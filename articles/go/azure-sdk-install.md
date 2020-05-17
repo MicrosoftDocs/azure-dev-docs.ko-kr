@@ -30,7 +30,7 @@ Azure SDK for Go 시작! SDK를 사용하면 Go 애플리케이션에서 Azure �
 
 ## <a name="vendor-the-azure-sdk-for-go"></a>Azure SDK for Go 공급하기
 
-Azure SDK for Go는 [dep](https://github.com/golang/dep)를 통해 공급할 수 있습니다. 안정성을 위해서는 공급 방식이 권장됩니다. 고유한 프로젝트에 `dep`를 사용하려면 `github.com/Azure/azure-sdk-for-go`의 `[[constraint]]` 섹션에 `Gopkg.toml`를 추가합니다. 예를 들어 버전 `14.0.0`에 공급하려면 다음 항목을 추가합니다.
+Azure SDK for Go는 [dep](https://github.com/golang/dep)를 통해 공급할 수 있습니다. 안정성을 위해서는 공급 방식이 권장됩니다. 고유한 프로젝트에 `dep`를 사용하려면 `Gopkg.toml`의 `[[constraint]]` 섹션에 `github.com/Azure/azure-sdk-for-go`를 추가합니다. 예를 들어 버전 `14.0.0`에 공급하려면 다음 항목을 추가합니다.
 
 ```toml
 [[constraint]]

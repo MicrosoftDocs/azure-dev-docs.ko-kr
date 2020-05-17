@@ -37,7 +37,7 @@ Docker를 사용하여 Azure CLI가 사전 설치된 독립 실행형 Linux 컨�
 > docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli
 > ```
 
-CLI는 `az`에 있는 `/usr/local/bin` 명령으로 이미지에 설치됩니다. 로그인하려면, [az login](/cli/azure/reference-index#az-login) 명령을 사용합니다.
+CLI는 `/usr/local/bin`에 있는 `az` 명령으로 이미지에 설치됩니다. 로그인하려면, [az login](/cli/azure/reference-index#az-login) 명령을 사용합니다.
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 

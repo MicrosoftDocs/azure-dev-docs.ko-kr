@@ -52,7 +52,7 @@ Zulu Mission Control은 다음과 같은 JDK/JRE와 호환됩니다.
     tar -xzvf zmc7.0.0-EA-macosx_x64.tar.gz
     ```
 
-4. 호환되는 JDK 중 하나를 사용하여 Java 애플리케이션을 시작합니다. 다음은 그 예입니다. 
+4. 호환되는 JDK 중 하나를 사용하여 Java 애플리케이션을 시작합니다. 다음은 그 예입니다.
 
     ```cli
     $JAVA_HOME/bin/java -jar MyApplication.jar

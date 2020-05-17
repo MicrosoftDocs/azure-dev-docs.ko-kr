@@ -84,7 +84,7 @@ $ sudo rpm -ivh --nodeps azure-cli-$AZ_VERSION.x86_64.rpm
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-`zypper`를 통해 이 프록시를 항상 사용하도록 명시적으로 `yast2`를 구성할 수도 있습니다. 이렇게 하려면 `yast2 proxy` 명령을 슈퍼 사용자 권한으로 실행하고 양식에 제공된 정보를 입력합니다. 시스템에서 창 관리자를 사용할 수 있으면 `Network Services > Proxy`에서 `YaST Control Center` 창을 사용할 수도 있습니다.
+`yast2`를 통해 이 프록시를 항상 사용하도록 명시적으로 `zypper`를 구성할 수도 있습니다. 이렇게 하려면 `yast2 proxy` 명령을 슈퍼 사용자 권한으로 실행하고 양식에 제공된 정보를 입력합니다. 시스템에서 창 관리자를 사용할 수 있으면 `YaST Control Center`에서 `Network Services > Proxy` 창을 사용할 수도 있습니다.
 
 고급 구성 또는 자세한 내용은 [openSUSE 프록시 구성 설명서](https://www.suse.com/documentation/slms1/book_slms/data/sec_wy_config_updates_proxy.html)를 참조하세요.
 

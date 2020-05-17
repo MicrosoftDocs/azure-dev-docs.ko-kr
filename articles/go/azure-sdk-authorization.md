@@ -136,7 +136,7 @@ authorizer, err := NewAuthorizerFromFile(azure.PublicCloud.ResourceManagerEndpoi
 
 사용자가 대화형으로 로그인하도록 하려면 디바이스 토큰 인증을 통하는 것이 가장 좋은 방법입니다. 이 인증 흐름에서 Microsoft 로그인 사이트에 붙여 넣을 토큰을 사용자에게 전달하면, 사용자가 이 로그인 사이트에서 AAD(Azure Active Directory) 계정을 사용하여 인증합니다. 표준 사용자 이름/암호 인증과 달리, 이 인증 방법은 다단계 인증을 사용하도록 설정된 계정을 지원합니다.
 
-디바이스 토큰 인증을 사용하려면 [NewDeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig) 함수를 사용하여 [DeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewDeviceFlowConfig) 권한 부여자를 만듭니다. 인증 프로세스를 시작하려면 결과 개체에서 [권한 부여자](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig.Authorizer)를 호출합니다. 전체 인증 흐름이 완료될 때까지 디바이스 흐름 인증에서 프로그램 실행을 차단합니다.
+디바이스 토큰 인증을 사용하려면 [NewDeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewDeviceFlowConfig) 함수를 사용하여 [DeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig) 권한 부여자를 만듭니다. 인증 프로세스를 시작하려면 결과 개체에서 [권한 부여자](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig.Authorizer)를 호출합니다. 전체 인증 흐름이 완료될 때까지 디바이스 흐름 인증에서 프로그램 실행을 차단합니다.
 
 ```go
 import "github.com/Azure/go-autorest/autorest/azure/auth"

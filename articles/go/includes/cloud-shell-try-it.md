@@ -14,6 +14,6 @@ Azure Cloud Shell은 Azure에서 실행되는 대화형 셸입니다. 공용 도
 
 |   | |
 |-----------------------------------------------|---|
-| 코드 블록의 오른쪽 위 모서리에서 **사용**을 클릭합니다.  | ![이 문서의 Cloud Shell](../media/cloud-shell-try-it/cli-try-it.png) |
+| 코드 블록의 오른쪽 위 모서리에서 **사용**을 클릭합니다. | ![이 문서의 Cloud Shell](../media/cloud-shell-try-it/cli-try-it.png) |
 | 브라우저에서 Cloud Shell을 엽니다. | [![https://shell.azure.com/bash](../media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com/bash) |
-| **Azure Portal**의 오른쪽 위 모서리에 있는 메뉴에서 [Cloud Shell](https://portal.azure.com) 단추를 클릭합니다. | ![포털의 Cloud Shell](../media/cloud-shell-try-it/cloud-shell-menu.png) |
+| [Azure Portal](https://portal.azure.com)의 오른쪽 위 모서리에 있는 메뉴에서 **Cloud Shell** 단추를 클릭합니다. | ![포털의 Cloud Shell](../media/cloud-shell-try-it/cloud-shell-menu.png) |

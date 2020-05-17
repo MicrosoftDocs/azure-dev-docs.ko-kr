@@ -33,7 +33,7 @@ Azure에서 Jenkins를 호스트하여 빌드 자동화를 중앙 집중화하�
 
 [Azure 서비스 주체](/azure/azure-resource-manager/resource-group-overview)로 구성되었으면 다음을 위해 Jenkins 작업 및 파이프라인에서 이 자격 증명을 사용할 수 있습니다.
 
-- [Azure Storage 플러그 인](/azure/storage/common/storage-introduction)을 사용하여 [Azure Storage](https://plugins.jenkins.io/windows-azure-storage)에 빌드 아티팩트를 안전하게 저장하고 보관합니다. 자세히 알아보려면 [Jenkins 스토리지 방법](azure-storage-blobs-as-build-artifact-repository.md)을 검토하세요.
+- [Azure Storage 플러그 인](https://plugins.jenkins.io/windows-azure-storage)을 사용하여 [Azure Storage](/azure/storage/common/storage-introduction)에 빌드 아티팩트를 안전하게 저장하고 보관합니다. 자세히 알아보려면 [Jenkins 스토리지 방법](azure-storage-blobs-as-build-artifact-repository.md)을 검토하세요.
 - [Azure CLI](deploy-to-azure-app-service-using-azure-cli.md)로 Azure 리소스를 관리하고 구성합니다.
 
 ## <a name="deploy-your-code-into-azure-services"></a>Azure 서비스에 코드 배포

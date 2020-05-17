@@ -2,19 +2,19 @@
 title: Azure에서 Spring Cloud 함수 시작하기
 description: Azure에서 Spring Cloud 함수를 사용하는 방법에 대해 알아봅니다.
 documentationcenter: java
-author: jdubois
+author: judubois
 manager: brborges
 ms.author: judubois
 ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 10c36b30b1c0f175571c675951f63734495cd291
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.openlocfilehash: e91940e22aba03367493a23d4792db38d36f394f
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153914"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "81673039"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure에서 Spring Cloud 함수 시작하기
 
@@ -71,7 +71,7 @@ Azure Functions에서 실행되고 Spring Cloud 함수로 구성된 기존 "Hell
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
     <functionResourceGroup>my-resource-group</functionResourceGroup>
     <start-class>com.example.HelloFunction</start-class>
-    <wrapper.version>1.0.24.RELEASE</wrapper.version>
+    <wrapper.version>1.0.22.RELEASE</wrapper.version>
 </properties>
 ```
 
@@ -217,7 +217,9 @@ package com.example;
 
 import com.example.model.Greeting;
 import com.example.model.User;
-import com.microsoft.azure.functions.*;
+import com.microsoft.azure.functions.ExecutionContext;
+import com.microsoft.azure.functions.HttpMethod;
+import com.microsoft.azure.functions.HttpRequestMessage;
 import com.microsoft.azure.functions.annotation.AuthorizationLevel;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
@@ -228,23 +230,19 @@ import java.util.Optional;
 public class HelloHandler extends AzureSpringBootRequestHandler<User, Greeting> {
 
     @FunctionName("hello")
-    public HttpResponseMessage execute(
+    public Greeting execute(
             @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<User>> request,
             ExecutionContext context) {
 
         context.getLogger().info("Greeting user name: " + request.getBody().get().getName());
-        return request
-                .createResponseBuilder(HttpStatus.OK)
-                .body(handleRequest(request.getBody().get(), context))
-                .header("Content-Type", "application/json")
-                .build();
+        return handleRequest(request.getBody().get(), context);
     }
 }
 ```
 
 이 Java 클래스는 다음과 같은 흥미로운 기능을 포함하는 Azure 함수입니다.
 
-- Azure Functions 및 Spring Cloud 함수 간의 링크를 수행하는 `AzureSpringBootRequestHandler`를 확장합니다. 이는 `handleRequest()` 메서드에서 사용되는 `execute()` 메서드를 제공합니다.
+- Azure Functions 및 Spring Cloud 함수 간의 링크를 수행하는 `AzureSpringBootRequestHandler`를 확장합니다. 이는 `execute()` 메서드에서 사용되는 `handleRequest()` 메서드를 제공합니다.
 - `@FunctionName("hello")` 주석으로 정의된 함수 이름은 이전 단계인 `hello`에서 구성된 Spring Bean과 동일합니다.
 - 실제 Azure 함수이므로 여기에서 전체 Azure Functions API를 사용할 수 있습니다.
 
@@ -327,7 +325,7 @@ curl http://localhost:7071/api/hello -d "{\"name\":\"Azure\"}"
 
 ## <a name="deploy-the-function-to-azure-functions"></a>Azure Functions에 함수 배포
 
-이제 프로덕션에 Azure 함수를 게시할 예정입니다. `<functionAppName>`pom.xml`<functionAppRegion>`에 정의한 `<functionResourceGroup>`, *및* 속성은 함수를 구성하는 데 사용됩니다.
+이제 프로덕션에 Azure 함수를 게시할 예정입니다. *pom.xml*에 정의한 `<functionAppName>`, `<functionAppRegion>` 및 `<functionResourceGroup>` 속성은 함수를 구성하는 데 사용됩니다.
 
 > [!NOTE]
 > Maven 플러그 인은 Azure를 사용하여 인증해야 합니다. Azure CLI가 설치되어 있으면 계속하기 전에 `az login`을 사용합니다.

@@ -133,7 +133,7 @@ Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-cosmos-db"></a>Azure Cosmos DB를 사용하도록 Spring Boot 앱 구성
 
-1. 앱의 *리소스* 디렉터리를 찾아*application.yml*라는 새 파일을 만듭니다. 다음은 그 예입니다. 
+1. 앱의 *리소스* 디렉터리를 찾아*application.yml*라는 새 파일을 만듭니다. 다음은 그 예입니다.
 
    `C:\SpringBoot\wingtiptoysdata\src\main\resources\application.yml`
 

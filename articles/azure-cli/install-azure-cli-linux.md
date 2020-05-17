@@ -58,7 +58,7 @@ curl -L https://aka.ms/InstallAzureCli | bash
 
 ### <a name="curl-object-moved-error"></a>"개체 이동됨" curl 오류
 
-`curl` 매개 변수와 관련된 `-L`에서 오류가 발생하거나 "개체 이동됨"이라는 텍스트가 포함된 오류 메시지가 표시되면 `aka.ms` 리디렉션 전체 URL을 사용해 보세요.
+`-L` 매개 변수와 관련된 `curl`에서 오류가 발생하거나 "개체 이동됨"이라는 텍스트가 포함된 오류 메시지가 표시되면 `aka.ms` 리디렉션 전체 URL을 사용해 보세요.
 
 ```bash
 curl https://azurecliprod.blob.core.windows.net/install | bash

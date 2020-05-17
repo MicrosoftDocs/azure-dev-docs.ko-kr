@@ -58,7 +58,7 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr를 사용하여 간단한 Spring Boot 애플리케이션 만들기
 
-다음 단계를 사용하여 Azure 지원으로 새 Spring Boot 애플리케이션 프로젝트를 만듭니다. 대안으로 [azure-spring-boot](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) 리포지토리에서 [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot) 샘플을 사용할 수 있습니다. 그런 다음, [앱 빌드 및 테스트](#build-and-test-your-app)로 직접 건너뛸 수 있습니다.
+다음 단계를 사용하여 Azure 지원으로 새 Spring Boot 애플리케이션 프로젝트를 만듭니다. 대안으로 [azure-spring-boot](https://github.com/microsoft/azure-spring-boot) 리포지토리에서 [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) 샘플을 사용할 수 있습니다. 그런 다음, [앱 빌드 및 테스트](#build-and-test-your-app)로 직접 건너뛸 수 있습니다.
 
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 

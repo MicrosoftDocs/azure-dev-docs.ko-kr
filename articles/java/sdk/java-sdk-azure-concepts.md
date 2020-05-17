@@ -55,7 +55,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
 
 `listByResourceGroup(String groupname)` 메서드를 사용하여 반환된 List의 범위를 특정 [Azure 리소스 그룹](/azure/azure-resource-manager/resource-group-overview#resource-groups)으로 지정합니다.  
 
-일반 `PagedList<T>`와 마찬가지로 반환된 `List<T>` 컬렉션을 검색하고 반복합니다.
+일반 `List<T>`와 마찬가지로 반환된 `PagedList<T>` 컬렉션을 검색하고 반복합니다.
 
 ```java
 PagedList<VirtualMachine> vms = azure.virtualMachines().list();
@@ -87,9 +87,9 @@ for (VirtualMachine vm : vms) {
 >[!NOTE]
 > `define()` 및 `update()`는 동사이지만 `create()` 또는 `apply()`가 뒤에 나오지 않으면 차단하지 않습니다.
  
-이러한 메서드 중 일부의 비동기 버전은 `Async`Reactive eXtension(영문)[을 사용하여 ](https://github.com/ReactiveX/RxJava) 접미사와 함께 존재합니다. 
+이러한 메서드 중 일부의 비동기 버전은 [Reactive eXtension(영문)](https://github.com/ReactiveX/RxJava)을 사용하여 `Async` 접미사와 함께 존재합니다. 
 
-일부 개체에는 Azure에서 리소스의 상태를 변경하는 다른 메서드가 있습니다. 예를 들어 `restart()`의 `VirtualMachine`와 같습니다.
+일부 개체에는 Azure에서 리소스의 상태를 변경하는 다른 메서드가 있습니다. 예를 들어 `VirtualMachine`의 `restart()`와 같습니다.
 
 ```java
 VirtualMachine vmToRestart = azure.getVirtualMachines().getById(id);
@@ -105,7 +105,7 @@ Azure 리소스를 만들 때 새 리소스가 아직 존재하지 않는 다른
 
 `Creatable<T>` 개체를 사용하면 구독에 Azure 리소스를 만들 때까지 기다리지 않고 코드에서 사용할 수 있도록 이러한 리소스를 정의할 수 있습니다. 관리 라이브러리는 `Creatable<T>` 개체가 필요할 때까지 기다린 후에 이러한 개체를 만듭니다.
 
-`Creatable<T>` 동사를 통해 Azure 리소스에 대한 `define()` 개체를 생성하는 예제는 다음과 같습니다:
+`define()` 동사를 통해 Azure 리소스에 대한 `Creatable<T>` 개체를 생성하는 예제는 다음과 같습니다:
 
 ```java
 Creatable<PublicIPAddress> publicIPAddressCreatable = azure.publicIPAddresses().define(publicIPAddressName)
@@ -120,7 +120,7 @@ Creatable<VirtualMachine> vmCreatable = azure.virtualMachines().define("creatabl
     .withNewPrimaryPublicIPAddress(publicIPAddressCreatable)
 ```
 
-개체를 사용하여 정의된 리소스가 Azure에서 `Creatable<T>`를 사용하여 빌드될 때 구독에 `create()` 리소스가 생성됩니다. IP 주소 및 가상 머신 예제를 계속하는 예제는 다음과 같습니다.
+개체를 사용하여 정의된 리소스가 Azure에서 `create()`를 사용하여 빌드될 때 구독에 `Creatable<T>` 리소스가 생성됩니다. IP 주소 및 가상 머신 예제를 계속하는 예제는 다음과 같습니다.
 
 ```java
 CreatedResources<VirtualMachine> virtualMachine = azure.virtualMachines().create(vmCreatable);
@@ -134,11 +134,11 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 
 ## <a name="exception-handling"></a>예외 처리
 
-관리 라이브러리의 Exception 클래스는 `com.microsoft.rest.RestException`을 확장합니다. 관련된 `catch (RestException exception)` 문 뒤에 `try` 블록이 있는 관리 라이브러리에서 생성된 예외를 catch합니다.
+관리 라이브러리의 Exception 클래스는 `com.microsoft.rest.RestException`을 확장합니다. 관련된 `try` 문 뒤에 `catch (RestException exception)` 블록이 있는 관리 라이브러리에서 생성된 예외를 catch합니다.
 
 ## <a name="logs-and-trace"></a>로그 및 추적
 
-`Azure`을 사용하여 `withLogLevel()` 진입점 개체를 빌드할 때 관리 라이브러리에서 로깅의 양을 구성합니다. 다음과 같은 추적 수준이 있습니다.
+`withLogLevel()`을 사용하여 `Azure` 진입점 개체를 빌드할 때 관리 라이브러리에서 로깅의 양을 구성합니다. 다음과 같은 추적 수준이 있습니다.
 
 | 추적 수준 | 사용되는 로깅 
 | ------------ | ---------------
@@ -148,4 +148,4 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 | com.microsoft.rest.LogLevel.HEADERS | BASIC의 모든 항목 및 REST 호출에 대한 요청/응답 헤더
 | com.microsoft.rest.LogLevel.BODY_AND_HEADERS | BODY 및 HEADERS 로그 수준 둘 다의 모든 항목
 
-[Log4J 2(영문)](https://www.slf4j.org/manual.html)와 같은 로깅 프레임워크에 출력을 기록해야 하는 경우 [SLF4J 로깅 구현(영문)](https://logging.apache.org/log4j/2.x/)을 바인딩합니다.
+[Log4J 2(영문)](https://logging.apache.org/log4j/2.x/)와 같은 로깅 프레임워크에 출력을 기록해야 하는 경우 [SLF4J 로깅 구현(영문)](https://www.slf4j.org/manual.html)을 바인딩합니다.

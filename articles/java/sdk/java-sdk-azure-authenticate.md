@@ -111,7 +111,7 @@ authURL=https\://login.windows.net/
 graphURL=https\://graph.windows.net/
 ```
 
-- subscription: Azure CLI 2.0에서 *의* id`az account show` 값을 사용합니다.
+- subscription: Azure CLI 2.0에서 `az account show`의 *id* 값을 사용합니다.
 - client: 애플리케이션을 실행하기 위해 만든 서비스 사용자에서 가져온 출력의 *appId* 값을 사용합니다. 앱에 대한 서비스 사용자가 없는 경우 [Azure CLI 2.0을 사용하여 서비스 사용자를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli).
 - key: 서비스 사용자 만들기 CLI 출력의 *password* 값을 사용합니다.
 - tenant: 서비스 사용자 만들기 CLI 출력의 *tenant* 값을 사용합니다.

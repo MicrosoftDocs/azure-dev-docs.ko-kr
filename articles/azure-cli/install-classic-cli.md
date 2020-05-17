@@ -39,7 +39,7 @@ npm 패키지에서 클래식 CLI를 설치하려면 [최신 Node.js 및 npm](ht
 npm install -g azure-cli
 ```
 
-Linux 배포에서는 `sudo` 명령을 정상적으로 실행하기 위해 다음과 같이 `npm`를 사용해야 할 수도 있습니다.
+Linux 배포에서는 `npm` 명령을 정상적으로 실행하기 위해 다음과 같이 `sudo`를 사용해야 할 수도 있습니다.
 
 ```bash
 sudo npm install -g azure-cli

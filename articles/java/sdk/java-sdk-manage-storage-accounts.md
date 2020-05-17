@@ -101,7 +101,7 @@ azure.storageAccounts().deleteByResourceGroup(rgName,accountName);
 | 샘플에 사용되는 클래스 | 메모
 |-------|-------|
 | [StorageAccount](/java/api/com.microsoft.azure.management.storage.storageaccount)  | Azure Storage 계정에 대한 표현입니다. 클래스의 메서드를 사용하여 스토리지 계정에 대한 정보를 얻습니다.
-| [StorageAccountKey](/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()`는 스토리지 계정 키를 반환합니다. `regenerateKey`의 `StorageAccount` 메서드를 사용하여 키를 업데이트합니다.
+| [StorageAccountKey](/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()`는 스토리지 계정 키를 반환합니다. `StorageAccount`의 `regenerateKey` 메서드를 사용하여 키를 업데이트합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

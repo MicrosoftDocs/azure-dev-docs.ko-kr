@@ -17,7 +17,7 @@ ms.locfileid: "81669069"
 
 [!INCLUDE [spring-boot-20-note.md](includes/spring-boot-20-note.md)]
 
-Azure는 [AMQP 1.0](/azure/service-bus-messaging/service-bus-messaging-overview)("고급 메시지 큐 프로토콜 1.0") 표준을 기반으로 하는 [Service Bus](http://www.amqp.org/)("Azure Service Bus")라는 비동기 메시징 플랫폼을 제공합니다. Service Bus는 지원되는 Azure 플랫폼 범위에서 사용할 수 있습니다.
+Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0") 표준을 기반으로 하는 [Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview)("Azure Service Bus")라는 비동기 메시징 플랫폼을 제공합니다. Service Bus는 지원되는 Azure 플랫폼 범위에서 사용할 수 있습니다.
 
 이 문서에서는 Spring Cloud Stream Binder를 사용하여 Service Bus `queues` 및 `topics`에서 메시지를 보내고 받는 방법을 보여 줍니다.
 

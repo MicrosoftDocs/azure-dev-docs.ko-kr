@@ -147,9 +147,9 @@ for (String publicIpCreatableKey : publicIpCreatableKeys) {
 
 `azure.virtualMachines().create(creatableVirtualMachines)` 호출은 `creatableVirtualMachines` 목록에 정의된 모든 가상 머신을 지역 전체에서 동시에 만듭니다.
 
-반환된 `CreatedResources<VirtualMachine>` 개체를 사용하여 반환된 `create()` 형식 외에도 `VirtualMachine` 메서드 중에 Azure 구독에 만들어진 모든 리소스에 액세스합니다. `createdRelatedResources()`에서 반환된 값을 올바른 형식으로 캐스트합니다. 
+반환된 `CreatedResources<VirtualMachine>` 개체를 사용하여 반환된 `VirtualMachine` 형식 외에도 `create()` 메서드 중에 Azure 구독에 만들어진 모든 리소스에 액세스합니다. `createdRelatedResources()`에서 반환된 값을 올바른 형식으로 캐스트합니다. 
 
-`Creatable<T>`라이브러리 개념 문서`CreatedResources`에서 [ 및 ](java-sdk-azure-concepts.md) 사용에 대해 자세히 알아보세요.
+[라이브러리 개념 문서](java-sdk-azure-concepts.md)에서 `Creatable<T>` 및 `CreatedResources` 사용에 대해 자세히 알아보세요.
 
 ## <a name="delete-the-resource-group"></a>리소스 그룹 삭제 
 
@@ -186,7 +186,7 @@ finally {
 | 샘플에 사용되는 클래스 | 메모
 |-------|-------|
 | [VirtualMachine](/java/api/com.microsoft.azure.management.compute.virtualmachine) | 속성을 쿼리하고 가상 머신의 상태를 관리합니다. `azure.virtualMachines().list()` 또는 이름별 또는 ID `azure.virtualMachines().getByResourceGroup()` 목록 형식으로 검색됩니다.
-| [VirtualMachineSizeTypes](/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | 가상 머신을 정의할 때 [에 대한 매개 변수로 사용할 ](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)가상 머신 크기 옵션`withSize()`에 매핑되는 정적 값입니다.
+| [VirtualMachineSizeTypes](/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | 가상 머신을 정의할 때 `withSize()`에 대한 매개 변수로 사용할 [가상 머신 크기 옵션](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)에 매핑되는 정적 값입니다.
 | [PublicIpAddress](/java/api/com.microsoft.azure.management.network.publicipaddress) | `azure.publicIpAddresses().define()`을 통해 각 가상 컴퓨터에 대해 정의되지만 즉시 만들어지지는 않습니다. 각 `Creatable`에 대한 키를 저장하고 나중에 `createdRelatedResource()`를 통해 검색합니다.
 | [KnownLinuxVirtualMachineImage](/java/api/com.microsoft.azure.management.compute.knownlinuxvirtualmachineimage) | 가상 컴퓨터를 정의할 때 `withPopularLinuxImage()` 메서드에 대한 매개 변수로 사용되는 Linux 가상 컴퓨터 옵션 집합입니다.
 | [Network](/java/api/com.microsoft.azure.management.network.network) | 샘플에서는 `azure.networks().define()`을 통해 각 지역에 대해 하나의 가상 네트워크를 정의합니다. 

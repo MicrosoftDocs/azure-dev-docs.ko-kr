@@ -78,7 +78,7 @@ log_dir=/var/log/azure
 
 ## <a name="cli-configuration-values-and-environment-variables"></a>CLI 구성 값 및 환경 변수
 
-다음 표에는 구성 파일에 배치할 수 있는 모든 섹션 및 옵션 이름이 포함되어 있습니다. 해당 환경 변수는 모두 대문자로 `AZURE_{section}_{name}`으로 설정됩니다. 예를 들어, `storage_account`에 대한 `batchai` 기본값은 `AZURE_BATCHAI_STORAGE_ACCOUNT` 변수에 설정됩니다.
+다음 표에는 구성 파일에 배치할 수 있는 모든 섹션 및 옵션 이름이 포함되어 있습니다. 해당 환경 변수는 모두 대문자로 `AZURE_{section}_{name}`으로 설정됩니다. 예를 들어, `batchai`에 대한 `storage_account` 기본값은 `AZURE_BATCHAI_STORAGE_ACCOUNT` 변수에 설정됩니다.
 
 기본값을 제공하면, 명령에 더 이상 인수가 필요하지 않습니다. 대신 기본값이 사용됩니다.
 

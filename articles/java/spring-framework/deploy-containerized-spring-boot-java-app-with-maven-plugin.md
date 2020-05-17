@@ -135,7 +135,7 @@ ms.locfileid: "81668399"
    * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
    * `$HOME/.m2/settings.xml`
 
-2. `<servers>`settings.xml*파일의* 컬렉션에 이 자습서의 이전 섹션에 있는 Azure 서비스 주체 설정을 추가합니다. 예:
+2. *settings.xml* 파일의 `<servers>` 컬렉션에 이 자습서의 이전 섹션에 있는 Azure 서비스 주체 설정을 추가합니다. 예:
 
    ```xml
    <servers>
@@ -169,7 +169,7 @@ Docker 계정이 있는 경우 Docker 컨테이너 이미지를 로컬에서 빌
 
 1. 텍스트 편집기에서 Spring Boot 애플리케이션에 대한 `pom.xml` 파일을 엽니다.
 
-1. `<imageName>` 요소의 `<containerSettings>` 자식 요소를 찾습니다.
+1. `<containerSettings>` 요소의 `<imageName>` 자식 요소를 찾습니다.
 
 1. Docker 계정 이름으로 `${docker.image.prefix}` 값을 업데이트합니다.
    ```xml
@@ -193,7 +193,7 @@ Docker 계정이 있는 경우 Docker 컨테이너 이미지를 로컬에서 빌
 
 ## <a name="optional-customize-your-pomxml-before-deploying-your-container-to-azure"></a>선택 사항: 컨테이너를 Azure에 배포하기 전에 pom.xml 사용자 지정
 
-텍스트 편집기에서 Spring Boot 애플리케이션에 대한 `pom.xml` 파일을 연 다음, `<plugin>`에 대한 `azure-webapp-maven-plugin` 요소를 찾습니다. 이 요소는 다음 예제와 유사합니다.
+텍스트 편집기에서 Spring Boot 애플리케이션에 대한 `pom.xml` 파일을 연 다음, `azure-webapp-maven-plugin`에 대한 `<plugin>` 요소를 찾습니다. 이 요소는 다음 예제와 유사합니다.
 
    ```xml
    <plugin>
@@ -225,7 +225,7 @@ Maven 플러그 인에 대해 수정할 수 있는 여러 값이 있으며 이�
 | 요소 | Description |
 |---|---|
 | `<version>` | [Azure Web Apps의 Maven 플러그 인] 버전을 지정합니다. [Maven 중앙 리포지토리](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)에 나열된 버전을 검사하여 최신 버전을 사용하고 있는지 확인해야 합니다. |
-| `<authentication>` | Azure에 대한 인증 정보를 지정합니다. 이 예제에서는 `<serverId>`이 포함된 `azure-auth` 요소를 포함합니다. Maven에서는 해당 값을 사용하여 이 문서의 이전 섹션에 정의된 Maven *settings.xml* 파일에서 Azure 서비스 주체 값을 조회합니다. |
+| `<authentication>` | Azure에 대한 인증 정보를 지정합니다. 이 예제에서는 `azure-auth`이 포함된 `<serverId>` 요소를 포함합니다. Maven에서는 해당 값을 사용하여 이 문서의 이전 섹션에 정의된 Maven *settings.xml* 파일에서 Azure 서비스 주체 값을 조회합니다. |
 | `<resourceGroup>` | 대상 리소스 그룹, 즉, 이 예에서 `maven-plugin`을 지정합니다. 리소스 그룹이 아직 존재하지 않는 경우 배포 중에 만들어집니다. |
 | `<appName>` | 웹앱에 대한 대상 이름을 지정합니다. 이 예제에서는 대상 이름은 `maven-linux-app-${maven.build.timestamp}`이며 이 예제에서 충돌을 피하기 위해 여기에 `${maven.build.timestamp}` 접미사가 추가됩니다. (타임스탬프는 선택 사항입니다. 앱 이름에 대한 고유한 문자열을 지정할 수 있습니다.) |
 | `<region>` | 대상 지역을 지정합니다. 이 예제에서는 `westus`입니다. (전체 목록은 [Azure Web Apps의 Maven 플러그 인] 설명서에서 제공됩니다.) |
@@ -254,7 +254,7 @@ Maven은 Azure에 웹앱을 배포합니다. 웹앱이 아직 없는 경우 생�
 
 > [!NOTE]
 >
-> `<region>`pom.xml*파일의* 요소에서 지정한 지역이 배포를 시작할 때 서버를 충분히 사용할 수 없는 경우 다음 예제와 비슷한 오류가 표시될 수 있습니다.
+> *pom.xml* 파일의 `<region>` 요소에서 지정한 지역이 배포를 시작할 때 서버를 충분히 사용할 수 없는 경우 다음 예제와 비슷한 오류가 표시될 수 있습니다.
 >
 > ```xml
 > [INFO] Start deploying to Web App maven-linux-app-20170804...

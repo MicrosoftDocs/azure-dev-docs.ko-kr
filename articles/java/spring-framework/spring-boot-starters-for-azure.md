@@ -232,7 +232,7 @@ Azure에서 [Spring Boot] 애플리케이션을 사용하는 방법에 대한 �
 
 Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure]와 [Azure DevOps 및 Java 사용하기]를 참조하세요.
 
-자체 Spring Boot 애플리케이션을 시작하는 데 도움이 필요하면 **에서** Spring Initializr https://start.spring.io/ 를 참조하세요.
+자체 Spring Boot 애플리케이션을 시작하는 데 도움이 필요하면 https://start.spring.io/ 에서 **Spring Initializr**를 참조하세요.
 
 <!-- URL List -->
 

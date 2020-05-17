@@ -30,7 +30,7 @@ Spring Data Cosmos DB SDK는 GitHub의 [spring-data-cosmosdb](https://github.com
 
 ### <a name="crudrepository-and-reactivecrudrepository-support"></a>CrudRepository 및 ReactiveCrudRepository 지원
 
-Spring Data Cosmos DB SDK는 Spring Data `CosmosRepository` 및 `ReactiveCosmosRepository` 인터페이스를 확장하는 `CrudRepository` 및 `ReactiveCrudRepository` 인터페이스를 제공합니다.
+Spring Data Cosmos DB SDK는 Spring Data `CrudRepository` 및 `ReactiveCrudRepository` 인터페이스를 확장하는 `CosmosRepository` 및 `ReactiveCosmosRepository` 인터페이스를 제공합니다.
 
 다음 예제에서는 이러한 인터페이스를 확장하는 방법을 보여줍니다.
 
@@ -46,7 +46,7 @@ public interface ReactiveSampleRepository extends ReactiveCosmosRepository<Sampl
 }
 ```
 
-사용량에 따라 `Configuration` 클래스에서 두 리포지토리를 별도로 사용하도록 설정해야 합니다. 다음은 그 예입니다. 
+사용량에 따라 `Configuration` 클래스에서 두 리포지토리를 별도로 사용하도록 설정해야 합니다. 다음은 그 예입니다.
 
 ```java
 @Configuration
@@ -221,7 +221,7 @@ public CosmosDBConfig getConfig() {
 
 Spring Data Cosmos DB SDK의 버전 2.2.x는 응답 진단 문자열과 쿼리 메트릭을 지원합니다.
 
-쿼리 메트릭을 사용하도록 설정하려면 `populateQueryMetrics` 파일에서 **플래그를**true`application.properties`로 설정합니다. 그런 다음, `ResponseDiagnosticsProcessor` 인터페이스를 확장하고, 진단 정보를 기록하도록 `processResponseDiagnostics` 메서드를 구현합니다. 마지막으로, 구현 인스턴스를 `CosmosDbConfig.setResponseDiagnosticsProcessor` 메서드로 전달합니다. 다음 코드에서는 구현 예제를 보여줍니다.
+쿼리 메트릭을 사용하도록 설정하려면 `application.properties` 파일에서 `populateQueryMetrics` 플래그를 **true**로 설정합니다. 그런 다음, `ResponseDiagnosticsProcessor` 인터페이스를 확장하고, 진단 정보를 기록하도록 `processResponseDiagnostics` 메서드를 구현합니다. 마지막으로, 구현 인스턴스를 `CosmosDbConfig.setResponseDiagnosticsProcessor` 메서드로 전달합니다. 다음 코드에서는 구현 예제를 보여줍니다.
 
 ```java
 @Configuration
@@ -390,7 +390,7 @@ private static class ResponseDiagnosticsProcessorImplementation implements Respo
 
 Spring Data Cosmos DB SDK 버전 2.2.1은 다음과 같은 향상된 예외 처리 기능을 제공합니다.
 
-- 모든 API는 getter를 통해 `CosmosDBAccessException` 필드를 노출하는 `cosmosClientException`을 throw합니다.
+- 모든 API는 getter를 통해 `cosmosClientException` 필드를 노출하는 `CosmosDBAccessException`을 throw합니다.
 - Cosmos DB SDK는 클라이언트 쪽에서 다시 시도 논리를 구현하는 데 사용할 수 있는 `CosmosClientException`을 throw합니다.
 - 일반적으로 다시 시도하는 예외는 `Resource already exists`, `Request rate too large`, `Request timeout exception` 등의 메시지가 표시됩니다.
 

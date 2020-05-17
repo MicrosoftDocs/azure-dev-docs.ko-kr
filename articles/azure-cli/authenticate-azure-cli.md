@@ -42,7 +42,7 @@ az login -u <username> -p <password>
 ```
 
 > [!IMPORTANT]
-> 콘솔에 암호를 표시하지 않고 `az login`을 대화식으로 사용하려는 경우 `read -s`에서 `bash` 명령을 사용합니다.
+> 콘솔에 암호를 표시하지 않고 `az login`을 대화식으로 사용하려는 경우 `bash`에서 `read -s` 명령을 사용합니다.
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS
@@ -78,7 +78,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 ```
 
 > [!IMPORTANT]
-> 콘솔에 암호를 표시하지 않고 `az login`을 대화식으로 사용하려는 경우 `read -s`에서 `bash` 명령을 사용합니다.
+> 콘솔에 암호를 표시하지 않고 `az login`을 대화식으로 사용하려는 경우 `bash`에서 `read -s` 명령을 사용합니다.
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login --service-principal -u <app-url> -p $AZ_PASS --tenant <tenant>

@@ -114,7 +114,7 @@ az alias create \
 az get-vm-ip MyResourceGroup MyVM
 ```
 
-별칭 명령에서 환경 변수를 사용할 수도 있으며, 이 명령은 런타임에서 평가됩니다. 다음 예는 `create-rg`에 리소스 그룹을 만들고 `eastus` 태그를 추가하는 `owner` 별칭을 추가합니다. 이 태그에는 로컬 환경 변수 `USER`의 값이 지정됩니다.
+별칭 명령에서 환경 변수를 사용할 수도 있으며, 이 명령은 런타임에서 평가됩니다. 다음 예는 `eastus`에 리소스 그룹을 만들고 `owner` 태그를 추가하는 `create-rg` 별칭을 추가합니다. 이 태그에는 로컬 환경 변수 `USER`의 값이 지정됩니다.
 
 ```azurecli-interactive
 az alias create \

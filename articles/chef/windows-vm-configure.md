@@ -71,7 +71,7 @@ New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName 
 Chef Server를 아직 사용하고 있지 않으면 다음을 수행할 수 있습니다.
 
 * [Hosted Chef](https://manage.chef.io/signup)에 등록합니다. 이렇게 하는 것이 Chef를 시작하는 가장 빠른 방법입니다.
-* [Chef Docs](https://docs.chef.io/install_server.html)의 [설치 지침](https://docs.chef.io/)에 따라 Linux 기반 컴퓨터에 독립 실행형 Chef Server를 설치합니다.
+* [Chef Docs](https://docs.chef.io/)의 [설치 지침](https://docs.chef.io/install_server.html)에 따라 Linux 기반 컴퓨터에 독립 실행형 Chef Server를 설치합니다.
 
 ### <a name="create-a-hosted-chef-account"></a>호스팅된 Chef 계정 만들기
 
@@ -99,7 +99,7 @@ Chef Server를 아직 사용하고 있지 않으면 다음을 수행할 수 있�
 
 `chef-starter\chef-repo\.chef`의 모든 파일을 `c:\chef` 디렉터리에 복사합니다.
 
-`organization-validator.pem`에 저장된 경우 `c:\chef` 파일을 `c:\Downloads`에 복사합니다.
+`c:\Downloads`에 저장된 경우 `organization-validator.pem` 파일을 `c:\chef`에 복사합니다.
 
 이제 디렉터리가 다음 예제와 같이 표시됩니다.
 
@@ -273,7 +273,7 @@ C:\chef\cookbooks\webserver\recipes\default.rb를 수정하고 다음 줄을 추
 
 ## <a name="deploy-a-virtual-machine-with-knife-azure"></a>Knife Azure를 사용하여 가상 머신 배포
 
-Azure 가상 머신을 배포하고, `Webserver` 명령을 사용하여 `knife` 쿡북을 적용합니다.
+Azure 가상 머신을 배포하고, `knife` 명령을 사용하여 `Webserver` 쿡북을 적용합니다.
 
 `knife` 명령은 IIS 웹 서비스 및 기본 웹 페이지도 설치합니다.
 

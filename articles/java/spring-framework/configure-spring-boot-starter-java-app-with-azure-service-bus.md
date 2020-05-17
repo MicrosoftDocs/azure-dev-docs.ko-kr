@@ -17,7 +17,7 @@ ms.locfileid: "81674299"
 
 [!INCLUDE [spring-boot-20-note.md](includes/spring-boot-20-note.md)]
 
-Azure는 [AMQP 1.0](/azure/service-bus-messaging/service-bus-messaging-overview)("고급 메시지 큐 프로토콜 1.0") 표준을 기반으로 하는 [Service Bus](http://www.amqp.org/)("Azure Service Bus")라는 비동기 메시징 플랫폼을 제공합니다. Service Bus는 지원되는 Azure 플랫폼 범위에서 사용할 수 있습니다.
+Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0") 표준을 기반으로 하는 [Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview)("Azure Service Bus")라는 비동기 메시징 플랫폼을 제공합니다. Service Bus는 지원되는 Azure 플랫폼 범위에서 사용할 수 있습니다.
 
 Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합합니다.
 
@@ -202,7 +202,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
     }
     ```
 
-    `Serializable`은 Spring 프레임워크에서 `send`의 `JmsTemplate` 메서드를 사용하도록 구현되었습니다. 그렇지 않으면 사용자 지정 `MessageConverter` 빈을 정의하여 json에서 콘텐츠를 텍스트 형식으로 직렬화해야 합니다. `MessageConverter`에 대한 자세한 내용은 공식 [Spring JMS 스타터 프로젝트](https://spring.io/guides/gs/messaging-jms/)를 참조하세요.
+    `Serializable`은 Spring 프레임워크에서 `JmsTemplate`의 `send` 메서드를 사용하도록 구현되었습니다. 그렇지 않으면 사용자 지정 `MessageConverter` 빈을 정의하여 json에서 콘텐츠를 텍스트 형식으로 직렬화해야 합니다. `MessageConverter`에 대한 자세한 내용은 공식 [Spring JMS 스타터 프로젝트](https://spring.io/guides/gs/messaging-jms/)를 참조하세요.
 
 1. *User.java* 파일을 저장하고 닫습니다.
 

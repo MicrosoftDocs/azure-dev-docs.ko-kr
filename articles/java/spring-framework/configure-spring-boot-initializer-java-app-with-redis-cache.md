@@ -104,7 +104,7 @@ ms.locfileid: "82104834"
 
    > [!NOTE] 
    > 
-   > SSL을 활성화하는 Jedis와 같은 다른 Redis 클라이언트를 사용하는 경우 *application.properties* 파일에서 사용하고자 하는 SSL과 포트 6380을 지정합니다. 다음은 그 예입니다. 
+   > SSL을 활성화하는 Jedis와 같은 다른 Redis 클라이언트를 사용하는 경우 *application.properties* 파일에서 사용하고자 하는 SSL과 포트 6380을 지정합니다. 다음은 그 예입니다.
    > 
    > ```yaml
    > # Specify the DNS URI of your Redis cache.

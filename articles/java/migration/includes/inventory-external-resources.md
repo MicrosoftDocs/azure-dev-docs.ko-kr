@@ -15,15 +15,15 @@ ms.locfileid: "81671629"
 
 #### <a name="inside-your-application"></a>애플리케이션 내부
 
-*META-INF/context.xml* 파일을 검사합니다. `<Resource>` 요소 내에서 `<Context>` 요소를 찾습니다.
+*META-INF/context.xml* 파일을 검사합니다. `<Context>` 요소 내에서 `<Resource>` 요소를 찾습니다.
 
 #### <a name="on-the-application-servers"></a>애플리케이션 서버에서
 
 *$CATALINA_BASE/conf/context.xml* 및 *$CATALINA_BASE/conf/server.xml* 파일과 *$CATALINA_BASE/conf/[engine-name]/[host-name]* 디렉터리에 있는 *.xml* 파일을 검사합니다.
 
-*context.xml* 파일에서 JNDI 리소스는 최상위 `<Resource>` 요소 내의 `<Context>` 요소로 설명됩니다.
+*context.xml* 파일에서 JNDI 리소스는 최상위 `<Context>` 요소 내의 `<Resource>` 요소로 설명됩니다.
 
-*server.xml* 파일에서 JNDI 리소스는 `<Resource>` 요소 내의 `<GlobalNamingResources>` 요소로 설명됩니다.
+*server.xml* 파일에서 JNDI 리소스는 `<GlobalNamingResources>` 요소 내의 `<Resource>` 요소로 설명됩니다.
 
 #### <a name="datasources"></a>Datasources
 

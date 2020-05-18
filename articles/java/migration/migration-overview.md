@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: e6215502b54bedf62f40a024f9e7b3acc01cdc1f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670609"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988694"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java 애플리케이션을 Azure로 마이그레이션
 
@@ -80,7 +80,7 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 
 |   |앱<br>서비스<br>Java SE|앱<br>서비스<br>Tomcat|Azure<br>Spring<br>클라우드|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot/JAR 애플리케이션                                    |&#x2714;|        |        |&#x2714;|&#x2714;|
+| Spring Boot/JAR 애플리케이션                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/마이크로서비스                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
 | 웹 애플리케이션                                                  |        |&#x2714;|        |&#x2714;|&#x2714;|
 | Java EE 애플리케이션                                              |        |        |        |&#x2714;|&#x2714;|
@@ -88,6 +88,8 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 | 로컬 파일 시스템의 장기 지속성                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
 | 애플리케이션 서버 수준 클러스터링                               |        |        |        |&#x2714;|&#x2714;|
 | Batch/예약된 작업                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
+| VNet 통합/하이브리드 연결                              |미리 보기 |미리 보기 |        |&#x2714;|&#x2714;|
+| Azure 지역 가용성                | [세부 정보][10] | [세부 정보][10] | [세부 정보][11] |[세부 정보][12]|[세부 정보][13]|
 
 ### <a name="ongoing-responsibility-grid"></a>진행 중인 책임 그리드
 
@@ -98,14 +100,14 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 > [!NOTE]
 > 이는 완전한 책임 목록이 아닙니다.
 
-|   | App Service | Azure Spring Cloud | AKS | Virtual Machines |
+|                                                                       | App Service | Azure Spring Cloud | AKS | Virtual Machines |
 |---|---|---|---|---|
 | 라이브러리 업데이트<br>(취약성 수정 포함)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | 애플리케이션 서버 업데이트<br>(취약성 수정 포함)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
 | Java 런타임 업데이트<br>(취약성 수정 포함)          | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
-| Kubernetes 업데이트 트리거<br>(Azure에서 수동 트리거를 사용하여 수행) | 해당 없음         | 해당 없음         | &#x1F449;   | 해당 없음       |
-| 이전 버전과 호환되지 않는 Kubernetes API 변경 내용 조정                  | 해당 없음         | 해당 없음         | &#x1F449;   | 해당 없음       |
-| 컨테이너 기본 이미지 업데이트<br>(취약성 수정 포함)      | 해당 없음         | 해당 없음         | &#x1F449;   | 해당 없음       |
+| Kubernetes 업데이트 트리거<br>(Azure에서 수동 트리거를 사용하여 수행) | 해당 없음         | ![Azure][1] | &#x1F449;   | 해당 없음       |
+| 이전 버전과 호환되지 않는 Kubernetes API 변경 내용 조정                  | 해당 없음         | ![Azure][1] | &#x1F449;   | 해당 없음       |
+| 컨테이너 기본 이미지 업데이트<br>(취약성 수정 포함)      | 해당 없음         | ![Azure][1] | &#x1F449;   | 해당 없음       |
 | 운영 체제 업데이트<br>(취약성 수정 포함)      | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | 실패한 인스턴스 검색 및 다시 시작                                   | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | 업데이트에 대한 드레이닝 및 롤링 다시 시작 구현                       | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
@@ -132,14 +134,14 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 
 아래 행을 사용하여 Java 애플리케이션 유형을 찾고, 열을 사용하여 애플리케이션을 호스팅할 Azure 서비스 대상을 찾습니다.
 
-JBoss EAP 앱을 App Service의 Tomcat으로 마이그레이션하려면 먼저 Java EE 앱을 Tomcat에서 실행되는 Java Web Apps(서블릿)로 변환한 다음, 아래에 표시된 지침을 따릅니다.
+JBoss EAP 앱을 App Service의 Tomcat으로 마이그레이션하려면 먼저 Java EE 앱을 Tomcat에서 실행되는 Java Web Apps(서블릿)로 변환한 다음, 아래에 나와 있는 지침을 따릅니다.
 
-Tomcat의 웹앱을 Azure Spring Cloud로 마이그레이션하려면 먼저 앱을 Spring Cloud 마이크로서비스로 변환한 다음, 아래에 표시된 지침을 따릅니다.
+Tomcat의 웹앱을 Azure Spring Cloud로 마이그레이션하려면 먼저 앱을 Spring Cloud 마이크로서비스로 변환한 다음, 아래에 나와 있는 지침을 따릅니다.
 
 |대상&nbsp;→<br><br>애플리케이션&nbsp;유형&nbsp;↓|앱<br>서비스<br>Java SE|앱<br>서비스<br>Tomcat|Azure<br>Spring<br>클라우드|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot /<br>JAR 애플리케이션 | [지침][5] | 지침<br>예정 | 지침<br>예정 | 지침<br>예정 | 지침<br>예정 |
-| Spring Cloud /<br>마이크로서비스   | 해당 없음           | 해당 없음                 | 지침<br>예정 | 지침<br>예정 | 지침<br>예정 |
+| Spring Boot /<br>JAR 애플리케이션 | [지침][5] | 지침<br>예정 | 지침<br>예정 | [지침][14]      | 지침<br>예정 |
+| Spring Cloud /<br>마이크로서비스   | 해당 없음           | 해당 없음                 | [지침][15]      | 지침<br>예정 | 지침<br>예정 |
 | 웹 애플리케이션<br>(Tomcat에 있음)     | 해당 없음           | [지침][2]       | 해당 없음                 | [지침][3]       | 지침<br>예정 |
 
 **Java EE 애플리케이션**
@@ -158,8 +160,14 @@ Tomcat의 웹앱을 Azure Spring Cloud로 마이그레이션하려면 먼저 앱
 [2]: migrate-tomcat-to-tomcat-app-service.md
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 [4]: migrate-weblogic-to-virtual-machines.md
-[5]: migrate-java-se-to-java-se-app-service.md
+[5]: migrate-spring-boot-to-app-service.md
 [6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
 [7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
 [8]: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md
 [9]: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
+[10]: https://azure.microsoft.com/global-infrastructure/services/?products=app-service-linux
+[11]: https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud
+[12]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
+[13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
+[14]: migrate-spring-boot-to-azure-kubernetes-service.md
+[15]: migrate-spring-cloud-to-azure-spring-cloud.md

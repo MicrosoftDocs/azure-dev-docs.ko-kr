@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 71bc7e2e7677ce3f53c70bd68e5e73765070bd06
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: c06c1205d1ef1f8dc7eec674c846cf53c6a2e5e8
+ms.sourcegitcommit: 996212c5a141d724d26f3899e91d194b08b2dc0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82104864"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82985183"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C용 Spring Boot Starter를 사용하여 Java 웹앱을 보호합니다.
 
@@ -88,15 +88,16 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
    ![애플리케이션 리디렉션 URI 추가](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-3. 애플리케이션에서 **인증서 및 비밀**을 선택하고, **키 생성**을 클릭하여 `${your-client-secret}`을 생성한 다음, **저장**을 클릭합니다.
+3. **인증서 및 비밀**을 선택하고, **새 클라이언트 암호**를 클릭하여 키를 생성합니다.
 
    ![사용자 흐름 만들기](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
-4. 왼쪽에서 **사용자 흐름**을 선택한 다음, **새 사용자 흐름**을 **클릭**합니다.
+4. 왼쪽에서 **사용자 흐름**을 선택한 다음, **새 사용자 흐름**을 클릭합니다.
 
-5. **가입 또는 로그인**, **프로필 편집** 및 **암호 재설정**을 선택하여 각각 사용자 흐름을 만듭니다. 사용자 흐름 **이름** 및 **사용자 특성 및 클레임**을 지정하고 **만들기**를 클릭합니다.
+5. **가입 또는 로그인**, **프로필 편집** 및 **암호 재설정**을 선택하여 사용자 흐름을 만듭니다. 자세한 내용은 [자습서: Azure Active Directory B2C에서 사용자 흐름 만들기](/azure/active-directory-b2c/tutorial-create-user-flows)를 참조하세요. AAD B2C는 로컬 계정 및 소셜 ID 공급자를 지원합니다. GitHub ID 공급자를 만드는 방법에 대한 예제는 [Azure Active Directory B2C를 사용하여 GitHub 계정으로 가입 및 로그인 설정](/azure/active-directory-b2c/identity-provider-github)을 참조하세요.
+클레임 토큰에 포함되도록 **표시 이름**을 선택해야 합니다.
 
-   ![사용자 흐름 구성](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
+   ![사용자 흐름 만들기](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c-create-userflow.png)
 
 ## <a name="configure-and-compile-your-app"></a>앱 구성 및 컴파일
 
@@ -110,7 +111,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    <dependency>
        <groupId>com.microsoft.azure</groupId>
        <artifactId>azure-active-directory-b2c-spring-boot-starter</artifactId>
-       <version>2.1.6.M2</version>
+       <version>2.2.4</version>
    </dependency>
    <dependency>
        <groupId>org.springframework.boot</groupId>
@@ -132,10 +133,10 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    azure:
      activedirectory:
        b2c:
-         tenant: ${your-tenant-name}
+         tenant: ${your-tenant-name} # This is also the first part of your domain name before "onmicrosoft.com".
          client-id: ${your-client-id}
          client-secret: ${your-client-secret}
-         reply-url: ${your-redirect-uri-from-aad} # should be absolute url.
+         reply-url: ${your-redirect-uri-from-aad} # This should be an absolute URL.
          logout-success-url: ${you-logout-success-url}
          user-flows:
            sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}
@@ -249,7 +250,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ## <a name="build-and-test-your-app"></a>앱 빌드 및 테스트
 
-1. 명령 프롬프트를 열고 디렉터리를 앱의 *pom.xml* 파일이 위치한 폴더로 변경합니다. 
+1. 명령 프롬프트를 열고 디렉터리를 앱의 *pom.xml* 파일이 위치한 폴더로 변경합니다.
 
 2. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 

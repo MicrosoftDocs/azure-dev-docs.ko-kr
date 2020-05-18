@@ -3,13 +3,13 @@ title: 빠른 시작 - Terraform을 사용하여 Azure에서 인프라를 갖춘
 description: Terraform을 사용하여 Azure에서 완전한 Linux 가상 머신 환경을 만들고 관리하는 방법을 알아봅니다.
 keywords: azure devops terraform linux vm 가상 머신
 ms.topic: quickstart
-ms.date: 05/04/2020
-ms.openlocfilehash: d6763118179251c224e0ec3ae6e05a630cae7cde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 05/11/2020
+ms.openlocfilehash: 3485e899deaf84a63a2cf2d8085ac34b43f6fca9
+ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801891"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83153716"
 ---
 # <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>빠른 시작: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 
@@ -146,9 +146,9 @@ resource "azurerm_network_interface" "myterraformnic" {
 
     ip_configuration {
         name                          = "myNicConfiguration"
-        subnet_id                     = "azurerm_subnet.myterraformsubnet.id"
+        subnet_id                     = azurerm_subnet.myterraformsubnet.id
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = "azurerm_public_ip.myterraformpublicip.id"
+        public_ip_address_id          = azurerm_public_ip.myterraformpublicip.id
     }
 
     tags = {
@@ -412,6 +412,9 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 }
 ```
 
+**참고:**
+
+- `admin_ssh_key` 블록과 관련하여 Azure VM 에이전트를 사용하려면 SSH 키를 `/home/{username}/.ssh/authorized_keys` 경로에 작성해야 합니다. Windows에서 이 샘플을 실행하려면 이 디렉터리 구조가 있는지 확인해야 할 수 있습니다. `admin_ssh_key` 블록에 대한 자세한 내용은 [Terraform.io의 azurerm_linux_virtual_machine 설명서](https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html)를 참조하세요.
 
 ## <a name="build-and-deploy-the-infrastructure"></a>인프라 빌드 및 배포
 

@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1d7348530a163981f5c0a5f6cd6af26d01c55848
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8a6245f496b3a1371c43f764081f50b7b3f13dbd
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671599"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988738"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Tomcat 애플리케이션을 Azure Kubernetes Service의 컨테이너로 마이그레이션
 
@@ -18,22 +18,22 @@ ms.locfileid: "81671599"
 
 ## <a name="pre-migration"></a>사전 마이그레이션
 
+마이그레이션을 성공적으로 수행하려면 시작하기 전에 다음 섹션에서 설명하는 평가 및 인벤토리 단계를 완료합니다.
+
 [!INCLUDE [inventory-external-resources](includes/inventory-external-resources.md)]
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-[!INCLUDE [inventory-persistence-usage](includes/inventory-persistence-usage.md)]
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
 <!-- AKS-specific addendum to inventory-persistence-usage -->
-#### <a name="dynamic-or-internal-content"></a>동적 또는 내부 콘텐츠
-
-애플리케이션에서 자주 쓰고 읽는 파일(예: 임시 데이터 파일) 또는 애플리케이션에만 표시되는 정적 파일의 경우 Azure Storage 공유를 영구 볼륨으로 탑재할 수 있습니다. 자세한 내용은 [Azure Kubernetes Service에서 Azure Files를 사용하여 영구 볼륨을 동적으로 만들어 사용](/azure/aks/azure-files-dynamic-pv)을 참조하세요.
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 ### <a name="identify-session-persistence-mechanism"></a>세션 지속성 메커니즘 식별
 
 사용 중인 세션 지속성 관리자를 확인하려면 애플리케이션 및 Tomcat 구성의 *context.xml* 파일을 검사합니다. `<Manager>` 요소를 찾은 다음, `className` 특성의 값을 확인합니다.
 
-[StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 또는 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation)와 같은 Tomcat의 기본 제공 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components) 구현은 Kubernetes와 같은 분산된 확장 플랫폼에서 사용하도록 설계되지 않았습니다. AKS는 여러 Pod 간에 부하를 분산하고 언제든지 Pod를 투명하게 다시 시작할 수 있으므로 변경 가능한 상태를 파일 시스템에 유지하지 않는 것이 좋습니다.
+[StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) 또는 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components)와 같은 Tomcat의 기본 제공 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 구현은 Kubernetes와 같은 분산된 확장 플랫폼에서 사용하도록 설계되지 않았습니다. AKS는 여러 Pod 간에 부하를 분산하고 언제든지 Pod를 투명하게 다시 시작할 수 있으므로 변경 가능한 상태를 파일 시스템에 유지하지 않는 것이 좋습니다.
 
 세션 지속성이 필요한 경우 외부 데이터 저장소에 쓰는 대체 `PersistentManager` 구현(예: Redis Cache를 사용하는 Pivotal 세션 관리자)을 사용해야 합니다. 자세한 내용은 [Tomcat을 사용하여 Redis를 세션 캐시로 사용](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)을 참조하세요.
 
@@ -55,7 +55,7 @@ Quartz 스케줄러 작업 또는 cron 작업과 같은 예약된 작업은 컨�
 
 [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html)에는 지속형 XML 파일이 필요합니다. Kubernetes에서는 이 파일을 컨테이너 이미지에 추가하거나 [컨테이너에 사용할 수 있는 공유 스토리지](#identify-session-persistence-mechanism)에 업로드해야 합니다. 이에 따라 `pathName` 매개 변수를 적절하게 수정해야 합니다.
 
-`MemoryRealm`이 현재 사용되고 있는지 확인하려면 *server.xml* 및  *context.xml* 파일을 검사하고 `<Realm>` 특성이 `className`으로 설정된 `org.apache.catalina.realm.MemoryRealm` 요소를 찾습니다.
+`MemoryRealm`이 현재 사용되고 있는지 확인하려면 *server.xml* 및 * context.xml* 파일을 검사하고 `className` 특성이 `org.apache.catalina.realm.MemoryRealm`으로 설정된 `<Realm>` 요소를 찾습니다.
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>SSL 세션 추적이 사용되는지 확인
 
@@ -126,13 +126,13 @@ AKS에서 [Tomcat 클러스터링](https://tomcat.apache.org/tomcat-9.0-doc/clus
 
 또는 복제본에서 사용할 수 있도록 세션 상태를 [대체 위치로 유지](#identify-session-persistence-mechanism)할 수 있습니다.
 
-애플리케이션에서 클러스터링을 사용하는지 확인하려면 `<Cluster>`server.xml`<Host>` 파일에서 `<Engine>` 요소 또는 *요소 내의* 요소를 찾습니다.
+애플리케이션에서 클러스터링을 사용하는지 확인하려면 *server.xml* 파일에서 `<Host>` 요소 또는 `<Engine>` 요소 내의 `<Cluster>` 요소를 찾습니다.
 
 #### <a name="add-jndi-resources"></a>JNDI 리소스 추가
 
 *server.xml*을 편집하여 마이그레이션 전 단계에서 준비한 리소스(예: 데이터 원본)를 추가합니다.
 
-다음은 그 예입니다. 
+다음은 그 예입니다.
 
 ```xml
 <!-- Global JNDI resources
@@ -172,7 +172,7 @@ AKS에서 사용할 수 있도록 이미지를 빌드하고 ACR(Azure Container 
 az acr build -t "${acrName}.azurecr.io/petclinic:{{.Run.ID}}" -r $acrName --build-arg APP_FILE=petclinic.war --build-arg=prod.server.xml .
 ```
 
-WAR 파일의 이름이 `--build-arg APP_FILE...`ROOT.war*인 경우*  매개 변수를 생략할 수 있습니다. 서버 XML 파일의 이름이 `--build-arg SERVER_XML...`server.xml*인 경우*  매개 변수를 생략할 수 있습니다. 두 파일은 모두 *Dockerfile*과 동일한 디렉터리에 있어야 합니다.
+WAR 파일의 이름이 *ROOT.war*인 경우 `--build-arg APP_FILE...` 매개 변수를 생략할 수 있습니다. 서버 XML 파일의 이름이 *server.xml*인 경우 `--build-arg SERVER_XML...` 매개 변수를 생략할 수 있습니다. 두 파일은 모두 *Dockerfile*과 동일한 디렉터리에 있어야 합니다.
 
 또는 Docker CLI를 사용하여 이미지를 로컬로 빌드할 수 있습니다. 이 방법을 사용하면 ACR에 처음 배포하기 전에 이미지를 테스트하고 구체화하는 작업을 간소화할 수 있습니다. 그러나 Docker CLI를 설치하고 Docker 디먼을 실행해야 합니다.
 
@@ -220,7 +220,7 @@ Tomcat 로그 디렉터리( */tomcat_logs*)에 탑재된 Azure Files를 사용�
 
 [Azure KeyVault를 만들고](/azure/key-vault/quick-create-cli) 필요한 모든 비밀을 채웁니다. 그런 다음, Pod에서 이러한 비밀을 액세스할 수 있도록 [KeyVault FlexVolume](https://github.com/Azure/kubernetes-keyvault-flexvol/blob/master/README.md)을 구성합니다.
 
-인증서를 컨테이너의 로컬 키 저장소로 가져오려면 시작 스크립트(*컨테이너의 Tomcat* GitHub 리포지토리에 있는 [startup.sh](https://github.com/Azure/tomcat-container-quickstart))를 수정해야 합니다.
+인증서를 컨테이너의 로컬 키 저장소로 가져오려면 시작 스크립트([컨테이너의 Tomcat](https://github.com/Azure/tomcat-container-quickstart) GitHub 리포지토리에 있는 *startup.sh*)를 수정해야 합니다.
 
 ### <a name="migrate-scheduled-jobs"></a>예약된 작업 마이그레이션
 

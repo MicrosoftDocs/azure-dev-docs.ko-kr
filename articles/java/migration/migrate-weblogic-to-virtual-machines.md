@@ -5,18 +5,20 @@ author: edburns
 ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 10edb96e4e0781945da85d5a872b14178db3122f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: b9d9a4ea8ef81af5c67b91281e892b4626f42f62
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673519"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988912"
 ---
 # <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션
 
 이 가이드에서는 Azure Virtual Machines에서 실행되도록 기존 WebLogic 애플리케이션을 마이그레이션하려는 경우 알아야 할 사항을 설명합니다.
 
 ## <a name="pre-migration"></a>사전 마이그레이션
+
+마이그레이션을 성공적으로 수행하려면 시작하기 전에 다음 섹션에서 설명하는 평가 및 인벤토리 단계를 완료합니다.
 
 ### <a name="define-what-you-mean-by-migration-complete"></a>"마이그레이션 완료"의 의미를 정의
 
@@ -40,11 +42,11 @@ Azure로 마이그레이션하기 위한 견고한 시작점을 제공하기 위
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-[!INCLUDE [validate-that-the-supported-java-version-works-correctly](includes/validate-that-the-supported-java-version-works-correctly.md)]
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-weblogic](includes/validate-that-the-supported-java-version-works-correctly-weblogic.md)]
 
 [!INCLUDE [inventory-jndi-resources](includes/inventory-jndi-resources.md)]
 
-[!INCLUDE [domain-configuration](includes/domain-configuration.md)]
+[!INCLUDE [inspect-your-domain-configuration](includes/inspect-your-domain-configuration.md)]
 
 [!INCLUDE [determine-whether-session-replication-is-used](includes/determine-whether-session-replication-is-used.md)]
 
@@ -74,7 +76,11 @@ Azure로 마이그레이션하기 위한 견고한 시작점을 제공하기 위
 
 [!INCLUDE [determine-whether-wlst-is-used](includes/determine-whether-wlst-is-used.md)]
 
-[!INCLUDE [validate-whether-and-how-the-file-system-is-used](includes/validate-whether-and-how-the-file-system-is-used.md)]
+### <a name="determine-whether-and-how-the-file-system-is-used"></a>파일 시스템의 사용 여부 및 방법 확인
+
+VM 파일 시스템은 지속성, 시작 및 종료의 측면에서 온-프레미스 파일 시스템과 동일한 방식으로 작동합니다. 그렇다 하더라도, 파일 시스템 요구 사항을 파악하고 VM의 스토리지 크기와 성능이 적절한지 확인해야 합니다.
+
+[!INCLUDE [static-content](includes/static-content.md)]
 
 [!INCLUDE [determine-the-network-topology](includes/determine-the-network-topology.md)]
 

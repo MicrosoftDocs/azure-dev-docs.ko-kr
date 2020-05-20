@@ -7,12 +7,12 @@ metadata:
   description: Java 개발자를 위한 이러한 자습서 및 도구를 사용하여 클라우드에서 앱 개발을 시작하세요.
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: 53d335ee809749a2788ba0d9e94c99f3d972f496
-  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.openlocfilehash: 68aaa1c4ff8274c3bcea170c7082051fbbca8929
+  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/08/2020
-  ms.locfileid: "82988956"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83631552"
 conceptualContent:
   items:
   - title: Java용 Azure 빠른 시작
@@ -172,7 +172,7 @@ tools:
     url: eclipse-microprofile/index.yml
   - title: Maven
     imageSrc: https://docs.microsoft.com/media/logos/logo_maven.svg
-    url: /java/api/overview/azure/maven/README
+    url: https://github.com/Microsoft/azure-maven-plugins#readme
   - title: Azure CLI
     imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
     url: /cli/azure

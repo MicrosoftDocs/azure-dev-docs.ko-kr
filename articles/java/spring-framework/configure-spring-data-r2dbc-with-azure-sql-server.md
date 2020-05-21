@@ -7,12 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 057f261de707adac2ab3ef9ac52834a9848362b6
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: 1dda447182867d6646e6b9637852f08b1d6fb124
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369995"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631641"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Azure SQL Database와 함께 Spring Data R2DBC 사용
 
@@ -111,7 +111,7 @@ az sql db create \
 다음을 입력하여 명령줄에서 애플리케이션을 생성합니다.
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RC1 -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>반응형 Azure SQL Database 드라이버 구현을 추가

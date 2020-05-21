@@ -7,12 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: d4da0f60df8d4c6e1da89ad24c893387cdda6be9
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: a4d06cc011f8c172445ed1f211e3c233d75801de
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369904"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631652"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>Azure Database for MySQL에서 Spring Data R2DBC 사용
 
@@ -31,7 +31,7 @@ ms.locfileid: "83369904"
 다음을 입력하여 명령줄에서 애플리케이션을 생성합니다.
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RC1 -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-mysql-driver-implementation"></a>반응형 MySQL 드라이버 구현 추가

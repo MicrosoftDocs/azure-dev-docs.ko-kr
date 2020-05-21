@@ -2,14 +2,14 @@
 title: '8단계: Azure Functions에서 Python 코드에 사용된 리소스 정리'
 description: 자습서 8단계, 지속적인 변경을 방지하기 위해 Azure 리소스 정리
 ms.topic: conceptual
-ms.date: 01/15/2020
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 1e8735f8cb1a3955fda50365a70274ae6c3c5230
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 151f063e87de6d8db528a20a5e0df958ec9a3afd
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80442148"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708627"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Azure Functions에 대한 Azure 리소스 정리
 

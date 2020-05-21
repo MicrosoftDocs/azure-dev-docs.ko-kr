@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019
-ms.openlocfilehash: c03e458f9a91d13a3ed1c375e0b6cb0fefe15a3d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 80e83873150356b53c826d7920df1163e51f2636
+ms.sourcegitcommit: 486b55521d7c27666dbb8035bc46fb60d1cbcf0a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105214"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550934"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Azure 에서 Java를 이용하여 클라우드 개발 시작
 
@@ -158,7 +158,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 - **도움말** 메뉴를 선택하고 **새 소프트웨어 설치**를 선택합니다.
 
-- **작업:** 필드에 `http://dl.microsoft.com/eclipse`를 입력하고 Enter를 누릅니다.
+- **작업:** 필드에 `http://dl.microsoft.com/eclipse/`를 입력하고 Enter를 누릅니다.
 
 - 그런 다음 **Java용 Azure 도구 키트** 옆의 확인란을 선택하고 **필요한 소프트웨어를 설치하는 동안 모든 업데이트 사이트 문의** 확인란의 선택을 취소합니다. 이제 다음을 선택합니다.
 

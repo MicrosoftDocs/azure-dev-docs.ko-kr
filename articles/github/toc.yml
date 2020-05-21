@@ -1,4 +1,4 @@
-- name: Azure와 GitHub의 공동 작업
+- name: Azure 및 GitHub 통합
   href: index.yml
   items:
     - name: Azure에 대한 GitHub 작업

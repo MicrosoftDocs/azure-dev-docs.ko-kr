@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e4c0c2ffb45303262b16179a726a8eb0526b3971
+ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82166682"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426116"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포
 
@@ -42,8 +42,8 @@ ms.locfileid: "82166682"
 1. 명령 프롬프트를 열고 애플리케이션을 저장할 로컬 디렉터리를 만들고 해당 디렉터리로 변경합니다. 예를 들면 다음과 같습니다.
 
    ```bash
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   mkdir SpringBoot
+   cd SpringBoot
    ```
 
 1. [Spring Boot on Docker 시작] 샘플 프로젝트를 방금 만든 디렉터리에 복제합니다. 예:

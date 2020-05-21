@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 2afe0deb03a1aff2b40c2d739f873bd6a2bbcf0c
-  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.openlocfilehash: 193bcf51848ac6fbf3c1f3fb263313bbde2784f8
+  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/08/2020
-  ms.locfileid: "82988712"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83631567"
 productDirectory:
   items:
   - title: Python
@@ -124,7 +124,7 @@ additionalContent:
     - title: Azure DevOps
       summary: Azure DevOps를 사용하여 작업을 계획하고, 코드 개발에 대한 공동 작업을 수행하고, 애플리케이션을 구축 및 배포합니다.
       url: https://docs.microsoft.com/azure/devops/?view=azure-devops
-    - title: Azure와 GitHub의 공동 작업
+    - title: Azure 및 GitHub 통합
       summary: GitHub 및 GitHub Actions를 사용하여 리포지토리 내에서 소프트웨어 개발 워크플로를 자동화, 사용자 지정 및 실행합니다.
       url: https://docs.microsoft.com/azure/developer/github
     - title: Jenkins
@@ -141,7 +141,7 @@ additionalContent:
       url: https://docs.microsoft.com/azure/developer/chef/
     - title: Maven
       summary: Maven을 사용하여 Java 프로젝트를 빌드 및 관리하는 방법을 자동화합니다. 다른 언어에서도 작동합니다.
-      url: https://docs.microsoft.com/java/api/overview/azure/maven/README
+      url: https://github.com/Microsoft/azure-maven-plugins#readme
     - title: IntelliJ용 Azure 도구 키트
       summary: Azure Toolkit for IntelliJ를 사용하여 IntelliJ IDE 내에서 Azure 애플리케이션을 생성, 개발, 테스트 및 배포합니다.
       url: https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/

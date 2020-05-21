@@ -1,17 +1,17 @@
 ---
 title: Azure DevOps 및 GitHub로 작업
 description: Azure DevOps와 GitHub의 통합을 지원하는 리소스를 찾습니다.
-ms.author: kaelli
-author: KathrynEE
+author: N-Usha
+ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 66f8cc3b81b7d5c199a801c9c5523fb2ee304763
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 112a2ba595e04e23524ae375c9585e3b944c5e4c
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990035"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631618"
 ---
 # <a name="work-with-azure-devops-and-github"></a>Azure DevOps 및 GitHub로 작업 
 

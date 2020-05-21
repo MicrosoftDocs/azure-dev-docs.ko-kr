@@ -2,19 +2,19 @@
 title: Azure에서 Spring Cloud 함수 시작하기
 description: Azure에서 Spring Cloud 함수를 사용하는 방법에 대해 알아봅니다.
 documentationcenter: java
-author: judubois
+author: jdubois
 manager: brborges
 ms.author: judubois
 ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: e91940e22aba03367493a23d4792db38d36f394f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 258b3e8fef4202df3b151ca7058daf72d7be2b61
+ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673039"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426094"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure에서 Spring Cloud 함수 시작하기
 
@@ -71,7 +71,7 @@ Azure Functions에서 실행되고 Spring Cloud 함수로 구성된 기존 "Hell
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
     <functionResourceGroup>my-resource-group</functionResourceGroup>
     <start-class>com.example.HelloFunction</start-class>
-    <wrapper.version>1.0.22.RELEASE</wrapper.version>
+    <spring.boot.wrapper.version>1.0.24.RELEASE</spring.boot.wrapper.version>
 </properties>
 ```
 
@@ -217,9 +217,7 @@ package com.example;
 
 import com.example.model.Greeting;
 import com.example.model.User;
-import com.microsoft.azure.functions.ExecutionContext;
-import com.microsoft.azure.functions.HttpMethod;
-import com.microsoft.azure.functions.HttpRequestMessage;
+import com.microsoft.azure.functions.*;
 import com.microsoft.azure.functions.annotation.AuthorizationLevel;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
@@ -230,12 +228,16 @@ import java.util.Optional;
 public class HelloHandler extends AzureSpringBootRequestHandler<User, Greeting> {
 
     @FunctionName("hello")
-    public Greeting execute(
+    public HttpResponseMessage execute(
             @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<User>> request,
             ExecutionContext context) {
 
         context.getLogger().info("Greeting user name: " + request.getBody().get().getName());
-        return handleRequest(request.getBody().get(), context);
+        return request
+                .createResponseBuilder(HttpStatus.OK)
+                .body(handleRequest(request.getBody().get(), context))
+                .header("Content-Type", "application/json")
+                .build();
     }
 }
 ```

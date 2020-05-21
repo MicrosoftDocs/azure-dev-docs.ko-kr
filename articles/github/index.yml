@@ -1,20 +1,20 @@
 ### YamlMime:Landing
-title: GitHub와 Azure의 공동 작업
+title: Azure 및 GitHub 통합
 summary: GitHub와 Azure의 공동 작업으로 어떻게 앱을 빌드하고 배포하는지 알아봅니다.
 metadata:
-  title: GitHub와 Azure의 공동 작업
+  title: Azure 및 GitHub 통합
   description: GitHub와 Azure의 공동 작업으로 어떻게 앱을 빌드하고 배포하는지 알아봅니다.
   ms.service: azure
   ms.topic: landing-page
-  author: KathrynEE
-  ms.author: kaelli
+  author: N-Usha
+  ms.author: ushan
   ms.date: 05/05/2020
-  ms.openlocfilehash: ea8d295dcd5c5a51261cbcbe223a5b89400740ba
-  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.openlocfilehash: a1ece0966a985e0532f2eb751b8a489d4d01d887
+  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/08/2020
-  ms.locfileid: "82990365"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83631679"
 landingContent:
 - title: Azure에 대한 GitHub 작업
   linkLists:
@@ -22,9 +22,9 @@ landingContent:
     links:
     - text: GitHub Actions를 사용하여 Azure에 배포
       url: github-actions.md
-- title: Azure에 배포
+- title: Deploy to Azure
   linkLists:
-  - linkListType: deploy
+  - linkListType: how-to-guide
     links:
     - text: GitHub에서 Azure로 앱 배포
       url: deploy-to-azure.md

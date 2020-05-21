@@ -1,14 +1,14 @@
 ---
 title: Azure에서 Python 앱 기계 학습을 위한 빠른 시작
 description: Python 앱 기계 학습에 대한 Azure 설명서의 시작 자료 목록입니다.
-ms.date: 03/17/2020
+ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: c76f2c8f16db20d40eee66930ec13259f51b9f92
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 056667d6242ec040299ad28755fe42aaea33601d
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80442058"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403715"
 ---
 # <a name="machine-learning-for-python-apps-on-azure"></a>Azure에서 Python 앱 기계 학습
 

@@ -12,7 +12,7 @@
   href: configure-local-development-environment.md
 - name: Python용 Azure SDK 시작
   items:
-    - name: 개요
+    - name: 개요 및 사용 패턴
       href: azure-sdk-overview.md
     - name: SDK 라이브러리 설치
       href: azure-sdk-install.md

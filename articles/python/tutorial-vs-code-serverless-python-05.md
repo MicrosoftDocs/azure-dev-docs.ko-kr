@@ -2,14 +2,14 @@
 title: '5단계: VS Code를 사용하여 Python에서 Azure Functions 배포'
 description: 자습서 5단계로, Azure에 Python 함수 코드를 배포하고 로컬 프로젝트와 Azure 간에 로그를 스트리밍하고 설정을 동기화하는 방법을 알아봅니다.
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 3e51760f6f779ef244d5788a3df852bc98924946
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441168"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708617"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Python에서 Azure Functions 배포
 
@@ -25,9 +25,11 @@ ms.locfileid: "80441168"
 
 1. 메시지가 표시되면 **Azure에서 새 함수 앱 만들기**를 선택하고 Azure에서 고유한 이름을 입력합니다(일반적으로 개인 또는 회사 이름을 다른 고유 식별자와 함께 사용하며, 문자, 숫자 및 하이픈을 사용할 수 있음). 이전에 함수 앱을 만든 경우 이 옵션 목록에 해당 이름이 표시됩니다.
 
+1. 메시지가 표시되면 Python 버전 및 Azure 위치를 선택합니다.
+
 1. 확장은 다음과 같은 작업을 수행합니다. 이 작업은 Visual Studio Code 팝업 메시지와 **출력** 창에서 확인할 수 있습니다(프로세스에 몇 분이 소요됨).
 
-    - 지정한 이름(하이픈 제거)을 사용하여 리소스 그룹을 만듭니다.
+    - 선택한 위치에서 지정한 이름(하이픈 제거)을 사용하여 리소스 그룹을 만듭니다.
     - 해당 리소스 그룹에서 스토리지 계정, 호스팅 계획 및 함수 앱을 만듭니다. 기본적 [소비 계획](/azure/azure-functions/functions-scale#consumption-plan)이 만들어집니다. 전용 계획에서 함수를 실행하려면 [고급 만들기 옵션을 사용하여 게시를 사용하도록 설정](/azure/azure-functions/functions-develop-vs-code)해야 합니다.
     - 함수 앱에 코드를 추가합니다.
 
@@ -39,9 +41,9 @@ ms.locfileid: "80441168"
 
     ![추가 작업을 사용하여 성공적인 배포를 나타내는 메시지](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
-    **로그 스트리밍** 및 **설정 업로드**의 경우 다음 섹션을 참조하세요. **출력 보기**의 경우 이어지는 5단계를 참조하세요.
+    **로그 스트리밍** 및 **설정 업로드**의 경우 다음 섹션을 참조하세요.
 
-1. 배포 후, **출력** 창에는 Azure의 퍼블릭 엔드포인트도 표시됩니다. 특정 엔드포인트의 URL은 함수 앱에 대해 지정한 이름과 일치합니다.
+1. **출력 보기**를 선택하여 **출력** 창으로 전환합니다. 출력은 Azure의 퍼블릭 엔드포인트를 표시합니다(특정 엔드포인트의 URL은 함수 앱에 지정한 이름과 일치함).
 
     <pre>
     HTTP Trigger Urls:

@@ -1,27 +1,33 @@
 ---
 title: GitHub Actions를 사용하여 Azure에 배포
 description: 워크플로를 리포지토리 내에 만들어 Azure에 빌드, 테스트, 패키지, 릴리스 및 배포합니다.
-ms.author: kaelli
-author: KathrynEE
+author: N-Usha
+ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 16ebc2d8013b2199911c0648f4bb8364c4d6de06
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369929"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631674"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions를 사용하여 Azure에 배포
 
-GitHub Actions를 Azure에 사용하여 Azure에 배포하도록 워크플로를 자동화합니다. 시작하려면 다음 GitHub Actions를 참조하세요. 
+[GitHub Actions](https://help.github.com/articles/about-github-actions)를 통해 개발자는 자동화된 소프트웨어 개발 수명 주기 워크플로를 빌드할 수 있습니다.  
 
-- [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) 작업 - Azure Web Apps 및 Azure Web App for Containers에 배포합니다. 
-- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) - Azure WebApp(Windows 또는 Linux) 또는 해당 배포 슬롯에서 JSON 구문을 사용하여 앱 설정, 연결 문자열 및 기타 일반 설정을 대량으로 구성합니다.
+Azure용 GitHub Actions를 사용하면 Azure에 빌드, 테스트, 패키지, 릴리스 및 **배포**하기 위해 리포지토리로 설정할 수 있는 워크플로를 만들 수 있습니다. [Azure와 다른 모든 통합에 대해 자세히 알아봅니다](https://aka.ms/GitHubonAzure).
+
+지금 [체험 Azure 계정](https://azure.com/free/open-source)으로 시작하세요!
 
 > [!NOTE]   
 > 이 문서에서 제공하는 링크는 GitHub 문서 또는 GitHub 리포지토리에 연결됩니다. 
+
+- Azure Web Apps 및 Azure Web App for Containers에 배포하기 위한 [Azure/webapps-deploy action](https://github.com/Azure/webapps-deploy) 
+- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) - Azure WebApp(Windows 또는 Linux) 또는 해당 배포 슬롯에서 JSON 구문을 사용하여 앱 설정, 연결 문자열 및 기타 일반 설정을 대량으로 구성합니다.
+
+
 
 ## <a name="key-concepts"></a>주요 개념
 
@@ -39,9 +45,11 @@ GitHub Actions에는 미리 구성된 템플릿 및 Marketplace 작업이 포함
 - [GitHub Marketplace의 작업 사용](https://help.github.com/en/actions/getting-started-with-github-actions/using-actions-from-github-marketplace)  
 - [GitHub Marketplace 작업, Azure에 배포](https://github.com/marketplace?type=actions&query=Azure)  
   
-모든 Azure용 GitHub Actions에 대한 링크는 다음 페이지를 참조하세요. 
+Azure용 GitHub Actions의 경우 다음 페이지를 참조하세요. 
    
 - [Azure 작업](https://github.com/marketplace?query=Azure&type=actions)  
+- [Azure에 배포할 스타터 작업 워크플로](https://github.com/Azure/actions-workflow-samples)
+
 
 ## <a name="connect-to-azure"></a>Azure에 연결
 
@@ -51,9 +59,9 @@ Azure에 연결하는 워크플로 샘플은 다음 GitHub 작업을 참조하�
 - [Azure CLI](https://github.com/Azure/CLI)  
 
 
-## <a name="starter-templates-and-end-to-end-cicd-workflow-samples"></a>스타터 템플릿 및 엔드투엔드 CI/CD 워크플로 샘플 
+## <a name="sample-apps-with-cicd-workflow-samples"></a>CI/CD 워크플로 샘플이 포함된 샘플 앱 
 
-웹앱을 Azure에 배포하는 엔드투엔드 워크플로를 제공하는 샘플은 다음과 같습니다. 
+다음 샘플에서는 모든 언어, 모든 에코시스템의 웹앱을 Azure에 빌드하고 배포하기 위한 엔드투엔드 워크플로를 제공합니다. 
 
 - [ASP.NET 지원을 사용하여 웹앱 배포](https://github.com/Azure-Samples/dotnet-sample)  
 - [ASP.NET Core 앱 배포](https://github.com/Azure-Samples/dotnet_core_sample)  
@@ -67,6 +75,8 @@ Azure에 연결하는 워크플로 샘플은 다음 GitHub 작업을 참조하�
 ## <a name="deploy-a-web-app"></a>웹앱 배포
 
 - [Azure Web App](https://github.com/Azure/webapps-deploy)  
+다음 작업을 사용하여 앱 설정 및 연결 문자열을 구성합니다.
+
 - [Azure Web App for Containers](https://github.com/Azure/webapps-container-deploy)  
 - [Azure App Service 설정](https://github.com/Azure/appservice-settings)  
 
@@ -78,6 +88,7 @@ Azure에 연결하는 워크플로 샘플은 다음 GitHub 작업을 참조하�
 ## <a name="build-and-deploy-containerized-apps"></a>컨테이너화된 앱 빌드 및 배포
 
 - [Docker 로그인](https://github.com/Azure/docker-login)  
+- [Azure Container Instances에 배포](https://github.com/Azure/aci-deploy)
 
 ## <a name="deploy-to-kubernetes"></a>Kubernetes에 배포
 
@@ -100,6 +111,10 @@ Azure에 연결하는 워크플로 샘플은 다음 GitHub 작업을 참조하�
 - [Azure SQL 데이터베이스](https://github.com/Azure/sql-action)  
 - [Azure MySQL 작업](https://github.com/Azure/mysql-action)  
 
+## <a name="deploy-machine-learning-models"></a>Machine Learning 모델 배포
+
+- [Azure Machine Learning 배포](https://github.com/Azure/aml-deploy)  
+
 ## <a name="trigger-a-run-in-azure-pipelines"></a>Azure Pipelines에서 실행 트리거
 
 - [Azure Pipelines](https://github.com/Azure/pipelines)  
@@ -113,6 +128,6 @@ Azure에 연결하는 워크플로 샘플은 다음 GitHub 작업을 참조하�
 
 다음 GitHub 리소스는 GitHub를 통해 앱을 Azure에 배포하는 데 사용할 수 있습니다.  
 
-- [Azure Marketplace용 GitHub Actions](https://github.com/marketplace?query=Azure&type=actions)
+- [Azure용 GitHub Actions Marketplace](https://github.com/marketplace?query=Azure&type=actions)
 - [학습 랩, Azure를 사용하여 지속적인 업데이트](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)
 - [Azure에 배포할 스타터 작업 워크플로](https://github.com/Azure/actions-workflow-samples)

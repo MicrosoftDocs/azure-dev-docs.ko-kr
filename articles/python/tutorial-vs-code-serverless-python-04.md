@@ -2,14 +2,14 @@
 title: '4단계: VS Code를 사용하여 Azure Functions Python 코드를 로컬에서 디버그'
 description: 자습서 4 단계, Python 코드를 확인하도록 VS Code 디버거를 로컬에서 실행
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 51ef666bd529194670279deaae51ee073633fd3a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 167e1c2be4d379f7457d35f2e6fe4a226092ac08
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441598"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708574"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Azure Functions Python 코드를 로컬에서 디버그
 
@@ -64,6 +64,11 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
 1. 함수 디버깅을 테스트하려면 `name = req.params.get('name')`을 읽는 줄에 중단점을 설정하고 URL을 다시 요청합니다. Visual Studio Code 디버거는 해당 줄에서 중지되어 변수를 검사하고 코드를 단계별로 실행할 수 있습니다. (기본 디버깅에 대한 간단한 연습은 [Visual Studio Code 자습서 - 디버거 구성 및 실행](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)을 참조하세요.)
 
 1. 함수를 로컬에서 철저하게 테스트한 것이 만족스러우면 디버거를 중지합니다(디버깅 도구 모음에서 **디버깅** > **디버깅 중지** 메뉴 명령 또는 **연결 끊기** 명령 사용).
+
+> [!NOTE]
+> "'local.settings.json'에 지정된 'AzureWebJobsStorage' 연결을 확인하지 못했습니다."라는 오류가 발생하면 프로젝트의 *local.settings.json* 파일에 `"AzureWebJobsStorage": "UseDevelopmentStorage=true"` 줄이 포함됩니다. 이 줄은 디버거가 Azure Storage 에뮬레이터를 로컬로 사용하려고 하지만 설치되지 않았음을 나타냅니다. 이 경우 [Azure Storage 에뮬레이터 설치](/azure/storage/common/storage-use-emulator#get-the-storage-emulator), [에뮬레이터 시작 및 초기화](/azure/storage/common/storage-use-emulator#start-and-initialize-the-storage-emulator) 및 디버거를 다시 시작할 수 있습니다.
+>
+> 또는 JSON 파일의 줄을 `"AzureWebJobsStorage": ""`로 변경하고 디버거를 다시 시작합니다.
 
 > [!div class="nextstepaction"]
 > [디버거를 로컬로 실행했습니다. - 5단계 진행 >>>](tutorial-vs-code-serverless-python-05.md)

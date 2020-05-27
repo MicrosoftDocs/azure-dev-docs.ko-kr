@@ -2,14 +2,14 @@
 title: '자습서: VS Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포'
 description: 자습서 1단계로, 소개 및 필수 구성 요소입니다.
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 509e62b5bb8b23365dc30781b6f658a39894d56d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441238"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708587"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포
 
@@ -42,7 +42,7 @@ Node.js를 설치할 때는 기본 옵션을 사용하고 필요한 도구를 �
 
 다음 소프트웨어를 설치합니다.
 
-- Azure Functions에 필요한 Python 3.7 또는 Python 3.6. [Python 3.7.5](https://www.python.org/downloads/release/python-375/) 및 [Python 3.6.8](https://www.python.org/downloads/release/python-368/)은 호환되는 최신 버전입니다. 이러한 페이지에서 아래로 스크롤하여 설치 관리자를 찾습니다. 설치할 때 **PATH에 Python 3.x 추가**를 선택하고 **지금 설치** 옵션을 선택하여 기본 옵션을 사용합니다. Windows에서는 프로세스가 끝날 때 **경로 길이 제한 사용 안 함**을 선택합니다.
+- Azure Functions에 필요한 Python 3.6, 3.7 또는 3.8 [python.org](https://www.python.org/downloads)에서 Python을 설치합니다. 설치할 때 **PATH에 Python 3.x 추가**를 선택하고 **지금 설치** 옵션을 선택하여 기본 옵션을 사용합니다. Windows에서는 프로세스가 끝날 때 **경로 길이 제한 사용 안 함**을 선택합니다.
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Visual Studio Code Python 자습서 - 필수 구성 요소](https://code.visualstudio.com/docs/python/python-tutorial)에 설명된 [Python 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 - [Azure Functions 확장](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). 일반 정보는 [vscode-azurefunctions GitHub 리포지토리](https://github.com/Microsoft/vscode-azurefunctions)를 참조하세요.

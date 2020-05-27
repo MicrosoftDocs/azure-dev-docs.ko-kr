@@ -4,12 +4,12 @@ description: 자습서 2단계, 애플리케이션 설정
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b53b774cb7747b8f6cca10d493f820bef5306fcc
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: bb515e1d785aa0e8a38e4fc1014915db56b89d94
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441948"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631721"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Azure App Service에 배포할 수 있도록 앱 준비
 
@@ -17,7 +17,7 @@ ms.locfileid: "80441948"
 
 이 문서에서는 이 자습서에서 Azure App Service에 배포할 앱을 준비합니다. 기존 앱을 사용하거나 새로 앱을 만들거나 다운로드할 수 있습니다.
 
-작업하려는 앱이 이미 있는 경우 Flask 또는 Django와 같은 프레임워크를 포함하여 종속성을 설명하는 *requirements.txt* 파일이 있는지 확인합니다.
+작업하려는 앱이 이미 있는 경우 Flask 또는 Django와 같은 프레임워크를 포함하여 종속성을 설명하는 *requirements.txt* 파일이 있는지 확인합니다. 선택한 프레임워크를 사용할 수 있습니다.
 
 앱이 아직 없는 경우 아래 옵션 중 하나를 사용합니다. 앱이 로컬에서 실행되는지 확인해야 합니다.
 
@@ -58,7 +58,7 @@ ms.locfileid: "80441948"
     $env:FLASK_APP = "hello:myapp"
     ```
 
-    # <a name="cmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
     ```bash
     set FLASK_APP=hello:myapp

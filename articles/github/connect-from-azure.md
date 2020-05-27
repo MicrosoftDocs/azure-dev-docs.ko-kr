@@ -1,19 +1,19 @@
 ---
 title: Azure 및 기타 서비스에서 GitHub로 연결
 description: Azure 및 기타 서비스에서 GitHub에 연결하기 위한 리소스
-ms.author: kaelli
-author: KathrynEE
+author: N-Usha
+ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: d68c63a91b0a20e3d35f0640c4dee76498eb880f
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 27dc7ebe3e197e6c56216e0616709e7390c96ca9
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990025"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631707"
 ---
-# <a name="connect-to-github-from-azure-and-other-services"></a>Azure 및 기타 서비스에서 GitHub로 연결
+# <a name="connect-to-github-from-other-azure-services"></a>다른 Azure 서비스에서 GitHub로 연결
 
 다음 문서에서는 Azure 및 기타 서비스에서 GitHub에 연결하는 방법에 대해 자세히 설명합니다.  
 

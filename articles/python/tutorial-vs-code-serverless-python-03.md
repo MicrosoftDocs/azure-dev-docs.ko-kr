@@ -2,14 +2,14 @@
 title: '3단계: VS Code에서 Azure Functions에 대한 Python 코드 파일 검사'
 description: 자습서 3단계, Azure Functions에서 제공하는 템플릿 Python 코드 이해
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84e438cf1aaf94c1341964d17e17055d066140d6
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441338"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708537"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Visual Studio Code에서 Python 코드 파일 검사
 
@@ -75,11 +75,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             name = req_body.get('name')
 
     if name:
-        return func.HttpResponse(f"Hello {name}!")
+        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
-             "Please pass a name on the query string or in the request body",
-             status_code=400
+             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             status_code=200
         )
 ```
 
@@ -88,7 +88,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 - `azure.functions` 모듈을 가져와야 합니다. 로깅 모듈 가져오기는 선택 사항이지만 권장됩니다.
 - 필요한 `main` Python 함수는 `req`라는 `func.HttpRequest` 개체를 수신하고, `func.HttpResponse` 형식의 값을 반환합니다. [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) 및 [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python) 참조에서 이러한 개체의 기능에 대해 자세히 알아볼 수 있습니다.
 - 그러면 `main`의 본문에서 요청을 처리하고 응답을 생성합니다. 이 경우 코드는 URL에서 `name` 매개 변수를 찾습니다. 실패한 경우 요청 본문에 JSON이 포함되어 있는지(`func.HttpRequest.get_json` 사용), JSON에 `name` 값이 포함되어 있는지 확인합니다(`get_json`에서 반환된 JSON 개체의 `get` 메서드 사용).
-- 이름이 발견되면 코드에서 이름이 추가된 "Hello" 문자열을 반환합니다. 그렇지 않은 경우 오류 메시지를 반환합니다.
+- 이름이 발견되면 코드에서 이름이 추가된 "Hello" 문자열을 반환합니다. 그렇지 않은 경우 일반 메시지를 반환합니다.
 
 > [!div class="nextstepaction"]
 > [코드 파일을 검사했습니다. - 4단계 진행 >>>](tutorial-vs-code-serverless-python-04.md)

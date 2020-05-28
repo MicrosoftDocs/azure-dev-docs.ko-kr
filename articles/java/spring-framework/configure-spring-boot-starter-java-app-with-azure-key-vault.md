@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 2df574104376ec1900c7dc5cbd4f0a49ef1f4732
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a43b951fddfea01c4678fca3174f15a3b3d714f9
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138739"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862816"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Azure Key Vault에 Spring Boot Starter를 사용하는 방법
 
@@ -202,8 +202,10 @@ ms.locfileid: "82138739"
 3. 이 자습서의 앞부분에서 완료한 단계의 값을 사용하여 키 자격 증명 모음의 값을 추가합니다. 예를 들어 다음과 같습니다.
 
    ```yaml
-   azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
    azure.keyvault.enabled=true
+   azure.keyvault.uri=Your-Keyvault-uri
+   azure.keyvault.client-id=Your-Client-ID
+   azure.keyvault.tenant-id=Your-Tenant-ID
    ```
 
    위치:

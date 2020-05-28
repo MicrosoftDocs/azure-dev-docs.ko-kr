@@ -4,12 +4,12 @@ description: Azure를 사용하여 JAMstack 앱(JavaScript, API 및 태그)을 �
 ms.topic: article
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 6c804185859611f4534d5fa4e62b8e2585d14aa5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: abe56482d616a5dfcc3dc25a8ab7949bc5164fe0
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "74467248"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862796"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js를 사용하여 Azure에서 JAMstack(정적 사이트) 웹앱 빌드
 
@@ -22,7 +22,7 @@ Azure에서 정적/JAMstack 사이트를 구현하려면 다음과 같은 다양
 - 프런트 엔드 개발(예: Angular)에 사용할 라이브러리를 선택합니다. 그런 다음, 이러한 정적 HTML, CSS 및 JavaScript 파일을 기본 제공 웹 서버를 제공하는 Azure Blob Storage에 업로드합니다.
 - 모든 트래픽이 하나의 URL 도메인을 통과하도록 역방향 프록시를 만듭니다.
 
-//build 2019 세션인 [JavaScript, Visual Studio Code 및 Azure를 사용한 생산적인 프런트 엔드 개발](https://mybuild.techcommunity.microsoft.com/sessions/77038?source=sessions#top-anchor)을 사용하여 프로세스 데모를 볼 수 있습니다.
+//build 2019 세션인 [JavaScript, Visual Studio Code 및 Azure를 사용한 생산적인 프런트 엔드 개발](https://azure.microsoft.com/resources/videos/build-2019-productive-front-end-development-with-javascript-visual-studio-code-and-azure/)을 사용하여 프로세스 데모를 볼 수 있습니다.
 
 > [!VIDEO https://medius.studios.ms/Embed/Video-nc/B19-BRK3021?latestplayer=true]
 

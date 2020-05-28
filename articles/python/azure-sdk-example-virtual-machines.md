@@ -3,12 +3,12 @@ title: Python용 Azure SDK를 사용하여 가상 머신 프로비전
 description: Python 및 Azure SDK 관리 라이브러리를 사용하여 Azure 가상 머신을 프로비저닝하는 방법입니다.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 816419d99647ed23173d6c9ff707c256b384968f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f21495cc42f3bb228e460f1c591c9aa037dd8123
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404986"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862786"
 ---
 # <a name="example-use-the-azure-sdk-to-provision-a-virtual-machine"></a>예제: Azure SDK를 사용하여 가상 머신 프로비전
 
@@ -35,7 +35,7 @@ ms.locfileid: "83404986"
     azure-mgmt-resource
     azure-mgmt-network
     azure-mgmt-compute
-    azure-core-cli
+    azure-cli-core
     ```
 
 1. 가상 환경이 활성화된 터미널 또는 명령 프롬프트에서 *requirements.txt*에 나열된 관리 라이브러리를 설치합니다.

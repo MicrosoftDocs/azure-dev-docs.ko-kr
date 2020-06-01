@@ -3,14 +3,14 @@ title: Python용 Azure SDK에서 Azure Storage 프로비저닝 및 사용
 description: Python용 Azure SDK 라이브러리를 사용하여 Azure Storage 계정에서 Blob 컨테이너를 프로비저닝한 다음, 이 컨테이너에 파일을 업로드합니다.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9b26dd4c5708231c807ea57979bed6bdcd9de25f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 904ca66f6e4c065fa0705d2e35b8a7bb46396a0d
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83405106"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759946"
 ---
-# <a name="example-use-the-azure-sdk-with-azure-storage"></a>예제: Azure Storage에서 Azure SDK 사용
+# <a name="example-use-the-azure-sdk-with-azure-storage"></a>예: Azure Storage에서 Azure SDK 사용
 
 이 문서에서는 Python 스크립트로 Azure SDK 관리 라이브러리를 사용하여 Azure Storage 계정과 Blob Storage 컨테이너가 포함된 리소스 그룹을 프로비저닝하는 방법을 알아봅니다. 그런 다음, Python 애플리케이션 코드로 Azure SDK 클라이언트 라이브러리를 사용하여 해당 Blob Storage 컨테이너에 파일을 업로드하는 방법을 알아봅니다.
 
@@ -282,7 +282,7 @@ az storage container create --account-name pythonsdkstorage12345 -n blob-contain
         blob_client.upload_blob(data)
     ```
 
-1. 코드 실행을 시도합니다.
+1. 의도적으로 실패하는 코드 실행을 시도합니다.
 
     ```bash
     python use_blob_auth.py
@@ -316,7 +316,7 @@ az storage container create --account-name pythonsdkstorage12345 -n blob-contain
 
     이 명령의 `--scope` 인수에는 AZURE_CLIENT_ID와 AZURE_SUBSCRIPTION_ID 환경 변수도 사용되며, 이러한 변수는 [Azure를 위한 로컬 Python 개발 환경 구성](configure-local-development-environment.md)에 따라 서비스 주체에 대해 로컬 환경에 이미 설정되어 있어야 합니다.
 
-1. 코드를 다시 실행하여 이제 작동하는지 확인합니다. 권한 오류가 다시 보이면 권한이 전파될 때까지 잠시 기다렸다가 코드 실행을 다시 시도합니다.
+1. 권한이 전파될 때까지 1~2분 정도 기다린 후 코드를 다시 실행하여 이제 코드가 작동하는지 확인합니다. 권한 오류가 다시 표시되면 조금 더 기다린 후 코드를 다시 시도합니다.
 
 범위 및 역할 할당에 대한 자세한 내용은 [역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)을 참조하세요.
 

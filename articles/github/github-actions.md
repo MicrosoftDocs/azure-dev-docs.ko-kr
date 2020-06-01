@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 3e6f6d447da93873a1278eaa42882a9d08a94d57
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631674"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862806"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions를 사용하여 Azure에 배포
 
@@ -23,11 +23,6 @@ Azure용 GitHub Actions를 사용하면 Azure에 빌드, 테스트, 패키지, �
 
 > [!NOTE]   
 > 이 문서에서 제공하는 링크는 GitHub 문서 또는 GitHub 리포지토리에 연결됩니다. 
-
-- Azure Web Apps 및 Azure Web App for Containers에 배포하기 위한 [Azure/webapps-deploy action](https://github.com/Azure/webapps-deploy) 
-- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) - Azure WebApp(Windows 또는 Linux) 또는 해당 배포 슬롯에서 JSON 구문을 사용하여 앱 설정, 연결 문자열 및 기타 일반 설정을 대량으로 구성합니다.
-
-
 
 ## <a name="key-concepts"></a>주요 개념
 
@@ -53,10 +48,11 @@ Azure용 GitHub Actions의 경우 다음 페이지를 참조하세요.
 
 ## <a name="connect-to-azure"></a>Azure에 연결
 
-Azure에 연결하는 워크플로 샘플은 다음 GitHub 작업을 참조하세요.  
+Azure에 연결하고 Az CLI 또는 Az PowerShell을 기반으로 스크립트를 실행하는 샘플 워크플로의 경우, 다음 GitHub 작업을 사용합니다.  
 
 - [Azure 로그인](https://github.com/Azure/login)  
-- [Azure CLI](https://github.com/Azure/CLI)  
+- [Azure CLI](https://github.com/Azure/CLI)
+- [Azure PowerShell](https://github.com/Azure/powershell)
 
 
 ## <a name="sample-apps-with-cicd-workflow-samples"></a>CI/CD 워크플로 샘플이 포함된 샘플 앱 
@@ -69,15 +65,22 @@ Azure에 연결하는 워크플로 샘플은 다음 GitHub 작업을 참조하�
 - [Java 웹앱 배포](https://github.com/Azure-Samples/java-spring-petclinic)  
 - [Java 스프링 앱 배포](https://github.com/Azure-Samples/Java-application-petstore-ee7)  
 - [Python 웹앱 배포](https://github.com/Azure-Samples/pythonSample_thecatsaidno)  
-- [Docker를 사용하여 배포](https://github.com/Azure-Samples/Node_express_container)  
+- [Docker를 사용하여 컨테이너화된 웹앱 배포](https://github.com/Azure-Samples/Node_express_container)
 
 
 ## <a name="deploy-a-web-app"></a>웹앱 배포
 
-- [Azure Web App](https://github.com/Azure/webapps-deploy)  
+Azure Web App 및 Azure Web App for Containers에 배포:
+
+- [Azure/webapps-deploy action](https://github.com/Azure/webapps-deploy)
+
+정적 웹앱 배포:
+- [Azure/static-web-apps-deploy](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=angular)
+
+
 다음 작업을 사용하여 앱 설정 및 연결 문자열을 구성합니다.
 
-- [Azure Web App for Containers](https://github.com/Azure/webapps-container-deploy)  
+- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) 
 - [Azure App Service 설정](https://github.com/Azure/appservice-settings)  
 
 ## <a name="deploy-a-serverless-app"></a>서버리스 앱 배포

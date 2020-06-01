@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: storage
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: e9546d2e65d198fe9ab92e5d588df8797fd97e16
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 7375373696b59320100e8109b75cb1fdef6ed64b
+ms.sourcegitcommit: 5322c817033e6e20064f53f0fbedcf1f455f54d0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669239"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83825194"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage에 Spring Boot Starter를 사용하는 방법
 
@@ -105,11 +105,9 @@ ms.locfileid: "81669239"
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-azure-starter-storage</artifactId>
-      <version>1.0.0.M2</version>
+      <version>1.2.5</version>
    </dependency>
    ```
-
-   ![pom.xml 파일을 편집합니다.][SI03]
 
 1. *pom.xml* 파일을 저장하고 닫습니다.
 
@@ -207,8 +205,9 @@ ms.locfileid: "81669239"
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
-   spring.cloud.azure.region=West US
+   spring.cloud.azure.region=westUS
    spring.cloud.azure.storage.account=wingtiptoysstorage
+   blob=azure-blob://containerName/blobName
    ```
    위치:
 
@@ -218,8 +217,8 @@ ms.locfileid: "81669239"
    |    `spring.cloud.azure.resource-group`    |           Azure Storage 계정을 포함하는 Azure 리소스 그룹을 지정합니다.            |
    |        `spring.cloud.azure.region`        | Azure Storage 계정을 만들 때 지정한 지리적 영역을 지정합니다. |
    |   `spring.cloud.azure.storage.account`    |            이 자습서의 앞부분에서 만든 Azure Storage 계정을 지정합니다.             |
-
-
+   |                   `blob`                  |           데이터를 저장할 컨테이너 및 Blob의 이름을 지정합니다.         |
+    
 3. *application.properties* 파일을 저장하고 닫습니다.
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>기본 Azure Storage 기능을 구현하는 샘플 코드 추가
@@ -254,17 +253,17 @@ ms.locfileid: "81669239"
 
 1. 기본 애플리케이션 Java 파일을 저장하고 닫습니다.
 
-### <a name="add-a-web-controller-class"></a>웹 컨트롤러 클래스 추가
+### <a name="add-a-blob-controller-class"></a>Blob 컨트롤러 클래스 추가
 
-1. 앱의 패키지 디렉터리에 *WebController.java*라는 새 Java 파일을 작성합니다. 예:
+1. 앱의 패키지 디렉터리에 *BlobController.java*라는 새 Java 파일을 작성합니다. 예:
 
-   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\WebController.java`
+   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\BlobController.java`
 
    또는
 
-   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/WebController.java`
+   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/BlobController.java`
 
-1. 텍스트 편집기에서 웹 컨트롤러 Java 파일을 열고 다음 줄을 파일에 추가합니다.  *wingtiptoys*를 적절한 리소스 그룹으로 변경하고 *storage*를 아티팩트 이름으로 변경합니다.
+1. 텍스트 편집기에서 Blob 컨트롤러 Java 파일을 열고 다음 줄을 파일에 추가합니다.  *wingtiptoys*를 적절한 리소스 그룹으로 변경하고 *storage*를 아티팩트 이름으로 변경합니다.
 
    ```java
    package com.wingtiptoys.storage;
@@ -273,41 +272,37 @@ ms.locfileid: "81669239"
    import org.springframework.core.io.Resource;
    import org.springframework.core.io.WritableResource;
    import org.springframework.util.StreamUtils;
-   import org.springframework.web.bind.annotation.GetMapping;
-   import org.springframework.web.bind.annotation.PostMapping;
-   import org.springframework.web.bind.annotation.RequestBody;
-   import org.springframework.web.bind.annotation.RestController;
+   import org.springframework.web.bind.annotation.*;
 
    import java.io.IOException;
    import java.io.OutputStream;
    import java.nio.charset.Charset;
 
    @RestController
-   public class WebController {
-
-      @Value("blob://test/myfile.txt")
-      private Resource blobFile;
-
-      @GetMapping(value = "/")
-      public String readBlobFile() throws IOException {
-         return StreamUtils.copyToString(
-            this.blobFile.getInputStream(),
-            Charset.defaultCharset()) + "\n";
-      }
-
-      @PostMapping(value = "/")
-      public String writeBlobFile(@RequestBody String data) throws IOException {
-         try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
-            os.write(data.getBytes());
-         }
-         return "File was updated.\n";
-      }
+   @RequestMapping("blob")
+   public class BlobController {
+   
+       @Value("${blob}")
+       private Resource blobFile;
+   
+       @GetMapping
+       public String readBlobFile() throws IOException {
+           return StreamUtils.copyToString(
+                   this.blobFile.getInputStream(),
+                   Charset.defaultCharset());
+       }
+   
+       @PostMapping
+       public String writeBlobFile(@RequestBody String data) throws IOException {
+           try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
+               os.write(data.getBytes());
+           }
+           return "file was updated";
+       }
    }
    ```
 
-   여기서 `@Value("blob://[container]/[blob]")` 구문은 데이터를 저장할 컨테이너 및 Blob의 이름을 각각 정의합니다.
-
-1. 웹 컨트롤러 Java 파일을 저장하고 닫습니다.
+1. Blob 컨트롤러 Java 파일을 저장하고 닫습니다.
 
 1. 명령 프롬프트를 열고 디렉터리를 *pom.xml* 파일이 위치한 폴더로 변경합니다. 예:
 
@@ -329,7 +324,7 @@ ms.locfileid: "81669239"
    a. 파일의 내용을 업데이트하려면 POST 요청을 보냅니다.
 
       ```shell
-      curl -X POST -H "Content-Type: text/plain" -d "Hello World" http://localhost:8080/
+      curl -d 'new message' -H 'Content-Type: text/plain' localhost:8080/blob
       ```
 
       파일이 업데이트되었다는 응답이 표시됩니다.
@@ -373,4 +368,3 @@ Spring Boot 애플리케이션에서 호출할 수 있는 다른 Azure Storage A
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-01.png
 [SI02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-02.png
-[SI03]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-03.png

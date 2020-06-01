@@ -3,12 +3,12 @@ title: Azure에서 리소스 프로비저닝, 액세스 및 관리
 description: Azure Portal, Azure CLI 및 Azure SDK를 포함하여 Azure 리소스 작업에 사용되는 방법에 대한 개요입니다.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 585c40523ba2be311af2d65fc3d4cbb679ba6f60
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404976"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759926"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Azure에서 리소스 프로비저닝, 액세스 및 관리
 

@@ -8,21 +8,21 @@
       href: cloud-development-provisioning.md
     - name: Azure 개발 흐름
       href: cloud-development-flow.md
-- name: Azure를 위한 개발 환경 설정
-  href: configure-local-development-environment.md
-- name: Python용 Azure SDK 시작
+- name: Python으로 Azure에서 Python 시작
   items:
-    - name: 개요 및 사용 패턴
+    - name: Azure 라이브러리의 개요
       href: azure-sdk-overview.md
-    - name: SDK 라이브러리 설치
-      href: azure-sdk-install.md
-    - name: '예제: 리소스 그룹 만들기'
+    - name: 개발 환경 설정
+      href: configure-local-development-environment.md
+    - name: 라이브러리 사용 패턴
+      href: azure-sdk-library-usage-patterns.md
+    - name: '예제: 리소스 그룹 프로비저닝'
       href: azure-sdk-example-resource-group.md
-    - name: '예제: Azure Storage 사용'
+    - name: '예제: Azure Storage 프로비저닝 및 사용'
       href: azure-sdk-example-storage.md
-    - name: '예제: 코드를 사용하여 웹앱 프로비저닝'
+    - name: '예제: 웹앱 프로비저닝 및 배포'
       href: azure-sdk-example-web-app.md
-    - name: '예제: 가상 머신 프로비전'
+    - name: '예제: 가상 머신 프로비저닝'
       href: azure-sdk-example-virtual-machines.md
 - name: Azure 서비스 빠른 시작
   items:
@@ -88,6 +88,8 @@
           href: tutorial-vs-code-serverless-python-08.md
 - name: 방법 가이드
   items:
+    - name: 라이브러리 패키지 설치
+      href: azure-sdk-install.md
     - name: Azure를 사용하여 앱 인증
       href: azure-sdk-authenticate.md
     - name: 서비스 사용자 관리
@@ -128,7 +130,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: 모든 샘플
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: 참조
-  items:
-    - name: Azure SDK
-      href: sdk.md
+- name: 라이브러리 API 참조
+  href: sdk-library-api-reference.md

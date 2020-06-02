@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 title: Python 개발자용 Azure
 summary: >
-  Azure는 앱 호스팅, 스토리지, mySQL 및 PostgreSQL과 같은 오픈 소스 데이터베이스, 데이터 과학, 기계 학습 및 AI 등 Python 개발자를 위해 광범위한 서비스를 제공합니다. Python용 Azure SDK는 개발자가 이러한 서비스를 사용할 때 생산성을 높여줍니다.
+  Azure는 앱 호스팅, 스토리지, mySQL 및 PostgreSQL과 같은 오픈 소스 데이터베이스, 데이터 과학, 기계 학습 및 AI 등 Python 개발자를 위해 광범위한 서비스를 제공합니다. Python용 Azure 라이브러리(SDK)는 개발자가 이러한 서비스를 사용할 때 생산성을 높여줍니다.
 metadata:
   title: Python 개발자용 Azure
   description: Python 및 Azure를 사용하여 개발을 시작하세요.
@@ -13,12 +13,12 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: ef9b2de52a63454d89a74698852fc68118ccfdf2
-  ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+  ms.openlocfilehash: 4f128432052206091b1cced8447bd64c4e288133
+  ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/14/2020
-  ms.locfileid: "83403546"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84146051"
 landingContent:
 - title: Azure에서 Python 시작
   linkLists:
@@ -32,42 +32,20 @@ landingContent:
       url: configure-local-development-environment.md
   - linkListType: overview
     links:
-    - text: Python용 Azure SDK 정보
+    - text: Python용 Azure 라이브러리 알아보기
       url: azure-sdk-overview.md
   - linkListType: how-to-guide
     links:
-    - text: SDK 라이브러리 설치
+    - text: Python 라이브러리 사용
       url: azure-sdk-install.md
   - linkListType: tutorial
     links:
-    - text: 코드에서 Azure SDK 사용
+    - text: 코드에서 Azure 라이브러리 사용
       url: azure-sdk-example-resource-group.md
   - linkListType: reference
     links:
-    - text: Python API용 Azure SDK 참조
-      url: /python/api?view=azure-python
-- title: Azure의 호스트 애플리케이션
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Visual Studio Code를 사용하여 HTTP 요청에 대한 서버리스 함수 만들기
-      url: tutorial-vs-code-serverless-python-01.md
-    - text: Azure CLI를 사용하여 HTTP 요청에 대한 서버리스 함수 만들기
-      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
-    - text: Azure App Service on Linux에서 Python 앱 만들기
-      url: /azure/app-service/containers/quickstart-python
-    - text: Azure Kubernetes Service에서 컨테이너화된 앱 배포
-      url: /azure/aks/kubernetes-walkthrough
-    - text: Azure CLI를 사용하여 Azure에서 컨테이너 인스턴스 배포
-      url: /azure/container-instances/container-instances-quickstart
-    - text: Azure Pipelines에서 Python 앱 빌드 및 배포
-      url: /azure/devops/pipelines/languages/python-webapp
-    - text: Python 웹 애플리케이션에 Microsoft로 로그인 추가
-      url: /azure/active-directory/develop/quickstart-v2-python-webapp
-  - linkListType: overview
-    links:
-    - text: Linux의 Azure App Service 소개
-      url: /azure/app-service/containers/app-service-linux-intro
+    - text: Python용 Azure 라이브러리 API 참조
+      url: sdk-library-api-reference.md
 - title: 개발자 도구 시작
   linkLists:
   - linkListType: overview
@@ -90,6 +68,28 @@ landingContent:
       url: /cli/azure/install-azure-cli?view=azure-cli-latest
     - text: 다양한 배포를 사용하여 Windows 10에서 기본적으로 Linux 애플리케이션 실행
       url: /windows/wsl/install-win10
+- title: Azure의 호스트 애플리케이션
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Visual Studio Code를 사용하여 HTTP 요청에 대한 서버리스 함수 만들기
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: Azure CLI를 사용하여 HTTP 요청에 대한 서버리스 함수 만들기
+      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - text: Azure App Service on Linux에서 Python 앱 만들기
+      url: /azure/app-service/containers/quickstart-python
+    - text: Azure Kubernetes Service에서 컨테이너화된 앱 배포
+      url: /azure/aks/kubernetes-walkthrough
+    - text: Azure CLI를 사용하여 Azure에서 컨테이너 인스턴스 배포
+      url: /azure/container-instances/container-instances-quickstart
+    - text: Azure Pipelines에서 Python 앱 빌드 및 배포
+      url: /azure/devops/pipelines/languages/python-webapp
+    - text: Python 웹 애플리케이션에 Microsoft로 로그인 추가
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp
+  - linkListType: overview
+    links:
+    - text: Linux의 Azure App Service 소개
+      url: /azure/app-service/containers/app-service-linux-intro
 - title: 데이터 과학, AI 및 Machine Learning을 위한 서비스
   linkLists:
   - linkListType: overview

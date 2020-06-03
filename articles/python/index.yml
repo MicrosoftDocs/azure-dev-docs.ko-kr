@@ -7,18 +7,18 @@ metadata:
   description: Python 및 Azure를 사용하여 개발을 시작하세요.
   author: kraigb
   ms.author: kraigb
-  ms.date: 05/04/2020
+  ms.date: 05/30/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: 4f128432052206091b1cced8447bd64c4e288133
-  ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+  ms.openlocfilehash: 89cc9d65d903fdeabd236387a24dd340fd90f9f9
+  ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/28/2020
-  ms.locfileid: "84146051"
+  ms.lasthandoff: 06/01/2020
+  ms.locfileid: "84256428"
 landingContent:
 - title: Azure에서 Python 시작
   linkLists:
@@ -34,14 +34,12 @@ landingContent:
     links:
     - text: Python용 Azure 라이브러리 알아보기
       url: azure-sdk-overview.md
-  - linkListType: how-to-guide
-    links:
-    - text: Python 라이브러리 사용
-      url: azure-sdk-install.md
   - linkListType: tutorial
     links:
-    - text: 코드에서 Azure 라이브러리 사용
-      url: azure-sdk-example-resource-group.md
+    - text: Python을 사용하여 Azure Storage 프로비저닝
+      url: azure-sdk-example-storage.md
+    - text: Python 코드에서 Azure Storage 사용
+      url: azure-sdk-example-storage-use.md
   - linkListType: reference
     links:
     - text: Python용 Azure 라이브러리 API 참조

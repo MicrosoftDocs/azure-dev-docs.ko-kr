@@ -18,26 +18,30 @@
       href: azure-sdk-library-usage-patterns.md
     - name: '예제: 리소스 그룹 프로비저닝'
       href: azure-sdk-example-resource-group.md
-    - name: '예제: Azure Storage 프로비저닝 및 사용'
+    - name: '예제: Azure Storage 프로비저닝'
       href: azure-sdk-example-storage.md
+    - name: '예제: Azure Storage 사용'
+      href: azure-sdk-example-storage-use.md
     - name: '예제: 웹앱 프로비저닝 및 배포'
       href: azure-sdk-example-web-app.md
     - name: '예제: 가상 머신 프로비저닝'
       href: azure-sdk-example-virtual-machines.md
-- name: Azure 서비스 빠른 시작
+- name: 특정 Azure 서비스 검색
   items:
     - name: 앱 호스팅
       href: quickstarts-app-hosting.md
     - name: 데이터 솔루션
       href: quickstarts-data-solutions.md
+    - name: ID 및 보안
+      href: quickstarts-identity-security.md
     - name: 기계 학습
       href: quickstarts-machine-learning.md
-    - name: Azure Cognitive Services
+    - name: AI(Cognitive Services)
       href: quickstarts-cognitive-services.md
-    - name: 메시징
-      href: quickstarts-messaging.md
-    - name: 보안 및 통합
-      href: quickstarts-security-integration.md
+    - name: 메시징 및 IoT
+      href: quickstarts-messaging-iot.md
+    - name: 기타 서비스
+      href: quickstarts-other-services.md
 - name: 시나리오별 자습서
   items:
     - name: VS Code를 사용하여 웹앱 배포

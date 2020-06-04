@@ -3,12 +3,12 @@ title: 자습서 - Azure Container Instances에 Azure Cosmos DB 배포
 description: Azure Cosmos DB를 Azure Container Instances에 배포하는 동안 간단한 Terraform 구성을 만드는 방법을 알아 봅니다.
 ms.topic: tutorial
 ms.date: 04/26/2020
-ms.openlocfilehash: 88bcb862389a4cbfc611f7beab797e7601c49258
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 5b66d89f7a9a5c690d3a62e6b96a0b056cad9e0e
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171019"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329551"
 ---
 # <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>자습서: Azure Container Instances에 Azure Cosmos DB 배포
 
@@ -179,4 +179,4 @@ terraform destroy -auto-approve
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [Terraform을 설치하고 구성하여 Azure 리소스를 프로비저닝합니다](install-configure.md).
+> [Terraform을 설치하고 구성하여 Azure 리소스를 프로비저닝합니다](getting-started-cloud-shell.md).

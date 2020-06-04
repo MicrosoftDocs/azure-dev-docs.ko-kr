@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 3e6f6d447da93873a1278eaa42882a9d08a94d57
-ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
+ms.openlocfilehash: a7bcf09da47e9af41f404bfdd2454b25f94eb7b4
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862806"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202852"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions를 사용하여 Azure에 배포
 
@@ -113,10 +113,6 @@ Azure Web App 및 Azure Web App for Containers에 배포:
 
 - [Azure SQL 데이터베이스](https://github.com/Azure/sql-action)  
 - [Azure MySQL 작업](https://github.com/Azure/mysql-action)  
-
-## <a name="deploy-machine-learning-models"></a>Machine Learning 모델 배포
-
-- [Azure Machine Learning 배포](https://github.com/Azure/aml-deploy)  
 
 ## <a name="trigger-a-run-in-azure-pipelines"></a>Azure Pipelines에서 실행 트리거
 

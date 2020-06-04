@@ -4,12 +4,12 @@ description: 자습서 4 단계, Python 코드를 확인하도록 VS Code 디버
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 167e1c2be4d379f7457d35f2e6fe4a226092ac08
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.openlocfilehash: 8d6b27b9390f347a464b9daded05b9c3b9a3352c
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708574"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256408"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Azure Functions Python 코드를 로컬에서 디버그
 
@@ -38,14 +38,6 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
 
 1. JSON 요청 본문에 이름 값을 전달하기 위해 JSON 인라인과 함께 curl과 같은 도구를 사용할 수 있습니다.
 
-    # <a name="bash"></a>[bash](#tab/bash)
-
-    ```bash
-    # Mac OS/Linux: modify the URL if you're using a different function name
-    curl --header "Content-Type: application/json" --request POST \
-        --data '{"name":"Visual Studio Code"}' http://localhost:7071/api/HttpExample
-    ```
-
     # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
     ```powershell
@@ -56,6 +48,14 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
     ```
 
     PowerShell에서 [Invoke-WebRequest cmdlet](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6)을 사용할 수도 있습니다.
+
+    # <a name="bash"></a>[bash](#tab/bash)
+
+    ```bash
+    # Mac OS/Linux: modify the URL if you're using a different function name
+    curl --header "Content-Type: application/json" --request POST \
+        --data '{"name":"Visual Studio Code"}' http://localhost:7071/api/HttpExample
+    ```
 
     ---
 

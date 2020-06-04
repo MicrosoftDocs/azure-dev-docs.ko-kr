@@ -3,12 +3,12 @@ title: 자습서 - Terraform을 사용하여 Azure 가상 머신 확장 집합 �
 description: Terraform을 사용하여 Azure 가상 머신 확장 집합을 구성하고 버전 관리하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: bb6175c92d0487bd5707b721ebc39ce4b727fed6
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.openlocfilehash: 23b57d5b7161c318a154bfa2afcf133aa545a233
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153720"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329581"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>자습서: Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
 
@@ -32,7 +32,7 @@ ms.locfileid: "83153720"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform 설치**: [Terraform 및 Azure에 액세스 구성](install-configure.md) 문서의 지침을 따릅니다.
+- **Terraform 설치**: [Terraform 및 Azure에 액세스 구성](getting-started-cloud-shell.md) 문서의 지침을 따릅니다.
 
 - **SSH 키 쌍 만들기**: 자세한 내용은 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](/azure/virtual-machines/linux/mac-create-ssh-keys)을 참조하세요.
 
@@ -80,9 +80,9 @@ Azure Cloud Shell 내에서 다음 단계를 수행합니다.
     description = "The location where resources will be created"
    }
 
-   variable "tags" {
+   variable "tags" = {
     description = "A map of the tags to use for the resources that are deployed"
-    type        = map
+    type        = map(string)
 
     default = {
       environment = "codelab"

@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: 783197c2a98ef76d1a30126144cb44ebdf474fdc
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: ea2d5ba7b48650c28e908448147da77d2e829312
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82166695"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256418"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Azure Kubernetes Service에 Spring Boot 애플리케이션 배포
 
@@ -117,8 +117,9 @@ ms.locfileid: "82166695"
 
    ```xml
    <properties>
+      <!-- Note: If your ACR name contains upper case characters, be sure to convert them to lower case characters. -->
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.3.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```

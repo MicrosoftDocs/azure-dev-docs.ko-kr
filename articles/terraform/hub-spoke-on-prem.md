@@ -3,12 +3,12 @@ title: 자습서 - Terraform을 사용하여 Azure에서 온-프레미스 가상
 description: 로컬 리소스를 보관하는 Azure에서 온-프레미스 VNet(가상 네트워크)을 구현하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: cbce485076be459882609f8f38ab51d085e2b3e1
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0f336a9dae0c063cb8498f0aae4db3d82d1dbcac
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170959"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329601"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 온-프레미스 가상 네트워크 만들기
 
@@ -80,7 +80,7 @@ ms.locfileid: "82170959"
       resource_group_name = azurerm_resource_group.onprem-vnet-rg.name
       address_space       = ["192.168.0.0/16"]
 
-      tags {
+      tags = {
         environment = local.prefix-onprem
       }
     }
@@ -105,7 +105,7 @@ ms.locfileid: "82170959"
         resource_group_name = azurerm_resource_group.onprem-vnet-rg.name
         allocation_method   = "Dynamic"
 
-        tags {
+        tags = {
             environment = local.prefix-onprem
         }
     }
@@ -142,7 +142,7 @@ ms.locfileid: "82170959"
             destination_address_prefix = "*"
         }
 
-        tags {
+        tags = {
             environment = "onprem"
         }
     }
@@ -183,7 +183,7 @@ ms.locfileid: "82170959"
         disable_password_authentication = false
       }
 
-      tags {
+      tags = {
         environment = local.prefix-onprem
       }
     }
@@ -214,7 +214,7 @@ ms.locfileid: "82170959"
         private_ip_address_allocation = "Dynamic"
         subnet_id                     = azurerm_subnet.onprem-gateway-subnet.id
       }
-      depends_on = ["azurerm_public_ip.onprem-vpn-gateway1-pip"]
+      depends_on = [azurerm_public_ip.onprem-vpn-gateway1-pip]
 
     }
     ```

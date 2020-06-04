@@ -3,12 +3,12 @@ title: 자습서 - Terraform을 사용하여 Azure에서 허브 가상 네트워
 description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 허브 가상 네트워크를 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 00e8e16588c86f85c4d5a0613de6e94efd2ec6fc
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: deef7a1462662b8f9f6ebbca013929102fa4ba95
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171009"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329701"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 만들기
 
@@ -88,7 +88,7 @@ ms.locfileid: "82171009"
       resource_group_name = azurerm_resource_group.hub-vnet-rg.name
       address_space       = ["10.0.0.0/16"]
 
-      tags {
+      tags = {
         environment = "hub-spoke"
       }
     }
@@ -126,7 +126,7 @@ ms.locfileid: "82171009"
         private_ip_address_allocation = "Dynamic"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub
       }
     }
@@ -163,7 +163,7 @@ ms.locfileid: "82171009"
         disable_password_authentication = false
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub
       }
     }
@@ -195,7 +195,7 @@ ms.locfileid: "82171009"
         private_ip_address_allocation = "Dynamic"
         subnet_id                     = azurerm_subnet.hub-gateway-subnet.id
       }
-      depends_on = ["azurerm_public_ip.hub-vpn-gateway1-pip"]
+      depends_on = [azurerm_public_ip.hub-vpn-gateway1-pip]
     }
 
     resource "azurerm_virtual_network_gateway_connection" "hub-onprem-conn" {

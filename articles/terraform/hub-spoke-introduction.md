@@ -3,12 +3,12 @@ title: 자습서 - Terraform을 사용하여 Azure에서 허브 및 스포크 �
 description: Terraform을 사용하여 Azure에서 전체 하이브리드 네트워크 참조 아키텍처를 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: a5498c1fea00948a77d740f4ce498d6a7eb73577
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8e9a120168f922194f903cc9a6f4be7c933ee62b
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170939"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329351"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 및 스포크 하이브리드 네트워크 토폴로지 만들기
 
@@ -32,7 +32,7 @@ ms.locfileid: "82170939"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform 설치 및 구성**: Azure에 VM 및 기타 인프라를 프로비저닝하려면 [Terraform을 설치 및 구성](install-configure.md)합니다.
+- **Terraform 설치 및 구성**: Azure에 VM 및 기타 인프라를 프로비저닝하려면 [Terraform을 설치 및 구성](getting-started-cloud-shell.md)합니다.
 
 ## <a name="hub-and-spoke-topology-architecture"></a>허브 및 스포크 토폴로지 아키텍처
 

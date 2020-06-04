@@ -3,12 +3,12 @@ title: Visual Studio Code에서 Azure App Service에 Docker 컨테이너 배포
 description: 자습서 1부, 소개 및 필수 구성 요소
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: bd4110bbbef5e5f65f76cd9329b194646431f91a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 816228d73ac6b21c2c3e144c3f7783de0377e73e
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138796"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202872"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Azure App Service에 컨테이너 배포
 
@@ -18,7 +18,7 @@ ms.locfileid: "82138796"
 
 이 문서의 내용에 대한 전체 연습을 보려면 이 비디오를 시청하세요.
 
-> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-to-Azure-App-Service/player]
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-Azure-App-Service/player]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 

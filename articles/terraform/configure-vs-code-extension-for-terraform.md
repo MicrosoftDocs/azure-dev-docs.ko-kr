@@ -3,12 +3,12 @@ title: 자습서 - Azure Terraform Visual Studio Code 확장 구성
 description: Visual Studio Code에서 Azure Terraform 확장을 설치하고 사용하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: c33006fc2be87bfce42f15a6fc123c9c8326aa42
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 9fd6d6b93537795109117198aa20063b556b8368
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171259"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329571"
 ---
 # <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>자습서: Azure Terraform Visual Studio Code 확장 구성
 
@@ -25,7 +25,7 @@ Azure Terraform Visual Studio Code 확장을 사용하면 편집기에서 Terraf
 ## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**: [Terraform을 설치 및 구성합니다](install-configure.md).
+- **Terraform**: [Terraform을 설치 및 구성합니다](getting-started-cloud-shell.md).
 - **Visual Studio Code**: 환경에 적합한 [Visual Studio Code](https://code.visualstudio.com/download) 버전을 설치합니다.
 
 ## <a name="prepare-your-dev-environment"></a>개발 환경 준비

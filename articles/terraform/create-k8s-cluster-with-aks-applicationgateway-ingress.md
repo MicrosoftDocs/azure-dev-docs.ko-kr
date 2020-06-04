@@ -4,12 +4,12 @@ description: Azure Kubernetes Service를 사용하여 수신 컨트롤러로 App
 keywords: azure devops terraform 애플리케이션 게이트웨이 수신 aks kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 95a1e9ebbf0dcffb2b3101c3b794ba86e62886c8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 60036b7ba4071d900a86835889501a932d48e7fe
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171249"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329631"
 ---
 # <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>자습서: Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
 
@@ -32,7 +32,7 @@ ms.locfileid: "82171249"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform 구성**: [Terraform 및 Azure에 액세스 구성](install-configure.md) 문서의 지침을 따릅니다.
+- **Terraform 구성**: [Terraform 및 Azure에 액세스 구성](getting-started-cloud-shell.md) 문서의 지침을 따릅니다.
 
 - **Azure 리소스 그룹**: 데모에 사용할 Azure 리소스 그룹이 없는 경우 [Azure 리소스 그룹을 만듭니다](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). 해당 값이 데모에 사용되므로 리소스 그룹 이름과 위치를 기록해 둡니다.
 
@@ -225,8 +225,8 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
       default     = "~/.ssh/id_rsa.pub"
     }
 
-    variable "tags" {
-      type = "map"
+    variable "tags" = {
+      type = map(string)
 
       default = {
         source = "terraform"
@@ -387,7 +387,7 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
 
       tags = var.tags
 
-      depends_on = ["azurerm_virtual_network.test", "azurerm_public_ip.test"]
+      depends_on = [azurerm_virtual_network.test, azurerm_public_ip.test]
     }
     ```
 
@@ -399,28 +399,28 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
       role_definition_name = "Network Contributor"
       principal_id         = var.aks_service_principal_object_id 
 
-      depends_on = ["azurerm_virtual_network.test"]
+      depends_on = [azurerm_virtual_network.test]
     }
 
     resource "azurerm_role_assignment" "ra2" {
       scope                = azurerm_user_assigned_identity.testIdentity.id
       role_definition_name = "Managed Identity Operator"
       principal_id         = var.aks_service_principal_object_id
-      depends_on           = ["azurerm_user_assigned_identity.testIdentity"]
+      depends_on           = [azurerm_user_assigned_identity.testIdentity]
     }
 
     resource "azurerm_role_assignment" "ra3" {
       scope                = azurerm_application_gateway.network.id
       role_definition_name = "Contributor"
       principal_id         = azurerm_user_assigned_identity.testIdentity.principal_id
-      depends_on           = ["azurerm_user_assigned_identity.testIdentity", "azurerm_application_gateway.network"]
+      depends_on           = [azurerm_user_assigned_identity.testIdentity, azurerm_application_gateway.network]
     }
 
     resource "azurerm_role_assignment" "ra4" {
       scope                = data.azurerm_resource_group.rg.id
       role_definition_name = "Reader"
       principal_id         = azurerm_user_assigned_identity.testIdentity.principal_id
-      depends_on           = ["azurerm_user_assigned_identity.testIdentity", "azurerm_application_gateway.network"]
+      depends_on           = [azurerm_user_assigned_identity.testIdentity, azurerm_application_gateway.network]
     }
     ```
 
@@ -468,7 +468,7 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
         service_cidr       = var.aks_service_cidr
       }
 
-      depends_on = ["azurerm_virtual_network.test", "azurerm_application_gateway.network"]
+      depends_on = [azurerm_virtual_network.test, azurerm_application_gateway.network]
       tags       = var.tags
     }
 

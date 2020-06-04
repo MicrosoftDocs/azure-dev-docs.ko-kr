@@ -3,12 +3,12 @@ title: 자습서 - Terraform을 사용하여 Azure에서 허브 가상 네트워
 description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 허브 VNet(가상 네트워크)을 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 6498010775fb4ee2d97041a04e80ff17c6bd2da8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 49af4bde3568185e1915edb49be3040ece89676f
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170979"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329318"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 어플라이언스 만들기
 
@@ -75,7 +75,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
       name     = "${local.prefix-hub-nva}-rg"
       location = local.hub-nva-location
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -93,7 +93,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
         private_ip_address            = "10.0.0.36"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -129,7 +129,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
         disable_password_authentication = false
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -152,7 +152,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
         }
     SETTINGS
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -183,7 +183,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
         next_hop_in_ip_address = "10.0.0.36"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -191,7 +191,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
     resource "azurerm_subnet_route_table_association" "hub-gateway-rt-hub-vnet-gateway-subnet" {
       subnet_id      = azurerm_subnet.hub-gateway-subnet.id
       route_table_id = azurerm_route_table.hub-gateway-rt.id
-      depends_on = ["azurerm_subnet.hub-gateway-subnet"]
+      depends_on = [azurerm_subnet.hub-gateway-subnet]
     }
 
     resource "azurerm_route_table" "spoke1-rt" {
@@ -213,7 +213,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
         next_hop_type  = "vnetlocal"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -221,13 +221,13 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
     resource "azurerm_subnet_route_table_association" "spoke1-rt-spoke1-vnet-mgmt" {
       subnet_id      = azurerm_subnet.spoke1-mgmt.id
       route_table_id = azurerm_route_table.spoke1-rt.id
-      depends_on = ["azurerm_subnet.spoke1-mgmt"]
+      depends_on = [azurerm_subnet.spoke1-mgmt]
     }
 
     resource "azurerm_subnet_route_table_association" "spoke1-rt-spoke1-vnet-workload" {
       subnet_id      = azurerm_subnet.spoke1-workload.id
       route_table_id = azurerm_route_table.spoke1-rt.id
-      depends_on = ["azurerm_subnet.spoke1-workload"]
+      depends_on = [azurerm_subnet.spoke1-workload]
     }
 
     resource "azurerm_route_table" "spoke2-rt" {
@@ -249,7 +249,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
         next_hop_type  = "vnetlocal"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -257,13 +257,13 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
     resource "azurerm_subnet_route_table_association" "spoke2-rt-spoke2-vnet-mgmt" {
       subnet_id      = azurerm_subnet.spoke2-mgmt.id
       route_table_id = azurerm_route_table.spoke2-rt.id
-      depends_on = ["azurerm_subnet.spoke2-mgmt"]
+      depends_on = [azurerm_subnet.spoke2-mgmt]
     }
 
     resource "azurerm_subnet_route_table_association" "spoke2-rt-spoke2-vnet-workload" {
       subnet_id      = azurerm_subnet.spoke2-workload.id
       route_table_id = azurerm_route_table.spoke2-rt.id
-      depends_on = ["azurerm_subnet.spoke2-workload"]
+      depends_on = [azurerm_subnet.spoke2-workload]
     }
 
     ```

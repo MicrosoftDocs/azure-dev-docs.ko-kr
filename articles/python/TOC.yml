@@ -16,16 +16,20 @@
       href: configure-local-development-environment.md
     - name: 라이브러리 사용 패턴
       href: azure-sdk-library-usage-patterns.md
-    - name: '예제: 리소스 그룹 프로비저닝'
-      href: azure-sdk-example-resource-group.md
-    - name: '예제: Azure Storage 프로비저닝'
-      href: azure-sdk-example-storage.md
-    - name: '예제: Azure Storage 사용'
-      href: azure-sdk-example-storage-use.md
-    - name: '예제: 웹앱 프로비저닝 및 배포'
-      href: azure-sdk-example-web-app.md
-    - name: '예제: 가상 머신 프로비저닝'
-      href: azure-sdk-example-virtual-machines.md
+    - name: 예제
+      items:
+        - name: 리소스 그룹 프로비저닝
+          href: azure-sdk-example-resource-group.md
+        - name: Azure Storage 프로비저닝
+          href: azure-sdk-example-storage.md
+        - name: Azure Storage 사용
+          href: azure-sdk-example-storage-use.md
+        - name: 웹앱 프로비저닝 및 배포
+          href: azure-sdk-example-web-app.md
+        - name: 데이터베이스 프로비저닝 및 쿼리
+          href: azure-sdk-example-database.md
+        - name: 가상 머신 프로비전
+          href: azure-sdk-example-virtual-machines.md
 - name: 특정 Azure 서비스 검색
   items:
     - name: 앱 호스팅
@@ -100,6 +104,8 @@
       href: how-to-manage-service-principals.md
     - name: 보안 주체에 역할 권한 할당
       href: how-to-assign-role-permissions.md
+    - name: 로깅 구성
+      href: azure-sdk-logging.md
     - name: REST API 인수 구성
       href: azure-sdk-operation-config.md
     - name: 다중 클라우드 개발

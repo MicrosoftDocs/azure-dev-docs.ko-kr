@@ -7,10 +7,8 @@
 - name: 빠른 시작
   expanded: true
   items:
-    - name: Terraform 설치 및 구성
-      href: install-configure.md
-    - name: Linux VM 만들기
-      href: create-linux-virtual-machine-with-infrastructure.md
+    - name: 시작하기 - Cloud Shell
+      href: getting-started-cloud-shell.md
 - name: 자습서
   items:
     - name: 설정 및 구성
@@ -31,16 +29,6 @@
       items:
         - name: Azure Cosmos DB 배포
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
-    - name: 인프라
-      items:
-        - name: Terraform 모듈을 사용하여 VM 클러스터 만들기
-          href: create-vm-cluster-module.md
-        - name: Terraform 및 HCL을 사용하여 VM 클러스터 만들기
-          href: create-vm-cluster-with-infrastructure.md
-        - name: 인프라를 사용하여 VM 확장 집합 프로비전
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: Packer 사용자 지정 이미지에서 VM 확장 집합 프로비전
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
     - name: 네트워크
       items:
         - name: 허브 및 스포크 토폴로지
@@ -62,9 +50,21 @@
         - name: Terraform Visual Studio Code 확장 설치
           href: configure-vs-code-extension-for-terraform.md
         - name: Yeoman을 사용하여 Terraform 기본 템플릿 만들기
-          href: create-a-base-template-using-yeoman.md
+          href: create-base-template-using-yeoman.md
         - name: Terratest를 사용하여 Terraform 모듈 테스트
           href: test-modules-using-terratest.md
+    - name: 가상 머신
+      items:
+        - name: 인프라가 있는 가상 머신
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: Terraform 모듈이 있는 가상 머신 클러스터
+          href: create-vm-cluster-module.md
+        - name: Terraform 및 HCL이 있는 가상 머신 클러스터
+          href: create-vm-cluster-with-infrastructure.md
+        - name: 인프라가 있는 가상 머신 확장 집합
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: Packer 이미지가 있는 가상 머신 확장 집합
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: 샘플
   items:
     - name: 구성 템플릿

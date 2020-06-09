@@ -7,6 +7,8 @@
       href: migrate-spring-boot-to-app-service.md
     - name: AKS에 Spring Boot 배포하기
       href: migrate-spring-boot-to-azure-kubernetes-service.md
+    - name: Azure Spring Cloud에 Spring Boot 배포하기
+      href: migrate-spring-boot-to-azure-spring-cloud.md
     - name: Azure Spring Cloud에 Spring Cloud 배포하기
       href: migrate-spring-cloud-to-azure-spring-cloud.md
     - name: Azure App Service에 Tomcat 설치하기

@@ -1,14 +1,14 @@
 ---
 title: Azure에서 리소스 프로비저닝, 액세스 및 관리
-description: Azure Portal, Azure CLI 및 Azure SDK를 포함하여 Azure 리소스 작업에 사용되는 방법에 대한 개요입니다.
-ms.date: 05/12/2020
+description: Azure Portal, Azure CLI 및 Azure 라이브러리(SDK)를 포함하여 Azure 리소스 작업에 사용되는 방법에 대한 개요입니다.
+ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
-ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
+ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759926"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146208"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Azure에서 리소스 프로비저닝, 액세스 및 관리
 
@@ -26,7 +26,10 @@ ms.locfileid: "83759926"
 
 이러한 보완 방법 중 하나 또는 모두를 사용하여 필요한 Azure 리소스를 만들고, 구성하고, 관리할 수 있습니다. 실제로 개발 프로젝트를 진행하는 동안 세 가지 방법을 모두 사용하는 것이 일반적이므로, 시간을 투자하여 각 방법을 숙지하는 것이 좋습니다.
 
-포털 사용법은 개별 서비스의 설명서에 잘 설명되어 있으므로 이 개발자 센터 내에서는 Azure SDK를 사용하는 CLI 및 Python 코드의 사용법을 주로 보여드립니다.
+포털 사용법은 개별 서비스의 설명서에 잘 설명되어 있으므로 이 개발자 센터 내에서는 Azure 라이브러리를 사용하는 CLI 및 Python 코드의 사용법을 주로 보여드립니다.
+
+> [!NOTE]
+> Python용 Azure 라이브러리는 Python용 Azure SDK라고도 합니다. 그러나 Python 패키지 관리자, pip를 통해 획득한 라이브러리 외에는 SDK 구성 요소가 없습니다.
 
 ## <a name="azure-portal"></a>Azure portal
 
@@ -48,11 +51,11 @@ ms.locfileid: "83759926"
 
 로컬 CLI 또는 PowerShell 대신 [https://shell.azure.com/](https://shell.azure.com/)을 통해 Azure Cloud Shell을 직접 사용할 수 있습니다. 그러나 Cloud Shell은 로컬 환경이 아니므로 자동화보다는 일회성 작업에 더 적합합니다.
 
-## <a name="azure-rest-api-and-azure-sdk"></a>Azure REST API 및 Azure SDK
+## <a name="azure-rest-api-and-azure-libraries"></a>Azure REST API 및 Azure 라이브러리
 
 [Azure REST API](/rest/api/?view=Azure)는 Azure의 프로그래밍 인터페이스이며, Azure의 데이터 센터가 기본적으로 인터넷에 연결되기 때문에 HTTP를 사용하는 보안 REST를 통해 제공됩니다. 모든 리소스에는 엄격한 인증 프로토콜 및 액세스 정책에 따라 리소스 관련 API를 지원하는 고유한 URL이 할당됩니다. (실제로 Azure Portal과 Azure CLI는 궁극적으로 REST API를 통해 작업을 수행합니다.)
 
-개발자를 위해 [Azure SDK](https://azure.microsoft.com/downloads/)는 REST API의 기능을 클래스 및 개체처럼 훨씬 편리한 프로그래밍 패러다임으로 변환하는 언어 관련 라이브러리를 제공합니다. Python의 경우 SDK 전체를 설치하는 대신 항상 `pip install` 명령을 사용하여 개별 SDK 라이브러리를 설치합니다.
+개발자를 위해 Azure 라이브러리는 REST API의 기능을 클래스 및 개체처럼 훨씬 편리한 프로그래밍 패러다임으로 변환하는 언어 관련 라이브러리를 제공합니다. Python의 경우 독립 실행형 SDK 전체를 설치하는 대신 항상 `pip install` 명령을 사용하여 개별 라이브러리를 설치합니다. (다른 언어에 경우, [Azure SDK 다운로드](https://azure.microsoft.com/downloads/)를 참조하세요.)
 
 **장점**: 한 작업의 출력을 다른 작업의 입력으로 사용하는 훨씬 직접적인 수단을 포함하여 모든 작업을 정밀하게 제어할 수 있습니다. Python 개발자의 경우 CLI를 사용하는 대신 익숙한 언어 패러다임 내에서 작업할 수 있습니다. 애플리케이션 코드에서 사용하여 관리 시나리오를 자동화할 수도 있습니다.
   

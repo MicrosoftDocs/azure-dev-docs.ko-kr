@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988694"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202832"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java 애플리케이션을 Azure로 마이그레이션
 
@@ -74,9 +74,9 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 
 다음 섹션에서는 애플리케이션 요구 사항을 충족하는 서비스 대상과 이와 관련된 책임을 보여 줍니다.
 
-### <a name="feature-grid"></a>기능 그리드
+### <a name="hosting-options-grid"></a>호스팅 옵션 그리드
 
-다음 그리드를 사용하여 필요한 애플리케이션 유형과 기능을 지원하는 대상을 확인합니다.
+다음 그리드를 사용하여 애플리케이션 유형의 잠재적 대상을 식별합니다. 보시다시피 AKS 및 Virtual Machines는 모든 애플리케이션 유형을 지원하지만, 다음 섹션에 표시된 것처럼 팀이 더 많은 책임을 져야 합니다.
 
 |   |앱<br>서비스<br>Java SE|앱<br>서비스<br>Tomcat|Azure<br>Spring<br>클라우드|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|

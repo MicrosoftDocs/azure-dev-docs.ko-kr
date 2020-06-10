@@ -1,35 +1,26 @@
 ---
-title: Azure에서 Python 앱 Cognitive Services 빠른 시작
-description: Python 앱 Cognitive Services에 대한 Azure 설명서의 시작 자료 목록입니다.
-ms.date: 05/12/2020
+title: Azure에서 Python 앱 AI Cognitive Services 시작
+description: Python 앱 AI Cognitive Services에 대한 Azure 설명서의 시작 자료 색인입니다.
+ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4b07e886fdb58f9a8abad48a6bd905cdf935e131
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 7192826524f647560f502fa0d01d136c0de945d1
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403747"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202811"
 ---
-# <a name="cognitive-services-for-python-apps-on-azure"></a>Azure에서 Python 앱 Cognitive Services 시작
+# <a name="ai-service-for-python-apps-on-azure"></a>Azure에서 Python 앱 AI 서비스
 
-다음 문서는 애플리케이션에서 광범위한 AI 기능을 쉽게 사용할 수 있도록 하는 Azure Cognitive Services를 시작하는 데 도움이 됩니다.
+Azure Cognition Services는 광범위한 AI 기능을 컴퓨터 비전 및 이미지 처리, 언어 분석 및 번역, 음성, 의사 결정, 포괄적인 검색 등의 분야에서 애플리케이션에 쉽게 사용할 수 있도록 지원합니다.
 
-- **개요**:
-  - [Python용 Azure Cognitive Services 모듈](/python/api/overview/azure/cognitive-services?view=azure-python)
+Azure Cognition Services가 계속 진화하기 때문에 Python용 시작 자료를 찾는 가장 좋은 방법은 [Azure Cognition Service 허브 페이지](/azure/cognitive-services/)에서 시작하는 것입니다. 관심 있는 서비스를 선택한 다음, **빠른 시작** 노드를 확장합니다. **빠른 시작**에서 클라이언트 라이브러리 또는 REST API 사용에 대한 하위 섹션을 찾습니다. 이러한 하위 섹션의 문서에는 지원되는 Python이 포함되어 있습니다.
 
-- **이미지 처리**:  
-  - [Computer Vision REST API 및 Python을 사용하여 원격 이미지 분석](/azure/cognitive-services/Computer-vision/Quickstarts/python-analyze)
-  - [Custom Vision Python SDK를 사용하여 이미지 분류 프로젝트 만들기](/azure/cognitive-services/custom-vision-service/python-tutorial)
+> [!div class="nextstepaction"]
+> [Cognitive Services 허브 페이지로 이동 >>>](/azure/cognitive-services/)
 
-- **얼굴 인식**:  
-  - [Python을 사용하여 얼굴 인식](/azure/cognitive-services/face/quickstarts/python-sdk)
+Cognitive Services 설명서의 별도 부분에 나와 있는 Azure Cognitive Search에 대한 다음 문서도 참조하세요.
 
-- **언어, 텍스트 분석 및 검색**:
-  - [Python용 LUIS(Language Understanding) 작성](/azure/cognitive-services/luis/sdk-authoring)
-  - [Python용 Text Analytics 클라이언트 라이브러리 사용](/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk)
-  - [Python용 Content Moderator 클라이언트 라이브러리 사용](/azure/cognitive-services/content-moderator/python-sdk-quickstart)
-  - [Bing Autosuggest REST API 및 Python으로 검색 쿼리 제안](/azure/cognitive-services/bing-autosuggest/quickstarts/python)
-  - [Search 허브 페이지](/azure/cognitive-services/bing-web-search/index)
+- [Jupyter Notebook을 사용하여 Python에서 Azure Cognitive Search 인덱스 만들기](/azure/search/search-get-started-python)
+- [Python 및 AI를 사용하여 Azure Blob에서 검색 가능한 콘텐츠 생성](/azure/search/cognitive-search-tutorial-blob-python)
 
-- **Speech Services**
-  - [Speech Services 허브 페이지](/azure/cognitive-services/speech-service/index)

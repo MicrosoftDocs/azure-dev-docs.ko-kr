@@ -1,21 +1,21 @@
 ---
-title: 모든 지역에 연결 - Python 용 Azure SDK 다중 클라우드
-description: 모든 지역에서 Azure 사용
-ms.date: 05/04/2020
+title: Python 다중 클라우드용 Azure 라이브러리를 사용하여 모든 지역에 연결
+description: msrestazure의 azure_cloud 모듈을 사용하여 여러 소버린 지역에서 Azure에 연결하는 방법
+ms.date: 05/27/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b585cc6853c338ca1d1f97b8e477818368342f8e
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f24e2261c8002f3f34d28ee02e0f409e8632f825
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403682"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146181"
 ---
-# <a name="multi-cloud-connect-to-all-regions-with-the-azure-sdk-for-python"></a>다중 클라우드: Python용 Azure SDK를 사용하여 모든 지역에 연결
+# <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>다중 클라우드: Python용 Azure 라이브러리를 사용하여 모든 지역에 연결
 
-Python용 Azure SDK를 사용하여 Azure를 [사용 가능한](https://azure.microsoft.com/regions/services) 모든 지역에 연결할 수 있습니다.
+Python용 Azure 라이브러리를 사용하여 Azure를 [사용 가능한](https://azure.microsoft.com/regions/services) 모든 지역에 연결할 수 있습니다.
 
-기본적으로 Python용 Azure SDK는 글로벌 Azure에 연결하도록 구성됩니다.
+기본적으로 Azure 라이브러리는 글로벌 Azure에 연결하도록 구성됩니다.
 
 ## <a name="using-pre-declared-cloud-definition"></a>미리 선언된 클라우드 정의 사용
 

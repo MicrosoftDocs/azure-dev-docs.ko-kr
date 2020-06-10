@@ -1,23 +1,23 @@
 ---
-title: 빠른 시작 - Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
+title: 자습서 - Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 description: Terraform을 사용하여 Azure에서 완전한 Linux 가상 머신 환경을 만들고 관리하는 방법을 알아봅니다.
 keywords: azure devops terraform linux vm 가상 머신
-ms.topic: quickstart
-ms.date: 05/11/2020
-ms.openlocfilehash: 3485e899deaf84a63a2cf2d8085ac34b43f6fca9
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.topic: tutorial
+ms.date: 05/31/2020
+ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153716"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329441"
 ---
-# <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>빠른 시작: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
+# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 
-Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들 수 있습니다. 일관되고 재현 가능한 방식으로 Azure 리소스를 만들고 구성하는 Terraform 템플릿을 이해하기 쉬운 형태로 빌드할 수 있습니다. 이 문서에서는 Terraform을 사용하여 전체 Linux 환경 및 지원 리소스를 만드는 방법을 보여 줍니다. [Terraform 설치 및 구성](install-configure.md) 방법도 알아봅니다.
+Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들 수 있습니다. 일관되고 재현 가능한 방식으로 Azure 리소스를 만들고 구성하는 Terraform 템플릿을 이해하기 쉬운 형태로 빌드할 수 있습니다. 이 문서에서는 Terraform을 사용하여 전체 Linux 환경 및 지원 리소스를 만드는 방법을 보여 줍니다. [Terraform 설치 및 구성](getting-started-cloud-shell.md) 방법도 알아봅니다.
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
@@ -25,22 +25,17 @@ Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들
 
 Terraform 템플릿의 각 섹션을 살펴보겠습니다. 복사하여 붙여넣을 수 있는 [Terraform 템플릿](#complete-terraform-script)의 전체 버전을 확인할 수 있습니다.
 
-`provider` 섹션은 Azure 공급자를 사용하도록 Terraform에 알립니다. `subscription_id`, `client_id`, `client_secret` 및 `tenant_id`에 대한 값을 가져오려면 [Terraform 설치 및 구성](install-configure.md)을 참조하세요. 
+`provider` 섹션은 Azure 공급자를 사용하도록 Terraform에 알립니다. `subscription_id`, `client_id`, `client_secret` 및 `tenant_id`에 대한 값을 가져오려면 [Terraform 설치 및 구성](getting-started-cloud-shell.md)을 참조하세요.
 
 > [!TIP]
 > 값에 대한 환경 변수를 만들거나 [Azure Cloud Shell Bash 환경](/azure/cloud-shell/overview)을 사용하는 경우 이 섹션에서 변수 선언을 포함시킬 필요가 없습니다.
 
 ```hcl
 provider "azurerm" {
-    # The "feature" block is required for AzureRM provider 2.x. 
+    # The "feature" block is required for AzureRM provider 2.x.
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
-    
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
 
@@ -83,10 +78,9 @@ resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = azurerm_resource_group.myterraformgroup.name
     virtual_network_name = azurerm_virtual_network.myterraformnetwork.name
-    address_prefix       = "10.0.2.0/24"
+    address_prefixes       = ["10.0.2.0/24"]
 }
 ```
-
 
 ## <a name="create-public-ip-address"></a>공용 IP 주소 만들기
 
@@ -163,7 +157,6 @@ resource "azurerm_network_interface_security_group_association" "example" {
 }
 ```
 
-
 ## <a name="create-storage-account-for-diagnostics"></a>진단을 위한 스토리지 계정 만들기
 
 VM을 위한 부트 진단을 저장하려면 스토리지 계정이 필요합니다. 이러한 부트 진단은 문제를 해결하고 VM의 상태를 모니터링하는 데 도움을 줄 수 있습니다. 사용자가 만든 스토리지 계정은 부팅 진단 데이터를 저장하기 위한 것입니다. 각 스토리지 계정에는 고유한 이름이 있어야 합니다. 다음 섹션에서는 일부 임의 텍스트를 생성합니다.
@@ -203,6 +196,13 @@ resource "azurerm_storage_account" "mystorageaccount" {
  SSH 키 데이터는 `ssh_keys` 섹션에서 제공됩니다. `key_data` 필드에 공용 SSH 키를 제공합니다.
 
 ```hcl
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+
+output "tls_private_key" { value = "tls_private_key.example_ssh.private_key_pem" }
+
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
     location              = "eastus"
@@ -229,7 +229,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = file("/home/azureuser/.ssh/authorized_keys")
+        public_key     = tls_private_key.example_ssh.public_key_openssh
     }
 
     boot_diagnostics {
@@ -253,11 +253,6 @@ provider "azurerm" {
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
-
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 
 # Create a resource group if it doesn't exist
@@ -287,7 +282,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = azurerm_resource_group.myterraformgroup.name
     virtual_network_name = azurerm_virtual_network.myterraformnetwork.name
-    address_prefix       = "10.0.1.0/24"
+    address_prefixes       = ["10.0.1.0/24"]
 }
 
 # Create public IPs
@@ -372,6 +367,13 @@ resource "azurerm_storage_account" "mystorageaccount" {
     }
 }
 
+# Create (and display) an SSH key
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+output "tls_private_key" { value = "${tls_private_key.example_ssh.private_key_pem}" }
+
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
@@ -399,7 +401,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = file("/home/azureuser/.ssh/authorized_keys")
+        public_key     = tls_private_key.example_ssh.public_key_openssh
     }
 
     boot_diagnostics {
@@ -411,10 +413,6 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     }
 }
 ```
-
-**참고:**
-
-- `admin_ssh_key` 블록과 관련하여 Azure VM 에이전트를 사용하려면 SSH 키를 `/home/{username}/.ssh/authorized_keys` 경로에 작성해야 합니다. Windows에서 이 샘플을 실행하려면 이 디렉터리 구조가 있는지 확인해야 할 수 있습니다. `admin_ssh_key` 블록에 대한 자세한 내용은 [Terraform.io의 azurerm_linux_virtual_machine 설명서](https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html)를 참조하세요.
 
 ## <a name="build-and-deploy-the-infrastructure"></a>인프라 빌드 및 배포
 

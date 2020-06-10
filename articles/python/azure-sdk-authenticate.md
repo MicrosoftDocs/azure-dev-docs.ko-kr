@@ -1,21 +1,21 @@
 ---
 title: Azure 서비스를 사용하여 Python 애플리케이션을 인증하는 방법
-description: Azure 관리 SDK 라이브러리를 사용하여 Azure 서비스로 Python 앱 인증
+description: Azure 라이브러리를 사용하여 Azure 서비스로 Python 앱을 인증하는 데 필요한 자격 증명 개체를 얻는 방법
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8dd434c0a18c0a263573188e04a54f48afcf2b0d
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403687"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329431"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Azure 서비스를 사용하여 Python 앱을 인증하는 방법
 
-Python용 Azure SDK를 사용하여 앱 코드를 작성하는 경우 다음 패턴을 사용하여 Azure 리소스에 액세스합니다.
+Python용 Azure 라이브러리를 사용하여 앱 코드를 작성하는 경우 다음 패턴을 사용하여 Azure 리소스에 액세스합니다.
 
 1. 자격 증명을 가져옵니다(일반적으로 일회성 작업).
-1. 자격 증명을 사용하여 리소스에 대해 SDK에서 제공하는 클라이언트 개체를 가져옵니다.
+1. 자격 증명을 사용하여 리소스에 대해 적절한 클라이언트 개체를 가져옵니다.
 1. 클라이언트 개체를 통해 리소스에 액세스하거나 수정하려고 시도합니다. 그러면 리소스의 REST API에 대한 HTTP 요청이 생성됩니다.
 
 REST API에 대한 요청은 자격 증명 개체에서 설명한 대로 Azure에서 앱의 ID를 인증하는 지점입니다. 그런 다음, Azure에서 요청된 작업을 수행할 수 있는 권한이 해당 ID에 부여되었는지 확인합니다. 권한이 ID에 부여되지 않았으면 작업이 실패합니다. (권한 부여는 Azure Key Vault, Azure Storage 등과 같은 리소스 종류에 따라 달라집니다. 자세한 내용은 해당 리소스 종류에 대한 설명서를 참조하세요.)
@@ -33,10 +33,15 @@ import os
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
-# Obtain the credential object
+# Obtain the credential object. When run locally, DefaultAzureCredential relies
+# on environment variables named AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
 credential = DefaultAzureCredential()
 
-# Create the SDK client object to access Key Vault secrets.
+# Create the client object using the credential
+#
+# **NOTE**: SecretClient here is only an example; the same process
+# applies to all other Azure client libraries.
+
 vault_url = os.environ["KEY_VAULT_URL"]
 secret_client = SecretClient(vault_url=vault_url, credential=credential)
 
@@ -137,17 +142,11 @@ print(subscription.subscription_id)
     4개의 자리 표시자를 Azure 구독 ID, 테넌트 ID, 클라이언트 ID 및 클라이언트 암호로 바꿉니다.
 
     > [!TIP]
-    > [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-for-development)에서 설명한 대로 이 JSON 형식은 `--sdk-auth` 매개 변수가 포함된 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 명령을 사용하여 직접 생성할 수 있습니다.
+    > [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)에서 설명한 대로 이 JSON 형식은 `--sdk-auth` 매개 변수가 포함된 [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 명령을 사용하여 직접 생성할 수 있습니다.
 
 1. 코드에서 액세스할 수 있는 안전한 위치에 파일을 *credentials.json*이라는 이름으로 저장합니다. 자격 증명을 안전하게 유지하려면 이 파일을 원본 제어에서 생략하고 다른 개발자와 공유하지 않아야 합니다. 즉, 서비스 주체의 테넌트 ID, 클라이언트 ID 및 클라이언트 암호는 항상 개발 워크스테이션에서 격리되어 있어야 합니다.
 
 1. JSON 파일의 경로를 값으로 사용하여 `AZURE_AUTH_LOCATION`이라는 환경 변수를 만듭니다.
-
-    # <a name="bash"></a>[bash](#tab/bash)
-
-    ```bash
-    AZURE_AUTH_LOCATION="../credentials.json"
-    ```
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -155,9 +154,16 @@ print(subscription.subscription_id)
     set AZURE_AUTH_LOCATION=../credentials.json
     ```
 
-    이러한 예제에서는 JSON 파일의 이름이 *credentials.json*이고 프로젝트의 부모 폴더에 있다고 가정합니다.
+    # <a name="bash"></a>[bash](#tab/bash)
+
+    ```bash
+    AZURE_AUTH_LOCATION="../credentials.json"
+    ```
 
     ---
+
+    이러한 예제에서는 JSON 파일의 이름이 *credentials.json*이고 프로젝트의 부모 폴더에 있다고 가정합니다.
+
 
 1. [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) 메서드를 사용하여 클라이언트 개체를 만듭니다.
 
@@ -211,7 +217,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-이전 섹션에서 설명한 대로 파일을 사용하는 대신 변수에 필요한 JSON 데이터를 작성하고 [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-)를 호출할 수 있습니다. 이 코드는 [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-for-development)에서 설명한 환경 변수를 만들었다고 가정합니다. 클라우드에 배포된 코드의 경우 Azure App Service 및 Azure Functions와 같은 플랫폼 서비스를 사용할 때 이러한 환경 변수를 서버 VM에 만들거나 애플리케이션 설정으로 만들 수 있습니다.
+이전 섹션에서 설명한 대로 파일을 사용하는 대신 변수에 필요한 JSON 데이터를 작성하고 [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-)를 호출할 수 있습니다. 이 코드는 [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)에서 설명한 환경 변수를 만들었다고 가정합니다. 클라우드에 배포된 코드의 경우 Azure App Service 및 Azure Functions와 같은 플랫폼 서비스를 사용할 때 이러한 환경 변수를 서버 VM에 만들거나 애플리케이션 설정으로 만들 수 있습니다.
 
 또한 환경 변수를 사용하는 대신 값을 Azure Key Vault에 저장하고 런타임에 이러한 값을 검색할 수 있습니다.
 
@@ -236,7 +242,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-이 방법에서는 Azure Key Vault 또는 환경 변수와 같은 보안 스토리지에서 가져온 자격 증명을 사용하여 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) 개체를 만듭니다. 이전 코드에서는 [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-for-development)에서 설명한 환경 변수를 만들었다고 가정합니다.
+이 방법에서는 Azure Key Vault 또는 환경 변수와 같은 보안 스토리지에서 가져온 자격 증명을 사용하여 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) 개체를 만듭니다. 이전 코드에서는 [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)에서 설명한 환경 변수를 만들었다고 가정합니다.
 
 이 방법을 사용하면 클라이언트 개체에 대해 `base_url` 인수를 지정하여 Azure 퍼블릭 클라우드 대신 [Azure 소버린 클라우드 또는 국가별 클라우드](/azure/active-directory/develop/authentication-national-cloud)를 사용할 수 있습니다.
 
@@ -320,4 +326,8 @@ SDK에서 기본 구독 ID를 사용하거나 [`az account`](https://docs.micros
 ## <a name="see-also"></a>참고 항목
 
 - [Azure를 위한 로컬 Python 개발 환경 구성](configure-local-development-environment.md)
-- [예: Azure Storage에서 Azure SDK 사용](azure-sdk-example-storage.md)
+- [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
+- [예: Azure Storage 프로비저닝 및 사용](azure-sdk-example-storage.md)
+- [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
+- [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md)
+- [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)

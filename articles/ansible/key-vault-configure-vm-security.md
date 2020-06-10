@@ -4,12 +4,12 @@ description: Ansible에서 Azure Key Vault를 사용하여 VM 보안을 구성�
 keywords: ansible, azure, devops, 키 자격 증명 모음, 보안, 자격 증명, 비밀, 키, 인증서, azure용 ansible 모듈, 리소스 그룹, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ce9adb7ea121425d410665e1f4cc225cfdb82bd8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84ed514e742c8a8fa3a9acc9328fc71743dfc5cb
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81755236"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84145971"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>자습서: Ansible에서 Linux 가상 머신으로 Azure Key Vault 사용
 
@@ -29,7 +29,7 @@ ms.locfileid: "81755236"
 > * Ansible 셸 모듈을 사용하여 키 자격 증명 모음 비밀 가져오기
 > * 가상 머신의 모든 구성 요소와 함께 가상 머신 만들기
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
@@ -216,7 +216,7 @@ tasks:
 **참고:**
 
 - [azure_rm_keyvaultsecret 모듈](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvaultsecret_module.html)은 키 자격 증명 모음 비밀을 만드는 데 사용됩니다.
-- 간단한 설명을 위해 데모에는 `secret_name`과 `secret_value`가 포함됩니다. 하지만 플레이북은 프로젝트의 다른 소스 코드와 마찬가지로 infrastructure-as-code(AiC) 파일입니다. 따라서, 이러한 값은 프로덕션 환경에서 사용할 경우 일반 텍스트 파일에 저장하지 않아야 합니다.
+- 간단한 설명을 위해 데모에는 `secret_name`과 `secret_value`가 포함됩니다. 하지만 플레이북은 프로젝트의 다른 소스 코드와 마찬가지로 IaC(infrastructure-as-code) 파일입니다. 따라서, 이러한 값은 프로덕션 환경에서 사용할 경우 일반 텍스트 파일에 저장하지 않아야 합니다.
 - 이 코드를 실행한 후에는 키 자격 증명 모음의 **비밀** 탭에 `testsecret`이라는 새로 추가된 비밀이 나열됩니다. 이것을 보려면 비밀을 선택하고, 현재 버전을 선택하고 **비밀 값 표시**를 선택합니다.
 
 ## <a name="get-a-key-vault-secret"></a>키 자격 증명 모음 비밀 가져오기
@@ -242,7 +242,7 @@ tasks:
 
 - **azure_rm_keyvaultsecret_info 모듈**은 키 자격 증명 모음 비밀을 가져오는 데 사용됩니다. 이 모듈은 Azure 모듈용 Ansible 컬렉션을 사용하는 경우에만 사용할 수 있습니다. 
 - 이 코드 조각을 실행하는 동안 오류가 발생하면 [사전 요구 사항 섹션](#prerequisites)의 모든 지침을 따랐는지 확인하세요.
-- 간단한 설명을 위해 데모에는 `secret_name`과 `secret_value`가 포함됩니다. 하지만 플레이북은 프로젝트의 다른 소스 코드와 마찬가지로 infrastructure-as-code(AiC) 파일입니다. 따라서, 이러한 값은 프로덕션 환경에서 사용할 경우 일반 텍스트 파일에 저장하지 않아야 합니다.
+- 간단한 설명을 위해 데모에는 `secret_name`과 `secret_value`가 포함됩니다. 하지만 플레이북은 프로젝트의 다른 소스 코드와 마찬가지로 IaC(infrastructure-as-code) 파일입니다. 따라서, 이러한 값은 프로덕션 환경에서 사용할 경우 일반 텍스트 파일에 저장하지 않아야 합니다.
 
 ## <a name="run-the-complete-playbook"></a>완전한 플레이북 실행
 
@@ -427,7 +427,7 @@ tasks:
 
 **참고:**
 
-- 가상 머신의 관리자 암호는 키 자격 증명 모음 비밀로 설정됩니다. 
+- 가상 머신의 관리자 암호는 키 자격 증명 모음 비밀로 설정됩니다.
 - 전체 플레이북을 한 번에 실행할 수 있는 기능은 테스트 환경에 따라 달라집니다. 키를 만들기 전에 키 자격 증명 모음 액세스 정책에 자신을 수동으로 추가해야 할 수도 있습니다. 이 작업은 [키 자격 증명 모음 만들기](#create-a-key-vault)와 [키 자격 증명 모음 액세스 정책에 자신을 추가](#add-yourself-to-key-vault-access-policy) 섹션에 설명되어 있습니다.
 - 여기에서 볼 수 있듯이 다양한 Ansible 모듈이 Azure 가상 머신과 이 머신의 모든 구성 요소를 만드는 데 사용됩니다. 가상 머신을 만드는 데 사용되는 다양한 Ansible 모듈에 대한 자세한 내용은 다음 목록을 참조하세요.
     - [Azure 리소스 그룹 모듈(azure_rm_resourcegroup)](https://docs.ansible.com/ansible/latest/modules/azure_rm_resourcegroup_module.html)

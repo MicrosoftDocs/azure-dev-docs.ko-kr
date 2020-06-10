@@ -3,12 +3,12 @@ title: Azure 개발을 위한 로컬 서비스 주체 관리
 description: Azure Portal 또는 Azure CLI를 사용하여 로컬 개발용으로 만든 서비스 주체를 관리하는 방법입니다.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: b2e0c913b08c98994226d7a9de39ae83ae50ec21
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404886"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146191"
 ---
 # <a name="how-to-manage-service-principals"></a>서비스 주체를 관리하는 방법
 
@@ -18,7 +18,7 @@ ms.locfileid: "83404886"
 
 ## <a name="basics-of-azure-authorization"></a>Azure 인증의 기본 사항
 
-코드가 Azure 리소스에서 작업을 수행하려고 시도할 때마다(Azure SDK의 클래스를 통해 수행함), Azure는 애플리케이션에 해당 작업을 수행할 권한이 있는지 확인합니다. [Azure Portal](https://portal.azure.com)이나 Azure CLI를 사용하여 애플리케이션 ID에 특정 역할 또는 리소스 기반 권한을 부여합니다. (이 절차는 애플리케이션의 보안이 손상될 경우 악용될 수 있는 애플리케이션에 대해 과도한 권한을 부여하지 않도록 방지합니다.)
+코드가 Azure 리소스에서 작업을 수행하려고 시도할 때마다(Azure 라이브러리의 클래스를 통해 수행함), Azure는 애플리케이션에 해당 작업을 수행할 권한이 있는지 확인합니다. [Azure Portal](https://portal.azure.com)이나 Azure CLI를 사용하여 애플리케이션 ID에 특정 역할 또는 리소스 기반 권한을 부여합니다. (이 절차는 애플리케이션의 보안이 손상될 경우 악용될 수 있는 애플리케이션에 대해 과도한 권한을 부여하지 않도록 방지합니다.)
 
 Azure에 배포할 때, 애플리케이션의 ID는 대개 애플리케이션을 호스트하는 서비스 내에서 앱에 부여한 이름과 동일합니다(예: 관리 ID가 활성화된 경우 Azure App Service, Azure Functions, 가상 머신 등). 하지만 코드를 로컬에서 실행할 때는 호스팅 서비스가 포함되지 않기 때문에 Azure에 적절한 대안을 제공해야 합니다.
 
@@ -51,4 +51,4 @@ Azure CLI를 사용하면 Azure Portal을 통해 서비스 주체에 수행할 �
 
 참고 항목:
 
-- [Azure SDK를 사용하여 Azure에서 인증](azure-sdk-authenticate.md)
+- [Azure 라이브러리를 사용하여 Azure에서 인증](azure-sdk-authenticate.md)

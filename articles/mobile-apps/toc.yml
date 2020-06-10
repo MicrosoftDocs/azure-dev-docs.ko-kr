@@ -1,0 +1,55 @@
+- name: 모바일 개발자용 Azure 설명서
+  href: index.yml
+- name: 개요
+  expanded: true
+  items:
+    - name: 모바일 개발 프레임워크 선택
+      href: choose-mobile-framework.md
+    - name: 모바일 앱 클라우드 개발 단계
+      href: mobile-cloud-development-stages.md
+- name: 개념
+  items:
+    - name: 인증
+      href: authentication.md
+    - name: 데이터
+      items:
+        - name: 데이터 스토리지
+          href: data-storage.md
+        - name: Azure Storage
+          href: azure-storage.md
+        - name: Azure Content Delivery Network
+          href: azure-content-delivery-network.md
+    - name: 컴퓨팅
+      items:
+        - name: 서버리스 컴퓨팅
+          href: serverless-compute.md
+        - name: 실시간 앱
+          href: real-time-communication.md
+    - name: 원본 제어
+      href: code-hosting-services.md
+    - name: DevOps
+      items:
+        - name: DevOps란?
+          href: devops.md
+        - name: 연속 빌드 및 통합
+          href: continuous-integration.md
+        - name: 실제 디바이스에서 테스트
+          href: test-mobile-apps.md
+        - name: 지속적인 업데이트
+          href: continuous-delivery.md
+    - name: 원격 분석
+      items:
+        - name: 사용량 및 사용자 동작 분석
+          href: analytics.md
+        - name: 실시간 오류 보고
+          href: diagnostics.md
+    - name: 푸시 알림
+      href: push-notifications.md
+    - name: 기계 학습
+      items:
+        - name: Azure Cognitive Services
+          href: cognitive-services.md
+        - name: Azure Maps
+          href: azure-maps.md
+        - name: Azure Cognitive Search
+          href: azure-search.md

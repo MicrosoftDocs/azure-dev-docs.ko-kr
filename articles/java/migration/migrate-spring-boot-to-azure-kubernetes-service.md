@@ -5,12 +5,12 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.openlocfilehash: 6c2781914e65d28a57f2f80ed287921eab3b76ae
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: bb355fdd8436d6483ebd1ffeead4c522c9895e16
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369982"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507680"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Spring Boot 애플리케이션을 Azure Kubernetes Service로 마이그레이션
 
@@ -64,7 +64,7 @@ Spring Boot 1.x를 사용하는 애플리케이션의 경우 [Spring Boot 2.0 �
 
 ### <a name="inventory-external-resources"></a>인벤토리 외부 리소스
 
-데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서 이러한 리소스의 구성은 일반적으로 *src/main/directory* 폴더의 *application.properties* 또는 *application.yml*이라는 파일에서 찾을 수 있습니다.
+데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서 이러한 리소스의 구성은 일반적으로 *src/main/directory* 폴더의 *application.properties* 또는 *application.yml*이라는 파일에서 찾을 수 있습니다. 또한 프로덕션 배포의 환경 변수에서 관련 구성 설정을 확인합니다.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 

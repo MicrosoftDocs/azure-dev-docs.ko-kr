@@ -4,12 +4,12 @@ description: Azure Kubernetes Service를 사용하여 수신 컨트롤러로 App
 keywords: azure devops terraform 애플리케이션 게이트웨이 수신 aks kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 60036b7ba4071d900a86835889501a932d48e7fe
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 433cf2e73e4672d73e036ebc1e25b6c1cc98795e
+ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329631"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85327216"
 ---
 # <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>자습서: Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
 
@@ -225,7 +225,7 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
       default     = "~/.ssh/id_rsa.pub"
     }
 
-    variable "tags" = {
+    variable "tags" {
       type = map(string)
 
       default = {

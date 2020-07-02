@@ -8,12 +8,12 @@ tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8f35aea0447f8681fb4f456dbafe500a608f6420
+ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670639"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85790780"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Java 11로 전환해야 하는 이유
 
@@ -168,7 +168,7 @@ JVM에 대한 다음과 같은 변경 내용은 성능에 직접적인 영향을
 (온라인). 주소: http://openjdk.java.net/jeps/318. (2019년 11월 13일에 액세스 가능 여부 확인).
 
 <a id="ref12">\[12\]</a> Oracle Corporation, \"JDK-8146115: Improve docker container detection and resource configuration usage,\" 2019년 9월 16일.
-(온라인). 주소: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=JDK-8146115.
+(온라인). 주소: https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8146115.
 (2019년 11월 13일에 액세스 가능 여부 확인).
 
 <a id="ref13">\[13\]</a> Oracle Corporation, \"JEP 238: Multi-Release JAR Files,\" 2017년 6월 22일. (온라인). 주소: http://openjdk.java.net/jeps/238. (2019년 11월 13일에 액세스 가능 여부 확인).
@@ -184,7 +184,7 @@ JVM에 대한 다음과 같은 변경 내용은 성능에 직접적인 영향을
 <a id="ref17">\[17\]</a> Oracle Corporation, \"JEP 312: Thread-Local Handshakes,\" 2019년 8월 21일.
 (온라인). 주소: https://openjdk.java.net/jeps/312. (2019년 11월 13일에 액세스 가능 여부 확인).
 
-<a id="ref18">\[18\]</a> Oracle Corporation, \"JDK-8198756: Lazy allocation of compiler threads,\" 2018년 10월 29일. (온라인). 주소: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=8198756.
+<a id="ref18">\[18\]</a> Oracle Corporation, \"JDK-8198756: Lazy allocation of compiler threads,\" 2018년 10월 29일. (온라인). 주소: https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8198756.
 (2019년 11월 13일에 액세스 가능 여부 확인).
 
 <a id="ref19">\[19\]</a> Oracle Corporation, \"JEP 193: Variable Handles,\" 2017년 8월 17일. (온라인). 주소: https://openjdk.java.net/jeps/193. (2019년 11월 13일에 액세스 가능 여부 확인).

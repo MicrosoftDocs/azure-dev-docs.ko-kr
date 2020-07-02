@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: e4a12380521828ac69aead376ae7ff5797e300ab
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 46fa281fdbaf53e35a73701fa2c17ae2ed3e2d90
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990305"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507641"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot 애플리케이션을 Azure App Service로 마이그레이션
 
@@ -33,15 +33,19 @@ App Service는 특정 버전의 Java SE를 제공합니다. 호환성을 보장�
 
 ### <a name="inventory-external-resources"></a>인벤토리 외부 리소스
 
-데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서는 일반적으로 *application.properties* 또는 *application.yml* 파일의 *src/main/directory*에서 이러한 리소스의 구성을 찾을 수 있습니다. 또한 프로덕션 배포의 환경 변수에서 관련 구성 설정을 확인합니다.
+데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서 이러한 리소스의 구성은 일반적으로 *src/main/directory* 폴더의 *application.properties* 또는 *application.yml*이라는 파일에서 찾을 수 있습니다. 또한 프로덕션 배포의 환경 변수에서 관련 구성 설정을 확인합니다.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
 [!INCLUDE [identify-jms-brokers-in-spring](includes/identify-jms-brokers-in-spring.md)]
 
-사용되는 broker가 확인되면 해당 설정을 찾습니다. 일반적으로 Spring Boot에 대한 *application.properties* 및 *application.yml* 파일에 있습니다.
+사용 중인 broker가 확인되면 해당 설정을 찾습니다. Spring Boot 애플리케이션에서 이러한 설정은 일반적으로 애플리케이션 디렉터리의 *application.properties* 및 *application.yml* 파일에서 찾을 수 있습니다.
 
 [!INCLUDE [jms-broker-settings-examples-in-spring](includes/jms-broker-settings-examples-in-spring.md)]
+
+[!INCLUDE [identify-external-caches-azure-spring-cloud](includes/identify-external-caches-azure-spring-cloud.md)]
+
+[!INCLUDE [inventory-identity-providers-spring-boot](includes/inventory-identity-providers-spring-boot.md)]
 
 #### <a name="all-other-external-resources"></a>기타 모든 외부 리소스
 
@@ -53,9 +57,7 @@ App Service는 특정 버전의 Java SE를 제공합니다. 호환성을 보장�
 
 프로덕션 배포의 모든 속성 및 구성 파일과 모든 환경 변수에 비밀 문자열과 암호가 있는지 확인합니다. Spring Boot 애플리케이션에서 이러한 문자열은 *application.properties* 또는 *application.yml*에서 찾을 수 있습니다.
 
-#### <a name="inventory-certificates"></a>인증서 인벤토리화
-
-[!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
+[!INCLUDE [inventory-certificates-h4](includes/inventory-certificates-h4.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
@@ -146,6 +148,8 @@ Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-ser
 ![App Service 애플리케이션 구성](media/migrate-spring-boot-to-app-service/app-service-parameterized-spring-boot-app-settings.png)
 
 [!INCLUDE [migrate-scheduled-jobs](includes/migrate-scheduled-jobs.md)]
+
+[!INCLUDE [migrate-identity-provider-app-service.md](includes/migrate-identity-provider-app-service.md)]
 
 ### <a name="restart-and-smoke-test"></a>다시 시작 및 스모크 테스트
 

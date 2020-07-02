@@ -1,7 +1,6 @@
 - name: 모바일 개발자용 Azure 설명서
   href: index.yml
 - name: 개요
-  expanded: true
   items:
     - name: 모바일 개발 프레임워크 선택
       href: choose-mobile-framework.md

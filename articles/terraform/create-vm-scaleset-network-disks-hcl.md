@@ -3,12 +3,12 @@ title: 자습서 - Terraform을 사용하여 Azure 가상 머신 확장 집합 �
 description: Terraform을 사용하여 Azure 가상 머신 확장 집합을 구성하고 버전 관리하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: 23b57d5b7161c318a154bfa2afcf133aa545a233
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ce6922fe8bb5671afece009cd0228e8a3ff191da
+ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329581"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85327205"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>자습서: Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
 
@@ -80,7 +80,7 @@ Azure Cloud Shell 내에서 다음 단계를 수행합니다.
     description = "The location where resources will be created"
    }
 
-   variable "tags" = {
+   variable "tags" {
     description = "A map of the tags to use for the resources that are deployed"
     type        = map(string)
 

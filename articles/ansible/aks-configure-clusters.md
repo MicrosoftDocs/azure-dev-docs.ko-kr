@@ -3,13 +3,13 @@ title: 자습서 - Azure에서 Ansible을 사용하여 AKS(Azure Kubernetes Serv
 description: Ansible을 사용하여 Azure에서 Azure Kubernetes Service 클러스터를 만들고 관리하는 방법 알아보기
 keywords: ansible, azure, devops, bash, cloudshell, 플레이북, aks, 컨테이너, aks, kubernetes
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: 7f68399fe2bf8dfe60a80ffdaff714b5c609b166
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 06/17/2020
+ms.openlocfilehash: 7d36f9bd68e6be1963821820cee7e8acf0465acc
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743708"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069413"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>자습서: Azure에서 Ansible을 사용하여 AKS(Azure Kubernetes Service) 클러스터 구성
 
@@ -51,7 +51,7 @@ ms.locfileid: "81743708"
     client_id: "your_client_id"
     client_secret: "your_client_secret"
     aks_version: aks_version
-tasks:
+  tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
       name: "{{ resource_group }}"

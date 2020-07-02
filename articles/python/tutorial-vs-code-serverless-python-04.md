@@ -4,12 +4,12 @@ description: 자습서 4 단계, Python 코드를 확인하도록 VS Code 디버
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8d6b27b9390f347a464b9daded05b9c3b9a3352c
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: 761ffab12712f5c90127665addb65201016be2c8
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256408"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370694"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Azure Functions Python 코드를 로컬에서 디버그
 
@@ -34,7 +34,7 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
     > [!TIP]
     > URL에 액세스할 수 없고 회사 프록시 뒤에서 실행되어 `HTTP_PROXY` 및 `HTTPS_PROXY` 환경 변수가 설정되었을 가능성이 높은 경우 `NO_PROXY`라는 환경 변수를 `localhost,127.0.0.1`로 설정하고 다시 시도합니다.
 
-1. 이제 `http://localhost:7071/api/HttpExample?name=VS%20Code`와 같이 사용할 이름 매개 변수를 추가해 봅니다. 그러면 브라우저 창은 해당 코드 경로를 실행했다는 것을 보여 주는 "Hello Visual Studio Code!"라는 메시지를 표시합니다.
+1. 이제 `http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code`와 같이 사용할 이름 매개 변수를 추가해 봅니다. 그러면 브라우저 창은 해당 코드 경로를 실행했다는 것을 보여 주는 "Hello Visual Studio Code!"라는 메시지를 표시합니다.
 
 1. JSON 요청 본문에 이름 값을 전달하기 위해 JSON 인라인과 함께 curl과 같은 도구를 사용할 수 있습니다.
 

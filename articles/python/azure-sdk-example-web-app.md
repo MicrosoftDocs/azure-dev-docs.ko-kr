@@ -3,12 +3,12 @@ title: Azure SDK 라이브러리를 사용하여 웹앱 프로비저닝 및 배�
 description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 사용하여 웹앱을 프로비저닝한 다음, GitHub 리포지토리에서 앱 코드를 배포합니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8196e86b4a4311b48b47975fd47bb04f11a1fe23
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: f09775fbd5eda59e9e4a687d63acca052429b8e1
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329641"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716081"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>예: Azure 라이브러리를 사용하여 웹앱 프로비저닝 및 배포
 
@@ -215,13 +215,13 @@ az appservice plan create -n PythonAzureExample-WebApp-plan --is-linux --sku F1
 az webapp create -g PythonAzureExample-WebApp-rg -n PythonAzureExample-WebApp-12345 ^
     --plan PythonAzureExample-WebApp-plan --runtime "python|3.8"
 
-# You can use --deployment-source-url with the first create command. It's shown here
-# to match the sequence of the Python code.
+rem You can use --deployment-source-url with the first create command. It's shown here
+rem to match the sequence of the Python code.
 
 az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-WebApp-plan ^
     --deployment-source-url https://github.com/<your_fork>/python-docs-hello-world
 
-# Replace <your_fork> with the specific URL of your forked repository.
+rem Replace <your_fork> with the specific URL of your forked repository.
 ```
 
 # <a name="bash"></a>[bash](#tab/bash)

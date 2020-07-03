@@ -1,16 +1,16 @@
 ---
-title: Python용 Azure SDK에서 Azure Storage 프로비저닝 및 사용
+title: Python용 Azure SDK에서 Azure Storage 사용
 description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage 계정에서 미리 프로비저닝된 Blob 컨테이너를 액세스한 다음, 이 컨테이너에 파일을 업로드합니다.
-ms.date: 05/29/2020
+ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 50d9b781e0ec3a1a9f752a9ec193720d99b88f4d
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
+ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329661"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84812669"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>예: Azure Storage와 함께 Azure 라이브러리 사용
+# <a name="example-use-the-azure-libraries-with-azure-storage"></a>예제: Azure Storage와 함께 Azure 라이브러리 사용
 
 이 예는 Python 애플리케이션 코드로 Azure 클라이언트 라이브러리를 사용하여 해당 Blob Storage 컨테이너에 파일을 업로드하는 방법을 보여줍니다. 이 예에서는 [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)에 표시된 리소스를 프로비저닝했다고 가정합니다.
 
@@ -47,11 +47,11 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="4-use-blob-storage-from-app-code"></a>4: 앱 코드에서 Blob Storage 사용
 
-다음 섹션(번호 4a 및 4b)에서는 Blob 컨테이너에 액세스하는 두 가지 방법을 보여줍니다.
+다음 섹션(번호 4a 및 4b)에서는 [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)을 통해 프로비저닝된 Blob 컨테이너에 액세스하는 두 가지 방법을 보여줍니다.
 
-[첫 번째 방법(4a)](#4a-use-blob-storage-with-authentication)은 [Python 앱을 인증하는 방법](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)의 설명대로 `DefaultAzureCredential`을 사용하여 앱을 인증합니다. 이 방법을 사용하면 먼저 앱 ID에 적절한 권한을 할당해야 합니다. 이것이 권장되는 방식입니다.
+[첫 번째 방법(아래 섹션 4a)](#4a-use-blob-storage-with-authentication)은 [Python 앱을 인증하는 방법](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)에 설명된 대로 `DefaultAzureCredential`을 사용하여 앱을 인증합니다. 이 방법을 사용하면 먼저 앱 ID에 적절한 권한을 할당해야 합니다. 이것이 권장되는 방식입니다.
 
-[두 번째 방법(4b)](#4b-use-blob-storage-with-a-connection-string)은 연결 문자열을 사용하여 스토리지 계정에 직접 액세스합니다. 이 방법이 더 간단해 보이지만 두 가지 중요한 결점이 있습니다.
+[두 번째 방법(아래 섹션 4b)](#4b-use-blob-storage-with-a-connection-string)은 연결 문자열을 사용하여 스토리지 계정에 직접 액세스합니다. 이 방법이 더 간단해 보이지만 두 가지 중요한 결점이 있습니다.
 
 - 연결 문자열은 본질적으로 스토리지 계정을 사용하여(해당 계정 내의 개별 리소스를 사용하지 않고) 연결 에이전트를 인증합니다. 결과적으로 연결 문자열은 필요 이상으로 광범위한 권한을 부여합니다.
 
@@ -116,7 +116,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     사용 중인 로컬 서비스 주체에 Blob 컨테이너에 액세스할 수 있는 권한이 없기 때문에 다음 오류가 표시됩니다. "이 요청은 이 권한을 사용하여 이 작업을 수행할 수 있는 권한이 없습니다."
 
-1. 서비스 주체에 컨테이너에 대한 권한을 부여하려면, Azure CLI 명령 [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)를 사용합니다.
+1. Azure CLI 명령 [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)를 사용하여 서비스 주체에게 컨테이너 권한을 부여합니다.
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -199,5 +199,5 @@ az group delete -n PythonAzureExample-Storage-rg
 - [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
-- [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md)
+- [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)

@@ -3,21 +3,21 @@ title: Python용 Azure SDK 라이브러리를 사용하여 가상 머신 프로�
 description: Python 및 Azure SDK 관리 라이브러리를 사용하여 Azure 가상 머신을 프로비저닝하는 방법입니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 297e45b2d694d723b84f84f6457577503155a598
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 4b11caa66eb297225b4b61000575a8a9c48edb19
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329651"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716091"
 ---
-# <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>예: Azure 라이브러리를 사용하여 가상 머신 프로비저닝
+# <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>예제: Azure 라이브러리를 사용하여 가상 머신 프로비저닝
 
 이 예제에서는 Python 스크립트에서 Azure SDK 관리 라이브러리를 사용하여 Linux 가상 머신이 포함된 리소스 그룹을 만드는 방법을 보여줍니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.)
 
 이 문서의 모든 명령은 언급되지 않는 한 Linux/Mac OS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
 
 > [!NOTE]
-> 코드를 통해 가상 머신을 프로비저닝하는 작업은 가상 머신에 필요한 여러 가지 다른 리소스의 프로비저닝하는 다중 단계 프로세스입니다. 명령줄에서 이러한 코드를 실행하는 경우 [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) 명령을 사용하는 것이 훨씬 쉽습니다. 이 명령은 생략하도록 선택한 설정에 대해 이러한 보조 리소스를 기본값으로 자동 프로비저닝합니다. 필요한 인수는 리소스 그룹, VM 이름, 이미지 이름 및 로그인 자격 증명뿐입니다. 자세한 내용은 [Azure CLI를 사용하여 가상 머신 빠른 생성](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create)을 참조하세요.
+> 코드를 통해 가상 머신을 프로비저닝하는 작업은 가상 머신에 필요한 여러 가지 다른 리소스의 프로비전을 포함하는 여러 단계의 프로세스입니다. 명령줄에서 이러한 코드를 실행하는 경우 [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) 명령을 사용하는 것이 훨씬 쉽습니다. 이 명령은 생략하도록 선택한 설정에 대해 이러한 보조 리소스를 기본값으로 자동 프로비저닝합니다. 필요한 인수는 리소스 그룹, VM 이름, 이미지 이름 및 로그인 자격 증명뿐입니다. 자세한 내용은 [Azure CLI를 사용하여 가상 머신 빠른 생성](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create)을 참조하세요.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: 로컬 개발 환경 설정
 
@@ -227,28 +227,28 @@ python provision_vm.py
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-VM-rg -l centralus
 
-# Provision a virtual network and subnet
+rem Provision a virtual network and subnet
 
 az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet ^
     --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet ^
     --subnet-prefix 10.0.0.0/24
 
-# Provision a public IP address
+rem Provision a public IP address
 
 az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip ^
     --allocation-method Dynamic --version IPv4
 
-# Provision a network interface client
+rem Provision a network interface client
 
 az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet ^
     --subnet python-example-subnet -n python-example-nic ^
     --public-ip-address python-example-ip
 
-# Provision the virtual machine
+rem Provision the virtual machine
 
 az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" ^
     --nics python-example-nic --image UbuntuLTS ^
@@ -303,7 +303,7 @@ az group delete -n PythonAzureExample-VM-rg
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
-- [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md)
+- [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 
 다음 리소스 컨테이너는 Python을 사용하여 가상 머신을 만드는 보다 포괄적인 예제입니다.
 

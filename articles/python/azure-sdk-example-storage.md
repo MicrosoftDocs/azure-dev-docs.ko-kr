@@ -3,14 +3,14 @@ title: Python용 Azure 라이브러리로 Azure Storage 프로비저닝
 description: Python용 Azure SDK 라이브러리를 사용하여 Azure Storage 계정에서 Blob 컨테이너를 프로비저닝한 다음, 이 컨테이너에 파일을 업로드합니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffc65746be0a7e002263010df4fe3048e0c321d1
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329671"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716101"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>예: Azure Storage와 함께 Azure 라이브러리 사용
+# <a name="example-use-the-azure-libraries-with-azure-storage"></a>예제: Azure Storage와 함께 Azure 라이브러리 사용
 
 이 문서에서는 Python 스크립트로 Azure 관리 라이브러리를 사용하여 Azure Storage 계정과 Blob Storage 컨테이너가 포함된 리소스 그룹을 프로비저닝하는 방법을 알아봅니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.)
 
@@ -154,7 +154,7 @@ python provision_blob.py
 
     ![Blob 컨테이너를 보여주는 스토리지 계정의 Azure Portal 페이지](media/azure-sdk-example-storage/portal-show-blob-containers.png)
 
-1. 애플리케이션 코드에서 이러한 프로비저닝된 리소스를 사용하려는 경우 [예: Azure Storage 사용](azure-sdk-example-storage-use.md)으로 계속 진행합니다.
+1. 애플리케이션 코드에서 이러한 프로비저닝된 리소스를 사용하려는 경우 [예: Azure Storage 사용](azure-sdk-example-storage-use.md)을 시도해보세요.
 
 Azure Storage 관리 라이브러리를 사용하는 다른 예는 [Python 스토리지 샘플 관리](https://docs.microsoft.com/samples/azure-samples/storage-python-manage/storage-python-manage/)를 참조하세요.
 
@@ -165,22 +165,22 @@ Azure Storage 관리 라이브러리를 사용하는 다른 예는 [Python 스�
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-Storage-rg -l centralus
 
-# Provision the storage account
+rem Provision the storage account
 
 az storage account create -g PythonAzureExample-Storage-rg -l centralus ^
     -n pythonazurestorage12345 --kind StorageV2 --sku Standard_LRS
 
-# Retrieve the connection string
+rem Retrieve the connection string
 
 az storage account show-connection-string -g PythonAzureExample-Storage-rg ^
     -n pythonazurestorage12345
 
-# Provision the blob container; NOTE: this command assumes you have an environment variable
-# named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
+rem Provision the blob container; NOTE: this command assumes you have an environment variable
+rem named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
 
 set AZURE_STORAGE_CONNECTION_STRING=<connection_string>
 az storage container create --account-name pythonazurestorage12345 -n blob-container-01
@@ -229,5 +229,5 @@ az group delete -n PythonAzureExample-Storage-rg
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
 - [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
-- [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md)
+- [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)

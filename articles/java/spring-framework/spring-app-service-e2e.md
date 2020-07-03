@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 7e90cd39bb50f5e83ee9bc3551252fe12086e750
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.openlocfilehash: 19eb7a5633f51400e139ba8dd7ad0a1f5999a213
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861196"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507449"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL을 사용하여 App Service에 Spring 앱 배포
 
@@ -19,7 +19,7 @@ ms.locfileid: "82861196"
 
 이 자습서는 인기 있는 Spring PetClinic 샘플 앱을 기반으로 합니다. 이 항목에서는 앱의 HSQLDB 버전을 로컬에서 테스트한 다음, [Azure App Service](/azure/app-service/containers)에 배포합니다. 그런 다음, [Azure Database for MySQL](/azure/mysql)을 사용하는 버전을 구성하고 배포합니다. 마지막으로, 앱 로그에 액세스하고 앱을 실행하는 작업자 수를 늘려 규모를 확장하는 방법을 알아봅니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 * [Azure CLI](/cli/azure/overview)
 * [Java 8](http://java.oracle.com/)
@@ -86,7 +86,7 @@ set TOMCAT_HOME=<Tomcat install directory>
 ```
 ---
 
-그런 다음, *pom.xml* 파일을 업데이트하여 Tomcat WAR 파일 배포용 Maven을 구성합니다. 다음 XML을 기존 `<plugins>` 요소의 자식으로 추가합니다. 필요한 경우 `1.7.11`을 [Cargo Maven 2 플러그 인](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin)의 최신 버전으로 변경합니다.
+그런 다음, WAR 파일을 배포하기 위해 *pom.xml* 파일을 업데이트합니다. 다음 XML을 기존 `<plugins>` 요소의 자식으로 추가합니다. 필요한 경우 `1.7.11`을 [Cargo Maven 2 플러그 인](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin)의 최신 버전으로 변경합니다.
 
 ```xml
 <plugin>

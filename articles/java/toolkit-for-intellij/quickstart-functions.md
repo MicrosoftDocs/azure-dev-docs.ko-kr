@@ -3,12 +3,12 @@ title: IntelliJ IDEA를 사용하여 Azure에서 첫 번째 함수 만들기
 description: Azure Toolkit for IntelliJ를 사용하여 간단한 HTTP 트리거 함수를 Azure에 만들고 게시합니다.
 ms.topic: quickstart
 ms.date: 03/26/2020
-ms.openlocfilehash: ff0733e275f89ffa349f8455455df93587ff4fdf
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: b8d8ae4093c03e3fb0e910a0b5dd21002b0e52ab
+ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674819"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133723"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>빠른 시작: IntelliJ IDEA를 사용하여 Azure Functions 프로젝트 만들기
 
@@ -133,6 +133,13 @@ ms.locfileid: "81674819"
     ![프로젝트 선택 트리거에 함수 추가](media/quickstart-functions/add-functions-trigger.png)
     
     ![프로젝트 출력에 함수 추가](media/quickstart-functions/add-functions-output.png)
+
+## <a name="cleaning-up-functions"></a>Functions 정리
+
+1. Azure 탐색기에서 Azure Functions 삭제
+      
+      ![프로젝트 선택 트리거에 함수 추가](media/quickstart-functions/delete-function.png)
+      
 
 ## <a name="next-steps"></a>다음 단계
 

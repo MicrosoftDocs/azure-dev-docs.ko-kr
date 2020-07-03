@@ -3,20 +3,20 @@ title: Azure를 사용하여 클라우드 개발 - Azure란?
 description: Microsoft Azure에서 클라우드 애플리케이션을 개발하는 방법에 대한 개요이며, 데이터 센터, 서비스 및 리소스의 관계부터 설명합니다.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 815da765aaed1e8364c37f621f17f279212bf77f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404956"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370714"
 ---
 # <a name="cloud-development-on-azure"></a>Azure에서 클라우드 개발
 
-Python 개발자이며 Microsoft Azure용 클라우드 애플리케이션을 개발할 준비가 되어 있습니다. 세 가지 문서로 구성된 이번 시리즈에서는 길고 생산적인 경력을 준비하는 데 도움이 되도록 Azure에서 클라우드를 개발하는 기본 환경에 대해 안내합니다.
+Python 개발자이며 Microsoft Azure용 클라우드 애플리케이션을 개발할 준비가 되었습니다. 세 가지 문서로 구성된 이번 시리즈에서는 길고 생산적인 경력을 준비하는 데 도움이 되도록 Azure에서 클라우드를 개발하는 기본 환경에 대해 안내합니다.
 
 ## <a name="what-is-azure-data-centers-services-and-resources"></a>Azure란? 데이터 센터, 서비스 및 리소스
 
-Microsoft CEO Satya Nadella는 종종 Azure를 "세계의 컴퓨터"라고 말합니다. 잘 알고 있듯이, 컴퓨터는 운영 체제로 관리되는 하드웨어의 모음이며, 시스템의 컴퓨팅 기능을 얼마든지 많은 작업에 적용할 수 있도록 소프트웨어를 구축하는 플랫폼을 제공합니다. (그래서 소프트웨어를 설명할 때 "애플리케이션"이라는 단어를 사용하는 것입니다.)
+Microsoft CEO Satya Nadella는 종종 Azure를 "세계의 컴퓨터"라고 말합니다. 잘 알고 있듯이, 컴퓨터는 운영 체제로 관리되는 하드웨어의 모음이며, 시스템의 컴퓨팅 기능을 얼마든지 많은 작업에 적용할 수 있도록 소프트웨어를 빌드하는 플랫폼을 제공합니다. (그래서 소프트웨어를 설명할 때 "애플리케이션"이라는 단어를 사용하는 것입니다.)
 
 Azure의 경우, 컴퓨터의 하드웨어는 단일 머신이 아니라 [전 세계 수십 곳의 대규모 데이터 센터](https://azure.microsoft.com/global-infrastructure/regions/)에 있는 가상화된 서버 컴퓨터의 방대한 풀입니다. Azure "운영 체제"는 애플리케이션의 필요에 따라 리소스 풀의 다양한 부분을 동적으로 할당되고 할당을 해제하는 *서비스*로 이루어집니다. 각 할당 &mdash;즉, 컴퓨팅 성능(CPU 코어 및 메모리), 스토리지, 데이터베이스, 네트워크 등&mdash;을 *리소스*라고 합니다. 그리고 각각의 개별적인 리소스에는 고유한 *개체 식별자*(GUID)와 고유 URL이 할당됩니다.
 

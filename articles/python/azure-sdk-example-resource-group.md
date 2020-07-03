@@ -3,14 +3,14 @@ title: Python용 Azure 라이브러리를 사용하여 리소스 그룹 프로�
 description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용하여 Python 코드에서 리소스 그룹을 만듭니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0d0ff5bf8a2417e38f9fd066b226ed26da87322b
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 38c2f87511c040a04040844fb512fd436d566c15
+ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329681"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84453704"
 ---
-# <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>예: Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
+# <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
 
 이 예제에서는 Python 스크립트에서 Azure SDK 관리 라이브러리를 사용하여 리소스 그룹을 프로비저닝하는 방법을 보여줍니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.)
 
@@ -127,5 +127,5 @@ az group create -n PythonAzureExample-ResourceGroup-rg -l centralus
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
-- [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md)
+- [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)

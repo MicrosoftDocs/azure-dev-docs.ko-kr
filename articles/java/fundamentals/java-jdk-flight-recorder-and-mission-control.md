@@ -1,19 +1,19 @@
 ---
-title: Java Flight Recorder 및 Mission Control을 사용하여 데이터 검토
-description: Java Flight Recorder 및 Mission Control을 사용하여 앱 데이터를 수집하고 검토하기 위한 지침입니다.
+title: Zulu Flight Recorder 및 Mission Control을 사용하여 데이터 검토
+description: Zulu Flight Recorder 및 Mission Control을 사용하여 앱 데이터를 수집하고 검토하기 위한 지침입니다.
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 23effea162bb4f39ca7ff9477695e21e6faeafdb
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: afd95e7f39fb9abdfe2261c8ef0f5ac961347ffb
+ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670869"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85418201"
 ---
-# <a name="monitor-and-manage-java-workloads-with-java-flight-recorder-jfr-and-zulu-mission-control"></a>JFR(Java Flight Recorder) 및 Zulu Mission Control을 통해 Java 워크로드 모니터링 및 관리
+# <a name="monitor-and-manage-java-workloads-with-zulu-flight-recorder-and-zulu-mission-control"></a>Zulu Flight Recorder 및 Zulu Mission Control을 통해 Java 워크로드 모니터링 및 관리
 
-이 문서에서는 JFR(Java Flight Recorder) 및 Zulu Mission Control을 통해 Java 워크로드를 모니터링하고 관리하는 방법을 보여줍니다.
+이 문서에서는 Zulu Flight Recorder 및 Zulu Mission Control을 통해 Java 워크로드를 모니터링하고 관리하는 방법을 보여줍니다.
 
 Zulu Mission Control은 JDK Mission Control의 완전히 테스트된 빌드입니다. 2018년의 Oracle 오픈 소스형 Mission Control로, OpenJDK 산하의 프로젝트로 관리됩니다. Flight Recorder와 결합할 경우 Mission Control은 오버헤드가 낮고 대화형으로 모니터링하는 Java 워크로드 관리 기능을 제공합니다.
 
@@ -52,7 +52,7 @@ Zulu Mission Control은 다음과 같은 JDK/JRE와 호환됩니다.
     tar -xzvf zmc7.0.0-EA-macosx_x64.tar.gz
     ```
 
-4. 호환되는 JDK 중 하나를 사용하여 Java 애플리케이션을 시작합니다. 다음은 그 예입니다.
+4. 호환되는 JDK 중 하나를 사용하여 Java 애플리케이션을 시작합니다. 예를 들면 다음과 같습니다.
 
     ```cli
     $JAVA_HOME/bin/java -jar MyApplication.jar

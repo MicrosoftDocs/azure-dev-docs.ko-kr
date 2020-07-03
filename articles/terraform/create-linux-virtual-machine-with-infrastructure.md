@@ -3,15 +3,15 @@ title: 자습서 - Terraform을 사용하여 Azure에서 인프라를 갖춘 Lin
 description: Terraform을 사용하여 Azure에서 완전한 Linux 가상 머신 환경을 만들고 관리하는 방법을 알아봅니다.
 keywords: azure devops terraform linux vm 가상 머신
 ms.topic: tutorial
-ms.date: 05/31/2020
-ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 06/14/2020
+ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
+ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329441"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84779655"
 ---
-# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
+# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 
 Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들 수 있습니다. 일관되고 재현 가능한 방식으로 Azure 리소스를 만들고 구성하는 Terraform 템플릿을 이해하기 쉬운 형태로 빌드할 수 있습니다. 이 문서에서는 Terraform을 사용하여 전체 Linux 환경 및 지원 리소스를 만드는 방법을 보여 줍니다. [Terraform 설치 및 구성](getting-started-cloud-shell.md) 방법도 알아봅니다.
 
@@ -463,10 +463,10 @@ Plan: 7 to add, 0 to change, 0 to destroy.
 terraform apply
 ```
 
-Terraform이 완료되면 VM 인프라가 준비됩니다. [az vm show](/cli/azure/vm)를 사용하여 VM의 공용 IP 주소를 가져옵니다.
+Terraform이 완료되면 VM 인프라가 준비됩니다. [az vm show](/cli/azure/vm#az-vm-show)를 사용하여 VM의 공용 IP 주소를 가져옵니다.
 
 ```azurecli-interactive
-az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
+az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -o tsv
 ```
 
 그런 다음 VM에 SSH할 수 있습니다.

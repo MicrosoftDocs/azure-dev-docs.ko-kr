@@ -4,12 +4,12 @@ description: 자습서 1단계로, 소개 및 필수 구성 요소입니다.
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b01c45d1f61e021bb025dec4980a7a10eae6185b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 1e86b06b87ed2a0471f38102d1ad5bca8d0dfcb1
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441888"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069399"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Azure App Service에 Docker 컨테이너 배포
 
@@ -17,7 +17,9 @@ ms.locfileid: "80441888"
 
 이 자습서의 단계 중 문제가 발생하는 경우 자세한 내용을 알려주시면 감사하겠습니다. 각 문서의 끝에 있는 **문제가 발생했습니다.** 링크를 사용하여 피드백을 제출합니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+관련 데모 비디오를 보려면 가상 PyCon 2020에서 <a href="https://www.youtube.com/watch?v=t79HDLC5kQA&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code 개발 컨테이너의 Django 앱</a>(youtube.com)을 참조하세요.
+
+## <a name="prerequisites"></a>필수 구성 요소
 
 - [Azure 계정](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension)
 - [Visual Studio Code](https://code.visualstudio.com/)

@@ -3,12 +3,12 @@ title: Python용 Azure 라이브러리(SDK) 사용
 description: 개발자가 Azure 리소스를 프로비저닝, 사용 및 관리하는 경우 생산성을 높이는 데 도움이 되는 Python용 Azure 라이브러리의 특징과 기능에 대해 간략히 설명합니다.
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 056c290883984c4abfacb3b7cef9e67f09e800c7
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ffa626db0518967e2659eeb5b89ece4bc15c1ce2
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329611"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069394"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python용 Azure 라이브러리(SDK) 사용
 
@@ -16,11 +16,15 @@ Python용 오픈 소스 Azure 라이브러리는 Python 애플리케이션 코�
 
 ## <a name="the-details-you-really-want-to-know"></a>꼭 알아야 하는 정보
 
+- Azure 라이브러리는 로컬로 또는 클라우드에서 실행하는 Python 코드*에서* Azure 서비스와 통신하는 방법입니다. (특정 서비스의 범위 내에서 Python 코드를 실행할 수 있는지 여부는 해당 서비스 자체에서 현재 Python을 지원하는지에 따라 달라집니다.)
+
 - 라이브러리는 Python 2.7 및 Python 3.5.3 이상을 지원하며 PyPy 5.4 이상에서도 테스트되었습니다.
 
 - Python용 Azure SDK는 특정 Azure 서비스와 관련된 180개가 넘는 개별 Python 라이브러리로만 구성되어 있습니다. "SDK"에는 다른 도구가 없습니다.
 
-- `pip install <library_name>`에 [릴리스 목록](https://azure.github.io/azure-sdk/releases/latest/all/python.html)의 라이브러리 패키지 이름을 사용하여 필요한 라이브러리를 설치할 수 있습니다. 자세한 내용은 [Azure 라이브러리 설치](azure-sdk-install.md)를 참조하세요.
+- 코드를 로컬로 실행할 때 Azure를 사용하여 인증하려면 [로컬 개발 환경 구성](configure-local-development-environment.md)에 설명된 대로 환경 변수를 사용합니다. 
+
+- [Python SDK 패키지 인덱스](azure-sdk-library-package-index.md)의 라이브러리 이름을 사용하여 `pip install <library_name>`에 필요한 라이브러리를 설치합니다. 자세한 내용은 [Azure 라이브러리 설치](azure-sdk-install.md)를 참조하세요.
 
 - "관리" 및 "클라이언트" 라이브러리("관리 평면" 및 "데이터 평면" 라이브러리라고도 함)가 별도로 있습니다. 각 세트는 서로 다른 용도로 사용되며 서로 다른 종류의 코드에 사용됩니다. 자세한 내용은 이 문서의 뒷부분에서 다음 섹션을 참조하십시오.
   - [관리 라이브러리를 사용하여 Azure 리소스 프로비저닝 및 관리](#provision-and-manage-azure-resources-with-management-libraries)
@@ -29,6 +33,8 @@ Python용 오픈 소스 Azure 라이브러리는 Python 애플리케이션 코�
 - 라이브러리에 대한 설명서는 [Python용 Azure 라이브러리 참조](/python/api/overview/azure/?view=azure-python)(Azure 서비스로 구성되어 있음) 또는 [Python API 브라우저](/python/api/?view=azure-python)(패키지 이름으로 구성되어 있음)에서 찾을 수 있습니다. 현재, 관심 있는 클래스와 메서드로 이동하려면 여러 레이어를 클릭해야 하는 경우가 종종 있습니다. 환경이 열악한 점에 대해 미리 사과드립니다. 개선하기 위해 노력하고 있습니다!
 
 - 라이브러리를 직접 사용해 보려면 먼저 [로컬 개발 환경을 설정](configure-local-development-environment.md)하는 것이 좋습니다. 그런 다음, 다음의 독립 실행형 예제를 순서에 관계없이 사용해 볼 수 있습니다. [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md), [예: Azure Storage 프로비저닝 및 사용](azure-sdk-example-storage.md), [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md), [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md), [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md).
+
+- 데모 비디오를 보려면 가상 PyCon 2020에서 <a href="https://www.youtube.com/watch?v=M1pVxItg2Mg&feature=youtu.be&ocid=AID3006292" target="_blank">Azure SDK를 사용하여 Azure 리소스와 상호 작용</a>(youtube.com)을 참조하세요.
 
 ### <a name="non-essential-but-still-interesting-details"></a>필수는 아니지만 흥미로운 정보
 
@@ -46,7 +52,7 @@ Python용 오픈 소스 Azure 라이브러리는 Python 애플리케이션 코�
 
   - 이 공유 기능은 [azure-core](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core) 라이브러리에 포함되어 있습니다.
 
-  - 현재 코어 라이브러리와 작동하는 라이브러리는 [Python용 Azure SDK 최신 릴리스](https://azure.github.io/azure-sdk/releases/latest/#python)에 나열되어 있습니다. 이러한 라이브러리는 주로 클라이언트 라이브러리이며 "트랙 2"라고 하는 경우도 있습니다.
+  - 현재 코어 라이브러리와 작동하는 라이브러리는 [Python용 Azure SDK 최신 릴리스](azure-sdk-library-package-index.md#libraries-using-azurecore)에 나열되어 있습니다. 이러한 라이브러리는 주로 클라이언트 라이브러리이며 "트랙 2"라고 하는 경우도 있습니다.
 
   - 관리 라이브러리와 아직 업데이트되지 않은 다른 라이브러리를 "트랙 1"이라고도 합니다.
 

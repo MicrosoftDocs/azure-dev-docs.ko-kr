@@ -2,13 +2,13 @@
 title: 자습서 - Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿 만들기
 description: Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿을 만드는 방법을 알아봅니다.
 ms.topic: tutorial
-ms.date: 04/25/2020
-ms.openlocfilehash: 1c60af3f4ebdac75dc5c4c56b76ee271002f29d6
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 05/25/2020
+ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
+ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329951"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85418221"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>자습서: Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
 
@@ -282,7 +282,7 @@ Azure용 Yeoman 생성기(https://github.com/Azure/generator-az-terra-module )�
 
     ![Rake 빌드](media/create-a-base-template-using-yeoman/ymg-rake-build.png)
 
-1. 다음 명령을 실행하여 텍스트를 실행합니다.
+1. 다음 명령을 실행하여 테스트를 실행합니다.
 
     ```bash
     rake e2e

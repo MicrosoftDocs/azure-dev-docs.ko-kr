@@ -3,12 +3,12 @@ title: Azure 개발을 위한 로컬 Python 환경 구성
 description: Visual Studio Code, Azure SDK 라이브러리 및 라이브러리 인증에 필요한 자격 증명을 포함하여 Azure를 사용하기 위한 로컬 Python 개발 환경을 설정하는 방법을 설명합니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: e3eb03182a45f3ceacc8b3ea09abca47d8fa2e81
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: cf87c90bd36594ffa4e1f3837133238f89a77836
+ms.sourcegitcommit: 43e4b50f6f6f5806b2f162ca39367face0779ff6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256458"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421499"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure를 위한 로컬 Python 개발 환경 구성
 
@@ -21,6 +21,8 @@ ms.locfileid: "84256458"
 - 각 프로젝트의 [Python 가상 환경 사용](#use-python-virtual-environments) 프로세스를 검토합니다.
 
 워크스테이션을 구성한 후에는 최소한의 구성만 추가하면 이 개발자 센터와 Azure 설명서의 다른 곳에서 다양한 빠른 시작과 자습서를 완료할 수 있습니다.
+
+로컬 개발을 위한 이 설정은 Azure에서 애플리케이션의 *클라우드 환경*을 구성하는 [프로비저닝 리소스](cloud-development-flow.md)와는 별개의 문제입니다. 개발 프로세스에서는 해당 클라우드 리소스에 액세스할 수 있는 로컬 개발 환경에서 코드를 실행하지만, 코드는 아직 클라우드의 [적절한 호스팅 서비스](quickstarts-app-hosting.md)에 배포되지 않았습니다. 이 배포 단계는 [Azure 개발 흐름](cloud-development-flow.md) 문서에 설명된 대로 나중에 제공됩니다.
 
 ## <a name="install-components"></a>구성 요소 설치
 
@@ -71,7 +73,7 @@ az login
 
 `az` 명령은 Azure CLI의 루트 명령입니다. `az` 뒤에는 하나 이상의 명령(예: `login`)이 붙습니다. [az login](/cli/azure/authenticate-azure-cli) 명령 참조를 확인하세요.
 
-Azure CLI은 일반적으로 세션 간에 로그인을 유지하지만, 새 터미널 또는 명령 프롬프트를 열 때마다 `az login`을 실행하는 것이 좋습니다.
+Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터미널 또는 명령 프롬프트를 열 때마다 `az login`을 실행하는 것이 좋습니다.
 
 ## <a name="configure-authentication"></a>인증 구성
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
-ms.openlocfilehash: 5377aed7ee541f1954a95f992ffee03a7cb569a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0dc5459ab4898deecebbc199e62f5dccc8ee6f7d
+ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672809"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85790745"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>Java CA 인증서 저장소에 루트 인증서 추가
 
@@ -44,7 +44,7 @@ Baltimore 인증서가 cacerts 저장소에 이미 설치되어 있을 수 있�
 
 ## <a name="to-add-a-root-certificate-to-the-cacerts-store"></a>cacerts 저장소에 루트 인증서를 추가하려면
 
-1. <https://cacert.omniroot.com/bc2025.crt>에서 Baltimore CyberTrust 루트 인증서를 다운로드하고, *.cer* 확장자로 *jdk\jre\lib\security* 폴더에 로컬 파일로 저장합니다. 본 예에서는 Baltimore CyberTrust 루트 인증서 파일을 *bc2025.cer*로 다운로드한 것으로 가정합니다.
+1. <https://cacert.omniroot.com/bc2025.crt>에서 Baltimore CyberTrust 루트 인증서를 다운로드하고 *jdk\jre\lib\security* 폴더에 확장명이 *.crt*인 로컬 파일로 저장합니다. 이 예제에서는 Baltimore CyberTrust 루트 인증서 파일을 *bc2025.crt*로 다운로드한 것으로 가정합니다.
 
    > [!NOTE]
    > Baltimore CyberTrust 루트 인증서의 시리얼 번호는 `02:00:00:b9`이며, SHA1 지문은 `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`입니다.
@@ -52,7 +52,7 @@ Baltimore 인증서가 cacerts 저장소에 이미 설치되어 있을 수 있�
 2. 다음 명령을 사용하여 cacerts 저장소로 인증서를 가져오기 합니다:
 
    ```shell
-   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.cer
+   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.crt
    ```
 
    위치:

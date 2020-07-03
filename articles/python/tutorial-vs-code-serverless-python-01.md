@@ -4,12 +4,12 @@ description: 자습서 1단계로, 소개 및 필수 구성 요소입니다.
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.openlocfilehash: e05402123da0c95a7e3abed8d0f525ad0c065bbe
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708587"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069368"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포
 
@@ -19,7 +19,9 @@ Azure Functions는 가상 머신을 프로비저닝하거나 웹앱을 게시할
 
 이 자습서의 단계 중 문제가 발생하는 경우 자세한 내용을 알려주시면 감사하겠습니다. 각 문서의 끝에 있는 **문제가 발생했습니다.** 링크를 사용하여 피드백을 제출해주세요.
 
-## <a name="prerequisites"></a>사전 요구 사항
+데모 비디오를 보려면 가상 PyCon 2020에서 <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code로 Azure Functions 빌드</a>(youtube.com)를 참조하세요. 더 긴 세션인 <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Azure Functions를 사용한 손쉬운 데이터 처리</a>(youtube.com)에 관심이 있을 수도 있습니다. 
+
+## <a name="prerequisites"></a>필수 구성 요소
 
 - [Azure 구독](#azure-subscription).
 - [Azure Functions Core Tools](#azure-functions-core-tools).
@@ -42,7 +44,7 @@ Node.js를 설치할 때는 기본 옵션을 사용하고 필요한 도구를 �
 
 다음 소프트웨어를 설치합니다.
 
-- Azure Functions에 필요한 Python 3.6, 3.7 또는 3.8 [python.org](https://www.python.org/downloads)에서 Python을 설치합니다. 설치할 때 **PATH에 Python 3.x 추가**를 선택하고 **지금 설치** 옵션을 선택하여 기본 옵션을 사용합니다. Windows에서는 프로세스가 끝날 때 **경로 길이 제한 사용 안 함**을 선택합니다.
+- Azure Functions에 필요한 64비트 버전의 Python 3.6, 3.7 또는 3.8입니다. [python.org](https://www.python.org/downloads)에서 Python을 설치합니다. 설치할 때 **PATH에 Python 3.x 추가**를 선택하고 **지금 설치** 옵션을 선택하여 기본 옵션을 사용합니다. Windows에서는 프로세스가 끝날 때 **경로 길이 제한 사용 안 함**을 선택합니다.
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Visual Studio Code Python 자습서 - 필수 구성 요소](https://code.visualstudio.com/docs/python/python-tutorial)에 설명된 [Python 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 - [Azure Functions 확장](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). 일반 정보는 [vscode-azurefunctions GitHub 리포지토리](https://github.com/Microsoft/vscode-azurefunctions)를 참조하세요.

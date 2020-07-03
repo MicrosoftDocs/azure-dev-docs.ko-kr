@@ -2,14 +2,14 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: d4b9becdce2b78e928b97b7d980024eac5871df2
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: e1bd45413368abe253ff4ac7733bbdcd3d0a4cc3
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369804"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507518"
 ---
-`DemoApplication` 클래스 옆에 새 `Todo` Java 클래스를 만듭니다.
+다음 코드를 사용하여 `DemoApplication` 클래스 옆에 새 `Todo` Java 클래스를 만듭니다.
 
 ```java
 package com.example.demo;
@@ -72,7 +72,7 @@ public class Todo {
 
 이 클래스는 이전에 만든 `todo` 테이블에 매핑된 도메인 모델입니다.
 
-해당 클래스를 관리하려면 리포지토리가 필요합니다. 동일한 패키지에 새 `TodoRepository` 인터페이스를 정의합니다.
+해당 클래스를 관리하려면 리포지토리가 필요합니다. 다음 코드를 사용하여 동일한 패키지에 새 `TodoRepository` 인터페이스를 정의합니다.
 
 ```java
 package com.example.demo;
@@ -118,7 +118,7 @@ public class TodoController {
 }
 ```
 
-마지막으로, 애플리케이션을 중지하고 다시 시작합니다.
+마지막으로, 다음 명령을 사용하여 애플리케이션을 중지하고 다시 시작합니다.
 
 ```bash
 ./mvnw spring-boot:run
@@ -128,28 +128,28 @@ public class TodoController {
 
 애플리케이션을 테스트할 때 cURL을 사용할 수 있습니다.
 
-먼저 데이터베이스에 새 "todo" 항목을 만듭니다.
+먼저 다음 명령을 사용하여 데이터베이스에 새 "todo" 항목을 만듭니다.
 
 ```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
+curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
+    http://127.0.0.1:8080
 ```
 
-이 명령은 생성된 항목을 반환합니다.
+이 명령은 다음과 같이 만들어진 항목을 반환해야 합니다.
 
 ```json
 {"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}
 ```
 
-다음으로, 새 cURL 요청을 사용하여 데이터를 검색합니다.
+다음으로, 다음 명령을 통해 새 cURL 요청을 사용하여 데이터를 검색합니다.
 
 ```bash
 curl http://127.0.0.1:8080
 ```
 
-이 명령은 생성된 항목을 포함한 "todo" 항목 목록을 반환합니다.
+이 명령은 다음과 같이 만들어진 항목을 포함하여 "todo" 항목 목록을 반환합니다.
 
 ```json
 [{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}]

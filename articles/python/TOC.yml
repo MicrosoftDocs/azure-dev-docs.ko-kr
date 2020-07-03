@@ -16,6 +16,8 @@
       href: configure-local-development-environment.md
     - name: 라이브러리 사용 패턴
       href: azure-sdk-library-usage-patterns.md
+    - name: 라이브러리 패키지 인덱스
+      href: azure-sdk-library-package-index.md
     - name: 예제
       items:
         - name: 리소스 그룹 프로비저닝
@@ -106,10 +108,10 @@
       href: how-to-assign-role-permissions.md
     - name: 로깅 구성
       href: azure-sdk-logging.md
-    - name: REST API 인수 구성
-      href: azure-sdk-operation-config.md
-    - name: 다중 클라우드 개발
-      href: azure-sdk-multi-cloud.md
+    - name: 프록시 구성
+      href: azure-sdk-configure-proxy.md
+    - name: 소버린 도메인 사용
+      href: azure-sdk-sovereign-domain.md
 - name: 샘플
   items:
     - name: 웹앱 및 서버리스

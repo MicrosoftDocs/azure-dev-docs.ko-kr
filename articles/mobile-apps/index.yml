@@ -1,159 +1,164 @@
-### YamlMime:Hub
+### YamlMime:Landing
 title: 모바일 개발자용 Azure 설명서
-summary: Azure에서 모바일 앱을 개발하는 데 필요한 정보 찾기
-brand: azure
+summary: Azure에서 모바일 앱을 개발하는 데 필요한 정보를 찾습니다.
 metadata:
-  title: 모바일 개발자용 Azure
-  description: Azure에서 모바일 앱을 개발하는 데 필요한 정보 찾기
-  services: mobile-services
+  title: 모바일 개발자용 Azure 설명서
+  description: Azure에서 모바일 앱을 개발하는 데 필요한 정보를 찾습니다.
   ms.service: mobile-services
-  ms.topic: hub-page
+  ms.subservice: mobile-services
+  ms.topic: landing-page
+  ms.collection: collection
   author: codemillmatt
   ms.author: masoucou
-  ms.date: 06/08/2020
-  ms.openlocfilehash: b641175986a6cede2bbd982e20e78f35b3b4ecb3
-  ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+  ms.date: 06/25/2020
+  ms.openlocfilehash: 6c7a1c2502ad8b1d24b074d291bb909c500a0727
+  ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/09/2020
-  ms.locfileid: "84632735"
-highlightedContent:
-  items:
-  - title: 모바일 개발 프레임워크 선택
-    itemType: architecture
-    url: choose-mobile-framework.md
-  - title: Azure 모바일 애플리케이션 개발 단계
-    itemType: architecture
-    url: mobile-cloud-development-stages.md
-  - title: Azure를 사용하여 전체 모바일 앱 빌드
-    itemType: video
-    url: https://channel9.msdn.com/Shows/Partly-Cloudy
-  - title: Xamarin.Forms를 사용하여 모바일 앱 빌드
-    itemType: learn
-    url: https://docs.microsoft.com/learn/paths/build-mobile-apps-with-xamarin-forms/
-conceptualContent:
-  title: 시작하기
-  summary: Azure를 사용하여 클라우드 연결 모바일 앱 만들기
-  items:
-  - title: 웹 서비스 호출
+  ms.lasthandoff: 07/01/2020
+  ms.locfileid: "85790627"
+landingContent:
+- title: Azure에서 모바일 시작
+  linkLists:
+  - linkListType: architecture
     links:
-    - url: serverless-compute.md
-      itemType: concept
-      text: Azure Functions 및 기타 서비스를 사용하여 서버리스 모바일 애플리케이션 백 엔드 빌드
-    - url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions.md
-      itemType: quickstart
-      text: Azure Functions 및 Xamarin 시작
-    - url: /learn/modules/consume-rest-services.md
-      itemType: learn
-      text: Xamarin으로 RESTful 웹 서비스 사용
-    - url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr.md
-      itemType: concept
-      text: Xamarin.Forms와 Azure SignalR Service
-    - url: /azure/api-management/api-management-key-concepts.md
-      itemType: overview
-      text: Azure API Management 개요
-    - url: real-time-communication.md
-      itemType: overview
-      text: Azure SignalR Service를 사용하여 실시간 앱 빌드
-  - title: 데이터 저장
+    - text: 모바일 개발 프레임워크 선택
+      url: choose-mobile-framework.md
+    - text: Azure 모바일 애플리케이션 개발 단계
+      url: mobile-cloud-development-stages.md
+  - linkListType: learn
     links:
-    - url: data-storage.md
-      itemType: concept
-      text: 클라우드의 모바일 애플리케이션 데이터 저장, 동기화 및 쿼리
-    - url: /azure/cosmos-db/create-sql-api-xamarin-dotnet.md
-      itemType: quickstart
-      text: Azure Cosmos DB를 사용하여 데이터 저장
-    - url: /azure/cosmos-db/create-mongodb-xamarin.md
-      itemType: quickstart
-      text: .NET SDK 및 Azure Cosmos DB의 MongoDB API를 사용하여 Xamarin.Forms 앱 빌드
-    - url: azure-storage.md
-      itemType: overview
-      text: Azure Storage를 사용한 매우 안전하고 내구성이 뛰어나고 확장 가능한 앱용 클라우드 저장소
-    - url: /azure/storage/blobs/storage-quickstart-blobs-xamarin.md
-      itemType: quickstart
-      text: Blob 스토리지 작업
-    - url: azure-content-delivery-network.md
-      itemType: overview
-      text: Azure Content Delivery Network로 콘텐츠 전송
-  - title: 푸시 알림 보내기
+    - text: Xamarin.Forms를 사용하여 모바일 앱 빌드
+      url: https://docs.microsoft.com/learn/paths/build-mobile-apps-with-xamarin-forms/
+  - linkListType: video
     links:
-    - url: push-notifications.md
-      itemType: overview
-      text: 푸시 알림을 보내 애플리케이션 사용자와 함께 참여
-    - url: /azure/notification-hubs/create-notification-hub-portal.md
-      itemType: quickstart
-      text: Azure Portal을 사용하여 Azure 알림 허브 만들기
-    - url: /azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started.md
-      itemType: tutorial
-      text: Android 디바이스에 푸시 알림 보내기
-    - url: /azure/notification-hubs/push-notifications-android-specific-devices-firebase-cloud-messaging.md
-      itemType: tutorial
-      text: Notification Hubs 및 Google Firebase Cloud Messaging을 사용하여 특정 디바이스에 알림 보내기
-    - url: /azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich.md
-      itemType: how-to-guide
-      text: 디바이스에 풍부한 콘텐츠 푸시
-  - title: 사용자 인증
+    - text: Azure를 사용하여 전체 모바일 앱 빌드
+      url: https://channel9.msdn.com/Shows/Partly-Cloudy
+    - text: 앱에 대한 사용자 지정 모바일 백 엔드 빌드
+      url: https://channel9.msdn.com/events/dotnetConf/Focus-on-Xamarin/Stitching-Together-a-Mobile-Backend-for-Your-App
+- title: 웹 서비스 호출
+  linkLists:
+  - linkListType: overview
     links:
-    - url: authentication.md
-      itemType: overview
-      text: 모바일 앱에서 인증 추가 및 사용자 ID 관리
-    - url: /azure/active-directory/develop/tutorial-v2-android.md
-      itemType: tutorial
-      text: Android 애플리케이션에서 사용자 로그인 및 Microsoft Graph 호출
-    - url: /azure/active-directory-b2c/add-native-application.md
-      itemType: how-to-guide
-      text: Active Directory B2C 테넌트에 네이티브 클라이언트 애플리케이션 추가
-    - url: /azure/active-directory/develop/msal-authentication-flows.md
-      itemType: concept
-      text: MSAL(Microsoft 인증 라이브러리)을 사용하여 지원되는 인증 흐름
-    - url: https://github.com/Azure-Samples/active-directory-b2c-ios-swift-native-msal
-      itemType: sample
-      text: Swift iOS 앱을 사용하여 사용자 로그인
-  - title: DevOps
+    - text: Azure Functions 및 기타 서비스를 사용하여 서버리스 모바일 애플리케이션 백 엔드 빌드
+      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+    - text: Azure SignalR을 사용하여 실시간 애플리케이션 빌드
+      url: real-time-communication.md
+  - linkListType: quickstart
     links:
-    - url: continuous-delivery.md
-      itemType: concept
-      text: 지속적인 배달 서비스를 통해 모바일 애플리케이션의 배포 및 릴리스 자동화
-    - url: continuous-integration.md
-      itemType: concept
-      text: 연속 빌드 및 통합으로 앱 수명 주기 자동화
-    - url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
-      itemType: concept
-      text: 새로운 Azure Pipelines 사용자를 위한 핵심 개념
-    - url: /appcenter/distribution/uploading.md
-      itemType: how-to-guide
-      text: App Center를 사용하여 빌드 릴리스
-    - url: /appcenter/distribution/codepush.md
-      itemType: overview
-      text: App Center CodePush
-  - title: 분석 및 크래시 보고
+    - text: Azure Functions 및 Xamarin 시작
+      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+    - text: Xamarin.Forms와 Azure SignalR Service
+      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
+  - linkListType: learn
     links:
-    - url: analytics.md
-      itemType: concept
-      text: 모바일 애플리케이션 사용 분석 및 이해
-    - url: /appcenter/analytics/overview.md
-      itemType: overview
-      text: App Center 분석
-    - url: https://docs.microsoft.com/appcenter/diagnostics/enabling-diagnostics
-      itemType: how-to-guide
-      text: 앱에서 진단 사용
-    - url: diagnostics.md
-      itemType: concept
-      text: 모바일 애플리케이션의 실패 및 오류 실시간 모니터링
-    - url: /appcenter/analytics/log-flow.md
-      itemType: tutorial
-      text: 실시간 분석 받기
-additionalContent:
-  sections:
-  - title: Azure 모바일 SDK
-    summary: 다음은 Azure 모바일 클라이언트 SDK의 일부입니다.
-    items:
-    - title: iOS
-      summary: Microsoft Azure용 iOS 클라이언트 SDK
+    - text: Xamarin으로 RESTful 웹 서비스 사용
+      url: https://docs.microsoft.com/learn/modules/consume-rest-services
+- title: 데이터 저장
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 클라우드의 모바일 애플리케이션 데이터 저장, 동기화 및 쿼리
+      url: data-storage.md
+    - text: Azure Storage를 사용한 매우 안전하고 내구성이 뛰어나고 확장 가능한 앱용 클라우드 저장소
+      url: azure-storage.md
+    - text: Azure Content Delivery Network로 콘텐츠 전송
+      url: azure-content-delivery-network.md
+  - linkListType: quickstart
+    links:
+    - text: Azure Cosmos DB를 사용하여 데이터 저장
+      url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+    - text: Blob 스토리지 작업
+      url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-xamarin
+    - text: .NET SDK 및 Azure Cosmos DB의 MongoDB API를 사용하여 Xamarin.Forms 앱 빌드
+      url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-xamarin
+- title: 푸시 알림 보내기
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 푸시 알림을 보내 애플리케이션 사용자와 함께 참여
+      url: push-notifications.md
+  - linkListType: quickstart
+    links:
+    - text: Azure Portal을 사용하여 Azure 알림 허브 만들기
+      url: https://docs.microsoft.com/azure/notification-hubs/create-notification-hub-portal
+  - linkListType: tutorial
+    links:
+    - text: Android 디바이스에 푸시 알림 보내기
+      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
+    - text: Notification Hubs 및 Google Firebase Cloud Messaging을 사용하여 특정 디바이스에 알림 보내기
+      url: https://docs.microsoft.com/azure/notification-hubs/push-notifications-android-specific-devices-firebase-cloud-messaging
+    - text: 디바이스에 풍부한 콘텐츠 푸시
+      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
+- title: 사용자 인증
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: MSAL(Microsoft 인증 라이브러리)을 사용하여 지원되는 인증 흐름
+      url: https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows
+    - text: 모바일 앱에서 인증 추가 및 사용자 ID 관리
+      url: authentication.md
+  - linkListType: tutorial
+    links:
+    - text: Android 애플리케이션에서 사용자 로그인 및 Microsoft Graph 호출
+      url: https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android
+    - text: Active Directory B2C 테넌트에 네이티브 클라이언트 애플리케이션 추가
+      url: https://docs.microsoft.com/azure/active-directory-b2c/add-native-application
+  - linkListType: sample
+    links:
+    - text: Swift iOS 앱을 사용하여 사용자 로그인
+      url: https://github.com/Azure-Samples/active-directory-b2c-ios-swift-native-msal
+- title: DevOps를 사용하여 빌드 및 배포 자동화
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 지속적인 배달 서비스를 통해 모바일 애플리케이션의 배포 및 릴리스 자동화
+      url: continuous-delivery.md
+    - text: 연속 빌드 및 통합으로 앱 수명 주기 자동화
+      url: continuous-integration.md
+    - text: 새로운 Azure Pipelines 사용자를 위한 핵심 개념
+      url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+  - linkListType: overview
+    links:
+    - text: App Center를 사용하여 빌드 릴리스
+      url: https://docs.microsoft.com/appcenter/distribution/uploading
+  - linkListType: how-to-guide
+    links:
+    - text: App Center CodePush
+      url: https://docs.microsoft.com/appcenter/distribution/codepush
+- title: 분석 및 충돌 추적
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 모바일 애플리케이션 사용 분석 및 이해
+      url: analytics.md
+    - text: 모바일 애플리케이션의 실패 및 오류 실시간 모니터링
+      url: diagnostics.md
+  - linkListType: overview
+    links:
+    - text: App Center 분석
+      url: https://docs.microsoft.com/appcenter/analytics/overview
+  - linkListType: how-to-guide
+    links:
+    - text: 앱에서 진단 사용
+      url: https://docs.microsoft.com/appcenter/diagnostics/enabling-diagnostics
+  - linkListType: tutorial
+    links:
+    - text: 실시간 분석 받기
+      url: https://docs.microsoft.com/appcenter/analytics/log-flow
+- title: SDK를 사용하여 개발
+  linkLists:
+  - linkListType: download
+    links:
+    - text: iOS
       url: https://github.com/Azure/azure-sdk-for-ios
-    - title: Android
-      summary: Microsoft Azure용 Android 클라이언트 SDK
+    - text: Android
       url: https://github.com/Azure/azure-sdk-for-android
-    - title: .NET / Xamarin
-      summary: .NET 및 Xamarin용 Azure SDK
+    - text: .NET / Xamarin
       url: https://azure.github.io/azure-sdk/releases/latest/dotnet.html
+    - text: iOS용 MSAL(Microsoft 인증 라이브러리)
+      url: https://github.com/AzureAD/microsoft-authentication-library-common-for-objc
+    - text: Android용 MSAL(Microsoft 인증 라이브러리)
+      url: https://github.com/AzureAD/microsoft-authentication-library-for-android
+    - text: .NET/Xamarin용 MSAL(Microsoft 인증 라이브러리)
+      url: https://github.com/AzureAD/microsoft-authentication-library-for-dotnet

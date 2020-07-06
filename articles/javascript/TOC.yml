@@ -1,6 +1,10 @@
 - name: JavaScript 및 Node.js 개발자용 Azure
   href: index.yml
   items:
+    - name: JavaScript로 Azure에서 시작
+      items:
+        - name: 개발 환경 설정
+          href: configure-local-development-environment.md
     - name: 빠른 시작
       expanded: true
       items:

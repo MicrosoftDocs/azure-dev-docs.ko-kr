@@ -1,18 +1,18 @@
 ---
 title: Python용 Azure 라이브러리의 사용 패턴
 description: Python용 Azure SDK 라이브러리의 일반적인 사용 패턴 개요
-ms.date: 05/26/2020
+ms.date: 06/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: f712dc41233b8301e370c9eb63786d8e2d7f8c70
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: d1cd1b1c965fdf5b6907c9842260d4c029d625f5
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256278"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942412"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python용 Azure 라이브러리 사용 패턴
 
-Python용 Azure SDK는 [Python용 Azure SDK 인덱스 페이지](https://azure.github.io/azure-sdk/releases/latest/all/python.html)에 나열된 여러 독립 라이브러리로만 구성됩니다.
+Python용 Azure SDK는 [Python SDK 패키지 인덱스](azure-sdk-library-package-index.md)에 나열된 여러 독립적인 라이브러리로만 구성됩니다.
 
 모든 라이브러리는 설치 및 개체 인수에 대한 인라인 JSON 사용과 같은 특정 공통 특성 및 사용 패턴을 공유합니다.
 
@@ -33,6 +33,79 @@ pip install azure-storage-blob
 `pip install`은 현재 Python 환경에서 최신 버전의 라이브러리를 검색합니다.
 
 `pip`를 사용하여 라이브러리를 제거하고 미리 보기 버전을 비롯한 특정 버전을 설치할 수도 있습니다. 자세한 내용은 [Python용 Azure 라이브러리 패키지 설치 방법](azure-sdk-install.md)을 참조하세요.
+
+## <a name="asynchronous-operations"></a>비동기 작업
+
+클라이언트 및 관리 클라이언트 개체(예: [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-))를 통해 호출하는 많은 작업에서는 `AzureOperationPoller[<type>]` 형식의 개체를 반환합니다. 여기서 `<type>`은 해당 작업에만 적용됩니다.
+
+[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python) 반환 형식은 비동기 작업임을 의미합니다. 따라서 해당 폴러의 `result` 메서드를 호출하여 실제 작업 결과를 사용할 수 있게 될 때까지 기다려야 합니다.
+
+[예제: 웹앱 프로비저닝 및 배포](azure-sdk-example-web-app.md)에서 가져온 다음 코드는 폴러를 사용하여 결과를 기다리는 예제를 보여 줍니다.
+
+```python
+poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
+    WEB_APP_NAME,
+    {
+        "location": LOCATION,
+        "server_farm_id": plan_result.id,
+        "site_config": {
+            "linux_fx_version": "python|3.8"
+        }
+    }
+)
+
+web_app_result = poller.result()
+```
+
+이 경우 `create_or_update`의 반환 값이 `AzureOperationPoller[Site]` 형식이며, 이는 `poller.result()`의 반환 값이 [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python) 개체임을 의미합니다.
+
+## <a name="exceptions"></a>예외
+
+Azure REST API에 대한 실패한 HTTP 요청을 포함하여 작업이 의도한 대로 수행되지 않으면 일반적으로 Azure 라이브러리에서 예외가 발생합니다. 그러면 앱 코드에서 라이브러리 작업 주위에 `try...except` 블록을 사용할 수 있습니다.
+
+발생할 수 있는 예외의 형식에 대한 자세한 내용은 해당 작업에 대한 설명서를 참조하세요.
+
+## <a name="logging"></a>로깅
+
+최신 Azure 라이브러리는 Python 표준 `logging` 라이브러리를 사용하여 로그 출력을 생성합니다. 개별 라이브러리, 라이브러리 그룹 또는 모든 라이브러리에 대한 로깅 수준을 설정할 수 있습니다. 로깅 스트림 처리기가 등록되면 특정 클라이언트 개체 또는 특정 작업에 대한 로깅을 사용하도록 설정할 수 있습니다. 자세한 내용은 [Azure 라이브러리의 로깅](azure-sdk-logging.md)을 참조하세요.
+
+## <a name="proxy-configuration"></a>프록시 구성
+
+프록시를 지정하려면 환경 변수 또는 선택적 인수를 사용할 수 있습니다. 자세한 내용은 [프록시를 구성하는 방법](azure-sdk-configure-proxy.md)을 참조하세요.
+
+## <a name="optional-arguments-for-client-objects-and-methods"></a>클라이언트 개체 및 메서드에 대한 선택적 인수
+
+라이브러리 참조 설명서에서 `**kwargs` 또는 `**operation_config**` 인수는 클라이언트 개체 생성자 또는 특정 작업 메서드의 서명에 표시되는 경우가 많습니다. 이러한 자리 표시자는 해당 개체 또는 메서드에서 명명된 추가 인수를 지원할 수 있음을 의미합니다. 일반적으로 참조 설명서에는 사용할 수 있는 특정 인수가 표시됩니다. 또한 다음 섹션에서 설명한 대로 자주 지원되는 몇 가지 일반적인 인수도 있습니다.
+
+### <a name="arguments-for-libraries-based-on-azurecore"></a>azure.core를 기반으로 하는 라이브러리에 대한 인수
+
+이러한 인수는 [Python - 새 라이브러리](https://azure.github.io/azure-sdk/releases/latest/#python)에 나열된 라이브러리에 적용됩니다.
+
+| Name                       | Type | 기본값     | Description |
+| ---                        | ---  | ---         | ---         |
+| logging_enable             | bool | False       | 로깅을 사용하도록 설정합니다. 자세한 내용은 [Azure 라이브러리의 로깅](azure-sdk-logging.md)을 참조하세요. |
+| proxies                    | dict | {}          | 프록시 서버 URL입니다. 자세한 내용은 [프록시를 구성하는 방법](azure-sdk-configure-proxy.md)을 참조하세요. |
+| use_env_settings           | bool | True        | True이면 `HTTP_PROXY` 및 `HTTPS_PROXY` 환경 변수를 프록시에 사용할 수 있습니다. False이면 환경 변수가 무시됩니다. 자세한 내용은 [프록시를 구성하는 방법](azure-sdk-configure-proxy.md)을 참조하세요. |
+| connection_timeout         | int  | 300         | Azure REST API 엔드포인트에 연결하는 데 적용되는 시간 제한(초)입니다. |
+| read_timeout               | int  | 300         | Azure REST API 작업을 완료하는 데 적용되는 시간 제한(초), 즉 응답을 기다리는 시간입니다. |
+| retry_total                | int  | 10          | REST API 호출에 대해 허용되는 재시도 횟수입니다. 재시도를 사용하지 않도록 설정하려면 `retry_total=0`을 사용합니다. |
+| retry_mode                 | enum | exponential | 재시도 타이밍을 linear(선형) 또는 exponential(지수) 방식으로 적용합니다. 'single'이면 재시도가 일정한 간격으로 수행됩니다. 'exponential'이면 각 재시도에서 이전 재시도보다 두 배 더 오래 기다립니다. |
+
+개별 라이브러리는 이러한 인수를 지원할 필요가 없으므로 정확한 세부 정보는 항상 각 라이브러리에 대한 참조 설명서를 참조하세요.
+
+### <a name="arguments-for-non-core-libraries"></a>코어가 아닌 라이브러리에 대한 인수
+
+| Name               | Type | 기본값 | Description |
+| ---                | ---  | ---     | ---         |
+| verify             | bool | True    | SSL 인증서를 확인합니다. |
+| cert               | str  | None    | 클라이언트 측 확인을 위한 로컬 인증서의 경로입니다. |
+| 시간 제한            | int  | 30      | 서버 연결을 설정하기 위한 시간 제한(초). |
+| allow_redirects    | bool | False   | 리디렉션을 사용하도록 설정합니다. |
+| max_redirects      | int  | 30      | 최대 허용 리디렉션 수입니다. |
+| proxies            | dict | {}      | 프록시 서버 URL입니다. 자세한 내용은 [프록시를 구성하는 방법](azure-sdk-configure-proxy.md)을 참조하세요. |
+| use_env_proxies    | bool | False   | 로컬 환경 변수에서 프록시 설정을 읽을 수 있도록 설정합니다. |
+| retries            | int  | 10      | 허용되는 총 재시도 횟수입니다. |
+| enable_http_logger | bool | False   | 디버그 모드에서 HTTP 로그를 사용하도록 설정합니다. |
 
 ## <a name="inline-json-pattern-for-object-arguments"></a>개체 인수에 대한 인라인 JSON 패턴
 
@@ -115,7 +188,7 @@ operation = keyvault_client.vaults.create_or_update(
 )
 ```
 
-두 형태가 동일하기 때문에 어느 쪽을 선호하든 괜찮으며 혼합할 수도 있습니다.
+두 양식이 모두 동일하므로 원하는 양식을 선택하거나 혼합할 수도 있습니다.
 
 JSON이 제대로 구성되지 않으면 일반적으로 다음 오류가 발생합니다. "DeserializationError: Unable to deserialize to object: type, AttributeError: 'str' object has no attribute 'get'". 이 오류의 일반적인 원인은 라이브러리에 중첩된 JSON 개체가 필요할 때 속성에 단일 문자열을 제공하기 때문입니다. 예를 들어 앞의 예제에서 `"sku": "standard"`를 사용하면 이러한 오류가 발생합니다. `sku` 매개 변수는 `Sku` 개체이고 이 개체에는 필요한 `SkuName` 형식에 매핑되는 인라인 개체 JSON(이 경우, `{ "name": "standard"}`)이 필요하기 때문입니다.
 
@@ -126,6 +199,7 @@ JSON이 제대로 구성되지 않으면 일반적으로 다음 오류가 발생
 - [예: 리소스 그룹 만들기](azure-sdk-example-resource-group.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
+- [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
 
 이들 예는 순차적이거나 상호 의존적이지 않으므로 어떤 순서로든 시도할 수 있습니다.

@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 06/25/2020
-  ms.openlocfilehash: 6c7a1c2502ad8b1d24b074d291bb909c500a0727
-  ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+  ms.openlocfilehash: 5d0d3c3aa4a1cca11ae54d1346e80aa790dd64b3
+  ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/01/2020
-  ms.locfileid: "85790627"
+  ms.lasthandoff: 07/06/2020
+  ms.locfileid: "86018638"
 landingContent:
 - title: Azure에서 모바일 시작
   linkLists:
@@ -42,7 +42,7 @@ landingContent:
     links:
     - text: Azure Functions 및 기타 서비스를 사용하여 서버리스 모바일 애플리케이션 백 엔드 빌드
       url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
-    - text: Azure SignalR을 사용하여 실시간 애플리케이션 빌드
+    - text: Azure SignalR을 사용하여 실시간 앱 빌드
       url: real-time-communication.md
   - linkListType: quickstart
     links:
@@ -84,10 +84,10 @@ landingContent:
       url: https://docs.microsoft.com/azure/notification-hubs/create-notification-hub-portal
   - linkListType: tutorial
     links:
+    - text: ASP.NET Core 및 Azure Notification Hubs를 사용하여 Xamarin.Forms 앱에 푸시 알림 보내기
+      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-backend-service-xamarin-forms
     - text: Android 디바이스에 푸시 알림 보내기
       url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
-    - text: Notification Hubs 및 Google Firebase Cloud Messaging을 사용하여 특정 디바이스에 알림 보내기
-      url: https://docs.microsoft.com/azure/notification-hubs/push-notifications-android-specific-devices-firebase-cloud-messaging
     - text: 디바이스에 풍부한 콘텐츠 푸시
       url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
 - title: 사용자 인증

@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 4a6463df852511ab37af772598f9ae525d8a02e9
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.openlocfilehash: dfd5dc1e81a5d25f1bb08f373bafae7e3c2fe61e
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069424"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018629"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C용 Spring Boot Starter를 사용하여 Java 웹앱을 보호합니다.
 
@@ -231,7 +231,7 @@ ms.locfileid: "85069424"
     >         password-reset: # optional
     > ```
     >
-    > *application.yml* 파일은 GitHub의 [Azure Active Directory B2C Spring Boot 샘플](https://github.com/microsoft/azure-spring-boot/blob/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/application.yml)에서 사용할 수 있습니다.
+    > *application.yml* 파일은 GitHub의 [Azure Active Directory B2C Spring Boot 샘플](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/application.yml)에서 사용할 수 있습니다.
 
 7. *application.yml* 파일을 저장하고 닫습니다.
 
@@ -323,7 +323,7 @@ ms.locfileid: "85069424"
     }
     ```
 
-14. *greeting.html* 및 *home.html* 파일을 [Azure AD B2C Spring Boot 샘플](https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/templates)에서 *src/main/resources/templates*로 복사하고, `${your-profile-edit-user-flow}` 및 `${your-password-reset-user-flow}`를 이전에 만든 사용자 흐름의 이름으로 바꿉니다.
+14. *greeting.html* 및 *home.html* 파일을 [Azure AD B2C Spring Boot 샘플](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/templates)에서 *src/main/resources/templates*로 복사하고, `${your-profile-edit-user-flow}` 및 `${your-password-reset-user-flow}`를 이전에 만든 사용자 흐름의 이름으로 바꿉니다.
 
 ## <a name="build-and-test-your-app"></a>앱 빌드 및 테스트
 

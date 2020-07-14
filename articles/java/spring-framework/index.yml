@@ -6,12 +6,12 @@ metadata:
   description: Spring은 Pivotal에서 개발한 오픈 소스 애플리케이션 프레임워크로, Java 애플리케이션을 간편하게 모듈식으로 개발하는 방법을 제공합니다. 이 웹 사이트의 콘텐츠에서는 Spring 앱을 개발하여 클라우드에 배포하는 방법을 보여줍니다.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 5cb86fbe5b328e84e3437dc3e5946061b62de421
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 4131fd1146fbff953a53747a7415b17e7f74ebf6
+  ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675409"
+  ms.lasthandoff: 07/13/2020
+  ms.locfileid: "86286440"
 landingContent:
 - title: 시작 가이드
   linkLists:
@@ -56,7 +56,7 @@ landingContent:
   - linkListType: sample
     links:
     - text: Azure용 Spring Boot 샘플
-      url: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples
+      url: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples
     - text: Spring 가이드
       url: https://github.com/spring-guides/
 - title: Spring 리소스

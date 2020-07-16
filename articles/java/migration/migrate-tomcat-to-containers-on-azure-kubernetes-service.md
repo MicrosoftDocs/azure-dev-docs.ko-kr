@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 8a6245f496b3a1371c43f764081f50b7b3f13dbd
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.custom: devx-track-java
+ms.openlocfilehash: 2671f861e780aad0025f881311b9bc603d72bb90
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988738"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379687"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Tomcat 애플리케이션을 Azure Kubernetes Service의 컨테이너로 마이그레이션
 

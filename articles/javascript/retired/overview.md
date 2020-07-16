@@ -3,16 +3,16 @@ title: JavaScript용 Azure 모듈
 description: JavaScript용 Azure 관리 및 서비스 모듈에 대한 개요입니다.
 ms.date: 06/17/2017
 ms.topic: article
-ms.openlocfilehash: 193e2d3c92a9c2b8e3970e7a130246947a7cc4da
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: 2d01dcc2095bc91fb9695c0299b603b86c4719f0
+ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792563"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86286450"
 ---
 # <a name="azure-modules-for-javascript"></a>JavaScript용 Azure 모듈
 
-JavaScript용 Azure 모듈을 사용하여 JavaScript 애플리케이션에서 Azure 리소스를 관리하고 서비스에 연결합니다. 코드는 프로젝트에서 사용할 npm 모듈](/api/?view=azure-node-latest.md)로 제공됩니다.
+JavaScript용 Azure 모듈을 사용하여 JavaScript 애플리케이션에서 Azure 리소스를 관리하고 서비스에 연결합니다. 코드는 프로젝트에서 사용할 [npm 모듈](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest)로 제공됩니다.
 
 ## <a name="manage-azure-resources"></a>Azure 리소스 관리
 
@@ -75,7 +75,7 @@ msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, function (
 });
 ```
 
-모듈의 전체 목록에 대한 [설치 지침](/api/?view=azure-node-latest)과 인증 설정 및 샘플 코드 실행에 대한 [시작 문서](../index.yml)를 검토하여 자신의 Azure 구독에 대한 리소스를 만들고 업데이트합니다 .
+모듈의 전체 목록에 대한 [설치 지침](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest)과 인증 설정 및 샘플 코드 실행에 대한 [시작 문서](../index.yml)를 검토하여 자신의 Azure 구독에 대한 리소스를 만들고 업데이트합니다 .
 
 ## <a name="connect-to-azure-services"></a>Azure 서비스에 연결
 

@@ -5,12 +5,13 @@ author: rloutlaw
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: c6fcf68e5ac4509744a618fab8b80f09ce24f052
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: ae1bc0aaeaf3a53daa899580f45e932fd653c58a
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105024"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379477"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>Java 애플리케이션에서 Azure App Service 배포 원본 구성
 

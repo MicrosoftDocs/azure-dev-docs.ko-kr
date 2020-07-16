@@ -6,12 +6,13 @@ manager: bborges
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
-ms.openlocfilehash: d7f90939701bfbcdcd895b8baf3cabcae4d5efa9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 8ed24a6b15d602a96ec7bdb186225c66a87393ae
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670759"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379857"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>자습서: Azure에서 실행되는 Java 앱용 Logz.io를 사용하여 모니터링 및 로깅 시작
 

@@ -7,13 +7,13 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 1eeb166f-8253-4fde-82d2-43997fda7819
-ms.custom: ''
-ms.openlocfilehash: 5013de76abf7cbd22df4f922d959c6dceae9f3c7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 4d347c7d145af39db3494240d6a5f658629f549e
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674239"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405744"
 ---
 # <a name="azure-management-libraries-for-java---virtual-machine-samples"></a>Java - 가상 머신 샘플용 Azure 관리 라이브러리
 

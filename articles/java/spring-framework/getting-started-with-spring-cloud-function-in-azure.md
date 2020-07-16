@@ -9,12 +9,13 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 30c225ed4d8e17860fe169e326f994c70ebe7d85
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.custom: devx-track-java
+ms.openlocfilehash: 5cfdbb3542222a7ff9547b25836237d5d0991ddb
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370724"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378477"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure에서 Spring Cloud 함수 시작하기
 
@@ -64,7 +65,7 @@ Azure Functions에서 실행되고 Spring Cloud 함수로 구성된 기존 "Hell
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <azure.functions.maven.plugin.version>1.5.0</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.6.0</azure.functions.maven.plugin.version>
     <functionAppName>my-spring-function</functionAppName>
     <functionAppRegion>westus</functionAppRegion>
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
@@ -348,7 +349,7 @@ mvn azure-functions:deploy
 이제 이전 섹션에서와 같이 cURL을 사용하여 실행 중인 함수에 액세스합니다. `your-function-name`을 실제 함수 이름으로 바꿉니다.
 
 ```bash
-curl https:/your-function-name.azurewebsites.net/api/hello -d "{\"name\":\"Azure\"}"
+curl https://your-function-name.azurewebsites.net/api/hello -d "{\"name\":\"Azure\"}"
 ```
 
 이전 섹션에서와 같이 함수는 여전히 JSON 형식으로 `Greeting` 개체를 사용하여 응답해야 합니다.

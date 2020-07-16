@@ -8,13 +8,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: b926b0bd1cb401f12f927abfea112e6004988812
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
+ms.openlocfilehash: e6e3effc4a857656a6d118d3fee898fa086c082e
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81668399"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378627"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps의 Maven을 사용하여 Azure에 컨테이너화된 Spring Boot 앱 배포
 

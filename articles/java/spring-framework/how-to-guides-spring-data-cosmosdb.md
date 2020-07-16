@@ -5,12 +5,13 @@ author: kushagraThapar
 ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
-ms.openlocfilehash: 838fb4efa79f5d3ef8a97977a0d239a809e2506d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 119a2b3ff761778e111500a9fe0cf33d2dc6b080
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674289"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378447"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 개발자 가이드
 

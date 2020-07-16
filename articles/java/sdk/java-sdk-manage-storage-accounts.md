@@ -6,12 +6,13 @@ ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 9084360a3cf4fa335bfded302461f4435b8452f7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 92c6c6fe43fe6bd7c1932eeb64a88db87437713d
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82104994"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379387"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Java 애플리케이션에서 Azure 스토리지 계정 관리
 

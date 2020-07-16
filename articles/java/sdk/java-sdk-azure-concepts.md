@@ -7,13 +7,13 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
-ms.custom: seo-java-july2019, seo-java-september2019
-ms.openlocfilehash: 202b34a6b64d75e814a4fb586a44e471a9a9f118
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-july2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: 8f9da09b7cc613c7a366662b311b9d24b779c95d
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673919"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379537"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Java용 Azure 라이브러리를 통한 개발 패턴 및 모범 사례 
 

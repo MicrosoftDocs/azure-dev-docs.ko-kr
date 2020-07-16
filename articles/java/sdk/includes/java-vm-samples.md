@@ -1,13 +1,14 @@
 ---
-ms.openlocfilehash: 5d005f5a4906e5e2a55189d073383ab77f6c1860
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a6e51b3fca9e2ae633a69b6372d7f622d2697812
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674189"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405754"
 ---
-| **가상 머신 만들기** || 
+| 샘플  | Description |
 |---|---|
+| **가상 머신 만들기** ||
 | [가상 머신 관리][1] | 가상 머신을 생성, 수정, 시작, 중지 및 삭제합니다. |
 | [사용자 지정 이미지에서 가상 머신 만들기][2] | 사용자 지정 가상 머신 이미지를 만들고, 이를 사용하여 새 가상 머신을 만듭니다. | 
 | [스냅샷에서 특수 VHD를 사용하여 가상 머신 만들기][3] | 가상 머신의 OS 및 데이터 디스크에서 스냅샷을 만들고, 스냅샷에서 관리 디스크를 만든 다음, 관리 디스크를 연결하여 가상 머신을 만듭니다. |  

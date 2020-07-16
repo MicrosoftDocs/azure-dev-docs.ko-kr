@@ -8,12 +8,13 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: a43b951fddfea01c4678fca3174f15a3b3d714f9
-ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
+ms.custom: devx-track-java
+ms.openlocfilehash: 51252278d7b0cec6de1920c5d6c81a20d164e7df
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862816"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379247"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Azure Key Vault에 Spring Boot Starter를 사용하는 방법
 

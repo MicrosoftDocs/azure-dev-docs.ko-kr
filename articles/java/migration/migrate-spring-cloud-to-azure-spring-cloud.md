@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
-ms.openlocfilehash: c9b05ea7f7e7d181150e11afb7e145740fc5ab5a
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: fb6a7c108f99081eeeb2bd41f1366f4c38865fe6
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507611"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379737"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Spring Cloud 애플리케이션을 Azure Spring Cloud로 마이그레이션
 

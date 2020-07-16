@@ -6,12 +6,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 2a059fa72207e8dde47eda7020ced90bd56b75a4
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 17aa931e10f68e08a1d87017a4cdd1238baa7f1f
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670159"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379937"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>IntelliJ용 Azure 탐색기를 사용하여 Redis Cache 관리
 

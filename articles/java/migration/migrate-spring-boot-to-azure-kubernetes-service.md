@@ -5,12 +5,13 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.openlocfilehash: bb355fdd8436d6483ebd1ffeead4c522c9895e16
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: 37abbaf978aabad22b8aa1200bcde2e2ba2051e3
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507680"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379757"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Spring Boot 애플리케이션을 Azure Kubernetes Service로 마이그레이션
 

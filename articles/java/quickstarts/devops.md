@@ -3,12 +3,13 @@ title: Azure의 Java 앱용 DevOps에 대한 빠른 시작
 description: Java 앱용 DevOps에 대한 Azure 설명서의 시작 자료 목록입니다.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2920259ca64addb86a58c166f5a1ce1863ff9e9b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 62c755665008f83cc6a644f8bf702d6b1486cf6a
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673699"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379637"
 ---
 # <a name="devops-for-java-apps-on-azure"></a>Azure의 Java 앱용 DevOps
 

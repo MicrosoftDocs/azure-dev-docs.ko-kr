@@ -6,12 +6,13 @@ ms.date: 11/13/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: aea65c8a7edd8afc32cc87eb3ce1a5899e7d7487
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: d05e5f5c6680e4a33bfd66289437d6967fe34e88
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669929"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378067"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>IntelliJ용 Azure Explorer를 사용하여 Virtual Machines 관리
 

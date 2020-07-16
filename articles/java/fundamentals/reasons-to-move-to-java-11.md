@@ -8,12 +8,13 @@ tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 8f35aea0447f8681fb4f456dbafe500a608f6420
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-java
+ms.openlocfilehash: b5c1ebe2a73a9f51811118c7190e607e9387ae42
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790780"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379807"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Java 11로 전환해야 하는 이유
 

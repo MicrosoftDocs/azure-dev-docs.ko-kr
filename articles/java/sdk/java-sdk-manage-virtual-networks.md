@@ -6,12 +6,13 @@ ms.assetid: 92736911-3df6-46e7-b751-25bb36bf89b9
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: a048cded2659c1cee15b2e26a5f3c80df79e895c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 31e20e4ef347bb3b771e818da6e458261537a3f3
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105004"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379397"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Java 앱에서 Azure 가상 네트워크 만들기 및 관리
 

@@ -7,12 +7,13 @@ ms.author: brendm
 ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: 9f7ad8d772b7de1335ebc3ba77cdea8aa1e8b683
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 5dbe0235143621587b111f4537a49b36f88115f1
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671949"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379447"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Java용 Azure SDK를 사용한 로깅 구성
 

@@ -7,12 +7,13 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: bb25b52bd68c71d9a51a4a33fe278fe5a0148a05
-ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.custom: devx-track-java
+ms.openlocfilehash: d9c03ffd4ba890dadda2e81ea9a2a30948e3dc42
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86018535"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378887"
 ---
 # <a name="use-spring-data-jpa-with-azure-sql-database"></a>Azure SQL Database에서 Spring Data JPA 사용
 

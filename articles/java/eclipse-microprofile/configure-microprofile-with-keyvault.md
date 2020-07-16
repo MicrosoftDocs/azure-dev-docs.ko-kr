@@ -10,12 +10,13 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: e68df202d49b7215eb4bdbff7a42e0900499484c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: d38387482e81a1418a0e4d76b217e0a1ba1d96ac
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105184"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379897"
 ---
 # <a name="configure-microprofile-with-azure-key-vault"></a>Azure Key Vault를 사용하여 MicroProfile 구성
 

@@ -5,13 +5,13 @@ author: rloutlaw
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 11/13/2018
-ms.custom: seo-java-july2019
-ms.openlocfilehash: c92ef101c15d5407ecc2d643388fc8caaf2fc75f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-july2019, devx-track-java
+ms.openlocfilehash: 32f3b53ed58f9436aca82f08a3a4ce8600060632
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670799"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379877"
 ---
 # <a name="azure-tools-for-java-developers"></a>Java 개발자용 Azure 도구
 

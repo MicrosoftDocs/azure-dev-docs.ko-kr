@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 46fa281fdbaf53e35a73701fa2c17ae2ed3e2d90
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: f5edea5267bd79db7de890b6030db3e5d02f0ea2
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507641"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379767"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot 애플리케이션을 Azure App Service로 마이그레이션
 

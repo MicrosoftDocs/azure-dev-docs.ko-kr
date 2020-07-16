@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 5/26/2020
-ms.openlocfilehash: 3d18968a3977c91c6345b44e44ece73ea3a663de
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: c779a85f49ccd7507882fbd123a329addca60a7c
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84512632"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379747"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-spring-cloud"></a>Spring Boot 애플리케이션을 Azure Spring Cloud로 마이그레이션
 

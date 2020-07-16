@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 6d2d18a6dbf87a97b806876a534a103dbbf88420
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.custom: devx-track-java
+ms.openlocfilehash: 1b22dfa4269cc0c51450ca307bb96b787278625b
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988774"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379707"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat 애플리케이션을 Azure App Service의 Tomcat으로 마이그레이션
 

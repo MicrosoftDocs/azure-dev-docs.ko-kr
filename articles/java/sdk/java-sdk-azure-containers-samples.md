@@ -6,13 +6,13 @@ author: rloutlaw
 ms.date: 07/31/2017
 ms.topic: article
 ms.service: multiple
-ms.custom: seo-java-july2019, seo-java-september2019
-ms.openlocfilehash: c833bbc6fc7f0b7b9fc5eb5ab4391da9e082cf36
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-july2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: e12e9b3007f8c542563013af3c00df40352c0036
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671379"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379527"
 ---
 # <a name="java-samples-for-azure-container-service"></a>Azure Container Service용 Java 샘플
 

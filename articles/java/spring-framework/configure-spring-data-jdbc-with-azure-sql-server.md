@@ -7,12 +7,13 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: cd0823246482f37822fab6326628e9aab01ebfbd
-ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.custom: devx-track-java
+ms.openlocfilehash: a6eabc4e7aca4a79ba41b0061721bf8431d312bf
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86018510"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378907"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Azure SQL Database에서 Spring Data JDBC 사용
 

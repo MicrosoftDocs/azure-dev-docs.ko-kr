@@ -7,12 +7,13 @@ ms.date: 12/19/2018
 ms.service: storage
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 7375373696b59320100e8109b75cb1fdef6ed64b
-ms.sourcegitcommit: 5322c817033e6e20064f53f0fbedcf1f455f54d0
+ms.custom: devx-track-java
+ms.openlocfilehash: 33f275274f46bf15c60a69087f956090fbb30e6e
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83825194"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379187"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage에 Spring Boot Starter를 사용하는 방법
 

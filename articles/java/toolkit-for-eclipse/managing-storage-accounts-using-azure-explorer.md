@@ -6,12 +6,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 131cc95ce3b927ffc26ea7b08367b65dd434c0e4
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 19f529b6d04e73c18648b77b2ac83a31ca1a455f
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82209766"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378137"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Eclipse용 Azure Explorer를 사용하여 스토리지 계정 관리
 
@@ -35,21 +36,21 @@ Azure Explorer를 사용하여 스토리지 계정을 만들려면 다음을 수
 
    ![새 Storage 계정 만들기 대화 상자][CS02]
 
-   * **이름**: 새 스토리지 계정의 이름을 지정합니다.
+   * **Name**: 새 스토리지 계정의 이름을 지정합니다.
 
    * **구독**: 새 스토리지 계정에 사용할 Azure 구독을 지정합니다.
 
-   * **리소스 그룹**: 가상 머신에 사용할 리소스 그룹을 지정합니다. 다음 옵션 중 하나를 선택합니다.
+   * **리소스 그룹**: 가상 머신용 리소스 그룹을 지정합니다. 다음 옵션 중 하나를 선택합니다.
       * **새로 만들기**: 새 리소스 그룹을 만들도록 지정합니다.
-      * **기존 그룹 사용**: Azure 계정에 연결된 리소스 그룹 목록에서 선택하도록 지정합니다.
+      * **기존 리소스 사용**: Azure 계정에 연결된 리소스 그룹 목록에서 선택하도록 지정합니다.
 
    * **지역**: 스토리지 계정을 만들 위치(예: “미국 서부”)를 지정합니다.
 
-   * **계정 종류**: 만들려는 스토리지 계정의 형식을 지정합니다(예: “Blob Storage”). 자세한 내용은 [Azure Storage 계정 정보]를 참조하세요.
+   * **계정 종류**: 만들려는 스토리지 계정의 형식을 지정합니다(예: “BLOB 스토리지”). 자세한 내용은 [Azure Storage 계정 정보]를 참조하세요.
 
    * **성능**: 선택한 게시자에서 사용할 스토리지 계정 제품을 지정합니다(예: “프리미엄”). 자세한 내용은 [Azure Storage 확장성 및 성능 목표]를 참조하세요.
 
-   * **복제**: 스토리지 계정에 대한 복제를 지정합니다(예: “영역 중복”). 자세한 내용은 [Azure Storage 복제]를 참조하세요.
+   * **복제**: 스토리지 계정의 복제를 지정합니다(예: “영역 중복”). 자세한 내용은 [Azure Storage 복제]를 참조하세요.
 
 1. 위의 옵션을 모두 지정했으면 **만들기**를 클릭합니다.
 

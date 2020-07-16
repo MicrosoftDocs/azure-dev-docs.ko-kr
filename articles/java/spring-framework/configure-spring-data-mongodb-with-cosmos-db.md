@@ -7,12 +7,13 @@ ms.date: 12/19/2018
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 706797811e699261bd8eebe82e9b31d544fc703b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: f3b7f08bd8fe0db177ac9989e49c5b3f5cca69c7
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673219"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378817"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Azure Cosmos DB에서 Spring Data MongoDB API를 사용하는 방법
 

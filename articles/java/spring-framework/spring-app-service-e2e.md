@@ -6,12 +6,13 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 19eb7a5633f51400e139ba8dd7ad0a1f5999a213
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: 22455b8f8215e0c3bfb9d4e9d8f75788cb56d844
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507449"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405634"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL을 사용하여 App Service에 Spring 앱 배포
 
@@ -54,7 +55,6 @@ cd spring-framework-petclinic
 ```
 ---
 
-
 ## <a name="build-and-run-the-hsqldb-sample-locally"></a>로컬에서 HSQLDB 샘플 빌드 및 실행
 
 먼저 HSQLDB를 데이터베이스로 사용하여 샘플을 로컬에서 테스트합니다.
@@ -77,7 +77,7 @@ export TOMCAT_HOME=<Tomcat install directory>
 
 ```ps
 $env:TOMCAT_HOME="<Tomcat install directory>"
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -135,7 +135,7 @@ ${TOMCAT_HOME}/bin/catalina.sh run
 
 ```ps
 & $env:TOMCAT_HOME/bin/catalina.bat run
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -168,7 +168,7 @@ $env:RESOURCEGROUP_NAME="<resource group>"
 $env:WEBAPP_NAME="<web app>"
 $env:WEBAPP_PLAN_NAME="$env:WEBAPP_NAME-appservice-plan"
 $env:REGION="<region>"
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -254,7 +254,7 @@ $env:MYSQL_SERVER_ADMIN_LOGIN_NAME="<admin>"
 $env:MYSQL_SERVER_ADMIN_PASSWORD="<password>"
 $env:MYSQL_DATABASE_NAME="<database>"
 $env:DOLLAR="$"
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -310,7 +310,7 @@ az mysql server configuration set --name wait_timeout `
 az mysql server configuration set --name time_zone `
     --resource-group $env:RESOURCEGROUP_NAME `
     --server $env:MYSQL_SERVER_NAME --value=-8:00
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -348,7 +348,7 @@ mysql -u ${MYSQL_SERVER_ADMIN_LOGIN_NAME}@${MYSQL_SERVER_NAME} \
 ```ps
 mysql -u $env:MYSQL_SERVER_ADMIN_LOGIN_NAME@$env:MYSQL_SERVER_NAME `
  -h $env:MYSQL_SERVER_FULL_NAME -P 3306 -p
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -442,7 +442,6 @@ show databases;
 
 그런 다음, 앱을 빌드한 후 Tomcat을 사용하여 앱을 배포하고 실행하는 방법으로 로컬에서 테스트합니다.
 
-
 # <a name="bash"></a>[bash](#tab/bash)
 
 ```bash
@@ -457,7 +456,7 @@ ${TOMCAT_HOME}/bin/catalina.sh run
 mvn package
 mvn cargo:deploy
 & $env:TOMCAT_HOME/bin/catalina.bat run
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -494,7 +493,7 @@ az webapp log tail --name ${WEBAPP_NAME} \
 ```ps
 az webapp log tail --name $env:WEBAPP_NAME `
     --resource-group $env:RESOURCEGROUP_NAME
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -526,7 +525,7 @@ az appservice plan update --number-of-workers 2 \
 az appservice plan update --number-of-workers 2 `
     --name $env:WEBAPP_PLAN_NAME `
     --resource-group $env:RESOURCEGROUP_NAME
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 
@@ -554,7 +553,7 @@ az group delete --name ${RESOURCEGROUP_NAME}
 
 ```ps
 az group delete --name $env:RESOURCEGROUP_NAME
-````
+```
 
 # <a name="cmd"></a>[Cmd](#tab/cmd)
 

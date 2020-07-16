@@ -6,12 +6,13 @@ ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
 ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 7e50a18346eb9bd2bee50bf2ea2d65cd94381292
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 78f50ce1c0110a9329d259d951e665a65bcbafeb
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82104974"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379407"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Java 애플리케이션에서 여러 지역에 가상 머신 만들기
 

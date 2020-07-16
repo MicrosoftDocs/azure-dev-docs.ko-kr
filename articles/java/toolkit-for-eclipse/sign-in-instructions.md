@@ -6,12 +6,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: accae3c9ab06eebe295aa745c62c4eff542d02d4
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 3be8734755455dfaebcf1478f4441058496f7999
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674549"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379977"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트에 대한 로그인 지침
 

@@ -8,12 +8,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 252ef1e31a71d996cb9e3856b48232ba24b66903
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 55f980785ea8cf4988c6a82dfa700beef18e2dfc
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671189"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405764"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>레거시 Eclipse용 도구 키트를 사용하여 Azure용 Hello World 웹앱 만들기
 
@@ -118,9 +119,9 @@ ms.locfileid: "81671189"
    * **이름** 텍스트 상자에서 새 리소스 그룹의 이름을 지정합니다.
    * **지역** 드롭다운 메뉴에서 리소스 그룹에 적합한 Azure 데이터 센터 위치를 선택합니다.
    * 선택 사항: 기본적으로 Java 8 최신 배포판은 Azure가 자동으로 웹앱 컨테이너에 JVM으로 설치합니다. 그러나 웹앱에서 요구하는 경우 JVM의 다른 버전 및 배포판을 지정할 수 있습니다. 웹앱에 대한 JDK를 지정하려면 **JDK** 탭을 클릭하고 다음 옵션 중 하나를 선택합니다.
-     * **Azure Web Apps에서 제공하는 기본 JDK 배포**: 이 옵션을 선택하면 Java 최신 배포판이 배포됩니다.
-     * **Azure에 제공되는 타사 JDK 배포**: 이 옵션을 선택하면 Microsoft Azure에서 제공하는 JDK 목록에서 선택할 수 있습니다.
-     * **이 다운로드 위치에서 나의 고유한 JDK 배포**: 이 옵션을 선택하면 사용자 고유의 JDK 배포판을 지정할 수 있으며, 사용자 고유의 배포판을 ZIP 파일로 패키지하여 공개적으로 이용 가능한 다운로드 위치 또는 사용자가 액세스 권한을 갖고 있는 Azure Storage 계정에 업로드해야 합니다.
+     * **Azure Web Apps 서비스에서 제공하는 기본 JDK 배포**: 이 옵션은 Java의 최신 배포판을 배포합니다.
+     * **Azure에서 사용할 수 있는 타사 JDK 배포**: 이 옵션을 선택하면 Microsoft Azure에서 제공하는 JDK 목록에서 선택할 수 있습니다.
+     * **이 다운로드 위치에서 자체 JDK 배포**: 이 옵션을 선택하면 사용자 고유의 JDK 배포판을 지정할 수 있으며, 사용자 고유의 배포판을 ZIP 파일로 패키지하여 공개적으로 이용 가능한 다운로드 위치 또는 사용자가 액세스 권한을 갖고 있는 Azure Storage 계정에 업로드해야 합니다.
           
        ![새 웹앱 컨테이너 대화 상자][07b]
 
@@ -128,7 +129,7 @@ ms.locfileid: "81671189"
 
    h. **App Service 계획** 드롭다운 메뉴에 선택한 리소스 그룹과 연결된 App Service 계획이 나열됩니다. (App Service 계획은 웹앱의 위치, 가격 책정 계층, 컴퓨팅 인스턴스 크기 등의 정보를 지정합니다. App Service 계획 하나를 여러 Web Apps에 사용할 수 있기 때문에 App Service 계획은 특정 웹앱 배포와는 별도로 관리됩니다.)
       
-       You can select an existing App Service Plan (if you have any) and skip to step h below, or use the following these steps to create a new App Service Plan:
+      기존 App Service 계획(있는 경우)을 선택하고 아래 h 단계로 건너뛰거나 이들 단계를 통해 새 App Service 계획을 만들 수 있습니다.
       
       * **새로 만들기...**
       * **새 App Service 계획** 대화 상자가 표시됩니다.

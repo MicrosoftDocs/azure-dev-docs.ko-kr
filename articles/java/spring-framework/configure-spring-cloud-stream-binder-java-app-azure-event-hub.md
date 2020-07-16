@@ -7,12 +7,13 @@ ms.date: 12/19/2018
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.openlocfilehash: 53416d6f97e0b3e21559c39982ce57b265abf4d9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: ff068c48a36aa746de1dac23861d453e0c6ff512
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669579"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379197"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hub를 사용하여 Spring Cloud 스트림 바인더 애플리케이션을 만드는 방법
 

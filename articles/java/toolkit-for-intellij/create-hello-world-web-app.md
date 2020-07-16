@@ -12,12 +12,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 6f453a42fe46299043d4857b464da601b18df018
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 47deaeb4957076ef80bcdf0f708fb16b95e0b646
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672369"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378077"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>IntelliJ를 사용하여 Azure App Service용 Hello World 웹앱 만들기
 

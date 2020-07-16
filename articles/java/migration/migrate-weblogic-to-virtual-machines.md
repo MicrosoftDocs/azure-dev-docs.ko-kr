@@ -5,12 +5,13 @@ author: edburns
 ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: b9d9a4ea8ef81af5c67b91281e892b4626f42f62
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.custom: devx-track-java
+ms.openlocfilehash: 3f3f4cd3a7714b45a68abe4d92c489581d1c1d5f
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988912"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379727"
 ---
 # <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션
 

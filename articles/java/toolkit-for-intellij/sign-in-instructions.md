@@ -6,12 +6,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 4447c9d2b09d0d004b8c858aceb31e6c7cee9493
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: c5830ab871b78e586b502e0c6e2331700fa0149d
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673989"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379957"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>IntelliJ용 Azure 도구 키트에 대한 로그인 지침
 

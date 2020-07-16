@@ -7,13 +7,13 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
-ms.custom: seo-java-september2019
-ms.openlocfilehash: 744d0194958fd0bd5bb96e6a03a70a8ce126d7c5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-september2019, devx-track-java
+ms.openlocfilehash: b7cf132dfe82e8c93f8b0eae0fd27dddd1de77fd
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670259"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379557"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>Java용 Azure 라이브러리를 사용하여 인증
 

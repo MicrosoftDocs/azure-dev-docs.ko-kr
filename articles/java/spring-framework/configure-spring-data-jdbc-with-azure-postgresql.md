@@ -7,12 +7,13 @@ ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 91cb38146b123f8d05eb9ca89b88af9e776f74f6
-ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.custom: devx-track-java
+ms.openlocfilehash: e6c95da37584db483d5acedaf738bfb0512a1de3
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86018525"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378917"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL에서 Spring Data JDBC 사용
 

@@ -6,12 +6,13 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 36fdd387653462e56ce2c93553e51da68e9d6d95
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 4b4d5c7b1090a5368529b83e21ec2a176b95dc94
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105014"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379367"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Java 애플리케이션에서 Azure 가상 머신 확장 세트 관리
 

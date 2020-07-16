@@ -7,12 +7,13 @@ ms.service: multiple
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
-ms.openlocfilehash: 0dc5459ab4898deecebbc199e62f5dccc8ee6f7d
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-java
+ms.openlocfilehash: 6807374dac927d8a93e1ecf1ac2b1e3fa54877ac
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790745"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379547"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>Java CA 인증서 저장소에 루트 인증서 추가
 

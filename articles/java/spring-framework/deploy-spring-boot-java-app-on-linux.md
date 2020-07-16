@@ -8,13 +8,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.custom: mvc
-ms.openlocfilehash: e4c0c2ffb45303262b16179a726a8eb0526b3971
-ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
+ms.custom: mvc, devx-track-java
+ms.openlocfilehash: 307a80fa11d397a77804f8fe126e58232e9f0cf5
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426116"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378607"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포
 

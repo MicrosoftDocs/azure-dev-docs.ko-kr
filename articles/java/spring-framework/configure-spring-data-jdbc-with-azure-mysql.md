@@ -7,12 +7,13 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 22c8cb54921121cf1afeb45c1ae99eb53cfcfed9
-ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.custom: devx-track-java
+ms.openlocfilehash: a30f06798591b0c76b84ab523961e9b4847f1132
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86018540"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378957"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>Azure Database for MySQL에서 Spring Data JDBC 사용
 

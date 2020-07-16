@@ -11,12 +11,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 6ec30d83352984181caff4984769ff62d07e4164
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: a9b0721c7a8d409d661c8e53963ca9b3bc2f52dd
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105114"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379867"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Java 기반 MicroProfile 서비스를 Azure Web App for Containers에 배포합니다.
 

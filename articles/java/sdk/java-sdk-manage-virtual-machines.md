@@ -6,12 +6,13 @@ ms.assetid: 88629aee-6279-433e-a08b-4f8e290446d0
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 90bf21232ed5ac8b4f98122951b6cfe4aed2eb4c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 4ef0dee190947fc77d65b46a56289185ac60d128
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82104984"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379357"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>Java 애플리케이션에서 Azure 가상 머신 관리
 

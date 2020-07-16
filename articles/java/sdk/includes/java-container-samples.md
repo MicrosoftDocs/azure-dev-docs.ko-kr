@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: ae3443ca54dc37e54b9c0bc5151cf35f5220a7ea
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 2f95eecf230db14292c6e449ab419af6f0c338c0
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671659"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86407985"
 ---
-|  |  |
+| 샘플  | Description |
 |---------|---------|
 | [Azure Container Registry 관리][1] | 새 Azure Container Registry를 만들고 새 이미지를 추가합니다. | 
 | [Azure Container Service 관리][2] | Kubernetes 오케스트레이션을 사용하여 Azure Container Service를 만듭니다. | 

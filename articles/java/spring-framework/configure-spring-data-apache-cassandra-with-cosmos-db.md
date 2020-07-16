@@ -7,12 +7,13 @@ ms.date: 12/19/2018
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 3d4778c85d6e94471555f87aa67d4d2def669f43
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: c39fffef8f743f89d6d448b86606463527c8e06a
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669149"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379057"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>Azure Cosmos DB에서 Spring Data Apache Cassandra API를 사용하는 방법
 

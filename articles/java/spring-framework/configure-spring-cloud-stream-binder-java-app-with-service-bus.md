@@ -6,12 +6,13 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 033025b82a493cf701abad7a6a97802611b7e48d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 1ecedc4f3b3fb3eb92b66403f00aa14660323ce2
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669069"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379047"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Spring Cloud Azure Stream Binder를 Azure Service Bus에 사용하는 방법
 

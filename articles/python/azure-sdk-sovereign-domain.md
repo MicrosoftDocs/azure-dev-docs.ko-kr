@@ -1,15 +1,15 @@
 ---
 title: Python 다중 클라우드용 Azure 라이브러리를 사용하여 모든 지역에 연결
 description: msrestazure의 azure_cloud 모듈을 사용하여 여러 소버린 지역에서 Azure에 연결하는 방법
-ms.date: 06/09/2020
+ms.date: 07/13/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: c8dc34260f4a37090af8c8408f7da70cf1de1f23
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.openlocfilehash: 25e8851a8812782712ff65ec4627a0d2ead848ae
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947509"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377907"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>다중 클라우드: Python용 Azure 라이브러리를 사용하여 모든 지역에 연결
 
@@ -17,9 +17,18 @@ Python용 Azure 라이브러리를 사용하여 Azure를 [사용 가능한](http
 
 기본적으로 Azure 라이브러리는 글로벌 Azure에 연결하도록 구성됩니다.
 
-## <a name="using-pre-declared-cloud-definition"></a>미리 선언된 클라우드 정의 사용
+## <a name="using-pre-defined-sovereign-cloud-constants"></a>미리 정의된 소버린 클라우드 상수 사용
 
-`msrestazure`(0.4.11+)의 `azure_cloud` 모듈을 사용합니다.
+미리 정의된 소버린 클라우드 상수는 `msrestazure`(0.4.11 +)의 `azure_cloud` 모듈에 의해 제공됩니다.
+
+- `AZURE_PUBLIC_CLOUD`
+- `AZURE_CHINA_CLOUD`
+- `AZURE_US_GOV_CLOUD`
+- `AZURE_GERMAN_CLOUD`
+
+모든 코드에서 상수를 적용하려면 이전 목록의 값 중 하나를 사용하여 `AZURE_CLOUD`라는 환경 변수를 정의합니다. (기본값은 `AZURE_PUBLIC_CLOUD`입니다.)
+
+특정 작업 내에서 상수를 적용하려면 `msrest.azure_cloud`에서 원하는 상수를 가져와 자격 증명과 클라이언트 개체를 만들 때 사용합니다.
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD
@@ -33,16 +42,9 @@ client = ResourceManagementClient(credentials,
     subscription_id, base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
 ```
   
-사용 가능한 클라우드 정의는 다음과 같습니다.
-
-- `AZURE_PUBLIC_CLOUD`
-- `AZURE_CHINA_CLOUD`
-- `AZURE_US_GOV_CLOUD`
-- `AZURE_GERMAN_CLOUD`
-
 ## <a name="using-your-own-cloud-definition"></a>사용자 고유의 클라우드 정의 사용
 
-이 코드에서는 프라이빗 클라우드(예: Azure Stack에 빌드된 클라우드)에 대한 Azure Resource Manager 엔드포인트와 함께 `get_cloud_from_metadata_endpoint`를 사용합니다.
+다음 코드는 프라이빗 클라우드(예: Azure Stack에 빌드된 클라우드)에 대한 Azure Resource Manager 엔드포인트와 함께 `get_cloud_from_metadata_endpoint`를 사용합니다.
 
 ```python
 from msrestazure.azure_cloud import get_cloud_from_metadata_endpoint
@@ -59,7 +61,7 @@ client = ResourceManagementClient(credentials, subscription_id,
 
 ## <a name="using-adal"></a>ADAL 사용
 
-다른 지역에 연결하려면 몇 가지를 고려해야 합니다.
+다른 지역에 연결하는 경우 다음 사항을 고려합니다.
 
 - 토큰에 요청할 엔드포인트는 어디인가요(인증)?
 - 이 토큰을 사용할 엔드포인트는 어디인가요(사용량)?

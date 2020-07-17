@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507469"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405714"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java 애플리케이션을 Azure로 마이그레이션
 
@@ -78,7 +79,7 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 
 다음 그리드를 사용하여 애플리케이션 유형의 잠재적 대상을 식별합니다. 보시다시피 AKS 및 Virtual Machines는 모든 애플리케이션 유형을 지원하지만, 다음 섹션에 표시된 것처럼 팀이 더 많은 책임을 져야 합니다.
 
-|   |앱<br>서비스<br>Java SE|앱<br>서비스<br>Tomcat|Azure<br>Spring<br>클라우드|AKS|가상<br>머신|
+|대상&nbsp;→<br><br>애플리케이션&nbsp;유형&nbsp;↓|앱<br>서비스<br>Java SE|앱<br>서비스<br>Tomcat|Azure<br>Spring<br>클라우드|AKS|가상<br>머신|
 |---|---|---|---|---|---|---|
 | Spring Boot/JAR 애플리케이션                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/마이크로서비스                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -95,12 +96,12 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 
 다음 그리드를 사용하여 마이그레이션 후 팀의 각 대상에 대한 책임을 파악합니다.
 
-팀은 "&#x1F449;"로 표시된 작업에 대해 지속적으로 책임을 집니다. 이러한 모든 책임을 이행하기 위해 강력하고 자동화된 프로세스를 구현하는 것이 좋습니다. 
+팀은 "&#x1F449;"로 표시된 작업에 대해 지속적으로 책임을 집니다. 이러한 모든 책임을 이행하기 위해 강력하고 자동화된 프로세스를 구현하는 것이 좋습니다.
 
 > [!NOTE]
 > 이는 완전한 책임 목록이 아닙니다.
 
-|                                                                       | 앱<br>서비스 | Azure<br>Spring<br>클라우드 | AKS | 가상<br>머신 |
+|대상&nbsp;→<br><br>작업&nbsp;↓                            | 앱<br>서비스 | Azure<br>Spring<br>클라우드 | AKS | 가상<br>머신 |
 |---|---|---|---|---|
 | 라이브러리 업데이트<br>(취약성 수정 포함)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | 애플리케이션 서버 업데이트<br>(취약성 수정 포함)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |

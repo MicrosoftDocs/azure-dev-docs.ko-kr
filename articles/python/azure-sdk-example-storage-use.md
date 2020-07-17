@@ -3,14 +3,14 @@ title: Python용 Azure SDK에서 Azure Storage 사용
 description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage 계정에서 미리 프로비저닝된 Blob 컨테이너를 액세스한 다음, 이 컨테이너에 파일을 업로드합니다.
 ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
-ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
+ms.openlocfilehash: 41c2c586678084e30f9f5b2bff3c773b46f5463d
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812669"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405734"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>예제: Azure Storage와 함께 Azure 라이브러리 사용
+# <a name="example-access-azure-storage-using-the-azure-libraries-for-pyhon"></a>예: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
 이 예는 Python 애플리케이션 코드로 Azure 클라이언트 라이브러리를 사용하여 해당 Blob Storage 컨테이너에 파일을 업로드하는 방법을 보여줍니다. 이 예에서는 [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)에 표시된 리소스를 프로비저닝했다고 가정합니다.
 
@@ -47,7 +47,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="4-use-blob-storage-from-app-code"></a>4: 앱 코드에서 Blob Storage 사용
 
-다음 섹션(번호 4a 및 4b)에서는 [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)을 통해 프로비저닝된 Blob 컨테이너에 액세스하는 두 가지 방법을 보여줍니다.
+다음 섹션(번호 4a 및 4b)에서는 [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)에 표시된 리소스를 프로비저닝했다고 가정합니다.
 
 [첫 번째 방법(아래 섹션 4a)](#4a-use-blob-storage-with-authentication)은 [Python 앱을 인증하는 방법](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)에 설명된 대로 `DefaultAzureCredential`을 사용하여 앱을 인증합니다. 이 방법을 사용하면 먼저 앱 ID에 적절한 권한을 할당해야 합니다. 이것이 권장되는 방식입니다.
 

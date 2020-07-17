@@ -3,14 +3,14 @@ title: Python용 Azure 라이브러리로 Azure Storage 프로비저닝
 description: Python용 Azure SDK 라이브러리를 사용하여 Azure Storage 계정에서 Blob 컨테이너를 프로비저닝한 다음, 이 컨테이너에 파일을 업로드합니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
-ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
+ms.openlocfilehash: 648abeb105f1c575d5454af09cd2279c059d7b98
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84716101"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405724"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>예제: Azure Storage와 함께 Azure 라이브러리 사용
+# <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>예: Python용 Azure 라이브러리를 사용하여 Azure Storage 프로비저닝
 
 이 문서에서는 Python 스크립트로 Azure 관리 라이브러리를 사용하여 Azure Storage 계정과 Blob Storage 컨테이너가 포함된 리소스 그룹을 프로비저닝하는 방법을 알아봅니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.)
 

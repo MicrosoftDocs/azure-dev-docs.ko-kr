@@ -7,25 +7,26 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 43633e5c-9fb1-4807-ba63-e24c126754e2
-ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 30884958dd4c829cf7b268715de7c79f3a786724
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: 585cb33b6eabc5e353ddda37f687bcf0bacc6901
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674179"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405704"
 ---
 # <a name="azure-management-libraries-for-java---web-app-samples"></a>Java - 웹앱 샘플용 Azure 관리 라이브러리 
 
 다음 표는 웹앱을 만들고 구성하는 데 사용할 수 있는 Java 소스에 연결됩니다.
 
-| **앱 만들기** ||
+| 샘플 | Description |
 |---|---|
+| **앱 만들기** ||
 | [웹앱 만들기 및 FTP 또는 GitHub에서 코드 배포][1] | 로컬 Git, FTP 및 GitHub의 연속 통합에서 웹앱을 배포합니다. |
 | [웹앱 만들기 및 배포 슬롯 관리][2] | 웹앱을 만들고, 스테이징 슬롯에 배포한 다음, 슬롯 간에 배포를 교환합니다. |
 | **앱 구성** ||
 | [웹앱 만들기 및 사용자 지정 도메인 구성][3] | 사용자 지정 도메인 및 자체 서명된 SSL 인증서가 있는 웹앱을 만듭니다. |
-| **앱 크기 조정** ||
+| **앱 스케일링** ||
 | [여러 지역에서 항상 사용 가능한 웹앱 크기 조정][4] | Azure Traffic Manager를 사용하여 서로 다른 세 지역의 웹앱 크기를 조정하고 단일 엔드포인트를 통해 사용할 수 있게 합니다. | 
 | **리소스에 앱 연결** ||
 | [스토리지 계정에 웹앱 연결][5] | Azure Storage 계정을 만들고, 앱 설정에 스토리지 계정 연결 문자열을 추가합니다. |

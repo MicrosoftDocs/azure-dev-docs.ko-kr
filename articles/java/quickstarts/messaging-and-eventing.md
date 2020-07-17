@@ -3,14 +3,15 @@ title: Azure의 Java 앱용 메시징 및 이벤트에 대한 빠른 시작
 description: Java 앱용 메시징 및 이벤트에 대한 Azure 설명서의 시작 자료 목록입니다.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fc45140d68493bd80093f361b478e485cc2ed42f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: d5455c05872c67853b526fd30ecb4aee3c75954c
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673649"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405644"
 ---
-# <a name="caching-for-java-apps-on-azure"></a>Azure의 Java 앱용 캐싱
+# <a name="messaging-and-eventing-for-java-apps-on-azure"></a>Azure의 Java 앱용 메시징 및 이벤트
 
 Azure에서 다양한 메시징 및 이벤트 옵션을 시작하는 데 유용한 문서는 다음과 같습니다.
 

@@ -8,12 +8,13 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: ff89152b5cbcd8c0abeff74ce75c4ba21528613e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 2714d4d4b8a614bcdbf951eb2a9dc4c2dc78dda2
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138830"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379427"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>자습서: Azure Active Directory용 Spring Boot Starter를 사용하여 Java 웹앱 보호하기
 
@@ -30,7 +31,7 @@ ms.locfileid: "82138830"
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 문서의 단계를 완료하려면 다음 필수 구성 요소가 필요합니다.
 
@@ -124,9 +125,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
     ![앱 매니페스트 구성][create-app-registration-11]
 
     > [!NOTE]
-    > 
-    > `oauth2AllowImplicitFlow` 매개 변수 및 다른 애플리케이션 설정에 대한 자세한 내용은 [Azure Active Directory 애플리케이션 매니페스트][AAD app manifest]를 참조하세요. 
-    >
+    > `oauth2AllowImplicitFlow` 매개 변수 및 다른 애플리케이션 설정에 대한 자세한 내용은 [Azure Active Directory 애플리케이션 매니페스트][AAD app manifest]를 참조하세요.
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>디렉터리에 사용자 계정을 추가하고 해당 계정을 그룹에 추가합니다
 
@@ -139,11 +138,9 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    ![사용자 계정 정보 입력][create-user-02]
 
    > [!NOTE]
-   > 
    > 사용자 이름을 입력하려면 자습서의 앞부분에 나온 디렉터리 URL을 지정해야 합니다. 예를 들어,
    >
    > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
-   > 
 
 1. **그룹**을 클릭한 다음, 애플리케이션에서 권한을 부여하는 데 사용할 **새 그룹을 만듭니다**.
 
@@ -151,7 +148,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
    ![그룹에 대한 사용자 선택][create-user-03]
 
-1. **사용자** 패널로 돌아가서 테스트 사용자를 선택하고, **암호 재설정**을 클릭하고, 암호를 복사합니다. 이 암호는 이 자습서의 뒷부분에서 애플리케이션에 로그인할 때 사용됩니다. 
+1. **사용자** 패널로 돌아가서 테스트 사용자를 선택하고, **암호 재설정**을 클릭하고, 암호를 복사합니다. 이 암호는 이 자습서의 뒷부분에서 애플리케이션에 로그인할 때 사용됩니다.
 
    ![암호 표시][create-user-04]
 
@@ -193,6 +190,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    # Specifies the list of Active Directory groups to use for authorization:
    azure.activedirectory.active-directory-groups=Users
    ```
+
    위치:
 
    | 매개 변수 | Description |
@@ -203,9 +201,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    | `azure.activedirectory.active-directory-groups` | 권한 부여에 사용할 Active Directory 그룹 목록을 포함합니다. |
 
    > [!NOTE]
-   > 
-   > *application.properties* 파일에서 사용할 수 있는 값의 전체 목록은 GitHub에서 [Azure Active Directory Spring Boot 샘플][AAD Spring Boot Sample]을 참조합니다.
-   >
+   > *application.properties* 파일에서 사용할 수 있는 값의 전체 목록은 GitHub에서 [Azure Active Directory Spring Boot 샘플][AAD Spring Boot Sample]을 참조하세요.
 
 1. *application.properties* 파일을 저장하고 닫습니다.
 
@@ -236,10 +232,10 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
       }
    }
    ```
+
    > [!NOTE]
-   > 
    > `@PreAuthorize("hasRole('')")` 메서드에 지정한 그룹 이름은 *application.properties* 파일의 `azure.activedirectory.active-directory-groups` 필드에 지정한 그룹 중 하나를 포함해야 합니다.
-   > 
+   >
    > 다른 요청 매핑에 대한 다른 권한 부여 설정을 지정할 수도 있습니다. 예를 들어:
    >
    > ``` java
@@ -262,7 +258,6 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    >    }
    > }
    > ```
-   >    
 
 1. 애플리케이션에 대해 Java 소스 폴더에 이름이 *security*인 폴더를 만듭니다. 예를 들어 *src/main/java/com/wingtiptoys/security/security*입니다.
 
@@ -303,7 +298,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ## <a name="build-and-test-your-app"></a>앱 빌드 및 테스트
 
-1. 명령 프롬프트를 열고 디렉터리를 앱의 *pom.xml* 파일이 위치한 폴더로 변경합니다. 
+1. 명령 프롬프트를 열고 디렉터리를 앱의 *pom.xml* 파일이 위치한 폴더로 변경합니다.
 
 1. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 
@@ -319,20 +314,16 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    ![애플리케이션에 로그인][application-login]
 
    > [!NOTE]
-   > 
    > 새 사용자 계정에서 처음 로그인한 경우라면, 암호를 변경하라는 메시지가 표시될 수 있습니다.
-   > 
+   >
    > ![암호 변경][update-password]
-   > 
 
 1. 사용자가 성공적으로 로그인한 후 컨트롤러에서 샘플 "Hello World" 텍스트가 표시됩니다.
 
    ![로그인 성공][hello-world]
 
    > [!NOTE]
-   > 
    > 승인되지 않은 사용자 계정인 경우 **HTTP 403 Unauthorized** 메시지가 나타납니다.
-   >
 
 ## <a name="summary"></a>요약
 
@@ -360,7 +351,7 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[AAD Spring Boot Sample]: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-spring-boot-backend-sample
+[AAD Spring Boot Sample]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-backend
 
 <!-- IMG List -->
 

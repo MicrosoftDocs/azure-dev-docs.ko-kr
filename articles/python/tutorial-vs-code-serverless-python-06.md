@@ -4,12 +4,12 @@ description: 자습서 6단계, 두 번째 함수를 추가하여 Azure Function
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ad5f645188eef2c283858e9f322aacb86bb2263b
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.openlocfilehash: 9d4ce18e2a46f86b221acaee096a7abfa1674e70
+ms.sourcegitcommit: f3699ec29f821e00700c4cc27c1d6a975018d195
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708597"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86481154"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Azure Functions에 두 번째 Python 함수 추가
 
@@ -53,7 +53,7 @@ ms.locfileid: "83708597"
             output += "%04d" % (carry + (total / scale))
             carry = total % scale
 
-        return output;
+        return output
 
     def main(req: func.HttpRequest) -> func.HttpResponse:
         logging.info('DigitsOfPi HTTP trigger function processed a request.')

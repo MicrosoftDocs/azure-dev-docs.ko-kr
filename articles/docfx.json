@@ -92,7 +92,7 @@
         "chef/**/*.md": "TomArcherMsft",
         "jenkins/**/*.md": "TomArcherMsft",
         "terraform/**/*.md": "TomArcherMsft",
-        "javascript/**/*.md": "btholt"
+        "javascript/**/*.md": "diberry"
       },
       "manager": {
         "**/*.md": "barbkess",
@@ -109,7 +109,7 @@
         "chef/**/*.md": "tarcher",
         "jenkins/**/*.md": "tarcher",
         "terraform/**/*.md": "tarcher",
-        "javascript/**/*.md": "brholt"
+        "javascript/**/*.md": "diberry"
       },
       "ms.devlang": {
         "java/**/*.md": "java",
@@ -142,7 +142,8 @@
       "ms.custom": {
         "python/**/*.md": "tracking-python",
         "ansible/**/*.md": "devx-track-ansible",
-        "terraform/**/*.md": "devx-track-terraform"
+        "terraform/**/*.md": "devx-track-terraform",
+        "javascript/**/*.md": "devx-track-javascript"
       }
     },
     "template": [],

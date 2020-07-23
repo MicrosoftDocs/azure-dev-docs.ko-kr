@@ -13,83 +13,13 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
-    },
-    {
-      "docset_name": "azure-dotnet",
-      "build_source_folder": "dotnet-redirects",
-      "build_output_subfolder": "azure-dotnet",
-      "locale": "ko-kr",
-      "monikers": [],
-      "moniker_ranges": [],
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes"
-    },
-    {
-      "docset_name": "azure-go-redirect",
-      "build_source_folder": "go-redirects",
-      "build_output_subfolder": "azure-go-redirect",
-      "locale": "ko-kr",
-      "monikers": [],
-      "moniker_ranges": [],
-      "open_to_public_contributors": false,
-      "type_mapping": {
-        "Conceptual": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes"
-    },
-    {
-      "docset_name": "azure-java",
-      "build_source_folder": "java",
-      "build_output_subfolder": "azure-java",
-      "locale": "ko-kr",
-      "monikers": [],
-      "moniker_ranges": [],
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes"
-    },
-    {
-      "docset_name": "azure-javascript",
-      "build_source_folder": "javascript",
-      "build_output_subfolder": "azure-javascript",
-      "locale": "ko-kr",
-      "monikers": [],
-      "moniker_ranges": [],
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes"
-    },
-    {
-      "docset_name": "azure-python",
-      "build_source_folder": "python",
-      "build_output_subfolder": "azure-python",
-      "locale": "ko-kr",
-      "monikers": [],
-      "moniker_ranges": [],
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes"
     }
   ],
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  },
   "notification_subscribers": [
-    "brendm@microsoft.com",
-    "karler@microsoft.com",
-    "kraigb@microsoft.com",
-    "barbkess@microsoft.com"
+      "alachary@microsoft.com"
   ],
   "sync_notification_subscribers": [],
   "branches_to_filter": [
@@ -121,8 +51,5 @@
   ],
   "branch_target_mapping": {},
   "need_generate_pdf_url_template": false,
-  "targets": {},
-  "docs_build_engine": {
-    "name": "docfx_v3"
-  }
+  "targets": {}
 }

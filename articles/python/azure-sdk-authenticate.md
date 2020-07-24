@@ -3,12 +3,12 @@ title: Azure 서비스를 사용하여 Python 애플리케이션을 인증하는
 description: Azure 라이브러리를 사용하여 Azure 서비스로 Python 앱을 인증하는 데 필요한 자격 증명 개체를 얻는 방법
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1694f85b2ad41a12865bb3d367b1b8498ab474bb
+ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377997"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86945821"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Azure 서비스를 사용하여 Python 앱을 인증하는 방법
 
@@ -69,7 +69,7 @@ retrieved_secret = client.get_secret("secret-name-01")
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>SDK 관리 라이브러리에서 DefaultAzureCredential 사용
 
 ```python
-# WARNING: this code presently fails!
+# WARNING: this code presently fails with current release libraries!
 
 from azure.identity import DefaultAzureCredential
 
@@ -86,7 +86,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-현재 `DefaultAzureCredential`은 Azure SDK 클라이언트("데이터 평면") 라이브러리에서만 작동하며, 이 코드 예제와 같이 이름이 `azure-mgmt`로 시작하는 Azure SDK 관리 라이브러리의 미리 보기 버전에서는 작동하지 않습니다. 즉, 현재 릴리스 라이브러리에서는 "'DefaultAzureCredential' 개체에 'signed_session' 특성이 없습니다."라는 약간 모호한 오류로 인해 `subscription_client.subscriptions.list()`에 대한 호출이 실패합니다. 이 오류는 현재 SDK 관리 라이브러리에서 `DefaultAzureCredential`이 없는 `signed_session` 속성이 자격 증명 개체에 포함되어 있다고 가정하므로 발생합니다.
+현재 `DefaultAzureCredential`은 Azure SDK 클라이언트("데이터 평면")와 이 코드 예제처럼 Azure SDK 관리 라이브러리의 미리 보기 버전(이름이 `azure-mgmt`로 시작하는 라이브러리의 최신 미리 보기 버전)에서만 작동합니다. 즉, 현재 릴리스 라이브러리에서는 "'DefaultAzureCredential' 개체에 'signed_session' 특성이 없습니다."라는 약간 모호한 오류로 인해 `subscription_client.subscriptions.list()`에 대한 호출이 실패합니다. 이 오류는 현재 SDK 관리 라이브러리에서 `DefaultAzureCredential`이 없는 `signed_session` 속성이 자격 증명 개체에 포함되어 있다고 가정하므로 발생합니다.
 
 블로그 게시물 [Azure 관리 라이브러리에 대한 새 미리 보기 소개](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/)에 설명된 대로 미리 보기 관리 라이브러리를 사용하여 오류를 해결할 수 있습니다.
 

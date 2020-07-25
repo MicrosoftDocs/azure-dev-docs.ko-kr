@@ -15,8 +15,13 @@
       href: migrate-tomcat-to-tomcat-app-service.md
     - name: AKS의 컨테이너에 Tomcat 설치하기
       href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
-    - name: Azure Virtual Machines에 WebLogic 배포하기
-      href: migrate-weblogic-to-virtual-machines.md
+    - name: Azure에 WebLogic 배포하기
+      expanded: true
+      items:
+        - name: Azure Virtual Machines에 WebLogic 배포하기
+          href: migrate-weblogic-to-virtual-machines.md
+        - name: LDAP를 통해 AAD를 사용하는 Azure에 WebLogic 배포하기
+          href: migrate-weblogic-with-aad-ldap.md
     - name: AKS에서 WildFly로 WildFly 배포하기
       href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
     - name: AKS에서 WildFly로 WebLogic 배포하기

@@ -10,12 +10,12 @@ metadata:
   ms.date: 04/03/2020
   ms.topic: landing-page
   ms.custom: azure-migrate-seo
-  ms.openlocfilehash: 875ee9ed26bd865f8074752be92aeefed3cae0e3
-  ms.sourcegitcommit: 513381434d3538f4397a6c1d40c94e002af6ffa9
+  ms.openlocfilehash: b0dca4c2fb34b1d32aea6c951e285f9d20eaa658
+  ms.sourcegitcommit: 1f78e54deb85c6063b887286a13a967d1d186b50
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/09/2020
-  ms.locfileid: "86195444"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "87114937"
 landingContent:
 - title: Java 애플리케이션을 Azure로 마이그레이션
   linkLists:
@@ -49,6 +49,8 @@ landingContent:
       url: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
     - text: Azure Virtual Machines에 WebLogic 배포하기
       url: migrate-weblogic-to-virtual-machines.md
+    - text: LDAP를 통해 AAD를 사용하는 Azure에 WebLogic 배포하기
+      url: migrate-weblogic-with-aad-ldap.md
 - title: WildFly를 Azure로 마이그레이션
   linkLists:
   - linkListType: how-to-guide

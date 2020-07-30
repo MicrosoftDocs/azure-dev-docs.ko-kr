@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: codemillmatt
   ms.author: masoucou
-  ms.date: 06/25/2020
-  ms.openlocfilehash: 5d0d3c3aa4a1cca11ae54d1346e80aa790dd64b3
-  ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+  ms.date: 07/27/2020
+  ms.openlocfilehash: f7f2f1d9d7b9764904fa995ce575fc7409d3a237
+  ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/06/2020
-  ms.locfileid: "86018638"
+  ms.lasthandoff: 07/29/2020
+  ms.locfileid: "87400671"
 landingContent:
 - title: Azure에서 모바일 시작
   linkLists:
@@ -85,7 +85,7 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: ASP.NET Core 및 Azure Notification Hubs를 사용하여 Xamarin.Forms 앱에 푸시 알림 보내기
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-backend-service-xamarin-forms
+      url: notification-hubs-backend-service-xamarin-forms.md
     - text: Android 디바이스에 푸시 알림 보내기
       url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
     - text: 디바이스에 풍부한 콘텐츠 푸시

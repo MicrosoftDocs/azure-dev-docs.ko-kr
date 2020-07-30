@@ -13,12 +13,12 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: 89cc9d65d903fdeabd236387a24dd340fd90f9f9
-  ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+  ms.openlocfilehash: ef568d127d1bc2669919eeeadfbbfeb36cf9ecf0
+  ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/01/2020
-  ms.locfileid: "84256428"
+  ms.lasthandoff: 07/30/2020
+  ms.locfileid: "87438261"
 landingContent:
 - title: Azure에서 Python 시작
   linkLists:
@@ -92,7 +92,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Azure Machine Learning 서비스 정보
+    - text: Azure Machine Learning 정보
       url: /azure/machine-learning/service
     - text: Azure Cognitive Services 정보
       url: /azure/cognitive-services

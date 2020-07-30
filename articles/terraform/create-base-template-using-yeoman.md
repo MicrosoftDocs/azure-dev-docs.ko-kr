@@ -3,12 +3,12 @@ title: 자습서 - Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿
 description: Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿을 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 05/25/2020
-ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
-ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
+ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85418221"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334468"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>자습서: Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
 
@@ -27,7 +27,7 @@ ms.locfileid: "85418221"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Visual Studio Code**: 플랫폼에 [Visual Studio Code를 다운로드](https://code.visualstudio.com/download)합니다.
-- **Terraform**: Yeoman에서 만든 모듈을 실행하기 위해 [Terraform을 설치](getting-started-cloud-shell.md)합니다.
+- **Terraform**: Yeoman에서 만든 모듈을 실행하기 위해 [Terraform을 설치](get-started-cloud-shell.md)합니다.
 - **Docker**: Yeoman 생성기에서 만든 모듈을 실행하기 위해 [Docker를 설치](https://www.docker.com/get-started)합니다.
 - **Go 프로그래밍 언어**: Yeoman에서 생성된 테스트 사례는 Go 언어를 사용하므로 [Go를 설치](https://golang.org/)합니다.
 
@@ -141,7 +141,7 @@ Yeoman 모듈 생성기에서 만든 파일은 다음과 같습니다.
     - 테스트 사례는 Go로 작성되었습니다.
     - 테스트의 모든 코드는 엔드투엔드 테스트입니다.
     - 엔드투엔드 테스트는 `fixture`에서 정의된 모든 항목의 프로비저닝을 시도합니다. `template_output.go` 파일의 결과는 미리 정의된 예상된 값과 비교됩니다.
-    - `Gopkg.lock` 및 `Gopkg.toml`: 종속성을 정의합니다. 
+    - `Gopkg.lock` 및 `Gopkg.toml`: 종속성을 정의합니다.
 
 Azure용 Yeoman 생성기(https://github.com/Azure/generator-az-terra-module )에 대한 자세한 내용은 [Terratest 설명서](https://terratest.gruntwork.io/docs/)를 참조하세요.
 

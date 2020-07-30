@@ -4,16 +4,16 @@ description: Terraform을 사용하여 Azure에서 완전한 Linux 가상 머신
 keywords: azure devops terraform linux vm 가상 머신
 ms.topic: tutorial
 ms.date: 06/14/2020
-ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
-ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
+ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84779655"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334438"
 ---
 # <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 
-Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들 수 있습니다. 일관되고 재현 가능한 방식으로 Azure 리소스를 만들고 구성하는 Terraform 템플릿을 이해하기 쉬운 형태로 빌드할 수 있습니다. 이 문서에서는 Terraform을 사용하여 전체 Linux 환경 및 지원 리소스를 만드는 방법을 보여 줍니다. [Terraform 설치 및 구성](getting-started-cloud-shell.md) 방법도 알아봅니다.
+Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들 수 있습니다. 일관되고 재현 가능한 방식으로 Azure 리소스를 만들고 구성하는 Terraform 템플릿을 이해하기 쉬운 형태로 빌드할 수 있습니다. 이 문서에서는 Terraform을 사용하여 전체 Linux 환경 및 지원 리소스를 만드는 방법을 보여 줍니다. [Terraform 설치 및 구성](get-started-cloud-shell.md) 방법도 알아봅니다.
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -25,7 +25,7 @@ Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들
 
 Terraform 템플릿의 각 섹션을 살펴보겠습니다. 복사하여 붙여넣을 수 있는 [Terraform 템플릿](#complete-terraform-script)의 전체 버전을 확인할 수 있습니다.
 
-`provider` 섹션은 Azure 공급자를 사용하도록 Terraform에 알립니다. `subscription_id`, `client_id`, `client_secret` 및 `tenant_id`에 대한 값을 가져오려면 [Terraform 설치 및 구성](getting-started-cloud-shell.md)을 참조하세요.
+`provider` 섹션은 Azure 공급자를 사용하도록 Terraform에 알립니다. `subscription_id`, `client_id`, `client_secret` 및 `tenant_id`에 대한 값을 가져오려면 [Terraform 설치 및 구성](get-started-cloud-shell.md)을 참조하세요.
 
 > [!TIP]
 > 값에 대한 환경 변수를 만들거나 [Azure Cloud Shell Bash 환경](/azure/cloud-shell/overview)을 사용하는 경우 이 섹션에서 변수 선언을 포함시킬 필요가 없습니다.

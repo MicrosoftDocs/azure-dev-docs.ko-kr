@@ -4,12 +4,12 @@ description: Terraform 모듈을 사용하여 Azure에서 Windows 가상 머신 
 keywords: azure devops terraform vm 가상 머신 클러스터 모듈 레지스트리
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: c6561f2e5ba98be4906f480ff8ac7970eae6e408
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ad318237dcefd6586211c45fb79e51baa05549c4
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329491"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334388"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>자습서: 모듈 레지스트리를 사용하여 Terraform으로 Azure VM 클러스터 만들기
 
@@ -30,9 +30,9 @@ ms.locfileid: "84329491"
 ## <a name="set-up-authentication-with-azure"></a>Azure로 인증 설정
 
 > [!TIP]
-> [Terraform 환경 변수를 사용](getting-started-cloud-shell.md)하거나 [Azure Cloud Shell](/azure/cloud-shell/overview)에서 자습서를 실행하는 경우 이 단계를 건너뜁니다.
+> [Terraform 환경 변수를 사용](get-started-cloud-shell.md)하거나 [Azure Cloud Shell](/azure/cloud-shell/overview)에서 자습서를 실행하는 경우 이 단계를 건너뜁니다.
 
- Azure 서비스 주체를 만들려면 [Terraform을 설치하고 Azure에 대한 액세스 구성](getting-started-cloud-shell.md)을 검토하세요. 이 서비스 주체를 사용하여 빈 디렉터리에 있는 새 파일 `azureProviderAndCreds.tf`를 다음 코드로 채웁니다.
+ Azure 서비스 주체를 만들려면 [Terraform을 설치하고 Azure에 대한 액세스 구성](get-started-cloud-shell.md)을 검토하세요. 이 서비스 주체를 사용하여 빈 디렉터리에 있는 새 파일 `azureProviderAndCreds.tf`를 다음 코드로 채웁니다.
 
 ```hcl
 variable subscription_id {}

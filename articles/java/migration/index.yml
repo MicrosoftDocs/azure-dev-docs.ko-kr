@@ -9,13 +9,13 @@ metadata:
   ms.author: karler
   ms.date: 04/03/2020
   ms.topic: landing-page
-  ms.custom: azure-migrate-seo
-  ms.openlocfilehash: b0dca4c2fb34b1d32aea6c951e285f9d20eaa658
-  ms.sourcegitcommit: 1f78e54deb85c6063b887286a13a967d1d186b50
+  ms.custom: seo-azure-migrate
+  ms.openlocfilehash: 8e1d7912ff2910e717fba1f3518dcf3a55847ee4
+  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/23/2020
-  ms.locfileid: "87114937"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87260330"
 landingContent:
 - title: Java 애플리케이션을 Azure로 마이그레이션
   linkLists:

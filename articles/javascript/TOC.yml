@@ -90,6 +90,10 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: 음성 인식
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+        - name: 로깅 및 메트릭
+          items:
+            - name: Azure SDK를 사용하여 로깅
+              href: node-sdk-logging.md
     - name: 자습서
       items:
         - name: VS Code로 Azure Functions 배포
@@ -220,5 +224,7 @@
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-search'
         - name: 모든 샘플
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs'
-    - name: 참조
-      href: /javascript/api/?view=azure-node-latest
+    - name: 라이브러리 API 참조
+      href: /javascript/api/overview/azure/?view=azure-node-latest
+    - name: 최신 SDK
+      href: 'https://azure.github.io/azure-sdk/releases/latest/index.html#javascript'

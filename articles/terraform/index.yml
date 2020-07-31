@@ -9,12 +9,12 @@ metadata:
   ms.author: tarcher
   ms.topic: landing-page
   ms.date: 04/26/2020
-  ms.openlocfilehash: 9749f2bbd1c2e10c83e15430998a96e41b58abd4
-  ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+  ms.openlocfilehash: c85e77d0e2cebd0cc8c5b9a0485e6002cb3014ee
+  ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84329711"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87334508"
 landingContent:
 - title: Azure의 Terraform 정보
   linkLists:
@@ -30,8 +30,10 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
-    - text: 시작하기 - Cloud Shell
-      url: getting-started-cloud-shell.md
+    - text: Cloud Shell 및 Azure CLI
+      url: get-started-cloud-shell.md
+    - text: Windows 및 PowerShell
+      url: get-started-powershell.md
   - linkListType: tutorial
     links:
     - text: Terraform Visual Studio Code 확장 설치

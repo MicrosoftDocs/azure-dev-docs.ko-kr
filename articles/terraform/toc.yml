@@ -8,7 +8,9 @@
   expanded: true
   items:
     - name: 시작하기 - Cloud Shell
-      href: getting-started-cloud-shell.md
+      href: get-started-cloud-shell.md
+    - name: 시작하기 - PowerShell
+      href: get-started-powershell.md
 - name: 자습서
   items:
     - name: 설정 및 구성

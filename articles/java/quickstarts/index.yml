@@ -5,14 +5,14 @@ metadata:
   description: 이러한 빠른 시작을 사용하여 클라우드용 Java 앱 개발을 시작하세요.
   ms.topic: landing-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: 4df3926c2de96a207b0f1f20445d60c4a2f4daac
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 302f214a3540012284867931d8b286e042fff147
+  ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675349"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87334478"
 landingContent:
-- title: 웹앱 배포
+- title: Java 앱 배포
   linkLists:
   - linkListType: quickstart
     links:

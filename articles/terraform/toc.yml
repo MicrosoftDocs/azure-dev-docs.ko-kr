@@ -7,16 +7,12 @@
 - name: 빠른 시작
   expanded: true
   items:
-    - name: 시작하기 - Cloud Shell
+    - name: 시작하기 - Azure Cloud Shell
       href: get-started-cloud-shell.md
-    - name: 시작하기 - PowerShell
+    - name: 시작하기 - Windows 및 PowerShell
       href: get-started-powershell.md
-- name: 자습서
+- name: 방법 가이드
   items:
-    - name: 설정 및 구성
-      items:
-        - name: Terraform 상태를 Azure Storage에 저장
-          href: store-state-in-azure-storage.md
     - name: App Service
       items:
         - name: Terraform 및 Azure 공급자 배포 슬롯
@@ -31,6 +27,30 @@
       items:
         - name: Azure Cosmos DB 배포
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
+    - name: 도구
+      items:
+        - name: Terraform Visual Studio Code 확장 설치
+          href: configure-vs-code-extension-for-terraform.md
+        - name: Yeoman을 사용하여 Terraform 기본 템플릿 만들기
+          href: create-base-template-using-yeoman.md
+    - name: 가상 머신
+      items:
+        - name: 인프라가 있는 가상 머신
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: Terraform 모듈이 있는 가상 머신 클러스터
+          href: create-vm-cluster-module.md
+        - name: Terraform 및 HCL이 있는 가상 머신 클러스터
+          href: create-vm-cluster-with-infrastructure.md
+        - name: 인프라가 있는 가상 머신 확장 집합
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: Packer 이미지가 있는 가상 머신 확장 집합
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+- name: 자습서
+  items:
+    - name: 설정 및 구성
+      items:
+        - name: Terraform 상태를 Azure Storage에 저장
+          href: store-state-in-azure-storage.md
     - name: 네트워크
       items:
         - name: 허브 및 스포크 토폴로지
@@ -47,26 +67,16 @@
               href: hub-spoke-spoke-network.md
             - name: 6. 네트워크 토폴로지 연결 유효성 검사
               href: hub-spoke-validation.md
-    - name: 도구
+    - name: Terraform 프로젝트 테스트
       items:
-        - name: Terraform Visual Studio Code 확장 설치
-          href: configure-vs-code-extension-for-terraform.md
-        - name: Yeoman을 사용하여 Terraform 기본 템플릿 만들기
-          href: create-base-template-using-yeoman.md
-        - name: Terratest를 사용하여 Terraform 모듈 테스트
-          href: test-modules-using-terratest.md
-    - name: 가상 머신
-      items:
-        - name: 인프라가 있는 가상 머신
-          href: create-linux-virtual-machine-with-infrastructure.md
-        - name: Terraform 모듈이 있는 가상 머신 클러스터
-          href: create-vm-cluster-module.md
-        - name: Terraform 및 HCL이 있는 가상 머신 클러스터
-          href: create-vm-cluster-with-infrastructure.md
-        - name: 인프라가 있는 가상 머신 확장 집합
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: Packer 이미지가 있는 가상 머신 확장 집합
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+        - name: 1. Terraform 테스트 개요
+          href: best-practices-testing-overview.md
+        - name: 2. 통합 테스트
+          href: best-practices-integration-testing.md
+        - name: 3. 호환성 테스트
+          href: best-practices-compliance-testing.md
+        - name: 4. 엔드투엔드 테스트
+          href: best-practices-end-to-end-testing.md
 - name: 샘플
   items:
     - name: 구성 템플릿

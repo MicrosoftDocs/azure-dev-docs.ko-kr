@@ -8,13 +8,13 @@ metadata:
   author: TomArcherMsft
   ms.author: tarcher
   ms.topic: landing-page
-  ms.date: 04/26/2020
-  ms.openlocfilehash: c85e77d0e2cebd0cc8c5b9a0485e6002cb3014ee
-  ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+  ms.date: 07/31/2020
+  ms.openlocfilehash: 40e1650488552387f5a62cf02a754dde89fed773
+  ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87334508"
+  ms.lasthandoff: 07/31/2020
+  ms.locfileid: "87478543"
 landingContent:
 - title: Azure의 Terraform 정보
   linkLists:
@@ -30,21 +30,33 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
-    - text: Cloud Shell 및 Azure CLI
+    - text: 시작하기 - Azure Cloud Shell
       url: get-started-cloud-shell.md
-    - text: Windows 및 PowerShell
+    - text: 시작하기 - Windows 및 PowerShell
       url: get-started-powershell.md
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Terraform Visual Studio Code 확장 설치
       url: configure-vs-code-extension-for-terraform.md
     - text: Yeoman을 사용하여 Terraform 기본 템플릿 만들기
       url: create-base-template-using-yeoman.md
-    - text: Terratest를 사용하여 Terraform 모듈 테스트
-      url: test-modules-using-terratest.md
+- title: Terraform 프로젝트 테스트
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Terraform 테스트 개요
+      url: best-practices-testing-overview.md
+  - linkListType: tutorial
+    links:
+    - text: 통합 테스트
+      url: best-practices-integration-testing.md
+    - text: 호환성 테스트
+      url: best-practices-compliance-testing.md
+    - text: 엔드투엔드 테스트
+      url: best-practices-end-to-end-testing.md
 - title: AKS 관리
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: AKS로 Kubernetes 클러스터 만들기
       url: create-k8s-cluster-with-tf-and-aks.md
@@ -56,7 +68,7 @@ landingContent:
     links:
     - text: Linux VM 만들기
       url: create-linux-virtual-machine-with-infrastructure.md
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Terraform 모듈을 사용하여 VM 클러스터 만들기
       url: create-vm-cluster-module.md
@@ -84,7 +96,7 @@ landingContent:
       url: hub-spoke-validation.md
 - title: 데이터베이스 관리
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Azure Cosmos DB 배포
       url: deploy-azure-cosmos-db-to-azure-container-instances.md

@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5dbe0235143621587b111f4537a49b36f88115f1
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
+ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379447"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87400621"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Java용 Azure SDK를 사용한 로깅 구성
 
@@ -26,17 +26,30 @@ Java용 Azure SDK 클라이언트 라이브러리는 SLF4J([Simple Logging Facad
 
 ## <a name="declare-a-logging-framework"></a>로깅 프레임워크 선언
 
-이러한 로거를 구현하기 전에 프로젝트에서 관련 프레임워크를 종속성으로 선언해야 합니다. 자세한 내용은 [SLF4J 사용 설명서](http://www.slf4j.org/manual.html#projectDep)를 참조하세요.
+이러한 로거를 구현하기 전에 프로젝트에서 관련 프레임워크를 종속성으로 선언해야 합니다. 자세한 내용은 [SLF4J 사용자 설명서](https://www.slf4j.org/manual.html#projectDep)를 참조하세요.
 
-## <a name="configure-log4j-or-log4j-2"></a>Log4j 또는 Log4j 2 구성
+다음 섹션에서는 일반적인 로깅 프레임워크에 대한 구성 예제를 제공합니다.
 
-속성 파일 또는 XML 파일에서 Log4j 및 Log4j 2 로깅을 구성할 수 있습니다. Log4j 및 Log4j 2 로깅에 대한 자세한 내용은 [Apache Log4j 2 매뉴얼](https://logging.apache.org/log4j/2.x/manual/configuration.html)을 참조하세요.
+## <a name="use-log4j"></a>Log4j 사용
 
-### <a name="use-a-properties-file"></a>properties 파일 사용
+다음 예제에서는 Log4j 로깅 프레임워크에 대한 구성을 보여 줍니다. 자세한 내용은 [Log4j 설명서](https://logging.apache.org/log4j/1.2/)를 참조하세요.
 
-프로젝트의 *./src/main/resource* 디렉터리에서 *log4j.properties* 또는 *log4j2.properties*(Logj4 2)라는 새 파일을 만듭니다. 시작하려면 다음 예제를 사용하세요.
+**Maven 종속성을 추가하여 Log4j 사용**
 
-Log4j 예제:
+프로젝트의 *pom.xml* 파일에 다음을 추가합니다.
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>[1.0,)</version> <!-- Version number 1.0 and above -->
+</dependency>
+```
+
+**properties 파일을 사용하여 Log4j 사용**
+
+*log4j.properties* 파일을 프로젝트의 *./src/main/resource* 디렉터리에 만들고, 다음 내용을 추가합니다.
 
 ```properties
 log4j.rootLogger=INFO, A1
@@ -46,47 +59,70 @@ log4j.appender.A1.layout.ConversionPattern=%m%n
 log4j.logger.com.azure.core=ERROR
 ```
 
-Log4j2 예제:
+**XML 파일을 사용하여 Log4j 사용**
 
-```properties
-appender.console.type = Console
-appender.console.name = LogToConsole
-appender.console.layout.type = PatternLayout
-appender.console.layout.pattern = %msg%n
-logger.app.name=com.azure.core
-logger.app.level=ERROR
-```
-
-### <a name="use-an-xml-file"></a>XML 파일 사용
-
-또는 XML 파일을 사용하여 Log4j 및 Log4j2를 구성할 수 있습니다. 프로젝트의 *./src/main/resource* 디렉터리에서 *log4j.xml* 또는 *log4j2.xml*(Logj4 2)이라는 새 파일을 만듭니다. 시작하려면 다음 예제를 사용하세요.
-
-Log4j 예제:
+*log4j.xml* 파일을 프로젝트의 *./src/main/resource* 디렉터리에 만들고, 다음 내용을 추가합니다.
 
 ```xml
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'>
 
-  <appender name="console" class="org.apache.log4j.ConsoleAppender">
-    <param name="Target" value="System.out"/>
-    <layout class="org.apache.log4j.PatternLayout">
-    <param name="ConversionPattern" value="%m%n" />
-    </layout>
-  </appender>
-  <logger name="com.azure.core" additivity="true">
-    <level value="ERROR" />
-    <appender-ref ref="console" />
-  </logger>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n" />
+        </layout>
+    </appender>
+    <logger name="com.azure.core">
+        <level value="ERROR" />
+        <appender-ref ref="console" />
+    </logger>
 
-  <root>
-    <priority value ="info"></priority>
-    <appender-ref ref="console"></appender>
-  </root>
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+    </root>
 
 </log4j:configuration>
 ```
 
-Log4j2 예제:
+## <a name="use-log4j-2"></a>Log4j 2 사용
+
+다음 예제에서는 Log4j 2 로깅 프레임워크에 대한 구성을 보여 줍니다. 자세한 내용은 [Log4j 2 설명서](https://logging.apache.org/log4j/2.x/manual/configuration.html)를 참조하세요.
+
+**Maven 종속성을 추가하여 Log4j 2 사용**
+
+프로젝트의 *pom.xml* 파일에 다음을 추가합니다.
+
+```
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>[2.0,)</version> <!-- Version number 2.0 and above -->
+</dependency>
+```
+
+**properties 파일을 사용하여 Log4j 2 사용**
+
+*log4j2.properties* 파일을 프로젝트의 *./src/main/resource* 디렉터리에 만들고, 다음 내용을 추가합니다.
+
+```properties
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %msg%n
+logger.app.name=com.azure.core
+logger.app.level=ERROR
+
+rootLogger.level = info
+rootLogger.appenderRefs = stdout
+rootLogger.appenderRef.stdout.ref = STDOUT
+```
+
+**XML 파일을 사용하여 Log4j 2 사용**
+
+*log4j2.xml* 파일을 프로젝트의 *./src/main/resource* 디렉터리에 만들고, 다음 내용을 추가합니다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,14 +144,28 @@ Log4j2 예제:
 </Configuration>
 ```
 
-## <a name="configure-logback"></a>Logback 구성
+## <a name="use-logback"></a>Logback 사용
 
-[Logback](https://logback.qos.ch/manual/introduction.html)은 인기 있는 로깅 프레임워크 중 하나이며 SLF4J의 네이티브 구현입니다. Logback을 구성하려면 프로젝트의 *./src/main/resources* 디렉터리에 *logback.xml*이라는 XML 파일을 만드세요. 구성 옵션에 대한 자세한 내용은 [Logback 프로젝트 웹 사이트](https://logback.qos.ch/manual/configuration.html)에서 확인할 수 있습니다.
+다음 예제에서는 Logback 로깅 프레임워크에 대한 기본 구성을 보여 줍니다. 자세한 내용은 [Logback 설명서](https://logback.qos.ch/manual/configuration.html)를 참조하세요.
 
-Logback 구성의 예는 다음과 같습니다.
+**Maven 종속성을 추가하여 Logback 사용**
+
+프로젝트의 *pom.xml* 파일에 다음을 추가합니다.
+
+```
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>[0.2.5,)</version> <!-- Version number 0.2.5 and above -->
+</dependency>
+```
+
+**XML 파일을 사용하여 Logback 사용**
+
+*logback.xml* 파일을 프로젝트의 *./src/main/resource* 디렉터리에 만들고, 다음 내용을 추가합니다.
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
@@ -131,9 +181,19 @@ Logback 구성의 예는 다음과 같습니다.
 </configuration>
 ```
 
-콘솔에 로깅하는 경우의 간단한 Logback 구성은 다음과 같습니다.
+## <a name="use-logback-in-a-spring-boot-application"></a>Spring Boot 애플리케이션에서 Logback 사용
 
-```xml
+다음 예제에서는 Spring에서 Logback을 사용하기 위한 몇 가지 구성을 보여 줍니다. 일반적으로 로깅 구성이 프로젝트의 *./src/main/resources* 디렉터리에 있는 *logback.xml* 파일에 추가됩니다. Spring은 이 파일에서 로깅을 포함한 다양한 구성을 검토합니다. 자세한 내용은 [Logback 설명서](https://logback.qos.ch/manual/configuration.html)를 참조하세요.
+
+모든 파일에서 Logback 구성을 읽도록 애플리케이션을 구성할 수 있습니다. *logback.xml* 파일을 Spring 애플리케이션에 연결하려면  *application.properties* 파일을 프로젝트의 *./src/main/resources* 디렉터리에 만들고, 다음 내용을 추가합니다.
+
+```properties
+logging.config=classpath:logback.xml
+```
+
+콘솔에 로깅하기 위한 Logback 구성을 만들려면 *logback.xml* 파일에 다음을 추가합니다.
+
+```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="Console"
@@ -151,7 +211,7 @@ Logback 구성의 예는 다음과 같습니다.
 </configuration>
 ```
 
-한 시간마다 롤오버되고 GZIP 파일 형식으로 보관되는 파일에 로깅하는 구성은 다음과 같습니다.
+매시간 롤오버되고 gzip 형식으로 보관되는 파일에 대한 로깅을 구성하려면 *logback.xml* 파일에 다음을 추가합니다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -175,14 +235,6 @@ Logback 구성의 예는 다음과 같습니다.
     <appender-ref ref="RollingFile" />
   </root>
 </configuration>
-```
-
-### <a name="configure-logback-for-a-spring-boot-application"></a>Spring Boot 애플리케이션의 Logback 구성
-
-Spring은 *./src/main/resources* 디렉터리에 있는 *application.properties* 파일에서 로깅을 포함한 프로젝트 구성을 찾습니다. *application.properties* 파일에서 *logback.xml*을 Spring Boot 애플리케이션에 연결하는 다음 줄을 추가하세요.
-
-```properties
-logging.config=classpath:logback.xml
 ```
 
 ## <a name="configure-fallback-logging-for-temporary-debugging"></a>임시 디버깅을 위한 대체 로깅 구성

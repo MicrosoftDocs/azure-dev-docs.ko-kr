@@ -4,12 +4,12 @@ description: Azure Kubernetes Service 및 Terraform을 사용하여 Kubernetes �
 keywords: azure devops terraform aks kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 01355f79f4c50d8599bf1c9cfab7c72257860f25
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 6056b6990e820d863404eea7394adc483de0cd3c
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329621"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334457"
 ---
 # <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>자습서: Terraform을 사용하여 Azure Kubernetes Service로 Kubernetes 클러스터 만들기
 
@@ -28,9 +28,9 @@ ms.locfileid: "84329621"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform 구성**: [Terraform 및 Azure에 액세스 구성](getting-started-cloud-shell.md) 문서의 지침을 따릅니다.
+- **Terraform 구성**: [Terraform 및 Azure에 액세스 구성](get-started-cloud-shell.md) 문서의 지침을 따릅니다.
 
-- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) 문서의 **서비스 주체 만들기** 섹션에 있는 지침을 따릅니다. appId, displayName, 암호, 테넌트를 기록해 둡니다.
+- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) 문서의 **서비스 주체 만들기** 섹션에 있는 지침을 따릅니다. `appId`, `displayName`, `password` 및 `tenant` 값을 적어 둡니다.
 
 ## <a name="create-the-directory-structure"></a>디렉터리 구조 만들기
 

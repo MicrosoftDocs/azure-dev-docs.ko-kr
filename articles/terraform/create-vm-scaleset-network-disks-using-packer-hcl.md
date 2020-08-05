@@ -1,14 +1,14 @@
 ---
 title: 자습서 - Terraform을 사용하여 Packer 사용자 지정 이미지에서 Azure 가상 머신 확장 집합 만들기
-description: Terraform을 사용하여 Packer에서 생성한 사용자 지정 이미지(가상 네트워크 및 연결된 관리 디스크로 완성)에서 Azure 가상 머신 확장 집합을 구성하고 버전 관리합니다.
+description: Terraform을 사용하여 Packer에서 생성한 사용자 지정 이미지에서 Azure 가상 머신 확장 집합을 구성하고 버전을 지정하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: d9db8f47cdb4c295ef5625450980938ff348b5fb
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790845"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334398"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>자습서: Terraform을 사용하여 Packer 사용자 지정 이미지에서 Azure 가상 머신 확장 집합 만들기
 
@@ -29,7 +29,7 @@ ms.locfileid: "85790845"
 ## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**: [Terraform을 설치하고 Azure에 대한 액세스 구성](getting-started-cloud-shell.md)
+- **Terraform**: [Terraform을 설치하고 Azure에 대한 액세스 구성](get-started-cloud-shell.md)
 - **SSH 키 쌍**: [SSH 키 쌍 만들기](/azure/virtual-machines/linux/mac-create-ssh-keys)
 - **Packer**:  [Packer 설치](https://learn.hashicorp.com/packer/getting-started/install)
 

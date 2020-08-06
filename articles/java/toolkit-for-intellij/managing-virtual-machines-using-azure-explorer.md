@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d05e5f5c6680e4a33bfd66289437d6967fe34e88
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 65f0c827fec68bc6a11d7dcaf380738967e16a92
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378067"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438472"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>IntelliJ용 Azure Explorer를 사용하여 Virtual Machines 관리
 
@@ -51,7 +51,7 @@ Azure Explorer를 사용하여 가상 머신을 만들려면 다음을 수행합
 
       * **SKU**: 선택한 제품에서 사용할 SKU(Stockkeeping Unit)를 지정합니다(예: *JDK_8*).
 
-      * **버전 번호**: 선택한 SKU에서 사용할 버전을 지정합니다.
+      * **버전 번호**: 선택한 SKU의 사용 버전을 지정합니다.
 
    ![Virtual Machine 이미지 선택 창][CR03]
 
@@ -61,9 +61,9 @@ Azure Explorer를 사용하여 가상 머신을 만들려면 다음을 수행합
 
    * **가상 머신 이름**: 새 가상 머신의 이름을 지정합니다. 이름은 문자로 시작하고 문자, 숫자 및 하이픈만 포함해야 합니다.
 
-   * **크기**: 가상 머신용으로 할당할 코어 수 및 메모리를 지정합니다.
+   * **Size**: 가상 머신용으로 할당할 코어 수 및 메모리를 지정합니다.
 
-   * **사용자 이름**: 가상 머신을 관리하기 위해 만들 관리자 계정을 지정합니다.
+   * **사용자 이름**: 가상 머신 관리용으로 만들 관리자 계정을 지정합니다.
 
    * **암호** 및 **확인**: 관리자 계정의 암호를 지정합니다.
 
@@ -73,23 +73,23 @@ Azure Explorer를 사용하여 가상 머신을 만들려면 다음을 수행합
 
 8. **연결된 리소스** 창에서 다음 정보를 입력합니다.
 
-   * **리소스 그룹**: 가상 머신에 사용할 리소스 그룹을 지정합니다. 다음 옵션 중 하나를 선택합니다.
+   * **리소스 그룹**: 가상 머신용 리소스 그룹을 지정합니다. 다음 옵션 중 하나를 선택합니다.
       * **새로 만들기**: 새 리소스 그룹을 만들도록 지정합니다.
       * **기존 그룹 사용**: Azure 계정에 연결된 리소스 그룹 목록에서 선택하도록 지정합니다.
 
        ![연결된 리소스 창][CR07]
 
-   * **Storage 계정**: 가상 머신을 저장하는 데 사용할 Storage 계정을 지정합니다. 기존 스토리지 계정을 사용하거나 새 스토리지 계정을 만들 수 있습니다. **새로 만들기**를 선택하면 다음 대화 상자가 표시됩니다.
+   * **스토리지 계정**: 가상 머신 저장용으로 사용할 스토리지 계정을 지정합니다. 기존 스토리지 계정을 사용하거나 새 스토리지 계정을 만들 수 있습니다. **새로 만들기**를 선택하면 다음 대화 상자가 표시됩니다.
 
       ![Storage 계정 만들기 대화 상자][CR05]
 
-   * **Virtual Network** 및 **서브넷**: 가상 머신이 연결될 가상 네트워크 및 서브넷을 지정합니다. 기존 네트워크 및 서브넷을 사용하거나 새 네트워크 및 서브넷을 만들 수 있습니다. **새로 만들기**를 선택하는 경우 다음과 같은 대화 상자가 나타납니다.
+   * **가상 네트워크** 및 **서브넷**: 가상 머신이 연결될 가상 네트워크 및 서브넷을 지정합니다. 기존 네트워크 및 서브넷을 사용하거나 새 네트워크 및 서브넷을 만들 수 있습니다. **새로 만들기**를 선택하는 경우 다음과 같은 대화 상자가 나타납니다.
 
       ![Virtual Network 만들기 대화 상자][CR06]
 
-   * **공용 IP 주소**: 가상 머신에 대한 외부 연결 IP 주소를 지정합니다. 새 IP 주소를 만들도록 선택하거나, 가상 머신에 공용 IP 주소가 없는 경우 **(없음)** 을 선택할 수 있습니다. 
+   * **공용 IP 주소**: 가상 머신용 외부 연결 IP 주소를 지정합니다. 새 IP 주소를 만들도록 선택하거나, 가상 머신에 공용 IP 주소가 없는 경우 **(없음)** 을 선택할 수 있습니다. 
 
-   * **네트워크 보안 그룹**: 가상 머신에 대한 선택적 네트워킹 방화벽을 지정합니다. 기존 방화벽을 선택하거나, 가상 머신에서 네트워크 방화벽을 사용하지 않을 경우 **(없음)** 을 선택할 수 있습니다. 
+   * **네트워크 보안 그룹**: 가상 머신을 위한 선택적 네트워킹 방화벽을 지정합니다. 기존 방화벽을 선택하거나, 가상 머신에서 네트워크 방화벽을 사용하지 않을 경우 **(없음)** 을 선택할 수 있습니다. 
 
    * **가용성 집합**: 가상 머신이 속할 선택적 가용성 집합을 지정합니다. 기존 가용성 집합을 선택하거나, 새 가용성 집합을 만들거나, 가상 머신이 가용성 집합에 속하지 않을 경우 **(없음)** 을 선택할 수 있습니다.
 
@@ -150,8 +150,8 @@ Azure 가상 컴퓨터 크기 및 가격 책정에 대한 자세한 내용은 �
 <!-- URL List -->
 
 [IntelliJ용 Azure 도구 키트에 대한 로그인 지침]: ./sign-in-instructions.md
-[Azure에서 Windows 가상 머신에 대한 크기]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Azure에서 Linux 가상 머신에 대한 크기]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Azure에서 Windows 가상 머신에 대한 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure에서 Linux 가상 머신에 대한 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Windows 가상 컴퓨터 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 가상 컴퓨터 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

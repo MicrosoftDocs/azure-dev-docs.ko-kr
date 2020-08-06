@@ -1,17 +1,17 @@
 ---
-title: 자습서 - Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
+title: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 description: Terraform을 사용하여 Azure에서 완전한 Linux 가상 머신 환경을 만들고 관리하는 방법을 알아봅니다.
 keywords: azure devops terraform linux vm 가상 머신
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/14/2020
-ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 518e5f619e142b3bed0ff539ff2b448c6f3e5b48
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334438"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478353"
 ---
-# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
+# <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 
 Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들 수 있습니다. 일관되고 재현 가능한 방식으로 Azure 리소스를 만들고 구성하는 Terraform 템플릿을 이해하기 쉬운 형태로 빌드할 수 있습니다. 이 문서에서는 Terraform을 사용하여 전체 Linux 환경 및 지원 리소스를 만드는 방법을 보여 줍니다. [Terraform 설치 및 구성](get-started-cloud-shell.md) 방법도 알아봅니다.
 

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: fb6a7c108f99081eeeb2bd41f1366f4c38865fe6
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c52326b29aca3b12310f8a1a0acd86566c45ecf8
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379737"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810636"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Spring Cloud 애플리케이션을 Azure Spring Cloud로 마이그레이션
 
@@ -94,7 +94,7 @@ ext {
 
 인증 및/또는 권한 부여가 필요한 모든 ID 공급자 및 모든 Spring Cloud 애플리케이션을 확인합니다. ID 공급자를 구성하는 방법에 대한 자세한 내용은 다음을 참조하세요.
 
-* OAuth2 구성은 [Spring Cloud Security 빠른 시작](https://cloud.spring.io/spring-cloud-static/spring-cloud-security/current/reference/html/#_quickstart)을 참조하세요.
+* OAuth2 구성은 [Spring Cloud Security 빠른 시작](https://cloud.spring.io/spring-cloud-security/2.1.x/multi/multi__quickstart.html#_quickstart)을 참조하세요.
 * Auth0 Spring Security 구성은 [Auth0 Spring Security 설명서](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization)를 참조하세요.
 * PingFederate Spring Security 구성은 [Auth0 PingFederate 지침](https://auth0.com/authenticate/java-spring-security/ping-federate/)을 참조하세요.
 

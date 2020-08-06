@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 7d155d307f1984861188ac7daab82db5104a6a7a
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: f3c667ab720a3e8c82b59dc439b8033697b4fc2a
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401576"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810596"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -279,4 +279,4 @@ Azure Portal의 웹앱 페이지 왼쪽에 있는 **모니터링** 아래에서 
 App Service에서 Python 앱을 실행하는 방법을 알아봅니다.
 
 > [!div class="nextstepaction"]
-> [Python 앱 구성](/azure/app-service/containers/how-to-configure-python.md)
+> [Python 앱 구성](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)

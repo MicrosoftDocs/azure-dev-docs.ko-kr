@@ -3,12 +3,13 @@ title: Azure 개발을 위한 로컬 서비스 주체 관리
 description: Azure Portal 또는 Azure CLI를 사용하여 로컬 개발용으로 만든 서비스 주체를 관리하는 방법입니다.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e29ee999472d0d9d141cfad728e62f1fe518e85b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146191"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478362"
 ---
 # <a name="how-to-manage-service-principals"></a>서비스 주체를 관리하는 방법
 

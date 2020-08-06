@@ -1,17 +1,17 @@
 ---
-title: 자습서 - Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
+title: Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
 description: Azure 공급자 배포 슬롯에서 Terraform을 사용하는 방법을 알아봅니다.
 keywords: azure devops terraform 배포 슬롯
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8f5597684a9d61474685f8117fa584405fa0979e
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171959"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478488"
 ---
-# <a name="tutorial-provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>자습서: Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
+# <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
 
 [Azure 배포 슬롯](/azure/app-service/deploy-staging-slots)을 사용하여 여러 다른 앱 버전 간을 전환할 수 있습니다. 이 기능을 사용하면 손상된 배포의 영향을 최소화할 수 있습니다. 
 

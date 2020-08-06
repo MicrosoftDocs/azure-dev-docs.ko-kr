@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: alstrakh
-ms.openlocfilehash: ddc35adf00b41dd421cbcd64437a7366bf4c74b1
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 1fbfd29cce90222334309cd24339eb196a3aaa36
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401616"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810646"
 ---
 # <a name="tutorial-send-push-notifications-to-react-native-apps-using-azure-notification-hubs-via-a-backend-service"></a>자습서: 백 엔드 서비스를 통해 Azure Notification Hubs를 사용하여 React Native 앱에 푸시 알림 보내기  
 
@@ -64,7 +64,7 @@ iOS의 경우 다음이 필요합니다.
 * [Apple 개발자 포털](https://developer.apple.com)
 * [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase 콘솔](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) 및 [Azure Notification Hubs를 사용하여 iOS 앱에 푸시 알림 보내기](/azure/notification-hubs/ios-sdk-get-started.md)
+* [Microsoft Azure](https://portal.azure.com) 및 [Azure Notification Hubs를 사용하여 iOS 앱에 푸시 알림 보내기](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)
 * [React Native](https://reactnative.dev/docs/getting-started).
 
 제공된 단계는 [Mac용 Visual Studio](https://visualstudio.microsoft.com/vs/mac/)와 [Visual Studio Code](https://code.visualstudio.com/download)용이지만 [Visual Studio 2019](https://visualstudio.microsoft.com/vs)에서도 따라 할 수 있습니다.
@@ -117,16 +117,16 @@ iOS의 경우 다음이 필요합니다.
 
 ## <a name="related-links"></a>관련 링크
 
-* [Azure Notification Hubs 개요](/azure/notification-hubs/notification-hubs-push-notification-overview.md)
+* [Azure Notification Hubs 개요](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
 * [Mac용 Visual Studio 설치](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
 * [Visual Studio Code 설치](https://code.visualstudio.com/download)
 * [React Native 개발 환경 설정](https://reactnative.dev/docs/environment-setup)
 * [백 엔드 작업에 대한 Notification Hubs SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub의 Notification Hubs SDK](https://github.com/Azure/azure-notificationhubs)
-* [애플리케이션 백 엔드에 등록](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md)
-* [등록 관리](/azure/notification-hubs/notification-hubs-push-notification-registration-management.md)
-* [태그 사용](/azure/notification-hubs/notification-hubs-tags-segment-push-message.md)
-* [사용자 지정 템플릿 사용](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md)
+* [애플리케이션 백 엔드에 등록](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [등록 관리](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [태그 사용](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [사용자 지정 템플릿 사용](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>다음 단계
 

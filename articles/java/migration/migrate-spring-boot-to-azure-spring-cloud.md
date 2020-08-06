@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 5/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c779a85f49ccd7507882fbd123a329addca60a7c
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7bc4a5188181f3b4b6d98b5308a5027a42bbac5e
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379747"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810586"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-spring-cloud"></a>Spring Boot 애플리케이션을 Azure Spring Cloud로 마이그레이션
 
@@ -134,7 +134,7 @@ Spring Cloud 게이트웨이를 사용 중이거나 사용할 생각이라면 �
 
 * 애플리케이션이 Spring Cloud Registry에서 작동하도록 설정하는 방안을 고려해 보세요. 이렇게 하면 배포된 다른 마이크로서비스 및 클라이언트에서 애플리케이션을 동적으로 검색할 수 있습니다. 자세한 내용은 [자습서: 배포할 Java Spring 앱 준비](/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment) 그런 다음, Spring 클라이언트 부하 분산 장치를 사용하도록 애플리케이션 클라이언트를 수정합니다. 이렇게 하면 클라이언트는 실행 중인 모든 애플리케이션 인스턴스의 주소를 가져오고, 다른 인스턴스가 손상되거나 응답하지 않을 때 작동하는 인스턴스를 찾을 수 있습니다. 자세한 내용은 Spring 블로그의 [Spring 팁: Spring Cloud 부하 분산 장치](https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer)를 참조하세요.
 
-* 애플리케이션을 공개로 설정하는 대신 [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/current/reference/html/) 인스턴스를 추가하는 것이 좋습니다. Spring Cloud Gateway는 Azure Spring Cloud 인스턴스에 배포된 모든 애플리케이션/마이크로서비스에 대한 단일 엔드포인트를 제공합니다. Spring Cloud Gateway가 이미 배포된 경우에는 새로 배포된 애플리케이션으로 트래픽을 라우팅하도록 구성해야 합니다.
+* 애플리케이션을 공개로 설정하는 대신 [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/) 인스턴스를 추가하는 것이 좋습니다. Spring Cloud Gateway는 Azure Spring Cloud 인스턴스에 배포된 모든 애플리케이션/마이크로서비스에 대한 단일 엔드포인트를 제공합니다. Spring Cloud Gateway가 이미 배포된 경우에는 새로 배포된 애플리케이션으로 트래픽을 라우팅하도록 구성해야 합니다.
 
 * Spring Cloud Config 서버를 추가하여 모든 Spring Cloud 마이크로서비스의 구성을 중앙에서 관리하고 버전을 제어하는 것이 좋습니다. 먼저 구성을 저장할 Git 리포지토리를 만들고 이 구성을 사용하도록 Azure Spring Cloud 인스턴스를 구성합니다. 자세한 내용은 [자습서: 서비스용 Spring Cloud Config 서버 인스턴스 설정](/azure/spring-cloud/spring-cloud-tutorial-config-server)을 참조하세요. 그 후에는 다음 단계에 따라 구성을 마이그레이션합니다.
 

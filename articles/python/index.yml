@@ -13,12 +13,13 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: ef568d127d1bc2669919eeeadfbbfeb36cf9ecf0
-  ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+  ms.custom: devx-track-python
+  ms.openlocfilehash: 5775f12eed61f43787d4df8bb8331e2f3339ccc0
+  ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/30/2020
-  ms.locfileid: "87438261"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87983065"
 landingContent:
 - title: Azure에서 Python 시작
   linkLists:

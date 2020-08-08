@@ -178,6 +178,8 @@
               href: tutorial-vscode-static-website-node-05.md
             - name: 리소스 정리
               href: tutorial-vscode-static-website-node-06.md
+    - name: Learn
+      href: learn-azure-javascript.md
     - name: 방법 가이드
       items:
         - name: VS Code를 사용한 종단 간 Node.js

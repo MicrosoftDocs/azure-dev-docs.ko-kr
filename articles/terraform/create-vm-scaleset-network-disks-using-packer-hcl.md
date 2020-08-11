@@ -1,20 +1,20 @@
 ---
-title: 자습서 - Terraform을 사용하여 Packer 사용자 지정 이미지에서 Azure 가상 머신 확장 집합 만들기
+title: Terraform을 사용하여 Packer 사용자 지정 이미지에서 Azure 가상 머신 확장 집합 만들기
 description: Terraform을 사용하여 Packer에서 생성한 사용자 지정 이미지에서 Azure 가상 머신 확장 집합을 구성하고 버전을 지정하는 방법을 알아봅니다.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 541d294a3098e2da7c76855de4db0c425b408e0e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334398"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478473"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>자습서: Terraform을 사용하여 Packer 사용자 지정 이미지에서 Azure 가상 머신 확장 집합 만들기
+# <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Terraform을 사용하여 Packer 사용자 지정 이미지에서 Azure 가상 머신 확장 집합 만들기
 
 [Azure 가상 머신 확장 집합](/azure/virtual-machine-scale-sets)을 사용하면 동일한 VM을 구성할 수 있습니다. VM 인스턴스 수는 수요 또는 일정에 따라 조정할 수 있습니다. 자세한 내용은 [Azure Portal에 설정된 가상 머신 자동 조정](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal)을 참조하세요.
 
-이 자습서에서는 다음 작업 방법을 알아봅니다.
+이 문서에서는 다음 방법을 설명합니다.
 
 > [!div class="checklist"]
 > * Terraform 배포 설정
@@ -158,14 +158,14 @@ terraform apply
 
 
 ## <a name="create-an-azure-image-by-using-packer"></a>Packer를 사용하여 Azure 이미지 만들기
-[Packer를 사용하여 Azure에서 Linux 가상 머신 이미지를 만드는 방법](/azure/virtual-machines/linux/build-image-with-packer) 자습서의 단계를 따라 사용자 지정 Linux 이미지를 만듭니다.
+[Packer를 사용하여 Azure에서 Linux 가상 머신 이미지를 만드는 방법](/azure/virtual-machines/linux/build-image-with-packer) 문서의 단계에 따라 사용자 지정 Linux 이미지를 만듭니다.
  
-자습서를 수행하여 Nginx를 설치한 프로비저닝 해제된 Ubuntu 이미지를 만듭니다.
+문서에 따라 Nginx가 설치된 프로비저닝 해제된 Ubuntu 이미지를 만듭니다.
 
 ![Packer 이미지를 만들면 이미지가 생성됩니다.](./media/create-vm-scaleset-network-disks-using-packer-hcl/packerimagecreated.png)
 
 > [!NOTE]
-> 이 자습서의 목표대로 Packer 이미지에서 명령을 실행하여 Nginx를 설치합니다. 만드는 동안 고유한 스크립트를 실행할 수도 있습니다.
+> 이 문서의 목적을 위해 Packer 이미지에서 Nginx를 설치하는 명령이 실행됩니다. 만드는 동안 고유한 스크립트를 실행할 수도 있습니다.
 
 ## <a name="edit-the-infrastructure-to-add-the-virtual-machine-scale-set"></a>인프라를 편집하여 가상 머신 확장 집합 추가
 
@@ -442,7 +442,7 @@ terraform apply
 
 ## <a name="clean-up-the-environment"></a>환경 정리
 
-다음은 이 자습서에서 만든 리소스를 삭제하는 명령입니다.
+다음 명령은 이 문서에서 만든 리소스를 삭제합니다.
 
 ```bash
 terraform destroy

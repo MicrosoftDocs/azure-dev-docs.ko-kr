@@ -1,18 +1,18 @@
 ---
-title: 자습서 - Azure Container Instances에 Azure Cosmos DB 배포
+title: Azure Container Instances에 Azure Cosmos DB 배포
 description: Terraform을 사용하여 Azure Cosmos DB를 Azure Container Instances에 배포하는 방법을 알아봅니다.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/26/2020
-ms.openlocfilehash: d0a175d3b465de640c151bd2b8ce339f0b5ade5b
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4534de7d57b86adefee36f5f6c0f455126a033c3
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334368"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478603"
 ---
-# <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>자습서: Azure Container Instances에 Azure Cosmos DB 배포
+# <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Azure Container Instances에 Azure Cosmos DB 배포
 
-이 자습서에서는 Terraform을 사용하여 Azure 리소스를 만듭니다. 이 문서의 단계에서는 다음 리소스를 만드는 과정을 안내합니다.
+이 문서에서는 Terraform을 사용하여 Azure 리소스를 만듭니다. 이 문서의 단계에서는 다음 리소스를 만드는 과정을 안내합니다.
 
 > [!div class="checklist"]
 > * Azure Cosmos DB 인스턴스
@@ -170,7 +170,7 @@ ms.locfileid: "87334368"
 
 더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다.
 
-[terraform destroy](https://www.terraform.io/docs/commands/destroy.html) 명령을 실행하여 이 자습서에서 만든 Azure 리소스를 제거합니다.
+[terraform destroy](https://www.terraform.io/docs/commands/destroy.html) 명령을 실행하여 이 문서에서 만든 Azure 리소스를 제거합니다.
 
 ```bash
 terraform destroy -auto-approve

@@ -1,19 +1,19 @@
 ---
-title: 자습서 - 모듈 레지스트리를 사용하여 Terraform으로 Azure VM 클러스터 만들기
+title: 모듈 레지스트리를 사용하여 Terraform으로 Azure VM 클러스터 만들기
 description: Terraform 모듈을 사용하여 Azure에서 Windows 가상 머신 클러스터를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform vm 가상 머신 클러스터 모듈 레지스트리
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: ad318237dcefd6586211c45fb79e51baa05549c4
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 771f8a1ce86aa36f7dfa9cf3f97f50e41ca23efa
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334388"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478453"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>자습서: 모듈 레지스트리를 사용하여 Terraform으로 Azure VM 클러스터 만들기
+# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>모듈 레지스트리를 사용하여 Terraform으로 Azure VM 클러스터 만들기
 
-이 문서에서는 Terraform [Azure 컴퓨팅 모듈](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)로 소형 VM 클러스터를 만드는 과정을 안내합니다. 이 자습서에서는 다음 방법에 대해 알아봅니다. 
+이 문서에서는 Terraform [Azure 컴퓨팅 모듈](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)로 소형 VM 클러스터를 만드는 과정을 안내합니다. 이 문서에서는 다음 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * Azure로 인증 설정
@@ -30,7 +30,7 @@ ms.locfileid: "87334388"
 ## <a name="set-up-authentication-with-azure"></a>Azure로 인증 설정
 
 > [!TIP]
-> [Terraform 환경 변수를 사용](get-started-cloud-shell.md)하거나 [Azure Cloud Shell](/azure/cloud-shell/overview)에서 자습서를 실행하는 경우 이 단계를 건너뜁니다.
+> [Terraform 환경 변수를 사용](get-started-cloud-shell.md)하거나 [Azure Cloud Shell](/azure/cloud-shell/overview)에서 다음 예제를 실행하는 경우 이 단계를 건너뜁니다.
 
  Azure 서비스 주체를 만들려면 [Terraform을 설치하고 Azure에 대한 액세스 구성](get-started-cloud-shell.md)을 검토하세요. 이 서비스 주체를 사용하여 빈 디렉터리에 있는 새 파일 `azureProviderAndCreds.tf`를 다음 코드로 채웁니다.
 

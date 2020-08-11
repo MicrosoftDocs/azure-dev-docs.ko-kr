@@ -1,18 +1,18 @@
 ---
-title: 자습서 - Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿 만들기
+title: Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
 description: Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿을 만드는 방법을 알아봅니다.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: e43c28232009f3dec274ad2c1749d9ab5d88957b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334468"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478533"
 ---
-# <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>자습서: Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
+# <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
 
-이 자습서에서는 [Terraform](/azure/terraform/) 및 [Yeoman](https://yeoman.io/)의 조합을 사용하는 방법을 알아봅니다. Terraform은 Azure에서 인프라를 만들기 위한 도구입니다. Yeoman을 사용하면 Terraform 모듈을 손쉽게 만들 수 있습니다.
+이 문서에서는 [Terraform](/azure/terraform/) 및 [Yeoman](https://yeoman.io/)의 조합을 사용하는 방법에 대해 알아봅니다. Terraform은 Azure에서 인프라를 만들기 위한 도구입니다. Yeoman을 사용하면 Terraform 모듈을 손쉽게 만들 수 있습니다.
 
 이 문서에서는 다음 작업을 수행하는 방법을 알아봅니다.
 > [!div class="checklist"]
@@ -32,7 +32,7 @@ ms.locfileid: "87334468"
 - **Go 프로그래밍 언어**: Yeoman에서 생성된 테스트 사례는 Go 언어를 사용하므로 [Go를 설치](https://golang.org/)합니다.
 
 >[!NOTE]
->이 자습서에 나온 프로시저 대부분은 명령줄 인터페이스를 포함합니다. 설명된 단계는 모든 운영 체제 및 명령줄 도구에 적용됩니다. 예제에서는 로컬 환경에 PowerShell을 사용하고, 클라우드 셸 환경에는 Git Bash를 사용하도록 선택했습니다.
+>이 문서에서 대부분의 절차는 명령줄 인터페이스와 관련이 있습니다. 설명된 단계는 모든 운영 체제 및 명령줄 도구에 적용됩니다. 예제에서는 로컬 환경에 PowerShell을 사용하고, 클라우드 셸 환경에는 Git Bash를 사용하도록 선택했습니다.
 
 ## <a name="prepare-your-environment"></a>환경 준비
 

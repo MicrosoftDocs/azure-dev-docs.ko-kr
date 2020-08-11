@@ -3,18 +3,18 @@ title: 자습서 - Terraform을 사용하여 Azure에서 허브 가상 네트워
 description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 허브 가상 네트워크를 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: deef7a1462662b8f9f6ebbca013929102fa4ba95
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ed2b391075dc04b7ef16d3f305ef4ff86abed4ae
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329701"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478573"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 만들기
 
-허브 가상 네트워크는 온-프레미스 네트워크에 대한 연결의 중심점 역할을 합니다. 가상 네트워크는 스포크 가상 네트워크에서 호스팅되는 워크로드가 소비하는 공유 서비스를 호스팅합니다. 데모 목적으로,이 자습서에서 구현된 공유 서비스는 없습니다.
+허브 가상 네트워크는 온-프레미스 네트워크에 대한 연결의 중심점 역할을 합니다. 가상 네트워크는 스포크 가상 네트워크에서 호스팅되는 워크로드가 소비하는 공유 서비스를 호스팅합니다. 데모를 위해 이 문서에서는 공유 서비스가 구현되지 않습니다.
 
-이 자습서에서 다루는 작업은 다음과 같습니다.
+이 문서에서 다루는 작업은 다음과 같습니다.
 
 > [!div class="checklist"]
 > * HCL(HashiCorp Configuration Language)을 사용하여 허브 및 스포크 토폴로지에서 허브 가상 네트워크를 구현합니다.

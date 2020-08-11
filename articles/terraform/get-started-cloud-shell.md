@@ -4,12 +4,12 @@ description: 이 빠른 시작에서는 Terraform을 설치하고 구성하여 A
 keywords: azure devops terraform 설치 구성 cloud shell init 계획 적용 실행 포털 로그인 rbac 서비스 주체 자동화된 스크립트
 ms.topic: quickstart
 ms.date: 07/26/2020
-ms.openlocfilehash: 381313edf386ac33dca137191c9eefef48f92931
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335270"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478593"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Terraform 시작
  
@@ -35,7 +35,7 @@ ms.locfileid: "87335270"
 
 1. 이전에 Cloud Shell을 사용하지 않은 경우 환경 및 스토리지 설정을 구성합니다. 이 문서에서는 Bash 환경을 사용합니다.
 
-참고:
+**참고**:
 - Cloud Shell에는 자동으로 최신 버전의 Terraform이 설치됩니다. 또한 Terraform은 현재 Azure 구독의 정보를 자동으로 사용합니다. 따라서 설치 또는 구성이 필요하지 않습니다.
 
 ## <a name="authenticate-to-azure"></a>Azure에 대한 인증
@@ -55,7 +55,7 @@ Terraform은 Azure에 인증하기 위한 몇 가지 옵션을 지원합니다. 
 az login
 ```
 
-참고:
+**참고**:
 
 - 로그인에 성공하면 `az login`은 로그인 Microsoft 계정에 연결된 Azure 구독 목록을 표시합니다.
 - 사용 가능한 각 Azure 구독의 속성 목록이 표시됩니다. `isDefault` 속성은 사용 중인 Azure 구독을 식별합니다. 다른 Azure 구독으로 전환하는 방법에 대한 자세한 내용은 [현재 Azure 구독 설정](#set-the-current-azure-subscription) 섹션을 참조하세요.
@@ -74,7 +74,7 @@ Azure 서비스를 배포하거나 사용하는 자동화된 도구(예: Terrafo
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
-참고:
+**참고**:
 
 - 성공적으로 완료되면 `az ad sp create-for-rbac`에서 여러 값을 표시합니다. `name`, `password` 및 `tenant` 값은 다음 단계에서 사용됩니다.
 - 분실한 암호는 복구할 수 없습니다. 따라서 암호를 안전한 장소에 저장해야 합니다. 암호를 잊어버린 경우 [서비스 주체 자격 증명을 다시 설정](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)해야 합니다.
@@ -107,7 +107,7 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     az account set --subscription="<subscription_id>"
     ```
 
-    참고:
+    **참고**:
 
     - `az account set`를 호출해도 지정된 Azure 구독으로 전환한 결과가 표시되지 않습니다. 그러나 `az account show`를 사용하여 현재 Azure 구독이 변경되었는지 확인할 수 있습니다.
 
@@ -154,7 +154,7 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     }
     ```
 
-    참고:
+    **참고**:
 
     - `provider` 블록은 [Azure 공급자(`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html)를 사용하도록 지정합니다.
     - `azurerm` 공급자 블록 내에서 `version` 및 `features` 특성이 설정됩니다. 주석에 언급된 대로, 용도는 버전에 따라 다릅니다. 환경에 이러한 특성을 설정하는 방법에 대한 자세한 내용은 [AzureRM 공급자의 v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)을 참조하세요.
@@ -174,13 +174,13 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     terraform init
     ```
 
-1. Terraform을 사용하면 [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 통해 완료되는 작업을 미리 볼 수 있습니다.
+1. [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 실행 계획을 만들고 결과를 미리 봅니다.
 
     ```bash
     terraform plan
     ```
 
-    참고:
+    **참고**:
 
     - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다.
     - `terraform plan` 명령을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
@@ -200,7 +200,7 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    참고:
+    **참고**:
 
     - 성공하면 `az group show`는 새로 만든 리소스 그룹의 다양한 특성을 표시합니다.
 
@@ -232,11 +232,11 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-참고:
-
-- 자동화와 함께 사용하면 `terraform apply <filename>`을 실행할 때 확인이 필요하지 않습니다.
-- 이 기능을 사용하려면 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 읽습니다.
-
+    **참고**:
+    
+    - 자동화와 함께 사용하면 `terraform apply <filename>`을 실행할 때 확인이 필요하지 않습니다.
+    - 이 기능을 사용하려면 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 읽습니다.
+    
 ## <a name="clean-up-resources"></a>리소스 정리
 
 더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다.
@@ -247,7 +247,7 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
     ```
 
-    **참고:**
+    **참고**:
     - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다. 이 패턴을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
     - `-destroy` 매개 변수는 리소스를 삭제하는 계획을 생성합니다.
     - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. 검토한 계획이 정확히 적용되도록 `-out` 매개 변수를 항상 사용해야 합니다.

@@ -1,20 +1,20 @@
 ---
-title: 자습서 - Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
+title: Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
 description: Terraform을 사용하여 Azure 가상 머신 확장 집합을 구성하고 버전 관리하는 방법을 알아봅니다.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: 057fbec811c842b27823395735186120612bc6c5
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 75481c04038b13d81fa273e53bd1950c84fa5053
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334408"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478503"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>자습서: Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
+# <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
 
 [Azure 가상 머신 확장 집합](/azure/virtual-machine-scale-sets)을 사용하면 동일한 VM을 구성할 수 있습니다. VM 인스턴스 수는 수요 또는 일정에 따라 조정할 수 있습니다. 자세한 내용은 [Azure Portal에 설정된 가상 머신 자동 조정](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal)을 참조하세요.
 
-이 자습서에서는 다음 작업 방법을 알아봅니다.
+이 문서에서는 다음 방법을 설명합니다.
 
 > [!div class="checklist"]
 > * Terraform 배포 설정
@@ -512,7 +512,7 @@ SSH *jumpbox*는 네트워크의 다른 서버에 액세스하기 위해 "점프
 
 ## <a name="environment-cleanup"></a>환경 정리
 
-이 자습서에서 만든 Terraform 리소스를 삭제하려면 Cloud Shell에 다음 명령을 입력합니다.
+이 문서에서 만든 Terraform 리소스를 삭제하려면 Cloud Shell에서 다음 명령을 입력합니다.
 
 ```bash
 terraform destroy

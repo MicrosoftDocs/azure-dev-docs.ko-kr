@@ -3,20 +3,20 @@ title: 자습서 - Terraform을 사용하여 Azure에서 허브 가상 네트워
 description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 허브 VNet(가상 네트워크)을 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 49af4bde3568185e1915edb49be3040ece89676f
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 71599c3d62ba3c3e0c6132cdf5197b87927cec91
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329318"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478563"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 어플라이언스 만들기
 
-**VPN 디바이스**는 온-프레미스 네트워크에 외부 연결을 제공하는 디바이스입니다. VPN 디바이스는 하드웨어 디바이스 또는 소프트웨어 솔루션일 수 있습니다. 소프트웨어 솔루션의 한 예는 Windows Server 2012의 RRAS(라우팅 및 원격 액세스 서비스)입니다. VPN 어플라이언스에 대한 자세한 내용은 [사이트 간 VPN Gateway 연결을 위한 VPN 디바이스 정보](/azure/vpn-gateway/vpn-gateway-about-vpn-devices)를 참조하세요.
+*VPN 디바이스*는 온-프레미스 네트워크에 외부 연결을 제공하는 디바이스입니다. VPN 디바이스는 하드웨어 디바이스 또는 소프트웨어 솔루션일 수 있습니다. 소프트웨어 솔루션의 한 예는 Windows Server 2012의 RRAS(라우팅 및 원격 액세스 서비스)입니다. VPN 어플라이언스에 대한 자세한 내용은 [사이트 간 VPN Gateway 연결을 위한 VPN 디바이스 정보](/azure/vpn-gateway/vpn-gateway-about-vpn-devices)를 참조하세요.
 
-Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언스를 지원합니다. 이 자습서의 경우 Ubuntu 이미지가 사용됩니다. Azure에서 지원되는 다양한 디바이스 솔루션에 대해 자세히 알아보려면 [네트워크 어플라이언스 홈페이지](https://azure.microsoft.com/solutions/network-appliances/)를 참조하세요.
+Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언스를 지원합니다. 이 문서에서는 Ubuntu 이미지가 사용됩니다. Azure에서 지원되는 다양한 디바이스 솔루션에 대해 자세히 알아보려면 [네트워크 어플라이언스 홈페이지](https://azure.microsoft.com/solutions/network-appliances/)를 참조하세요.
 
-이 자습서에서 다루는 작업은 다음과 같습니다.
+이 문서에서 다루는 작업은 다음과 같습니다.
 
 > [!div class="checklist"]
 > * HCL(HashiCorp Language)을 사용하여 허브 스포크 토폴로지에서 Hub VNet을 구현

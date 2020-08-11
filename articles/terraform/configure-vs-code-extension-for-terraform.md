@@ -1,16 +1,16 @@
 ---
-title: 자습서 - Azure Terraform Visual Studio Code 확장 구성
+title: Azure Terraform Visual Studio Code 확장 구성
 description: Visual Studio Code에서 Azure Terraform 확장을 설치하고 사용하는 방법을 알아봅니다.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/26/2019
-ms.openlocfilehash: 7bbddd2d455e53354829557b99c19a8fb3e3dbf7
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 6ac6cada3e7a411d940f5207fa6cfa10f4fea0de
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334488"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478553"
 ---
-# <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>자습서: Azure Terraform Visual Studio Code 확장 구성
+# <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>Azure Terraform Visual Studio Code 확장 구성
 
 Azure Terraform Visual Studio Code 확장을 사용하면 편집기에서 Terraform으로 작업할 수 있습니다. 이 확장을 통해 Terraform 구성을 작성, 테스트 및 실행할 수 있습니다. 이 확장은 리소스 그래프 시각화도 지원합니다.
 
@@ -166,7 +166,7 @@ Azure Terraform 확장이 설치된 확장 목록에 표시됩니다.
 
 ### <a name="visualize-the-plan"></a>계획 시각화
 
-이 자습서의 앞부분에서 GraphViz를 설치했습니다. Terraform은 GraphViz를 사용하여 구성 또는 실행 계획의 시각적 표현을 생성할 수 있습니다. Azure Terraform Visual Studio Code 확장은 *visualize* 명령을 통해 이 기능을 구현합니다.
+이 문서의 앞부분에서 GraphViz를 설치했습니다. Terraform은 GraphViz를 사용하여 구성 또는 실행 계획의 시각적 표현을 생성할 수 있습니다. Azure Terraform Visual Studio Code 확장은 *visualize* 명령을 통해 이 기능을 구현합니다.
 
 - 메뉴 모음에서 **보기 > 명령 팔레트 > Azure Terraform: 시각화**를 선택합니다.
 

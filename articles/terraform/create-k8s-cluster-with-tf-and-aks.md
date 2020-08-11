@@ -1,21 +1,21 @@
 ---
-title: 자습서 - Terraform을 사용하여 AKS(Azure Kubernetes Service)로 Kubernetes 클러스터 만들기
+title: Terraform을 사용하여 AKS(Azure Kubernetes Service)에서 Kubernetes 클러스터 만들기
 description: Azure Kubernetes Service 및 Terraform을 사용하여 Kubernetes 클러스터를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform aks kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 6056b6990e820d863404eea7394adc483de0cd3c
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0f0d8eb512f4ba6d2e4245ad61dcb41d969cf4b8
+ms.sourcegitcommit: da9fab1b718c71e40c7cbe0a08526c316dcdd6df
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334457"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87525808"
 ---
-# <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>자습서: Terraform을 사용하여 Azure Kubernetes Service로 Kubernetes 클러스터 만들기
+# <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Terraform을 사용하여 Azure Kubernetes Service로 Kubernetes 클러스터 만들기
 
 [AKS(Azure Kubernetes Service)](/azure/aks/)는 호스트된 Kubernetes 환경을 관리합니다. AKS를 사용하면 컨테이너 오케스트레이션 전문 지식 없이도 컨테이너화된 애플리케이션을 배포 및 관리할 수 있습니다. AKS를 사용하면 앱을 오프라인 상태로 전환하지 않고도 많은 일반적인 유지 관리 작업을 수행할 수 있습니다. 이러한 작업에는 주문형 리소스 프로비저닝, 업그레이드 및 확장이 포함됩니다.
 
-이 자습서에서는 다음 작업을 수행하는 방법을 알아봅니다.
+이 문서에서는 다음 작업을 수행하는 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * HCL(HashiCorp Language)을 사용하여 Kubernetes 클러스터 정의
@@ -147,7 +147,7 @@ Kubernetes 클러스터용 리소스를 선언하는 Terraform 구성 파일을 
         default_node_pool {
             name            = "agentpool"
             node_count      = var.agent_count
-            vm_size         = "Standard_DS1_v2"
+            vm_size         = "Standard_D2_v2"
         }
 
         service_principal {
@@ -160,6 +160,11 @@ Kubernetes 클러스터용 리소스를 선언하는 Terraform 구성 파일을 
             enabled                    = true
             log_analytics_workspace_id = azurerm_log_analytics_workspace.test.id
             }
+        }
+        
+        network_profile {
+        load_balancer_sku = "Standard"
+        network_plugin = "kubenet"
         }
 
         tags = {
@@ -334,7 +339,7 @@ Terraform은 `terraform.tfstate` 파일을 통해 로컬로 상태를 추적합�
 
     ![“terraform plan” 결과의 예](./media/create-k8s-cluster-with-tf-and-aks/terraform-plan-complete.png)
 
-1. `terraform apply` 명령을 실행하여 Kubernetes 클러스터를 만들 계획에 적용합니다. Kubernetes 클러스터를 만드는 프로세스는 몇 분 정도 소요될 수도 있으며 이 경우 Cloud Shell 세션 시간이 초과됩니다. Cloud Shell 세션의 시간이 초과되면 "Cloud Shell 시간 초과에서 복구" 섹션에 나온 단계에 따라 자습서를 완료할 수 있습니다.
+1. `terraform apply` 명령을 실행하여 Kubernetes 클러스터를 만들 계획에 적용합니다. Kubernetes 클러스터를 만드는 프로세스는 몇 분 정도 소요될 수도 있으며 이 경우 Cloud Shell 세션 시간이 초과됩니다. Cloud Shell 세션의 시간이 초과되면 "Cloud Shell 시간 초과에서 복구" 섹션의 단계에 따라 프로세스를 완료할 수 있습니다.
 
     ```bash
     terraform apply out.plan

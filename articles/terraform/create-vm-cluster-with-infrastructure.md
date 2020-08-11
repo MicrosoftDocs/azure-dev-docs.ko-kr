@@ -1,19 +1,19 @@
 ---
-title: 자습서 - Terraform 및 HCL로 Azure VM 클러스터 만들기
+title: Terraform 및 HCL로 Azure VM 클러스터 만들기
 description: Terraform 및 HCL을 사용하여 Azure에서 부하 분산 장치가 있는 Linux 가상 머신 클러스터를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform vm 가상 머신 클러스터
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 7f19d28270f911cac7bc96a9159f1b927ceb0235
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: f970bdd0f3d37d32cae9e556094c199cfb82df2e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170479"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478493"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-and-hcl"></a>자습서: Terraform 및 HCL로 Azure VM 클러스터 만들기
+# <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Terraform 및 HCL로 Azure VM 클러스터 만들기
 
-이 자습서에서는 [HCL](https://www.terraform.io/docs/configuration/syntax.html)을 사용하여 작은 컴퓨팅 클러스터를 만드는 방법을 보여 줍니다. 
+이 문서에서는 [HCL](https://www.terraform.io/docs/configuration/syntax.html)을 사용하여 작은 컴퓨팅 클러스터를 만드는 방법을 살펴봅니다. 
 
 다음 작업을 수행하는 방법을 알아봅니다.
 
@@ -236,7 +236,7 @@ Terraform은 구성 파일에 지정된 상태를 구현하는 데 필요한 작
 
 ## <a name="4-apply-the-terraform-execution-plan"></a>4. Terraform 실행 계획 적용
 
-이 자습서의 마지막 단계는[terraform apply 명령](https://www.terraform.io/docs/commands/apply.html)을 사용하여 `terraform plan` 명령에서 생성한 동작 집합을 적용하는 것입니다.
+이 문서의 마지막 단계는 [terraform apply 명령](https://www.terraform.io/docs/commands/apply.html)을 사용하여 `terraform plan` 명령에서 생성한 작업 집합을 적용하는 것입니다.
 
 최신 실행 계획만 적용하려면 다음 명령을 실행합니다.
 

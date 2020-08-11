@@ -4,12 +4,13 @@ description: 지속적인 통합 및 배포 파이프라인에서 Azure CLI를 �
 keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 01/07/2020
-ms.openlocfilehash: c9341ef89e43f14111b6e656daebadcd4790322d
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0135dbfa67f1de2b0602ae06b7ab970c2b560d59
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861216"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478313"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 

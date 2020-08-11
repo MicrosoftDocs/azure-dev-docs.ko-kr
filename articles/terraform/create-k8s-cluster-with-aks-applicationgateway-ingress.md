@@ -1,23 +1,23 @@
 ---
-title: 자습서 - Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
+title: Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
 description: Azure Kubernetes Service를 사용하여 수신 컨트롤러로 Application Gateway를 사용하는 Kubernetes 클러스터를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform 애플리케이션 게이트웨이 수신 aks kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: a98d9af5c8d3bd63451f007f66a8793d9f38a61d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4e34942257baa1e530a7ed0990a6d30a5297dadf
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334454"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478523"
 ---
-# <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>자습서: Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
+# <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
 
 [AKS(Azure Kubernetes Service)](/azure/aks/)는 호스트된 Kubernetes 환경을 관리합니다. AKS를 사용하면 컨테이너 오케스트레이션 전문 지식 없이도 컨테이너화된 애플리케이션을 쉽고 빠르게 배포 및 관리할 수 있습니다. AKS는 운영 및 유지 관리 작업을 위해 애플리케이션을 오프라인으로 전환하는 부담을 없애줍니다. AKS를 사용하면 이러한 작업(예: 리소스 프로비저닝, 업그레이드 및 크기 조정)을 요청 시 수행할 수 있습니다.
 
 수신 컨트롤러는 Kubernetes 서비스에 대해 다양한 기능을 제공합니다. 이러한 기능에는 역방향 프록시, 구성 가능한 트래픽 라우팅 및 TLS 종료가 포함됩니다. Kubernetes 수신 리소스는 개별 Kubernetes 서비스에 대한 수신 규칙을 구성하는 데 사용됩니다. 수신 컨트롤러 및 수신 규칙을 사용하면 단일 IP 주소를 사용하여 Kubernetes 클러스터의 여러 서비스에 트래픽을 라우팅할 수 있습니다. 이러한 모든 기능이 Azure [Application Gateway](/azure/Application-Gateway/)에서 제공되기 때문에 Azure의 Kubernetes에 이상적인 수신 컨트롤러입니다. 
 
-이 자습서에서는 다음 작업을 수행하는 방법을 알아봅니다.
+이 문서에서는 다음 작업을 수행하는 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * AKS를 Application Gateway에서 수신 컨트롤러로 사용하여 [Kubernetes](https://www.redhat.com/en/topics/containers/what-is-kubernetes) 클러스터 만들기
@@ -604,7 +604,7 @@ Terraform은 `terraform.tfstate` 파일을 통해 로컬로 상태를 추적합�
 
     ![“terraform plan” 결과의 예](./media/terraform-k8s-cluster-appgw-with-tf-aks/terraform-plan-complete.png)
 
-1. `terraform apply` 명령을 실행하여 Kubernetes 클러스터를 만들 계획에 적용합니다. Kubernetes 클러스터를 만드는 프로세스는 몇 분 정도 소요될 수도 있으며 이 경우 Cloud Shell 세션 시간이 초과됩니다. Cloud Shell 세션의 시간이 초과되면 "Cloud Shell 시간 초과에서 복구" 섹션에 나온 단계에 따라 자습서를 완료할 수 있습니다.
+1. `terraform apply` 명령을 실행하여 Kubernetes 클러스터를 만들 계획에 적용합니다. Kubernetes 클러스터를 만드는 프로세스는 몇 분 정도 소요될 수도 있으며 이 경우 Cloud Shell 세션 시간이 초과됩니다. Cloud Shell 세션의 시간이 초과되면 "Cloud Shell 시간 초과에서 복구" 섹션의 단계에 따라 프로세스를 완료할 수 있습니다.
 
     ```bash
     terraform apply out.plan

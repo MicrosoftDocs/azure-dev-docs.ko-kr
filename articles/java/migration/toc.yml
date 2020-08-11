@@ -20,8 +20,10 @@
       items:
         - name: Azure Virtual Machines에 WebLogic 배포하기
           href: migrate-weblogic-to-virtual-machines.md
-        - name: LDAP를 통해 AAD를 사용하는 Azure에 WebLogic 배포하기
+        - name: LDAP를 통해 AAD를 사용하는 WebLogic
           href: migrate-weblogic-with-aad-ldap.md
+        - name: App Gateway를 사용하는 WebLogic
+          href: migrate-weblogic-with-app-gateway.md
     - name: AKS에서 WildFly로 WildFly 배포하기
       href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
     - name: AKS에서 WildFly로 WebLogic 배포하기

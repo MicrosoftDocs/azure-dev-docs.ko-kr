@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: eca3b004b2c0b9355ecbeea4bf9900faec61afe0
-ms.sourcegitcommit: da9fab1b718c71e40c7cbe0a08526c316dcdd6df
+ms.openlocfilehash: f7db99471224ab62abfee88c6353f67d29a2efa7
+ms.sourcegitcommit: f82e9f569dce0416f4040312882d28eafab05a4a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87545324"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88057700"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
@@ -32,5 +32,5 @@ ms.locfileid: "87545324"
 | 리소스 관리 - KeyVault | pypi [2.2.0](https://pypi.org/project/azure-mgmt-keyvault/2.2.0)<br>pypi [7.0.0b2](https://pypi.org/project/azure-mgmt-keyvault/7.0.0b2) |  | github [2.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-keyvault_2.2.0/sdk/keyvault/azure-mgmt-keyvault/)<br>github [7.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-keyvault_7.0.0b2/sdk/keyvault/azure-mgmt-keyvault/) |
 | 리소스 관리 - 모니터 | pypi [0.11.0](https://pypi.org/project/azure-mgmt-monitor/0.11.0)<br>pypi [1.0.0b1](https://pypi.org/project/azure-mgmt-monitor/1.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-monitor-readme/) | github [0.11.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-monitor_0.11.0/sdk/monitor/azure-mgmt-monitor/)<br>github [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-monitor_1.0.0b1/sdk/monitor/azure-mgmt-monitor/) |
 | 리소스 관리 - 네트워크 | pypi [11.0.0](https://pypi.org/project/azure-mgmt-network/11.0.0)<br>pypi [16.0.0b1](https://pypi.org/project/azure-mgmt-network/16.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-network-readme/) | github [11.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-network_11.0.0/sdk/network/azure-mgmt-network/)<br>github [16.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-network_16.0.0b1/sdk/network/azure-mgmt-network/) |
-| 관리 리소스 - 리소스 | pypi [10.1.0](https://pypi.org/project/azure-mgmt-resource/10.1.0)<br>pypi [15.0.0b1](https://pypi.org/project/azure-mgmt-resource/15.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-resource-readme/) | github [10.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-resource_10.1.0/sdk/resources/azure-mgmt-resource/)<br>github [15.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-resource_15.0.0b1/sdk/resources/azure-mgmt-resource/) |
+| 관리 리소스 - 리소스 | pypi [10.2.0](https://pypi.org/project/azure-mgmt-resource/10.2.0)<br>pypi [15.0.0b1](https://pypi.org/project/azure-mgmt-resource/15.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-resource-readme/) | github [10.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-resource_10.2.0/sdk/resources/azure-mgmt-resource/)<br>github [15.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-resource_15.0.0b1/sdk/resources/azure-mgmt-resource/) |
 | 리소스 관리 - 스토리지 | pypi [11.1.0](https://pypi.org/project/azure-mgmt-storage/11.1.0)<br>pypi [16.0.0b2](https://pypi.org/project/azure-mgmt-storage/16.0.0b2) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-storage-readme/) | github [11.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storage_11.1.0/sdk/storage/azure-mgmt-storage/)<br>github [16.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storage_16.0.0b2/sdk/storage/azure-mgmt-storage/) |

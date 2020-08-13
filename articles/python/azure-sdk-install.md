@@ -3,12 +3,13 @@ title: Python용 Azure SDK 라이브러리 패키지 설치 방법
 description: pip를 사용하여 Azure SDK 또는 Python 라이브러리를 설치, 제거 및 확인하는 방법입니다. 특정 버전 및 미리 보기 패키지 설치에 대한 세부 정보가 포함되어 있습니다.
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9dbe783f9f91431b684e7e4a6c2ea5b9ff5a6a2a
-ms.sourcegitcommit: 39da5bec7ef824a34aa04514afc1141b75466547
+ms.custom: devx-track-python
+ms.openlocfilehash: 310a4327029f808a5e09136aa77956ed8810f5b2
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84741445"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983375"
 ---
 # <a name="how-to-install-azure-library-packages-for-python"></a>Python용 Azure 라이브러리 패키지 설치 방법
 

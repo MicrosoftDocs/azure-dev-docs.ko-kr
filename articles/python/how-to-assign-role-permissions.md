@@ -3,13 +3,13 @@ title: 앱 ID 또는 서비스 주체에 역할 권한 할당
 description: Azure CLI를 사용하여 서비스 주체 또는 앱 ID에 권한을 부여하는 방법
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 46856cef77058ec3eb48aa6da806adb0bba26327
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 3eb81eac5ee9a7f2f85e50494efa2e04bbcbe439
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478383"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983135"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>앱 ID 또는 서비스 주체에 역할 권한을 할당하는 방법
 

@@ -3,12 +3,13 @@ title: Azure에서 Python 앱 데이터 솔루션 시작
 description: Python 앱 데이터 솔루션에 대한 Azure 설명서의 시작 자료 색인입니다.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9880025bcbe2d019d04469e6cff0b415cbbdc744
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: bdd55f180b6ba72386bee64fb8f6bfd0b916af02
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202892"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147344"
 ---
 # <a name="data-solutions-for-python-apps-on-azure"></a>Azure에서 Python 앱 데이터 솔루션 시작
 
@@ -18,7 +19,7 @@ Azure에서 다양한 데이터 솔루션 옵션을 시작하는 데 유용한 �
 
 - **PostgreSQL**:
   - [PostgreSQL용 Azure Database에서 Python을 사용하여 데이터 연결 및 쿼리](/azure/postgresql/connect-python)
-  - [Azure App Service에서 PostgreSQL을 사용하여 Python(Django) 웹앱 실행](/azure/app-service/containers/tutorial-python-postgresql-app)
+  - [Azure App Service에서 PostgreSQL을 사용하여 Python(Django) 웹앱 실행](/azure/app-service/tutorial-python-postgresql-app)
 
 - **MySQL**:
   - [Python을 사용하여 Azure Database for MySQL에서 데이터 연결 및 쿼리](/azure/mysql/connect-python)

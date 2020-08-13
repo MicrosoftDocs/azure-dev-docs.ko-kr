@@ -3,13 +3,13 @@ title: '7단계: Visual Studio Code에서 Linux의 Azure App Service에 배포 �
 description: 자습서 7 단계, Azure 리소스 정리
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 001e5d58311267221c5fafb3de89aff3859f4197
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 49c0d32326010de66e8855c800d715dcb456e48f
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441408"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983598"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7: Visual Studio Code에서 Linux의 Azure App Service에 배포 후 리소스 정리
 

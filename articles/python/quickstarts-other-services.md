@@ -3,12 +3,13 @@ title: Python 앱용 기타 Azure 서비스의 시작 자료
 description: Python 앱과 함께 사용되는 기타 서비스에 대한 Azure 설명서의 시작 자료 색인입니다.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: de4da2be8b3767cabf4bb8fdb7e23528bb778e60
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: 1a58973b0e51f488c0b8afbbbe473cbbfc088c24
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84207646"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982875"
 ---
 # <a name="other-services-for-python-apps-on-azure"></a>Azure에서 Python 앱을 위한 기타 서비스
 

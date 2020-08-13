@@ -3,13 +3,13 @@ title: '4단계: Azure App Service on Linux에서 Python 앱에 대한 사용자
 description: 자습서 4단계에서는 Django, Flask 및 기타 프레임워크에 대한 특정 지침을 포함하여 웹앱을 시작하는 방법을 App Service에 지시합니다.
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 1e724fa7d35c1b3488dbe6738a4840e20bbfbf96
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256448"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147384"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Azure App Service에서 Python 앱에 대한 사용자 지정 시작 파일 구성
 
@@ -17,7 +17,7 @@ ms.locfileid: "84256448"
 
 이 문서에서는 Azure App Service에서 Python 앱의 커스텀 시작 파일을 구성하는 방법을 보여줍니다.
 
-앱을 구조화한 방법에 따라 Azure 설명서의 [App Service on Linux에서 Python 앱 구성](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)에 설명된 대로 앱에 대한 사용자 지정 시작 명령 파일을 만들어야 할 수도 있습니다.
+앱을 구조화한 방법에 따라 Azure 설명서의 [App Service on Linux에서 Python 앱 구성](/azure/app-service/configure-language-python)에 설명된 대로 앱에 대한 사용자 지정 시작 명령 파일을 만들어야 할 수도 있습니다.
 
 사용자 지정 시작 명령의 특정 사용 사례는 다음과 같습니다.
 

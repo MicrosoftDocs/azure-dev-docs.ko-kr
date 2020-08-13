@@ -4,17 +4,17 @@ description: Azure에서 웹앱 및 PostgreSQL 데이터베이스를 프로비�
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
-ms.custom: tracking-python
-ms.openlocfilehash: f3c667ab720a3e8c82b59dc439b8033697b4fc2a
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.custom: devx-track-python
+ms.openlocfilehash: 0e9785871eba8866b5d225bb9ac1339becc172a3
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810596"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147394"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
-Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.djangoproject.com/) 웹앱을 [Azure App Service](/azure/app-service/containers/app-service-linux-intro)에 배포하고, [Azure Database for PostgreSQL](/azure/postgresql/) 데이터베이스에 연결할 수 있습니다. 나중에 언제든지 확장할 수 있는 체험 가격 책정 계층으로 시작할 수 있습니다.
+Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.djangoproject.com/) 웹앱을 [Azure App Service](/azure/app-service/overview#app-service-on-linux)에 배포하고, [Azure Database for PostgreSQL](/azure/postgresql/) 데이터베이스에 연결할 수 있습니다. 나중에 언제든지 확장할 수 있는 체험 가격 책정 계층으로 시작할 수 있습니다.
 
 이 경우 웹앱 코드는 GitHub 리포지토리에서 제공되며 GitHub에서 지속적으로 배포할 수 있도록 웹앱을 구성합니다. 구성된 후에는 로컬 컴퓨터에서 추가 개발을 수행하고 리포지토리에 대한 변경 내용을 커밋할 수 있습니다. 그런 다음, Azure의 웹앱에서 이러한 변경 내용을 자동으로 배포합니다.
 
@@ -27,7 +27,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 > - 진단 로그 보기
 > - Azure Portal에서 웹앱 관리
 
-[이 자습서의 Azure CLI 기반 버전](/azure/app-service/containers/tutorial-python-postgresql-app?tabs=bash%2Cclone)을 사용할 수도 있습니다.
+[이 자습서의 Azure CLI 기반 버전](/azure/app-service/tutorial-python-postgresql-app)을 사용할 수도 있습니다.
 
 ## <a name="fork-the-sample-repository"></a>샘플 리포지토리 포크
 
@@ -137,7 +137,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 ## <a name="connect-the-database"></a>데이터베이스 연결
 
-이 섹션에서는 `pollsdb` 데이터베이스에 연결해야 하는 웹앱에 대한 설정을 만듭니다. 이러한 설정은 앱 코드에서 환경 변수로 표시됩니다. (자세한 내용은 [환경 변수 액세스](/azure/app-service/containers/how-to-configure-python#access-environment-variables)를 참조하세요.)
+이 섹션에서는 `pollsdb` 데이터베이스에 연결해야 하는 웹앱에 대한 설정을 만듭니다. 이러한 설정은 앱 코드에서 환경 변수로 표시됩니다. (자세한 내용은 [환경 변수 액세스](/azure/app-service/configure-language-python#access-environment-variables)를 참조하세요.)
 
 1. 이전 섹션에서 만든 웹앱에 대한 브라우저 탭 또는 창으로 다시 전환합니다.
 
@@ -182,7 +182,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. **계속**을 선택하여 리포지토리를 선택한 다음, **마침**을 선택합니다. Azure에서 몇 초 내에 코드를 배포하고 앱을 시작합니다.
 
-    App Service는 각 하위 폴더에서 *wsgi.py* 파일을 찾아서 Django 프로젝트를 검색합니다. App Service에서 해당 파일을 찾으면 Django 웹앱이 로드됩니다. 자세한 내용은 [기본 제공 Python 이미지 구성](/azure/app-service/containers/how-to-configure-python)을 참조하세요.
+    App Service는 각 하위 폴더에서 *wsgi.py* 파일을 찾아서 Django 프로젝트를 검색합니다. App Service에서 해당 파일을 찾으면 Django 웹앱이 로드됩니다. 자세한 내용은 [기본 제공 Python 이미지 구성](/azure/app-service/configure-language-python)을 참조하세요.
 
 [문제가 있나요? 알려주세요.](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -279,4 +279,4 @@ Azure Portal의 웹앱 페이지 왼쪽에 있는 **모니터링** 아래에서 
 App Service에서 Python 앱을 실행하는 방법을 알아봅니다.
 
 > [!div class="nextstepaction"]
-> [Python 앱 구성](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)
+> [Python 앱 구성](/azure/app-service/configure-language-python)

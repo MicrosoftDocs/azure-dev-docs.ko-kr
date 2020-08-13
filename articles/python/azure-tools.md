@@ -2,13 +2,14 @@
 title: Python 개발자용 Azure 도구
 description: Azure에서 작업하는 Python 개발자를 위한 IDE 통합 및 명령줄 인터페이스입니다.
 ms.topic: conceptual
-ms.date: 02/19/2020
-ms.openlocfilehash: 04616841d9e345a29209814f7a32576b54fc25da
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/06/2020
+ms.custom: devx-track-python
+ms.openlocfilehash: cd81a4dcceb4d13630fd5cad60162729028eb91e
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441628"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982575"
 ---
 # <a name="azure-tools-for-python-developers"></a>Python 개발자용 Azure 도구
 
@@ -41,4 +42,3 @@ Azure CLI와 마찬가지로 Azure PowerShell은 Azure 리소스를 만들고 �
 Windows에서 Visual Studio는 Python 개발 및 데이터 과학 작업(Visual Studio 2017 이상) 및 Visual Studio용 Python 도구 확장 평가판(Visual Studio 2015 및 이전 버전)을 통해 Python 언어에 대한 오픈 소스 지원을 제공합니다. Visual Studio는 동급 최고의 언어 간 개발 및 디버깅 지원을 제공하므로 Python 및 C ++로 작업하는 개발자가 가장 일반적으로 사용합니다.
 
 [Visual Studio에 Python 지원 설치](https://docs.microsoft.com/visualstudio/python/installation)
-

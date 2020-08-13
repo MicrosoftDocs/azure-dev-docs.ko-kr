@@ -3,12 +3,13 @@ title: Python용 Azure 라이브러리의 사용 패턴
 description: Python용 Azure SDK 라이브러리의 일반적인 사용 패턴 개요
 ms.date: 06/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: d1cd1b1c965fdf5b6907c9842260d4c029d625f5
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.custom: devx-track-python
+ms.openlocfilehash: cf44dc4458014972b6c6e16a28acab164d8f0f89
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942412"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983324"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python용 Azure 라이브러리 사용 패턴
 

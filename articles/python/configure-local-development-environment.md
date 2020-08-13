@@ -3,12 +3,13 @@ title: Azure 개발을 위한 로컬 Python 환경 구성
 description: Visual Studio Code, Azure SDK 라이브러리 및 라이브러리 인증에 필요한 자격 증명을 포함하여 Azure를 사용하기 위한 로컬 Python 개발 환경을 설정하는 방법을 설명합니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: cf87c90bd36594ffa4e1f3837133238f89a77836
-ms.sourcegitcommit: 43e4b50f6f6f5806b2f162ca39367face0779ff6
+ms.custom: devx-track-python
+ms.openlocfilehash: 8d20960df802dc4671f6b432173a56f6dc88c38c
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421499"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983145"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure를 위한 로컬 Python 개발 환경 구성
 

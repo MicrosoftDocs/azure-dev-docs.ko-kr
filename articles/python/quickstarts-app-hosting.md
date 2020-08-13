@@ -3,12 +3,13 @@ title: Azure에서 Python 앱 호스팅 시작
 description: Python 앱 코드 호스팅에 대한 Azure 설명서의 시작 자료 색인입니다.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: f4e880901b057b7ad4c958c4acf3239d2ef79db5
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1fa1f47355c6dac81d94f2a10f92b65c471be432
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256248"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147354"
 ---
 # <a name="hosting-python-apps-on-azure"></a>Azure에서 Python 앱 호스팅
 
@@ -21,8 +22,8 @@ Azure에서 다양한 앱 호스팅 옵션을 시작하는 데 유용한 문서�
   - [Visual Studio Code를 사용하여 Azure Storage에 Azure Functions 연결](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python)
   
 - **웹앱 호스팅 및 모니터링**:
-  - [Azure App Service on Linux에서 Python 앱 만들기](/azure/app-service/containers/quickstart-python)
-  - [Azure App Service용 Linux Python 앱 구성](/azure/app-service/containers/how-to-configure-python)
+  - [Azure App Service on Linux에서 Python 앱 만들기](/azure/app-service/quickstart-python)
+  - [Azure App Service용 Linux Python 앱 구성](/azure/app-service/configure-language-python)
   - [Python 애플리케이션용 Azure Monitor 설정](/azure/azure-monitor/app/opencensus-python)
 
 - **컨테이너 호스팅**:

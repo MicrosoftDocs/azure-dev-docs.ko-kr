@@ -3,12 +3,13 @@ title: Python용 Azure 라이브러리(SDK) 사용
 description: 개발자가 Azure 리소스를 프로비저닝, 사용 및 관리하는 경우 생산성을 높이는 데 도움이 되는 Python용 Azure 라이브러리의 특징과 기능에 대해 간략히 설명합니다.
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffa626db0518967e2659eeb5b89ece4bc15c1ce2
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.custom: devx-track-python
+ms.openlocfilehash: dce4485a65da75d0918805ef55fafe71d55ce0a6
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069394"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983285"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python용 Azure 라이브러리(SDK) 사용
 

@@ -3,13 +3,13 @@ title: '3단계: Visual Studio Code에서 변경 후 컨테이너를 Azure App S
 description: 자습서 3단계, 컨테이너 이미지를 다시 빌드하고 다시 배포하는 간단한 단계입니다.
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: f0e6eb808e25f3bb48eb2c849310747945e0d7f9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: c23676dd0d8b3741881f38d1a3bbee367f7d6c58
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441868"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982885"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2: 변경 후 컨테이너를 Azure App Service에 다시 배포
 

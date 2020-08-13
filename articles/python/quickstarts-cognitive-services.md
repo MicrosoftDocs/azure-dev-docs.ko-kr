@@ -3,12 +3,13 @@ title: Azure에서 Python 앱 AI Cognitive Services 시작
 description: Python 앱 AI Cognitive Services에 대한 Azure 설명서의 시작 자료 색인입니다.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7192826524f647560f502fa0d01d136c0de945d1
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: 531dfcca27b7dff29f97b6b9ee58e9d330ac9696
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202811"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983055"
 ---
 # <a name="ai-service-for-python-apps-on-azure"></a>Azure에서 Python 앱 AI 서비스
 

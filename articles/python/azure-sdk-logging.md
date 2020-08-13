@@ -3,12 +3,13 @@ title: Python용 Azure 라이브러리에서 로깅 구성
 description: Azure 라이브러리는 라이브러리 또는 작업별로 구성되는 표준 Python 로깅 모듈을 사용합니다.
 ms.date: 06/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: b6456a1bf4bdbf8469483eb181b3df603263aa55
-ms.sourcegitcommit: 39da5bec7ef824a34aa04514afc1141b75466547
+ms.custom: devx-track-python
+ms.openlocfilehash: 0c08ba9c514bf9bca3c982ccf3ef3182f203e247
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84741434"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983318"
 ---
 # <a name="configure-logging-in-the-azure-libraries-for-python"></a>Python용 Azure 라이브러리에서 로깅 구성
 

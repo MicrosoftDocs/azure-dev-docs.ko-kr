@@ -3,12 +3,13 @@ title: Azure에서 Python 앱 메시징 및 IoT 시작
 description: Python 앱 메시징 및 IoT에 대한 Azure 설명서의 시작 자료 색인입니다.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 23c4f8d92d8ae0653eff43c29db8d06b15df4e67
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: b9c3746d5f6dab9cca74d9493e0e68380018db19
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84207626"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983015"
 ---
 # <a name="messaging-and-iot-for-python-apps-on-azure"></a>Azure에서 Python 앱 메시징 및 IoT
 

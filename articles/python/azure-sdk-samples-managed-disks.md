@@ -3,12 +3,13 @@ title: Managed Disks
 description: 관리 디스크를 생성, 크기 조정 및 업데이트합니다.
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.openlocfilehash: 11e50b86f888079ef44d498dfa59cf999bd0b08a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python
+ms.openlocfilehash: 0e319d56f1391d193979c79750025a99b565134a
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441648"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983245"
 ---
 # <a name="managed-disks"></a>Managed Disks
 

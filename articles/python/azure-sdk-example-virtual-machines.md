@@ -3,12 +3,13 @@ title: Python용 Azure SDK 라이브러리를 사용하여 가상 머신 프로�
 description: Python 및 Azure SDK 관리 라이브러리를 사용하여 Azure 가상 머신을 프로비저닝하는 방법입니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4b11caa66eb297225b4b61000575a8a9c48edb19
-ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
+ms.custom: devx-track-python
+ms.openlocfilehash: a6595b60a70ab3b6ee36bf95b4557cb37c496188
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84716091"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983495"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>예제: Azure 라이브러리를 사용하여 가상 머신 프로비저닝
 

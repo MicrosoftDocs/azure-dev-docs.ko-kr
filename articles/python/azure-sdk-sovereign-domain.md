@@ -3,13 +3,13 @@ title: Python 다중 클라우드용 Azure 라이브러리를 사용하여 모�
 description: msrestazure의 azure_cloud 모듈을 사용하여 여러 소버린 지역에서 Azure에 연결하는 방법
 ms.date: 07/13/2020
 ms.topic: conceptual
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 25e8851a8812782712ff65ec4627a0d2ead848ae
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.custom: devx-track-python
+ms.openlocfilehash: caf3f90fb9d21535dd6bf8974a6bdc719f3758ab
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377907"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983184"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>다중 클라우드: Python용 Azure 라이브러리를 사용하여 모든 지역에 연결
 

@@ -4,12 +4,12 @@ description: Jenkins Azure VM 에이전트 플러그 인에서 Azure 가상 머�
 keywords: Jenkins, Azure, DevOps, 가상 머신, 에이전트
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 488569312a665d6efb91e995490254289024a745
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: c5ea0c3782414abfda47810ba68ad1092cd7b0d5
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170539"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162052"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>자습서: Azure VM 에이전트를 사용하여 Jenkins 배포 크기 조정
 
@@ -29,9 +29,6 @@ ms.locfileid: "82170539"
 
 ## <a name="install-azure-vm-agents-plugin"></a>Azure VM 에이전트 플러그 인 설치
 
-> [!TIP]
-> [솔루션 템플릿](configure-on-linux-vm.md)을 사용하여 Azure에 Jenkins를 배포한 경우 Azure VM 에이전트 플러그 인이 이미 설치되어 있습니다.
-
 1. Jenkins 대시보드에서 **Jenkins 관리**를 선택한 다음, **플러그 인 관리**를 선택합니다.
 
 1. **가용성** 탭을 선택한 다음, **Azure VM 에이전트**를 검색합니다. 플러그 인에 대한 항목 옆의 확인란을 선택하고 대시보드 아래 쪽에서 **다시 시작하지 않고 설치**를 선택합니다.
@@ -46,7 +43,7 @@ ms.locfileid: "82170539"
 
     a. **Azure 자격 증명** 옆에 있는 **추가**를 선택하고 **Jenkins**를 선택합니다.
     b. **자격 증명 추가** 대화 상자에 있는 **종류** 드롭다운에서 **Microsoft Azure 서비스 주체**를 선택합니다.
-    다. Azure CLI 또는 [Cloud Shell](/azure/cloud-shell/overview)에서 Active Directory Service 주체를 만듭니다.
+    c. Azure CLI 또는 [Cloud Shell](/azure/cloud-shell/overview)에서 Active Directory Service 주체를 만듭니다.
     
     ```azurecli-interactive
     az ad sp create-for-rbac --name jenkins_sp --password secure_password
@@ -106,7 +103,7 @@ Azure VM 에이전트를 정의하는 데 사용할 템플릿을 구성합니다
 
 ## <a name="configure-agent-operating-system-and-tools"></a>에이전트 운영 체제 및 도구 구성
 
-플러그 인 구성의 **이미지 구성** 섹션에서 **Ubuntu 16.04 LTS**를 선택합니다. **Git 설치(최신)** , **Maven 설치(V3.5.0)** 및 **Docker 설치** 옆에 있는 확인란을 선택하여 새로 만든 에이전트에서 이러한 도구를 설치합니다.
+플러그 인 구성의 **이미지 구성** 섹션에서 **Ubuntu 16.04 LTS**를 선택합니다. **Git 설치(최신)**, **Maven 설치(V3.5.0)** 및 **Docker 설치** 옆에 있는 확인란을 선택하여 새로 만든 에이전트에서 이러한 도구를 설치합니다.
 
 ![VM OS 및 도구 구성](./media/scale-deployments-using-vm-agents/jenkins-os-config.png)
 

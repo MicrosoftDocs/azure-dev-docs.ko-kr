@@ -3,12 +3,13 @@ title: Azure를 사용하여 클라우드 개발 - Azure란?
 description: Microsoft Azure에서 클라우드 애플리케이션을 개발하는 방법에 대한 개요이며, 데이터 센터, 서비스 및 리소스의 관계부터 설명합니다.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.custom: devx-track-python
+ms.openlocfilehash: e776ce3aa84921dcfcb1be1e8613ae7332fe61a8
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370714"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983179"
 ---
 # <a name="cloud-development-on-azure"></a>Azure에서 클라우드 개발
 

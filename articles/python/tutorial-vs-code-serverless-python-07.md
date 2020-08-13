@@ -3,13 +3,13 @@ title: '7단계: VS Code를 사용하여 Python에서 Azure Functions에 대한 
 description: 자습서 7단계로, Azure Storage에 메시지를 기록하기 위해 Python에서 바인딩을 추가합니다.
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: f374e3155adc2d8681d8d39a579e0bd9fb3f5370
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 211d1534d617b649b574f9f3d23e8c5ffd5ac414
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708607"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982814"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Python에서 Azure Functions에 대한 스토리지 바인딩 추가
 

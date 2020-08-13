@@ -3,12 +3,13 @@ title: Python용 Azure 라이브러리를 사용하여 리소스 그룹 프로�
 description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용하여 Python 코드에서 리소스 그룹을 만듭니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 38c2f87511c040a04040844fb512fd436d566c15
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1a87e53253eff5679245ac5528fac3bb10e2bc8d
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453704"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982615"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
 

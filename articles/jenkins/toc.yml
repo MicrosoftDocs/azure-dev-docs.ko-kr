@@ -7,7 +7,7 @@
 - name: 빠른 시작
   expanded: true
   items:
-    - name: Jenkins 서버 만들기
+    - name: Azure CLI를 사용하여 Jenkins 구성
       href: configure-on-linux-vm.md
 - name: 자습서
   items:

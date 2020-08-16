@@ -7,9 +7,9 @@
 - name: 빠른 시작
   expanded: true
   items:
-    - name: 시작하기 - Azure Cloud Shell
+    - name: Azure Cloud Shell을 사용하여 Terraform 구성
       href: get-started-cloud-shell.md
-    - name: 시작하기 - Windows 및 PowerShell
+    - name: Azure PowerShell을 사용하여 Terraform 구성
       href: get-started-powershell.md
 - name: 방법 가이드
   items:

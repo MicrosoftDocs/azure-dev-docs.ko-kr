@@ -7,12 +7,12 @@ metadata:
   description: Java 개발자를 위한 이러한 자습서 및 도구를 사용하여 클라우드에서 앱 개발을 시작하세요.
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: 68aaa1c4ff8274c3bcea170c7082051fbbca8929
-  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+  ms.openlocfilehash: b6bce3af7a5d7dcd5faaa8e588ec06098f52a2d5
+  ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83631552"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88218917"
 conceptualContent:
   items:
   - title: Java용 Azure 빠른 시작
@@ -179,3 +179,7 @@ tools:
   - title: Azure의 Jenkins
     imageSrc: https://docs.microsoft.com/media/logos/logo_jenkins.svg
     url: /azure/jenkins
+additionalContent:
+  sections:
+  - title: ''
+  footer: Java 및 OpenJDK는 Oracle 및/또는 해당 계열사의 상표 또는 등록 상표입니다.

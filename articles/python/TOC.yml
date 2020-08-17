@@ -8,16 +8,116 @@
       href: cloud-development-provisioning.md
     - name: Azure 개발 흐름
       href: cloud-development-flow.md
-- name: Python으로 Azure에서 Python 시작
+- name: 서버리스 함수 배포
   items:
-    - name: Azure 라이브러리의 개요
+    - name: 함수 만들기
+      items:
+        - name: Visual Studio Code 사용
+          items:
+            - name: 1 소개 및 필수 구성 요소
+              href: tutorial-vs-code-serverless-python-01.md
+            - name: 2 Python 함수 만들기
+              href: tutorial-vs-code-serverless-python-02.md
+            - name: 3 코드 파일 검사
+              href: tutorial-vs-code-serverless-python-03.md
+            - name: 4 로컬에서 디버그
+              href: tutorial-vs-code-serverless-python-04.md
+            - name: 5 Azure에 배포
+              href: tutorial-vs-code-serverless-python-05.md
+            - name: 6 두 번째 함수 추가
+              href: tutorial-vs-code-serverless-python-06.md
+            - name: 7 스토리지 바인딩 추가
+              href: tutorial-vs-code-serverless-python-07.md
+            - name: 8 리소스 정리
+              href: tutorial-vs-code-serverless-python-08.md
+        - name: Azure CLI 사용
+          href: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - name: Azure Storage에 연결
+      items:
+        - name: Visual Studio Code 사용
+          href: /azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python
+        - name: Azure CLI 사용
+          href: /azure/azure-functions/functions-add-output-binding-storage-queue-cli?tabs=bash%2Cbrowser&pivots=programming-language-python
+- name: 웹 앱 및 데이터베이스 배포
+  items:
+    - name: 간단한 Flask 앱
+      items:
+        - name: Visual Studio Code 사용
+          items:
+            - name: 1 소개 및 필수 구성 요소
+              href: tutorial-deploy-app-service-on-linux-01.md
+            - name: 2 앱 준비
+              href: tutorial-deploy-app-service-on-linux-02.md
+            - name: 3 App Service 만들기
+              href: tutorial-deploy-app-service-on-linux-03.md
+            - name: 4 시작 파일 구성
+              href: tutorial-deploy-app-service-on-linux-04.md
+            - name: 5 앱 배포
+              href: tutorial-deploy-app-service-on-linux-05.md
+            - name: 6 로그 스트리밍
+              href: tutorial-deploy-app-service-on-linux-06.md
+            - name: 7 리소스 정리
+              href: tutorial-deploy-app-service-on-linux-07.md
+        - name: Azure CLI 사용
+          href: /azure/app-service/quickstart-python
+    - name: Django 앱 + PostgreSQL
+      items:
+        - name: Azure Portal 사용
+          href: tutorial-python-postgresql-app-portal.md
+        - name: Azure CLI 사용
+          href: /azure/app-service/tutorial-python-postgresql-app
+    - name: CI/CD 설정
+      href: /azure/devops/pipelines/languages/python-webapp
+    - name: Linux 호스트 구성
+      href: /azure/app-service/configure-language-python
+    - name: 로그인 추가
+      href: /azure/active-directory/develop/quickstart-v2-python-webapp
+    - name: 비밀 저장 및 검색
+      href: /azure/key-vault/quick-create-python
+    - name: Azure Monitor 설정
+      href: /azure/azure-monitor/app/opencensus-python
+- name: 컨테이너 배포
+  items:
+    - name: Visual Studio Code 사용
+      items:
+        - name: 1 소개 및 필수 구성 요소
+          href: tutorial-deploy-containers-01.md
+        - name: 2 컨테이너 이미지 배포
+          href: tutorial-deploy-containers-02.md
+        - name: 3 변경 및 재배포
+          href: tutorial-deploy-containers-03.md
+        - name: 4 로그 스트리밍
+          href: tutorial-deploy-containers-04.md
+        - name: 5 리소스 정리
+          href: tutorial-deploy-containers-05.md
+    - name: Kubernetes 클러스터 배포
+      href: /azure/aks/kubernetes-walkthrough
+- name: 기계 학습 모델 배포
+  href: quickstarts-machine-learning.md
+- name: 데이터 및 스토리지 배포
+  href: quickstarts-data-solutions.md
+- name: Azure 라이브러리(SDK) 사용
+  items:
+    - name: 개요
       href: azure-sdk-overview.md
     - name: 개발 환경 설정
       href: configure-local-development-environment.md
     - name: 라이브러리 사용 패턴
       href: azure-sdk-library-usage-patterns.md
-    - name: 라이브러리 패키지 인덱스
+    - name: 인증
+      items:
+        - name: Azure를 사용하여 앱 인증
+          href: azure-sdk-authenticate.md
+        - name: 서비스 사용자 관리
+          href: how-to-manage-service-principals.md
+        - name: 보안 주체에 역할 권한 할당
+          href: how-to-assign-role-permissions.md
+    - name: 패키지 설치
+      href: azure-sdk-install.md
+    - name: 패키지 인덱스
       href: azure-sdk-library-package-index.md
+    - name: 라이브러리 API 참조
+      href: sdk-library-api-reference.md
     - name: 예제
       items:
         - name: 리소스 그룹 프로비저닝
@@ -32,7 +132,15 @@
           href: azure-sdk-example-database.md
         - name: 가상 머신 프로비전
           href: azure-sdk-example-virtual-machines.md
-- name: 특정 Azure 서비스 검색
+    - name: 로깅 구성
+      href: azure-sdk-logging.md
+    - name: 프록시 구성
+      href: azure-sdk-configure-proxy.md
+    - name: 소버린 도메인 사용
+      href: azure-sdk-sovereign-domain.md
+- name: Python 개발자용 도구
+  href: azure-tools.md
+- name: Python을 지원하는 서비스 살펴보기
   items:
     - name: 앱 호스팅
       href: quickstarts-app-hosting.md
@@ -46,103 +154,37 @@
       href: quickstarts-cognitive-services.md
     - name: 메시징 및 IoT
       href: quickstarts-messaging-iot.md
-    - name: 기타 서비스
+    - name: 서비스
       href: quickstarts-other-services.md
-- name: 시나리오별 자습서
-  items:
-    - name: 웹앱 및 데이터베이스 배포(포털)
-      href: tutorial-python-postgresql-app-portal.md
-    - name: 웹앱 배포(VS Code)
-      items:
-        - name: 1 소개 및 필수 구성 요소
-          href: tutorial-deploy-app-service-on-linux-01.md
-        - name: 2 앱 준비
-          href: tutorial-deploy-app-service-on-linux-02.md
-        - name: 3 App Service 만들기
-          href: tutorial-deploy-app-service-on-linux-03.md
-        - name: 4 시작 파일 구성
-          href: tutorial-deploy-app-service-on-linux-04.md
-        - name: 5 앱 배포
-          href: tutorial-deploy-app-service-on-linux-05.md
-        - name: 6 로그 스트리밍
-          href: tutorial-deploy-app-service-on-linux-06.md
-        - name: 7 리소스 정리
-          href: tutorial-deploy-app-service-on-linux-07.md
-    - name: 컨테이너 배포(VS Code)
-      items:
-        - name: 1 소개 및 필수 구성 요소
-          href: tutorial-deploy-containers-01.md
-        - name: 2 컨테이너 이미지 배포
-          href: tutorial-deploy-containers-02.md
-        - name: 3 변경 및 재배포
-          href: tutorial-deploy-containers-03.md
-        - name: 4 로그 스트리밍
-          href: tutorial-deploy-containers-04.md
-        - name: 5 리소스 정리
-          href: tutorial-deploy-containers-05.md
-    - name: 서버리스 함수 배포(VS Code)
-      items:
-        - name: 1 소개 및 필수 구성 요소
-          href: tutorial-vs-code-serverless-python-01.md
-        - name: 2 Python 함수 만들기
-          href: tutorial-vs-code-serverless-python-02.md
-        - name: 3 코드 파일 검사
-          href: tutorial-vs-code-serverless-python-03.md
-        - name: 4 로컬에서 디버그
-          href: tutorial-vs-code-serverless-python-04.md
-        - name: 5 Azure에 배포
-          href: tutorial-vs-code-serverless-python-05.md
-        - name: 6 두 번째 함수 추가
-          href: tutorial-vs-code-serverless-python-06.md
-        - name: 7 스토리지 바인딩 추가
-          href: tutorial-vs-code-serverless-python-07.md
-        - name: 8 리소스 정리
-          href: tutorial-vs-code-serverless-python-08.md
-- name: 방법 가이드
-  items:
-    - name: 라이브러리 패키지 설치
-      href: azure-sdk-install.md
-    - name: Azure를 사용하여 앱 인증
-      href: azure-sdk-authenticate.md
-    - name: 서비스 사용자 관리
-      href: how-to-manage-service-principals.md
-    - name: 보안 주체에 역할 권한 할당
-      href: how-to-assign-role-permissions.md
-    - name: 로깅 구성
-      href: azure-sdk-logging.md
-    - name: 프록시 구성
-      href: azure-sdk-configure-proxy.md
-    - name: 소버린 도메인 사용
-      href: azure-sdk-sovereign-domain.md
 - name: 샘플
   items:
     - name: 웹앱 및 서버리스
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps'
+      href: /samples/browse/?languages=python&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps
     - name: 데이터베이스
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database'
+      href: /samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database
     - name: 스토리지
       items:
         - name: Azure Storage
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-storage'
+          href: /samples/browse/?languages=python&products=azure-storage
         - name: Redis Cache
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-redis-cache'
+          href: /samples/browse/?languages=python&products=azure-redis-cache
     - name: ID 및 보안
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-active-directory%2Cazure-key-vault'
+      href: /samples/browse/?languages=python&products=azure-active-directory%2Cazure-key-vault
     - name: IoT
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central'
+      href: /samples/browse/?languages=python&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central
     - name: 데이터 과학
       items:
         - name: Machine Learning Service
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-machine-learning-service'
+          href: /samples/browse/?languages=python&products=azure-machine-learning-service
         - name: Databricks
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-databricks'
+          href: /samples/browse/?languages=python&products=azure-databricks
         - name: HDInsight
-          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-hdinsight'
+          href: /samples/browse/?languages=python&products=azure-hdinsight
     - name: Cognitive Services를 이용한 AI
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cognitive-services'
+      href: /samples/browse/?languages=python&products=azure-cognitive-services
     - name: 검색
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
+      href: /samples/browse/?languages=python&products=azure-search
     - name: 모든 샘플
-      href: 'https://docs.microsoft.com/samples/browse/?languages=python'
+      href: /samples/browse/?languages=python
 - name: 라이브러리 API 참조
   href: sdk-library-api-reference.md

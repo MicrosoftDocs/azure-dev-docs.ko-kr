@@ -1,16 +1,17 @@
 ---
 title: Python용 Azure SDK에서 Azure Storage 사용
 description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage 계정에서 미리 프로비저닝된 Blob 컨테이너를 액세스한 다음, 이 컨테이너에 파일을 업로드합니다.
-ms.date: 06/15/2020
+ms.date: 08/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 41c2c586678084e30f9f5b2bff3c773b46f5463d
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.custom: devx-track-python
+ms.openlocfilehash: bcb8d680950e2c42d3d7f092478c4d6096454b12
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405734"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982695"
 ---
-# <a name="example-access-azure-storage-using-the-azure-libraries-for-pyhon"></a>예: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
+# <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>예제: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
 이 예는 Python 애플리케이션 코드로 Azure 클라이언트 라이브러리를 사용하여 해당 Blob Storage 컨테이너에 파일을 업로드하는 방법을 보여줍니다. 이 예에서는 [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)에 표시된 리소스를 프로비저닝했다고 가정합니다.
 

@@ -1,19 +1,19 @@
 ### YamlMime:Landing
 title: Azure의 Eclipse MicroProfile 설명서
-summary: MicroProfile은 여러 구현에서 혁신을 거치고 표준화를 목표로 공동 관심 분야에 대해 협력함으로써, Java EE와 같은 Enterprise Java 기술을 분산 마이크로서비스 아키텍처로 활용하고 진화시키려는 목적을 가진 Eclipse Foundation 프로젝트입니다.
+summary: MicroProfile은 여러 구현에서 혁신을 거치고 표준화를 목표로 공동 관심 분야에 대해 협력함으로써, Java EE와 같은 Enterprise Java 기술을 분산 마이크로 서비스 아키텍처로 활용하고 진화시키려는 목적을 가진 Eclipse Foundation 프로젝트입니다.
 metadata:
   title: Azure의 Eclipse MicroProfile 설명서
-  description: Azure에서 Eclipse MicroProfile을 사용하여 앱 개발을 시작합니다.
+  description: Eclipse MicroProfile을 사용하여 Enterprise Java 기술을 활용하고 발전시켜 Azure에서 앱을 개발합니다.
   author: brborges
   ms.author: brborges
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: e17e2d97494e2043c9925283adb53c2449224586
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 0b0bb28c4ec0751b1a6d29ff89fadaf53fe57ccd
+  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675209"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88240915"
 landingContent:
 - title: 시작 가이드
   linkLists:

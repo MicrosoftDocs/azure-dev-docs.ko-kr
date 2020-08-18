@@ -3,13 +3,13 @@ title: 자습서 - Jenkins를 사용하여 GitHub에서 Azure App Service로 배
 description: GitHub 및 CD(지속적인 배포)에서 Java 웹앱용 Azure App Service까지의 CI(연속 통합)를 위해 Jenkins를 구성하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
-ms.date: 10/23/2019
-ms.openlocfilehash: 6516f5481f6170a9d15d43113ac0f3f234174931
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/10/2020
+ms.openlocfilehash: 3961d413a573d416777f649cef44ceccdecb0b01
+ms.sourcegitcommit: e792f681ab66c54e6fd0c7f3cb71816206216d72
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170029"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88075716"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>자습서: Jenkins를 사용하여 GitHub에서 Azure App Service로 배포
 
@@ -116,31 +116,20 @@ Jenkins가 GitHub를 모니터링하고, GitHub 포크의 웹앱으로 새 커�
 
 ## <a name="create-service-principal"></a>서비스 주체 만들기
 
-이후 섹션에서는 GitHub에서 앱을 빌드하고 Azure App Service에 앱을 배포하는 Jenkins 파이프라인 작업을 만듭니다. 자격 증명을 입력하지 않고 Jenkins가 Azure에 액세스하도록 하려면 Jenkins용 Azure Active Directory에서 [서비스 주체](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)를 만듭니다. 서비스 주체는 Azure 리소스에 대한 액세스를 인증하기 위해 Jenkins가 사용할 수 있는 별도 ID입니다. 이 서비스 주체를 만들려면 로컬 명령줄 또는 Azure Cloud Shell에서 Azure CLI 명령 [ **`az ad sp create-for-rbac`** ](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)을 실행합니다. 예를 들면 다음과 같습니다. 
+이후 섹션에서는 GitHub에서 앱을 빌드하고 Azure App Service에 앱을 배포하는 Jenkins 파이프라인 작업을 만듭니다. 자격 증명을 입력하지 않고 Jenkins가 Azure에 액세스하도록 하려면 [서비스 주체](/active-directory/develop/app-objects-and-service-principals)가 필요합니다. 이 문서에서 설명하는 서비스 주체를 이미 사용할 수 있는 경우 이 섹션을 건너뛸 수 있습니다.
+
+서비스 주체를 만들려면 Azure CLI [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) 명령을 실행합니다.
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourSecurePassword
+az ad sp create-for-rbac
 ```
 
-서비스 주체 이름을 따옴표로 묶어야 합니다. [Azure Active Directory 암호 규칙 및 제한 사항](/azure/active-directory/active-directory-passwords-policy)에 따라 강력한 암호를 만들어야 합니다. 암호를 제공하지 않으면 Azure CLI가 암호를 만듭니다. 
+**참고**:
 
-다음은 **`create-for-rbac`** 명령에 의해 생성되는 출력입니다. 
+- 성공적으로 완료되면 `az ad sp create-for-rbac`에서 여러 값을 표시합니다. `name`, `password` 및 `tenant` 값은 다음 단계에서 사용됩니다.
+- 기본적으로 서비스 주체는 Azure 계정에 대한 전체 읽기 및 쓰기 권한이 있는 **기여자** 역할을 사용하여 생성됩니다. RBAC(역할 기반 액세스 제어)와 역할에 대한 자세한 내용은 [RBAC: 기본 제공 역할](/azure/active-directory/role-based-access-built-in-roles)을 참조하세요.
+- 분실한 암호는 복구할 수 없습니다. 따라서 암호를 안전한 장소에 저장해야 합니다. 암호를 잊어버린 경우 [서비스 주체 자격 증명을 다시 설정](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)해야 합니다.
 
-```json
-{
-   "appId": "yourAzureServicePrincipal-ID", // A GUID such as AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA
-   "displayName": "yourAzureServicePrincipalName", // A user-friendly name for your Azure service principal
-   "name": "http://yourAzureServicePrincipalName",
-   "password": "yourSecurePassword",
-   "tenant": "yourAzureActiveDirectoryTenant-ID" // A GUID such as BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB
-}
-```
-
-> [!TIP]
-> 
-> 서비스 주체가 이미 있는 경우 해당 ID를 대신 사용할 수 있습니다.
-> 인증을 위해 서비스 주체 값을 제공하는 경우 `appId`, `password` 및 `tenant` 속성 값을 사용합니다. 
-> 기존 서비스 주체를 검색할 때 `displayName` 속성 값을 사용합니다.
 
 ## <a name="add-service-principal-to-jenkins"></a>Jenkins에 서비스 주체 추가
 
@@ -156,7 +145,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
    ![Azure 서비스 주체 자격 증명 추가](media/deploy-from-github-to-azure-app-service/add-service-principal-credentials.png)
 
-   | 속성 | 값 | Description | 
+   | 속성 | 값 | 설명 | 
    |----------|-------|-------------| 
    | **구독 ID** | <*yourAzureSubscription-ID*> | Azure 구독에 대한 GUID 값입니다. <p>**팁**: Azure 구독 ID를 모르는 경우 명령줄 또는 Cloud Shell에서 이 Azure CLI 명령을 실행한 후 `id` GUID 값을 사용합니다. <p>`az account list` | 
    | **클라이언트 ID** | <*yourAzureServicePrincipal-ID*> | Azure 서비스 주체에 대해 이전에 생성된 `appId` GUID 값입니다. | 

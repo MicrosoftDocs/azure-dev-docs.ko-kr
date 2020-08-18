@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: f3757b8ca84eb9c52f9e4a94f20d54fd3a303652
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: cd7afa2e54a648c282a48d781a116032e7414e1d
+ms.sourcegitcommit: f82e9f569dce0416f4040312882d28eafab05a4a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378617"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88040344"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Azure Kubernetes Service에 Spring Boot 애플리케이션 배포
 
@@ -48,8 +48,8 @@ ms.locfileid: "86378617"
    ```
    -- 또는 --
    ```
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   md /users/$USER/SpringBoot
+   cd /users/$USER/SpringBoot
    ```
 
 1. [Spring Boot on Docker 시작] 샘플 프로젝트를 디렉터리에 복제합니다.
@@ -111,7 +111,12 @@ ms.locfileid: "86378617"
    az acr login
    ```
 
-1. Spring Boot 애플리케이션에 대해 완료된 프로젝트 디렉터리로 이동하고(예: "*C:\SpringBoot\gs-spring-boot-docker\complete*"또는" */users/robert/SpringBoot/gs-spring-boot-docker/complete*") 텍스트 편집기를 사용하여 *pom.xml* 파일을 엽니다.
+1. 텍스트 편집기(예: [VS Code](https://code.visualstudio.com/docs))를 사용하여 *pom.xml* 파일을 엽니다.
+
+   ```
+   code pom.xml
+   ```
+
 
 1. *pom.xml* 파일의 `<properties>` 컬렉션을 Azure Container Registry의 레지스트리 이름과 최신 버전의 [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin)으로 업데이트합니다.
 
@@ -119,7 +124,7 @@ ms.locfileid: "86378617"
    <properties>
       <!-- Note: If your ACR name contains upper case characters, be sure to convert them to lower case characters. -->
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>2.3.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.4.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -207,7 +212,7 @@ ms.locfileid: "86378617"
 1. 앱이 클러스터에 배포되면 외부 IP 주소를 쿼리하고 웹 브라우저에서 엽니다.
 
    ```
-   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=default
+   kubectl get services -o=jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}'
    ```
 
    ![Azure에서 샘플 앱 찾아보기][SB02]

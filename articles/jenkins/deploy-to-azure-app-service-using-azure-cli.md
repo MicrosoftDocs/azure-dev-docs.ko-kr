@@ -3,14 +3,14 @@ title: 자습서 - Jenkins 및 Azure CLI를 사용하여 Azure App Service에 �
 description: Azure CLI를 사용하여 Jenkins 파이프라인을 통해 Azure에 Java 웹앱을 배포하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
-ms.date: 04/25/2020
+ms.date: 08/08/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 63a5097358001e0312af13053e3d7310fe413cc7
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.openlocfilehash: b26adfa3fd4639efa5de20ffcf93f1730a992a12
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478343"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162072"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용해 Azure App Service에 배포
 
@@ -26,7 +26,7 @@ Java 웹앱을 Azure에 배포하려면 [Jenkins 파이프라인](https://jenkin
 
 ## <a name="create-and-configure-jenkins-instance"></a>Jenkins 인스턴스 만들기 및 구성
 
-Jenkins 마스터가 아직 없는 경우 [Jenkins 솔루션 템플릿](configure-on-linux-vm.md)을 사용하여 설치합니다. 템플릿은 기본적으로 필요한 [Azure 자격 증명](https://plugins.jenkins.io/azure-credentials) 플러그 인을 설치합니다. 
+Jenkins 마스터가 아직 없는 경우 [Linux VM에 Jenkins를 설치합니다](configure-on-linux-vm.md).
 
 Azure 자격 증명 플러그 인을 사용하면 Microsoft Azure 서비스 주체 자격 증명을 Jenkins에 저장할 수 있습니다. 버전 1.2에서는 Jenkins 파이프라인이 Azure 자격 증명을 얻을 수 있도록 지원이 추가되었습니다. 
 
@@ -114,7 +114,7 @@ az webapp create \
 
 [az appservice web config update](/cli/azure/webapp/config) 명령으로 앱에 필요한 Java 런타임 구성을 설정합니다.
 
-다음 명령은 최근 Java 8 JDK 및 [Apache Tomcat](https://tomcat.apache.org/) 8.0에서 실행되도록 웹앱을 구성합니다.
+다음 명령은 최신 Java 8 JDK 및 [Apache Tomcat](https://tomcat.apache.org/) 8.0에서 실행되도록 웹앱을 구성합니다.
 
 ```azurecli
 az webapp config set \ 
@@ -146,7 +146,7 @@ az webapp config set \
 
 웹 브라우저에서 Jenkins를 열고 **새 항목**을 클릭합니다.
 
-1. 작업 이름을 입력합니다.
+1. 작업의 이름을 입력합니다.
 1. **파이프라인**을 선택합니다. 
 1. **확인**을 선택합니다.
 1. **파이프라인**을 선택합니다.
@@ -167,7 +167,7 @@ az webapp config set \
 
 1. 웹 브라우저를 엽니다.
 
-1. `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`으로 이동합니다.
+1. `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`으로 이동
 
 1. 다음과 비슷한 텍스트가 표시됩니다.
 

@@ -3,14 +3,14 @@ title: WebLogic Server의 Java 앱을 Azure로 마이그레이션하기 위해 A
 description: 이 가이드에서는 LDAP를 통해 Azure Active Directory Domain Services에 연결하도록 Oracle WebLogic Server를 구성하는 방법을 설명합니다.
 author: edburns
 ms.author: edburns
-ms.topic: conceptual
-ms.date: 07/09/2020
-ms.openlocfilehash: 0f3b8f7e2535bc91629f056cf59bc0d2658aba19
-ms.sourcegitcommit: 1f78e54deb85c6063b887286a13a967d1d186b50
+ms.topic: tutorial
+ms.date: 08/10/2020
+ms.openlocfilehash: b828fc2bc41b0e4e557472e7efd00498e68933db
+ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118449"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88052220"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>WebLogic Server의 Java 앱을 Azure로 마이그레이션하기 위한 최종 사용자 권한 부여 및 인증
 
@@ -35,7 +35,7 @@ Java EE 개발자는 워크로드를 Azure로 이동하는 경우에도 [표준 
 ## <a name="prerequisites"></a>필수 구성 요소
 
 * 활성화된 Azure 구독.
-  * Azure 구독이 없는 경우 [계정을 만듭니다](https://azure.microsoft.com/free/).
+  * Azure 구독이 아직 없는 경우 [무료 계정을 만듭니다](https://azure.microsoft.com/free/).
 * [Oracle WebLogic Server Azure 애플리케이션](/azure/virtual-machines/workloads/oracle/oracle-weblogic)에 나와 있는 WLS Azure 애플리케이션 중 하나를 배포하는 기능
 
 ## <a name="migration-context"></a>마이그레이션 컨텍스트
@@ -46,6 +46,7 @@ Java EE 개발자는 워크로드를 Azure로 이동하는 경우에도 [표준 
 * 온-프레미스 Active Directory 포리스트와 관련된 시나리오인 경우 Azure AD를 사용하여 하이브리드 ID 솔루션을 구현하는 것이 좋습니다.  자세한 내용은 [하이브리드 ID 설명서](/azure/active-directory/hybrid/)를 참조하세요.
 * 온-프레미스 AD DS(Active Directory Domain Services) 배포가 이미 있는 경우 [자체 관리형 Active Directory Domain Services, Azure Active Directory 및 관리형 Azure Active Directory Domain Services 비교](/azure/active-directory-domain-services/compare-identity-solutions)를 방문하여 마이그레이션 경로를 살펴봅니다.
 * 클라우드에 맞게 최적화하는 경우 이 가이드에서는 Azure AD DS LDAP 및 WLS를 사용하여 처음부터 시작하는 방법을 보여 줍니다.
+* WebLogic Server를 Azure Virtual Machines로 마이그레이션하는 과정에 대한 포괄적인 설문 조사는 [WebLogic Server 애플리케이션을 Azure Virtual Machines로 마이그레이션](migrate-weblogic-to-virtual-machines.md)을 참조하세요.
 
 ## <a name="azure-active-directory-configuration"></a>Azure Active Directory 구성
 
@@ -115,6 +116,38 @@ Java EE 개발자는 워크로드를 Azure로 이동하는 경우에도 [표준 
 
 위의 변형을 염두에 두고 [Azure Active Directory Domain Services 관리형 도메인에 대한 보안 LDAP 구성](/azure/active-directory-domain-services/tutorial-configure-ldaps)을 완료합니다.  이제 WLS 구성에 제공하는 데 필요한 값을 수집할 수 있습니다.
 
+### <a name="disable-weak-tls-v1"></a>약한 TLS v1 사용 안 함
+
+기본적으로 Azure AD DS(Azure Active Directory Domain Services)는 TLS v1을 사용하도록 설정합니다. 이는 약한 것으로 간주되며 WebLogic Server 14 이상에서 지원되지 않습니다. 
+
+이 섹션에서는 TLS v1 암호화를 사용하지 않도록 설정하는 방법을 안내합니다.
+
+먼저 LDAP를 사용하도록 설정하는 Azure Domain Service 인스턴스의 리소스 ID를 가져옵니다. 다음 예에서는 `aadds-rg`라는 리소스 그룹에서 `aaddscontoso.com`이라는 Azure Domain Service 인스턴스의 ID를 가져옵니다.
+
+```azurecli
+AADDS_ID=$(az resource show --resource-group aadds-rg --resource-type "Microsoft.AAD/DomainServices" --name aaddscontoso.com --query "id" --output tsv)
+```
+
+다음 명령을 실행하여 TLS v1을 사용하지 않도록 설정하세요.
+
+```azurecli
+az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1=Disabled
+```
+
+출력에는 다음 예와 같이 `domainSecuritySettings`가 `"tlsV1": "Disabled"`로 표시됩니다.
+
+```text
+"domainSecuritySettings": {
+      "ntlmV1": "Enabled",
+      "syncKerberosPasswords": "Enabled",
+      "syncNtlmPasswords": "Enabled",
+      "syncOnPremPasswords": "Enabled",
+      "tlsV1": "Disabled"
+}
+```
+
+자세한 내용은 [약한 암호화 및 암호 해시 동기화를 사용하지 않도록 설정하여 Azure Active Directory Domain Services 관리되는 도메인 보호](/azure/active-directory-domain-services/secure-your-domain)를 참조하세요.
+
 ## <a name="wls-configuration"></a>WLS 구성
 
 이 섹션은 이전에 배포한 Azure AD DS에서 매개 변수 값을 수집하는 데 도움이 됩니다.
@@ -149,9 +182,9 @@ Java EE 개발자는 워크로드를 Azure로 이동하는 경우에도 [표준 
 
 1. WLS 관리 콘솔을 방문합니다.
 1. 왼쪽 탐색기에서 트리를 펼쳐 **보안 영역** -> **myrealm** -> **공급자**를 차례로 선택합니다.
-1. 성공적으로 통합되면 `AzureActiveDirectoryProvider`와 같은 AAD 공급자를 찾을 수 있습니다.
+1. 성공적으로 통합되면 `AzureActiveDirectoryProvider`와 같은 Azure AD 공급자를 찾을 수 있습니다.
 1. 왼쪽 탐색기에서 트리를 펼쳐 **보안 영역** -> **myrealm** -> **사용자 및 그룹**을 차례로 선택합니다.
-1. 성공적으로 통합되면 AAD 공급자에서 사용자를 찾을 수 있습니다.
+1. 성공적으로 통합되면 Azure AD 공급자의 사용자를 찾을 수 있습니다.
 
 ### <a name="lock-down-and-secure-ldap-access-over-the-internet"></a>인터넷을 통한 보안 LDAP 액세스 잠금
 
@@ -162,6 +195,8 @@ Java EE 개발자는 워크로드를 Azure로 이동하는 경우에도 [표준 
 이제 [Azure Active Directory Domain Services 관리형 도메인에 대한 보안 LDAP 구성](/azure/active-directory-domain-services/tutorial-configure-ldaps#clean-up-resources)에 있는 [리소스 정리](/azure/active-directory-domain-services/tutorial-configure-ldaps#clean-up-resources) 섹션의 단계를 수행합니다.
 
 ## <a name="next-steps"></a>다음 단계
+
+WebLogic Server 앱을 Azure로 마이그레이션하는 과정의 측면을 살펴보세요.
 
 > [!div class="nextstepaction"]
 > [WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)

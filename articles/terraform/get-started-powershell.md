@@ -3,19 +3,32 @@ title: 빠른 시작 - Windows 및 PowerShell을 사용하여 Terraform 시작
 description: 이 빠른 시작에서는 Terraform을 설치하고 구성하여 Azure 리소스를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform install configure windows init plan apply execution login rbac service principal automated script powershell
 ms.topic: quickstart
-ms.date: 07/27/2020
-ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478583"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026146"
 ---
 # <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>빠른 시작: Windows 및 PowerShell을 사용하여 Terraform 시작
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 이 문서에서는 PowerShell을 사용하여 [Azure에서 Terraform을 시작](https://www.terraform.io/docs/providers/azurerm/index.html)하는 방법에 대해 설명합니다.
+
+이 문서에서는 다음 방법을 설명합니다.
+> [!div class="checklist"]
+> * PowerShell 최신 버전 설치
+> * 새로운 PowerShell Az 모듈 설치
+> * Azure CLI 설치
+> * Terraform 설치
+> * 인증용 Azure 서비스 주체 만들기
+> * 서비스 주체를 사용하여 Azure에 로그인 
+> * Terraform이 Azure 구독에 올바르게 인증하도록 환경 변수 설정
+> * Terraform 스크립트를 작성하여 Azure 리소스 그룹 만들기
+> * Terraform 실행 계획 만들기 및 적용
+> * `terraform plan -destroy` 플래그를 사용하여 실행 계획 되돌리기
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -119,6 +132,16 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
     Connect-AzAccount -Credential $spCredential -Tenant "<azure_subscription_tenant_id>" -ServicePrincipal
     ```
 
+## <a name="set-environment-variables"></a>환경 변수 설정
+
+Terraform에서 의도한 Azure 구독을 사용하도록 환경 변수를 설정합니다. 환경 변수는 Windows 시스템 수준 또는 특정 PowerShell 세션 내에서 설정할 수 있습니다. 특정 세션에 대한 환경 변수를 설정하려면 다음 코드를 사용합니다. 자리 표시자를 사용자 환경에 적절한 값으로 바꿉니다.
+
+```powershell
+$env:ARM_CLIENT_ID=<service_principle_app_id>
+$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
+$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+```
+
 ## <a name="create-a-terraform-configuration-file"></a>Terraform 구성 파일 만들기
 
 이 섹션에서는 Azure 리소스 그룹을 만드는 Terraform 구성 파일을 코딩합니다.
@@ -162,16 +185,6 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
     - `azurerm` 공급자 블록 내에서 `version` 및 `features` 특성이 설정됩니다. 주석에 언급된 대로, 용도는 버전에 따라 다릅니다. 이러한 특성을 설정하는 방법에 대한 자세한 내용은 [AzureRM Provider v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)을 참조하세요.
     - [resource declaration](https://www.terraform.io/docs/configuration/resources.html)은 [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html) 리소스 종류에 대해서만 적용됩니다. azure_resource_group에 대한 두 가지 필수 인수는 name 및 location입니다.
 
-## <a name="set-environment-variables"></a>환경 변수 설정
-
-Terraform에서 의도한 Azure 구독을 사용하도록 환경 변수를 설정합니다. 환경 변수는 Windows 시스템 수준 또는 특정 PowerShell 세션 내에서 설정할 수 있습니다. 특정 세션에 대한 환경 변수를 설정하려면 다음 코드를 사용합니다. 자리 표시자를 사용자 환경에 적절한 값으로 바꿉니다.
-
-```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
-```
-
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 실행 계획 만들기 및 적용
 
 이 섹션에서는 *실행 계획*을 만들어 클라우드 인프라에 적용합니다.
@@ -205,7 +218,9 @@ $env:ARM_TENANT_ID=<azure_subscription_tenant_id>
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
     ```
 
-    성공하면 명령은 새로 만들어진 리소스 그룹의 다양한 특성을 표시합니다.
+    **참고**:
+
+    - 성공하면 명령은 새로 만들어진 리소스 그룹의 다양한 특성을 표시합니다.
 
 ## <a name="clean-up-resources"></a>리소스 정리
 

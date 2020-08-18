@@ -3,15 +3,15 @@ title: Azure Toolkit for IntelliJ 설명서
 summary: Azure Toolkit for IntelliJ는 IntelliJ IDE(통합 개발 환경)에서 Azure 애플리케이션을 쉽게 작성, 개발, 테스트 및 배포할 수 있는 템플릿과 기능을 제공합니다.
 metadata:
   title: Azure Toolkit for IntelliJ 설명서
-  description: IntelliJ용 Azure 도구 키트에 대해 알아봅니다.
+  description: Azure Toolkit for IntelliJ의 IntelliJ IDE를 사용하여 Azure 애플리케이션을 쉽게 생성, 개발, 테스트 및 배포합니다.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: f816ad75074b92b0b2b8025c5e541b5ef7988b65
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: f69096bead0650bbb5a40959f55cdf0967dade8e
+  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675389"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88241015"
 landingContent:
 - title: 시작 가이드
   linkLists:
@@ -33,7 +33,7 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Redis Caches
+    - text: Redis 캐시
       url: managing-redis-caches-using-azure-explorer.md
     - text: Storage 계정
       url: managing-virtual-machines-using-azure-explorer.md

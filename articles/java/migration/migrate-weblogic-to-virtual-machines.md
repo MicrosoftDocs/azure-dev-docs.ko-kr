@@ -6,16 +6,16 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3f3f4cd3a7714b45a68abe4d92c489581d1c1d5f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 3b6d9847cc72f246587a36b74173521736a6cc9a
+ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379727"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88052266"
 ---
-# <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션
+# <a name="migrate-weblogic-server-applications-to-azure-virtual-machines"></a>WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션
 
-이 가이드에서는 Azure Virtual Machines에서 실행되도록 기존 WebLogic 애플리케이션을 마이그레이션하려는 경우 알아야 할 사항을 설명합니다.
+이 가이드에서는 Azure Virtual Machines에서 실행되도록 기존 WebLogic 애플리케이션을 마이그레이션하려는 경우 알아야 할 사항을 설명합니다.  Azure Marketplace에 제공되는 WebLogic Server 솔루션에 대한 개요는 [Azure 기반 Oracle WebLogic Server란?](/azure/virtual-machines/workloads/oracle/oracle-weblogic)을 참조하세요.
 
 ## <a name="pre-migration"></a>사전 마이그레이션
 
@@ -29,7 +29,7 @@ ms.locfileid: "86379727"
 
 ### <a name="determine-whether-the-pre-built-marketplace-offers-are-a-good-starting-point"></a>미리 빌드된 Marketplace 제품이 좋은 시작점인지 확인
 
-Azure로 마이그레이션하기 위한 견고한 시작점을 제공하기 위해, Oracle과 Microsoft는 파트너 관계를 맺고 Azure 솔루션 템플릿 세트를 Azure Marketplace에 제공합니다. [Oracle 퓨전 미들웨어](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/) 설명서를 참조하여 기존 배포와 가장 일치하는 제품을 선택하세요. [Oracle 설명서](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/select-required-oracle-weblogic-server-offer-azure-marketplace.html#GUID-187739C5-EE7A-47C6-B3BA-C0A0333DC398)에서 제품 목록을 볼 수 있습니다.
+Azure로 마이그레이션하기 위한 견고한 시작점을 제공하기 위해, Oracle과 Microsoft는 파트너 관계를 맺고 Azure 솔루션 템플릿 세트를 Azure Marketplace에 제공합니다. [Oracle 퓨전 미들웨어](https://docs.oracle.com/en/middleware/standalone/weblogic-server/wlazu/) 설명서를 참조하여 기존 배포와 가장 일치하는 제품을 선택하세요. [Azure 기반 Oracle WebLogic Server란?](/azure/virtual-machines/workloads/oracle/oracle-weblogic) 개요 문서에서 솔루션 목록을 볼 수 있습니다.
 
 기존 제품 중에 좋은 시작점이 없는 경우 Azure Virtual Machine 리소스를 사용하여 배포를 직접 재현해야 합니다. 자세한 내용은 [IaaS란?](https://azure.microsoft.com/overview/what-is-iaas/)을 참조하세요.
 
@@ -99,7 +99,7 @@ VM 파일 시스템은 지속성, 시작 및 종료의 측면에서 온-프레�
 
 다음은 Azure Virtual Machines에서 WebLogic에 사용할 수 있는 제품입니다.
 
-제품을 배포하는 동안 WebLogic Server 노드에 사용할 Virtual Machine 크기를 선택하라는 메시지가 표시됩니다. VM 크기를 선택할 때 모든 관점(메모리, 프로세서, 디스크)을 고려해야 합니다. 자세한 내용은 [제품 설명서](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/deploy-oracle-weblogic-server-administration-server-single-node.html) 및 [가상 머신 크기 조정에 대한 Azure 설명서](/azure/cloud-services/cloud-services-sizes-specs)를 참조하세요.
+제품을 배포하는 동안 WebLogic Server 노드에 사용할 Virtual Machine 크기를 선택하라는 메시지가 표시됩니다. VM 크기를 선택할 때 모든 관점(메모리, 프로세서, 디스크)을 고려해야 합니다. 자세한 내용은 [가상 머신 규모 조정에 대한 Azure 설명서](/azure/cloud-services/cloud-services-sizes-specs)를 참조하세요.
 
 #### <a name="weblogic-server-single-node-with-no-admin-server"></a>관리 서버가 없는 WebLogic Server 단일 노드
 
@@ -107,7 +107,7 @@ VM 파일 시스템은 지속성, 시작 및 종료의 측면에서 온-프레�
 
 #### <a name="weblogic-server-single-node-with-admin-server"></a>관리 서버가 있는 WebLogic Server 단일 노드
 
-이 제품은 단일 VM을 프로비저닝하고 거기에 WebLogic Server 12.1.2.3을 설치합니다. 도메인을 만들고 관리 서버를 시작합니다.
+이 솔루션은 단일 VM을 프로비저닝하고 거기에 WebLogic Server를 설치합니다. 도메인을 만들고 관리 서버를 시작합니다.
 
 #### <a name="weblogic-server-n-node-cluster"></a>WebLogic Server N-노드 클러스터
 
@@ -119,7 +119,7 @@ VM 파일 시스템은 지속성, 시작 및 종료의 측면에서 온-프레�
 
 ### <a name="provision-the-offer"></a>제품 프로비저닝
 
-시작할 제품을 선택한 후에는 [제품 설명서](https://wls-eng.github.io/arm-oraclelinux-wls/)의 지침에 따라 해당 제품을 프로비저닝합니다. 기존 도메인 이름과 일치하는 도메인 이름을 선택해야 합니다. 도메인 암호를 기존 도메인 암호와 매칭할 수도 있습니다.
+시작할 제품을 선택한 후에는 [제품 설명서](https://docs.oracle.com/en/middleware/standalone/weblogic-server/wlazu/)의 지침에 따라 해당 제품을 프로비저닝합니다. 기존 도메인 이름과 일치하는 도메인 이름을 선택해야 합니다. 도메인 암호를 기존 도메인 암호와 매칭할 수도 있습니다.
 
 ### <a name="migrate-the-domains"></a>도메인 마이그레이션
 
@@ -136,6 +136,8 @@ VM 파일 시스템은 지속성, 시작 및 종료의 측면에서 온-프레�
 ### <a name="connect-the-jms-sources"></a>JMS 원본 연결
 
 데이터베이스를 연결한 후에는 WebLogic 설명서의 [Oracle WebLogic Server용 JMS 리소스를 관리하는 퓨전 미들웨어](https://docs.oracle.com/middleware/12213/wls/JMSAD/toc.htm)에 설명된 지침에 따라 JMS를 구성할 수 있습니다.
+
+[!INCLUDE [account-for-authentication-and-authorization](includes/account-for-authentication-and-authorization.md)]
 
 ### <a name="account-for-logging"></a>로깅 계정
 
@@ -158,6 +160,8 @@ CI/CD 파이프라인 또는 수동 배포 시스템에서 액세스할 수 있�
 * Azure Storage를 사용하여 가상 머신에 탑재된 정적 콘텐츠 제공. 자세한 내용은 [가상 머신에 데이터 디스크 연결 또는 분리](/azure/lab-services/devtest-lab-attach-detach-data-disk)를 참조하세요.
 
 * Azure DevOps를 사용하여 마이그레이션된 WebLogic 클러스터에 애플리케이션 배포. 자세한 내용은 [Azure DevOps 시작 설명서](/azure/devops/get-started/?view=azure-devops)를 참조하세요.
+
+* [자습서: Azure Application Gateway를 부하 분산 장치로 사용하여 WebLogic Server 클러스터를 Azure로 마이그레이션](migrate-weblogic-with-app-gateway.md)의 단계에 따라 Azure Application Gateway를 사용하여 WebLogic Server를 배포한 경우 Application Gateway에서 추가 구성을 수행하는 것이 좋습니다.  자세한 내용은 [Application Gateway 구성 개요](/azure/application-gateway/configuration-overview)를 참조하세요.
 
 * 고급 부하 분산 서비스를 사용하여 네트워크 토폴로지 향상. 자세한 내용은 [Azure에서 부하 분산 서비스 사용](/azure/traffic-manager/traffic-manager-load-balancing-azure)을 참조하세요.
 

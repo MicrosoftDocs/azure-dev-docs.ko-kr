@@ -3,19 +3,29 @@ title: 빠른 시작 - Azure Cloud Shell을 사용하여 Terraform 시작
 description: 이 빠른 시작에서는 Terraform을 설치하고 구성하여 Azure 리소스를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform 설치 구성 cloud shell init 계획 적용 실행 포털 로그인 rbac 서비스 주체 자동화된 스크립트
 ms.topic: quickstart
-ms.date: 07/26/2020
-ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 736c805b8dd8c95d1950537b754059cca9fc5712
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478593"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026140"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Terraform 시작
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 이 문서에서는 [Azure에서 Terraform을 시작](https://www.terraform.io/docs/providers/azurerm/index.html)하는 방법에 대해 설명합니다.
+
+이 문서에서는 다음 방법을 설명합니다.
+> [!div class="checklist"]
+> * `az login`을 사용하여 Azure에 인증
+> * Azure CLI를 사용하여 Azure 서비스 주체 만들기
+> * 서비스 주체를 사용하여 Azure에 인증
+> * 현재 Azure 구독 설정 - 여러 Azure 구독이 있는 경우 사용
+> * Terraform 스크립트를 작성하여 Azure 리소스 그룹 만들기
+> * Terraform 실행 계획 만들기 및 적용
+> * `terraform plan -destroy` 플래그를 사용하여 실행 계획 되돌리기
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -166,7 +176,7 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
 
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 실행 계획 만들기 및 적용
 
-구성 파일이 만들어지면 이 섹션에서 *실행 계획*을 만들고 클라우드 인프라에 적용하는 방법에 대해 설명합니다.
+이 섹션에서는 *실행 계획*을 만들어 클라우드 인프라에 적용합니다.
 
 1. [terraform init](https://www.terraform.io/docs/commands/init.html)를 사용하여 Terraform 배포를 초기화합니다. 이 단계에서는 Azure 리소스 그룹을 만드는 데 필요한 Azure 모듈을 다운로드합니다.
 
@@ -174,27 +184,24 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     terraform init
     ```
 
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 실행 계획을 만들고 결과를 미리 봅니다.
+1. [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 Terraform 구성 파일에서 실행 계획을 만듭니다.
 
     ```bash
-    terraform plan
+    terraform plan -out QuickstartTerraformTest.tfplan
     ```
 
-    **참고**:
+    **참고:**
+    - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다. 이 패턴을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
+    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. `-out` 매개 변수를 사용하면 검토한 계획이 정확하게 적용됩니다.
+    - 실행 계획 및 보안을 유지하는 방법에 대한 자세한 내용은 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 참조하세요.
 
-    - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다.
-    - `terraform plan` 명령을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
-    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. `-out` 매개 변수를 사용하는 방법에 대한 자세한 내용은 [이후 배포를 위해 실행 계획 유지](#persist-an-execution-plan-for-later-deployment) 섹션을 참조하세요.
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 사용하여 실행 계획을 적용합니다.
+1. [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 실행하여 실행 계획을 적용합니다.
 
     ```bash
-    terraform apply
+    terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. Terraform은 실행 계획을 적용하고 실행을 확인해야 할 경우 어떻게 되는지 보여줍니다. `yes`를 입력하고 **Enter** 키를 눌러 명령을 확인합니다.
-
-1. 계획 실행이 확인되면 [az group show](/cli/azure/group?#az-group-show)를 사용하여 리소스 그룹이 성공적으로 만들어졌는지 테스트합니다.
+1. 실행 계획이 적용되면 [az group show](/cli/azure/group?#az-group-show)를 사용하여 리소스 그룹이 성공적으로 만들어졌는지 테스트할 수 있습니다.
 
     ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
@@ -204,39 +211,6 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
 
     - 성공하면 `az group show`는 새로 만든 리소스 그룹의 다양한 특성을 표시합니다.
 
-## <a name="persist-an-execution-plan-for-later-deployment"></a>이후 배포를 위해 실행 계획 유지
-
-이전 섹션에서는 [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 실행 계획을 만드는 방법을 살펴보았습니다. 그런 다음, [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 사용하여 해당 계획을 적용하는 것을 살펴보았습니다. 이 패턴은 단계가 대화식이고 순차적일 때 효과적입니다.
-
-더 복잡한 시나리오의 경우 실행 계획을 파일에 유지할 수 있습니다. 이후 또는 다른 머신에서 실행하는 경우에도 해당 실행 계획을 적용할 수 있습니다.
-
-이 기능을 사용하는 경우 [자동화에서 Terraform 실행](https://learn.hashicorp.com/terraform/development/running-terraform-in-automation) 문서를 참조하는 것이 좋습니다.
-
-다음 단계에서는 이 기능을 사용하기 위한 기본 패턴을 보여줍니다.
-
-1. [terraform init](https://www.terraform.io/docs/commands/init.html)를 실행합니다.
-
-    ```bash
-    terraform init
-    ```
-
-1. `-out` 매개 변수를 사용하여 `terraform plan`을 실행합니다.
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-1. 이전 단계에서 파일 이름을 지정하여 `terraform apply`를 실행합니다.
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-    **참고**:
-    
-    - 자동화와 함께 사용하면 `terraform apply <filename>`을 실행할 때 확인이 필요하지 않습니다.
-    - 이 기능을 사용하려면 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 읽습니다.
-    
 ## <a name="clean-up-resources"></a>리소스 정리
 
 더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다.
@@ -250,7 +224,7 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     **참고**:
     - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다. 이 패턴을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
     - `-destroy` 매개 변수는 리소스를 삭제하는 계획을 생성합니다.
-    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. 검토한 계획이 정확히 적용되도록 `-out` 매개 변수를 항상 사용해야 합니다.
+    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. `-out` 매개 변수를 사용하면 검토한 계획이 정확하게 적용됩니다.
     - 실행 계획 및 보안을 유지하는 방법에 대한 자세한 내용은 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 참조하세요.
 
 1. [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 실행하여 실행 계획을 적용합니다.

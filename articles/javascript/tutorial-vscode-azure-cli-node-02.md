@@ -3,12 +3,13 @@ title: Azure CLI를 사용하여 Azure에 배포할 Node.js 앱 만들기
 description: 자습서 2부, 앱 코드 만들기
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 160b543abee59bdd7504aa356a3b11eb7bde3da8
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: c4efa8f2c9e467e0bddeb43dd227eb9b9ecb6f99
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85793013"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217909"
 ---
 # <a name="create-the-app-code-using-express"></a>Express를 사용하여 앱 코드 만들기
 

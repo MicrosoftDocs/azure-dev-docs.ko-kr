@@ -4,12 +4,13 @@ description: Ansible을 사용하여 Azure 동적 인벤토리를 관리하는 �
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 동적 인벤토리
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 20c152c6f276aed68abf10a6f2e6ae052235a99f
-ms.sourcegitcommit: 9365b437b119eebf98e40f851bd6f66fe966be4a
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 8ada951f0c1e21de8e193d94fd7e7dcf35ae03be
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86422667"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240305"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>자습서: Ansible을 사용하여 Azure 리소스의 동적 인벤토리 구성
 
@@ -92,7 +93,7 @@ Ansible은 Azure 리소스의 동적 인벤토리를 생성하는 [azure_rm.py](
 1. GNU `wget` 명령을 사용하여 `azure_rm.py` 스크립트를 검색합니다.
 
     ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/master/scripts/inventory/azure_rm.py
+    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
     ```
 
 1. `chmod` 명령을 사용하여 `azure_rm.py` 스크립트에 대한 액세스 권한을 변경합니다. 다음 명령은 `+x` 매개 변수를 사용하여 지정된 파일(`azure_rm.py`)의 실행을 허용합니다.

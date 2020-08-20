@@ -4,12 +4,13 @@ description: Jenkins 및 Azure DevOps Services를 사용하여 앱을 Linux 가�
 keywords: Jenkins, Azure, DevOps, 가상 머신, CI/CD, Azure DevOps Services
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 213acfa152d5bd066f2cdac51204b3eac56307eb
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 458acc31d4cb56215dff036bd3952090052eb5a1
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169859"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241075"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>자습서: Jenkins 및 Azure DevOps Services를 사용하여 Linux 가상 머신에 배포
 

@@ -3,12 +3,13 @@ title: 자습서 - Terraform을 사용하여 Azure에서 스포크 네트워크 
 description: 허브-스포크 토폴로지에서 허브에 연결된 두 개의 스포크 VNet(가상 네트워크)을 구현하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 935bf66b19eeb73d1fff5d4471d2541f38d7f03a
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 236665b205a602466244a2c5d5cfee5800c51317
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329591"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241095"
 ---
 # <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 스포크 네트워크 만들기
 

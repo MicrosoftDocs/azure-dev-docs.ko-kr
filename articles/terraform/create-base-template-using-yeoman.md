@@ -3,12 +3,13 @@ title: Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
 description: Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿을 만드는 방법을 알아봅니다.
 ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: e43c28232009f3dec274ad2c1749d9ab5d88957b
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: aa71698735d96bd591b15d6804fd2d142602d326
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478533"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241285"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
 

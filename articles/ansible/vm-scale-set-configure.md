@@ -4,12 +4,13 @@ description: Azure에서 Ansible을 사용하여 Virtual Machine Scale Sets를 �
 keywords: ansible, azure, devops, bash, 플레이북, 가상 머신, 가상 머신 확장 집합, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: fedd2cff7d9e4a51c681d06e86899ef9e8227454
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: e9ac4604b10f73e85290162eaf47803f4c4021c0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743844"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240655"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>자습서: Ansible을 사용하여 Azure에서 가상 머신 확장 집합 구성
 

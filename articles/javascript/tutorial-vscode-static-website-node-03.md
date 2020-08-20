@@ -3,12 +3,13 @@ title: Visual Studio Code에서 정적 Node.js 웹 사이트에 대한 Azure Sto
 description: 자습서 3부, Azure Storage 계정 만들기
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: f0aa6a8cbfc0a5d286d0b7c93a12cbd48b68d620
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792723"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218355"
 ---
 # <a name="create-an-azure-storage-account"></a>Azure Storage 계정 만들기
 

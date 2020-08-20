@@ -4,12 +4,13 @@ description: Ansible을 사용하여 Azure DevTest Labs에서 랩을 구성하�
 keywords: ansible, azure, devops, bash, playbook, devtest labs
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 832ff131822a5cd864c2b005c36480235a5e1971
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 38acc59a023bc8145d3e1d542b9a2dc7c1a7b146
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743663"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240325"
 ---
 # <a name="tutorial-configure-labs-in-azure-devtest-labs-using-ansible"></a>자습서: Ansible을 사용하여 Azure DevTest Labs에서 랩 구성
 

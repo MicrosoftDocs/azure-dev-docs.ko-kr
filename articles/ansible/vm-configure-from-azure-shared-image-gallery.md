@@ -4,12 +4,13 @@ description: Ansible을 사용하여 Shared Image Gallery에서 일반화된 이
 keywords: Ansible, Azure, DevOps, Bash, 플레이북, 가상 머신, 가상 머신 확장 집합, Shared Image Gallery
 ms.topic: tutorial
 ms.date: 10/14/2019
-ms.openlocfilehash: cd66899b5d5f37bc056d251a68117456062c16cf
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: c214daa3f63f88711ace9d41ffb9978d20551fc9
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743277"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240575"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>자습서: Ansible을 사용하여 Azure Shared Image Gallery에서 VM 또는 가상 머신 확장 집합 만들기
 

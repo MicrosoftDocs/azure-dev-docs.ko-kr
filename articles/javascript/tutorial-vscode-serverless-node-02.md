@@ -3,12 +3,13 @@ title: Visual Studio Code에서 Azure Functions 애플리케이션 만들기
 description: 자습서 2부, Azure Functions 앱 만들기
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: fb7b5f3bab0dbde0a04671126ad7aa8e5be16ba0
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 2aca9c53e254eca7c8a070cc50a88426d3886cdd
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792833"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218395"
 ---
 # <a name="create-the-local-functions-app"></a>로컬 Functions 앱 만들기
 

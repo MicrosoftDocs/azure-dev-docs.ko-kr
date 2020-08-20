@@ -4,12 +4,13 @@ description: Azure 인프라를 구성하고 테스트하기 위한 Chef 사용 
 keywords: azure, chef, devops, 가상 머신, 개요, 자동화
 ms.date: 02/22/2020
 ms.topic: article
-ms.openlocfilehash: 94cfe5d57673db151d53133fb8b2ef66c5629b93
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 86678436612f97e2928228ec9dd47ac9185d9b72
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892992"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240926"
 ---
 # <a name="using-chef-with-azure"></a>Azure로 Chef 사용하기
 
@@ -26,7 +27,7 @@ ms.locfileid: "80892992"
 Azure Cloud Shell에서 Chef 워크스테이션을 직접 사용하세요! Cloud Shell에서 바로, 모든 Chef 유틸리티 및 InSpec을 실행합니다. 다음에서 Chef 명령을 이용할 수 있습니다.
 
 * [chef](https://docs.chef.io/ctl_chef.html)
-* [kitchen](https://docs.chef.io/ctl_kitchen.html)
+* [주방](https://docs.chef.io/ctl_kitchen.html)
 * [inspec](https://www.inspec.io/docs/reference/cli/)
 * [knife](https://docs.chef.io/knife.html)
 * [cookstyle](https://docs.chef.io/cookstyle.html)

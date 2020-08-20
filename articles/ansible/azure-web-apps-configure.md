@@ -4,12 +4,13 @@ description: Azure App Service에서 Java 8 및 Tomcat 컨테이너 런타임을
 keywords: Ansible, Azure, Devops, Bash, 플레이북, Azure App Service, Web App, Java
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 59113376d1f15d902553daa0c00bc7de56999d9d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 83bd47fca1e04aa55bbebca84b3f52bdc9f52ecc
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743701"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240375"
 ---
 # <a name="tutorial-configure-apps-in-azure-app-service-using-ansible"></a>자습서: Azure App Service에서 Ansible을 사용하여 앱 구성
 

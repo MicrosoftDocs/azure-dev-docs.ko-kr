@@ -4,12 +4,13 @@ description: 지속적인 통합 파이프라인에서 Azure Dev Spaces 플러�
 keywords: jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 505ee15ab181e63576f1bb2c276ac317d8372164
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369935"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240855"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>자습서: Azure Kubernetes Service에서 Azure Dev Spaces 사용
 
@@ -37,7 +38,7 @@ Azure Dev Spaces를 사용하면 종속 요소를 복제하거나 모방할 필�
 
 * [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 버전 2.0.43 이상
 
-* Jenkins 마스터 서버입니다. Jenkins 마스터가 없는 경우 이  [빠른 시작](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)의 단계에 따라 Azure에 [Jenkins](https://aka.ms/jenkins-on-azure) 를 배포합니다. 
+* Jenkins 마스터 서버입니다. Jenkins 마스터가 없는 경우 이  [빠른 시작](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)의 단계에 따라 Azure에 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) 를 배포합니다. 
 
 * 이 자습서의 뒷부분에 설명된 것처럼, Jenkins 서버에 Helm과 kubectl이 모두 설치되어 있고 Jenkins 계정에 사용할 수 있어야 합니다.
 

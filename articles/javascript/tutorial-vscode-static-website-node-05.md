@@ -4,14 +4,15 @@ description: 자습서 5부, 변경 및 재배포
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: d0f6be1d57c9d378a4428a5a05da0428314f76c0
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792703"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218326"
 ---
-# <a name="make-changes-and-redeploy"></a>변경 및 재배포
+# <a name="part-5-make-changes-and-redeploy"></a>5부: 변경 및 재배포
 
 [이전 단계: Azure Storage에 배포](tutorial-vscode-static-website-node-04.md)
 

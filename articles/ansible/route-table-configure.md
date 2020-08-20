@@ -4,12 +4,13 @@ description: Ansible을 사용하여 Azure 경로 테이블을 생성, 관리 �
 keywords: Ansible, Azure, DevOps, Bash, 플레이북, 네트워킹, 경로, 경로 테이블
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: cadc8f63d887cdd1ffe8b230dbe53a68645e601b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 28302e5e8fc6a46193d96c791080797559a566e9
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743328"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240025"
 ---
 # <a name="tutorial-configure-azure-route-tables-using-ansible"></a>자습서: Ansible을 사용하여 Azure 경로 테이블 구성
 

@@ -4,12 +4,13 @@ description: Azure 공급자 배포 슬롯에서 Terraform을 사용하는 방�
 keywords: azure devops terraform 배포 슬롯
 ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478488"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241215"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
 

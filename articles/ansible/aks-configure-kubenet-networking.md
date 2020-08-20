@@ -3,14 +3,14 @@ title: 자습서 - AKS(Azure Kubernetes Service)에서 Ansible을 사용하여 k
 description: Ansible을 사용하여 AKS(Azure Kubernetes Service) 클러스터에서 kubenet 네트워킹을 구성하는 방법 알아보기
 keywords: ansible, azure, devops, bash, cloudshell, 플레이북, aks, 컨테이너, aks, kubernetes
 ms.topic: tutorial
-ms.custom: fasttrack-edit
 ms.date: 10/23/2019
-ms.openlocfilehash: 7d1dc7b381c02c84b2da89c5c90d822e86a3cd1b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible,fasttrack-edit
+ms.openlocfilehash: 55b3f2ec248e3163a6916c8a6067957f6a0c9ae1
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82026126"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239775"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>자습서: AKS(Azure Kubernetes Service)에서 Ansible을 사용하여 kubenet 네트워킹 구성
 

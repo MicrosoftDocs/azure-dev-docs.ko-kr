@@ -4,12 +4,13 @@ description: 자습서 2부, 샘플 앱 만들기
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 81593d61126b34f002513deb02d9bf634a7e9dd6
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 4d35a46323639aa42e7f220b8609f913f57d9027
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792778"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218224"
 ---
 # <a name="create-the-app"></a>앱 만들기
 

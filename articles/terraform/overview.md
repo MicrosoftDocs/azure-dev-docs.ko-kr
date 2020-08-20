@@ -3,12 +3,13 @@ title: Azure에서 Terraform 사용
 description: Terraform을 통해 Azure에서 인프라를 배포 및 버전 관리하는 방법을 알아봅니다.
 ms.topic: overview
 ms.date: 10/26/2019
-ms.openlocfilehash: 8819a20e9bfb381cb6eb4f5b610b4ffcaa1d63b2
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.custom: devx-track-terraform
+ms.openlocfilehash: d5089a9e27f9f17ebde6a2e9847908157018e08c
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334498"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241055"
 ---
 # <a name="terraform-with-azure"></a>Azure의 Terraform
 

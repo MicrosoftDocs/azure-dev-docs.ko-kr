@@ -4,12 +4,13 @@ description: Jenkins Azure Functions 플러그 인을 사용하여 Azure Functio
 keywords: jenkins, azure, devops, java, azure functions
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 4dbd37b9527a3c41c6f1d5b40edf974b6adda6c3
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169799"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240934"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>자습서: Jenkins를 사용하여 Azure Functions에 배포
 
@@ -51,7 +52,7 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
 
 다음 단계에서는 Jenkins 서버를 준비하는 방법을 설명합니다.
 
-1. Azure에서 [Jenkins 서버](https://aka.ms/jenkins-on-azure)를 배포합니다. Jenkins 서버 인스턴스가 아직 설치되어 있지 않은 경우 [Azure에서 Jenkins 서버 만들기](./configure-on-linux-vm.md) 과정을 안내하는 문서를 참조하세요.
+1. Azure에서 [Jenkins 서버](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)를 배포합니다. Jenkins 서버 인스턴스가 아직 설치되어 있지 않은 경우 [Azure에서 Jenkins 서버 만들기](./configure-on-linux-vm.md) 과정을 안내하는 문서를 참조하세요.
 
 1. SSH를 사용하여 Jenkins 인스턴스에 로그인합니다.
 

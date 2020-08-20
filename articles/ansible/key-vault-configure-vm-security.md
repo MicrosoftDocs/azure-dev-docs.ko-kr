@@ -4,12 +4,13 @@ description: Ansible에서 Azure Key Vault를 사용하여 VM 보안을 구성�
 keywords: ansible, azure, devops, 키 자격 증명 모음, 보안, 자격 증명, 비밀, 키, 인증서, azure용 ansible 모듈, 리소스 그룹, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: 84ed514e742c8a8fa3a9acc9328fc71743dfc5cb
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 935361b62c30a34d3a2916abba79a2c2c99d1214
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84145971"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240005"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>자습서: Ansible에서 Linux 가상 머신으로 Azure Key Vault 사용
 

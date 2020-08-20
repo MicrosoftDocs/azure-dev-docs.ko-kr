@@ -4,12 +4,13 @@ description: Azure Portal에서 Chef 클라이언트를 배포 및 구성하는 
 keywords: azure, chef, devops, client, install, portal
 ms.date: 02/22/2020
 ms.topic: article
-ms.openlocfilehash: b5dd158bd06511bf440228d4ae0948596bca0612
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 3fb282914bad8992a5f4df76019df89824675da0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892902"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240825"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Azure Portal에서 Chef 클라이언트 설치
 Azure Portal에서 Linux 또는 Windows 머신에 직접 Chef 클라이언트 확장을 추가할 수 있습니다. 이 문서에서는 새 Linux 가상 머신을 사용하여 해당 프로세스를 안내합니다.

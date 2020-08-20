@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 2714d4d4b8a614bcdbf951eb2a9dc4c2dc78dda2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f449df07048dfcc20e173bc4103995ac989e38fe
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379427"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240945"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>자습서: Azure Active Directory용 Spring Boot Starter를 사용하여 Java 웹앱 보호하기
 
@@ -188,7 +188,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
    # Specifies the list of Active Directory groups to use for authorization:
-   azure.activedirectory.active-directory-groups=Users
+   azure.activedirectory.user-group.allowed-groups=Users
    ```
 
    위치:
@@ -198,7 +198,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    | `azure.activedirectory.tenant-id` | 앞에 나온 Active Directory의 **디렉터리 ID** 포함합니다. |
    | `spring.security.oauth2.client.registration.azure.client-id` | 앞에서 완료한 앱 등록의 **애플리케이션 ID**를 포함합니다. |
    | `spring.security.oauth2.client.registration.azure.client-secret` | 앞에서 완료한 앱 등록 키의 **값**을 포함합니다. |
-   | `azure.activedirectory.active-directory-groups` | 권한 부여에 사용할 Active Directory 그룹 목록을 포함합니다. |
+   | `azure.activedirectory.user-group.allowed-groups` | 권한 부여에 사용할 Active Directory 그룹 목록을 포함합니다. |
 
    > [!NOTE]
    > *application.properties* 파일에서 사용할 수 있는 값의 전체 목록은 GitHub에서 [Azure Active Directory Spring Boot 샘플][AAD Spring Boot Sample]을 참조하세요.
@@ -234,7 +234,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    ```
 
    > [!NOTE]
-   > `@PreAuthorize("hasRole('')")` 메서드에 지정한 그룹 이름은 *application.properties* 파일의 `azure.activedirectory.active-directory-groups` 필드에 지정한 그룹 중 하나를 포함해야 합니다.
+   > `@PreAuthorize("hasRole('')")` 메서드에 지정한 그룹 이름은 *application.properties* 파일의 `azure.activedirectory.user-group.allowed-groups` 필드에 지정한 그룹 중 하나를 포함해야 합니다.
    >
    > 다른 요청 매핑에 대한 다른 권한 부여 설정을 지정할 수도 있습니다. 예를 들어:
    >

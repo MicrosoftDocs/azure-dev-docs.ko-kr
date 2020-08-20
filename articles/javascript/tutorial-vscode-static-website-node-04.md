@@ -4,12 +4,13 @@ description: 자습서 4부, Azure Storage에 파일 배포
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 53578d829167512877c2359d02c3e70d88afe77f
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 3ab1a95caea62bdbd36f6f82fee6cd18301a35ba
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792748"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218337"
 ---
 # <a name="deploy-the-website-to-azure-storage"></a>Azure Storage에 웹 사이트 배포
 

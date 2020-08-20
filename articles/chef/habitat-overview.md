@@ -4,12 +4,13 @@ description: 애플리케이션을 Azure 가상 머신 및 컨테이너에 일�
 keywords: azure, chef, devops, 가상 머신, 개요, 자동화, habitat
 ms.date: 05/15/2018
 ms.topic: article
-ms.openlocfilehash: 9a1ef0c4f59f7b973898de0f8ad4aaeb0771265f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: af7a08e526a5b9109cb9662b1be5d2243af92e9d
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892972"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240775"
 ---
 # <a name="use-habitat-to-deploy-your-application-to-azure"></a>Habitat 사용하여 Azure에 애플리케이션 배포
 

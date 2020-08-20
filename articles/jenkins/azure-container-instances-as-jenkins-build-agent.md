@@ -4,12 +4,13 @@ description: Azure Container Instances에서 주문형 빌드 작업을 실행�
 keywords: Jenkins, Azure, DevOps, Container Instances, 빌드 에이전트
 ms.topic: article
 ms.date: 08/31/2018
-ms.openlocfilehash: 0fa994657412190ce1860f7bd30915cc8bb2bc91
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861286"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240905"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>자습서: Azure Container Instances를 Jenkins 빌드 에이전트로 사용
 

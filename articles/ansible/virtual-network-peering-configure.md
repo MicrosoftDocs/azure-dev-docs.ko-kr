@@ -4,12 +4,13 @@ description: Ansible을 사용하여 가상 네트워크 피어링으로 가상 
 keywords: ansible, azure, devops, bash, playbook, networking, peering
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 4dfda10693ad86131ec529d7ac06070098a40a5e
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 25ca319c735605e6597d4a4717c58f41b69e66c0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453694"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240055"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>자습서: Ansible을 사용하여 Azure Virtual Network 피어링 구성
 

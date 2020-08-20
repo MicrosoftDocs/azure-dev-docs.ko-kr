@@ -4,12 +4,13 @@ description: Terraform을 사용하여 Azure에서 완전한 Linux 가상 머신
 keywords: azure devops terraform linux vm 가상 머신
 ms.topic: how-to
 ms.date: 06/14/2020
-ms.openlocfilehash: 518e5f619e142b3bed0ff539ff2b448c6f3e5b48
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 387f53b9fb1a78a66b9628346564132002b77fb0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478353"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241225"
 ---
 # <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 

@@ -4,12 +4,13 @@ description: Jenkins를 사용하여 Service Fabric Linux 애플리케이션에 
 keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, 클러스터
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: eca6b1b446cda07c35f453f17d688a5e8708b8e7
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 6ce3714220a5c1cdff3a40cb8590a36356167616
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861276"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240865"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>자습서: Service Fabric 클러스터에 배포
 

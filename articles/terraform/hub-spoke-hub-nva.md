@@ -3,12 +3,13 @@ title: 자습서 - Terraform을 사용하여 Azure에서 허브 가상 네트워
 description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 허브 VNet(가상 네트워크)을 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 71599c3d62ba3c3e0c6132cdf5197b87927cec91
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 1bc9b2b899157985394165171adc76d988fe7e6a
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478563"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241135"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 어플라이언스 만들기
 

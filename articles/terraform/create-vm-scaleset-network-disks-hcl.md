@@ -3,12 +3,13 @@ title: Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
 description: Terraform을 사용하여 Azure 가상 머신 확장 집합을 구성하고 버전 관리하는 방법을 알아봅니다.
 ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: 75481c04038b13d81fa273e53bd1950c84fa5053
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: e6f83d6f4f138b92576e44cadb65c3e4d018dc66
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478503"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241245"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
 

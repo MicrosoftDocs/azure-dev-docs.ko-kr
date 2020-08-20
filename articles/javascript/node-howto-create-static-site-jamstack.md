@@ -3,13 +3,13 @@ title: Node.js, API 및 태그를 사용하여 Azure에 정적 사이트 빌드
 description: Azure를 사용하여 JAMstack 앱(JavaScript, API 및 태그)을 빌드하는 방법
 ms.topic: article
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: abe56482d616a5dfcc3dc25a8ab7949bc5164fe0
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: seo-javascript-september2019, devx-track-javascript
+ms.openlocfilehash: 354c55609092bbeaf21b4e1eefdd125967eccfd6
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792603"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218693"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js를 사용하여 Azure에서 JAMstack(정적 사이트) 웹앱 빌드
 

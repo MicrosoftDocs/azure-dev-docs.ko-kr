@@ -4,12 +4,13 @@ description: Ansible을 사용하여 AKS(Azure Kubernetes Service) 클러스터�
 keywords: ansible, azure, devops, bash, cloudshell, 플레이북, aks, 컨테이너, aks, kubernetes
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 6be7056a89b0ac0327ffc5ba39b77c31c23bb0fe
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: f3892b9c25b952d2d8c71e4e44857557c0a1813b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743902"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239955"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>자습서: Ansible을 사용하여 AKS(Azure Kubernetes Service)에서 Azure CNI 네트워킹 구성
 

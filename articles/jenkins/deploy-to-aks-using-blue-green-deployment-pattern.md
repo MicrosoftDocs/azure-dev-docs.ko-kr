@@ -4,12 +4,13 @@ description: Jenkins와 파란색/녹색 배포 패턴을 사용하여 AKS(Azure
 keywords: Jenkins, Azure, DevOps, Kubernetes, k8s, AKS, 파란색/녹색 배포, 지속적인 업데이트, CD
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 051a1531c9e973231ca56256603df63f60e21cf9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169949"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240995"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>자습서: 파란색/녹색 배포 패턴을 사용하여 AKS(Azure Kubernetes Service)에 배포
 
@@ -189,7 +190,7 @@ GitHub의 Microsoft 리포지토리에서 Jenkins와 파란색/녹색 배포 패
 
 이 섹션에서는 테스트하기 좋은 Jenkins 서버를 준비하여 빌드를 실행하는 방법을 살펴봅니다. 그러나 [Azure VM 에이전트](https://plugins.jenkins.io/azure-vm-agents) 또는 [Azure Container 에이전트](https://plugins.jenkins.io/azure-container-agents)를 사용하여 사용자 빌드를 실행하려면 Azure에서 에이전트를 스핀업해야 합니다. 자세한 내용은 [마스터 빌드의 보안 영향](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master)에 관한 Jenkins 문서를 참조하세요.
 
-1. [Azure에 Jenkins 마스터](https://aka.ms/jenkins-on-azure)를 배포합니다.
+1. [Azure에 Jenkins 마스터](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)를 배포합니다.
 
 1. SSH 통해 서버에 연결하고 빌드를 실행할 서버에서 빌드 도구를 설치합니다.
    

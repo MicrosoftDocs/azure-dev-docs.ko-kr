@@ -3,13 +3,13 @@ title: Azure의 JavaScript 개발자용 도구
 description: Azure에 Node.js 및 JavaScript 개발을 위한 개별 도구 설치
 ms.topic: article
 ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 690ae9375a8ac8d929d610bde4e306061cd1ff8e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
+ms.openlocfilehash: 3de364d2bf2cb44dee0b7d08ee79dfbffb161300
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792578"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218779"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>JavaScript 개발자용 Azure 도구
 Azure의 JavaScript 앱을 개발하는 데 다음과 같은 도구를 사용하는 것이 좋습니다.

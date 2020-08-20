@@ -3,12 +3,13 @@ title: 자습서 - Terraform 및 Azure를 사용한 호환성 테스트
 description: BDD(동작 기반 개발) 스타일 호환성 테스트를 Terraform 구성에 적용하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 07/31/2020
-ms.openlocfilehash: 38358be8bc7626d7b8a6b2df7e5da9b53d98618e
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 7abb4072d923d4d5ec4fa3df6251f07576dba3bc
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810616"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241315"
 ---
 # <a name="tutorial-compliance-testing-with-terraform-and-azure"></a>자습서: Terraform 및 Azure를 사용한 호환성 테스트
 

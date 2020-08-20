@@ -4,12 +4,12 @@ description: 자습서 6단계, 앱 로그를 Visual Studio Code로 스트리밍
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e6955e849fbec2d3d3c3546b00fb3745b6a0b8f3
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: a303976143b2b2579c23bde8eb320ee4dc902dba
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983555"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501418"
 ---
 # <a name="6-stream-logs-from-azure-app-service-into-visual-studio-code"></a>6: Azure App Service에서 Visual Studio Code로 로그 스트리밍
 
@@ -30,4 +30,4 @@ ms.locfileid: "87983555"
 > [!div class="nextstepaction"]
 > [로그가 보입니다. - 7단계 진행 >>>](tutorial-deploy-app-service-on-linux-07.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=06-stream-logs)
+[문제가 있나요? 알려주세요.](https://aka.ms/FlaskVSCQuickstartHelp)

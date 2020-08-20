@@ -4,12 +4,12 @@ description: 자습서 1단계, 소개, 필수 구성 요소 및 Azure에 로그
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 88335c081375e0a3830de7676e137f5b1038a98c
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 255e94d863f0c144ff4de402a2d775a21645b95a
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147404"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501378"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>자습서: Visual Studio Code에서 Linux의 Azure App Service에 Python 앱 배포
 
@@ -47,4 +47,4 @@ Azure 구독이 없는 경우 지금 200달러의 Azure 크레딧으로 체험 �
 > [!div class="nextstepaction"]
 > [Azure에 로그인했습니다. - 2단계 진행 >>>](tutorial-deploy-app-service-on-linux-02.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=01-verify-prerequisites)
+[문제가 있나요? 알려주세요.](https://aka.ms/FlaskVSCQuickstartHelp)

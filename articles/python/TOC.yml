@@ -108,10 +108,10 @@
       items:
         - name: Azure를 사용하여 앱 인증
           href: azure-sdk-authenticate.md
-        - name: 서비스 사용자 관리
-          href: how-to-manage-service-principals.md
         - name: 보안 주체에 역할 권한 할당
           href: how-to-assign-role-permissions.md
+        - name: 서비스 사용자 관리
+          href: how-to-manage-service-principals.md
     - name: 패키지 설치
       href: azure-sdk-install.md
     - name: 패키지 인덱스

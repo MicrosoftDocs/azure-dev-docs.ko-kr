@@ -4,12 +4,12 @@ description: 자습서 4단계에서는 Django, Flask 및 기타 프레임워크
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147384"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501428"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Azure App Service에서 Python 앱에 대한 사용자 지정 시작 파일 구성
 
@@ -113,4 +113,4 @@ Django 또는 Flask 이외의 프레임워크(예: Falcon, FastAPI 등)를 사�
 > [!div class="nextstepaction"]
 > [시작 파일을 구성했습니다. - 5단계 진행 >>>](tutorial-deploy-app-service-on-linux-05.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=04-startup-command)
+[문제가 있나요? 알려주세요.](https://aka.ms/FlaskVSCQuickstartHelp)

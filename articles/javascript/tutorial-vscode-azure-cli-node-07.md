@@ -3,14 +3,15 @@ title: Azure CLI를 사용하여 Azure에 Node.js 앱을 배포한 후 리소스
 description: 자습서 7부, 리소스 정리
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 183539b8e2f0246bd812e5fa364a885b75626819
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fb78f369d80ff40fef1d4a21df68ea79fafa2dbc
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792129"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218531"
 ---
-# <a name="clean-up-resources"></a>리소스 정리
+# <a name="part-7-clean-up-resources"></a>7부: 리소스 정리
 
 [이전 단계: 변경 및 재배포](tutorial-vscode-docker-node-06.md)
 

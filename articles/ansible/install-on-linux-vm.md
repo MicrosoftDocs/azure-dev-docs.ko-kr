@@ -1,105 +1,118 @@
 ---
-title: 빠른 시작 - Azure의 Linux 가상 머신에 Ansible 설치
+title: 빠른 시작 - Azure CLI를 사용하여 Ansible 구성
 description: 이 빠른 시작에서는 Ubuntu, CentOS 및 SLES에서 Azure 리소스를 관리하기 위해 Ansible을 설치 및 구성하는 방법을 알아봅니다.
-keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Bash
+keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Azure CLI
 ms.topic: quickstart
-ms.service: ansible
-author: tomarchermsft
-manager: gwallace
-ms.author: tarcher
-ms.date: 04/30/2019
-ms.openlocfilehash: 4f577b9841375d63bfc88249da88e554c1464bde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible,devx-track-cli
+ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743573"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240165"
 ---
-# <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>빠른 시작: Azure의 Linux 가상 머신에 Ansible 설치
+# <a name="quickstart-configure-ansible-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Ansible 구성
 
-Ansible을 사용하면 사용자 환경에서 리소스의 배포 및 구성을 자동화할 수 있습니다. 이 문서에서는 가장 일반적인 Linux 배포판 중 일부에 사용되는 Ansible을 구성하는 방법을 보여줍니다. 다른 배포판에 Ansible을 설치하려면 설치된 패키지를 해당 플랫폼에 맞게 조정합니다. 
+이 빠른 시작에서는 Azure CLI를 사용하여 [Ansible](https://docs.ansible.com/)을 설치하는 방법을 보여줍니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+이 빠른 시작에서는 다음 작업을 수행합니다.
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+> [!div class="checklist"]
+> * SSH 키 쌍 만들기
+> * 리소스 그룹 만들기
+> * CentOS 가상 머신 만들기 
+> * 가상 머신에 Ansible 설치
+> * SSH를 통해 가상 머신에 연결
+> * 가상 머신에서 Ansible 구성
+
+## <a name="prerequisites"></a>필수 구성 요소
+
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
 - **Linux 또는 Linux 가상 머신에 대한 액세스 권한** - Linux 머신에 액세스할 수 없는 경우 [Linux 가상 머신](/azure/virtual-network/quick-create-cli)을 만듭니다.
 
-## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Azure Linux 가상 머신에 Ansible 설치
+## <a name="create-an-ssh-key-pair"></a>SSH 키 쌍 만들기
 
-Linux 가상 머신에 로그인하고, Ansible 설치 방법에 대한 단계에서 다음 배포판 중 하나를 선택합니다.
+Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 수 있습니다. 키 기반 인증이 암호를 사용하는 것보다 안전합니다. 따라서 이 문서에서는 키 기반 인증을 사용합니다.
 
-- [CentOS 7.4](#centos-74)
-- Ubuntu 16.04 LTS
-- [SLES 12 SP2](#sles-12-sp2)
+키 기반 인증에는 두 가지 키가 있습니다.
 
-### <a name="centos-74"></a>CentOS 7.4
+- **공개 키**: 공개 키는 VM과 같은 호스트에 저장됩니다(이 문서 참조).
+- **프라이빗 키**: 프라이빗 키를 사용하면 호스트에 안전하게 연결할 수 있습니다. 프라이빗 키는 사실상 내 암호이며 내 암호처럼 보호해야 합니다.
+        
+다음 단계는 SSH 키 쌍을 만드는 과정을 안내합니다.
 
-이 섹션에서는 Ansible을 사용하도록 CentOS를 구성합니다.
+1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
-1. 터미널 창을 엽니다.
+1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 열고(아직 열지 않은 경우) **Bash**로 전환합니다.
 
-1. 다음 명령을 입력하여 Azure Python SDK 모듈에 필요한 패키지를 설치합니다.
-
-    ```bash
-    sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel epel-release
-    sudo yum install -y python-pip python-wheel
-    ```
-
-1. 다음 명령을 입력하여 Ansible에 필요한 패키지를 설치합니다.
+1. [ssh-keygen](https://www.ssh.com/ssh/keygen/)을 사용하여 SSH 키를 만듭니다.
 
     ```bash
-    sudo pip install ansible[azure]
+    ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-1. [Azure 자격 증명을 만듭니다](#create-azure-credentials).
+    **참고**:
 
-### <a name="ubuntu-1604-lts"></a>Ubuntu 16.04 LTS
+    - `ssh-keygen` 명령은 생성된 키 파일의 위치를 표시합니다. 가상 머신을 만들 때 이 디렉터리 이름이 필요합니다.
+    - 공개 키는 `ansible_rsa.pub`에 저장되고 프라이빗 키는 `ansible_rsa`에 저장됩니다.
 
-이 섹션에서는 Ansible을 사용하도록 Ubuntu를 구성합니다.
+## <a name="create-a-virtual-machine"></a>가상 머신 만들기
 
-1. 터미널 창을 엽니다.
+1. [az group create](/cli/azure/group#az-group-create)를 사용하여 리소스 그룹을 만듭니다. `--location` 매개 변수를 사용자 환경에 적절한 값으로 바꿔야 할 수 있습니다.
 
-1. 다음 명령을 입력하여 Azure Python SDK 모듈에 필요한 패키지를 설치합니다.
-
-    ```bash
-    sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev python-pip
+    ```azurecli
+    az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. 다음 명령을 입력하여 Ansible에 필요한 패키지를 설치합니다.
+1. [az vm create](/cli/azure/vm#az-vm-create)를 사용하여 가상 머신을 만듭니다.
 
-    ```bash
-    sudo pip install ansible[azure]
+    ```azurecli
+    az vm create \
+    --resource-group QuickstartAnsible-rg \
+    --name QuickstartAnsible-vm \
+    --image OpenLogic:CentOS:7.7:latest \
+    --admin-username azureuser \
+    --ssh-key-values <ssh_public_key_filename>
     ```
 
-1. [Azure 자격 증명을 만듭니다](#create-azure-credentials).
+1. [az vm list](/cli/azure/vm#az-vm-list)를 사용하여 새 가상 머신의 생성(및 상태)을 확인합니다.
 
-### <a name="sles-12-sp2"></a>SLES 12 SP2
-
-이 섹션에서는 Ansible을 사용하도록 SLES를 구성합니다.
-
-1. 터미널 창을 엽니다.
-
-1. 다음 명령을 입력하여 Azure Python SDK 모듈에 필요한 패키지를 설치합니다.
-
-    ```bash
-    sudo zypper refresh && sudo zypper --non-interactive install gcc libffi-devel-gcc5 make \
-        python-devel libopenssl-devel libtool python-pip python-setuptools
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-1. 다음 명령을 입력하여 Ansible에 필요한 패키지를 설치합니다.
+    **참고**:
 
-    ```bash
-    sudo pip install ansible[azure]
-    ```
+    - `az vm list` 명령의 출력에는 SSH를 통해 가상 머신에 연결하는 데 사용되는 공용 IP 주소가 포함됩니다.
 
-1. 다음 명령을 입력하여 충돌하는 Python 암호화 패키지를 제거합니다.
+## <a name="install-ansible-on-the-virtual-machine"></a>가상 머신에 Ansible 설치
 
-    ```bash
-    sudo pip uninstall -y cryptography
-    ```
+[az vm extension set](/cli/azure/vm/extension?#az-vm-extension-set)을 사용하여 Ansible 설치 스크립트를 실행합니다.
 
-1. [Azure 자격 증명을 만듭니다](#create-azure-credentials).
+```azurecli
+az vm extension set \
+ --resource-group QuickstartAnsible-rg \
+ --vm-name QuickstartAnsible-vm \
+ --name customScript \
+ --publisher Microsoft.Azure.Extensions \
+ --version 2.1 \
+ --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-ansible-control-machine/master/configure-ansible-centos.sh"]}' \
+ --protected-settings '{"commandToExecute": "./configure-ansible-centos.sh"}'
+```
+
+**참고:**
+
+- 완료되면, `az vm extension` 명령이 설치 스크립트를 실행한 결과를 표시합니다.
+
+## <a name="connect-to-your-virtual-machine-via-ssh"></a>SSH를 통해 가상 머신에 연결
+
+SSH 명령을 사용하여 가상 머신에 연결합니다.
+
+```azurecli
+ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
+```
 
 ## <a name="create-azure-credentials"></a>Azure 자격 증명 만들기
 
@@ -117,7 +130,7 @@ Ansible Tower 또는 Jenkins를 사용하는 경우 서비스 주체 값을 환�
 
 ### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Ansible 자격 증명 파일 만들기
 
-이 섹션에서는 Ansible에 자격 증명을 제공하는 로컬 자격 증명 파일을 만듭니다. 
+이 섹션에서는 Ansible에 자격 증명을 제공하는 로컬 자격 증명 파일을 만듭니다.
 
 Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자격 증명 제공](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)을 참조하세요.
 
@@ -155,13 +168,9 @@ Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자�
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
-## <a name="verify-the-configuration"></a>구성 확인
-
-구성이 성공했는지 확인하려면 Ansible을 사용하여 Azure 리소스 그룹을 만듭니다.
-
-[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
+이제 Ansible이 설치되고 구성된 가상 머신이 있습니다!
 
 ## <a name="next-steps"></a>다음 단계
 
-> [!div class="nextstepaction"] 
-> [빠른 시작: Azure에서 Ansible을 사용하여 Linux 가상 머신 구성](./vm-configure.md)
+> [!div class="nextstepaction"]
+> [Azure의 Ansible](/azure/developer/Ansible)

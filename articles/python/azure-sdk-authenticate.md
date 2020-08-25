@@ -1,67 +1,148 @@
 ---
 title: Azure 서비스를 사용하여 Python 애플리케이션을 인증하는 방법
 description: Azure 라이브러리를 사용하여 Azure 서비스로 Python 앱을 인증하는 데 필요한 자격 증명 개체를 얻는 방법
-ms.date: 05/12/2020
+ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 08636d4a9b8b0b93b6e448b919a14cbfc3ae2a96
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 50f13c09d1c3932446d90420399b18c3247f1640
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982675"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614473"
 ---
-# <a name="how-to-authenticate-python-apps-with-azure-services"></a>Azure 서비스를 사용하여 Python 앱을 인증하는 방법
+# <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure에서 Python 앱을 인증하고 권한을 부여하는 방법
 
-Python용 Azure 라이브러리를 사용하여 앱 코드를 작성하는 경우 다음 패턴을 사용하여 Azure 리소스에 액세스합니다.
+Azure에 배포된 대부분의 클라우드 애플리케이션은 스토리지, 데이터베이스, 저장된 비밀 등과 같은 다른 Azure 리소스에 액세스해야 합니다. 이러한 리소스에 액세스하려면 애플리케이션이 인증되고 권한이 부여되어야 합니다.
 
-1. 자격 증명을 가져옵니다(일반적으로 일회성 작업).
-1. 자격 증명을 사용하여 리소스에 대해 적절한 클라이언트 개체를 가져옵니다.
-1. 클라이언트 개체를 통해 리소스에 액세스하거나 수정하려고 시도합니다. 그러면 리소스의 REST API에 대한 HTTP 요청이 생성됩니다.
+- **인증**은 Azure Active Directory를 사용하여 앱의 ID를 확인합니다.
 
-REST API에 대한 요청은 자격 증명 개체에서 설명한 대로 Azure에서 앱의 ID를 인증하는 지점입니다. 그런 다음, Azure에서 요청된 작업을 수행할 수 있는 권한이 해당 ID에 부여되었는지 확인합니다. 권한이 ID에 부여되지 않았으면 작업이 실패합니다. (권한 부여는 Azure Key Vault, Azure Storage 등과 같은 리소스 종류에 따라 달라집니다. 자세한 내용은 해당 리소스 종류에 대한 설명서를 참조하세요.)
+- **권한 부여**는 인증된 앱이 지정된 리소스에 대해 수행할 수 있는 작업을 결정합니다. 권한이 부여된 작업은 해당 리소스의 앱 ID에 할당된 **역할**을 통해 정의됩니다. 앱 ID에 할당된 추가 **액세스 정책**에 의해 권한 부여가 결정되는 경우(예: Azure Key Vault)도 있습니다.
 
-이러한 프로세스에 관련된 ID, 즉, 자격 증명 개체에서 설명하는 ID는 일반적으로 사용자, 그룹, 서비스 또는 앱을 나타내는 *보안 주체*에서 정의됩니다. 이 문서에서 설명하는 여러 인증 방법에서는 일반적으로 *서비스 주체*라고 하는 명시적 보안 주체를 사용합니다.
+이 문서에서는 인증 및 권한 부여에 대해 자세히 설명합니다.
 
-그러나 대부분의 클라우드 애플리케이션에서는 첫 번째 섹션에서 설명한 대로 `DefaultAzureCredential` 개체를 사용하는 것이 좋습니다. 이는 애플리케이션에 대한 서비스 주체를 완전히 처리하지 않기 때문입니다.
+- 앱 ID를 할당하는 방법
+- ID에 권한을 부여하는 방법
+- 인증 및 권한 부여가 수행되는 방법 및 시기
+- 앱이 Azure 라이브러리를 사용하여 Azure에서 인증하는 다양한 방법입니다. `DefaultAzureCredential`이 필수는 아니지만 사용하는 것이 좋습니다.
 
-[!INCLUDE [chrome-note](includes/chrome-note.md)]
+## <a name="how-to-assign-an-app-identity"></a>앱 ID를 할당하는 방법
 
-## <a name="authenticate-with-defaultazurecredential"></a>DefaultAzureCredential을 사용하여 인증
+Azure에서 앱 ID는 **서비스 주체**에 의해 정의됩니다. (서비스 주체는 앱 또는 서비스를 식별하는 데 사용되는 특정 유형의 "보안 주체"이며, 인간 사용자나 사용자 그룹이 아닌 코드 조각입니다.)
+
+관련된 서비스 주체는 앱이 실행되는 위치에 따라 달라지며, 다음 섹션에 설명되어 있습니다.
+
+### <a name="identity-when-running-the-app-on-azure"></a>Azure에서 앱을 실행하는 경우 ID
+
+클라우드에서 실행하는 경우(예: 프로덕션 환경) 앱은 **시스템이 할당한 관리 ID**를 가장 일반적으로 사용합니다. [관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하면 리소스에 대한 역할 및 권한을 할당할 때 앱 이름을 사용합니다. Azure에서는 기본 서비스 주체가 자동으로 관리되고 다른 Azure 리소스를 사용하여 앱이 자동으로 인증됩니다. 따라서 서비스 주체를 직접 처리할 필요가 없습니다. 또한 앱 코드가 Azure 리소스에 대한 액세스 토큰, 비밀 또는 연결 문자열을 처리할 필요가 없기 때문에 이러한 정보가 유출되거나 손상될 위험이 적습니다.
+
+관리 ID 구성은 앱을 호스트하는 데 사용하는 서비스에 따라 달라집니다. 각 서비스에 대한 지침 링크는 [관리 ID를 지원하는 서비스](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities) 문서를 참조하세요. 예를 들어 Azure App Service에 배포된 웹앱의 경우 Azure Portal에서 **ID** > **시스템 할당 항목** 옵션을 사용하거나 Azure CLI에서 `az webapp identity assign` 명령을 사용하여 관리 ID를 사용하도록 설정합니다.
+
+관리 ID를 사용할 수 없으면 그 대신 Azure Active Directory에 애플리케이션을 수동으로 등록합니다. 등록하면 역할 및 권한을 할당할 때 사용하는 서비스 주체가 앱에 할당됩니다. 자세한 내용은 [애플리케이션 등록](/azure/active-directory/develop/quickstart-register-app)을 참조하세요.
+
+### <a name="identity-when-running-the-app-locally"></a>로컬에서 앱을 실행하는 경우 ID
+
+개발하는 동안, 개발자 워크스테이션에서 앱 코드를 실행하고 디버그하는 동시에 같은 코드로 클라우드의 Azure 리소스에 액세스해야 하는 경우가 많습니다. 이런 경우에는 Azure Active Directory를 통해 로컬 개발 전용으로 별도의 서비스 주체를 만듭니다. 다시, 해당 리소스에 대한 역할과 권한을 서비스 주체에게 할당합니다. 일반적으로 개발 ID는 비프로덕션 리소스에만 액세스할 수 있도록 권한을 부여합니다.
+
+로컬 서비스 주체를 만들고 Azure 라이브러리에서 사용할 수 있도록 설정하는 방법에 대한 자세한 내용은 [로컬 개발 환경 구성](configure-local-development-environment.md)을 참조하세요. 이러한 일회성 구성을 완료하고 나면, 환경에 맞게 수정하지 않고도 로컬과 클라우드에서 동일한 앱 코드를 실행할 수 있습니다.
+
+각 개발자는 자신의 서비스 주체를 가지고 있어야 하며, 이 주체는 워크스테이션의 사용자 계정으로 보호되고 소스 제어 리포지토리에는 저장되지 않습니다. 서비스 주체 하나가 도난되거나 손상되면 해당 주체를 간편하게 삭제하고 모든 권한을 해지한 다음, 해당 개발자의 서비스 주체를 다시 만들 수 있습니다. 자세한 내용은 [서비스 주체를 관리하는 방법](how-to-manage-service-principals.md)을 참조하세요.
+
+> [!NOTE]
+> 자신의 Azure 사용자 자격 증명을 사용하여 앱을 실행할 수 있지만 그렇게 하면 클라우드에 배포할 때 앱에 필요한 특정 리소스 권한을 설정하는 데 도움이 되지 않습니다. 개발용 서비스 주체를 설정하여 필요한 역할 및 권한을 할당하는 것이 훨씬 더 좋습니다. 그런 다음, 배포된 앱의 관리 ID 또는 서비스 주체를 사용하여 복제할 수 있습니다.
+
+## <a name="assign-roles-and-permissions-to-an-identity"></a>ID에 역할 및 권한 할당
+
+Azure에서 그리고 로컬에서 실행할 때 앱의 ID를 알고 나면, RBAC(역할 기반 액세스 제어)를 사용하여 Azure Portal 또는 Azure CLI를 통해 권한을 부여합니다. 자세한 전체 내용은 [앱 ID 또는 서비스 주체에 역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)을 참조하세요.
+
+## <a name="when-does-authentication-and-authorization-occur"></a>인증 및 권한 부여가 수행되는 시기
+
+Python용 Azure 라이브러리(SDK)를 사용하여 앱 코드를 작성하는 경우 다음 패턴을 사용하여 Azure 리소스에 액세스합니다.
+
+1. 이 문서의 뒷부분에서 설명하는 방법 중 하나를 사용하여 앱 ID를 설명하는 자격 증명을 얻습니다.
+
+1. 자격 증명을 사용하여 원하는 리소스에 대한 클라이언트 개체를 가져옵니다. (각 유형의 리소스에는 리소스의 URL을 제공하는 Azure 라이브러리에 자체 클라이언트 개체가 있습니다.)
+
+1. 클라이언트 개체를 통해 리소스에 액세스하거나 수정하려고 시도합니다. 그러면 리소스의 REST API에 대한 HTTP 요청이 생성됩니다. API 호출은 Azure에서 앱 ID를 인증하고 권한 부여를 확인하는 지점입니다.
+
+다음 코드는 Azure Key Vault에 액세스를 시도하여 이러한 단계를 설명하고 보여줍니다.
 
 ```python
 import os
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
-# Obtain the credential object. When run locally, DefaultAzureCredential relies
-# on environment variables named AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
-credential = DefaultAzureCredential()
-
-# Create the client object using the credential
-#
-# **NOTE**: SecretClient here is only an example; the same process
-# applies to all other Azure client libraries.
+# Acquire the resource URL. In this code we assume the resource URL is in an
+# environment variable, KEY_VAULT_URL in this case.
 
 vault_url = os.environ["KEY_VAULT_URL"]
+
+
+# Acquire a credential object for the app identity. When running in the cloud,
+# DefaultAzureCredential uses the app's managed identity or user-assigned service principal.
+# When run locally, DefaultAzureCredential relies on environment variables named
+# AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
+
+credential = DefaultAzureCredential()
+
+
+# Acquire an appropriate client object for the resource identified by the URL. The
+# client object only stores the given credential at this point but does not attempt
+# to authenticate it.
+#
+# **NOTE**: SecretClient here is only an example; the same process applies to all
+# other Azure client libraries.
+
 secret_client = SecretClient(vault_url=vault_url, credential=credential)
 
-# Attempt to retrieve a secret value. The operation fails if the principal
-# cannot be authenticated or is not authorized for the operation in question.
-retrieved_secret = client.get_secret("secret-name-01")
+# Attempt to perform an operation on the resource using the client object (in
+# this case, retrieve a secret from Key Vault). The operation fails for any of
+# the following reasons:
+#
+# 1. The information in the credential object is invalid (for example, the AZURE_CLIENT_ID
+#    environment variable cannot be found).
+# 2. The app identity cannot be authenticated using the information in the credential object.
+# 3. The app identity is not authorized to perform the requested operation on the
+#    resource (identified in this case by the vault_url.
+
+retrieved_secret = secret_client.get_secret("secret-name-01")
 ```
 
-[`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python) 라이브러리의 [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) 클래스는 가장 간단하고 추천되는 인증 방법을 제공합니다.
+또한, 코드가 클라이언트 개체를 통해 Azure REST API에 특정 요청을 수행할 때까지 인증이나 권한 부여는 발생하지 않습니다. `DefaultAzureCredential`(다음 섹션 참조)을 만드는 명령문은 메모리에 클라이언트 측 개체만 만들고 다른 검사는 수행하지 않습니다. 
 
-이전 코드는 Azure Key Vault에 액세스할 때 `DefaultAzureCredential`을 사용합니다. 여기서 Key Vault의 URL은 `KEY_VAULT_URL`이라는 환경 변수에서 사용할 수 있습니다. 코드는 문서의 시작 부분에서 설명한 패턴을 명확하게 구현합니다. 즉 자격 증명 개체를 가져오고, SDK 클라이언트 개체를 만든 다음, 해당 클라이언트 개체를 사용하여 작업을 수행하려고 시도합니다.
+SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python) 개체를 만드는 경우에도 해당 리소스와 통신하지 않습니다. `SecretClient` 개체는 기본 Azure REST API 주위의 래퍼일 뿐이며 앱의 런타임 메모리에만 존재합니다. 
 
-다시 말하지만 인증 및 권한 부여는 마지막 단계까지 수행되지 않습니다. SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python) 개체를 만들면 해당 리소스와 통신할 필요가 없습니다. `SecretClient` 개체는 기본 Azure REST API를 중심으로 하는 래퍼일 뿐이며 앱의 런타임 메모리에만 존재합니다. [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-) 메서드를 호출하는 경우에만 클라이언트 개체에서 Azure에 대한 적절한 REST API 호출을 생성합니다. 그런 다음, `get_secret`에 대한 Azure의 엔드포인트에서 호출자의 ID를 인증하고 권한 부여를 확인합니다.
+코드가 [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-) 메서드를 호출하는 경우에만 클라이언트 개체에서 Azure에 대한 적절한 REST API 호출을 생성합니다. 그런 다음, `get_secret`에 대한 Azure의 엔드포인트에서 호출자의 ID를 인증하고 권한 부여를 확인합니다.
 
-코드가 Azure에 배포되어 실행되면 `DefaultAzureCredential`에서 자동으로 할당된 시스템이 할당한("관리") ID를 사용하여 코드를 호스팅하는 모든 서비스 내에서 앱에 사용하도록 설정할 수 있습니다. 예를 들어 Azure App Service에 배포된 웹앱의 경우 Azure Portal에서 **ID** > **시스템 할당 항목** 옵션을 사용하거나 Azure CLI에서 `az webapp identity assign` 명령을 사용하여 관리 ID를 사용하도록 설정합니다. Azure Storage 또는 Azure Key Vault와 같은 특정 리소스에 대한 권한도 Azure Portal 또는 Azure CLI를 사용하여 해당 ID에 할당됩니다. 이러한 경우 코드에서 명시적인 서비스 주체를 처리하지 않으므로 이 Azure 관리 ID는 보안을 최대화합니다.
+## <a name="authenticate-with-defaultazurecredential"></a>DefaultAzureCredential을 사용하여 인증
 
-코드를 로컬로 실행하면 `DefaultAzureCredential`에서 `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` 및 `AZURE_CLIENT_SECRET`이라는 환경 변수에서 설명하는 서비스 주체를 자동으로 사용합니다. 그런 다음, SDK 클라이언트 개체는 API 엔드포인트를 호출할 때 이러한 값을 HTTP 요청 헤더에 안전하게 포함합니다. 코드를 변경할 필요가 없습니다. 서비스 주체를 만들고 환경 변수를 설정하는 방법에 대한 자세한 내용은 [Azure를 위한 로컬 Python 개발 환경 구성 - 인증 구성](configure-local-development-environment.md#configure-authentication)을 참조하세요.
+대부분의 애플리케이션에서 [`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python) 라이브러리의 [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) 클래스는 가장 간단하고 권장되는 인증 방법을 제공합니다. `DefaultAzureCredential`은 클라우드에서 앱의 관리 ID를 자동으로 사용하고, 로컬에서 실행될 때는 환경 변수에서 로컬 서비스 주체를 자동으로 로드합니다.
 
-두 경우 모두에서 적절한 리소스에 대한 권한을 관련된 ID에 할당해야 합니다. 이는 개별 서비스의 설명서에서 설명하고 있습니다. 이전 코드에 필요한 Key Vault 권한에 대한 자세한 내용은 [액세스 제어 정책을 사용하여 Key Vault 인증 제공](/azure/key-vault/general/group-permissions-for-apps)을 참조하세요.
+```python
+import os
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
+
+# Acquire the resource URL
+vault_url = os.environ["KEY_VAULT_URL"]
+
+# Aquire a credential object
+credential = DefaultAzureCredential()
+
+# Acquire a client object
+secret_client = SecretClient(vault_url=vault_url, credential=credential)
+
+# Attempt to perform an operation
+retrieved_secret = secret_client.get_secret("secret-name-01")
+```
+
+이전 코드는 Azure Key Vault에 액세스할 때 `DefaultAzureCredential` 개체를 사용합니다. 여기서 Key Vault의 URL은 `KEY_VAULT_URL`이라는 환경 변수에서 사용할 수 있습니다. 이 코드는 일반적인 라이브러리 사용 패턴을 명확하게 구현합니다. 자격 증명 개체를 확보하고, Azure 리소스에 적절한 클라이언트 개체를 만든 다음, 해당 클라이언트 개체를 사용하여 해당 리소스에 대한 작업을 수행합니다. 다시 말하지만 인증 및 권한 부여는 이러한 마지막 단계까지 수행되지 않습니다.
+
+코드가 Azure에 배포되어 실행되면 `DefaultAzureCredential`은 호스트하는 서비스 내에서 앱에 대해 사용하도록 설정할 수 있는 시스템이 할당한 관리 ID를 자동으로 사용합니다. Azure Storage 또는 Azure Key Vault와 같은 특정 리소스에 대한 권한은 Azure Portal 또는 Azure CLI를 사용하여 해당 ID에 할당됩니다. 이러한 경우 코드에서 명시적인 서비스 주체를 처리하지 않으므로 이 Azure 관리 ID는 보안을 최대화합니다.
+
+코드를 로컬로 실행하면 `DefaultAzureCredential`에서 `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` 및 `AZURE_CLIENT_SECRET`이라는 환경 변수에서 설명하는 서비스 주체를 자동으로 사용합니다. 그런 다음, 클라이언트 개체는 API 엔드포인트를 호출할 때 이러한 값을 HTTP 요청 헤더에 안전하게 포함합니다. 로컬 또는 클라우드에서 실행하는 경우 코드를 변경할 필요가 없습니다. 서비스 주체를 만들고 환경 변수를 설정하는 방법에 대한 자세한 내용은 [Azure를 위한 로컬 Python 개발 환경 구성 - 인증 구성](configure-local-development-environment.md#configure-authentication)을 참조하세요.
+
+두 경우 모두 적절한 리소스에 대한 권한이 관련 ID에 할당되어야 합니다. 일반적인 프로세스는 [역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)에 설명되어 있습니다. 세부 정보는 개별 서비스의 설명서에서 찾을 수 있습니다. 예를 들어 이전 코드에 필요한 Key Vault 권한에 대한 자세한 내용은 [액세스 제어 정책을 사용하여 Key Vault 인증 제공](/azure/key-vault/general/group-permissions-for-apps)을 참조하세요.
 
 <a name="cli-auth-note"></a>
 > [!IMPORTANT]
@@ -121,9 +202,11 @@ print(subscription.subscription_id)
 
 클라우드에 배포된 애플리케이션에 대한 서비스 주체는 구독 Active Directory에서 관리됩니다. 자세한 내용은 [서비스 주체를 관리하는 방법](how-to-manage-service-principals.md)을 참조하세요.
 
+모든 경우, 적절한 서비스 주체 또는 사용자에게 해당 리소스 및 작업에 대한 적절한 권한이 있어야 합니다.
+
 ### <a name="authenticate-with-a-json-file"></a>JSON 파일을 사용하여 인증
 
-이 방법에서는 서비스 주체에 필요한 자격 증명이 포함된 JSON 파일을 만듭니다. 그런 다음, 해당 파일을 사용하여 SDK 클라이언트 개체를 만듭니다. 이 방법은 로컬 및 클라우드 모두에서 사용할 수 있습니다. 
+이 방법에서는 서비스 주체에 필요한 자격 증명이 포함된 JSON 파일을 만듭니다. 그런 다음, 해당 파일을 사용하여 SDK 클라이언트 개체를 만듭니다. 이 방법은 로컬 및 클라우드 모두에서 사용할 수 있습니다.
 
 1. 다음 형식의 JSON 파일을 만듭니다.
 
@@ -166,7 +249,6 @@ print(subscription.subscription_id)
     ---
 
     이러한 예제에서는 JSON 파일의 이름이 *credentials.json*이고 프로젝트의 부모 폴더에 있다고 가정합니다.
-
 
 1. [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) 메서드를 사용하여 클라이언트 개체를 만듭니다.
 
@@ -316,7 +398,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-이 방법에서는 `az login` Azure CLI 명령을 사용하여 로그인한 사용자의 자격 증명을 사용하여 클라이언트 개체를 만듭니다.
+이 방법에서는 `az login` Azure CLI 명령을 사용하여 로그인한 사용자의 자격 증명을 사용하여 클라이언트 개체를 만듭니다. 애플리케이션에는 사용자로 모든 작업을 수행할 수 있는 권한이 부여됩니다.
 
 SDK에서 기본 구독 ID를 사용하거나 [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli)를 사용하여 구독을 설정할 수 있습니다.
 
@@ -329,6 +411,7 @@ SDK에서 기본 구독 ID를 사용하거나 [`az account`](https://docs.micros
 ## <a name="see-also"></a>참고 항목
 
 - [Azure를 위한 로컬 Python 개발 환경 구성](configure-local-development-environment.md)
+- [역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)
 - [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
 - [예: Azure Storage 프로비저닝 및 사용](azure-sdk-example-storage.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)

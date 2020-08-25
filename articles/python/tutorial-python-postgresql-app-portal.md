@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 0e9785871eba8866b5d225bb9ac1339becc172a3
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 9e6794d655d420d5f6b4093aecf15b7540f34709
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147394"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614538"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -190,12 +190,18 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 코드가 배포되고 데이터베이스가 준비되면 앱을 거의 사용할 수 있습니다. 이제 데이터베이스 자체에 필요한 스키마를 설정하기만 하면 됩니다. 이렇게 하려면 Django 앱의 데이터 모델을 데이터베이스로 "마이그레이션"합니다.
 
-1. 웹앱에 대한 브라우저 창 또는 탭의 왼쪽에 있는 **개발 도구** 아래에서 **SSH**를 선택하여 웹앱 서버에서 SSH 콘솔을 엽니다. 웹앱 컨테이너에서 시작해야 하므로 처음 연결하는 데 1분 정도 걸릴 수 있습니다.
+1. 웹 앱의 브라우저 창 또는 탭에서 **SSH**(왼쪽에 있는 **개발 도구** 아래에서)를 선택한 다음, **이동**하여 웹앱 서버에서 SSH 콘솔을 엽니다. 웹앱 컨테이너에서 시작해야 하므로 처음 연결하는 데 1분 정도 걸릴 수 있습니다.
 
 1. 콘솔에서 웹앱의 폴더로 변경합니다.
 
     ```bash
     cd site/wwwroot
+    ```
+
+1. 컨테이너의 가상 환경을 활성화합니다.
+
+    ```bash
+    source /antenv/bin/activate
     ```
 
 1. Python 패키지를 설치합니다.
@@ -247,6 +253,8 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 1. [Django 데이터베이스 마이그레이션 실행](#run-django-database-migrations)에서 설명한 대로 SSH를 통해 웹앱에 다시 연결합니다.
 
 1. `cd site/wwwroot`를 사용하여 앱 폴더로 변경합니다.
+
+1. `source /antenv/bin/activate`를 사용하여 가상 환경을 활성화합니다.
 
 1. `python manage.py migrate`를 사용하여 마이그레이션을 다시 실행합니다.
 

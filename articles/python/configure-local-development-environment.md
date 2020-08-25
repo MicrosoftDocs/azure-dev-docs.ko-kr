@@ -4,12 +4,12 @@ description: Visual Studio Code, Azure SDK 라이브러리 및 라이브러리 �
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8d20960df802dc4671f6b432173a56f6dc88c38c
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983145"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614507"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure를 위한 로컬 Python 개발 환경 구성
 
@@ -78,7 +78,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
 ## <a name="configure-authentication"></a>인증 구성
 
-[서비스 주체를 관리하는 방법 - 권한 부여의 기본 사항](how-to-manage-service-principals.md#basics-of-azure-authorization)에서 설명했듯이, 각 개발자는 로컬로 앱을 테스트할 때 애플리케이션 ID로 사용할 서비스 주체가 필요합니다.
+[앱 인증 방법](azure-sdk-authenticate.md#identity-when-running-the-app-locally)에서 설명했듯이, 각 개발자는 로컬에서 앱 코드를 테스트할 때 애플리케이션 ID로 사용할 서비스 주체가 필요합니다.
 
 다음 섹션에서는 서비스 주체를 만드는 방법 및 서비스 주체의 속성을 필요한 때에 Azure 라이브러리에 제공하는 환경 변수를 만드는 방법에 대해 설명합니다.
 
@@ -98,7 +98,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
     조직에 속한 개발자는 구독에서 이 명령을 실행할 수 있는 권한이 없을 수도 있습니다. 이 경우 구독 소유자에게 연락하여 서비스 주체를 만들어 달라고 요청합니다.
 
-1. Azure 라이브러리에 필요한 환경 변수를 만듭니다. (azure-identity 라이브러리의 `DefaultAzureCredential` 개체가 이러한 변수를 찾습니다.)
+1. 다음 명령을 사용하여 Azure 라이브러리에 필요한 환경 변수를 만듭니다. (azure-identity 라이브러리의 `DefaultAzureCredential` 개체가 이러한 변수를 찾습니다.)
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -124,7 +124,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
     구독 ID를 검색하려면 [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) 명령을 실행하고 출력에서 `id` 속성을 찾습니다.
 
-    편의를 위해 이러한 명령을 사용하여 로컬 테스트를 위해 터미널 또는 명령 프롬프트를 열 때마다 실행할 수 있는 *sh* 또는 *.cmd* 파일을 만듭니다. 다시 강조하지만, 파일이 사용자 계정에만 남아 있도록 파일을 소스 제어에 추가하지 마세요.
+    편의를 위해 동일한 명령이 포함된 명령줄 스크립트 파일(예: macOS/Linux의 경우 *setenv.sh* 또는 Windows의 경우 *setenv.cmd*)을 만듭니다. 그런 다음, 로컬 테스트를 위해 터미널 또는 명령 프롬프트를 열 때마다 스크립트를 실행하여 변수를 설정할 수 있습니다. 다시 강조하지만, 파일이 사용자 계정에만 남아 있도록 스크립트 파일을 소스 제어에 추가하지 마세요.
 
 1. 항상 워크스테이션의 특정 사용자 계정 내에 남아 있도록 클라이언트 ID와 클라이언트 암호(및 클라이언트 암호를 저장하는 모든 파일)를 보호합니다. 이러한 속성을 소스 제어에 저장하거나 다른 개발자와 공유하지 마세요. 필요한 경우 서비스 주체를 삭제하고 새로 만들 수 있습니다.
 

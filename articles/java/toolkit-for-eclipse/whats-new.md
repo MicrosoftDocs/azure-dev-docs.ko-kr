@@ -1,6 +1,6 @@
 ---
 title: Eclipse용 Azure 도구 키트의 새로운 기능
-description: Eclipse용 Azure 도구 키트의 최신 기능에 대해 알아봅니다.
+description: Azure Toolkit for Eclipse의 최신 업데이트에 대해 알아 봅니다. 이 문서에는 추가 정보의 링크 및 도구 키트의 향상된 기능이 포함되어 있습니다.
 documentationcenter: java
 ms.assetid: 16b066ea-aae7-4c30-9a12-fa0c3711b93e
 ms.date: 11/13/2018
@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 9c15441396a0475c97c3d5362f30ee19a62af648
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: e7ebd13d811a30d8b6db5c1bc8b530f9545d87fa
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379907"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241035"
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트의 새로운 기능
 

@@ -1,17 +1,18 @@
 ---
-title: 빠른 시작 - Ansible - Azure Cloud Shell 시작
+title: 빠른 시작 - Azure Cloud Shell을 사용하여 Ansible 구성
 description: 이 빠른 시작에서는 Azure Cloud Shell에서 Bash를 사용하여 다양한 Ansible 작업을 수행하는 방법을 알아봅니다.
 keywords: ansible, azure, devops, bash, cloudshell, 플레이북, Bash
 ms.topic: quickstart
-ms.date: 06/01/2020
-ms.openlocfilehash: f48342dc9abdaa1a93979a6026e453f41e0043a7
-ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible
+ms.openlocfilehash: fa118213624db21192617b65930041b8712075bd
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133636"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240315"
 ---
-# <a name="quickstart-getting-started-with-ansible---azure-cloud-shell"></a>빠른 시작: Ansible - Azure Cloud Shell 시작
+# <a name="quickstart-configure-ansible-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Ansible 구성
 
 [!INCLUDE [annsible-intro.md](includes/ansible-intro.md)]
 

@@ -3,13 +3,14 @@ title: 자습서 - Azure VM 에이전트를 사용하여 Jenkins 배포 크기 �
 description: Jenkins Azure VM 에이전트 플러그 인에서 Azure 가상 머신을 사용하여 추가 용량을 Jenkins 파이프라인에 추가하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, 가상 머신, 에이전트
 ms.topic: tutorial
-ms.date: 07/31/2018
-ms.openlocfilehash: c5ea0c3782414abfda47810ba68ad1092cd7b0d5
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: d081861eac98495d125a1a5eb5dd9700fb7783a8
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162052"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614546"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>자습서: Azure VM 에이전트를 사용하여 Jenkins 배포 크기 조정
 
@@ -26,6 +27,10 @@ ms.locfileid: "88162052"
 > * Azure VM 에이전트에서 작업 실행
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
+
+## <a name="prerequisites"></a>필수 구성 요소
+
+- **Jenkins 설치**: Jenkins 설치에 대한 액세스 권한이 없는 경우 [Azure CLI를 사용하여 Jenkins를 구성](configure-on-linux-vm.md)합니다.
 
 ## <a name="install-azure-vm-agents-plugin"></a>Azure VM 에이전트 플러그 인 설치
 
@@ -81,8 +86,6 @@ ms.locfileid: "88162052"
     완료된 서비스 주체는 **구독 ID**에 `id` 필드, **클라이언트 ID**에 `appId` 값, **클라이언트 암호**에 `password` 및 **테넌트 ID**에 `tenant`을 사용해야 합니다. **추가**를 선택하여 서비스 주체를 추가한 다음, 새로 만든 자격 증명을 사용하도록 플러그 인을 구성합니다.
 
     ![Azure 서비스 주체 구성](./media/scale-deployments-using-vm-agents/new-service-principal.png)
-
-    
 
 1. **리소스 그룹 이름** 섹션에서 **새로 만들기**를 선택된 상태로 두고 `myJenkinsAgentGroup`을 입력합니다.
 1. **구성 확인**을 선택하여 Azure에 연결하여 프로필 설정을 테스트합니다.

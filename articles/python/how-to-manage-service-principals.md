@@ -1,31 +1,21 @@
 ---
 title: Azure 개발을 위한 로컬 서비스 주체 관리
 description: Azure Portal 또는 Azure CLI를 사용하여 로컬 개발용으로 만든 서비스 주체를 관리하는 방법입니다.
-ms.date: 05/12/2020
+ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 8901a7ef9de7bbca31c5ba0352c79a4ee2c5cdf9
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b6d3ffbb7e78b7c4f2405e5363446c1906913aa9
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983105"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614511"
 ---
 # <a name="how-to-manage-service-principals"></a>서비스 주체를 관리하는 방법
 
-보안을 위해, Azure 리소스에 액세스하고 수정할 수 있도록 앱 코드에 권한을 부여하는 방식을 항상 신중하게 관리해야 합니다. 코드를 로컬에서 테스트하는 경우에는 [로컬 Python 개발 환경 구성 - 인증](configure-local-development-environment.md#configure-authentication)의 설명대로 전체 권한이 있는 사용자로 실행하기 보다는 로컬 *서비스 주체*를 사용해야 합니다.
+[앱 인증 방법](azure-sdk-authenticate.md)의 설명대로 관리 ID를 사용하는 경우를 제외하면 Azure에서 앱을 식별하기 위해 서비스 주체를 사용하는 경우가 많습니다.
 
-시간이 지나면 이러한 서비스 주체를 삭제하거나 이름을 바꾸거나 관리해야 할 수도 있으며, 이러한 작업은 Azure Portal 또는 Azure CLI를 통해 수행할 수 있습니다.
-
-## <a name="basics-of-azure-authorization"></a>Azure 인증의 기본 사항
-
-코드가 Azure 리소스에서 작업을 수행하려고 시도할 때마다(Azure 라이브러리의 클래스를 통해 수행함), Azure는 애플리케이션에 해당 작업을 수행할 권한이 있는지 확인합니다. [Azure Portal](https://portal.azure.com)이나 Azure CLI를 사용하여 애플리케이션 ID에 특정 역할 또는 리소스 기반 권한을 부여합니다. (이 절차는 애플리케이션의 보안이 손상될 경우 악용될 수 있는 애플리케이션에 대해 과도한 권한을 부여하지 않도록 방지합니다.)
-
-Azure에 배포할 때, 애플리케이션의 ID는 대개 애플리케이션을 호스트하는 서비스 내에서 앱에 부여한 이름과 동일합니다(예: 관리 ID가 활성화된 경우 Azure App Service, Azure Functions, 가상 머신 등). 하지만 코드를 로컬에서 실행할 때는 호스팅 서비스가 포함되지 않기 때문에 Azure에 적절한 대안을 제공해야 합니다.
-
-이런 용도로 로컬 서비스 주체를 사용합니다. 서비스 주체는 앱 ID의 다른 이름이며 사용자 ID가 아닙니다. 서비스 주체에는 이름, "테넌트" 식별자(본질적으로 조직의 ID), 앱 또는 "클라이언트" 식별자, 비밀/암호가 있습니다. 이러한 자격 증명은 Azure에서 ID를 인증하기에 충분하며, 해당 ID가 지정된 리소스에 액세스할 권한이 있는지 여부를 확인할 수 있습니다.
-
-각 개발자는 자신의 서비스 주체를 가지고 있어야 하며, 이 주체는 워크스테이션의 사용자 계정으로 보호되고 소스 제어 리포지토리에는 저장되지 않습니다. 서비스 주체 하나가 도난되거나 손상되면 Azure Portal에서 해당 주체를 간편하게 삭제하고 모든 권한을 해지한 다음, 해당 개발자의 서비스 주체를 다시 만들 수 있습니다.
+시간이 지나면 이러한 서비스 주체를 삭제하거나 이름을 바꾸거나 관리해야 하는 경우가 일반적이며, 이러한 작업은 Azure Portal 또는 Azure CLI를 통해 수행할 수 있습니다.
 
 ## <a name="manage-service-principals-using-the-azure-portal"></a>Azure Portal을 사용하여 서비스 주체 관리
 

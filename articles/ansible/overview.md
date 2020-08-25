@@ -3,17 +3,18 @@ title: Azure에서 Ansible 사용
 description: Ansible을 사용하여 클라우드 프로비전, 구성 관리 및 애플리케이션 배포를 자동화하는 방법을 소개합니다.
 keywords: Ansible, Azure, DevOps, 개요, 클라우드 프로비전, 구성 관리, 애플리케이션 배포, Ansible 모듈, Ansible 플레이북
 ms.topic: overview
-ms.date: 04/30/2019
-ms.openlocfilehash: e37807ffd4d7479bccec0dc058760be2e1f1e6d5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 2bd996a93952df1f52c2a007d73f7f37e4e0f132
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80741521"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239965"
 ---
 # <a name="using-ansible-with-azure"></a>Azure에서 Ansible 사용
 
-[Ansible](https://www.ansible.com)은 클라우드 프로비전, 구성 관리 및 애플리케이션 배포를 자동화하는 오픈 소스 제품입니다. Ansible을 사용하면 가상 머신, 컨테이너 및 네트워크를 프로비전하고 클라우드 인프라를 완성할 수 있습니다. 또한 Ansible을 사용하면 사용자 환경에서 리소스의 배포 및 구성을 자동화할 수 있습니다.
+[Ansible](https://www.ansible.com)은 클라우드 프로비전, 구성 관리 및 애플리케이션 배포를 자동화하는 오픈 소스 제품입니다. Ansible을 사용하면 가상 머신, 컨테이너 및 네트워크를 프로비저닝하고 클라우드 인프라를 완성할 수 있습니다. 또한 Ansible을 사용하면 사용자 환경에서 리소스의 배포 및 구성을 자동화할 수 있습니다.
 
 이 문서에서는 Azure에서 Ansible을 사용할 때의 이점에 대한 기본적인 개요를 제공합니다.
 
@@ -56,5 +57,5 @@ Ansible에는 Azure 리소스 프로비저닝 및 구성에 사용할 모듈 모
 
 ## <a name="next-steps"></a>다음 단계
 
-- [빠른 시작: CentOS에 Azure용 Ansible 솔루션 템플릿 배포](./solution-template-deploy.md)
-- [빠른 시작: Ansible을 사용하여 Azure에서 Linux 가상 머신 구성](./install-on-linux-vm.md)
+- [빠른 시작: Azure Cloud Shell을 사용하여 Ansible 구성](getting-started-cloud-shell.md)
+- [빠른 시작: Azure CLI를 사용하여 Ansible 구성](install-on-linux-vm.md)

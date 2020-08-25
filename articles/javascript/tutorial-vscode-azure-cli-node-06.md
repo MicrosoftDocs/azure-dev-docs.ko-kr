@@ -3,14 +3,15 @@ title: 앱 코드를 변경하고 Azure에 다시 배포
 description: 자습서 6부, 변경 및 재배포
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 9702f10795893004965631fa99dfbfab181f2292
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: e6747551ec80fc7b04873445557e2d2153e3b358
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792158"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217923"
 ---
-# <a name="make-changes-and-redeploy"></a>변경 및 재배포
+# <a name="part-6-make-changes-and-redeploy"></a>6부 변경 및 재배포
 
 [이전 단계: 로그 스트리밍](tutorial-vscode-azure-cli-node-05.md)
 

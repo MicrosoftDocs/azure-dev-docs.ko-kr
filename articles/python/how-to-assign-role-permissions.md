@@ -4,12 +4,12 @@ description: Azure CLI를 사용하여 서비스 주체 또는 앱 ID에 권한�
 ms.date: 05/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 3eb81eac5ee9a7f2f85e50494efa2e04bbcbe439
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: facfa1663e6f62a7458f99ee20c86f66ee67b17d
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983135"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614485"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>앱 ID 또는 서비스 주체에 역할 권한을 할당하는 방법
 
@@ -17,7 +17,7 @@ Azure의 RBAC(역할 기반 액세스 제어) 시스템은 다양한 리소스�
 
 실제로는 항상 가장 구체적인 범위에서 보안 주체에 꼭 필요한 역할만 할당합니다. 처음에는 더 넓은 범위에서 더 넓은 역할을 할당하는 것이 더 편리하게 보이겠지만, 이렇게 하지 마세요. 역할 및 범위를 제한하면 보안 주체가 손상될 때(즉, 해당 보안 주체의 자격 증명이 데이터 위반 또는 기타 보안 인시던트에 노출될 때) 위험에 노출되는 리소스를 제한할 수 있습니다.
 
-개발 환경과 프로덕션 환경에서 서로 다른 보안 주체를 사용하기 때문에 개발자는 환경마다 역할 할당을 반복합니다. 즉, 개발 과정에서 개발자는 일반적으로 워크스테이션에서 만든 로컬 서비스 사용자에게 역할을 할당합니다([로컬 Python 개발 환경 구성 - 인증](configure-local-development-environment.md#configure-authentication) 참조). 프로덕션 환경에서는 애플리케이션이 시작할 때 액세스 권한을 갖도록 배포 전에 애플리케이션 ID 또는 서비스 주체에 역할을 할당합니다.
+개발 환경과 프로덕션 환경에서 서로 다른 보안 주체를 사용하기 때문에 개발자는 환경마다 역할 할당을 반복합니다. 즉, 개발 과정에서 개발자는 일반적으로 워크스테이션에서 만든 로컬 서비스 사용자에게 역할을 할당합니다([로컬 Python 개발 환경 구성 - 인증](configure-local-development-environment.md#configure-authentication) 참조). 프로덕션 환경에서는 애플리케이션이 시작할 때 액세스 권한을 갖도록 배포 전에 애플리케이션의 관리 ID 또는 서비스 주체에 역할을 할당합니다. 자세한 내용은 [인증 - Azure에서 실행하는 경우 앱 ID](azure-sdk-authenticate.md#identity-when-running-the-app-on-azure)를 참조하세요.
 
 RBAC에 대한 일반적인 내용은 [Azure 역할 기반 액세스 제어란?](/azure/role-based-access-control/overview)을 참조하세요.
 
@@ -64,7 +64,7 @@ RBAC에 대한 일반적인 내용은 [Azure 역할 기반 액세스 제어란?]
 
 ## <a name="identify-scope-and-assign-a-role-through-the-azure-cli"></a><a name="azure-cli"></a>Azure CLI를 통해 범위를 식별하고 역할 할당
 
-Azure CLI를 통해 역할을 할당할 때에는 [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) 명령을 사용합니다. `az role assignment create` 명령을 사용하여 할당을 추가하고 `az role assignment delete` 명령을 사용하여 할당을 제거합니다. 
+Azure CLI를 통해 역할을 할당할 때에는 [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) 명령을 사용합니다. `az role assignment create` 명령을 사용하여 할당을 추가하고 `az role assignment delete` 명령을 사용하여 할당을 제거합니다.
 
 전체 프로세스는 [Azure CLI를 사용하여 Azure 역할 할당 추가 또는 제거](/azure/role-based-access-control/role-assignments-cli)에 설명되어 있으며, 다음 요약에서는 이 개발자 센터의 다른 문서와 관련된 특정 예제를 제공합니다.
 

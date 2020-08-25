@@ -1,20 +1,21 @@
 ---
-title: Visual Studio Code에서 Azure App Service에 Node.js 앱 배포
+title: Visual Studio Code에서 Azure App Service에 앱 배포
 description: '자습서 3부: 웹 사이트 배포'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 2a1089a88a27d1ae02b2ce4f0e201ef02f21c74e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 5d812f9aa6efb308cafcb5d3e3ccb1ce852e93f1
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792213"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501508"
 ---
 # <a name="deploy-the-app-to-azure"></a>Azure에 앱 배포
 
 [이전 단계: 앱 만들기](tutorial-vscode-azure-app-service-node-02.md)
 
-이 단계에서는 Visual Studio Code 및 Azure App Service 확장을 통해 git 배포를 사용하여 Node.js 앱을 Azure에 배포합니다. 이 목표를 달성하려면 먼저 로컬 git 리포지토리를 초기화하고, Azure에서 웹앱을 만든 다음, git 배포를 사용하도록 VS Code를 구성합니다.
+이 단계에서는 Visual Studio Code 및 Azure App Service 확장을 통해 Git 배포를 사용하여 Node.js 앱을 Azure에 배포합니다. 이 목표를 달성하려면 먼저 로컬 Git 리포지토리를 초기화하고, Azure에서 웹앱을 만든 다음, Git 배포를 사용하도록 VS Code를 구성합니다.
 
 1. 터미널에서 *expressApp1* 폴더에 있는지 확인한 다음, 다음 명령을 사용하여 Visual Studio Code를 시작합니다.
 
@@ -22,7 +23,7 @@ ms.locfileid: "85792213"
     code .
     ```
 
-1. VS Code에서 소스 제어 아이콘을 선택하여 **소스 제어** 탐색기를 연 다음, **+** 를 선택하여 로컬 git 리포지토리를 초기화합니다.
+1. VS Code에서 소스 제어 아이콘을 선택하여 **소스 제어** 탐색기를 연 다음, **+** 를 선택하여 로컬 Git 리포지토리를 초기화합니다.
 
     ![git 리포지토리 초기화](media/deploy-azure/git-init.png)
 
@@ -49,7 +50,7 @@ ms.locfileid: "85792213"
 
     ![웹앱 만들기 완료 시 알림](media/deploy-azure/creation-complete.png)
 
-1. 웹앱이 준비되면 다음으로 VS Code에서 로컬 git 리포지토리의 코드를 배포하도록 지시합니다. Azure 아이콘을 선택하여 **Azure App Service** 탐색기를 열고, 구독 노드를 펼치고, 마우스 오른쪽 단추로 방금 만든 웹앱 이름을 클릭하고, **배포 원본 구성**을 선택합니다.
+1. 웹앱이 준비되면 다음으로 VS Code에서 로컬 Git 리포지토리의 코드를 배포하도록 지시합니다. Azure 아이콘을 선택하여 **Azure App Service** 탐색기를 열고, 구독 노드를 펼치고, 마우스 오른쪽 단추로 방금 만든 웹앱 이름을 클릭하고, **배포 원본 구성**을 선택합니다.
 
     ![웹앱에서 배포 원본 명령 구성](media/deploy-azure/configure-deployment-source.png)
 

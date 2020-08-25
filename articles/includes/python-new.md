@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ecda20ec66678a7ac601f6b29e7fd6b77d5b38b7
-ms.sourcegitcommit: 9310403d6921844e85abf038e588b1bea099d3c0
+ms.openlocfilehash: 7a63fd9bdb9a4475e31ec11d951e851b3f46c252
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88602402"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88748877"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
@@ -15,7 +15,7 @@ ms.locfileid: "88602402"
 | Event Hubs | pypi [5.1.0](https://pypi.org/project/azure-eventhub/5.1.0)<br>pypi [5.2.0b1](https://pypi.org/project/azure-eventhub/5.2.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-readme/) | github [5.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub_5.1.0/sdk/eventhub/azure-eventhub/)<br>github [5.2.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub_5.2.0b1/sdk/eventhub/azure-eventhub/) |
 | Event Hubs - Azure Blob Storage 검사점 저장소 | pypi [1.1.0](https://pypi.org/project/azure-eventhub-checkpointstoreblob/1.1.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-checkpointstoreblob-readme/) | github [1.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub-checkpointstoreblob_1.1.0/sdk/eventhub/azure-eventhub-checkpointstoreblob/) |
 | Event Hubs - Azure Blob Storage 검사점 저장소 AIO | pypi [1.1.0](https://pypi.org/project/azure-eventhub-checkpointstoreblob-aio/1.1.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-checkpointstoreblob-aio-readme/) | github [1.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub-checkpointstoreblob-aio_1.1.0/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/) |
-| Form Recognizer | pypi [3.0.0b1](https://pypi.org/project/azure-ai-formrecognizer/3.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/ai-formrecognizer-readme/) | github [3.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-formrecognizer_3.0.0b1/sdk/formrecognizer/azure-ai-formrecognizer/) |
+| Form Recognizer | pypi [3.0.0b1](https://pypi.org/project/azure-ai-formrecognizer/3.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/ai-formrecognizer-readme-pre) | github [3.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-formrecognizer_3.0.0b1/sdk/formrecognizer/azure-ai-formrecognizer/) |
 | ID | pypi [1.4.0](https://pypi.org/project/azure-identity/1.4.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/identity-readme/) | github [1.4.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-identity_1.4.0/sdk/identity/azure-identity/) |
 | Key Vault - 인증서 | pypi [4.2.0](https://pypi.org/project/azure-keyvault-certificates/4.2.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/keyvault-certificates-readme/) | github [4.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-keyvault-certificates_4.2.0/sdk/keyvault/azure-keyvault-certificates/) |
 | Key Vault - 키 | pypi [4.2.0](https://pypi.org/project/azure-keyvault-keys/4.2.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/keyvault-keys-readme/) | github [4.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-keyvault-keys_4.2.0/sdk/keyvault/azure-keyvault-keys/) |

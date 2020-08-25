@@ -7,12 +7,13 @@ ms.service: chef
 author: tomarchermsft
 ms.author: tarcher
 ms.date: 02/22/2020
-ms.openlocfilehash: 17fc56cbf3aaed573cead58eb8d436d99efa391b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 7afddc83fef8e52e074600df75f2a2f6bc7c9ea7
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80893052"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501359"
 ---
 # <a name="quickstart---configure-a-windows-virtual-machine-in-azure-using-chef"></a>빠른 시작 - Chef를 사용하여 Azure에서 Windows 가상 머신 구성
 
@@ -26,7 +27,7 @@ Chef를 사용하면 자동화 및 필요한 상태 구성을 제공할 수 있�
 
 이 문서를 시작하기 전에 [Chef에 대한 기본 개념을 검토](https://www.chef.io/chef)하세요.
 
-다음 다이어그램에서는 대략적인 Chef 아키텍처를 보여 줍니다.
+다음 다이어그램은 대략적인 Chef 아키텍처를 보여줍니다.
 
 ![Chef 아키텍처](media/windows-vm-configure/chef-architecure.png)
 
@@ -52,7 +53,7 @@ Chef는 세 가지 주요 아키텍처 구성 요소인
 ## <a name="configure-azure-service-principal"></a>Azure 서비스 주체 구성
 
 Chef Workstation에서 Azure 리소스를 만드는 데 도움이 되는 서비스 주체를 사용합니다.  필요한 권한을 사용하여 관련 서비스 주체를 만들려면 PowerShell에서 다음 명령을 실행합니다.
- 
+
 ```powershell
 Login-AzureRmAccount
 Get-AzureRmSubscription
@@ -104,7 +105,8 @@ Chef Server를 아직 사용하고 있지 않으면 다음을 수행할 수 있�
 이제 디렉터리가 다음 예제와 같이 표시됩니다.
 
 ```powershell
-    Directory: C:\Users\username\chef
+
+Directory: C:\Users\username\chef
 
 Mode           LastWriteTime    Length Name
 ----           -------------    ------ ----
@@ -180,7 +182,7 @@ Chef Workstation을 기본 위치에 설치합니다.
 
 `chef --version`은 다음과 같은 결과를 반환합니다.
 
-```
+```powershell
 Chef Workstation: 0.4.2
   chef-run: 0.3.0
   chef-client: 15.0.300
@@ -204,7 +206,9 @@ Azure 플러그 인이 포함된 Knife Azure 확장을 설치합니다.
 
 다음 명령을 실행합니다.
 
-    chef gem install knife-azure ––pre
+```bash
+chef gem install knife-azure ––pre
+```
 
 > [!NOTE]
 > `–-pre` 인수는 최신 API 세트에 대한 액세스를 제공하는 최신 RC 버전의 Knife Azure 플러그 인을 받을 수 있도록 합니다.
@@ -217,7 +221,9 @@ Azure 플러그 인이 포함된 Knife Azure 확장을 설치합니다.
 
 모든 것이 올바르게 구성되었는지 확인하려면 다음 명령을 실행합니다.
 
-    knife azurerm server list
+```bash
+knife azurerm server list
+```
 
 모든 것이 올바르게 구성되었으면 사용 가능한 Azure 이미지 목록이 표시됩니다.
 
@@ -229,27 +235,31 @@ Chef에서는 쿡북을 사용하여 관리 클라이언트에서 실행할 명�
 
 `C:\Chef directory` 아래에서 다음 명령을 실행합니다.
 
-    chef generate cookbook webserver
+```bash
+chef generate cookbook webserver
+```
 
 이 명령은 C:\Chef\cookbooks\webserver 디렉터리 아래에 파일 세트를 생성합니다. 다음으로, Chef Client에서 관리 가상 머신에 실행할 명령 세트를 정의합니다.
 
 명령은 default.rb 파일에 저장되어 있습니다. 이 파일에서 IIS를 설치하고, IIS를 시작하며, 템플릿 파일을 `wwwroot` 폴더에 복사하는 명령 세트를 정의합니다.
 
-C:\chef\cookbooks\webserver\recipes\default.rb를 수정하고 다음 줄을 추가합니다.
+C:\chef\cookbooks\webserver\recipes\default.rb 파일을 수정하고 다음 줄을 추가합니다.
 
-    powershell_script 'Install IIS' do
-         action :run
-         code 'add-windowsfeature Web-Server'
-    end
+```powershell
+powershell_script 'Install IIS' do
+        action :run
+        code 'add-windowsfeature Web-Server'
+end
 
-    service 'w3svc' do
-         action [ :enable, :start ]
-    end
+service 'w3svc' do
+        action [ :enable, :start ]
+end
 
-    template 'c:\inetpub\wwwroot\Default.htm' do
-         source 'Default.htm.erb'
-         rights :read, 'Everyone'
-    end
+template 'c:\inetpub\wwwroot\Default.htm' do
+        source 'Default.htm.erb'
+        rights :read, 'Everyone'
+end
+```
 
 작업이 완료되면 파일을 한 번 저장합니다.
 
@@ -259,7 +269,9 @@ C:\chef\cookbooks\webserver\recipes\default.rb를 수정하고 다음 줄을 추
 
 다음 명령을 실행하여 템플릿을 생성합니다.
 
-    chef generate template webserver Default.htm
+```bash
+chef generate template webserver Default.htm
+```
 
 `C:\chef\cookbooks\webserver\templates\default\Default.htm.erb` 파일로 이동합니다. 간단한 *Hello World* HTML 코드를 추가하여 파일을 편집한 다음, 파일을 저장합니다.
 
@@ -267,7 +279,9 @@ C:\chef\cookbooks\webserver\recipes\default.rb를 수정하고 다음 줄을 추
 
 이 단계에서는 로컬 머신에서 만든 쿡북의 복사본을 만들어 Chef Hosted Server에 업로드합니다. 업로드가 완료되면 쿡북이 **Policy(정책)** 탭 아래에 표시됩니다.
 
-    knife cookbook upload webserver
+```bash
+knife cookbook upload webserver
+```
 
 ![쿡북을 Chef Server에 설치한 결과](./media/windows-vm-configure/cookbook-installation-under-policy-tab.png)
 
@@ -278,20 +292,20 @@ Azure 가상 머신을 배포하고, `knife` 명령을 사용하여 `Webserver` 
 `knife` 명령은 IIS 웹 서비스 및 기본 웹 페이지도 설치합니다.
 
 ```bash
-    knife azurerm server create `
-    --azure-resource-group-name rg-chefdeployment `
-    --azure-storage-account store `
-    --azure-vm-name chefvm `
-    --azure-vm-size 'Standard_DS2_v2' `
-    --azure-service-location 'westus' `
-    --azure-image-reference-offer 'WindowsServer' `
-    --azure-image-reference-publisher 'MicrosoftWindowsServer' `
-    --azure-image-reference-sku '2016-Datacenter' `
-    --azure-image-reference-version 'latest' `
-    -x myuser -P myPassword123 `
-    --tcp-endpoints '80,3389' `
-    --chef-daemon-interval 1 `
-    -r "recipe[webserver]"
+knife azurerm server create `
+--azure-resource-group-name rg-chefdeployment `
+--azure-storage-account store `
+--azure-vm-name chefvm `
+--azure-vm-size 'Standard_DS2_v2' `
+--azure-service-location 'westus' `
+--azure-image-reference-offer 'WindowsServer' `
+--azure-image-reference-publisher 'MicrosoftWindowsServer' `
+--azure-image-reference-sku '2016-Datacenter' `
+--azure-image-reference-version 'latest' `
+-x myuser -P myPassword123 `
+--tcp-endpoints '80,3389' `
+--chef-daemon-interval 1 `
+-r "recipe[webserver]"
 ```
 
 `knife` 명령 예제에서는 Windows Server 2016이 미국 서부 지역 내에 설치된 *Standard_DS2_v2* 가상 머신을 만듭니다. 앱 요구 사항에 따라 이러한 값을 수정합니다.

@@ -3,14 +3,15 @@ title: Visual Studio Code에서 변경 후 컨테이너를 Azure App Service에 
 description: 자습서 6단계, 컨테이너 이미지를 다시 빌드하고 다시 배포하는 간단한 단계입니다.
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 27bfc943ee64cbf6708fc2665ad9593b0fb28647
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792983"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501408"
 ---
-# <a name="make-changes-and-redeploy"></a>변경 및 재배포
+# <a name="make-changes-and-redeploy-a-container-using-visual-studio-code"></a>Visual Studio Code를 사용하여 컨테이너 변경 및 재배포
 
 [이전 단계: 앱 이미지 배포](tutorial-vscode-docker-node-05.md)
 

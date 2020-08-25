@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 10dfdc316ba00f8a7019f0724aab231e344c1c6d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82031315"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501268"
 ---
 # <a name="azure-cli-release-notes"></a>Azure CLI 릴리스 정보
 
@@ -150,7 +150,7 @@ ms.locfileid: "82031315"
 * `az acr import`: --source 및 --registry 사용법을 명확히 하기 위해 도움말 및 오류 메시지 수정
 * 'registry_name' 인수에 대한 유효성 검사기 추가
 * `az acr login`: '--expose-token'에서 미리 보기 플래그 제거
-* [주요 변경 사항] 'az acr task create/update' 분기 매개 변수가 제거됨
+* [호환성이 손상되는 변경] 'az acr task create/update' 분기 매개 변수가 제거됨
 * 'az acr task update' 고객은 이제 컨텍스트, git-token 또는 트리거를 개별적으로 업데이트할 수 있게 됨
 * 'az acr agentpool': 새로운 기능
 
@@ -289,7 +289,7 @@ ms.locfileid: "82031315"
 * 관리 ID를 사용하도록 설정하는 aks 클러스터 만들기 지원
 * az aks: 네트워크 플러그 인이 "azure"인지 아니면 "kubenet"인지 확인
 * az aks: AAD 세션 키 지원 추가
-* [주요 변경 사항] omsagent의 GF 및 BF에 대한 msi 변경 지원(컨테이너 모니터링)(#1)
+* [호환성이 손상되는 변경] omsagent의 GF 및 BF에 대한 msi 변경 지원(컨테이너 모니터링)(#1)
 * az aks use-dev-spaces: Azure Dev Spaces 컨트롤러에서 만든 엔드포인트를 사용자 지정할 수 있도록 use-dev-spaces 명령에 엔드포인트 유형 옵션을 추가
 
 ### <a name="appconfig"></a>AppConfig
@@ -325,7 +325,7 @@ ms.locfileid: "82031315"
 * az sig image-version: --data-snapshot-luns 추가
 * az ppg show: 근접 배치 그룹에 있는 모든 리소스의 공동 배치 상태를 가져올 수 있도록 --colocation-status 추가
 * az vmss create/update: 자동 복구 지원
-* [주요 변경 사항] az image template: 이름을 템플릿에서 빌더로 변경
+* [호환성이 손상되는 변경] az image template: 이름을 템플릿에서 빌더로 변경
 * az image builder create: --image-template 추가
 
 ### <a name="cosmos-db"></a>Cosmos DB
@@ -439,7 +439,7 @@ ms.locfileid: "82031315"
 * vm/vmss/availability-set update: ProximityPlacementGroup을 업데이트할 수 있도록 --ppg 추가
 * vmss create: --data-disk-iops 및 --data-disk-mbps 추가
 * az vm host: `vm host` 및 `vm host group`에 대한 preview 태그 제거
-* [주요 변경 사항] #10728 해결: `az vm create`: VNet이 지정되어 있지만 서브넷이 없는 경우 서브넷을 자동으로 만듦
+* [호환성이 손상되는 변경] #10728 해결: `az vm create`: VNet이 지정되어 있지만 서브넷이 없는 경우 서브넷을 자동으로 만듦
 * vm image list의 견고성 향상
 
 ### <a name="eventhub"></a>Eventhub
@@ -460,7 +460,7 @@ ms.locfileid: "82031315"
 
 ### <a name="packaging"></a>패키징
 
-* [주요 변경 사항] Python 2.7 지원 중단
+* [호환성이 손상되는 변경] Python 2.7 지원 중단
 
 ### <a name="profile"></a>프로필
 
@@ -491,7 +491,7 @@ ms.locfileid: "82031315"
 ### <a name="acr"></a>ACR
 
 * [호환성이 손상되는 변경]  `az acr delete` 메시지가 표시됨
-* [주요 변경 사항] 'az acr task delete' 메시지가 표시됨
+* [호환성이 손상되는 변경] 'az acr task delete' 메시지가 표시됨
 * taskrun 관리를 위한 새 명령 그룹 'az acr taskrun show/list/delete' 추가
 
 ### <a name="aks"></a>AKS
@@ -571,7 +571,7 @@ ms.locfileid: "82031315"
 
 ### <a name="rbac"></a>RBAC
 
-* [주요 변경 사항] #11883 해결: `az role assignment create`: 빈 범위에서 오류 메시지 표시
+* [호환성이 손상되는 변경] #11883 해결: `az role assignment create`: 빈 범위에서 오류 메시지 표시
 
 ### <a name="security"></a>보안
 
@@ -617,7 +617,7 @@ ms.locfileid: "82031315"
 
 ### <a name="acr"></a>ACR
 
-* [주요 변경 사항] 'acr build', 'acr task create/update', 'acr run' 및 'acr pack'에서 '--os' 매개 변수 제거. 대신 '--platform'을 사용하세요.
+* [호환성이 손상되는 변경] 'acr build', 'acr task create/update', 'acr run' 및 'acr pack'에서 '--os' 매개 변수 제거. 대신 '--platform'을 사용하세요.
 
 ### <a name="appconfig"></a>AppConfig
 
@@ -658,11 +658,11 @@ ms.locfileid: "82031315"
 
 ### <a name="event-hubs"></a>Event Hubs
 
-* [주요 변경 사항] 'az eventhubs eventhub update' 및 'az eventhubs eventhub create' 명령에서 'ReceiveDisabled' 상태 옵션 제거. 이 옵션은 이벤트 허브 항목에 적합하지 않습니다.
+* [호환성이 손상되는 변경] 'az eventhubs eventhub update' 및 'az eventhubs eventhub create' 명령에서 'ReceiveDisabled' 상태 옵션 제거. 이 옵션은 이벤트 허브 항목에 적합하지 않습니다.
 
 ### <a name="service-bus"></a>Service Bus
 
-* [주요 변경 사항] 'az servicebus topic create', 'az servicebus topic update', 'az servicebus queue create' 및 'az servicebus queue update' 명령에서 'ReceiveDisabled' 상태 옵션 제거. 이 옵션은 Service Bus 항목 및 큐에 적합하지 않습니다.
+* [호환성이 손상되는 변경] 'az servicebus topic create', 'az servicebus topic update', 'az servicebus queue create' 및 'az servicebus queue update' 명령에서 'ReceiveDisabled' 상태 옵션 제거. 이 옵션은 Service Bus 항목 및 큐에 적합하지 않습니다.
 
 ### <a name="rbac"></a>RBAC
 
@@ -684,7 +684,7 @@ ms.locfileid: "82031315"
 
 ### <a name="acs"></a>ACS
 
-* [주요 변경 사항]az openshift create: `--workspace-resource-id`에서 `--workspace-id`로 이름이 변경됨.
+* [호환성이 손상되는 변경]az openshift create: `--workspace-resource-id`에서 `--workspace-id`로 이름이 변경됨.
 
 ### <a name="ams"></a>AMS
 
@@ -713,7 +713,7 @@ ms.locfileid: "82031315"
 
 ### <a name="botservice"></a>BotService
 
-* [주요 변경 사항] 미리 보기 명령 'az bot create'에서 '--version' 플래그 제거. v4 SDK 봇만 지원됩니다.
+* [호환성이 손상되는 변경] 미리 보기 명령 'az bot create'에서 '--version' 플래그 제거. v4 SDK 봇만 지원됩니다.
 * 'az bot create'에 대한 이름 가용성 검사 추가
 * 'az bot update'를 통해 봇의 아이콘 URL 업데이트에 대한 지원 추가
 * 'az bot directline update'를 통해 Direct Line 채널을 업데이트하는 기능에 대한 지원 추가
@@ -746,7 +746,7 @@ ms.locfileid: "82031315"
 
 ### <a name="iot"></a>IOT
 
-* [주요 변경 사항] manual-failover에서 --failover-region 매개 변수 제거. 이제 할당된, 지리적으로 연결된 보조 지역으로 장애 조치(failover)됩니다.
+* [호환성이 손상되는 변경] manual-failover에서 --failover-region 매개 변수 제거. 이제 할당된, 지리적으로 연결된 보조 지역으로 장애 조치(failover)됩니다.
 
 ### <a name="key-vault"></a>Key Vault
 
@@ -839,7 +839,7 @@ ms.locfileid: "82031315"
 * image create: --data-disk-caching이 추가되어 데이터 디스크의 캐싱 설정을 지정할 수 있음
 * Python Compute SDK를 10.0.0으로 업그레이드
 * vm/vmss create: 'Priority' 열거형 속성에 'Spot' 추가
-* [주요 변경 사항] Swagger 및 Powershell cmdlet과 일치하도록 VM 및 VMSS에 대한 '--max-billing' 매개 변수의 이름이 '--max-price'로 변경됨
+* [호환성이 손상되는 변경] Swagger 및 Powershell cmdlet과 일치하도록 VM 및 VMSS에 대한 '--max-billing' 매개 변수의 이름이 '--max-price'로 변경됨
 * vm monitor log show: 연결된 로그 분석 작업 영역을 통한 로그 쿼리에 대한 지원이 추가되었습니다.
 
 ### <a name="iot"></a>IOT
@@ -861,7 +861,7 @@ ms.locfileid: "82031315"
 * application-gateway waf-config: 사용되지 않음
 * application-gateway waf-policy: 관리형 규칙 집합과 제외 규칙을 관리하는 하위 그룹 managed-rules가 추가됨
 * application-gateway waf-policy: waf-policy의 글로벌 구성을 관리하는 하위 그룹 policy-setting이 추가됨
-* [주요 변경 사항] application-gateway waf-policy: 하위 그룹 규칙의 이름이 custom-rule로 변경됨
+* [호환성이 손상되는 변경] application-gateway waf-policy: 하위 그룹 규칙의 이름이 custom-rule로 변경됨
 * application-gateway http-listener: 생성 시 --firewall-policy가 추가됨
 * application-gateway url-path-map 규칙: 생성 시 --firewall-policy가 추가됨
 
@@ -1028,8 +1028,8 @@ ms.locfileid: "82031315"
 
 ### <a name="ams"></a>AMS
 
-* [주요 변경 사항]`job start`의 이름이 `job create`로 변경됨
-* [주요 변경 사항] UTF8 대신 32자 16진수 문자열을 사용하도록 `content-key-policy create`의 `--ask` 매개 변수가 변경됨
+* [호환성이 손상되는 변경]`job start`의 이름이 `job create`로 변경됨
+* [호환성이 손상되는 변경] UTF8 대신 32자 16진수 문자열을 사용하도록 `content-key-policy create`의 `--ask` 매개 변수가 변경됨
 
 ### <a name="appservice"></a>AppService
 
@@ -1065,7 +1065,7 @@ ms.locfileid: "82031315"
 ### <a name="network"></a>네트워크
 
 * 교차 테넌트 가상 연결에 대한 지원이 `network private-dns link vnet [create|update]`에 추가됨
-* [주요 변경 사항]`--resource-group` 및 `--vnet-name` 매개 변수가 필수 매개 변수가 되도록 `network vnet subnet list`가 변경됨
+* [호환성이 손상되는 변경]`--resource-group` 및 `--vnet-name` 매개 변수가 필수 매개 변수가 되도록 `network vnet subnet list`가 변경됨
 
 ### <a name="sql"></a>SQL
 
@@ -1083,7 +1083,7 @@ ms.locfileid: "82031315"
 ### <a name="acr"></a>ACR
 
 * `acr config retention update`에 필수 `--type` 매개 변수가 추가되었습니다.
-* [주요 변경 사항] `--name -n` 매개 변수가 `acr config` 명령 그룹에 대한 `--registry -r `로 변경되었습니다.
+* [호환성이 손상되는 변경] `--name -n` 매개 변수가 `acr config` 명령 그룹에 대한 `--registry -r `로 변경되었습니다.
 
 ### <a name="aks"></a>AKS
 
@@ -1152,14 +1152,14 @@ ms.locfileid: "82031315"
   * 파일 시스템을 탑재하기 위한 `MountConfigurations`가 추가됨(자세한 내용은 https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body 참조)
   * `NetworkConfiguration`에 풀의 공용 IP에 대한 선택적 속성 `publicIPs`가 추가됨(자세한 내용은 https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body 참조)
 * 공유 이미지 갤러리에 대한 지원이 `--image`에 추가됨
-* [주요 변경 사항]`batch pool create`의 기본값 `--start-task-wait-for-success`가 `true`로 변경됨
-* [주요 변경 사항]`AutoUserSpecification`의 `Scope` 기본값이 항상 풀이 되도록 변경됨(Windows 노드에서는 `Task`, Linux 노드에서는 `Pool`이었음)
+* [호환성이 손상되는 변경]`batch pool create`의 기본값 `--start-task-wait-for-success`가 `true`로 변경됨
+* [호환성이 손상되는 변경]`AutoUserSpecification`의 `Scope` 기본값이 항상 풀이 되도록 변경됨(Windows 노드에서는 `Task`, Linux 노드에서는 `Pool`이었음)
   * 이 인수는 `--json-file`을 사용하여 JSON 구성에서만 설정 가능
 
 ### <a name="hdinsight"></a>HDInsight
 
 * GA 릴리스
-* [주요 변경 사항]`az hdinsight resize`의 `--workernode-count/-c` 매개 변수가 필수 항목으로 변경됨
+* [호환성이 손상되는 변경]`az hdinsight resize`의 `--workernode-count/-c` 매개 변수가 필수 항목으로 변경됨
 
 ### <a name="key-vault"></a>Key Vault
 
@@ -1183,7 +1183,7 @@ ms.locfileid: "82031315"
 
 ### <a name="acr"></a>ACR
 
-* [주요 변경 사항]`classic` SKU 지원이 제거되었습니다.
+* [호환성이 손상되는 변경]`classic` SKU 지원이 제거되었습니다.
 
 ### <a name="api-management"></a>API Management
 
@@ -1239,7 +1239,7 @@ ms.locfileid: "82031315"
 
 ### <a name="botservice"></a>BotService
 
-* [주요 변경 사항] v3 SDK 봇 만들기에 대한 지원이 제거됨
+* [호환성이 손상되는 변경] v3 SDK 봇 만들기에 대한 지원이 제거됨
 
 ### <a name="cognitiveservices"></a>CognitiveServices
 
@@ -1254,29 +1254,29 @@ ms.locfileid: "82031315"
 
 이 릴리스에는 호환성이 손상되는 변경이 많이 포함되어 있습니다.
 
-* [주요 변경 사항]`hdinsight create`에 대한 매개 변수의 이름이 변경됨
+* [호환성이 손상되는 변경]`hdinsight create`에 대한 매개 변수의 이름이 변경됨
   * `--storage-default-container`에서 `--storage-container`로 이름이 변경됨
   * `--storage-default-filesystem`에서 `--storage-filesystem`로 이름이 변경됨
-* [주요 변경 사항]`application create`의 `--name` 인수에서 클러스터 이름 대신 애플리케이션 이름을 나타내도록 변경됨
+* [호환성이 손상되는 변경]`application create`의 `--name` 인수에서 클러스터 이름 대신 애플리케이션 이름을 나타내도록 변경됨
 * 이전 `--name` 기능을 대체하기 위해 `--cluster-name` 인수가 `application create`에 추가됨
-* [주요 변경 사항]`application create`에 대한 매개 변수의 이름이 변경됨
+* [호환성이 손상되는 변경]`application create`에 대한 매개 변수의 이름이 변경됨
   * `--application-type`에서 `--type`로 이름이 변경됨
   * `--marketplace-identifier`에서 `--marketplace-id`로 이름이 변경됨
   * `--https-endpoint-access-mode`에서 `--access-mode`로 이름이 변경됨
   * 이름이 `--https-endpoint-destination-port`에서 `--destination-port`로 변경됨
-* [주요 변경 사항]`application create`에 대한 매개 변수가 제거됨
+* [호환성이 손상되는 변경]`application create`에 대한 매개 변수가 제거됨
   * `--https-endpoint-location`
   * `--https-endpoint-public-port`
   * `--ssh-endpoint-destination-port`
   * `--ssh-endpoint-location`
   * `--ssh-endpoint-public-port`
 * [호환성이 손상되는 변경] `hdinsight resize`에 대한 이름이 `--target-instance-count`에서 `--workernode-count`로 변경됨
-* [주요 변경 사항]`hdinsight script-action` 그룹의 모든 명령에서 `--name` 매개 변수를 스크립트 작업 이름으로 사용하도록 변경됨.
+* [호환성이 손상되는 변경]`hdinsight script-action` 그룹의 모든 명령에서 `--name` 매개 변수를 스크립트 작업 이름으로 사용하도록 변경됨.
 * 이전 `--name` 기능을 대체하기 위해 `--cluster-name` 인수가 모든 `hdinsight script-action` 명령에 추가됨
-* [주요 변경 사항] 모든 `hdinsight script-action` 명령에 대한 이름이 `--script-execution-id`에서 `--execution-id`로 변경됨
-* [주요 변경 사항]`hdinsight script-action show`에서 `hdinsight script-action show-execution-details`로 이름이 변경됨
+* [호환성이 손상되는 변경] 모든 `hdinsight script-action` 명령에 대한 이름이 `--script-execution-id`에서 `--execution-id`로 변경됨
+* [호환성이 손상되는 변경]`hdinsight script-action show`에서 `hdinsight script-action show-execution-details`로 이름이 변경됨
 * [호환성이 손상되는 변경] `hdinsight script-action execute --roles`의 매개 변수에서 쉼표로 구분하는 대신 공백으로 구분하도록 변경됨
-* [주요 변경 사항]`hdinsight script-action list`의 `--persisted` 매개 변수가 제거됨
+* [호환성이 손상되는 변경]`hdinsight script-action list`의 `--persisted` 매개 변수가 제거됨
 * `hdinsight create --cluster-configurations` 매개 변수에서 로컬 JSON 파일 또는 JSON 문자열에 대한 경로를 허용하도록 변경됨
 * 명령 `hdinsight script-action list-execution-history` 추가됨
 * `hdinsight monitor enable --workspace`에서 Log Analytics 작업 영역 ID 또는 작업 영역 이름을 허용하도록 변경됨
@@ -1369,7 +1369,7 @@ Version 2.0.69
 
 ### <a name="batch"></a>Batch
 
-* [주요 변경 사항]`batch pool node-agent-skus list`를 `batch pool supported-images list`로 대체
+* [호환성이 손상되는 변경]`batch pool node-agent-skus list`를 `batch pool supported-images list`로 대체
 * `batch pool create network`의 `--json-file` 옵션을 사용할 때 트래픽의 소스 포트를 기반으로 풀에 대한 네트워크 액세스를 차단하는 보안 규칙에 대한 지원이 추가됨
 * `batch task create`의 `--json-file` 옵션을 사용할 때 컨테이너 작업 디렉터리 또는 일괄 처리 작업 디렉터리에서 작업을 실행하도록 지원이 추가됨
 * `batch pool create`의 `--application-package-references` 옵션에서 기본값으로만 작동하는 오류가 수정됨
@@ -1413,7 +1413,7 @@ Version 2.0.68
 ### <a name="appservice"></a>App Service
 
 * 기본값으로 애플리케이션 인사이트를 사용하도록 `functionapp create` 변경
-* [주요 변경 사항] 사용되지 않는 `functionapp devops-build` 제거
+* [호환성이 손상되는 변경] 사용되지 않는 `functionapp devops-build` 제거
   *  대신 새 명령 `az functionapp devops-pipeline` 사용
 * `functionapp deployment config-zip`에 Linux 사용 함수 앱 계획 지원 추가
 
@@ -1425,14 +1425,14 @@ Version 2.0.68
 
 * 업데이트된 ADLS 버전(0.0.45)
 
-### <a name="feedback"></a>사용자 의견
+### <a name="feedback-command"></a>피드백 명령
 
 * 실패한 확장 명령을 보고할 때, `az feedback`은 이제 브라우저에서 인덱스 확장의 프로젝트/리포지토리 URL을 열려고 시도합니다.
 
 ### <a name="hdinsight"></a>HDInsight
 
-* [주요 변경 사항]`oms` 명령 그룹 이름을 `monitor`로 변경
-* [주요 변경 사항] 필수 매개 변수로 `--http-password/-p` 변경 
+* [호환성이 손상되는 변경]`oms` 명령 그룹 이름을 `monitor`로 변경
+* [호환성이 손상되는 변경] 필수 매개 변수로 `--http-password/-p` 변경 
 * `--cluster-admin-account` 및 `cluster-users-group-dns` 매개 변수 완성자에 대한 완성자 추가 
 * `—esp`가 있을 때 `cluster-users-group-dns` 매개 변수가 필수가 되도록 변경
 * 모든 기존 인수 자동-완성자에 대한 시간 제한 추가
@@ -1449,7 +1449,7 @@ Version 2.0.68
 
 ### <a name="rbac"></a>RBAC
 
-* [주요 변경 사항]`create-for-rbac`에 대한 `--password` 인수가 제거됨
+* [호환성이 손상되는 변경]`create-for-rbac`에 대한 `--password` 인수가 제거됨
 * AAD 그래프 서버 복제 대기 시간으로 인한 일시적인 실패를 피하기 위해 `create` 명령에 `--assignee-principal-type` 매개 변수가 추가됨
 * 소유 개체를 나열할 때 `ad signed-in-user`에서의 충돌 수정
 * `ad sp`가 서비스 주체로부터 올바른 애플리케이션을 찾지 못하는 문제가 해결됨
@@ -1493,7 +1493,7 @@ CLI는 앞으로 개별 패키지의 버전 번호를 제거합니다. 명령이
 * 사용되지 않는 ACS 명령이 도움말 보기에서 숨겨짐
 
 ### <a name="ams"></a>AMS
-* [주요 변경 사항] archive-window-length 및 key-frame-interval-duration에 대한 ISO 8601 시간 문자열을 반환하도록 변경됨
+* [호환성이 손상되는 변경] archive-window-length 및 key-frame-interval-duration에 대한 ISO 8601 시간 문자열을 반환하도록 변경됨
 
 ### <a name="appservice"></a>AppService
 * `webapp deleted list` 및 `webapp deleted restore`에 대한 위치 기반 라우팅을 추가
@@ -1522,7 +1522,7 @@ CLI는 앞으로 개별 패키지의 버전 번호를 제거합니다. 명령이
 * 도메인 토픽 CRUD 작업에 `eventgrid domain topic` 명령이 추가됨
 * OData 구문을 사용하여 결과를 필터링하기 위해 `eventgrid [topic|event-subscription] list`에 `--odata-query` 인수가 추가됨
 * `event-subscription create/update`: `--endpoint-type` 매개 변수의 새 값으로 servicebusqueue 추가
-* [주요 변경 사항]`eventgrid event-subscription [create|update]`를 사용하여 `--included-event-types All`에 대한 지원 제거
+* [호환성이 손상되는 변경]`eventgrid event-subscription [create|update]`를 사용하여 `--included-event-types All`에 대한 지원 제거
 
 ### <a name="hdinsight"></a>HDInsight
 * `hdinsight create` 명령에서 `--ssh-public-key` 매개 변수에 대한 지원 추가
@@ -1610,7 +1610,7 @@ CLI는 앞으로 개별 패키지의 버전 번호를 제거합니다. 명령이
 ### <a name="appservice"></a>AppService
 * [사용 되지 않음]`functionapp devops-build` 명령이 사용되지 않음 - 다음 릴리스에서 제거됨
 * `functionapp devops-pipeline`에서 Azure DevOps의 빌드 로그를 자세한 정보 표시 모드로 가져오도록 변경됨
-* [주요 변경 사항]`functionapp devops-pipeline` 명령에서 `--use_local_settings` 플래그가 제거됨 - 작동하지 않음
+* [호환성이 손상되는 변경]`functionapp devops-pipeline` 명령에서 `--use_local_settings` 플래그가 제거됨 - 작동하지 않음
 * `--logs`를 사용하지 않으면 `webapp up`에서 JSON 출력을 반환하도록 변경됨
 * `webapp up`에 대한 로컬 구성에 기본 리소스를 작성할 수 있도록 지원됨
 * `webapp up`에서 `--location` 인수를 사용하지 않고 앱을 다시 배포할 수 있도록 지원됨
@@ -1627,7 +1627,7 @@ CLI는 앞으로 개별 패키지의 버전 번호를 제거합니다. 명령이
 * 모든 키를 나열하도록 지원됨
 
 ### <a name="network"></a>네트워크
-* [주요 변경 사항]: Removed `network interface-endpoints` command group - use `network private-endpoints` 
+* [호환성이 손상되는 변경]: Removed `network interface-endpoints` command group - use `network private-endpoints` 
 * NAT 게이트웨이에 연결하기 위해 `network vnet subnet [create|update]`에 `--nat-gateway` 인수가 추가됨
 * 레코드 이름이 레코드 유형과 일치하지 않는 `dns zone import` 문제가 해결됨
 
@@ -1651,7 +1651,7 @@ CLI는 앞으로 개별 패키지의 버전 번호를 제거합니다. 명령이
 Version 2.0.64
 
 ### <a name="acs"></a>ACS
-* [주요 변경 사항]`openshift` 명령에서 `--fqdn` 플래그가 제거됨
+* [호환성이 손상되는 변경]`openshift` 명령에서 `--fqdn` 플래그가 제거됨
 * Azure Red Hat Openshift GA API 버전을 사용하도록 변경됨
 * `customer-admin-group-id` 플래그가 `openshift create`에 추가되었습니다.
 * [GA] `aks create` 옵션인 `--network-policy`에서 `(PREVIEW)`가 제거됨
@@ -1672,19 +1672,19 @@ Version 2.0.64
 * `--application-package-references` 옵션에 대한 유효성 검사기의 버그가 수정됨
 
 ### <a name="botservice"></a>Botservice
-* [주요 변경 사항]`bot create -v v4 -k webapp`에서 기본적으로 빈 Web App 봇을 만들도록 변경됨(즉, 봇이 App Service에 배포되지 않음)
+* [호환성이 손상되는 변경]`bot create -v v4 -k webapp`에서 기본적으로 빈 Web App 봇을 만들도록 변경됨(즉, 봇이 App Service에 배포되지 않음)
 * `-v v4`에서 이전 동작을 사용하도록 `--echo` 플래그가 `bot create`에 추가됨
-* [주요 변경 사항]`--version`의 기본값이 `v4`로 변경됨
+* [호환성이 손상되는 변경]`--version`의 기본값이 `v4`로 변경됨
   * __참고:__ `bot prepare-publish`는 이전의 기본값을 계속 사용함
-* [주요 변경 사항]`--lang`에서 `Csharp`이 더 이상 기본값으로 설정되지 않도록 변경됨 명령에 `--lang`이 필요하지만 제공되지 않으면 이제 명령에서 오류가 발생함
-* [주요 변경 사항]`bot create`에서 `--appid` 및 `--password` 인수가 필수 항목이 되도록 변경되었으며 이제 `ad app create`를 통해 만들어질 수 있음
+* [호환성이 손상되는 변경]`--lang`에서 `Csharp`이 더 이상 기본값으로 설정되지 않도록 변경됨 명령에 `--lang`이 필요하지만 제공되지 않으면 이제 명령에서 오류가 발생함
+* [호환성이 손상되는 변경]`bot create`에서 `--appid` 및 `--password` 인수가 필수 항목이 되도록 변경되었으며 이제 `ad app create`를 통해 만들어질 수 있음
 * `--appid` 및 `--password` 유효성 검사가 추가됨
-* [주요 변경 사항]`bot create -v v4`에서 Storage 계정 또는 Application Insights를 만들거나 사용하지 않도록 변경됨
-* [주요 변경 사항]`bot create -v v3`에서 Application Insights를 사용할 수 있는 지역을 요구하도록 변경됨
-* [주요 변경 사항]`bot update`에서 이제 봇의 특정 속성에만 영향을 주도록 변경됨
-* [주요 변경 사항]`--lang` 플래그에서 `Node` 대신 `Javascript`를 허용하도록 변경됨
-* [주요 변경 사항]`Node`가 허용되는 `--lang` 값으로 제거됨
-* [주요 변경 사항]`bot create -v v4 -k webapp`에서 `SCM_DO_BUILD_DURING_DEPLOYMENT`가 더 이상 true로 설정되지 않도록 변경됨. Kudu를 통한 모든 배포가 해당 기본 동작에 따라 작동함
+* [호환성이 손상되는 변경]`bot create -v v4`에서 Storage 계정 또는 Application Insights를 만들거나 사용하지 않도록 변경됨
+* [호환성이 손상되는 변경]`bot create -v v3`에서 Application Insights를 사용할 수 있는 지역을 요구하도록 변경됨
+* [호환성이 손상되는 변경]`bot update`에서 이제 봇의 특정 속성에만 영향을 주도록 변경됨
+* [호환성이 손상되는 변경]`--lang` 플래그에서 `Node` 대신 `Javascript`를 허용하도록 변경됨
+* [호환성이 손상되는 변경]`Node`가 허용되는 `--lang` 값으로 제거됨
+* [호환성이 손상되는 변경]`bot create -v v4 -k webapp`에서 `SCM_DO_BUILD_DURING_DEPLOYMENT`가 더 이상 true로 설정되지 않도록 변경됨. Kudu를 통한 모든 배포가 해당 기본 동작에 따라 작동함
 * `.bot` 파일이 없는 봇에 대한 `bot download`에서 해당 봇에 대한 애플리케이션 설정 값을 사용하여 언어별 구성 파일을 만들도록 변경됨
 * `bot prepare-deploy`에 `Typescript` 지원이 추가됨
 * `--code-dir`에 `package.json`이 포함되어 있지 않은 경우 `Javascript` 및 `Typescript` 봇에 대한 경고 메시지가 `bot prepare-deploy`에 추가됨
@@ -1700,7 +1700,7 @@ Version 2.0.64
 * 네트워크 규칙에 대한 `--default-action` 인수가 `namespace [create|update]`에 추가됨
 
 ### <a name="network"></a>네트워크
-* [주요 변경 사항]`vnet [create|update]`에 대한 `--cache` 인수가 `--defer`로 바뀜 
+* [호환성이 손상되는 변경]`vnet [create|update]`에 대한 `--cache` 인수가 `--defer`로 바뀜 
 
 ### <a name="policy-insights"></a>Policy Insights
 * `--expand PolicyEvaluationDetails`에서 리소스에 대한 정책 평가 세부 정보를 쿼리하도록 지원됨
@@ -1793,7 +1793,7 @@ Version 2.0.63
 * `webapp up`에 `--logs` 지원이 추가됨
 * `functionapp devops-build create` 명령 `azure-pipelines.yml` 생성 문제 해결
 * `unctionapp devops-build create` 오류 처리 및 표시기 개선
-* [주요 변경 사항]`devops-build` 명령에 대한 `--local-git` 플래그 제거, Azure DevOps 파이프라인을 만드는 경우 강제 로컬 git 검색 및 처리
+* [호환성이 손상되는 변경]`devops-build` 명령에 대한 `--local-git` 플래그 제거, Azure DevOps 파이프라인을 만드는 경우 강제 로컬 git 검색 및 처리
 * Linux 함수 플랜을 만들기 위한 지원 추가
 * `functionapp update --plan`을 사용하여 함수 앱 아래에 계획을 전환하는 기능이 추가됨
 * Azure Functions 프리미엄 플랜 확장 설정에 대한 지원 추가
@@ -1801,7 +1801,7 @@ Version 2.0.63
 ### <a name="cdn"></a>CDN
 * `Microsoft_Standard` 및 `Standard_ChinaCdn`에 대한 지원이 추가됨
 
-### <a name="feedback"></a>사용자 의견
+### <a name="feedback-command"></a>피드백 명령
 * 최근 실행한 명령에 대한 메타데이터를 표시하도록 `feedback`을 변경
 * 브라우저를 열고 문제 템플릿을 사용하여 문제 생성 프로세스에서 도움이 되는 프롬프트를 사용자에게 표시하도록 `feedback`을 변경
 * '--verbose'를 사용하여 실행할 때 문제 본문을 출력하도록 `feedback`을 변경
@@ -1823,13 +1823,13 @@ Version 2.0.63
 
 ### <a name="role"></a>역할
 * `--years`를 올바르게 처리하도록 `create-for-rbac` 수정
-* [주요 변경 사항] 구독 아래의 모든 할당을 무조건 삭제하는 경우 프롬프트를 표시하도록 `role assignment delete` 변경
+* [호환성이 손상되는 변경] 구독 아래의 모든 할당을 무조건 삭제하는 경우 프롬프트를 표시하도록 `role assignment delete` 변경
 
 ### <a name="sql"></a>SQL
 * 속성 proxyOverride 및 publicDataEndpointEnabled로 `sql mi [create|update]` 업데이트
 
 ### <a name="storage"></a>스토리지
-* [주요 변경 사항]`storage blob delete`의 결과 제거
+* [호환성이 손상되는 변경]`storage blob delete`의 결과 제거
 * SAS를 포함하는 BLOB에 대해 전체 URI를 만드는 `--full-uri`을 `storage blob generate-sas`에 추가
 * 스냅샷에서 파일을 복사하는 `--file-snapshot`을 `storage file copy start`에 추가
 * NoPendingCopyOperation에 대해 예외 대신 오류만 표시하도록 `storage blob copy cancel` 변경
@@ -1857,12 +1857,12 @@ Version 2.0.63
 ### <a name="bot-service"></a>BOT Service
 * `webapp`을 통한 봇 배포를 준비하는 `bot prepare-deploy`가 추가되었습니다.
 * 암호가 제공되지 않으면 암호를 표시하도록 `bot create --kind registration`이 변경되었습니다.
-* [주요 변경 사항]`bot create --kind registration`의 `--endpoint`가 기본적으로 필수 문자열 대신 빈 문자열로 지정되도록 변경되었습니다.
+* [호환성이 손상되는 변경]`bot create --kind registration`의 `--endpoint`가 기본적으로 필수 문자열 대신 빈 문자열로 지정되도록 변경되었습니다.
 * v4 웹앱 봇에 대한 ARM 템플릿의 애플리케이션 설정에 `SCM_DO_BUILD_DURING_DEPLOYMENT`를 추가
 
 ### <a name="cdn"></a>CDN
 * `--no-wait`에 대한 지원이 `cdn endpoint [create|update|start|stop|delete|load|purge]`에 추가됨  
-* [주요 변경 사항]: `cdn endpoint create` 기본 쿼리 문자열 캐싱 동작이 변경되었습니다. 더 이상 "IgnoreQueryString"이 기본값으로 지정되지 않습니다. 이제 서비스에 의해 설정됩니다.
+* [호환성이 손상되는 변경]: `cdn endpoint create` 기본 쿼리 문자열 캐싱 동작이 변경되었습니다. 더 이상 "IgnoreQueryString"이 기본값으로 지정되지 않습니다. 이제 서비스에 의해 설정됩니다.
 
 ### <a name="cosmosdb"></a>Cosmosdb
 * 계정 업데이트 시 `--enable-multiple-write-locations` 지원이 추가되었습니다.
@@ -1989,10 +1989,10 @@ Version 2.0.63
 * `functionapp devops-build` 명령이 추가됨
 
 ### <a name="batch"></a>Batch
-* [주요 변경 사항]`batch pool upgrade os` 명령 제거됨
-* [주요 변경 사항]`Application` 응답에서 `Pacakges` 속성 제거됨
+* [호환성이 손상되는 변경]`batch pool upgrade os` 명령 제거됨
+* [호환성이 손상되는 변경]`Application` 응답에서 `Pacakges` 속성 제거됨
 * 애플리케이션 패키지를 나열하는 `batch application package list` 명령이 추가됨
-* [주요 변경 사항] 모든 `batch application` 명령에서 `--application-id`가 `--application-name`으로 변경됨 
+* [호환성이 손상되는 변경] 모든 `batch application` 명령에서 `--application-id`가 `--application-name`으로 변경됨 
 * 원시 API 응답을 요청하는 명령에 `--json-file` 인수 추가됨
 * 모든 엔드포인트에 `https://`가 누락된 경우 이를 자동으로 포함하도록 유효성 검사 업데이트됨
 
@@ -2002,7 +2002,7 @@ Version 2.0.63
 
 ### <a name="kusto"></a>Kusto
 
-* [주요 변경 사항] 포맷하는 동안 데이터베이스의 `hot_cache_period` 및 `soft_delete_period` 유형이 ISO8601로 변경됨
+* [호환성이 손상되는 변경] 포맷하는 동안 데이터베이스의 `hot_cache_period` 및 `soft_delete_period` 유형이 ISO8601로 변경됨
 
 ### <a name="network"></a>네트워크
 
@@ -2040,8 +2040,8 @@ Version 2.0.63
 * JSON 출력에서 `--ids`를 더 이상 사용할 수 없었던 회귀가 수정되었습니다.
 
 ### <a name="acr"></a>ACR
-* [주요 변경 사항]`acr build-task` 명령 그룹이 제거되었습니다.
-* [주요 변경 사항]`acr repository delete`에서 `--tag` 및 `--manifest` 옵션이 제거되었습니다.
+* [호환성이 손상되는 변경]`acr build-task` 명령 그룹이 제거되었습니다.
+* [호환성이 손상되는 변경]`acr repository delete`에서 `--tag` 및 `--manifest` 옵션이 제거되었습니다.
 
 ### <a name="acs"></a>ACS
 * 대/소문자를 구분하지 않는 이름에 대한 지원이 `aks [enable-addons|disable-addons]`에 추가되었습니다.
@@ -2094,12 +2094,12 @@ Version 2.0.63
 * 서버 링크를 관리하기 위한 명령(create, delete, show, list)이 추가되었습니다.
 * 패치 일정을 관리하기 위한 명령(create, update, delete, show)이 추가되었습니다.
 * 가용성 영역 및 최소 TLS 버전에 대한 지원이 'redis create'에 추가되었습니다.
-* [주요 변경 사항]`redis update-settings` 및 `redis list-all` 명령이 제거되었습니다.
-* [주요 변경 사항]`redis create`: '테넌트 설정' 매개 변수가 key[=value] 형식으로 허용되지 않습니다.
+* [호환성이 손상되는 변경]`redis update-settings` 및 `redis list-all` 명령이 제거되었습니다.
+* [호환성이 손상되는 변경]`redis create`: '테넌트 설정' 매개 변수가 key[=value] 형식으로 허용되지 않습니다.
 * [사용 되지 않음]`redis import-method` 명령이 사용되지 않는다는 경고 메시지 추가
 
 ### <a name="role"></a>역할
-* [주요 변경 사항]`vm` 명령에서 `az identity` 명령으로 전환되었습니다.
+* [호환성이 손상되는 변경]`vm` 명령에서 `az identity` 명령으로 전환되었습니다.
 
 ### <a name="sql-vm"></a>SQL VM
 * [사용 되지 않음] 오타로 인해 `--boostrap-acc-pwd` 인수가 사용되지 않음
@@ -2108,7 +2108,7 @@ Version 2.0.63
 * `vm list-skus`에서 `--all true` 대신 `--all`을 사용할 수 있도록 변경되었습니다.
 * `vmss run-command [invoke | list | show]`가 추가됨
 * 이전에 실행하면 `vmss encryption enable`이 실패했던 버그가 수정되었습니다.
-* [주요 변경 사항]`az identity` 명령이 `role` 명령으로 전환되었습니다.
+* [호환성이 손상되는 변경]`az identity` 명령이 `role` 명령으로 전환되었습니다.
 
 ## <a name="january-31-2019"></a>2019년 1월 31일
 
@@ -2131,8 +2131,8 @@ Version 2.0.63
 * `aks update-credentials -reset-service-principal`을 사용하여 서비스 주체를 업데이트할 수 있도록 지원합니다.
 
 ### <a name="ams"></a>AMS
-* [주요 변경 사항]`ams asset get-streaming-locators`에서 `ams asset list-streaming-locators`로 이름이 변경됨
-* [주요 변경 사항]`ams streaming-locator get-content-keys`에서 `ams streaming-locator list-content-keys`로 이름이 변경됨
+* [호환성이 손상되는 변경]`ams asset get-streaming-locators`에서 `ams asset list-streaming-locators`로 이름이 변경됨
+* [호환성이 손상되는 변경]`ams streaming-locator get-content-keys`에서 `ams streaming-locator list-content-keys`로 이름이 변경됨
 
 ### <a name="appservice"></a>App Service
 * App Insights에서 `functionapp create`를 지원할 수 있습니다.
@@ -2151,8 +2151,8 @@ Version 2.0.63
 * 모든 이벤트 구독 관련 명령에 대한 source-resource-id 매개 변수가 추가되었고, 다른 모든 원본 리소스 관련 매개 변수가 더 이상 사용되지 않는 것으로 표시되었습니다.
 
 ### <a name="hdinsight"></a>HDInsight
-* [주요 변경 사항]`hdinsight [application] create`에서 `--virtual-network` 및 `--subnet-name` 매개 변수가 제거되었습니다.
-* [주요 변경 사항]`hdinsight create --storage-account`에서 Blob 엔드포인트 대신 스토리지 계정의 이름 또는 ID를 허용하도록 변경되었습니다.
+* [호환성이 손상되는 변경]`hdinsight [application] create`에서 `--virtual-network` 및 `--subnet-name` 매개 변수가 제거되었습니다.
+* [호환성이 손상되는 변경]`hdinsight create --storage-account`에서 Blob 엔드포인트 대신 스토리지 계정의 이름 또는 ID를 허용하도록 변경되었습니다.
 * `hdinsight create`에 `--vnet-name` 및 `--subnet-name` 매개 변수 추가
 * Enterprise Security Package 및 디스크 암호화에 대한 지원이 `hdinsight create`에 추가되었습니다. 
 * `hdinsight rotate-disk-encryption-key` 명령이 추가됨
@@ -2224,7 +2224,7 @@ Version 2.0.63
 * 스크립트 작업 관리 명령이 추가되었습니다.
 * OMS(Operation Management Suite) 관리 명령이 추가되었습니다.
 * 지역별 사용량 나열에 대한 지원이 `hdinsight list-usage`에 추가되었습니다.
-* [주요 변경 사항]`hdinsight create`에서 기본 클러스터 유형이 제거되었습니다.
+* [호환성이 손상되는 변경]`hdinsight create`에서 기본 클러스터 유형이 제거되었습니다.
 
 ### <a name="network"></a>네트워크
 * `--custom-headers` 및 `--status-code-ranges` 인수를 `traffic-manager profile [create|update]`에 추가
@@ -2239,7 +2239,7 @@ Version 2.0.63
 * 초기 릴리스
 
 ### <a name="storage"></a>스토리지
-* [주요 변경 사항]`storage [blob|file|container|share] list`의 기본 결과 수가 5,000개가 되도록 변경되었습니다. 모든 결과를 반환하는 원래 동작에는 `--num-results *`를 사용합니다.
+* [호환성이 손상되는 변경]`storage [blob|file|container|share] list`의 기본 결과 수가 5,000개가 되도록 변경되었습니다. 모든 결과를 반환하는 원래 동작에는 `--num-results *`를 사용합니다.
 * `--marker` 매개 변수가 `storage [blob|file|container|share] list`에 추가됨
 * 다음 페이지에 대한 로그 표식이 `storage [blob|file|container|share] list`의 STDERR에 추가되었습니다. 
 * 정적 웹 사이트를 지원하는 `storage blob service-properties update` 명령이 추가되었습니다.
@@ -2264,7 +2264,7 @@ Version 2.0.63
 * 업데이트 명령 API 호출이 수정됨
 
 ### <a name="role"></a>역할
-* [주요 변경 사항] 기본적으로 처음 100개의 개체만 목록으로 표시하도록 `ad [app|sp] list`를 변경함
+* [호환성이 손상되는 변경] 기본적으로 처음 100개의 개체만 목록으로 표시하도록 `ad [app|sp] list`를 변경함
 
 ### <a name="sql"></a>SQL
 * 관리되는 인스턴스에서의 사용자 지정 데이터 정렬에 대한 지원이 추가됨
@@ -2406,7 +2406,7 @@ Version 2.0.51
 * 빌드 명령에서 기본 Dockerfile이 지정되지 않은 경우 기본 Dockerfile을 사용하도록 변경됨
 
 ### <a name="acs"></a>ACS
-* [주요 변경 사항] 기본적으로 'az aks browse'을 기본적으로 사용하기 위해 `enable_cloud_console_aks_browse` 제거됨
+* [호환성이 손상되는 변경] 기본적으로 'az aks browse'을 기본적으로 사용하기 위해 `enable_cloud_console_aks_browse` 제거됨
 
 ### <a name="advisor"></a>Advisor
 * GA 릴리스
@@ -2431,12 +2431,12 @@ Version 2.0.51
 * `ams job` 명령 그룹에 `--correlation-data` 및 `--label` 인수가 추가됨
 * `ams asset` 명령 그룹에 `--storage-account` 및 `--container` 인수가 추가됨
 * `ams asset get-sas-url` 명령에서 만료 시간(현재+23h) 및 사용 권한(읽기)의 기본값이 추가됨 
-* [주요 변경 사항]`ams streaming locator` 명령이 `ams streaming-locator`로 대체됨
-* [주요 변경 사항]`ams streaming locator`의 `--content-keys` 인수가 업데이트됨
-* [주요 변경 사항]`ams streaming locator` 명령에서 `--content-policy-name`에서 `--content-key-policy-name`로 이름이 변경됨
-* [주요 변경 사항]`ams streaming policy` 명령이 `ams streaming-policy`로 대체됨
-* [주요 변경 사항]`ams transform` 명령 그룹에서 `--preset-names` 인수가 `--preset`으로 대체됨 이제 한 번에 1개의 출력/사전 설정만 설정할 수 있습니다(더 추가하려면 `ams transform output add`를 실행해야 함). 또한 사용자 정의 JSON에 경로를 전달하여 사용자 정의 StandardEncoderPreset을 설정할 수 있습니다
-* [주요 변경 사항]`ams job start` 명령에서 `--output-asset-names `에서 `--output-assets`로 이름이 변경됨 이제 'assetName = label' 형식으로 공백으로 구분된 자산 목록을 허용합니다. 레이블이 없는 자산은 'assetName='과 같이 보낼 수 있습니다.
+* [호환성이 손상되는 변경]`ams streaming locator` 명령이 `ams streaming-locator`로 대체됨
+* [호환성이 손상되는 변경]`ams streaming locator`의 `--content-keys` 인수가 업데이트됨
+* [호환성이 손상되는 변경]`ams streaming locator` 명령에서 `--content-policy-name`에서 `--content-key-policy-name`로 이름이 변경됨
+* [호환성이 손상되는 변경]`ams streaming policy` 명령이 `ams streaming-policy`로 대체됨
+* [호환성이 손상되는 변경]`ams transform` 명령 그룹에서 `--preset-names` 인수가 `--preset`으로 대체됨 이제 한 번에 1개의 출력/사전 설정만 설정할 수 있습니다(더 추가하려면 `ams transform output add`를 실행해야 함). 또한 사용자 정의 JSON에 경로를 전달하여 사용자 정의 StandardEncoderPreset을 설정할 수 있습니다
+* [호환성이 손상되는 변경]`ams job start` 명령에서 `--output-asset-names `에서 `--output-assets`로 이름이 변경됨 이제 'assetName = label' 형식으로 공백으로 구분된 자산 목록을 허용합니다. 레이블이 없는 자산은 'assetName='과 같이 보낼 수 있습니다.
 
 ### <a name="appservice"></a>AppService
 * 백업 스케쥴이 아직 설정되지 않은 경우 백업 스케쥴 설정을 방해하는 `az webapp config backup update`의 버그가 수정됨
@@ -2497,7 +2497,7 @@ Version 2.0.51
 * Python2에서 ACR Build 인코딩 문제가 해결되었습니다.
 
 ### <a name="cdn"></a>CDN
-* [주요 변경 사항] "IgnoreQueryString"를 더 이상 기본값으로 설정하지 않도록 `cdn endpoint create`의 기본 쿼리 문자열 캐싱 동작이 변경되었습니다. 이제 서비스에 의해 설정됩니다.
+* [호환성이 손상되는 변경] "IgnoreQueryString"를 더 이상 기본값으로 설정하지 않도록 `cdn endpoint create`의 기본 쿼리 문자열 캐싱 동작이 변경되었습니다. 이제 서비스에 의해 설정됩니다.
 
 ### <a name="container"></a>컨테이너
 * '--ip-address'를 전달하기 위해 `Private`이 올바른 유형으로 추가되었습니다.
@@ -2516,7 +2516,7 @@ Version 2.0.51
 
 ### <a name="iot-central"></a>IoT Central
 * IoT Central 애플리케이션 생성을 위해 템플릿 및 표시 이름 옵션이 추가되었습니다.
-* [주요 변경 사항] F1 SKU에 대한 지원이 제거되었습니다. 대신 S1 SKU를 사용합니다.
+* [호환성이 손상되는 변경] F1 SKU에 대한 지원이 제거되었습니다. 대신 S1 SKU를 사용합니다.
 
 ### <a name="monitor"></a>모니터
 * `monitor activity-log list`에 대한 변경 내용:
@@ -2578,7 +2578,7 @@ Version 2.0.51
 
 ### <a name="event-hub"></a>이벤트 허브
 * `eventhub update` 명령 수정됨
-* [주요 변경 사항] 빈 목록을 표시하는 대신 일반적인 방법으로 resource(s) NotFound(404)에 대한 오류를 처리하도록 `list` 명령을 변경
+* [호환성이 손상되는 변경] 빈 목록을 표시하는 대신 일반적인 방법으로 resource(s) NotFound(404)에 대한 오류를 처리하도록 `list` 명령을 변경
 
 ### <a name="extensions"></a>확장
 * 이미 설치되어 있는 확장을 추가하려고 시도할 때의 문제 해결
@@ -2608,7 +2608,7 @@ Version 2.0.51
 * 홈 페이지 URI가 항상 "https"가 되도록 `ad sp create-for-rbac`가 변경되었습니다.
 
 ### <a name="service-bus"></a>Service Bus
-* [주요 변경 사항] 빈 목록을 표시하는 대신 일반적인 방법으로 resource(s) NotFound(404)에 대한 오류를 처리하도록 `list` 명령을 변경
+* [호환성이 손상되는 변경] 빈 목록을 표시하는 대신 일반적인 방법으로 resource(s) NotFound(404)에 대한 오류를 처리하도록 `list` 명령을 변경
 
 ### <a name="vm"></a>VM
 * `disk grant-access` 내 빈 `accessSas` 수정
@@ -2751,7 +2751,7 @@ Version 2.0.45
 
 * 누락된 리소스 발생 시 코드 3을 사용하여 종료하도록 `backup vault backup-properties show` 변경
 
-### <a name="bot-service"></a>Bot 서비스
+### <a name="bot-service"></a>Bot Service
 
 * 초기 Bot Service CLI 릴리스
 
@@ -2826,7 +2826,7 @@ Version 2.0.44
 
 ### <a name="iot"></a>IoT
 
-* [주요 변경 사항] 사용되지 않는 명령을 제거하여 iot 확장으로 이동
+* [호환성이 손상되는 변경] 사용되지 않는 명령을 제거하여 iot 확장으로 이동
 * `azure-devices.net` 도메인을 가정하지 않도록 요소를 업데이트
 
 ### <a name="iot-central"></a>Iot Central
@@ -2852,7 +2852,7 @@ Version 2.0.44
 
 ### <a name="storage"></a>스토리지
 
-* [주요 변경 사항]`--location` 매개 변수를 요구하도록 `storage account show-usage`를 변경하여 지역에 따라 나열됨
+* [호환성이 손상되는 변경]`--location` 매개 변수를 요구하도록 `storage account show-usage`를 변경하여 지역에 따라 나열됨
 * `--resource-group` 매개 변수가 `storage account` 명령에 대해 선택 사항이 되도록 변경
 * 단일 집계된 메시지에 대한 일괄 처리 명령에서 개별 오류에 대한 '전제 조건 실패’ 경고를 제거
 * `[blob|file] delete-batch` 명령을 변경하여 더 이상 null 배열을 출력하지 않도록 함
@@ -2918,7 +2918,7 @@ Version 2.0.43
 * 구독 별로 가용성 집합을 리스팅하도록 지원 추가
 * `StandardSSD_LRS`에 대한 지원이 추가됨
 * VM 확장 집합 생성 시 애플리케이션 보안 그룹에 대한 지원이 추가됨
-* [주요 변경 사항]`[vm|vmss] create`, `[vm|vmss] identity assign`, 및 `[vm|vmss] identity remove`를 사전 형식으로 사용자 할당 ID를 출력하도록 변경
+* [호환성이 손상되는 변경]`[vm|vmss] create`, `[vm|vmss] identity assign`, 및 `[vm|vmss] identity remove`를 사전 형식으로 사용자 할당 ID를 출력하도록 변경
 
 ## <a name="july-18-2018"></a>2018년 7월 18일
 
@@ -2928,11 +2928,11 @@ Version 2.0.43
 
 * WSL bash 창에서 브라우저 기반 로그인에 대한 지원 추가
 * 모든 일반 업데이트 명령에 `--force-string` 플래그 추가
-* [주요 변경 사항] '표시' 명령이 리소스 누락 시 오류 메시지를 기록하고 종료 코드 3과 함께 실패하도록 변경됨
+* [호환성이 손상되는 변경] '표시' 명령이 리소스 누락 시 오류 메시지를 기록하고 종료 코드 3과 함께 실패하도록 변경됨
 
 ### <a name="acr"></a>ACR
 
-* [주요 변경 사항] '--no-push'를 'acr 빌드' 명령에서 순수 플래그로 업데이트
+* [호환성이 손상되는 변경] '--no-push'를 'acr 빌드' 명령에서 순수 플래그로 업데이트
 * `show` 및 `update` 명령이 `acr repository` 그룹 아래 추가됨
 * 세부 정보를 표시 하기 위해 `--detail` 플래그를 `show-manifests` 및 `show-tags`에 대해 추가
 * `--image` 매개 변수를 이미지로 빌드 세부 사항이나 로그를 얻을 수 있도록 지원하기 위해 추가
@@ -2985,7 +2985,7 @@ Version 2.0.43
 
 ### <a name="vm"></a>VM
 
-* [주요 변경 사항]`vmss create`가 `Standard_DS1_v2`를 기본 인스턴스 크기로 사용하도록 변경
+* [호환성이 손상되는 변경]`vmss create`가 `Standard_DS1_v2`를 기본 인스턴스 크기로 사용하도록 변경
 * `vm extension [set|delete]` 및 `vmss extension [set|delete]`에 대한 `--no-wait` 지원 추가
 * `vm extension wait`가 추가됨
 
@@ -3013,10 +3013,10 @@ Version 2.0.43
 
 ### <a name="acs"></a>ACS
 
-* [주요 변경 사항]Kubernetes 역할 기반 액세스 제어를 기본값으로 활성화합니다.
+* [호환성이 손상되는 변경]Kubernetes 역할 기반 액세스 제어를 기본값으로 활성화합니다.
 * `--disable-rbac` 인수를 추가 그리고 `--enable-rbac`가 기본값이므로 이제 사용되지 않음
 * `aks browse` 명령 옵션이 업데이트됨. `--listen-port` 지원이 추가됨
-* `aks install-connector` 명령에 대한 기본 helm 차트 패키지 업데이트  virtual-kubelet-for-aks-latest.tgz 사용
+* `aks install-connector` 명령에 대한 기본 helm 차트 패키지 업데이트 virtual-kubelet-for-aks-latest.tgz 사용
 * 기존 클러스터 업데이트에 `aks enable-addons`과 `aks disable-addons` 명령 추가
 
 ### <a name="appservice"></a>AppService
@@ -3109,13 +3109,13 @@ Version 2.0.38
 * Docker 컨테이너에서 실행 중인 작업에 대해 `/dev/shm`을 구성하는 지원 추가
 * `batchai cluster node exec` 및 `batchai job node exec` 명령이 추가됨. 이 명령은 노드에서 직접 모든 명령을 실행하도록 허용하고 포트 포워드를 위한 기능을 제공합니다.
 * `--ids`에 대한 지원이 `batchai` 명령에 추가됨
-* [주요 변경 사항] 모든 클러스터 및 파일 서버는 작업 영역에서 만들어야 합니다
-* [주요 변경 사항] 실험 아래에 작업을 만들어야 합니다
-* [주요 변경 사항]`cluster create`, `job create` 명령에서 `--nfs-resource-group`제거. 다른 작업 영역/리소스 그룹에 속한 NFS를 탑재하려면 `--nfs` 옵션을 통해 파일 서버의 ARM ID를 제공
-* [주요 변경 사항]`job create` 명령에서 `--cluster-resource-group`제거. 다른 작업 영역/리소스 그룹에 속한 클러스터 상의 작업을 제출하려면 `--cluster` 옵션을 통해 클러스터의 ARM ID를 제공
-* [주요 변경 사항]`location` 특성을 작업, 클러스터 및 파일 서버에서 제거. 이제 이 위치는 작업 영역의 특성입니다.
-* [주요 변경 사항]`job create`, `cluster create`, `file-server create` 명령에서 `--location`제거
-* [주요 변경 사항] 보다 일관된 인터페이스를 위해 간단한 옵션의 이름을 변경:
+* [호환성이 손상되는 변경] 모든 클러스터 및 파일 서버는 작업 영역에서 만들어야 합니다
+* [호환성이 손상되는 변경] 실험 아래에 작업을 만들어야 합니다
+* [호환성이 손상되는 변경]`cluster create`, `job create` 명령에서 `--nfs-resource-group`제거. 다른 작업 영역/리소스 그룹에 속한 NFS를 탑재하려면 `--nfs` 옵션을 통해 파일 서버의 ARM ID를 제공
+* [호환성이 손상되는 변경]`job create` 명령에서 `--cluster-resource-group`제거. 다른 작업 영역/리소스 그룹에 속한 클러스터 상의 작업을 제출하려면 `--cluster` 옵션을 통해 클러스터의 ARM ID를 제공
+* [호환성이 손상되는 변경]`location` 특성을 작업, 클러스터 및 파일 서버에서 제거. 이제 이 위치는 작업 영역의 특성입니다.
+* [호환성이 손상되는 변경]`job create`, `cluster create`, `file-server create` 명령에서 `--location`제거
+* [호환성이 손상되는 변경] 보다 일관된 인터페이스를 위해 간단한 옵션의 이름을 변경:
   - [`--config`, `-c`]을 [`--config-file`, `-f`]로 이름 바꿈
   - [`--cluster`, `-r`]을 [`--cluster`, `-c`]로 이름 바꿈
   - [`--cluster`, `-n`]을 [`--cluster`, `-c`]로 이름 바꿈
@@ -3123,7 +3123,7 @@ Version 2.0.38
 
 ### <a name="maps"></a>지도
 
-* [주요 변경 사항] 대화형 프롬프트 또는 `--accept-tos` 플래그로 서비스 약관을 수락하도록 `maps account create` 변경
+* [호환성이 손상되는 변경] 대화형 프롬프트 또는 `--accept-tos` 플래그로 서비스 약관을 수락하도록 `maps account create` 변경
 
 ### <a name="network"></a>네트워크
 
@@ -3132,11 +3132,11 @@ Version 2.0.38
 
 ### <a name="reservations"></a>예약
 
-* [주요 변경 사항] 필수 매개 변수 `ReservedResourceType`을 `reservations catalog show`에 추가
+* [호환성이 손상되는 변경] 필수 매개 변수 `ReservedResourceType`을 `reservations catalog show`에 추가
 * `Location` 매개 변수가 `reservations catalog show`에 추가됨
-* [주요 변경 사항]`ReservationProperties`에서 `kind`제거
-* [주요 변경 사항]`Catalog` 내에서 `capabilities`에서 `sku_properties`로 이름이 변경됨
-* [주요 변경 사항]`Catalog`에서 `size`, `tier` 속성 제거
+* [호환성이 손상되는 변경]`ReservationProperties`에서 `kind`제거
+* [호환성이 손상되는 변경]`Catalog` 내에서 `capabilities`에서 `sku_properties`로 이름이 변경됨
+* [호환성이 손상되는 변경]`Catalog`에서 `size`, `tier` 속성 제거
 * `InstanceFlexibility` 매개 변수가 `reservations reservation update`에 추가됨
 
 ### <a name="role"></a>역할
@@ -3149,7 +3149,7 @@ Version 2.0.38
 
 ### <a name="storage"></a>스토리지
 
-* `storage blob download`에 대한 출력 테이블을 가독성을 높이도록 변경 
+* `storage blob download`에 대한 출력 테이블을 가독성을 높이도록 변경
 
 ### <a name="vm"></a>VM
 
@@ -3187,7 +3187,7 @@ Version 2.0.35
 
 ### <a name="interactive"></a>대화형
 
-* 대화형 모드의 종속성에 제한 추가 
+* 대화형 모드의 종속성에 제한 추가
 
 ## <a name="june-5-2018"></a>2018년 6월 5일
 
@@ -3282,7 +3282,7 @@ Version 2.0.35
 ### <a name="interactive"></a>대화형
 
 * 완료 시 파서를 음소거하도록 로깅을 변경함
-* 잘못된 도움말 캐시의 처리가 향상됨 
+* 잘못된 도움말 캐시의 처리가 향상됨
 
 ### <a name="keyvault"></a>KeyVault
 
@@ -3290,24 +3290,24 @@ Version 2.0.35
 
 ### <a name="network"></a>네트워크
 
-* `network watcher show-topology`이 vnet 및/또는 서브넷 이름[#6326](https://github.com/Azure/azure-cli/issues/6326)으로 작동하지 않는 문제 해결 
+* `network watcher show-topology`이 vnet 및/또는 서브넷 이름[#6326](https://github.com/Azure/azure-cli/issues/6326)으로 작동하지 않는 문제 해결
 * `network watcher` 명령 결과 실제로 [#6264](https://github.com/Azure/azure-cli/issues/6264)인 영역에 대해 Network Watcher가 사용 가능하지 않다는 문제 해결
 
 ### <a name="sql"></a>SQL
 
-* [주요 변경 사항]`db` 및 `dw` 명령으로 리턴되는 응답 개체 변경 :
-    * `serviceLevelObjective` 속성을 `currentServiceObjectiveName`로 이름을 바꿈 
+* [호환성이 손상되는 변경]`db` 및 `dw` 명령으로 리턴되는 응답 개체 변경 :
+    * `serviceLevelObjective` 속성을 `currentServiceObjectiveName`로 이름을 바꿈
     * `currentServiceObjectiveId` 및 `requestedServiceObjectiveId` 속성 제거
     * `maxSizeBytes` 속성을 문자열 대신 정수값으로 변경
-* [주요 변경 사항]`db` 및 `dw`를 읽기 전용 속성으로 변경
-    * `requestedServiceObjectiveName`입니다.  업데이트하려면, `--service-objective` 매개 변수를 사용하거나 `sku.name` 속성 설정
-    * `edition`입니다. 업데이트하려면, `--edition` 매개 변수를 사용하거나 `sku.tier` 속성 설정
-    * `elasticPoolName`입니다. 업데이트하려면, `--elastic-pool` 매개 변수를 사용하거나 `elasticPoolId` 속성 설정
-* [주요 변경 사항] 다음 `elastic-pool` 속성을 읽기 전용으로 변경
-    * `edition`입니다. 업데이트하려면 `--edition` 매개 변수를 사용 
-    * `dtu`입니다. 업데이트하려면 `--capacity` 매개 변수를 사용 
-    *  `databaseDtuMin`입니다. 업데이트하려면 `--db-min-capacity` 매개 변수를 사용 
-    *  `databaseDtuMax`입니다. 업데이트하려면 `--db-max-capacity` 매개 변수를 사용 
+* [호환성이 손상되는 변경]`db` 및 `dw`를 읽기 전용 속성으로 변경
+    * `requestedServiceObjectiveName`.  업데이트하려면, `--service-objective` 매개 변수를 사용하거나 `sku.name` 속성 설정
+    * `edition`. 업데이트하려면, `--edition` 매개 변수를 사용하거나 `sku.tier` 속성 설정
+    * `elasticPoolName`. 업데이트하려면, `--elastic-pool` 매개 변수를 사용하거나 `elasticPoolId` 속성 설정
+* [호환성이 손상되는 변경] 다음 `elastic-pool` 속성을 읽기 전용으로 변경
+    * `edition`. 업데이트하려면 `--edition` 매개 변수를 사용
+    * `dtu`. 업데이트하려면 `--capacity` 매개 변수를 사용
+    *  `databaseDtuMin`. 업데이트하려면 `--db-min-capacity` 매개 변수를 사용
+    *  `databaseDtuMax`. 업데이트하려면 `--db-max-capacity` 매개 변수를 사용
 * `db`,`dw`,`elastic-pool` 명령에 `--family`, `--capacity` 매개 변수 추가합니다.
 * `elastic-pool` 명령에 `db`, `dw` 테이블 포맷터를 추가합니다.
 
@@ -3318,9 +3318,9 @@ Version 2.0.35
 
 ### <a name="vm"></a>VM
 
-* [주요 변경 사항]`vm create`에서 `--write-accelerator`제거됨. 동일한 지원을 `vm update` 또는 `vm disk attach`를 통해 액세스할 수 있음
-* `[vm|vmss] extension`에서 일치하는 확장 이미지 수정 
-* 부팅 로그를 캡처하기 위해 `vm create`에 `--boot-diagnostics-storage` 추가 
+* [호환성이 손상되는 변경]`vm create`에서 `--write-accelerator`제거됨. 동일한 지원을 `vm update` 또는 `vm disk attach`를 통해 액세스할 수 있음
+* `[vm|vmss] extension`에서 일치하는 확장 이미지 수정
+* 부팅 로그를 캡처하기 위해 `vm create`에 `--boot-diagnostics-storage` 추가
 * `[vm|vmss] update`에 `--license-type` 추가
 
 ## <a name="may-7-2018"></a>2018년 5월 7일
@@ -3403,7 +3403,7 @@ Version 2.0.35
 
 ### <a name="network"></a>네트워크
 
-* [주요 변경 사항] 다음 항목에서 `--ids` 매개 변수가 제거됨
+* [호환성이 손상되는 변경] 다음 항목에서 `--ids` 매개 변수가 제거됨
   * `express-route auth list`
   * `express-route peering list`
   * `nic ip-config list`
@@ -3415,7 +3415,7 @@ Version 2.0.35
 ### <a name="profile"></a>프로필
 
 * `disk create` 원본 감지가 수정됨
-* [주요 변경 사항]`--msi-port` 및 `--identity-port`가 더 이상 사용되지 않아서 제거됨
+* [호환성이 손상되는 변경]`--msi-port` 및 `--identity-port`가 더 이상 사용되지 않아서 제거됨
 * `account get-access-token` 짧은 요약의 오타가 수정됨
 
 ### <a name="redis"></a>Redis
@@ -3427,7 +3427,7 @@ Version 2.0.35
 
 ### <a name="role"></a>역할
 
-* [주요 변경 사항] 사용되지 않는 `ad sp reset-credentials`가 제거됨
+* [호환성이 손상되는 변경] 사용되지 않는 `ad sp reset-credentials`가 제거됨
 
 ### <a name="storage"></a>스토리지
 
@@ -3441,9 +3441,9 @@ Version 2.0.35
 
 * 관리되지 않는 Blob URI에 대한 잘못된 검색 논리가 수정됨
 * 사용자가 제공한 서비스 사용자가 없는 디스크 암호화 지원이 추가됨
-* [주요 변경 사항] MSI 지원에 VM 'ManagedIdentityExtension' 사용 금지
+* [호환성이 손상되는 변경] MSI 지원에 VM 'ManagedIdentityExtension' 사용 금지
 * `vmss`에 대한 제거 정책이 추가됨
-* [주요 변경 사항] 다음 항목에서 `--ids`가 제거됨
+* [호환성이 손상되는 변경] 다음 항목에서 `--ids`가 제거됨
   * `vm extension list`
   * `vm secret list`
   * `vm unmanaged-disk list`
@@ -3497,8 +3497,8 @@ Version 2.0.35
 * 클러스터 생성을 위해 `--use-auto-storage` 옵션이 추가되었습니다. 이 옵션을 사용하면 보다 쉽게 스토리지 계정을 관리하고 Azure File Share 및 Azure Blob Containers를 클러스터에 탑재할 수 있습니다.
 * `--generate-ssh-keys` 옵션을 `cluster create` 및 `file-server create`에 추가
 * 명령줄을 통해 노드 설정 작업을 제공하는 기능 추가
-* [주요 변경 사항]`job stream-file` 및 `job list-files` 명령을 `job file`로 이동함
-* [주요 변경 사항]`cluster create` 명령과 호환되도록 `file-server create` 명령에서 `--admin-user-name`을 `--user-name`로 이름을 변경함
+* [호환성이 손상되는 변경]`job stream-file` 및 `job list-files` 명령을 `job file`로 이동함
+* [호환성이 손상되는 변경]`cluster create` 명령과 호환되도록 `file-server create` 명령에서 `--admin-user-name`을 `--user-name`로 이름을 변경함
 
 ### <a name="billing"></a>결제
 
@@ -3507,11 +3507,11 @@ Version 2.0.35
 ### <a name="consumption"></a>Consumption
 
 * `marketplace` 명령이 추가됨
-* [주요 변경 사항]`reservations summaries`에서 `reservation summary`로 이름이 변경됨
-* [주요 변경 사항]`reservations details`에서 `reservation detail`로 이름이 변경됨
-* [주요 변경 사항]`reservation` 명령에 대한 `--reservation-order-id`과 `--reservation-id` 짧은 옵션이 제거됨
-* [주요 변경 사항]`reservation summary` 명령에 대한 `--grain` 짧은 옵션이 제거됨
-* [주요 변경 사항]`pricesheet` 명령에 대한 `--include-meter-details` 짧은 옵션이 제거됨
+* [호환성이 손상되는 변경]`reservations summaries`에서 `reservation summary`로 이름이 변경됨
+* [호환성이 손상되는 변경]`reservations details`에서 `reservation detail`로 이름이 변경됨
+* [호환성이 손상되는 변경]`reservation` 명령에 대한 `--reservation-order-id`과 `--reservation-id` 짧은 옵션이 제거됨
+* [호환성이 손상되는 변경]`reservation summary` 명령에 대한 `--grain` 짧은 옵션이 제거됨
+* [호환성이 손상되는 변경]`pricesheet` 명령에 대한 `--include-meter-details` 짧은 옵션이 제거됨
 
 ### <a name="container"></a>컨테이너
 
@@ -3541,7 +3541,7 @@ Version 2.0.35
 ### <a name="profile"></a>프로필
 
 * `account list`에 있는 Azure Classic 계정에 대한 지원이 추가됨
-* [주요 변경 사항]`--msi` & `--msi-port` 인수가 제거됨
+* [호환성이 손상되는 변경]`--msi` & `--msi-port` 인수가 제거됨
 
 ### <a name="rdbms"></a>RDBMS
 
@@ -3623,7 +3623,7 @@ Version 2.0.35
 
 * 확장이 미리 보기에 있는 경우 `extension add`에 대한 메시지가 추가됨
 * `--show-details`로 전체 확장 데이터를 표시하도록 `extension list-available`이 변경됨
-* [주요 변경 사항] 기본적으로 단순화된 확장 데이터를 표시하도록 `extension list-available`로 변경됨
+* [호환성이 손상되는 변경] 기본적으로 단순화된 확장 데이터를 표시하도록 `extension list-available`로 변경됨
 
 ### <a name="interactive"></a>대화형
 
@@ -3663,7 +3663,7 @@ Version 2.0.35
 * 필수 액세스 구성 및 네이티브 클라이언트에 대한 지원이 `az ad app create`에 추가됨
 * 개체 확인 시 1000개 미만의 ID를 반환하도록 `rbac` 명령이 변경됨
 * 자격 증명 관리 명령 `ad sp credential [reset|list|delete]` 추가됨
-* [주요 변경 사항]`az role assignment [list|show]` 출력에서 '속성' 제거됨
+* [호환성이 손상되는 변경]`az role assignment [list|show]` 출력에서 '속성' 제거됨
 * `dataActions` 및 `notDataActions` 권한에 대한 지원이 `role definition`에 추가됨
 
 ### <a name="storage"></a>스토리지
@@ -3676,7 +3676,7 @@ Version 2.0.35
 * 100개 이상의 인스턴스가 있는 세트의 향후 호환성이 손상되는 변경에 대한 경고가 `vmss create`에 추가됨
 * `vm [snapshot|image]`에 영역 복원 지원 추가됨
 * 향상된 암호화 상태를 보고하도록 디스크 인스턴스 보기 변경됨
-* [주요 변경 사항] 더 이상 출력을 반환하지 않도록 `vm extension delete` 변경됨
+* [호환성이 손상되는 변경] 더 이상 출력을 반환하지 않도록 `vm extension delete` 변경됨
 
 ## <a name="march-13-2018"></a>2018년 3월 13일
 
@@ -3695,9 +3695,9 @@ Version 2.0.35
 
 ### <a name="advisor"></a>Advisor
 
-* [주요 변경 사항]`advisor configuration get`에서 `advisor configuration list`로 이름이 변경됨
-* [주요 변경 사항]`advisor configuration set`에서 `advisor configuration update`로 이름이 변경됨
-* [주요 변경 사항]`advisor recommendation generate` 제거됨
+* [호환성이 손상되는 변경]`advisor configuration get`에서 `advisor configuration list`로 이름이 변경됨
+* [호환성이 손상되는 변경]`advisor configuration set`에서 `advisor configuration update`로 이름이 변경됨
+* [호환성이 손상되는 변경]`advisor recommendation generate` 제거됨
 * `--refresh` 매개 변수가 `advisor recommendation list`에 추가됨
 * `advisor recommendation show` 명령이 추가됨
 
@@ -3730,7 +3730,7 @@ Version 2.0.35
 
 ### <a name="network"></a>네트워크
 
-* [주요 변경 사항]`route-filter rule create`에서 `--tags` 매개 변수 제거됨
+* [호환성이 손상되는 변경]`route-filter rule create`에서 `--tags` 매개 변수 제거됨
 * 다음 명령의 일부 잘못된 기본값 제거:
   * `network express-route update`
   * `network nsg rule update`
@@ -3835,7 +3835,7 @@ Version 2.0.35
 
 ### <a name="acs"></a>ACS
 
-* [주요 변경 사항] 정확성을 위해 `aks get-versions`에서 `aks get-upgrades`로 이름이 변경됨
+* [호환성이 손상되는 변경] 정확성을 위해 `aks get-versions`에서 `aks get-upgrades`로 이름이 변경됨
 * `aks create`에 사용 가능한 Kubernetes 버전 표시를 위한 `aks get-versions` 변경
 * 서버가 Kubernetes 버전을 선택할 수 있도록 `aks create` 기본값 변경
 * AKS로 생성되는 서비스 주체를 나타내는 도움말 메시지 업데이트
@@ -3867,7 +3867,7 @@ Version 2.0.35
 * `az extension [add|update]` 명령에 대한 `--pip-proxy` 매개 변수 지원 추가
 * `az extension [add|update]` 명령에 대한 `--pip-extra-index-urls` 인수 지원 추가
 
-### <a name="feedback"></a>사용자 의견
+### <a name="feedback-command"></a>피드백 명령
 
 * 원격 분석 데이터에 대한 확장 정보 추가
 
@@ -4038,9 +4038,9 @@ Version 2.0.35
 
 ### <a name="event-grid"></a>Event Grid
 
-* [주요 변경 사항]`az eventgrid topic event-subscription` 명령이 `eventgrid event-subscription`으로 이동됨
-* [주요 변경 사항]`az eventgrid resource event-subscription` 명령이 `eventgrid event-subscription`으로 이동됨
-* [주요 변경 사항]`eventgrid event-subscription show-endpoint-url` 명령 제거됨 대신 `eventgrid event-subscription show --include-full-endpoint-url`을 사용하세요.
+* [호환성이 손상되는 변경]`az eventgrid topic event-subscription` 명령이 `eventgrid event-subscription`으로 이동됨
+* [호환성이 손상되는 변경]`az eventgrid resource event-subscription` 명령이 `eventgrid event-subscription`으로 이동됨
+* [호환성이 손상되는 변경]`eventgrid event-subscription show-endpoint-url` 명령 제거됨 대신 `eventgrid event-subscription show --include-full-endpoint-url`을 사용하세요.
 * 명령 `eventgrid topic update` 추가됨
 * 명령 `eventgrid event-subscription update` 추가됨
 * `eventgrid topic` 명령에 대한 `--ids` 매개 변수 추가됨
@@ -4084,8 +4084,8 @@ Version 2.0.35
 ### <a name="vm"></a>VM
 
 * [미리 보기] `vmss`에 대한 영역 간 지원
-* [주요 변경 사항] 단일 영역 `vmss` 기본값이 "표준" 부하 분산 장치로 변경됨
-* [주요 변경 사항] EMSI에 대해 `externalIdentities`을 `userAssignedIdentities`로 변경됨
+* [호환성이 손상되는 변경] 단일 영역 `vmss` 기본값이 "표준" 부하 분산 장치로 변경됨
+* [호환성이 손상되는 변경] EMSI에 대해 `externalIdentities`을 `userAssignedIdentities`로 변경됨
 * [미리 보기] OS 디스크 교체에 대한 지원 추가됨
 * 다른 구독에서 VM 이미지를 사용하기 위한 지원 추가됨
 * `--plan-name`, `--plan-product`, `--plan-promotion-code`, `--plan-publisher` 인수를 `[vm|vmss] create`에 추가
@@ -4388,7 +4388,7 @@ Version 2.0.35
 * 기본 제공 정책 정의를 표시하기 위한 지원 추가
 * 정책 정의를 만들기 위한 지원 모드 매개 변수 추가
 * UI 정의 및 템플릿에 대한 지원을 `managedapp definition create`에 추가
-* [주요 변경 사항]`managedapp` 리소스 종류가 `appliances`에서 `applications`로 그리고 `applianceDefinitions`에서 `applicationDefinitions`로 변경됨
+* [호환성이 손상되는 변경]`managedapp` 리소스 종류가 `appliances`에서 `applications`로 그리고 `applianceDefinitions`에서 `applicationDefinitions`로 변경됨
 
 ### <a name="network"></a>네트워크
 
@@ -4529,7 +4529,7 @@ Version 2.0.35
 
 ### <a name="appservice"></a>App Service
 
-* [주요 변경 사항]`az webapp config appsettings [delete|set]` 출력의 불일치가 수정됨
+* [호환성이 손상되는 변경]`az webapp config appsettings [delete|set]` 출력의 불일치가 수정됨
 * `az webapp config container set --docker-custom-image-name`에 대해 새로운 `-i` 별칭이 추가됨
 * `az webapp log show`가 공개됨
 * `az webapp delete`에서 앱 서비스 계획, 통계 또는 DNS 등록을 유지하는 새 인수가 공개됨
@@ -4541,8 +4541,8 @@ Version 2.0.35
 
 ### <a name="network"></a>네트워크
 
-* [주요 변경 사항]`vnet list-private-access-services`에서 `vnet list-endpoint-services`로 이름이 변경됨
-* [주요 변경 사항]`vnet subnet [create|update]`에 대한 옵션 이름이 `--private-access-services`에서 `--service-endpoints`로 변경됨
+* [호환성이 손상되는 변경]`vnet list-private-access-services`에서 `vnet list-endpoint-services`로 이름이 변경됨
+* [호환성이 손상되는 변경]`vnet subnet [create|update]`에 대한 옵션 이름이 `--private-access-services`에서 `--service-endpoints`로 변경됨
 * 여러 IP 및 포트 범위에 대한 지원이 `nsg rule [create|update]`에 추가됨
 * SKU에 대한 지원이 `lb create`에 추가됨
 * SKU에 대한 지원이 `public-ip create`에 추가됨
@@ -4564,7 +4564,7 @@ Version 2.0.35
 * 서비스 터널링을 지원하는 `--bypass` 및 `--default-action` 인수가 `storage account [create|update]`에 추가됨
 * VNET 규칙 및 IP 기반 규칙을 추가하는 명령이 `storage account network-rule`에 추가됨
 * 고객 관리 키에 의한 서비스 암호화가 사용됨
-* [주요 변경 사항]`az storage account create and az storage account update` 명령에 대한 옵션 이름이 `--encryption`에서 `--encryption-services`로 변경됨
+* [호환성이 손상되는 변경]`az storage account create and az storage account update` 명령에 대한 옵션 이름이 `--encryption`에서 `--encryption-services`로 변경됨
 * #4220: `az storage account update encryption` - 구문 불일치가 수정됨
 
 ### <a name="vm"></a>VM

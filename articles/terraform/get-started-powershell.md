@@ -1,17 +1,18 @@
 ---
-title: 빠른 시작 - Windows 및 PowerShell을 사용하여 Terraform 시작
+title: 빠른 시작 - Azure PowerShell을 사용하여 Terraform 구성
 description: 이 빠른 시작에서는 Terraform을 설치하고 구성하여 Azure 리소스를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform install configure windows init plan apply execution login rbac service principal automated script powershell
 ms.topic: quickstart
-ms.date: 08/08/2020
-ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
-ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
+ms.date: 08/18/2020
+ms.custom: devx-track-terraform
+ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2020
-ms.locfileid: "88026146"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614525"
 ---
-# <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>빠른 시작: Windows 및 PowerShell을 사용하여 Terraform 시작
+# <a name="quickstart-configure-terraform-using-azure-powershell"></a>빠른 시작: Azure PowerShell을 사용하여 Terraform 구성
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
@@ -115,14 +116,14 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
     1. [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential)을 호출하고, 요청 시 서비스 주체 이름과 암호를 입력합니다.
 
         ```powershell
-        $psCredential = Get-Credential
+        $spCredential = Get-Credential
         ```
 
     1. 메모리에서 `PsCredential` 개체를 생성합니다. 자리 표시자를 서비스 주체에 적절한 값으로 바꿉니다. 이 패턴은 스크립트에서 로그인하는 방법입니다.
 
         ```powershell
-        $spName = "<service_principle_name>"
-        $spPassword = ConvertTo-SecureString "<service_principle_password>" -AsPlainText -Force
+        $spName = "<service_principal_name>"
+        $spPassword = ConvertTo-SecureString "<service_principal_password>" -AsPlainText -Force
         $spCredential = New-Object System.Management.Automation.PSCredential($spName , $spPassword)
         ```
 
@@ -137,9 +138,9 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
 Terraform에서 의도한 Azure 구독을 사용하도록 환경 변수를 설정합니다. 환경 변수는 Windows 시스템 수준 또는 특정 PowerShell 세션 내에서 설정할 수 있습니다. 특정 세션에 대한 환경 변수를 설정하려면 다음 코드를 사용합니다. 자리 표시자를 사용자 환경에 적절한 값으로 바꿉니다.
 
 ```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+$env:ARM_CLIENT_ID="<service_principal_app_id>"
+$env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+$env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
 ## <a name="create-a-terraform-configuration-file"></a>Terraform 구성 파일 만들기

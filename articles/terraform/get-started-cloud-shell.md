@@ -1,17 +1,18 @@
 ---
-title: 빠른 시작 - Azure Cloud Shell을 사용하여 Terraform 시작
+title: 빠른 시작 - Azure Cloud Shell을 사용하여 Terraform 구성
 description: 이 빠른 시작에서는 Terraform을 설치하고 구성하여 Azure 리소스를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform 설치 구성 cloud shell init 계획 적용 실행 포털 로그인 rbac 서비스 주체 자동화된 스크립트
 ms.topic: quickstart
 ms.date: 08/08/2020
-ms.openlocfilehash: 736c805b8dd8c95d1950537b754059cca9fc5712
-ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
+ms.custom: devx-track-terraform
+ms.openlocfilehash: d8cec2954357269b5605a7b35c96030b8e8b5fa0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2020
-ms.locfileid: "88026140"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241175"
 ---
-# <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Terraform 시작
+# <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Terraform 구성
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 

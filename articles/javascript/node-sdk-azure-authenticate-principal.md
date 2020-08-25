@@ -3,12 +3,13 @@ title: Node.js를 사용하여 Azure 서비스 사용자 만들기
 description: Azure에서 Node.js 및 JavaScript를 통해 서비스 사용자 인증을 사용하는 방법 알아보기
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 1a85d185d6272a72b0f8029822b01174f9a043ce
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792223"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218884"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>Node.js를 사용하여 Azure 서비스 사용자 만들기 
 
@@ -46,7 +47,7 @@ ms.locfileid: "85792223"
 
 4. `az login`을 호출하면 URL과 코드가 표시됩니다. 지정된 URL로 이동하고, 코드를 입력하고, Azure ID로 로그인합니다(이미 로그인한 경우 자동으로 발생할 수 있음). 그러면 CLI를 통해 계정에 액세스할 수 있습니다.
 
-5. Azure 구독 및 테넌트 ID를 얻습니다.
+5. 구독 및 테넌트 ID 얻기:
 
     ```shell
     $ az account list

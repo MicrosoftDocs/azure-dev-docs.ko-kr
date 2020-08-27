@@ -5,16 +5,16 @@ keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 769067c03fce08e462364314d2e4712ab6ffe155
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 707af403bf789ccd85e52f7bb5880389f61e8f15
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240835"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725167"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 
-[Azure Spring Cloud](/spring-cloud/spring-cloud-overview)는 기본 제공 서비스 검색 및 구성 관리를 사용하는 완전 관리형 마이크로서비스 개발입니다. 이 서비스를 사용하면 Spring Boot 기반 마이크로서비스 애플리케이션을 Azure에 쉽게 배포할 수 있습니다. 이 자습서에서는 Jenkins에서 Azure CLI를 사용하여 Azure Spring Cloud에 대한 CI/CD(지속적인 통합 및 업데이트)를 자동화하는 방법을 보여 줍니다.
+[Azure Spring Cloud](/azure/spring-cloud/spring-cloud-overview)는 기본 제공 서비스 검색 및 구성 관리를 사용하는 완전 관리형 마이크로서비스 개발입니다. 이 서비스를 사용하면 Spring Boot 기반 마이크로서비스 애플리케이션을 Azure에 쉽게 배포할 수 있습니다. 이 자습서에서는 Jenkins에서 Azure CLI를 사용하여 Azure Spring Cloud에 대한 CI/CD(지속적인 통합 및 업데이트)를 자동화하는 방법을 보여 줍니다.
 
 이 자습서에서는 다음 작업을 수행합니다.
 
@@ -24,7 +24,7 @@ ms.locfileid: "88240835"
 > * Jenkins 파이프라인의 Azure CLI를 사용하여 마이크로서비스 애플리케이션 빌드 및 배포 
 
 >[!Note]
-> Azure Spring Cloud는 현재 퍼블릭 미리 보기로 제공됩니다. 퍼블릭 미리 보기 제품을 통해 고객은 공식 릴리스 전에 새로운 기능을 시험해 볼 수 있습니다.  퍼블릭 미리 보기 기능 및 서비스는 프로덕션 용도로 사용되지 않습니다.  미리 보기 동안 제공되는 지원에 대한 자세한 내용은 [FAQ](https://azure.microsoft.com/support/faq/)를 검토하거나 [지원 요청](/azure-supportability/how-to-create-azure-support-request)을 참조하여 자세히 알아보세요.
+> Azure Spring Cloud는 현재 퍼블릭 미리 보기로 제공됩니다. 퍼블릭 미리 보기 제품을 통해 고객은 공식 릴리스 전에 새로운 기능을 시험해 볼 수 있습니다.  퍼블릭 미리 보기 기능 및 서비스는 프로덕션 용도로 사용되지 않습니다.  미리 보기 동안 제공되는 지원에 대한 자세한 내용은 [FAQ](https://azure.microsoft.com/support/faq/)를 검토하거나 [지원 요청](/azure/azure-portal/supportability/how-to-create-azure-support-request)을 참조하여 자세히 알아보세요.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -36,7 +36,7 @@ ms.locfileid: "88240835"
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>서비스 인스턴스 프로비저닝 및 Java Spring 애플리케이션 시작
 
-[Piggy Metrics](https://github.com/Azure-Samples/piggymetrics)를 Microsoft 서비스 애플리케이션 샘플로 사용하고, [빠른 시작: Azure CLI를 사용하여 Java Spring 애플리케이션 시작](/spring-cloud/spring-cloud-quickstart-launch-app-cli.md)의 동일한 단계에 따라 서비스 인스턴스를 프로비저닝하고 애플리케이션을 설정합니다. 동일한 프로세스를 이미 수행한 경우 다음 섹션으로 건너뛸 수 있습니다. 그렇지 않으면 Azure CLI 명령이 다음에 포함됩니다. 추가 배경 정보를 얻으려면 [빠른 시작: Azure CLI를 사용하여 Java Spring 애플리케이션 시작](/spring-cloud/spring-cloud-quickstart-launch-app-cli.md)을 참조하세요.
+[Piggy Metrics](https://github.com/Azure-Samples/piggymetrics)를 Microsoft 서비스 애플리케이션 샘플로 사용하고, [빠른 시작: Azure CLI를 사용하여 Java Spring 애플리케이션 시작](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)의 동일한 단계에 따라 서비스 인스턴스를 프로비저닝하고 애플리케이션을 설정합니다. 동일한 프로세스를 이미 수행한 경우 다음 섹션으로 건너뛸 수 있습니다. 그렇지 않으면 Azure CLI 명령이 다음에 포함됩니다. 추가 배경 정보를 얻으려면 [빠른 시작: Azure CLI를 사용하여 Java Spring 애플리케이션 시작](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)을 참조하세요.
 
 로컬 머신은 Jenkins 빌드 서버와 동일한 필수 구성 요소를 충족해야 합니다. 마이크로서비스 애플리케이션을 빌드하고 배포하려면 다음이 설치되어 있어야 합니다.
     * [Git](https://git-scm.com/)

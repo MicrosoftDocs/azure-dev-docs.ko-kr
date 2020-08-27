@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 307a80fa11d397a77804f8fe126e58232e9f0cf5
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f6f90deebd214d0381f3a66c6808dbc4f848aa13
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378607"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725147"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포
 
@@ -268,7 +268,7 @@ Azure와 함께 사용자 지정 Docker 이미지를 사용하는 방법에 대�
 [Java 개발자를 위한 Azure]: /azure/developer/java/
 [Azure Portal]: https://portal.azure.com/
 [Azure Portal을 사용하여 프라이빗 Docker 컨테이너 레지스트리 만들기]: /azure/container-registry/container-registry-get-started-portal
-[Azure Web App on Linux에 대한 사용자 지정 Docker 이미지 사용]: /azure/app-service-web/app-service-linux-using-custom-docker-image
+[Azure Web App on Linux에 대한 사용자 지정 Docker 이미지 사용]: /azure/app-service/tutorial-custom-container
 [Docker]: https://www.docker.com/
 [체험판 Azure 계정]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/

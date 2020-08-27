@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6b7f1693eb02b51107e595365bc800540f98f20e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: dea9ebe0976b45332f166034f3ff5c92ca4cfe99
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241025"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725207"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>자습서: Jenkins를 사용하여 GitHub에서 Azure App Service로 배포
 
@@ -117,7 +117,7 @@ Jenkins가 GitHub를 모니터링하고, GitHub 포크의 웹앱으로 새 커�
 
 ## <a name="create-service-principal"></a>서비스 주체 만들기
 
-이후 섹션에서는 GitHub에서 앱을 빌드하고 Azure App Service에 앱을 배포하는 Jenkins 파이프라인 작업을 만듭니다. 자격 증명을 입력하지 않고 Jenkins가 Azure에 액세스하도록 하려면 [서비스 주체](/active-directory/develop/app-objects-and-service-principals)가 필요합니다. 이 문서에서 설명하는 서비스 주체를 이미 사용할 수 있는 경우 이 섹션을 건너뛸 수 있습니다.
+이후 섹션에서는 GitHub에서 앱을 빌드하고 Azure App Service에 앱을 배포하는 Jenkins 파이프라인 작업을 만듭니다. 자격 증명을 입력하지 않고 Jenkins가 Azure에 액세스하도록 하려면 [서비스 주체](/azure/active-directory/develop/app-objects-and-service-principals)가 필요합니다. 이 문서에서 설명하는 서비스 주체를 이미 사용할 수 있는 경우 이 섹션을 건너뛸 수 있습니다.
 
 서비스 주체를 만들려면 Azure CLI [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) 명령을 실행합니다.
 

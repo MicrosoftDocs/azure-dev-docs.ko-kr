@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: f5edea5267bd79db7de890b6030db3e5d02f0ea2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379767"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725237"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot 애플리케이션을 Azure App Service로 마이그레이션
 
@@ -162,7 +162,7 @@ Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-ser
 
 ### <a name="recommendations"></a>권장 사항
 
-* */home* 디렉터리를 파일 스토리지에 사용하도록 선택한 경우 [이를 Azure Storage로 바꾸는 것](/azure/app-service/containers/how-to-serve-content-from-azure-storage)이 좋습니다.
+* */home* 디렉터리를 파일 스토리지에 사용하도록 선택한 경우 [이를 Azure Storage로 바꾸는 것](/azure/app-service/configure-connect-to-azure-storage)이 좋습니다.
 
 * 연결 문자열, SSL 키 및 기타 비밀 정보가 포함된 */home* 디렉터리에 구성이 있는 경우 가능하다면 [Azure Key Vault](/azure/app-service/app-service-key-vault-references) 및/또는 [애플리케이션 설정을 통한 매개 변수 주입](/azure/app-service/configure-common#configure-app-settings)을 사용하는 방안을 고려해 보세요.
 

@@ -5,12 +5,12 @@ keywords: ansible, azure, 개발, 솔루션 템플릿, 가상 머신, azure 리�
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e984d95c86541f84d56ede4d47d2f5acabee7a58
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cae15f8a69151b7692edde3c8fb36a9818a0e305
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240075"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725187"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>빠른 시작: CentOS에 Azure용 Ansible 솔루션 템플릿 배포
 
@@ -26,7 +26,7 @@ Azure용 Ansible 솔루션 템플릿은 Azure와 함께 작동하도록 구성�
 
 ## <a name="deploy-the-ansible-solution-template"></a>Ansible 솔루션 템플릿 배포
 
-1. [Azure Marketplace에서 Ansible 솔루션 템플릿 배포](https://azuremarketplace.microsoft.com/marketplace/apps/azure-oss.ansible?tab=Overview)로 이동합니다.
+1. Azure Marketplace에서 Ansible 솔루션 템플릿 배포로 이동합니다.
 
 1. **지금 가져오기**를 선택합니다.
 

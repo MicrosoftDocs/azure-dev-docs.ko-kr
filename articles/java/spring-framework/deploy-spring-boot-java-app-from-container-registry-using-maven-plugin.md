@@ -10,12 +10,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 6b23c432767bca6b228e5f68b498f7b4818e9a52
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 88e1c8d6a09c73c784593393fe682b38bba88b86
+ms.sourcegitcommit: 09e1952776c83e1f67005f144fd8181f5681889b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378587"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88781815"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Azure Web Apps의 Maven을 사용하여 Azure App Service에 Azure Container Registry의 Spring Boot 앱 배포
 
@@ -152,7 +152,7 @@ ms.locfileid: "86378587"
 
 1. 컨테이너 레지스트리에 대한 암호를 검색합니다.
    ```azurecli
-   az acr credential show --name wingtiptoysregistry --query passwords[0]
+   az acr credential show --name wingtiptoysregistry --resource-group wingtiptoysresources "passwords[0].value"
    ```
    Azure는 암호로 응답합니다. 예:
    ```json

@@ -5,16 +5,16 @@ keywords: azure, chef, devops, 가상 머신, 개요, 자동화, habitat
 ms.date: 05/15/2018
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: af7a08e526a5b9109cb9662b1be5d2243af92e9d
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d2a834c631986b70a13c95f1403e84e82886a5f2
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240775"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662944"
 ---
 # <a name="use-habitat-to-deploy-your-application-to-azure"></a>Habitat 사용하여 Azure에 애플리케이션 배포
 
-[Habitat](https://www.habitat.sh/)는 애플리케이션 및 해당 자동화를 배포 단위로 번들하는 애플리케이션 패키징 및 런타임 시스템입니다. 이렇게 하면 최고의 애플리케이션 이식성이 생성되므로 애플리케이션을 다시 작성하거나 패키지하지 않고 컨테이너, 가상 머신, 완전 복구 또는 PaaS에 배포할 수 있습니다.
+[Habitat](https://www.habitat.sh/)는 애플리케이션 및 해당 자동화를 배포 단위로 번들하는 애플리케이션 패키징 및 런타임 시스템입니다. 이렇게 하면 최고의 애플리케이션 이식성이 생성되므로 애플리케이션을 다시 작성하거나 패키지하지 않고 컨테이너, 가상 머신, 베어 메탈 또는 PaaS에 배포할 수 있습니다.
 
 이 문서에서는 Habitat 사용 시의 주요 혜택을 설명합니다.
 
@@ -28,7 +28,7 @@ Habitat는 런타임 종속성을 정확하게 표시하여 복잡한 마이크�
 
 ## <a name="run-any-application-anywhere"></a>모든 위치에서 모든 애플리케이션 실행
 
-Habitat을 사용하여 애플리케이션은 모든 런타임 환경에서 수정되지 않고 실행할 수 있습니다. 완전 복구 및 가상 머신부터 컨테이너(예: Docker), 클러스터 관리 시스템(예: Mesosphere 또는 Kubernetes) 및 PaaS 시스템(예: Pivotal Cloud Foundry)에 이르는 모든 것이 포함됩니다.
+Habitat을 사용하여 애플리케이션은 모든 런타임 환경에서 수정되지 않고 실행할 수 있습니다. 베어 메탈 및 가상 머신부터 컨테이너(예: Docker), 클러스터 관리 시스템(예: Mesosphere 또는 Kubernetes) 및 PaaS 시스템(예: VMware Tanzu Application Service(이전의 Pivotal Cloud Foundry))에 이르는 모든 것이 포함됩니다.
 
 ## <a name="integrate-into-the-chef-devops-workflow"></a>Chef DevOps 워크플로로 통합
 

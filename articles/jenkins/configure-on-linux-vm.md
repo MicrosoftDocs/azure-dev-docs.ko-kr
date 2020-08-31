@@ -3,14 +3,14 @@ title: 빠른 시작 - Azure CLI를 사용하여 Jenkins 구성
 description: Jenkins를 Azure Linux 가상 머신에 설치하고 Java 애플리케이션 샘플을 빌드하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, 포털, Linux, 가상 머신
 ms.topic: quickstart
-ms.date: 08/19/2020
+ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614552"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725217"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Jenkins 구성
 
@@ -22,7 +22,7 @@ ms.locfileid: "88614552"
 > * Jenkins를 다운로드하고 설치하는 설치 파일 만들기
 > * 리소스 그룹 만들기
 > * 설치 파일을 사용하여 가상 머신 만들기
-> * 가상 머신에 SSH로 연결할 수 있도록 8080 포트 열기
+> * 가상 머신의 Jenkins에 액세스하기 위해 포트 8080 열기
 > * SSH를 통해 가상 머신에 연결
 > * GitHub에서 샘플 Java 앱을 기반으로 샘플 Jenkins 작업 구성
 > * 샘플 Jenkins 작업 빌드
@@ -88,7 +88,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
     az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
-1. [az vm open](/cli/azure/vm#az-vm-open-port)을 사용하여 새 가상 머신에서 8080 포트를 엽니다.
+1. 기본적으로 Jenkins는 포트 8080에서 실행됩니다. 따라서 [az vm open](/cli/azure/vm#az-vm-open-port)을 사용하여 새 가상 머신에서 8080 포트를 엽니다.
 
     ```azurecli
     az vm open-port \

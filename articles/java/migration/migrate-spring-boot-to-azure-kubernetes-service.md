@@ -6,12 +6,12 @@ ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 37abbaf978aabad22b8aa1200bcde2e2ba2051e3
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 84e7bc49d8e52081465ce18b90c3ffe14d41f75c
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379757"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662994"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Spring Boot 애플리케이션을 Azure Kubernetes Service로 마이그레이션
 
@@ -89,12 +89,12 @@ Spring Boot 1.x를 사용하는 애플리케이션의 경우 [Spring Boot 2.0 �
 * Auth0 Spring Security 구성은 [Auth0 Spring Security 설명서](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization)를 참조하세요.
 * PingFederate Spring Security 구성은 [Auth0 PingFederate 지침](https://auth0.com/authenticate/java-spring-security/ping-federate/)을 참조하세요.
 
-#### <a name="resources-configured-through-pivotal-cloud-foundry-pcf"></a>PCF(Pivotal Cloud Foundry)를 통해 구성된 리소스
+#### <a name="resources-configured-through-vmware-tanzu-application-service-tas-formerly-pivotal-cloud-foundry"></a>VMware TAS(Tanzu Application Service) (이전의 Pivotal Cloud Foundry)를 통해 구성된 리소스입니다.
 
-Pivotal Cloud Foundry를 사용하여 관리되는 애플리케이션의 경우 앞에서 설명한 리소스를 포함한 외부 리소스는 PCF 서비스 바인딩을 통해 구성되는 경우가 많습니다. 이러한 리소스에 대한 구성을 검사하려면 [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/)를 사용하여 애플리케이션에 대한 `VCAP_SERVICES` 변수를 확인합니다.
+TAS를 사용하여 관리되는 애플리케이션의 경우 앞에서 설명한 리소스를 포함한 외부 리소스는 TAS 서비스 바인딩을 통해 구성되는 경우가 많습니다. 이러한 리소스에 대한 구성을 검사하려면 [TAS(Cloud Foundry) CLI](https://docs.cloudfoundry.org/cf-cli/)를 사용하여 애플리케이션에 대한 `VCAP_SERVICES` 변수를 확인합니다.
 
 ```bash
-# Log into PCF, if needed (enter credentials when prompted)
+# Log into TAS, if needed (enter credentials when prompted)
 cf login -a <API endpoint>
 
 # Set the organization and space containing the application, if not already selected during login.
@@ -105,7 +105,7 @@ cf target space <Space Name>
 cf env <Application Name>
 ```
 
-`VCAP_SERVICES` 변수를 검사하여 애플리케이션에 바인딩된 외부 서비스의 구성 설정을 확인합니다. 자세한 내용은 [PCF 설명서](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)를 참조하세요.
+`VCAP_SERVICES` 변수를 검사하여 애플리케이션에 바인딩된 외부 서비스의 구성 설정을 확인합니다. 자세한 내용은 [TAS(Cloud Foundry) 설명서](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)를 참조하세요.
 
 ### <a name="in-place-testing"></a>내부 테스트
 

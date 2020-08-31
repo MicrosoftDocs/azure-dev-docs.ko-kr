@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: f449df07048dfcc20e173bc4103995ac989e38fe
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: e8d9cf1c1fcc834b74f265c94ef5aae361100dbe
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240945"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725227"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>자습서: Azure Active Directory용 Spring Boot Starter를 사용하여 Java 웹앱 보호하기
 
@@ -116,7 +116,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
     ![회신 URL 편집][create-app-registration-09]
 
-1. 새 **리디렉션 URI**로 <http:<span></span>//localhost:8080/login/oauth2/code/azure>를 입력한 다음, **구성**을 클릭합니다.
+1. 'http://localhost:8080/login/oauth2/code/azure '를 새 **리디렉션 URI**로 입력한 다음, **구성**을 클릭합니다.
 
     ![새 회신 URL 추가][create-app-registration-10]
 

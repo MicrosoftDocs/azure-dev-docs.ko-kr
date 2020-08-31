@@ -15,6 +15,8 @@
       href: migrate-tomcat-to-tomcat-app-service.md
     - name: AKS의 컨테이너에 Tomcat 설치하기
       href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+    - name: Azure Spring Cloud에 Tomcat 설치하기
+      href: migrate-tomcat-to-azure-spring-cloud.md
     - name: Azure에 WebLogic 배포하기
       expanded: true
       items:

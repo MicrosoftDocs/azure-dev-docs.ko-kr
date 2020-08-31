@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 782123b4b567010a43ce72c622f7db5a65679db9
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 2afdf7c4194052aff1fe7c7f915540b270ce588e
+ms.sourcegitcommit: c012db9b6e369813c56f35a0ddbb1d3a73db5c4d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632585"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889237"
 ---
 # <a name="add-authentication-and-manage-user-identities-in-your-mobile-apps"></a>모바일 앱에서 인증 추가 및 사용자 ID 관리
 
@@ -45,14 +45,14 @@ ms.locfileid: "84632585"
 
 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)는 직원들이 로그인하여 다음에 액세스할 수 있게 해주는 Microsoft의 클라우드 기반 ID 및 액세스 관리 서비스입니다.
 
-- Microsoft Office 365, Azure Portal, 수천 개의 기타 SaaS(Software as a Service) 애플리케이션을 비롯한 외부 리소스
+- Microsoft 365, Azure Portal, 수천 개의 기타 SaaS(Software as a Service) 애플리케이션을 비롯한 외부 리소스
 - 조직에서 자체 개발한 클라우드 앱과 함께 회사 네트워크와 인트라넷의 앱 같은 내부 리소스.
 
 ### <a name="azure-active-directory-features"></a>Azure Active Directory 기능
 
 - 사용자를 필요한 애플리케이션에 연결하여 원활하고 안전한 액세스 지원
 - 사용자, 위치, 디바이스, 데이터 및 애플리케이션 컨텍스트를 기준으로 ID 및 액세스를 위한 포괄적인 ID 보호 및 보안 강화
-- 상업용 애플리케이션 및 사용자 지정 애플리케이션(예: Office 365, Salesforce.com 및 Box)을 위한 수천 개의 사전 통합 앱
+- 상업용 애플리케이션 및 사용자 지정 애플리케이션(예: Microsoft 365, Salesforce.com 및 Box)을 위한 수천 개의 사전 통합 앱
 - 대규모로 액세스를 관리하는 기능
 
 ### <a name="azure-active-directory-references"></a>Azure Active Directory 참조

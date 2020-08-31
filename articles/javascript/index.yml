@@ -1,7 +1,7 @@
 ### YamlMime:Landing
-title: JavaScript 개발자용 Azure
+title: JavaScript 및 Node.js 개발자용 Azure
 summary: >
-  JavaScript 및 Node.js용 Azure SDK와, 이를 사용하여 시작하는 방법 및 개발자를 위해 제공되는 기능에 대해 알아봅니다. 애플리케이션 호스팅, DevOps 작업, 영구 스토리지 및 데이터베이스와 같은 유용한 Azure 기능과 사물 인터넷 디바이스 작업을 시작하세요.
+  빠른 시작, 방법 가이드, 코드 샘플 등을 통해 Azure에서 JavaScript의 기능을 살펴봅니다.
 metadata:
   title: JavaScript 및 Node.js 개발자용 Azure
   description: 자습서, 도구 및 SDK 참조를 통해 브라우저 또는 Node.js에서 JavaScript용 Azure SDK를 사용하여 앱 개발을 시작하세요.
@@ -13,102 +13,95 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
-  ms.openlocfilehash: 9bd3770871be1c687f8f3096a840c0dd465dec54
-  ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+  ms.custom: 2020Aug21Redesign
+  ms.openlocfilehash: 886b00c75b2c653f458e68c475e6c775eb8cce03
+  ms.sourcegitcommit: 09e1952776c83e1f67005f144fd8181f5681889b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/07/2020
-  ms.locfileid: "87983445"
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88781805"
 landingContent:
-- title: Azure 시작
+- title: Hosting
   linkLists:
-  - linkListType: overview
+  - linkListType: tutorial
     links:
-    - text: 로컬 개발 환경 설정
-      url: configure-local-development-environment.md
-  - linkListType: quickstart
-    links:
-    - text: Azure App Service에 빠른 배포
-      url: https://aka.ms/try-azure-node
-    - text: 샘플 찾아보기
-      url: /samples/browse/?languages=javascript,nodejs
-  - linkListType: learn
-    links:
-    - text: Microsoft Learn 모듈 및 과정
-      url: learn-azure-javascript.md
-  - linkListType: reference
-    links:
-    - text: API 참조 문서
-      url: /javascript/api/overview/azure/?view=azure-node-latest
-    - text: 최신 SDK
-      url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
-- title: Visual Studio Code를 사용하여 배포
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: 정적 웹 애플리케이션
-      url: tutorial-vscode-static-website-node-01.md
-    - text: 서버리스 애플리케이션
-      url: tutorial-vscode-serverless-node-01.md
-    - text: 풀 스택 애플리케이션
+    - text: 프런트 엔드 앱
+      url: /azure/static-web-apps/getting-started.md
+    - text: App Service를 사용한 Node.js
       url: tutorial-vscode-azure-app-service-node-01.md
-    - text: 컨테이너화된 애플리케이션
-      url: tutorial-vscode-docker-node-01.md
-- title: Azure CLI를 사용하여 배포
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Deno 앱
+    - text: App Service를 사용한 Deno
       url: tutorial-visual-studio-code-azure-app-service-deno-01.md
-- title: 호스트
+    - text: 컨테이너
+      url: tutorial-vscode-docker-node-01.md
+  - linkListType: how-to-guide
+    links:
+    - text: 전체 스택(서버리스 API 및 프런트 엔드)
+      url: node-howto-create-static-site-jamstack.md
+- title: 서버리스 Functions
   linkLists:
-  - linkListType: overview
+  - linkListType: tutorial
     links:
-    - text: Azure App Service
-      url: /azure/app-service/overview
-  - linkListType: architecture
+    - text: 개발 및 배포
+      url: tutorial-vscode-serverless-node-01.md
+  - linkListType: how-to-guide
     links:
-    - text: 올바른 호스팅 옵션 찾기
-      url: /azure/architecture/guide/technology-choices/compute-decision-tree
-- title: DevOps
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Azure Pipelines의 CI/CD 설정
-      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-- title: 모니터
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure Monitor
-      url: /azure/azure-monitor/overview?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-  - linkListType: quickstart
-    links:
-    - text: Azure Pipelines의 CI/CD
-      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-    - text: 배포된 애플리케이션 모니터링
-      url: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: 메시징 서비스
+    - text: 서버리스 코드 쓰기
+      url: node-howto-write-serverless-code.md
+- title: 데이터
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Azure Service Bus 큐로 메시지 전달
-      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: Azure Storage 큐로 메시지 전달
-      url: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: 스토리지 및 데이터베이스
+    - text: MongoDB
+      url: /azure/cosmos-db/create-mongodb-nodejs.md?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - text: MySql
+      url: /azure/mysql/connect-nodejs.md
+    - text: PostgreSQL
+      url: /azure/postgresql/connect-nodejs.md
+    - text: Redis Cache
+      url: /azure/azure-cache-for-redis/cache-nodejs-get-started.md?toc=/azure/developer/javascript/toc.json&bc=/
+    - text: SQL Server
+      url: /azure/azure-sql/database/connect-query-nodejs.md
+    - text: 파일 저장
+      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs.md?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+- title: Cognitive Services
   linkLists:
   - linkListType: quickstart
     links:
-    - text: MongoDB에서 Azure Cosmos DB로 마이그레이션
-      url: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: Blob 사용
-      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: IoT(사물 인터넷) 디바이스
+    - text: 음성 텍스트 변환
+      url: /azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-file.md?tabs=linux%2Cbrowser%2Cwindowsinstall&pivots=programming-language-javascript
+    - text: 텍스트 번역
+      url: /azure/cognitive-services/translator/quickstart-translate.md?pivots=programming-language-javascript
+    - text: 이미지에서 개체 검색
+      url: /azure/cognitive-services/computer-vision/quickstarts-sdk/client-library.md?pivots=programming-language-javascript
+- title: 보안, 메시징 및 로그
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 디바이스 관리
-      url: /azure/iot-hub/quickstart-control-device-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: 데이터 처리
-      url: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - text: 인증
+      url: /azure/active-directory/develop/quickstart-v2-javascript.md
+    - text: 메시지 큐
+      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package.md
+    - text: 로깅 및 분석
+      url: /azure/azure-monitor/learn/nodejs-quick-start.md
+- title: Azure 클라이언트 라이브러리(SDK) 사용
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 최신 클라이언트 라이브러리
+      url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
+    - text: 참조 설명서
+      url: https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest
+    - text: JS/TS 샘플
+      url: https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript
+- title: 개발자 도구 살펴보기
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Visual Studio Code(IDE)
+      url: https://code.visualstudio.com/docs/languages/javascript
+    - text: Azure CLI(명령줄 인터페이스)
+      url: /cli/azure/install-azure-cli
+    - text: Windows 터미널
+      url: https://aka.ms/terminal
+    - text: WSL(Linux용 Windows 하위 시스템)
+      url: /windows/wsl/install-win10#install-your-linux-distribution-of-choice

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 005fc97633135f8458b0650b9a3afb49e841001d
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405714"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89061992"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java 애플리케이션을 Azure로 마이그레이션
 
@@ -89,7 +89,7 @@ Java EE 사양에서 제공하는 기능만 사용하는 애플리케이션(즉,
 | 로컬 파일 시스템의 장기 지속성                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
 | 애플리케이션 서버 수준 클러스터링                               |        |        |        |&#x2714;|&#x2714;|
 | Batch/예약된 작업                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
-| VNet 통합/하이브리드 연결                              |미리 보기 |미리 보기 |        |&#x2714;|&#x2714;|
+| VNet 통합/하이브리드 연결                              |&#x2714;|&#x2714;|미리 보기 |&#x2714;|&#x2714;|
 | Azure 지역 가용성                | [세부 정보][10] | [세부 정보][10] | [세부 정보][11] |[세부 정보][12]|[세부 정보][13]|
 
 ### <a name="ongoing-responsibility-grid"></a>진행 중인 책임 그리드
@@ -143,7 +143,7 @@ Tomcat의 웹앱을 Azure Spring Cloud로 마이그레이션하려면 먼저 앱
 |---|---|---|---|---|---|---|
 | Spring Boot /<br>JAR 애플리케이션 | [지침][5] | 지침<br>예정 | [지침][16] | [지침][14]      | 지침<br>예정 |
 | Spring Cloud /<br>마이크로서비스   | 해당 없음           | 해당 없음                 | [지침][15] | 지침<br>예정 | 지침<br>예정 |
-| 웹 애플리케이션<br>(Tomcat에 있음)     | 해당 없음           | [지침][2]       | 해당 없음            | [지침][3]       | 지침<br>예정 |
+| 웹 애플리케이션<br>(Tomcat에 있음)     | 해당 없음           | [지침][2]       | [지침][17] | [지침][3]       | 지침<br>예정 |
 
 **Java EE 애플리케이션**
 
@@ -173,3 +173,4 @@ Tomcat의 웹앱을 Azure Spring Cloud로 마이그레이션하려면 먼저 앱
 [14]: migrate-spring-boot-to-azure-kubernetes-service.md
 [15]: migrate-spring-cloud-to-azure-spring-cloud.md
 [16]: migrate-spring-boot-to-azure-spring-cloud.md
+[17]: migrate-tomcat-to-azure-spring-cloud.md

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725197"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062002"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat 애플리케이션을 Azure App Service의 Tomcat으로 마이그레이션
 
@@ -44,8 +44,6 @@ Azure App Service에서 사용하는 현재 버전을 가져오려면 Azure App 
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-### <a name="inventory-certificates"></a>인증서 인벤토리화
-
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
@@ -62,6 +60,10 @@ Azure App Service에서 사용하는 현재 버전을 가져오려면 Azure App 
 [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) 또는 [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components)와 같은 Tomcat의 기본 제공 [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) 구현은 App Service와 같은 분산된 확장 플랫폼에서 사용하도록 설계되지 않았습니다. App Service는 여러 인스턴스 간에 부하를 분산하고 언제든지 인스턴스를 투명하게 다시 시작할 수 있으므로 변경 가능한 상태를 파일 시스템에 유지하지 않는 것이 좋습니다.
 
 세션 지속성이 필요한 경우 외부 데이터 저장소에 쓰는 대체 `PersistentManager` 구현(예: Redis Cache를 사용하는 VMware Tanzu 세션 관리자)을 사용해야 합니다. 자세한 내용은 [Tomcat을 사용하여 Redis를 세션 캐시로 사용](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)을 참조하세요.
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
 
 ### <a name="special-cases"></a>특수 사례
 
@@ -82,10 +84,6 @@ Quartz 스케줄러 작업 또는 cron 작업과 같은 예약된 작업은 App 
 [Tomcat 클러스터링](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)은 Azure App Service에서 지원되지 않습니다. 대신 Tomcat 특정 기능 없이 Azure App Service를 통해 크기 조정 및 부하 분산을 구성하고 관리할 수 있습니다. 복제본에서 사용할 수 있도록 세션 상태를 대체 위치로 유지할 수 있습니다. 자세한 내용은 [세션 지속성 메커니즘 식별](#identify-session-persistence-mechanism)을 참조하세요.
 
 애플리케이션에서 클러스터링을 사용하는지 확인하려면 *server.xml* 파일에서 `<Host>` 요소 또는 `<Engine>` 요소 내의 `<Cluster>` 요소를 찾습니다.
-
-#### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>프로덕션 서버에서 실행되는 모든 외부 프로세스/디먼 확인
-
-디먼 모니터링과 같이 애플리케이션 서버 외부에서 실행되는 모든 프로세스를 다른 곳으로 마이그레이션하거나 제거해야 합니다.
 
 #### <a name="determine-whether-non-http-connectors-are-used"></a>HTTP가 아닌 커넥터가 사용되는지 확인
 

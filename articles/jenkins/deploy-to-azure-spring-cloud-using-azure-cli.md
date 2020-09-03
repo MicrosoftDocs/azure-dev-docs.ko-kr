@@ -3,14 +3,14 @@ title: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 description: 지속적인 통합 및 배포 파이프라인에서 Azure CLI를 사용하여 마이크로서비스를 Azure Spring Cloud 서비스에 배포하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
-ms.date: 08/10/2020
+ms.date: 09/01/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 707af403bf789ccd85e52f7bb5880389f61e8f15
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7c6b9d526b2fe42a0210daf70ec8ba919641ced9
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725167"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374564"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 
@@ -23,16 +23,13 @@ ms.locfileid: "88725167"
 > * Jenkins 서버 준비
 > * Jenkins 파이프라인의 Azure CLI를 사용하여 마이크로서비스 애플리케이션 빌드 및 배포 
 
->[!Note]
-> Azure Spring Cloud는 현재 퍼블릭 미리 보기로 제공됩니다. 퍼블릭 미리 보기 제품을 통해 고객은 공식 릴리스 전에 새로운 기능을 시험해 볼 수 있습니다.  퍼블릭 미리 보기 기능 및 서비스는 프로덕션 용도로 사용되지 않습니다.  미리 보기 동안 제공되는 지원에 대한 자세한 내용은 [FAQ](https://azure.microsoft.com/support/faq/)를 검토하거나 [지원 요청](/azure/azure-portal/supportability/how-to-create-azure-support-request)을 참조하여 자세히 알아보세요.
-
 ## <a name="prerequisites"></a>전제 조건
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-**Jenkins**: [Linux VM에 Jenkins 설치](configure-on-linux-vm.md)
+- **Jenkins**: [Linux VM에 Jenkins 설치](configure-on-linux-vm.md)
 
-**GitHub 계정**: GitHub 계정이 없는 경우 시작하기 전에 [체험 계정](https://github.com/)을 만듭니다.
+- **GitHub 계정**: GitHub 계정이 없는 경우 시작하기 전에 [체험 계정](https://github.com/)을 만듭니다.
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>서비스 인스턴스 프로비저닝 및 Java Spring 애플리케이션 시작
 

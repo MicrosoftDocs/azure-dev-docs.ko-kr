@@ -14,28 +14,28 @@ metadata:
   ms.service: multiple
   ms.devlang: python
   ms.custom: devx-track-python
-  ms.openlocfilehash: 1a89da5a7ce092de4d8194db2136d390fec22928
-  ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+  ms.openlocfilehash: 2dbd633555e7841eb28f58813a9ba292da989dd6
+  ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/12/2020
-  ms.locfileid: "88147254"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89374544"
 landingContent:
-- title: 서버리스 함수 배포
+- title: 서버리스 Functions
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Visual Studio Code 사용
+    - text: Visual Studio Code를 사용하여 배포
       url: tutorial-vs-code-serverless-python-01.md
-    - text: 명령줄 사용
+    - text: 명령줄을 사용하여 배포
       url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
     - text: Visual Studio Code를 사용하여 스토리지에 연결
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python
     - text: 명령줄을 사용하여 스토리지에 연결
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-cli?tabs=bash%2Cbrowser&pivots=programming-language-python
-- title: 웹앱 배포
+- title: 웹 앱
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: Visual Studio Code를 사용하는 Flask
       url: tutorial-deploy-app-service-on-linux-01.md
@@ -47,9 +47,9 @@ landingContent:
       url: /azure/app-service/tutorial-python-postgresql-app
     - text: Visual Studio Code를 사용하는 컨테이너
       url: tutorial-deploy-containers-01.md
-    - text: CI/CD 파이프라인 빌드
+    - text: CI/CD 파이프라인
       url: /azure/devops/pipelines/ecosystems/python-webapp
-- title: 기계 학습 모델 배포
+- title: 기계 학습
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -63,9 +63,9 @@ landingContent:
       url: quickstarts-cognitive-services.md
     - text: 자세히...
       url: quickstarts-machine-learning.md
-- title: 데이터 및 스토리지 배포
+- title: 데이터 및 스토리지
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: SQL 데이터베이스
       url: quickstarts-data-solutions.md#sql-databases
@@ -73,7 +73,7 @@ landingContent:
       url: quickstarts-data-solutions.md#tables-blobs-files-nosql
     - text: 빅 데이터 및 분석
       url: quickstarts-data-solutions.md#big-data-and-analytics
-- title: Azure 라이브러리(SDK) 사용
+- title: Azure 라이브러리(SDK)
   linkLists:
   - linkListType: get-started
     links:
@@ -85,7 +85,9 @@ landingContent:
       url: azure-sdk-overview.md
     - text: 라이브러리 사용 패턴 알아보기
       url: azure-sdk-library-usage-patterns.md
-- title: 개발자 도구 살펴보기
+    - text: Azure 서비스를 사용하여 인증
+      url: walkthrough-tutorial-authentication-01.md
+- title: 개발자 도구
   linkLists:
   - linkListType: get-started
     links:

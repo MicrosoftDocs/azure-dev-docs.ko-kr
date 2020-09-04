@@ -112,6 +112,22 @@
           href: how-to-assign-role-permissions.md
         - name: 서비스 사용자 관리
           href: how-to-manage-service-principals.md
+        - name: 연습 자습서
+          items:
+            - name: 1 소개 및 배경
+              href: walkthrough-tutorial-authentication-01.md
+            - name: 2 인증 요구 사항
+              href: walkthrough-tutorial-authentication-02.md
+            - name: 3 타사 API 구현
+              href: walkthrough-tutorial-authentication-03.md
+            - name: 4 기본 앱 구현
+              href: walkthrough-tutorial-authentication-04.md
+            - name: 5 종속성 및 환경 변수
+              href: walkthrough-tutorial-authentication-05.md
+            - name: 6 주 앱 시작 코드
+              href: walkthrough-tutorial-authentication-06.md
+            - name: 7 기본 애플리케이션 엔드포인트
+              href: walkthrough-tutorial-authentication-07.md
     - name: 패키지 설치
       href: azure-sdk-install.md
     - name: 패키지 인덱스

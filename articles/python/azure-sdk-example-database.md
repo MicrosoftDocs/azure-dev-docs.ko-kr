@@ -4,16 +4,16 @@ description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 �
 ms.date: 06/02/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 04e80a2b5ab6e6a1dc0adbe546132cf861667995
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e9a08761fb9af300b5d3f2c4a9704bc7f10e1158
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982655"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275126"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>예: Azure 라이브러리를 사용하여 데이터베이스 프로비저닝
 
-이 예제에서는 Python 스크립트에서 Azure SDK 관리 라이브러리를 사용하여 Azure MySQL 데이터베이스를 프로비저닝하는 방법을 보여줍니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.) 또한 Azure SDK의 일부가 아닌 mysql-connector 라이브러리를 사용하여 데이터베이스를 쿼리하는 간단한 스크립트를 제공합니다.
+이 예제에서는 Python 스크립트에서 Azure SDK 관리 라이브러리를 사용하여 Azure MySQL 데이터베이스를 프로비저닝하는 방법을 보여줍니다. 또한 Azure SDK의 일부가 아닌 mysql-connector 라이브러리를 사용하여 데이터베이스를 쿼리하는 간단한 스크립트를 제공합니다. ([해당 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다. Azure Portal을 사용하려면 [PostgreSQL 서버 만들기](/azure/postgresql/quickstart-create-server-database-portal) 또는 [MariaDB 서버 만들기](/azure/mariadb/quickstart-create-mariadb-server-database-using-azure-portal)를 참조하세요.)
 
 비슷한 코드를 사용하여 PostgreSQL 또는 MariaDB 데이터베이스를 프로비저닝할 수 있습니다.
 
@@ -60,9 +60,6 @@ from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.rdbms.mysql import MySQLManagementClient
 
 from azure.mgmt.rdbms.mysql.models import ServerForCreate, ServerPropertiesForDefaultCreate, ServerVersion
-
-# Retrieve subscription ID from environment variable
-subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.

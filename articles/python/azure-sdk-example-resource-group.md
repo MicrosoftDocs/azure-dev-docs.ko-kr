@@ -4,16 +4,16 @@ description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용�
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1a87e53253eff5679245ac5528fac3bb10e2bc8d
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 459311e76f70e10a5da62c4205a9843427f76cec
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982615"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275117"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
 
-이 예제에서는 Python 스크립트에서 Azure SDK 관리 라이브러리를 사용하여 리소스 그룹을 프로비저닝하는 방법을 보여줍니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.)
+이 예제에서는 Python 스크립트에서 Azure SDK 관리 라이브러리를 사용하여 리소스 그룹을 프로비저닝하는 방법을 보여줍니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다. Azure Portal을 사용하려는 경우 [리소스 그룹 만들기](/azure/azure-resource-manager/management/manage-resource-groups-portal)를 참조하세요.)
 
 이 문서의 모든 명령은 언급되지 않는 한 Linux/Mac OS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
 

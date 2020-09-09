@@ -4,12 +4,12 @@ description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage �
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: bcb8d680950e2c42d3d7f092478c4d6096454b12
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982695"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275137"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>예제: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
@@ -21,7 +21,16 @@ ms.locfileid: "87982695"
 
 아직 수행하지 않은 경우 [Azure에 대한 로컬 Python 개발 환경 구성](configure-local-development-environment.md)의 모든 지침을 따르세요.
 
-로컬 개발을 위한 서비스 주체를 만들고 이 프로젝트의 가상 환경을 만들어 활성화해야 합니다.
+로컬 개발을 위한 서비스 주체를 만들고, 서비스 주체에 대한 환경 변수를 설정하고(아래 참조), 이 프로젝트의 가상 환경을 만들어 활성화해야 합니다.
+
+이 예에서는 다음과 같은 환경 변수를 이미 설정했다고 가정합니다.
+
+| 변수 이름 | 필요한 값 |
+| --- | --- |
+| AZURE_SUBSCRIPTION_ID | Azure 구독의 GUID입니다. |
+| AZURE_CLIENT_ID | 로컬 서비스 주체의 클라이언트 ID입니다. |
+| AZURE_CLIENT_SECRET | 서비스 주체의 클라이언트 암호입니다. |
+| AZURE_TENANT_ID | 서비스 주체의 테넌트 ID입니다. |
 
 ## <a name="2-install-library-packages"></a>2: 라이브러리 패키지 설치
 

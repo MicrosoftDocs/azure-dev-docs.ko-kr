@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: b828fc2bc41b0e4e557472e7efd00498e68933db
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.openlocfilehash: b1437362601e990b560dc0385420605ef01a426a
+ms.sourcegitcommit: 4049dc6109600a8308ba5617cc122a5b32cc4ca1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052220"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056285"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>WebLogic Server의 Java 앱을 Azure로 마이그레이션하기 위한 최종 사용자 권한 부여 및 인증
 
@@ -107,14 +107,24 @@ Java EE 개발자는 워크로드를 Azure로 이동하는 경우에도 [표준 
    >
    > WLS 구성에 필요한 일부 값을 수집하기 위해 수행해야 하는 LDAP 데이터 쿼리에 대한 몇 가지 팁은 다음과 같습니다.
    >
-   > * 이 자습서에서는 *LDP.exe* Windows 프로그램을 사용하는 것이 좋습니다.  동일한 목적으로 [Apache Directory Studio](https://directory.apache.org/studio/downloads.html)를 사용할 수도 있습니다.
+   > * 이 자습서에서는 *LDP.exe* Windows 프로그램을 사용하는 것이 좋습니다.  이 프로그램은 Windows에서만 사용할 수 있습니다.  Windows 외 사용자의 경우, 동일한 목적으로 [Apache Directory Studio](https://directory.apache.org/studio/downloads.html)를 사용할 수도 있습니다.
    > * *LDP.exe*를 사용하여 LDAP에 로그인하는 경우 사용자 이름은 단지 @ 앞에 있는 부분입니다.  예를 들어 사용자가 `alice@contoso.onmicrosoft.com`인 경우 *LDP.exe* 바인딩 작업에 대한 사용자 이름은 `alice`입니다.  또한 이후 단계에서 사용하기 위해 *LDP.exe*를 실행하여 로그인한 상태로 둡니다.
    >
 [외부 액세스를 위한 DNS 영역 구성](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access) 섹션에서 **보안 LDAP 외부 IP 주소**에 대한 값을 적어 둡니다.  이는 나중에 사용합니다.
 
+**보안 LDAP 외부 IP 주소** 값을 쉽게 알 수 없는 경우 다음 단계에 따라 IP 주소를 가져옵니다.
+
+1. 포털에서 Azure AD Domain Services 리소스가 포함된 리소스 그룹을 찾습니다.
+1. 리소스 목록에서 다음과 같이 Azure AD Domain Services 리소스에 대한 공용 IP 리소스를 선택합니다.  공용 IP는 `aads`로 시작할 가능성이 높습니다.
+   :::image type="content" source="media/migrate-weblogic-with-aad-ldap/alternate-secure-ip-address-technique.png" alt-text="공용 IP를 선택하는 방법을 보여주는 브라우저":::
+1. 공용 IP는 **IP 주소** 레이블 옆에 표시됩니다.
+
 이 가이드에서 수행하도록 지시할 때까지 [리소스 정리](/azure/active-directory-domain-services/tutorial-configure-ldaps#clean-up-resources)의 단계를 실행하지 마세요.
 
 위의 변형을 염두에 두고 [Azure Active Directory Domain Services 관리형 도메인에 대한 보안 LDAP 구성](/azure/active-directory-domain-services/tutorial-configure-ldaps)을 완료합니다.  이제 WLS 구성에 제공하는 데 필요한 값을 수집할 수 있습니다.
+
+>[!NOTE]
+> 보안 LDAP 구성의 처리가 완료될 때까지 기다린 후 다음 섹션으로 이동하세요.
 
 ### <a name="disable-weak-tls-v1"></a>약한 TLS v1 사용 안 함
 
@@ -162,7 +172,7 @@ az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1
 | `wlsLDAPGroupBaseDN` 및 `wlsLDAPUserBaseDN` | 사용자 기본 DN 및 그룹 기본 DN | 이 자습서에서는 이러한 두 속성의 값이 모두 동일합니다(첫 번째 쉼표 뒤의 **wlsLDAPPrincipal** 부분).|
 | `wlsLDAPPrincipalPassword` | 보안 주체 암호 | 이 값은 **AAD DC 관리자** 그룹에 추가된 사용자에 대한 암호입니다. |
 | `wlsLDAPProviderName` | Provider Name | 이 값은 기본값으로 둘 수 있습니다.  WLS에서 인증 공급자의 이름으로 사용됩니다. |
-| `wlsLDAPSSLCertificate` | SSL 구성에 대한 신뢰 키 저장소 | 이 값은 [클라이언트 컴퓨터에 대한 인증서 내보내기](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers) 단계를 완료할 때 별도로 저장하도록 요청받은 Base 64로 인코딩된 *.cer* 파일입니다.  이 값은 다음 UNIX 또는 PowerShell 명령을 사용하여 가져올 수 있습니다. <br /> bash: <br /> `base64 your-certificate.cer -w 0 >temp.txt` <br /> PowerShell: <br /> `$Content = Get-Content -Path .\your-certificate.cer -Encoding Byte`<br /> `$Base64 = [System.Convert]::ToBase64String($Content)` <br /> `$Base64 | Out-File .\temp.txt`
+| `wlsLDAPSSLCertificate` | SSL 구성에 대한 신뢰 키 저장소 | 이 값은 [클라이언트 컴퓨터에 대한 인증서 내보내기](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers) 단계를 완료할 때 별도로 저장하라는 요청을 받은 *.cer* 파일입니다.
 
 ### <a name="integrating-azure-ad-ds-ldap-with-wls"></a>WLS와 Azure AD DS LDAP 통합
 

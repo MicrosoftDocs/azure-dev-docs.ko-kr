@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: ff068c48a36aa746de1dac23861d453e0c6ff512
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 50b6046e8b4435d8e75af1bb8df360be018eb8ec
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379197"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614297"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hub를 사용하여 Spring Cloud 스트림 바인더 애플리케이션을 만드는 방법
 
@@ -136,7 +136,7 @@ ms.locfileid: "86379197"
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
-      <version>1.1.0.RC2</version>
+      <version>1.2.7</version>
    </dependency>
    ```
 
@@ -253,7 +253,6 @@ ms.locfileid: "86379197"
    |       `spring.cloud.stream.bindings.input.group `        | Azure Event Hub에서 소비자 그룹을 지정합니다. Azure Event Hub를 만들 때 생성된 기본 소비자 그룹을 사용하려면 '$Default'로 설정할 수 있습니다. |
    |    `spring.cloud.stream.bindings.output.destination`     |                               출력 대상 Azure Event Hub를 지정합니다.이 자습서에서는 입력 대상과 동일합니다.                               |
 
-
 3. *application.properties* 파일을 저장하고 닫습니다.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>기본 이벤트 허브 기능을 구현하는 샘플 코드 추가
@@ -342,13 +341,13 @@ ms.locfileid: "86379197"
 
       @StreamListener(Sink.INPUT)
       public void handleMessage(String message, @Header(AzureHeaders.CHECKPOINTER) Checkpointer checkpointer) {
-         LOGGER.info("New message received: '{}'", message);
-         checkpointer.success().handle((r, ex) -> {
-            if (ex == null) {
-               LOGGER.info("Message '{}' successfully checkpointed", message);
-            }
-            return null;
-         });
+        LOGGER.info("New message received: '{}'", message);
+        checkpointer.success()
+                .doOnSuccess(s -> LOGGER.info("Message '{}' successfully checkpointed", message))
+                .doOnError((msg) -> {
+                    LOGGER.error(String.valueOf(msg));
+                })
+                .subscribe();
       }
    }
    ```

@@ -75,7 +75,7 @@
           href: deploy-spring-boot-java-app-on-kubernetes.md
         - name: 컨테이너용 웹앱 배포
           href: deploy-spring-boot-java-app-on-linux.md
-        - name: Azure Redis 캐시(영문)
+        - name: Azure Redis Cache
           href: configure-spring-boot-initializer-java-app-with-redis-cache.md
         - name: Maven을 통해 Docker 컨테이너 배포
           href: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
@@ -89,8 +89,6 @@
           href: 'https://github.com/Microsoft/todo-app-java-on-azure/'
         - name: MySQL을 통한 할 일 목록
           href: 'https://github.com/Azure-Samples/mysql-spring-boot-todo'
-        - name: Java SDK를 사용하는 Azure Storage
-          href: configure-spring-boot-starter-java-app-with-azure-storage-api.md
         - name: Spring Initializr
           href: 'https://start.spring.io/'
     - name: 참조

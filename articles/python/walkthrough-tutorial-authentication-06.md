@@ -4,12 +4,12 @@ description: API 엔드포인트에 필요한 DefaultAzureCredential 개체 및 
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 5fc344fcf00655bbac7b2a20a2401ffb52482447
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 17d5e007c65572ef301a4aa682260af6f492a626
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379528"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614281"
 ---
 # <a name="part-6-main-app-startup-code"></a>6부: 기본 앱 시작 코드
 
@@ -25,7 +25,8 @@ app = Flask(__name__)
 number_url = os.environ["THIRD_PARTY_API_ENDPOINT"]
 ```
 
-다음으로 Azure 서비스를 사용하여 인증할 때 사용할 권장 자격 증명인 [`DefaultAzureCredential`](/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) 개체를 가져옵니다. [Python 앱을 인증하는 방법](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)을 참조하세요.
+다음으로 Azure 서비스를 사용하여 인증할 때 사용할 권장 자격 증명인 [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python
+) 개체를 가져옵니다. [Python 앱을 인증하는 방법](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)을 참조하세요.
 
 ```python
 credential = DefaultAzureCredential()

@@ -4,12 +4,12 @@ description: 통합 테스트 및 Azure DevOps를 사용하여 Terraform 프로�
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 3d305fb63deffb8f56ebd2cb1503bac543c5b84b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ced6dc9a3ff40ceee3ac37daea3ab6300a529e0e
+ms.sourcegitcommit: 62f78d529c02c7d7895d32ec8ed415bf0946d056
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241305"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89557556"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>자습서: Azure에서 Terraform 프로젝트에 대한 통합 테스트 구성
 
@@ -36,7 +36,7 @@ ms.locfileid: "88241305"
 - **Terraform 설치**: 사용자 환경에 따라 [Terraform을 다운로드하여 설치](https://www.terraform.io/downloads.html)합니다.
 - **테스트 샘플 포크**: [GitHub에서 Terraform 샘플 프로젝트](https://github.com/Azure/terraform)를 포크하고 개발/테스트 컴퓨터에 복제합니다.
 
-## <a name="validate-alocal-terraform-configuration"></a>로컬 Terraform 구성 유효성 검사
+## <a name="validate-a-local-terraform-configuration"></a>로컬 Terraform 구성 유효성 검사
 
 [terraform validate](https://www.terraform.io/docs/commands/validate.html) 명령은 Terraform 파일이 포함된 디렉터리의 명령줄에서 실행됩니다. 이 명령의 주요 목표는 구문 유효성 검사입니다.
 

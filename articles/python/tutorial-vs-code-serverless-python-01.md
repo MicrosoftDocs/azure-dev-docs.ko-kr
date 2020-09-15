@@ -1,15 +1,15 @@
 ---
 title: '자습서: VS Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포'
-description: 자습서 1단계로, 소개 및 필수 구성 요소입니다.
+description: 자습서 1단계, Azure Functions 작업, 소개 및 필수 구성 요소
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 25ae33cef961b35747ee614a52ff80ebf1e96d62
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 740a64785c57694be34f37ef6aa6571b0b3304b7
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982985"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473608"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포
 
@@ -71,4 +71,4 @@ Azure Functions 로고로 시작하는 출력(출력을 위쪽으로 스크롤 �
 > [!div class="nextstepaction"]
 > [Azure에 로그인했습니다. - 2단계 진행 >>>](tutorial-vs-code-serverless-python-02.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=01-verify-prerequisites)
+문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

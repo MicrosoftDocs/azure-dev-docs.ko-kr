@@ -4,12 +4,12 @@ description: 자습서 2단계로, 컨테이너 레지스트리에서 Azure App 
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 1a8afac614f930e3d26424d5d776ff5d97019324
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 080f3f5aa82d9944b5f26d3a54fb6f10bfe914cb
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983535"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473548"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2: Azure App Service에 컨테이너 이미지 배포
 
@@ -48,4 +48,4 @@ ms.locfileid: "87983535"
 > [!div class="nextstepaction"]
 > [이미지를 배포했습니다. - 3단계 진행 >>>](tutorial-deploy-containers-03.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=02-deploy-container)
+문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

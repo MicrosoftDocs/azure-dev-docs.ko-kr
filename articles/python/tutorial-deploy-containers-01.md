@@ -1,15 +1,15 @@
 ---
 title: '자습서: Visual Studio Code를 사용하여 Azure App Service에 Docker 컨테이너 배포'
-description: 자습서 1단계로, 소개 및 필수 구성 요소입니다.
+description: 자습서 1단계, 컨테이너 작업, 소개 및 필수 구성 요소
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: fe98ff2007be9f817cc8e9bd0210761579eef536
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: f0fb983a596ca1828809d1d829af5517e8af66df
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147414"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473558"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Azure App Service에 Docker 컨테이너 배포
 
@@ -34,4 +34,4 @@ ms.locfileid: "88147414"
 > [!div class="nextstepaction"]
 > [Azure에 로그인했습니다. - 2단계 진행 >>>](tutorial-deploy-containers-02.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=01-verify-prerequisites)
+문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

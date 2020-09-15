@@ -4,12 +4,12 @@ description: 자습서 5단계, 지속적인 요금을 방지하기 위해 Azure
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cf19f0a5a1fabeed8a1858c07098dc38a84911ef
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: cc5540570bc914d39a17bd102dc0f86f6674025a
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982927"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473528"
 ---
 # <a name="5-clean-up-azure-resources"></a>5: Azure 리소스 정리
 
@@ -39,4 +39,4 @@ AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여
 > [!div class="nextstepaction"]
 > [완료했습니다!](https://docs.microsoft.com/python/azure/?view=azure-python)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=07-clean-up-resources)
+문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

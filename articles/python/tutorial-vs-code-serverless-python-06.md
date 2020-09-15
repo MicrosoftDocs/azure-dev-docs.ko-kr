@@ -4,12 +4,12 @@ description: 자습서 6단계, 두 번째 함수를 추가하여 Azure Function
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6dbdd722d1167e703119b8709ec6b44eadc3dcec
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 29d625d40868ab761037c1a4a049f7e95e63df26
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982795"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473578"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Azure Functions에 두 번째 Python 함수 추가
 
@@ -119,4 +119,4 @@ ms.locfileid: "87982795"
 > [!div class="nextstepaction"]
 > [두 번째 함수를 추가했습니다. - 7단계 진행 >>>](tutorial-vs-code-serverless-python-07.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=06-second-function)
+문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

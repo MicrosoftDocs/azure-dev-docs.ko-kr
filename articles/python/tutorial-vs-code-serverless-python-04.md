@@ -4,12 +4,12 @@ description: 자습서 4 단계, Python 코드를 확인하도록 VS Code 디버
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8b7af7f4ebc5861083f5fd430129b8f013199bf3
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f96e2065f4864423470c1eda9ad48cad086e0fe6
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983475"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473588"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Azure Functions Python 코드를 로컬에서 디버그
 
@@ -73,4 +73,4 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
 > [!div class="nextstepaction"]
 > [디버거를 로컬로 실행했습니다. - 5단계 진행 >>>](tutorial-vs-code-serverless-python-05.md)
 
-[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=04-test-debug)
+문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

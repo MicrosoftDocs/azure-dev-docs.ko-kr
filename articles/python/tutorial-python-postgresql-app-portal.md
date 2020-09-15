@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 9e6794d655d420d5f6b4093aecf15b7540f34709
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4ad5086e0bc0500a7b7a117142a153e56ee4b481
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614538"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614290"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -27,7 +27,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 > - 진단 로그 보기
 > - Azure Portal에서 웹앱 관리
 
-[이 자습서의 Azure CLI 기반 버전](/azure/app-service/tutorial-python-postgresql-app)을 사용할 수도 있습니다.
+**[이 자습서의 Azure CLI 기반 버전](/azure/app-service/tutorial-python-postgresql-app)** 을 사용할 수도 있습니다.
 
 ## <a name="fork-the-sample-repository"></a>샘플 리포지토리 포크
 

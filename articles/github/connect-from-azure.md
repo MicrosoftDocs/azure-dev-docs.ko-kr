@@ -6,12 +6,13 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
-ms.openlocfilehash: 4f6a7d09c0adba2fc55e94ab652c5228a742e67d
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.custom: github-actions-azure
+ms.openlocfilehash: d7c791aec426e139592e8a32e7779b2f02832d5f
+ms.sourcegitcommit: 5205d15c697bbfd4ecb3f45b5de093f709d11979
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614274"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026414"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions를 사용하여 Azure에 연결
 

@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, 키 자격 증명 모음, 보안, 자격 증�
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 935361b62c30a34d3a2916abba79a2c2c99d1214
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240005"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682014"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>자습서: Ansible에서 Linux 가상 머신으로 Azure Key Vault 사용
 
@@ -40,13 +40,13 @@ ms.locfileid: "88240005"
 
 Azure CLI를 사용하여 Azure용 Ansible 모듈을 사용할 때 필요한 Azure 구독 정보를 가져옵니다. 
 
-1. `az account show` 명령을 사용하여 Azure 구독 ID 및 Azure 구독 테넌트 ID를 가져옵니다. `<Subscription>` 자리 표시자에는 Azure 구독 이름 또는 Azure 구독 ID를 지정합니다. 이 명령은 기본 Azure 구독과 연결된 여러 키 값을 표시합니다. 구독이 여러 개인 경우 [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) 명령을 통해 현재 구독을 설정해야 할 수도 있습니다. 명령의 출력에서 **ID**와 **tenantID** 값을 둘 다 적어둡니다.
+1. `az account show` 명령을 사용하여 Azure 구독 ID 및 Azure 구독 테넌트 ID를 가져옵니다. `<Subscription>` 자리 표시자에는 Azure 구독 이름 또는 Azure 구독 ID를 지정합니다. 이 명령은 기본 Azure 구독과 연결된 여러 키 값을 표시합니다. 구독이 여러 개인 경우 [az account set](/cli/azure/account#az-account-set) 명령을 통해 현재 구독을 설정해야 할 수도 있습니다. 명령의 출력에서 **ID**와 **tenantID** 값을 둘 다 적어둡니다.
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
     ```
 
-1. Azure 구독에 대한 서비스 주체가 없는 경우, [Azure CLI를 사용하여 Azure 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). 명령의 출력에서 **appId** 값을 적어둡니다.
+1. Azure 구독에 대한 서비스 주체가 없는 경우, [Azure CLI를 사용하여 Azure 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli). 명령의 출력에서 **appId** 값을 적어둡니다.
 
 1. `az ad sp show` 명령을 사용하여 서비스 주체의 개체 ID를 가져옵니다. `<ApplicationID>` 자리 표시자에는 서비스 주체 appId를 지정합니다. `--query` 매개 변수는 *stdout*에 출력할 값을 나타냅니다. 이 경우에는 서비스 주체 개체 ID입니다.
 
@@ -441,23 +441,23 @@ tasks:
     
 ## <a name="clean-up-resources"></a>리소스 정리
 
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다. `<kv_rg>` 자리 표시자를 데모 키 자격 증명 모음을 보유하는 데 사용된 리소스 그룹으로 바꿉니다.
+더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다. `<kv_rg>` 자리 표시자를 데모 키 자격 증명 모음을 보유하는 데 사용된 리소스 그룹으로 바꿉니다. 
 
-```yml
-- hosts: localhost
-  vars:
-    kv_rg: <kv_rg>
-    test_vm_rg: kv_test_vm_rg
-  tasks:
-    - name: Delete the key vault resource group
-      azure_rm_resourcegroup:
-        name: "{{ kv_rg }}"
-        force_delete_nonempty: yes
-        state: absent
-    - name: Delete the test vm resource group
-      azure_rm_resourcegroup:
-        name: "{{ test_vm_rg }}"
-        force_delete_nonempty: yes
+```yml  
+- hosts: localhost  
+  vars: 
+    kv_rg: <kv_rg>  
+    test_vm_rg: kv_test_vm_rg   
+  tasks:    
+    - name: Delete the key vault resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ kv_rg }}" 
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete the test vm resource group   
+      azure_rm_resourcegroup:   
+        name: "{{ test_vm_rg }}"    
+        force_delete_nonempty: yes  
         state: absent
 ```
 

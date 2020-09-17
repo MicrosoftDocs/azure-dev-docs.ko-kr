@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 4ad5086e0bc0500a7b7a117142a153e56ee4b481
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614290"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753762"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -230,15 +230,15 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 이제 PostgreSQL 데이터베이스를 사용하고 있음을 보여 주기 위해 앱에 대한 빠른 테스트를 실행할 준비가 되었습니다.
 
-1. 웹앱에 대한 브라우저 창 또는 탭에서 **개요** 페이지로 돌아간 다음, 웹앱에 대한 **URL**(`http:\//\<app-name>.azurewebsites.net` 형식)을 선택합니다.
+1. 웹앱에 대한 브라우저 창 또는 탭에서 **개요** 페이지로 돌아간 다음, 웹앱에 대한 **URL**(`http://<app-name>.azurewebsites.net` 형식)을 선택합니다.
 
 1. 데이터베이스에 아직 특정 설문 조사가 없으므로 앱에서 "설문 조사를 사용할 수 없습니다."라는 메시지가 표시됩니다.
 
-1. `http:\//\<app-name>.azurewebsites.net/admin`("Django 관리" 페이지)으로 이동하여 이전 섹션의 슈퍼 사용자 자격 증명(`root` 및 `Pollsdb1`)을 사용하여 로그인합니다.
+1. `http://<app-name>.azurewebsites.net/admin`("Django 관리" 페이지)으로 이동하여 이전 섹션의 슈퍼 사용자 자격 증명(`root` 및 `Pollsdb1`)을 사용하여 로그인합니다.
 
 1. **설문 조사** 아래에서 **질문** 옆에 있는 **추가**를 선택하고, 몇 가지 선택 항목이 있는 설문 조사 질문을 만듭니다.
 
-1. `http:\//\<app-name>.azurewebsites.net/`으로 다시 이동하여 이제 질문이 사용자에게 표시되는지 확인합니다. 데이터베이스에 일부 데이터를 생성하려는 질문에 대답합니다.
+1. `http://<app-name>.azurewebsites.net/`으로 다시 이동하여 이제 질문이 사용자에게 표시되는지 확인합니다. 데이터베이스에 일부 데이터를 생성하려는 질문에 대답합니다.
 
 **축하합니다.** Linux용 Azure App Service에서 활성 PostgreSQL 데이터베이스를 사용하는 Python Django 웹앱이 실행되고 있습니다.
 

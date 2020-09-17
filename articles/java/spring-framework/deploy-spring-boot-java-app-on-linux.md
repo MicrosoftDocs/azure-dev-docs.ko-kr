@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: f6f90deebd214d0381f3a66c6808dbc4f848aa13
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: fadb42994486bf9b9f6aa20d87f84ad07867ced2
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725147"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534501"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포
 
@@ -109,7 +109,7 @@ ms.locfileid: "88725147"
 
    ```xml
    <properties>
-      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.5.2</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
    </properties>

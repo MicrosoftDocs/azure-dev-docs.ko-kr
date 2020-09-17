@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: e6e3effc4a857656a6d118d3fee898fa086c082e
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c8ee810df90ed9b0de12e92c336898fb700e1c67
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378627"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681633"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps의 Maven을 사용하여 Azure에 컨테이너화된 Spring Boot 앱 배포
 
@@ -318,7 +318,7 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 
 * [Azure CLI에서 Azure에 로그인](/azure/xplat-cli-connect)
 
-* [Azure Web Apps의 Maven 플러그 인을 사용하여 Spring Boot 앱을 Azure App Service에 배포하는 방법](deploy-spring-boot-java-app-with-maven-plugin.md)
+* [빠른 시작: Azure App Service에서 Java 앱 만들기](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux)
 
 * [Azure CLI 2.0을 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli)
 

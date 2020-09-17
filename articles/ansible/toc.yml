@@ -16,10 +16,8 @@
       items:
         - name: Linux 가상 머신 구성
           href: vm-configure.md
-          maintainContext: true
         - name: Linux 가상 머신 관리
           href: vm-manage.md
-          maintainContext: true
 - name: 자습서
   items:
     - name: Azure Application Gateway

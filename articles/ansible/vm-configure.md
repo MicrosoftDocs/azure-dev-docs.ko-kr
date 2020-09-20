@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, 가상 머신
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: c9f6d9a954b8bdbd05ede42cc69a0078eae3cea2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6ef5b2799218e3edb008d19102985d38ca6646d6
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240435"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681945"
 ---
 # <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>빠른 시작: Ansible을 사용하여 Azure에서 Linux 가상 머신 구성
 
@@ -58,10 +58,6 @@ Azure 가상 머신을 만들 때 [가상 네트워크](/azure/virtual-network/v
 ```
 
 ## <a name="create-a-public-ip-address"></a>공용 IP 주소 만들기
-
-
-
-
 
 [공용 IP 주소](/azure/virtual-network/virtual-network-ip-addresses-overview-arm)를 통해 인터넷 리소스가 Azure 리소스에 대한 인바운드와 통신할 수 있습니다. 또한 공용 IP 주소를 사용하면 Azure 리소스에서 공용 Azure 서비스에 아웃바운드로 통신할 수 있습니다. 두 시나리오 모두에서 액세스하려는 리소스에 IP 주소가 할당되어 있습니다. 이 주소는 사용자가 할당을 취소할 때까지 해당 리소스에만 전용됩니다. 공용 IP 주소가 리소스에 할당되지 않아도 리소스는 여전히 인터넷에 아웃바운드로 통신할 수 있습니다. Azure에서는 연결이 설정되고, 사용 가능한 IP 주소가 동적으로 할당됩니다. 동적으로 할당된 주소는 해당 리소스에만 전용되지 않습니다.
 
@@ -282,6 +278,10 @@ Azure 가상 머신을 만들 때 [가상 네트워크](/azure/virtual-network/v
     ```bash
     ssh azureuser@<ip-address>
     ```
+
+## <a name="clean-up-resources"></a>리소스 정리
+
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

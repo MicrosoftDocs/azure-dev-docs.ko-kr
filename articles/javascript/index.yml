@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign
-  ms.openlocfilehash: f83322b246d8af3b89742d450db708845b4a4a10
-  ms.sourcegitcommit: 9b4fb8594e6659a8f7a3df0227b1df0636a7681c
+  ms.openlocfilehash: 372e8cbbfea398d06bbadca0d0d05a769cc1ec4a
+  ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/31/2020
-  ms.locfileid: "89176317"
+  ms.lasthandoff: 09/18/2020
+  ms.locfileid: "90772986"
 landingContent:
 - title: Hosting
   linkLists:
@@ -90,9 +90,9 @@ landingContent:
     - text: 최신 클라이언트 라이브러리
       url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
     - text: 참조 설명서
-      url: https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest
+      url: /javascript/api/overview/azure/?view=azure-node-latest
     - text: JS/TS 샘플
-      url: https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript
+      url: /samples/browse/?languages=javascript%252cnodejs%252ctypescript
 - title: 개발자 도구 살펴보기
   linkLists:
   - linkListType: get-started

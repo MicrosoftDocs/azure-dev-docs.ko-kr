@@ -14,7 +14,7 @@
       items:
         - name: Visual Studio Code 사용
           items:
-            - name: 1 소개 및 필수 구성 요소
+            - name: 1 환경 구성
               href: tutorial-vs-code-serverless-python-01.md
             - name: 2 Python 함수 만들기
               href: tutorial-vs-code-serverless-python-02.md
@@ -44,7 +44,7 @@
       items:
         - name: Visual Studio Code 사용
           items:
-            - name: 1 소개 및 필수 구성 요소
+            - name: 1 환경 구성
               href: tutorial-deploy-app-service-on-linux-01.md
             - name: 2 앱 준비
               href: tutorial-deploy-app-service-on-linux-02.md
@@ -80,7 +80,7 @@
   items:
     - name: Visual Studio Code 사용
       items:
-        - name: 1 소개 및 필수 구성 요소
+        - name: 1 환경 구성
           href: tutorial-deploy-containers-01.md
         - name: 2 컨테이너 이미지 배포
           href: tutorial-deploy-containers-02.md

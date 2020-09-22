@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, 플레이북, 가상 머신, 가상 머�
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: c214daa3f63f88711ace9d41ffb9978d20551fc9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad8bfca4030583e67423144dbc650eecb22e5060
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240575"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681963"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>자습서: Ansible을 사용하여 Azure Shared Image Gallery에서 VM 또는 가상 머신 확장 집합 만들기
 
@@ -101,7 +101,7 @@ ms.locfileid: "88240575"
           version: latest
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 00-prerequisites.yml
@@ -133,7 +133,7 @@ ansible-playbook 00-prerequisites.yml
         source: "{{ source_vm_name }}"
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 01a-create-generalized-image.yml
@@ -160,7 +160,7 @@ ansible-playbook 01a-create-generalized-image.yml
         description: This is the gallery description.
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 02-create-shared-image-gallery.yml
@@ -222,7 +222,7 @@ ansible-playbook 02-create-shared-image-gallery.yml
         var: output
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 03a-create-shared-image-generalized.yml
@@ -253,7 +253,7 @@ ansible-playbook 03a-create-shared-image-generalized.yml
         id: "/subscriptions/{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Compute/galleries/{{ shared_gallery_name }}/images/{{ shared_image_name }}/versions/{{ shared_image_version }}"
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 04a-create-vm-using-generalized-image.yml
@@ -286,7 +286,7 @@ ansible-playbook 04a-create-vm-using-generalized-image.yml
         id: "/subscriptions/{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Compute/galleries/{{ shared_gallery_name }}/images/{{ shared_image_name }}/versions/{{ shared_image_version }}"
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 05a-create-vmss-using-generalized-image.yml
@@ -320,7 +320,7 @@ ansible-playbook 05a-create-vmss-using-generalized-image.yml
       name: "{{ shared_image_version }}"
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 06-get-info.yml
@@ -359,7 +359,7 @@ ansible-playbook 06-get-info.yml
       state: absent
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook 07-delete-gallery.yml
@@ -367,36 +367,7 @@ ansible-playbook 07-delete-gallery.yml
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다. 
-
-이 섹션의 샘플 플레이북 코드는 다음에 사용됩니다.
-
-- 이전에 만든 두 리소스 그룹 삭제
-
-다음 플레이북을 `cleanup.yml`로 저장합니다.
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-다음은 샘플 플레이북을 사용할 때 고려할 몇 가지 주요 참고 사항입니다.
-
-- `{{ resource_group_name }}` 자리 표시자를 리소스 그룹의 이름으로 바꿉니다.
-- 지정된 두 리소스 그룹 내의 모든 리소스가 삭제됩니다.
-
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

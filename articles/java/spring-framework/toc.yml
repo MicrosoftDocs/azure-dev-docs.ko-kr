@@ -70,7 +70,7 @@
     - name: 자습서
       items:
         - name: Maven을 사용하여 App Service에 배포
-          href: deploy-spring-boot-java-app-with-maven-plugin.md
+          href: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
         - name: Kubernetes에 배포
           href: deploy-spring-boot-java-app-on-kubernetes.md
         - name: 컨테이너용 웹앱 배포

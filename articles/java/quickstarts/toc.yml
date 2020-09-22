@@ -1,11 +1,11 @@
 - name: Java용 Azure 빠른 시작
-  href: /azure/developer/java/quickstarts
+  href: ./index.yml
   items:
     - name: 컴퓨팅 서비스
       href: compute.md
-    - name: data
+    - name: 데이터
       href: data.md
-    - name: 스토리지
+    - name: Storage
       href: storage.md
     - name: 캐싱
       href: caching.md

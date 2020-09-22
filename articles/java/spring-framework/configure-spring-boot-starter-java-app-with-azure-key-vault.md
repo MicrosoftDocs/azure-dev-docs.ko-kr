@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 17a154fe7f41e4079fd9c6dcf1358c2acd50367b
-ms.sourcegitcommit: 035f485f182405fdf3e274ec4f70abfcf5fc9641
+ms.openlocfilehash: efe17eba034b92d771d979a896585d4d5362a11d
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89511063"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534401"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>자습서: Spring Boot 애플리케이션의 Azure Key Vault에서 비밀 읽기
 
@@ -34,7 +34,7 @@ Spring Boot 애플리케이션은 사용자 이름 및 암호와 같은 중요�
 
 * 활성화된 Azure 구독.
   * Azure 구독이 아직 없는 경우 [무료 계정을 만듭니다](https://azure.microsoft.com/free/).
-* [Azure CLI 버전 2.0.67 이상을 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)하고 다음 명령을 사용하여 Azure Spring Cloud 확장을 설치합니다. `az extension add --name spring-cloud`
+* [Azure CLI 버전 2.0.67 이상을 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)하고 다음 명령을 사용하여 Azure Spring Cloud 확장을 설치합니다. `az extension add --name spring-cloud`
 * 지원되는 JDK(Java Development Kit) Azure에서 개발하는 경우 사용할 수 있는 JDK에 대한 자세한 내용은 <https://aka.ms/azure-jdks>를 참조하세요.
 * [Apache Maven](http://maven.apache.org/), 버전 3.0 이상
 * `curl` 명령.  UNIX와 유사한 대부분의 운영 체제에는 이 명령이 미리 설치되어 있습니다.  OS별 클라이언트는 [공식 curl 웹 사이트](https://curl.haxx.se/)에서 사용할 수 있습니다.
@@ -170,7 +170,7 @@ az ad sp create-for-rbac --name contososp
    "https://contosokv.vault.azure.net/"
    ```
 
-1. Key Vault를 구성하면 관리 ID의 `get` 및 `list` 작업이 가능합니다.  `object-id` 값은 위 `az ad sp create-for-rbac` 명령의 `appId`입니다.
+1. 해당 관리 ID에서 `get` 및 `list` 작업을 허용하도록 Key Vault를 구성합니다.  `object-id` 값은 위 `az ad sp create-for-rbac` 명령의 `appId`입니다.
 
    ```azurecli
    az keyvault set-policy --name contosokv --spn http://ejbcontososp --secret-permissions get list
@@ -185,6 +185,9 @@ az ad sp create-for-rbac --name contososp
    | name | Key Vault 이름입니다. |
    | spn | 위의 `az ad sp create-for-rbac` 명령 출력의 `name`입니다. |
    | secret-permissions | 명명된 보안 주체에서 허용할 작업 목록입니다. |
+
+    > [!NOTE]
+    > 최소 권한의 원칙으로 리소스에 가능한 최소 권한 세트를 부여하는 것을 권장하지만 Key Vault 통합 설계에는 `get` 및 `list` 이상이 필요합니다.
 
 1. 새 Key Vault에 비밀을 저장합니다.  일반적인 사용 사례는 JDBC 연결 문자열을 저장하는 것입니다.  예를 들면 다음과 같습니다.
 

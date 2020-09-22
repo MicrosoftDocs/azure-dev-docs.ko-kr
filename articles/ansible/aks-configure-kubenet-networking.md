@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, 플레이북, aks, 컨테이
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-ansible,fasttrack-edit
-ms.openlocfilehash: 55b3f2ec248e3163a6916c8a6067957f6a0c9ae1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: fed1864ec886cacf1b67a51199158898524e17bf
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239775"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682083"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>자습서: AKS(Azure Kubernetes Service)에서 Ansible을 사용하여 kubenet 네트워킹 구성
 
@@ -109,7 +109,7 @@ AKS를 사용하여 다음 네트워크 모델을 통해 클러스터를 배포�
 - `network_profile`은 kubenet 네트워크 플러그 인의 속성을 정의합니다.
 - `service_cidr`은 AKS 클러스터의 내부 서비스를 IP 주소에 할당하는 데 사용됩니다. 이 IP 주소 범위는 AKS 클러스터 외부에서 사용되지 않는 주소 공간이어야 합니다. 하지만 여러 AKS 클러스터에 동일한 서비스 CIDR을 다시 사용할 수 있습니다. 
 - `dns_service_ip` 주소는 서비스 IP 주소 범위의 ".10" 주소여야 합니다.
-- `pod_cidr`은 네트워크 환경의 다른 위치에서 사용되지 않는 큰 주소 공간이어야 합니다. 이 주소 범위는 앞으로 강화할 노드 수를 수용할 수 있을 정도로 커야 합니다. 클러스터가 배포된 후에는 이 주소 범위를 변경할 수 없습니다. 서비스 CIDR과 마찬가지로, 이 IP 범위는 AKS 클러스터 외부에 존재하면 안 되지만 클러스터 전체에서 안전하게 다시 사용할 수 있습니다.
+- `pod_cidr`은 네트워크 환경의 다른 위치에서 사용되지 않는 큰 주소 공간이어야 합니다. 이 주소 범위는 앞으로 강화할 노드 수를 수용할 수 있을 정도로 커야 합니다. 클러스터가 배포된 후에는 이 주소 범위를 변경할 수 없습니다. 서비스 CIDR과 마찬가지로, 이 IP 범위는 AKS 클러스터 외부에 존재하면 안 되지만 클러스터 간에 안전하게 다시 사용할 수 있습니다.
 - Pod IP 주소 범위는 /24 주소 공간을 클러스터의 각 노드에 할당하는 데 사용됩니다. 다음 예제에서 192.168.0.0/16의 `pod_cidr`은 첫 번째 노드 192.168.0.0/24, 두 번째 노드 192.168.1.0/24 및 세 번째 노드 192.168.2.0/24를 할당합니다.
 - 클러스터가 확장 또는 업그레이드되면 Azure는 새로운 각 노드에 Pod IP 주소 범위를 계속 할당합니다.
 - 플레이북은 `~/.ssh/id_rsa.pub`에서 `ssh_key`를 로드합니다. 수정할 때는 "ssh-rsa"(따옴표 제외)로 시작하는 단일 줄 형식을 사용합니다.
@@ -326,30 +326,7 @@ localhost                  : ok=15   changed=2    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다. 
-
-다음 코드를 `cleanup.yml`로 저장합니다.
-
-```yml
----
-- hosts: localhost
-  vars:
-      resource_group: aksansibletest
-  tasks:
-      - name: Clean up resource group
-        azure_rm_resourcegroup:
-            name: "{{ resource_group }}"
-            state: absent
-            force: yes
-```
-
-`vars` 섹션에서 `{{ resource_group_name }}` 자리 표시자를 리소스 그룹의 이름으로 바꿉니다.
-
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c5830ab871b78e586b502e0c6e2331700fa0149d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2891b0c09c43b652fd7dd41e354290c2821bad46
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379957"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534575"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>IntelliJ용 Azure 도구 키트에 대한 로그인 지침
 
@@ -31,25 +31,22 @@ ms.locfileid: "86379957"
 
 1. IntelliJ IDEA로 프로젝트를 엽니다.
 
-2. 사이드바 **Azure Explorer**를 연 다음, 위쪽 막대에서(또는 IDEA 메뉴 **도구/Azure/Azure 로그인**에서) **Azure 로그인** 아이콘을 클릭합니다.
+1. 사이드바 **Azure Explorer**를 연 다음, 위쪽 막대에서 **Azure 로그인** 아이콘을 클릭합니다(또는 IntelliJ 메뉴에서 **Tools>Azure>Azure 로그인**으로 이동).
 
    ![IntelliJ Azure 로그인 명령][I01]
 
-3. **Azure 로그인** 창에서 **디바이스 로그인**을 선택한 다음, **로그인**을 클릭합니다.
+1. **Azure 로그인** 창에서 **디바이스 로그인**을 선택한 다음, **로그인**을 클릭합니다.
 
    ![디바이스 로그인을 선택한 Azure 로그인 창][I02]
 
-4. **Azure 디바이스 로그인** 대화 상자에서 **복사 및 열기**를 클릭합니다.
+1. **Azure 디바이스 로그인** 대화 상자에서 **복사 및 열기**를 클릭합니다.
 
-   ![Azure 로그인 대화 상자 창][I03]
+1. 브라우저에서, 마지막 단계에서 **복사 및 열기**를 클릭할 때 복사한 디바이스 코드를 붙여넣은 후 **다음**을 클릭합니다.
 
-5. 브라우저에서, 마지막 단계에서 **복사 및 열기**를 클릭할 때 복사한 디바이스 코드를 붙여넣은 후 **다음**을 클릭합니다.
+1. Azure 계정을 선택하고 로그인하는 데 필요한 모든 인증 절차를 완료합니다.
 
-   ![디바이스 로그인 브라우저][I04]
+1. **구독 선택** 대화 상자에서 사용하려는 구독을 선택한 다음, **확인**을 클릭합니다.
 
-6. **구독 선택** 대화 상자에서 사용하려는 구독을 선택한 다음, **확인**을 클릭합니다.
-
-   ![구독 선택 대화 상자][I05]
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>서비스 주체에 의해 Azure 계정에 로그인
 
@@ -57,8 +54,9 @@ ms.locfileid: "86379957"
 
 1. IntelliJ IDEA로 프로젝트를 엽니다.
 
-1. 사이드바 **Azure Explorer**를 연 다음, 위쪽 막대에서(또는 IDEA 메뉴 **도구/Azure/Azure 로그인**에서) **Azure 로그인** 아이콘을 클릭합니다.
-   ![IntelliJ Azure 로그인 명령][A01]
+1. 사이드바 **Azure Explorer**를 연 다음, 위쪽 막대에서 **Azure 로그인** 아이콘을 클릭합니다(또는 IntelliJ 메뉴에서 **Tools>Azure>Azure 로그인**으로 이동).
+
+   ![IntelliJ Azure 로그인 명령][I01]
 
 1. **Azure 로그인** 창에서 **서비스 주체**를 선택한 다음 **새로 만들기**를 클릭합니다.
 
@@ -66,37 +64,27 @@ ms.locfileid: "86379957"
 
 1. **Azure 디바이스 로그인** 대화 상자에서 **복사 및 열기**를 클릭합니다.
 
-   ![Azure 로그인 대화 상자 창][A03]
-
 1. 브라우저에서, 마지막 단계에서 **복사 및 열기**를 클릭할 때 복사한 디바이스 코드를 붙여넣은 후 **다음**을 클릭합니다.
 
-   ![디바이스 로그인 브라우저][A04]
+1. Azure 계정을 선택하고 로그인하는 데 필요한 모든 인증 절차를 완료합니다. 인증 후 브라우저를 닫고 IntelliJ로 다시 전환합니다.
 
 1. **인증 파일 만들기** 창에서 사용할 구독을 선택하고 대상 디렉터리를 선택한 다음, **시작**을 클릭합니다.
 
-   ![인증 파일 만들기 창][A05]
-
 1. **서비스 주체 만들기 상태** 대화 상자에서 파일을 성공적으로 만든 후 **확인**을 클릭합니다.
-
-   ![서비스 주체 만들기 상태 대화 상자][A06]
 
 1. **Azure 로그인** 창에서 **로그인**을 클릭합니다. 
 
-   ![Azure 로그인 대화 상자][A07]
-
 1. **구독 선택** 대화 상자에서 사용하려는 구독을 선택한 다음, **확인**을 클릭합니다.
 
-   ![구독 선택 대화 상자][A08]
-
-> 서비스 주체 인증 파일을 만든 후 8단계에서 시작하여 인증 파일을 선택하고 로그인할 수 있습니다.
+   > [!TIP]
+   > 서비스 주체 인증 파일을 만든 후 3단계부터 시작하여 인증 파일을 선택하고 로그인할 수 있습니다.
 
 ## <a name="sign-out-of-your-azure-account"></a>Azure 계정에서 로그아웃
 
-이전 단계에서 계정을 구성한 후에는 IntelliJ IDEA를 시작할 때마다 자동으로 로그인됩니다. 그러나 Azure 계정에서 로그아웃하려면 다음을 수행합니다.
+이전 단계에서 계정을 구성한 후에는 IntelliJ IDEA를 시작할 때마다 자동으로 로그인됩니다. 
 
-* IntelliJ IDEA에서 Azure Explorer 사이드바를 열고 **Azure 로그아웃** 아이콘을 클릭하고 확인합니다(또는 IDEA 메뉴 **도구/Azure/Azure 로그아웃**에서).
+그러나 Azure 계정에서 로그아웃하려면 Azure Explorer 사이드바로 이동하여 **Azure 로그 아웃** 아이콘을 클릭하거나, IntelliJ 메뉴에서 **Tools>Azure>Azure 로그아웃**으로 이동합니다.
 
-   ![IntelliJ Azure 로그아웃 명령][L01]
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -108,20 +96,6 @@ ms.locfileid: "86379957"
 
 [I01]: media/sign-in-instructions/I01.png
 [I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
-[A01]: media/sign-in-instructions/A01.png
 [A02]: media/sign-in-instructions/A02.png
-[A03]: media/sign-in-instructions/A03.png
-[A04]: media/sign-in-instructions/A04.png
-[A05]: media/sign-in-instructions/A05.png
-[A06]: media/sign-in-instructions/A06.png
-[A07]: media/sign-in-instructions/A07.png
-[A08]: media/sign-in-instructions/A08.png
-[A09]: media/sign-in-instructions/A09.png
 
-[L01]: media/sign-in-instructions/L01.png
-[L02]: media/sign-in-instructions/L02.png
-[L03]: media/sign-in-instructions/L03.png

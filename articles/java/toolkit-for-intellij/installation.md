@@ -3,17 +3,17 @@ title: IntelliJ용 Azure 도구 키트 설치
 description: Azure Toolkit for IntelliJ 플러그 인을 설치하여 클라우드 애플리케이션을 만들어 Azure에 배포하는 방법에 대해 알아봅니다.
 documentationcenter: java
 ms.assetid: c6817c7b-f28c-4c06-8216-41c7a8117de3
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 15e3bdc3f001b3fe93a96b27bf7fc44c7aaa8f3a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: fe8b07257ff3a9fc5523d13dd13e19982103ab05
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379927"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534480"
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>IntelliJ용 Azure 도구 키트 설치
 
@@ -53,80 +53,39 @@ Azure Toolkit for IntelliJ에는 다음 소프트웨어 구성 요소가 필요�
 -->
 
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-settings-dialog-box"></a>설정 대화 상자에서 IntelliJ용 Azure 도구 키트를 설치하려면
+## <a name="from-the-settings-dialog-box"></a>설정 대화 상자에서
 
-1. IntelliJ IDEA를 시작합니다.
+1. IntelliJ 도구 모음에서 **파일**을 클릭한 다음, **설정**을 클릭합니다.
 
-1. IntelliJ IDEA가 열리면 **File**을 클릭한 다음 **Settings**를 클릭합니다.
-   
-   ![IntelliJ IDEA Settings 대화 상자 열기][01a]
+1. 설정 대화 상자의 왼쪽 탐색 메뉴에서 **플러그 인**을 클릭합니다.
 
-1. 설정 대화 상자에서 **Plugins**를 클릭하고 **Browse repositories**를 클릭합니다.
-   
-   ![IntelliJ IDEA Settings 대화 상자][02a]
+1. **Marketplace** 검색 창에 "Azure"를 입력하여 플러그 인 목록을 필터링합니다. **Azure Toolkit for IntelliJ**를 선택한 다음, **설치**를 클릭합니다. IntelliJ의 *타사 플러그 인 개인 정보 노트*를 읽고 **수락**을 클릭합니다.
 
-1. **Browse repositories** 대화 상자에서 검색 상자에 "Azure"를 입력합니다. **IntelliJ용 Azure 도구 키트**를 강조 표시하고 **Install**을 클릭합니다.
-   
-   ![IntelliJ용 Azure 도구 키트 검색][03]
-   
-   IntelliJ IDEA 대화 상자에서 설치 진행 상태가 표시됩니다.
-   
-   ![설치 진행률][04]
+   :::image type="content" source="media/installation/03-intellij-search-plugin.png" alt-text="Azure Toolkit for IntelliJ 플러그 인을 검색합니다."::: 
 
-1. 설치가 완료되면 **Restart IntelliJ IDEA**를 클릭합니다.
-   
-   ![Restart IntelliJ IDEA][05]
+1. 설치가 완료되면 **IDE 다시 시작**을 클릭합니다.
 
-1. **OK** 를 클릭하여 Settings 대화 상자를 닫습니다.
+1. IntelliJ IDEA를 다시 시작하라는 메시지가 표시되면 **다시 시작**을 클릭합니다.
    
-   ![IntelliJ IDEA Settings 대화 상자 닫기][06]
+   :::image type="content" source="media/installation/07-restart-intellij.png" alt-text="IntelliJ IDEA를 다시 시작합니다."::: 
 
-1. IntelliJ IDEA를 다시 시작할지 또는 연기할지 묻는 메시지가 나타나면 **Restart**를 클릭합니다.
-   
-1   ![Restart IntelliJ IDEA][07]
+## <a name="from-the-start-screen"></a>시작 화면에서
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-start-screen"></a>시작 화면에서 IntelliJ용 Azure 도구 키트를 설치하려면
+1. IntelliJ IDEA 시작 화면에서 **구성**을 클릭한 다음, **플러그 인**을 클릭합니다.
 
-1. IntelliJ IDEA를 시작합니다.
+   :::image type="content" source="media/installation/01-intellij-configure-dropdown.png" alt-text="시작 화면에서 플러그 인."::: 
 
-1. IntelliJ IDEA 시작 화면이 나타나면 **Configure**를 클릭하고 **Plugins**를 클릭합니다.
-   
-   ![IntelliJ IDEA 플러그 인 설치][01b]
+1. **Marketplace** 검색 창에 "Azure"를 입력하여 플러그 인 목록을 필터링합니다. **Azure Toolkit for IntelliJ**를 선택한 다음, **설치**를 클릭합니다. IntelliJ의 *타사 플러그 인 개인 정보 노트*를 읽고 **수락**을 클릭합니다.
 
-1. **Plugins** 대화 상자에서 **Browse repositories**를 클릭합니다.
-   
-   ![IntelliJ 아이디어 플러그 인 저장소 찾아보기][02b]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace.png" alt-text="시작 화면에서 플러그 인 마켓플레이스.":::
 
-1. **Browse repositories** 대화 상자에서 검색 상자에 "Azure"를 입력합니다. **IntelliJ용 Azure 도구 키트**를 강조 표시하고 **Install**을 클릭합니다.
-   
-   ![IntelliJ용 Azure 도구 키트 검색][03]
-   
-   IntelliJ IDEA 대화 상자에서 설치 진행 상태가 표시됩니다.
-   
-   ![설치 진행률][04]
+1. 설치가 완료되면 **IDE 다시 시작**을 클릭합니다.
 
-1. 설치가 완료되면 **Restart IntelliJ IDEA**를 클릭합니다.
+1. IntelliJ IDEA를 다시 시작하라는 메시지가 표시되면 **다시 시작**을 클릭합니다.
    
-   ![Restart IntelliJ IDEA][05]
-
-1. IntelliJ IDEA를 다시 시작할지 또는 연기할지 묻는 메시지가 나타나면 **Restart**를 클릭합니다.
-   
-   ![Restart IntelliJ IDEA][07]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace-restart.png" alt-text="시작 화면에서 설치하려면 다시 시작합니다.":::
 
 ## <a name="next-steps"></a>다음 단계
 
 [!INCLUDE [additional-resources](includes/additional-resources.md)]
 
-<!-- URL List -->
-
-<!-- IMG List -->
-
-[01a]: media/installation/01-intellij-file-settings.png
-[01b]: media/installation/01-intellij-configure-dropdown.png
-[02a]: media/installation/02-intellij-settings-dialog.png
-[02b]: media/installation/02-intellij-plugins-dialog.png
-[03]: media/installation/03-intellij-browse-repositories.png
-[04]: media/installation/04-install-progress.png
-[05]: media/installation/05-restart-intellij.png
-[06]: media/installation/06-intellij-settings-dialog.png
-[07]: media/installation/07-restart-intellij.png

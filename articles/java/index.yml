@@ -7,19 +7,19 @@ metadata:
   description: Java 개발자를 위한 이러한 자습서 및 도구를 사용하여 클라우드에서 앱 개발을 시작하세요.
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: b6bce3af7a5d7dcd5faaa8e588ec06098f52a2d5
-  ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+  ms.openlocfilehash: bcbd1b0b40aa6b10df1db7db0e4695e600160647
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88218917"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90830439"
 conceptualContent:
   items:
   - title: Java용 Azure 빠른 시작
     links:
     - text: Linux에 Java SE 웹앱 배포
       itemType: quickstart
-      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     - text: 서버리스 기능 만들기
       itemType: quickstart
       url: /azure/azure-functions/functions-create-first-java-maven
@@ -81,7 +81,7 @@ conceptualContent:
       url: /azure/app-service/containers/configure-language-java
     - text: MySQL을 사용하여 Spring 앱 배포
       itemType: tutorial
-      url: /azure/developer/java/spring-framework/spring-app-service-e2e
+      url: ./spring-framework/spring-app-service-e2e.md
     footerLink:
       text: App Service 설명서 참조
       url: /azure/app-service/containers/
@@ -109,7 +109,7 @@ conceptualContent:
       url: spring-framework/how-to-guides-spring-data-cosmosdb.md
     - text: Spring Boot 앱 배포
       itemType: tutorial
-      url: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     footerLink:
       text: 자세히 보기
       url: spring-framework/index.yml
@@ -120,7 +120,7 @@ conceptualContent:
       url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
     - text: Spring Cloud Function 만들기
       itemType: tutorial
-      url: /azure/developer/java/spring-framework/getting-started-with-spring-cloud-function-in-azure
+      url: ./spring-framework/getting-started-with-spring-cloud-function-in-azure.md
     - text: 개발자 가이드
       itemType: reference
       url: /azure/azure-functions/functions-reference-java
@@ -134,7 +134,7 @@ conceptualContent:
       url: /azure/azure-monitor/app/java-in-process-agent
     - text: ELK 시작
       itemType: tutorial
-      url: /azure/developer/java/fundamentals/java-get-started-with-logzio
+      url: ./fundamentals/java-get-started-with-logzio.md
     - text: Spring 앱 모니터링
       itemType: how-to-guide
       url: /azure/spring-cloud/diagnostic-services

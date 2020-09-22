@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725237"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682161"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot 애플리케이션을 Azure App Service로 마이그레이션
 
@@ -113,7 +113,7 @@ spring.jms.servicebus.idle-timeout=10000
 
 #### <a name="maven-applications"></a>Maven 애플리케이션
 
-애플리케이션이 Maven POM 파일에서 빌드되는 경우 [Maven용 Webapp 플러그 인을 사용](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service)하여 Web App을 만들고 애플리케이션을 배포합니다.
+애플리케이션이 Maven POM 파일에서 빌드되는 경우 Maven용 Webapp 플러그 인을 사용하여 Web App을 만들고 애플리케이션을 배포합니다. 자세한 내용은 [빠른 시작: Azure App Service에서 Java 앱 만들기](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux)를 참조하세요.
 
 #### <a name="non-maven-applications"></a>비 Maven 애플리케이션
 

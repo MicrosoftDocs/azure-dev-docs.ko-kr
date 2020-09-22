@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, 플레이북, aks, 컨테이
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: aa2c897a1581a75bcd9bacaa26c34f14474708b0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7fef950e1b0b953d73ffd28f59e23fd2c715db2c
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239765"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681788"
 ---
 # <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>자습서: Ansible을 사용하여 AKS(Azure Kubernetes Service)에서 RBAC(역할 기반 액세스 제어) 역할 구성
 
@@ -258,7 +258,7 @@ aks-nodepool1-33413200-2   Ready    agent   49m   v1.12.6
             path: "aks-{{ name }}-kubeconfig"
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook cleanup.yml

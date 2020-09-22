@@ -6,12 +6,12 @@ metadata:
   description: Spring은 VMware에서 개발한 오픈 소스 애플리케이션 프레임워크로, Java 애플리케이션을 간편하게 모듈식으로 개발하는 방법을 제공합니다.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: bf6e9302c0c566881be4161a632409f083f29322
-  ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+  ms.openlocfilehash: 8260997ed17f456b2307a4e2d4092104847ceb6e
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/20/2020
-  ms.locfileid: "88662954"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90831559"
 landingContent:
 - title: 시작 가이드
   linkLists:
@@ -42,7 +42,7 @@ landingContent:
     - text: Azure Cosmos DB SQL API 사용
       url: configure-spring-boot-starter-java-app-with-cosmos-db.md
     - text: Spring Boot 앱 배포
-      url: deploy-spring-boot-java-app-with-maven-plugin.md
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     - text: AKS에서 클러스터에 앱 배포
       url: deploy-spring-boot-java-app-on-kubernetes.md
     - text: Web Apps for Containers에 앱 배포

@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, 플레이북, 가상 머신, 가상 머�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e9ac4604b10f73e85290162eaf47803f4c4021c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 357de61099b8b3673022857a933a18632cff7e40
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240655"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681866"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>자습서: Ansible을 사용하여 Azure에서 가상 머신 확장 집합 구성
 
@@ -146,7 +146,7 @@ ms.locfileid: "88240655"
 
 * `vars` 섹션에서 `{{ admin_password }}` 자리 표시자를 해당 암호로 바꿉니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook vmss-create.yml
@@ -244,7 +244,7 @@ localhost                  : ok=8    changed=7    unreachable=0    failed=0
       azure_rm_virtualmachinescaleset: "{{ body }}"
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook vmss-scale-out.yml

@@ -5,12 +5,12 @@ metadata:
   description: 이러한 빠른 시작을 사용하여 클라우드용 Java 앱 개발을 시작하세요.
   ms.topic: landing-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: 302f214a3540012284867931d8b286e042fff147
-  ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+  ms.openlocfilehash: 3a25bcf7d2f45e2d4c109e4aa96316f54c465367
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87334478"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90830245"
 landingContent:
 - title: Java 앱 배포
   linkLists:
@@ -19,9 +19,9 @@ landingContent:
     - text: Linux 및 Tomcat
       url: /azure/app-service/containers/quickstart-java
     - text: Linux 및 Java SE
-      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     - text: IntelliJ를 사용하여 Linux에 배포
-      url: /azure/developer/java/toolkit-for-intellij/create-hello-world-web-app
+      url: ../toolkit-for-intellij/create-hello-world-web-app.md
     - text: Visual Studio Code를 사용하여 Linux에 배포
       url: https://code.visualstudio.com/docs/java/java-webapp
 - title: 서버리스 Functions
@@ -31,7 +31,7 @@ landingContent:
     - text: 함수를 만들고 Azure에 게시
       url: /azure/azure-functions/functions-create-first-java-maven
     - text: IntelliJ를 사용하여 배포
-      url: /azure/developer/java/toolkit-for-intellij/quickstart-functions
+      url: ../toolkit-for-intellij/quickstart-functions.md
     - text: Visual Studio Code를 사용하여 배포
       url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
 - title: Azure Spring Cloud
@@ -109,4 +109,4 @@ landingContent:
     - text: Jedis를 사용하는 App Cache
       url: /azure/azure-cache-for-redis/cache-java-get-started
     - text: Spring Data Reactive Redis
-      url: /azure/developer/java/spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache
+      url: ../spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache.md

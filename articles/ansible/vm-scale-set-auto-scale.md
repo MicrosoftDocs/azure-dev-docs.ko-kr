@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, bash, 플레이북, 크기 조정, 자동 크�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 32e7f8029a361f9559a61a32bb078b2bd3a3ecd5
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 62b2eb84ba7328e87896f9da448717856cb75c80
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240685"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681892"
 ---
 # <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>자습서: Azure에서 Ansible을 사용하여 가상 머신 확장 집합 자동 크기 조정
 
@@ -78,7 +78,7 @@ Ansible을 사용하면 특정 날짜에 또는 되풀이 일정에 따라 확�
               - '10'
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook vmss-auto-scale.yml
@@ -172,7 +172,7 @@ CPU 백분율 메트릭에 따라 플레이북이 다음 작업 중 하나를 �
             value: '1'
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook vmss-auto-scale-metrics.yml
@@ -200,7 +200,7 @@ ansible-playbook vmss-auto-scale-metrics.yml
         var: autoscale_query.autoscales[0]
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook vmss-auto-scale-get-settings.yml
@@ -227,7 +227,7 @@ ansible-playbook vmss-auto-scale-get-settings.yml
          state: absent
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 vmss-auto-scale-delete-setting.yml

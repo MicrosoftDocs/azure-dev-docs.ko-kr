@@ -1,16 +1,16 @@
 ---
 title: 자습서 - Ansible을 사용하여 AKS(Azure Kubernetes Service)에서 Azure CNI 네트워킹 구성
-description: Ansible을 사용하여 AKS(Azure Kubernetes Service) 클러스터에서 kubenet 네트워킹을 구성하는 방법 알아보기
+description: Ansible을 사용하여 AKS(Azure Kubernetes Service) 클러스터에서 Azure CNI 네트워킹을 구성하는 방법 알아보기
 keywords: ansible, azure, devops, bash, cloudshell, 플레이북, aks, 컨테이너, aks, kubernetes
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: f3892b9c25b952d2d8c71e4e44857557c0a1813b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1f58c8c5964a6e015de9cb1e3990274791037599
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239955"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682118"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>자습서: Ansible을 사용하여 AKS(Azure Kubernetes Service)에서 Azure CNI 네트워킹 구성
 
@@ -245,37 +245,7 @@ localhost                  : ok=9    changed=4    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다. 
-
-이 섹션의 샘플 플레이북 코드는 다음에 사용됩니다.
-
-- `vars` 섹션에서 참조된 리소스 그룹을 참조합니다.
-
-다음 플레이북을 `cleanup.yml`로 저장합니다.
-
-```yml
----
-- hosts: localhost
-  vars:
-      resource_group: {{ resource_group_name }}
-  tasks:
-      - name: Clean up resource group
-        azure_rm_resourcegroup:
-            name: "{{ resource_group }}"
-            state: absent
-            force: yes
-```
-
-다음은 샘플 플레이북을 사용할 때 고려할 몇 가지 주요 참고 사항입니다.
-
-- `{{ resource_group_name }}` 자리 표시자를 리소스 그룹의 이름으로 바꿉니다.
-- 지정된 리소스 그룹 내의 모든 리소스가 삭제됩니다.
-
-다음과 같이 ansible-playbook 명령을 사용하여 플레이북을 실행합니다.
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

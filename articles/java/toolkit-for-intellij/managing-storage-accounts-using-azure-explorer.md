@@ -2,19 +2,22 @@
 title: IntelliJ용 Azure Explorer를 사용하여 스토리지 계정 관리
 description: IntelliJ용 Azure 탐색기를 사용하여 Azure Storage 계정을 관리하는 방법을 알아봅니다.
 documentationcenter: java
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a692081032781a530d80c8fa2ff77792611e2673
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 5152b1bfedd02c821d2a9138fa3e20325b5ea086
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438465"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534321"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>IntelliJ용 Azure Explorer를 사용하여 스토리지 계정 관리
+
+> [!NOTE]
+> Azure Explorer의 스토리지 계정 기능은 더 이상 사용되지 않습니다. Azure Portal을 활용하여 스토리지 계정 및 컨테이너를 만들고 관리할 수 있습니다. 스토리지 계정을 관리하는 방법에 대한 빠른 시작은 [Azure Storage](/azure/storage/blobs/storage-quickstart-blobs-portal) 설명서를 참조하세요.
 
 IntelliJ용 Azure 도구 키트의 일부인 Azure Explorer는 IntelliJ IDE(통합 개발 환경) 내에서 Azure 계정의 스토리지 계정을 관리하기 위한 사용하기 쉬운 솔루션을 Java 개발자에게 제공합니다.
 
@@ -22,7 +25,7 @@ IntelliJ용 Azure 도구 키트의 일부인 Azure Explorer는 IntelliJ IDE(통�
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-intellij"></a>IntelliJ에서 스토리지 계정 만들기
+## <a name="create-a-storage-account"></a>스토리지 계정 만들기
 
 Azure Explorer를 사용하여 스토리지 계정을 만들려면 다음을 수행합니다.
 
@@ -30,11 +33,7 @@ Azure Explorer를 사용하여 스토리지 계정을 만들려면 다음을 수
 
 2. **Azure Explorer** 보기에서 **Azure** 노드를 확장하고 **스토리지 계정**을 마우스 오른쪽 단추로 클릭한 후 **스토리지 계정 만들기**를 클릭합니다.
 
-   ![Storage 계정 만들기 명령][CS01]
-
 3. **스토리지 계정 만들기** 대화 상자에서 다음 옵션을 지정합니다.
-
-   ![새 Storage 계정 만들기 대화 상자][CS02]
 
    * **Name**: 새 스토리지 계정의 이름을 지정합니다.
 
@@ -54,17 +53,14 @@ Azure Explorer를 사용하여 스토리지 계정을 만들려면 다음을 수
 
 4. 위의 옵션을 모두 지정했으면 **확인**을 클릭합니다.
 
-## <a name="delete-a-storage-account-in-intellij"></a>IntelliJ에서 스토리지 계정 삭제
+## <a name="delete-a-storage-account"></a>스토리지 계정 삭제
 
 Azure Explorer를 사용하여 스토리지 계정을 삭제하려면 다음을 수행합니다.
 
 1. **Azure Explorer** 보기에서 스토리지 계정을 마우스 오른쪽 단추로 클릭하고 **삭제**를 선택합니다.
 
-   ![스토리지 계정 삭제 메뉴][DS01]
-
 2. 확인 창에서 **예**를 클릭합니다.
 
-   ![스토리지 계정 삭제 확인 창][DS02]
 
 ## <a name="next-steps"></a>다음 단계
 

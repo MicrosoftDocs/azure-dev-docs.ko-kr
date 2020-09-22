@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Bash
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 354c54191d108dc7a58f2813225a40b75968a4b2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 896616cff3f2df237de625536981b08d5db9175b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240625"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681930"
 ---
 # <a name="quickstart-manage-linux-virtual-machines-in-azure-using-ansible"></a>빠른 시작: Ansible을 사용하여 Azure에서 Linux 가상 머신 관리
 
@@ -53,7 +53,7 @@ Ansible을 사용하면 사용자 환경에서 리소스의 배포 및 구성을
 
 1. 파일을 저장하고 편집기를 종료합니다.
 
-1. 다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+1. [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
     ```bash
     ansible-playbook azure-vm-stop.yml
@@ -105,7 +105,7 @@ Ansible을 사용하면 사용자 환경에서 리소스의 배포 및 구성을
 
 1. 파일을 저장하고 편집기를 종료합니다.
 
-1. 다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+1. [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
     ```bash
     ansible-playbook azure-vm-start.yml

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.custom: devx-track-java
-ms.openlocfilehash: 6aa930bb4ee5c6a5019e33b3d8075765b92f0bfc
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f7a7777551aadc5ef970d071e93974f1dea17b9
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379787"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753753"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Java 8에서 Java 11로 전환
 
@@ -126,7 +126,7 @@ JDK 11을 사용하여 컴파일하려면 스크립트, 도구, 테스트 프레
 ### <a name="check-command-line-options"></a>명령줄 옵션 확인
 
 Java 11에서 실행하기 전에, 명령줄 옵션을 빠르게 검사합니다. 
-[제거된 옵션](#unrecognized-options)을 사용하면 JVM(Java Virtual Machine)이 종료됩니다. Java 8부터 GC 로깅 옵션이 완전히 바뀌었기 때문에 GC 로깅 옵션을 사용하는 경우에는 이 검사가 특히 중요합니다. [JaCoLine](https://jacoline.dev/about) 도구는 명령줄 옵션과 관련된 문제를 찾는 데 유용한 도구입니다. 
+[제거된 옵션](#unrecognized-options)을 사용하면 JVM(Java Virtual Machine)이 종료됩니다. Java 8부터 GC 로깅 옵션이 완전히 바뀌었기 때문에 GC 로깅 옵션을 사용하는 경우에는 이 검사가 특히 중요합니다. JaCoLine 도구는 명령줄 옵션과 관련된 문제를 찾는 데 유용한 도구입니다. 
 
 ### <a name="check-third-party-libraries"></a>타사 라이브러리 검사
 

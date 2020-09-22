@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, service bus, topics, subscript
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 8dad002f52ded3baaf66d96a516a3d23dac91d56
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a6cc84b17a5971ba487e304822de9f366826274b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240065"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681975"
 ---
 # <a name="tutorial-configure-topics-in-azure-service-bus-using-ansible"></a>자습서: Ansible을 사용하여 Azure Service Bus에 토픽 구성
 
@@ -70,7 +70,7 @@ ms.locfileid: "88240065"
           var: topic
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook servicebus_topic.yml
@@ -103,7 +103,7 @@ ansible-playbook servicebus_topic.yml
 
 다음 플레이북을 `servicebus_subscription.yml`로 저장합니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook servicebus_subscription.yml
@@ -140,7 +140,7 @@ ansible-playbook servicebus_subscription.yml
           var: policy
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook servicebus_topic_policy.yml
@@ -173,7 +173,7 @@ ansible-playbook servicebus_topic_policy.yml
 플레이북을 실행하기 전에 다음 정보를 참조하세요.
 - `show_sas_policies` 값은 지정된 네임스페이스 아래에 SAS 정책을 표시할지 여부를 나타냅니다. 추가 네트워크 오버헤드를 방지하기 위해 이 값은 기본적으로 `False`입니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -220,7 +220,7 @@ ansible-playbook servicebus_namespace_info.yml
 플레이북을 실행하기 전에 다음 정보를 참조하세요.
 - `show_sas_policies` 값은 지정된 큐 아래에 SAS 정책을 표시할지 여부를 나타냅니다. 추가 네트워크 오버헤드를 방지하기 위해 이 값은 기본적으로 `False`로 설정됩니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook servicebus_list.yml
@@ -249,7 +249,7 @@ ansible-playbook servicebus_list.yml
           state: absent
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook servicebus_topic_policy_delete.yml
@@ -295,7 +295,7 @@ ansible-playbook servicebus_topic_policy_delete.yml
           force_delete_nonempty: yes
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook cleanup.yml

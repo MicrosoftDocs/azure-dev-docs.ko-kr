@@ -3,14 +3,14 @@ title: 자습서 - Ansible을 사용하여 Azure Application Gateway로 웹 트�
 description: Ansible을 사용하여 웹 트래픽을 관리하도록 Azure Application Gateway를 만들고 구성하는 방법 알아보기
 keywords: Ansible, Azure, DevOps, Bash, 플레이북, 애플리케이션 게이트웨이, 부하 분산 장치, 웹 트래픽
 ms.topic: tutorial
-ms.date: 06/19/2020
+ms.date: 09/14/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: cfeba71085443afb978ceb6b7c381a1e74e723fb
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cb29fa619a68906a5a68eeaff5904d606c631616
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240475"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681677"
 ---
 # <a name="tutorial-manage-web-traffic-with-azure-application-gateway-using-ansible"></a>자습서: Ansible을 사용하여 Azure Application Gateway로 웹 트래픽 관리
 
@@ -54,7 +54,7 @@ ms.locfileid: "88240475"
 - 리소스 그룹 이름은 `myResourceGroup`입니다. 이 값은 자습서 전체에서 사용됩니다.
 - 리소스 그룹이 `eastus` 위치에 생성됩니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook rg.yml
@@ -107,7 +107,7 @@ ansible-playbook rg.yml
 * `vars` 섹션에는 네트워크 리소스를 만드는 데 사용되는 값이 포함되어 있습니다. 
 * 해당 환경에 맞게 이러한 값을 변경해야 합니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook vnet_create.yml
@@ -160,7 +160,7 @@ ansible-playbook vnet_create.yml
               - 80
 ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook aci_create.yml
@@ -263,7 +263,7 @@ ansible-playbook aci_create.yml
 * `appGatewayFrontendIP`은 `frontend_ip_configurations` 블록에 정의됩니다. myAGPublicIPAddress를 appGatewayHttpListener에 할당합니다.
 * `rule1`은 `request_routing_rules` 블록에 정의됩니다. appGatewayHttpListener에 연결되는 기본 회람 규칙입니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook appgw_create.yml
@@ -287,26 +287,7 @@ ansible-playbook appgw_create.yml
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다. 
-
-다음 코드를 `cleanup.yml`로 저장합니다.
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

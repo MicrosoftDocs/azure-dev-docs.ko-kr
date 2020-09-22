@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f5606cb8b1e61358e610c8ff1bcadc837e44a539
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 51037098f05d985bcb8c35580688d37db0cbe363
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378287"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534741"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트를 사용하는 클라우드 내의 Linux 컨테이너에 Hello World 웹앱 배포
 
@@ -97,7 +97,7 @@ ms.locfileid: "86378287"
 
 1. 위에 나열된 설정을 구성했으면 **확인**을 클릭하여 웹앱을 Azure에 게시합니다.
 
-1. 웹앱이 게시된 후에는 웹앱에 대해 이전에 지정한 URL로 이동할 수 있습니다. 예: *wingtiptoys.azurewebsites.net*
+1. 웹앱이 게시된 후에는 웹앱에 대해 이전에 지정한 URL로 이동할 수 있습니다(예: *wingtiptoys.azurewebsites.net*).
 
    ![웹앱 검색][browsing-to-web-app]
 

@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Azure CLI
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240165"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682028"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Ansible 구성
 
@@ -118,7 +118,7 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
 
 Ansible 자격 증명을 구성하려면 다음 정보가 필요합니다.
 
-* Azure 구독 ID 
+* Azure 구독 ID
 * 서비스 주체 값
 
 Ansible Tower 또는 Jenkins를 사용하는 경우 서비스 주체 값을 환경 변수로 선언합니다.
@@ -168,7 +168,11 @@ Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자�
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
+## <a name="test-ansible-installation"></a>Ansible 설치 테스트
+
 이제 Ansible이 설치되고 구성된 가상 머신이 있습니다!
+
+[!INCLUDE [ansible-test-configuration.md](includes/ansible-test-configuration.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

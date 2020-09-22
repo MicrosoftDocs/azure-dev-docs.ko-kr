@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, networking, peering
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 25ca319c735605e6597d4a4717c58f41b69e66c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 747b11c9727e0844ac9d9c7b07a8355e8163c75e
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240055"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681957"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>자습서: Ansible을 사용하여 Azure Virtual Network 피어링 구성
 
@@ -289,43 +289,42 @@ localhost                  : ok=12   changed=9    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다. 
+더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다.    
 
-이 섹션의 샘플 플레이북 코드는 다음에 사용됩니다.
+이 섹션의 샘플 플레이북 코드는 다음에 사용됩니다.    
 
-- 이전에 만든 두 리소스 그룹 삭제
+- 이전에 만든 두 리소스 그룹 삭제   
 
-다음 플레이북을 `cleanup.yml`로 저장합니다.
+다음 플레이북을 `cleanup.yml`로 저장합니다.   
 
-```bash
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name-1 }}"
-    resource_group_secondary: "{{ resource_group_name-2 }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
+```bash 
+- hosts: localhost  
+  vars: 
+    resource_group: "{{ resource_group_name-1 }}"   
+    resource_group_secondary: "{{ resource_group_name-2 }}" 
+  tasks:    
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group }}"    
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group_secondary }}"  
+        force_delete_nonempty: yes  
+        state: absent   
+``` 
 
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group_secondary }}"
-        force_delete_nonempty: yes
-        state: absent
-```
+다음은 샘플 플레이북을 사용할 때 고려할 몇 가지 주요 참고 사항입니다.  
 
-다음은 샘플 플레이북을 사용할 때 고려할 몇 가지 주요 참고 사항입니다.
+- `{{ resource_group_name-1 }}` 자리 표시자를 처음 만든 리소스 그룹의 이름으로 바꿉니다.  
+- `{{ resource_group_name-2 }}` 자리 표시자를 두 번째로 만든 리소스 그룹의 이름으로 바꿉니다. 
+- 지정된 두 리소스 그룹 내의 모든 리소스가 삭제됩니다.   
 
-- `{{ resource_group_name-1 }}` 자리 표시자를 처음 만든 리소스 그룹의 이름으로 바꿉니다.
-- `{{ resource_group_name-2 }}` 자리 표시자를 두 번째로 만든 리소스 그룹의 이름으로 바꿉니다.
-- 지정된 두 리소스 그룹 내의 모든 리소스가 삭제됩니다.
+다음과 같이 ansible-playbook 명령을 사용하여 플레이북을 실행합니다.    
 
-다음과 같이 ansible-playbook 명령을 사용하여 플레이북을 실행합니다.
-
-```bash
-ansible-playbook cleanup.yml
+```bash 
+ansible-playbook cleanup.yml    
 ```
 
 ## <a name="next-steps"></a>다음 단계

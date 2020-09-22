@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, 플레이북, aks, 컨테이
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 0e7b42776c0405acf335dc75508ef2759838da21
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d54febc3e2d4a82b8986f0c64b200a4aaff7ab55
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240045"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682150"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>자습서: Azure에서 Ansible을 사용하여 AKS(Azure Kubernetes Service) 클러스터 구성
 
@@ -83,9 +83,9 @@ ms.locfileid: "88240045"
 - `tasks` 내부의 첫 번째 섹션은 `eastus` 위치 내에 `myResourceGroup`이라는 리소스 그룹을 정의합니다.
 - `tasks` 내부의 두 번째 섹션은 `myResourceGroup` 리소스 그룹 내에 `myAKSCluster`라는 AKS 클러스터를 정의합니다.
 - `your_ssh_key` 자리 표시자의 경우 "ssh-rsa"로 시작하는 단일 줄 형식으로 RSA 공개 키를 입력합니다(따옴표 제외).
-- `aks_version` 자리 표시자의 경우 [az aks get-versions](/cli/azure/aks?view=azure-cli-latest#az-aks-get-versions) 명령을 사용합니다.
+- `aks_version` 자리 표시자의 경우 [az aks get-versions](/cli/azure/aks#az-aks-get-versions) 명령을 사용합니다.
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook azure_create_aks.yml
@@ -150,7 +150,7 @@ localhost                  : ok=3    changed=2    unreachable=0    failed=0
 
 - `your_ssh_key` 자리 표시자의 경우 "ssh-rsa"로 시작하는 단일 줄 형식으로 RSA 공개 키를 입력합니다(따옴표 제외).
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook azure_configure_aks.yml
@@ -193,7 +193,7 @@ localhost                  : ok=2    changed=1    unreachable=0    failed=0
       state: absent
   ```
 
-다음과 같이 `ansible-playbook` 명령을 사용하여 플레이북을 실행합니다.
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
 
 ```bash
 ansible-playbook azure_delete_aks.yml

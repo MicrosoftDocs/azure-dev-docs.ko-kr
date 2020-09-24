@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
 ms.date: 08/08/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 9c5f3b30507cda764dd29f0c133d4997dbc2bb53
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4a6fde1eb8830c897c438fa89e7da6fe93b5a3a8
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240955"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831339"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용해 Azure App Service에 배포
 
@@ -47,7 +47,7 @@ sudo apt-get install -y maven
 Azure CLI를 실행하려면 Azure 자격 증명이 필요합니다.
 
 * Jenkins 대시보드 내에서 **자격 증명->시스템->** 을 클릭합니다. **전역 자격 증명(제한 없음)** 을 클릭합니다.
-* **자격 증명 추가**를 클릭한 다음 구독 ID, 클라이언트 ID, 클라이언트 암호 및 OAuth 2.0 토큰 엔드포인트를 입력하여 [Microsoft Azure 서비스 주체](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)를 추가합니다. 이후 단계에서 사용할 ID를 제공합니다.
+* **자격 증명 추가**를 클릭한 다음 구독 ID, 클라이언트 ID, 클라이언트 암호 및 OAuth 2.0 토큰 엔드포인트를 입력하여 [Microsoft Azure 서비스 주체](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json)를 추가합니다. 이후 단계에서 사용할 ID를 제공합니다.
 
 ![자격 증명 추가](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
 

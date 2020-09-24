@@ -2,12 +2,12 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: f357b0a4fe0b606a39a4897b4cc76b494be021f5
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.openlocfilehash: 4293cd410cf5d18ffa25597c63edeb46138a2d15
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507516"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830974"
 ---
 ## <a name="clean-up-resources"></a>리소스 정리
 
@@ -24,4 +24,4 @@ az group delete \
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
 
 > [!div class="nextstepaction"]
-> [Azure의 Spring](/azure/developer/java/spring-framework)
+> [Azure의 Spring](../index.yml)

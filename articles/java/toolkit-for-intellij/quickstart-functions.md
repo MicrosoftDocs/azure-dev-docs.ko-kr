@@ -4,12 +4,12 @@ description: Azure Toolkit for IntelliJ를 사용하여 간단한 HTTP 트리거
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1260d5cbaec821149468ef524af35e081c06ec52
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: b27655657d763e295a1817acf200a67c090ff67d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379967"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831409"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>빠른 시작: IntelliJ IDEA를 사용하여 Azure Functions 프로젝트 만들기
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379967"
 시작하기 전에 다음 요구 사항을 갖추었는지 확인합니다.
 
 + 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-+ Java 8용 [Azure 지원 JDK(Java Development Kit)](https://aka.ms/azure-jdks)
++ Java 8용 [Azure 지원 JDK(Java Development Kit)](../fundamentals/java-jdk-long-term-support.md)
 + [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition 또는 Community Edition 설치
 + [Maven 3.5.0+](https://maven.apache.org/download.cgi)
 + 최신 [Function Core Tools](https://github.com/Azure/azure-functions-core-tools)

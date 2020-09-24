@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: b1437362601e990b560dc0385420605ef01a426a
-ms.sourcegitcommit: 4049dc6109600a8308ba5617cc122a5b32cc4ca1
+ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056285"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831389"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>WebLogic Server의 Java 앱을 Azure로 마이그레이션하기 위한 최종 사용자 권한 부여 및 인증
 
@@ -209,4 +209,4 @@ az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1
 WebLogic Server 앱을 Azure로 마이그레이션하는 과정의 측면을 살펴보세요.
 
 > [!div class="nextstepaction"]
-> [WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)
+> [WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션](./migrate-weblogic-to-virtual-machines.md)

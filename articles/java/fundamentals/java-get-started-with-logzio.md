@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
 ms.custom: devx-track-java
-ms.openlocfilehash: 8ed24a6b15d602a96ec7bdb186225c66a87393ae
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 89dc2a40e39a417d33e59b22f28202c61f036c79
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379857"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831489"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>자습서: Azure에서 실행되는 Java 앱용 Logz.io를 사용하여 모니터링 및 로깅 시작
 
@@ -28,7 +28,7 @@ ms.locfileid: "86379857"
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-* [Java Developer Kit](https://aka.ms/azure-jdks) 버전 8 이상
+* [Java Developer Kit](./java-jdk-long-term-support.md) 버전 8 이상
 * [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/logz.logzio-elk-as-a-service-pro)의 Logz.io 계정
 * Log4J 또는 Logback을 사용하는 기존 Java 애플리케이션
 

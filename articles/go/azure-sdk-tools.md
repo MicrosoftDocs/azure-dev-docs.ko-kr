@@ -3,12 +3,12 @@ title: Azure SDK for Go 사용 개발자를 위한 도구
 description: Azure SDK for Go 및 Azure 서비스 작업을 위한 도구
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: b08a578c3e5ceb7381cc1643b2967405b292376e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e52845218de7d874e045a11c004360b7a35baa03
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80319440"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831309"
 ---
 # <a name="tools-for-developers-using-the-azure-sdk-for-go"></a>Azure SDK for Go 사용 개발자를 위한 도구
 
@@ -16,7 +16,7 @@ Go 코드를 효율적으로 작성하고 Azure 서비스와 원활하게 작동
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Azure CLI는 구독에 Azure 리소스를 만들고 구성할 수 있는 명령줄 인터페이스를 제공합니다. CLI는 공통 및 공유 Azure 리소스 구축을 빠르게 시작할 수 있도록 도와줌으로써 더 복잡한 서비스 사용에 집중할 수 있게 해줍니다. CLI에는 쿼리 및 필터링 기능이 포함되므로, 원하는 명령줄 도구로 출력을 직접 파이프할 수 있습니다. CLI는 Docker 이미지로 또는 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)을 통해 로컬 시스템에 설치할 수 있도록 제공됩니다.
+Azure CLI는 구독에 Azure 리소스를 만들고 구성할 수 있는 명령줄 인터페이스를 제공합니다. CLI는 공통 및 공유 Azure 리소스 구축을 빠르게 시작할 수 있도록 도와줌으로써 더 복잡한 서비스 사용에 집중할 수 있게 해줍니다. CLI에는 쿼리 및 필터링 기능이 포함되므로, 원하는 명령줄 도구로 출력을 직접 파이프할 수 있습니다. CLI는 Docker 이미지로 또는 [Azure Cloud Shell](/azure/cloud-shell/overview)을 통해 로컬 시스템에 설치할 수 있도록 제공됩니다.
 
 > [!div class="nextstepaction"]
 > [Azure CLI 설치](/cli/azure/install-azure-cli)

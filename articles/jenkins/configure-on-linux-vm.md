@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, 포털, Linux, 가상 머신
 ms.topic: quickstart
 ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7e7c8de6353a29af949231709675a4d2785405c3
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725217"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831369"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Jenkins 구성
 
@@ -216,4 +216,4 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [Azure의 Jenkins](/azure/developer/jenkins)
+> [Azure의 Jenkins](./index.yml)

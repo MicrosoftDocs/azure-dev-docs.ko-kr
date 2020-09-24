@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 5/8/2020
-ms.openlocfilehash: f99653f3ce30c629c2c11127089445a4c3072a69
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 82cf9553654e1efc884542ecdd52d294688291df
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990245"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738159"
 ---
 ### <a name="inspect-the-deployment-architecture"></a>배포 아키텍처 검사
 

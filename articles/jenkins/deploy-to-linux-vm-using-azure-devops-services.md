@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, 가상 머신, CI/CD, Azure DevOps Services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 458acc31d4cb56215dff036bd3952090052eb5a1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241075"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831329"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>자습서: Jenkins 및 Azure DevOps Services를 사용하여 Linux 가상 머신에 배포
 
@@ -18,7 +18,7 @@ CI(연속 통합) 및 CD(연속 배포)는 코드를 빌드, 릴리스 및 배�
 
 이 자습서에서는 Jenkins를 사용하여 Node.js 웹앱을 빌드합니다. 그런 후 Azure DevOps를 사용하여
 
-Linux VM(가상 머신)을 포함하는 [배포 그룹](https://docs.microsoft.com/azure/devops/pipelines/release/deployment-groups/index?view=vsts)에 배포합니다. 다음 방법을 알아봅니다.
+Linux VM(가상 머신)을 포함하는 [배포 그룹](/azure/devops/pipelines/release/deployment-groups/index?view=vsts)에 배포합니다. 다음 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * 샘플 앱 가져오기
@@ -32,17 +32,17 @@ Linux VM(가상 머신)을 포함하는 [배포 그룹](https://docs.microsoft.c
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
-* Jenkins 서버에 대한 액세스가 필요합니다. Jenkins 서버를 아직 만들지 않은 경우 [Azure 가상 머신에 Jenkins 마스터 만들기](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)를 참조하세요. 
+* Jenkins 서버에 대한 액세스가 필요합니다. Jenkins 서버를 아직 만들지 않은 경우 [Azure 가상 머신에 Jenkins 마스터 만들기](/azure/jenkins/install-jenkins-solution-template)를 참조하세요. 
 
 * Azure DevOps Services 조직(**https://{yourorganization}.visualstudio.com**)에 로그인합니다. 
   [무료 Azure DevOps Services 조직](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308)을 얻을 수 있습니다.
 
   > [!NOTE]
-  > 자세한 내용은 [Azure DevOps Services에 연결](https://docs.microsoft.com/azure/devops/organizations/projects/connect-to-projects?view=vsts)을 참조하세요.
+  > 자세한 내용은 [Azure DevOps Services에 연결](/azure/devops/organizations/projects/connect-to-projects?view=vsts)을 참조하세요.
 
-*  배포 대상으로 Linux 가상 머신이 필요합니다.  자세한 내용은 [Azure CLI로 Linux VM 만들기 및 관리](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)를 참조하세요.
+*  배포 대상으로 Linux 가상 머신이 필요합니다.  자세한 내용은 [Azure CLI로 Linux VM 만들기 및 관리](/azure/virtual-machines/linux/tutorial-manage-vm)를 참조하세요.
 
-*  가상 컴퓨터의 인바운드 포트 80을 엽니다. 자세한 내용은 [Azure Portal을 사용하여 네트워크 보안 그룹 만들기](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)를 참조하세요.
+*  가상 컴퓨터의 인바운드 포트 80을 엽니다. 자세한 내용은 [Azure Portal을 사용하여 네트워크 보안 그룹 만들기](/azure/virtual-network/tutorial-filter-network-traffic)를 참조하세요.
 
 ## <a name="get-the-sample-app"></a>샘플 앱 가져오기
 
@@ -90,7 +90,7 @@ Git 리포지토리에 저장된 앱을 배포해야 합니다.
  
 1.  Azure DevOps Services 조직에 PAT가 아직 없으면 만듭니다. 이 정보는 Jenkins가 Azure DevOps Services 조직에 액세스하는 데 필요합니다. 이 섹션의 이후 단계에 대한 토큰 정보를 저장해야 합니다.
   
-    토큰을 생성하는 방법을 알아보려면 [Azure DevOps Services용 개인용 액세스 토큰은 어떻게 만드나요?](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)를 참조하세요.
+    토큰을 생성하는 방법을 알아보려면 [Azure DevOps Services용 개인용 액세스 토큰은 어떻게 만드나요?](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)를 참조하세요.
 2. **Post-build Actions**(빌드 후 작업) 탭에서 **Add post-build action**(빌드 후 작업 추가)을 선택합니다. **Archive the artifacts**(아티팩트 보관)를 선택합니다.
 3. **Files to archive**(보관할 파일)에 `**/*`를 입력하여 모든 파일을 포함합니다.
 4. 또 다른 작업을 만들려면 **Add post-build action**(빌드 후 작업 추가)을 선택합니다.
@@ -177,7 +177,7 @@ Jenkins 플러그 인에서 버그가 발생하면 [Jenkins JIRA](https://issues
 > * Azure 가상 머신에 대한 배포 그룹 만들기
 > * VM을 구성하고 앱을 배포하는 Azure Pipeline을 만듭니다.
 
-빌드 및 릴리스 단계 모두에 Azure Pipelines를 사용하는 방법에 대해 알아보려면 [이 항목](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups)을 참조하세요.
+빌드 및 릴리스 단계 모두에 Azure Pipelines를 사용하는 방법에 대해 알아보려면 [이 항목](/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups)을 참조하세요.
 
 VM에 배포할 YAML 기반 CI/CD 파이프라인을 제작하는 방법에 대해 알아보려면 다음 자습서로 이동하세요.
 

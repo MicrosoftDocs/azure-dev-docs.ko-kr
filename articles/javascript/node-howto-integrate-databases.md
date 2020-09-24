@@ -4,12 +4,12 @@ description: Azure는 웹 및 기타 Node.js 앱과 함께 사용할 수 있는 
 ms.topic: article
 ms.date: 08/20/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3e38e3edca5022eb87f090cb8f951d65f36dcb60
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: efee87ce711616de35979a696539e47784c1868c
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218624"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772966"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Node.js 앱에서 Azure 데이터베이스를 통합하는 방법
 
@@ -17,10 +17,10 @@ ms.locfileid: "88218624"
 
 | 서비스 | 빠른 시작 | 샘플 |
 | --- | --- | --- |
-| **Cosmos DB** | [Node.js Azure Cosmos DB 웹앱 만들기](/azure/cosmos-db/create-sql-api-nodejs) | [샘플](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-cosmos-db) |
-| **MongoDB** | [Node.js 및 MongoDB 웹앱 만들기](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [샘플](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&term=Mongo%20DB) |
+| **Cosmos DB** | [Node.js Azure Cosmos DB 웹앱 만들기](/azure/cosmos-db/create-sql-api-nodejs) | [샘플](/samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db) |
+| **MongoDB** | [Node.js 및 MongoDB 웹앱 만들기](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [샘플](/samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB) |
 | **Redis Cache** | [Redis Cache 만들기 및 사용](/azure/redis-cache/cache-nodejs-get-started) | |
-| **Azure SQL 데이터베이스** | [Node.js를 사용하여 Azure SQL 데이터베이스 쿼리](/azure/sql-database/sql-database-connect-query-nodejs) | [샘플](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-sql-database) | |
+| **Azure SQL 데이터베이스** | [Node.js를 사용하여 Azure SQL 데이터베이스 쿼리](/azure/sql-database/sql-database-connect-query-nodejs) | [샘플](/samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database) | |
 | **MySQL** | [Node.js를 사용하여 데이터 연결 및 쿼리](/azure/mysql/connect-nodejs) | |
 | **PostgreSQL** | [Node.js를 사용하여 데이터 연결 및 쿼리](/azure/postgresql/connect-nodejs) | |
 

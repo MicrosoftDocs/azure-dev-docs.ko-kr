@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5cfdbb3542222a7ff9547b25836237d5d0991ddb
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: e126e56784b2f680cb69b9c3e0533831340a0f10
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378477"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830049"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure에서 Spring Cloud 함수 시작하기
 
@@ -27,7 +27,7 @@ ms.locfileid: "86378477"
 
 Java를 사용하여 함수를 개발하려면 다음을 설치해야 합니다.
 
-- [Java Developer Kit](https://aka.ms/azure-jdks), 버전 8
+- [Java Developer Kit](../fundamentals/java-jdk-long-term-support.md), 버전 8
 - [Apache Maven](https://maven.apache.org), 버전 3.0 이상
 - [Azure CLI](/cli/azure)
 - [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) 버전 2.7.1158 이상

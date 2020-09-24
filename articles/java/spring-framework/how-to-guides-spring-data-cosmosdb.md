@@ -6,12 +6,12 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 119a2b3ff761778e111500a9fe0cf33d2dc6b080
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f2fb9a1af0634e0cecb3b6d990ae423b31da6210
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378447"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829989"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 개발자 가이드
 
@@ -19,9 +19,9 @@ ms.locfileid: "86378447"
 
 [Azure Cosmos DB](/azure/cosmos-db/introduction)는 개발자가 다양한 표준 API를 사용하여 데이터를 작업할 수 있게 해주는 전역적으로 분산된 데이터베이스 서비스입니다. Spring Data Cosmos DB SDK는 [Spring Data](https://spring.io/projects/spring-data) 프레임워크를 기반으로 하며 SQL API를 사용하여 Azure Cosmos DB와의 통합을 제공합니다. 다른 API에 대한 지원 정보는 다음 토픽에서 찾을 수 있습니다.
 
-- [Azure Cosmos DB에서 Spring Data MongoDB API를 사용하는 방법](/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db)
-- [Azure Cosmos DB에서 Spring Data Apache Cassandra API를 사용하는 방법](/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db) 문서에서 구현된 데이터베이스)
-- [Azure Cosmos DB SQL API에서 Spring Data Gremlin Starter를 사용하는 방법](/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
+- [Azure Cosmos DB에서 Spring Data MongoDB API를 사용하는 방법](./configure-spring-data-mongodb-with-cosmos-db.md)
+- [Azure Cosmos DB에서 Spring Data Apache Cassandra API를 사용하는 방법](./configure-spring-data-apache-cassandra-with-cosmos-db.md) 문서에서 구현된 데이터베이스)
+- [Azure Cosmos DB SQL API에서 Spring Data Gremlin Starter를 사용하는 방법](./configure-spring-data-gremlin-java-app-with-cosmos-db.md)
 
 Spring Data Cosmos DB SDK는 GitHub의 [spring-data-cosmosdb](https://github.com/microsoft/spring-data-cosmosdb) 리포지토리에서 오픈 소스로 제공됩니다. 이 리포지토리에는 버그를 파일로 작성하거나 이미 파일로 작성된 이슈의 해결 방법을 확인할 수 있는 활성 [이슈](https://github.com/microsoft/spring-data-cosmosdb/issues) 목록이 있습니다. [릴리스](https://github.com/microsoft/spring-data-cosmosdb/releases) 목록을 확인하여 최신 버전에서 이슈가 해결되었는지 확인할 수도 있습니다. Spring Data Cosmos DB SDK 버전 2.2.x 릴리스 학습은 spring-data-commons 버전 2.2.0.RELEASE를 지원하는 반면, SDK의 버전 2.1.x 릴리스 학습은 spring-data-common 버전 2.1.0.RELEASE를 지원합니다.
 

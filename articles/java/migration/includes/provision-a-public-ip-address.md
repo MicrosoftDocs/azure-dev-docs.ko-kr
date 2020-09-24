@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 5527a38151afd531cbd256428bd729b7aba8fe45
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 92caae7f50ddb0e58f14e8c99a4cd598a72f884f
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673169"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738156"
 ---
 ### <a name="provision-a-public-ip-address"></a>공용 IP 주소 프로비저닝
 

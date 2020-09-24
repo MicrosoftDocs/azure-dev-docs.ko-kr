@@ -4,12 +4,12 @@ ms.service: ansible
 ms.topic: include
 ms.date: 09/15/2020
 ms.author: tarcher
-ms.openlocfilehash: 4c4bb046496f80a7280aed429a8cd251e533a8db
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: 885764615beed7a623db03499b4ff6a6ab705ba7
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681669"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831176"
 ---
 #### <a name="ansible"></a>[Ansible](#tab/ansible)
 
@@ -40,13 +40,13 @@ ms.locfileid: "90681669"
     
 #### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-1. [az group delete](https://docs.microsoft.com/cli/azure/group#az_group_delete)를 실행하여 리소스 그룹을 삭제합니다. 리소스 그룹 내의 모든 리소스가 삭제됩니다.
+1. [az group delete](/cli/azure/group#az_group_delete)를 실행하여 리소스 그룹을 삭제합니다. 리소스 그룹 내의 모든 리소스가 삭제됩니다.
 
     ```azurecli
     az group delete --name <resource_group>
     ```
 
-1. [az group show](https://docs.microsoft.com/cli/azure/group#az_group_show)를 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
+1. [az group show](/cli/azure/group#az_group_show)를 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
 
     ```azurecli
     az group show --name <resource_group>
@@ -54,13 +54,13 @@ ms.locfileid: "90681669"
 
 #### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
-1. [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Remove-AzResourceGroup)을 실행하여 리소스 그룹을 삭제합니다. 리소스 그룹 내의 모든 리소스가 삭제됩니다.
+1. [Remove-AzResourceGroup](/powershell/module/az.resources/Remove-AzResourceGroup)을 실행하여 리소스 그룹을 삭제합니다. 리소스 그룹 내의 모든 리소스가 삭제됩니다.
 
     ```azurepowershell
     Remove-AzResourceGroup -Name <resource_group>
     ```
 
-1. [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
+1. [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
 
     ```azurepowershell
     Get-AzResourceGroup -Name <resource_group>

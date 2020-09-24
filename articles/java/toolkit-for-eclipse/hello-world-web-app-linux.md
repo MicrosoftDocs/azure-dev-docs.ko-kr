@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 51037098f05d985bcb8c35580688d37db0cbe363
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: b12888cde3a80583d95ccd39bfcd34615842913c
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534741"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830015"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트를 사용하는 클라우드 내의 Linux 컨테이너에 Hello World 웹앱 배포
 
@@ -34,7 +34,7 @@ ms.locfileid: "90534741"
 
 ## <a name="create-a-new-web-app-project"></a>새 웹앱 프로젝트 만들기
 
-1. [Eclipse용 Azure 도구 키트에 대한 로그인 지침](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions) 문서의 단계를 사용하여 Eclipse를 시작하고 Azure 계정에 로그인합니다.
+1. [Eclipse용 Azure 도구 키트에 대한 로그인 지침](./sign-in-instructions.md) 문서의 단계를 사용하여 Eclipse를 시작하고 Azure 계정에 로그인합니다.
 
 1. **파일** 메뉴, **새로 만들기**, **동적 웹 프로젝트**를 차례로 클릭합니다.
    
@@ -111,7 +111,7 @@ Docker의 추가 리소스는 공식 [Docker 웹 사이트][Docker]를 참조하
 
 [Azure Portal]: https://portal.azure.com/
 [Azure Portal을 사용하여 프라이빗 Docker 컨테이너 레지스트리 만들기]: /azure/container-registry/container-registry-get-started-portal
-[Azure for Java Developers]: /azure/developer/java/
+[Azure for Java Developers]: ../index.yml
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Create Docker Registry using Azure CLI]: /azure/container-registry/container-registry-get-started-azure-cli
 

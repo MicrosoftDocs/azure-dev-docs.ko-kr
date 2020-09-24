@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 1ffc12fa2a99e2abdbbc43e0024afd8e5e98c4b9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a185e4a01f048d05ffe6951baf5c90d6721dcebb
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673259"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738408"
 ---
 ### <a name="recommendations"></a>권장 사항
 

@@ -4,12 +4,12 @@ description: 자습서 4부, Azure App Service의 로그를 보고 동작을 모
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 92af617452aa8892f61e110a69be53a9208f3883
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 47316324010d5a74568bb55be508128917702780
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473508"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772646"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4: 컨테이너에 대한 Azure App Service에서 로그 스트리밍
 
@@ -41,4 +41,3 @@ VS Code 내에서 Azure App Service의 실행 중인 사이트에서 로그(또�
 > [!div class="nextstepaction"]
 > [로그가 보입니다. - 5단계 진행 >>>](tutorial-deploy-containers-05.md)
 
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 99140db00e7a0a72b96db19b4dab9d7476694ab2
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 6f35e42736d538c8bb755a84cd0b082052645b6e
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672929"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738509"
 ---
 ### <a name="determine-whether-jaas-is-in-use"></a>JAAS가 사용 중인지 확인
 

@@ -2,14 +2,14 @@
 title: '4단계: VS Code를 사용하여 Azure Functions Python 코드를 로컬에서 디버그'
 description: 자습서 4 단계, Python 코드를 확인하도록 VS Code 디버거를 로컬에서 실행
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: f96e2065f4864423470c1eda9ad48cad086e0fe6
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 4a5cb6bb8eedca93ce1e7675d3e7e1959ca066f6
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473588"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773033"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Azure Functions Python 코드를 로컬에서 디버그
 
@@ -29,7 +29,9 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
     </pre>
 
-1. Visual Studio Code **출력** 창의 URL에서 **Ctrl+클릭** 또는 **Cmd+c클릭**을 사용하여 해당 주소로 브라우저를 열거나 브라우저를 시작하고 동일한 URL에 붙여 넣습니다. 두 경우 모두 엔드포인트는 `api/<function_name>`이며, 이 경우 `api/HttpExample`입니다. 그러나 해당 URL에 이름 매개 변수가 포함되어 있지 않기 때문에 브라우저 창에는 코드의 해당 경로에 대한 적절한 "쿼리 문자열 또는 요청 본문에 이름을 전달하세요."가 표시되어야 합니다.
+1. Visual Studio Code **출력** 창의 URL에서 **Ctrl+클릭** 또는 **Cmd+c클릭**을 사용하여 해당 주소로 브라우저를 열거나 브라우저를 시작하고 동일한 URL에 붙여 넣습니다.
+
+    두 경우 모두 엔드포인트는 `api/<function_name>`이며, 이 경우 `api/HttpExample`입니다. 그러나 해당 URL에 이름 매개 변수가 포함되어 있지 않기 때문에 브라우저 창에는 코드의 해당 경로에 대한 적절한 "쿼리 문자열 또는 요청 본문에 이름을 전달하세요."가 표시되어야 합니다.
 
     > [!TIP]
     > URL에 액세스할 수 없고 회사 프록시 뒤에서 실행되어 `HTTP_PROXY` 및 `HTTPS_PROXY` 환경 변수가 설정되었을 가능성이 높은 경우 `NO_PROXY`라는 환경 변수를 `localhost,127.0.0.1`로 설정하고 다시 시도합니다.
@@ -47,7 +49,7 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
         --data {"""name""":"""Visual Studio Code"""} http://localhost:7071/api/HttpExample
     ```
 
-    PowerShell에서 [Invoke-WebRequest cmdlet](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6)을 사용할 수도 있습니다.
+    PowerShell에서 [Invoke-WebRequest cmdlet](/powershell/module/microsoft.powershell.utility/invoke-webrequest)을 사용할 수도 있습니다.
 
     # <a name="bash"></a>[bash](#tab/bash)
 
@@ -61,7 +63,11 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
 
     또는 `{"name":"Visual Studio Code"}`를 포함하는 *data.json*과 같은 파일을 만들고 `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample` 명령을 사용합니다.
 
-1. 함수 디버깅을 테스트하려면 `name = req.params.get('name')`을 읽는 줄에 중단점을 설정하고 URL을 다시 요청합니다. Visual Studio Code 디버거는 해당 줄에서 중지되어 변수를 검사하고 코드를 단계별로 실행할 수 있습니다. (기본 디버깅에 대한 간단한 연습은 [Visual Studio Code 자습서 - 디버거 구성 및 실행](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)을 참조하세요.)
+1. 함수 디버깅을 테스트하려면 `name = req.params.get('name')`을 읽는 줄에 중단점을 설정하고 URL을 다시 요청합니다.
+
+    Visual Studio Code 디버거는 해당 줄에서 중지되어 변수를 검사하고 코드를 단계별로 실행할 수 있습니다.
+
+    (기본 디버깅에 대한 간단한 연습은 [Visual Studio Code 자습서 - 디버거 구성 및 실행](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)을 참조하세요.)
 
 1. 함수를 로컬에서 철저하게 테스트한 것이 만족스러우면 디버거를 중지합니다(디버깅 도구 모음에서 **디버깅** > **디버깅 중지** 메뉴 명령 또는 **연결 끊기** 명령 사용).
 
@@ -73,4 +79,3 @@ Visual Studio Code에서 Azure Functions Python 코드를 로컬에서 디버그
 > [!div class="nextstepaction"]
 > [디버거를 로컬로 실행했습니다. - 5단계 진행 >>>](tutorial-vs-code-serverless-python-05.md)
 
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

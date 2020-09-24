@@ -5,12 +5,12 @@ keywords: azure, chef, devops, virtual machines, overview, automate, inspec
 ms.date: 03/19/2019
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 0c50cd07473565609084db24b9e537519194a0c2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: baabe7530c2f54d89b1d14023a4f9a34e4eeb809
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240725"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831449"
 ---
 # <a name="use-inspec-for-compliance-automation-of-your-azure-infrastructure"></a>Azure 인프라의 규정 준수 자동화에 대한 InSpec 사용
 
@@ -30,7 +30,7 @@ InSpec의 에이전트 없는 검색 모드를 사용하면 노출 수준을 대
 
 ## <a name="audit-azure-virtual-machines-with-policy-guest-configuration"></a>정책 게스트 구성을 사용하여 Azure 가상 머신 감사
 
-Azure에서는 [Azure 정책 게스트 구성](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration)을 통해 Azure 가상 머신을 감사하는 Chef InSpec 정의를 사용하도록 직접 지원합니다. 게스트 구성은 제공된 Chef InSpec 정의에 대해 Linux 가상 머신을 평가하고 Azure Policy를 통해 규정 준수를 다시 보고합니다. 이러한 감사 결과는 Azure Monitor 로그를 통해서도 보고되며, 이를 통해 경고 및 기타 자동화 시나리오를 사용하도록 설정할 수 있습니다.
+Azure에서는 [Azure 정책 게스트 구성](/azure/governance/policy/concepts/guest-configuration)을 통해 Azure 가상 머신을 감사하는 Chef InSpec 정의를 사용하도록 직접 지원합니다. 게스트 구성은 제공된 Chef InSpec 정의에 대해 Linux 가상 머신을 평가하고 Azure Policy를 통해 규정 준수를 다시 보고합니다. 이러한 감사 결과는 Azure Monitor 로그를 통해서도 보고되며, 이를 통해 경고 및 기타 자동화 시나리오를 사용하도록 설정할 수 있습니다.
 
 ## <a name="satisfy-audits"></a>감사 충족
 

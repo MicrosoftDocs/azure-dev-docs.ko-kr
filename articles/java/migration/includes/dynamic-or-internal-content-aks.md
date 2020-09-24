@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 4/30/2020
-ms.openlocfilehash: 7845cb1813c7615b92f81fd9b1b6365574a3205d
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: b520d81e5fb64a94e4bf0fcb03b83eaf73035350
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988752"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738175"
 ---
 #### <a name="dynamic-or-internal-content"></a>동적 또는 내부 콘텐츠
 

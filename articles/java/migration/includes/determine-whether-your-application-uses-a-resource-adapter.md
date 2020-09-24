@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: f5995a3c5efc46bc58b446589ce089bf7d86b2ba
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 9fa87bf3d0de64271a9ffb0e7e8fbff3cd1afd12
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673079"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738499"
 ---
 ### <a name="determine-whether-your-application-uses-a-resource-adapter"></a>애플리케이션에서 리소스 어댑터를 사용하는지 확인
 

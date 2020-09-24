@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 8b0224ce92662e1655f1d232d8b067a89c241ed4
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 81cda3739ed99182700ac2ff63b8b8cda02be4f6
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673149"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738158"
 ---
 ### <a name="migrate-scheduled-jobs"></a>예약된 작업 마이그레이션
 

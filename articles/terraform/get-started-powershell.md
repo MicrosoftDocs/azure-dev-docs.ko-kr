@@ -5,12 +5,12 @@ keywords: azure devops terraform install configure windows init plan apply execu
 ms.topic: quickstart
 ms.date: 08/18/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614525"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830059"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>빠른 시작: Azure PowerShell을 사용하여 Terraform 구성
  
@@ -39,13 +39,13 @@ ms.locfileid: "88614525"
 
 ## <a name="configure-your-environment"></a>환경 구성
 
-1. Azure 리소스와 상호 작용하도록 허용하는 최신 PowerShell 모듈은 [Azure PowerShell Az 모듈](https://docs.microsoft.com/powershell/azure/new-azureps-module-az)이라고 합니다. Azure PowerShell Az 모듈을 사용하는 경우 모든 플랫폼에서 추천되는 버전은 PowerShell 7 이상입니다. PowerShell이 설치되어 있으면 PowerShell 프롬프트에서 다음 명령을 입력하여 버전을 확인할 수 있습니다.
+1. Azure 리소스와 상호 작용하도록 허용하는 최신 PowerShell 모듈은 [Azure PowerShell Az 모듈](/powershell/azure/new-azureps-module-az)이라고 합니다. Azure PowerShell Az 모듈을 사용하는 경우 모든 플랫폼에서 추천되는 버전은 PowerShell 7 이상입니다. PowerShell이 설치되어 있으면 PowerShell 프롬프트에서 다음 명령을 입력하여 버전을 확인할 수 있습니다.
 
     ```powershell
     $PSVersionTable.PSVersion
     ```
 
-1. [PowerShell을 설치](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)합니다. 이 데모는 Windows 10에서 PowerShell 7.0.2를 사용하여 테스트되었습니다.
+1. [PowerShell을 설치](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)합니다. 이 데모는 Windows 10에서 PowerShell 7.0.2를 사용하여 테스트되었습니다.
 
 1. [Terraform을 Azure에 인증](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)하려면 [Azure CLI를 설치](/cli/azure/install-azure-cli-windows?view=azure-cli-latest)해야 합니다. 이 데모는 Azure CLI 버전 2.9.1을 사용하여 테스트되었습니다.
 
@@ -70,9 +70,9 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
 
 서비스 주체를 사용하여 Azure 구독에 로그인하려면 서비스 주체에 대한 액세스 권한이 필요합니다. 서비스 주체가 이미 있는 경우 이 섹션을 건너뛸 수 있습니다.
 
-[PowerShell을 사용하여 서비스 주체를 만드는 경우](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps) 많은 옵션이 있습니다. 이 문서에서는 **기여자** 역할을 사용하여 서비스 주체를 만듭니다. **기여자** 역할(기본 역할)에는 Azure 계정에서 읽고 쓸 수 있는 모든 권한이 있습니다. RBAC(역할 기반 액세스 제어)와 역할에 대한 자세한 내용은 [RBAC: 기본 제공 역할](/azure/active-directory/role-based-access-built-in-roles)을 참조하세요.
+[PowerShell을 사용하여 서비스 주체를 만드는 경우](/powershell/azure/create-azure-service-principal-azureps) 많은 옵션이 있습니다. 이 문서에서는 **기여자** 역할을 사용하여 서비스 주체를 만듭니다. **기여자** 역할(기본 역할)에는 Azure 계정에서 읽고 쓸 수 있는 모든 권한이 있습니다. RBAC(역할 기반 액세스 제어)와 역할에 대한 자세한 내용은 [RBAC: 기본 제공 역할](/azure/active-directory/role-based-access-built-in-roles)을 참조하세요.
 
-[New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzADServicePrincipal)을 호출하면 지정된 구독에 대한 서비스 주체를 만듭니다. 성공적으로 완료되면 서비스 주체 이름 및 표시 이름과 같은 서비스 주체의 정보가 표시됩니다. 인증 자격 증명을 지정하지 않고 `New-AzADServicePrincipal`을 호출하면 암호가 자동으로 생성됩니다. 그러나 이 암호는 `SecureString` 형식으로 반환되므로 표시되지 않습니다. 따라서 변수로 이동하는 결과가 포함된 `New-AzADServicePrincipal`을 호출해야 합니다. 그런 다음, 변수를 일반 텍스트로 변환하여 표시할 수 있습니다.
+[New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal)을 호출하면 지정된 구독에 대한 서비스 주체를 만듭니다. 성공적으로 완료되면 서비스 주체 이름 및 표시 이름과 같은 서비스 주체의 정보가 표시됩니다. 인증 자격 증명을 지정하지 않고 `New-AzADServicePrincipal`을 호출하면 암호가 자동으로 생성됩니다. 그러나 이 암호는 `SecureString` 형식으로 반환되므로 표시되지 않습니다. 따라서 변수로 이동하는 결과가 포함된 `New-AzADServicePrincipal`을 호출해야 합니다. 그런 다음, 변수를 일반 텍스트로 변환하여 표시할 수 있습니다.
 
 1. 사용하려는 Azure 구독에 대한 구독 ID를 가져옵니다. 구독 ID를 모르는 경우 [Azure Portal](https://portal.azure.com/)에서 해당 값을 가져올 수 있습니다.
 
@@ -82,7 +82,7 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
 
 1. PowerShell을 시작합니다.
 
-1. [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal)을 사용하여 새 서비스 주체를 만듭니다. `<azure_subscription_id>`를 사용하려는 Azure 구독의 ID로 바꿉니다.
+1. [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal)을 사용하여 새 서비스 주체를 만듭니다. `<azure_subscription_id>`를 사용하려는 Azure 구독의 ID로 바꿉니다.
 
     ```powershell
     $sp = New-AzADServicePrincipal -Scope /subscriptions/<azure_subscription_id>
@@ -94,7 +94,7 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
     $sp.ServicePrincipalNames
     ```
 
-1. 자동으로 생성된 암호를 텍스트로 표시합니다([ConvertFrom-SecureString](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring)).
+1. 자동으로 생성된 암호를 텍스트로 표시합니다([ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring)).
 
     ```powershell
     $UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
@@ -103,17 +103,17 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
 **참고**:
 
 - 서비스 주체 이름 및 암호 값은 서비스 주체를 사용하여 구독에 로그인하는 데 필요합니다.
-- 분실한 암호는 복구할 수 없습니다. 따라서 암호를 안전한 장소에 저장해야 합니다. 암호를 잊어버린 경우 [서비스 주체 자격 증명을 다시 설정](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps#reset-credentials)해야 합니다.
+- 분실한 암호는 복구할 수 없습니다. 따라서 암호를 안전한 장소에 저장해야 합니다. 암호를 잊어버린 경우 [서비스 주체 자격 증명을 다시 설정](/powershell/azure/create-azure-service-principal-azureps#reset-credentials)해야 합니다.
 
 ## <a name="log-in-to-azure-using-a-service-principal"></a>서비스 주체를 사용하여 Azure에 로그인
 
-서비스 주체를 사용하여 Azure 구독에 로그인하려면 [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/Connect-AzAccount)를 호출하고 [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) 형식의 개체를 지정합니다.
+서비스 주체를 사용하여 Azure 구독에 로그인하려면 [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount)를 호출하고 [PsCredential](/dotnet/api/system.management.automation.pscredential) 형식의 개체를 지정합니다.
 
 1. PowerShell을 시작합니다.
 
-1. 다음 기술 중 하나를 사용하여 [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) 개체를 가져옵니다.
+1. 다음 기술 중 하나를 사용하여 [PsCredential](/dotnet/api/system.management.automation.pscredential) 개체를 가져옵니다.
 
-    1. [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential)을 호출하고, 요청 시 서비스 주체 이름과 암호를 입력합니다.
+    1. [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)을 호출하고, 요청 시 서비스 주체 이름과 암호를 입력합니다.
 
         ```powershell
         $spCredential = Get-Credential
@@ -213,7 +213,7 @@ $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. 실행 계획이 적용되면 [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 성공적으로 만들어졌는지 테스트할 수 있습니다.
+1. 실행 계획이 적용되면 [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 성공적으로 만들어졌는지 테스트할 수 있습니다.
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
@@ -245,7 +245,7 @@ $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
     terraform apply QuickstartTerraformTest.destroy.tfplan
     ```
 
-1. [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
+1. [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg

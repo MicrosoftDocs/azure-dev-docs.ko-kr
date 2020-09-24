@@ -5,12 +5,12 @@ keywords: azure, chef, devops, client, install, portal
 ms.date: 02/22/2020
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 3fb282914bad8992a5f4df76019df89824675da0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: c84804628be0904deb1781006b7a66c7c402deb8
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240825"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831469"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Azure Portal에서 Chef 클라이언트 설치
 Azure Portal에서 Linux 또는 Windows 머신에 직접 Chef 클라이언트 확장을 추가할 수 있습니다. 이 문서에서는 새 Linux 가상 머신을 사용하여 해당 프로세스를 안내합니다.
@@ -51,7 +51,7 @@ Azure Portal에서 Linux 또는 Windows 머신에 직접 Chef 클라이언트 �
 1. **기본** 탭에서 다음 값을 지정한 다음, **확인**을 선택합니다.
 
    - **이름** - 새 가상 머신의 이름을 입력합니다.
-   - **VM 디스크 유형** - 스토리지 디스크 유형에 대해 **SSD** 또는 **HDD**를 지정합니다. Azure의 가상 머신 디스크 유형에 대한 자세한 내용은 [디스크 유형 선택](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types) 문서를 참조하세요.
+   - **VM 디스크 유형** - 스토리지 디스크 유형에 대해 **SSD** 또는 **HDD**를 지정합니다. Azure의 가상 머신 디스크 유형에 대한 자세한 내용은 [디스크 유형 선택](/azure/virtual-machines/windows/disks-types) 문서를 참조하세요.
    - **사용자 이름** - 가상 머신에서 관리자 권한이 부여된 사용자 이름을 입력합니다.
    - **인증 형식** - **암호**를 선택합니다. **SSH 공개 키**를 선택하고, SSH 공개 키 값을 제공할 수도 있습니다. 이 데모의 목적을 위해(및 스크린샷에서) **암호**가 선택됩니다.
    - **암호** 및 **암호 확인** - 사용자에 대한 암호를 입력합니다.

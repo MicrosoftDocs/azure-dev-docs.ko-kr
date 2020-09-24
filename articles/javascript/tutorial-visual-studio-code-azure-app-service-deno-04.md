@@ -3,12 +3,13 @@ title: Azure App Service에 배포 후 리소스 정리
 description: 자습서 4부, 리소스 정리
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 1f452b054aa41c714105e79bd3dc971c88acd260
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6573d7b33d4e18d541def9ca742809a6741f821a
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792473"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772906"
 ---
 # <a name="clean-up"></a>정리
 

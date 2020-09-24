@@ -4,12 +4,12 @@ description: Azure Functions를 사용하여 서버리스 코드를 만들고 �
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: 8b0fa5aac45d95780da4327d72cea6b6533c971e
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 5f69fa073647527516452e7a5cdf77d6b5a8caa8
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218610"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772956"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Azure에서 Azure Functions를 사용하여 서버리스 Node.js 코드 작성
 
@@ -31,7 +31,7 @@ Azure에서는 서버리스 제품을 Azure Functions라고 합니다. 서버리
 
 여기서는 서버리스 코드를 자세히 검색하는 데 도움이 되는 다양한 리소스를 이용할 수 있습니다.
 
-- Microsoft Learn 모듈: [Azure Functions 및 SignalR Service를 사용하여 웹앱에서 자동 업데이트 사용](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
+- Microsoft Learn 모듈: [Azure Functions 및 SignalR Service를 사용하여 웹앱에서 자동 업데이트 사용](/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
 
 - 다양한 트리거를 사용하여 서버리스 코드를 실행하는 방법에 대해 알아봅니다.
 

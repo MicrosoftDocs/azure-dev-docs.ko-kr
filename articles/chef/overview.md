@@ -5,12 +5,12 @@ keywords: azure, chef, devops, 가상 머신, 개요, 자동화
 ms.date: 02/22/2020
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 86678436612f97e2928228ec9dd47ac9185d9b72
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2c24bba7d3da9976d5bd21a7a10bbb0de0887667
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240926"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831439"
 ---
 # <a name="using-chef-with-azure"></a>Azure로 Chef 사용하기
 
@@ -20,7 +20,7 @@ ms.locfileid: "88240926"
 
 ## <a name="chef-extension-on-azure"></a>Azure의 Chef 확장
 
-[Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040)에서 [Chef 확장](https://docs.microsoft.com/azure/chef/chef-extension-portal)을 통해 Chef 클라이언트를 백그라운드 서비스로 실행하여 가상 머신을 프로비저닝합니다. 프로비전되고 나면 이러한 가상 머신을 Chef 서버에서 관리할 준비가 된 것입니다.
+[Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040)에서 [Chef 확장](/azure/chef/chef-extension-portal)을 통해 Chef 클라이언트를 백그라운드 서비스로 실행하여 가상 머신을 프로비저닝합니다. 프로비전되고 나면 이러한 가상 머신을 Chef 서버에서 관리할 준비가 된 것입니다.
 
 ## <a name="chef-cloud-shell"></a>Chef Cloud Shell
 

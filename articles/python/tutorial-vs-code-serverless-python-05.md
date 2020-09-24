@@ -2,14 +2,14 @@
 title: '5단계: VS Code를 사용하여 Python에서 Azure Functions 배포'
 description: 자습서 5단계로, Azure에 Python 함수 코드를 배포하고 로컬 프로젝트와 Azure 간에 로그를 스트리밍하고 설정을 동기화하는 방법을 알아봅니다.
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8acf168ecc858410677b8f55b7b84ed14416c005
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473598"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772866"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Python에서 Azure Functions 배포
 
@@ -23,7 +23,9 @@ ms.locfileid: "89473598"
 
     ![Azure 함수 앱에 Python 함수 배포](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
-1. 메시지가 표시되면 **Azure에서 새 함수 앱 만들기**를 선택하고 Azure에서 고유한 이름을 입력합니다(일반적으로 개인 또는 회사 이름을 다른 고유 식별자와 함께 사용하며, 문자, 숫자 및 하이픈을 사용할 수 있음). 이전에 함수 앱을 만든 경우 이 옵션 목록에 해당 이름이 표시됩니다.
+1. 메시지가 표시되면 **Azure에서 새 함수 앱 만들기**를 선택하고 Azure에서 고유한 이름을 입력합니다(일반적으로 개인 또는 회사 이름을 다른 고유 식별자와 함께 사용하며, 문자, 숫자 및 하이픈을 사용할 수 있음).
+
+    이전에 함수 앱을 만든 경우 이 옵션 목록에 해당 이름이 표시됩니다.
 
 1. 메시지가 표시되면 Python 버전 및 Azure 위치를 선택합니다.
 
@@ -75,4 +77,3 @@ func azure functionapp logstream <app_name> --browser
 > [!div class="nextstepaction"]
 > [함수를 배포했습니다. - 6단계 진행 >>>](tutorial-vs-code-serverless-python-06.md)
 
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

@@ -4,27 +4,27 @@ description: 자습서 1부, 소개 및 필수 구성 요소
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 51fb29a80ba69dd59ca18dd94eaaeb6f09e53074
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: e720cd1ca6f29a42bfd9bf6c79c6184338c2621a
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218074"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772886"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI를 사용하여 Azure App Service에 배포
 
-이 자습서에서는 모든 운영 체제에서 실행되는 [Azure CLI(명령 줄 인터페이스)](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest)를 사용하여 Azure App Service에 Node.js 애플리케이션을 배포합니다. CLI를 사용하면 Azure 리소스를 만들고 Git 리포지토리와 Azure 간에 배포 파이프라인을 설정하고 앱의 `console.log` 출력을 볼 수 있습니다.
+이 자습서에서는 모든 운영 체제에서 실행되는 [Azure CLI(명령 줄 인터페이스)](/cli/azure/overview?view=azure-cli-latest)를 사용하여 Azure App Service에 Node.js 애플리케이션을 배포합니다. CLI를 사용하면 Azure 리소스를 만들고 Git 리포지토리와 Azure 간에 배포 파이프라인을 설정하고 앱의 `console.log` 출력을 볼 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
 - [Azure 구독](#azure-subscription).
 - [Node.js 및 npm 6.x 이상](https://nodejs.org/en/download)(Node.js 패키지 관리자)
 - [Git](https://git-scm.com/downloads)(뒤에 나오는 `git --version` 명령에 버전 번호를 표시해야 함)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
+- [Azure CLI](/cli/azure/install-azure-cli)
 
 대안으로, Azure CLI 스크립트를 작성할 때 구문 색 지정, IntelliSense(완료) 및 코드 조각을 제공하는 [Visual Studio Code용 Azure CLI 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)을 대신 사용할 수도 있습니다.
 
-두 번째 대안은 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)이며, [Azure Account 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)을 사용하여 Visual Studio Code 내에서 사용할 수 있습니다.
+두 번째 대안은 [Azure Cloud Shell](/azure/cloud-shell/overview)이며, [Azure Account 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)을 사용하여 Visual Studio Code 내에서 사용할 수 있습니다.
 
 ### <a name="azure-subscription"></a>Azure 구독
 

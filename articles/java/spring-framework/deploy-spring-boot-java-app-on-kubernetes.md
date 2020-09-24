@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: b2cc66d13cd5248604e61b5322f53c358c15a7d8
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: b4b36df09811e8e9e6a9bae944119e280258d751
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681597"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830079"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Azure Kubernetes Service에 Spring Boot 애플리케이션 배포
 
@@ -291,7 +291,7 @@ ms.locfileid: "90681597"
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
 
 > [!div class="nextstepaction"]
-> [Azure의 Spring](/azure/developer/java/spring-framework)
+> [Azure의 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>추가 리소스
 
@@ -330,7 +330,7 @@ Azure Dev Spaces가 있는 AKS(Azure Kubernetes Service)에서 직접 컨테이�
 [dashboard-authentication]: https://github.com/kubernetes/dashboard/wiki/Access-control
 [Azure CLI(명령줄 인터페이스)]: /cli/azure/overview
 [AKS(Azure Kubernetes Service)]: https://azure.microsoft.com/services/kubernetes-service/
-[Java 개발자를 위한 Azure]: /azure/developer/java/
+[Java 개발자를 위한 Azure]: ../index.yml
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [Azure Web App on Linux에 대한 사용자 지정 Docker 이미지 사용]: /azure/app-service/tutorial-custom-container
@@ -349,7 +349,7 @@ Azure Dev Spaces가 있는 AKS(Azure Kubernetes Service)에서 직접 컨테이�
 [네임스페이스]: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 [프라이빗 레지스트리에서 이미지 끌어오기]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->

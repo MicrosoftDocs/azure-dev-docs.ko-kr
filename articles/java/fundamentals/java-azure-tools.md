@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: seo-java-july2019, devx-track-java
-ms.openlocfilehash: 32f3b53ed58f9436aca82f08a3a4ce8600060632
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 857487b644e585b87998f660b9ecc6358be01eba
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379877"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831499"
 ---
 # <a name="azure-tools-for-java-developers"></a>Java 개발자용 Azure 도구
 
@@ -23,7 +23,7 @@ Azure에서 개발하는 경우 사용 가능한 지원되는 JDK에 대한 자�
 
 ## <a name="eclipse-and-intellij-plugins"></a>Eclipse 및 IntelliJ 플러그 인
 
-[Eclipse](/azure/developer/java/toolkit-for-eclipse) 및 [IntelliJ](/azure/developer/java/toolkit-for-intellij)용 Azure 도구 키트를 사용하여 Azure 리소스를 관리하고 IDE에서 앱을 배포합니다.
+[Eclipse](../toolkit-for-eclipse/index.yml) 및 [IntelliJ](../toolkit-for-intellij/index.yml)용 Azure 도구 키트를 사용하여 Azure 리소스를 관리하고 IDE에서 앱을 배포합니다.
 
 ![Azure 탐색기를 보여 주는 IntelliJ 도구 키트](media/intelliJ-azure-explorer.png)
 

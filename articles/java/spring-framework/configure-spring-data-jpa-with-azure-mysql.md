@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c76dd7a91340c603bdb4ce921457013229a26c4c
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 6e4371e4d375c663f61f59707c553ac0e2d6e237
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378877"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831229"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-mysql"></a>Azure Database for MySQL에서 Spring Data JPA 사용
 
-이 항목에서는 [Spring Data JPA](https://spring.io/projects/spring-data-jpa)를 사용하여 [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/)에서 정보를 저장하고 검색하는 애플리케이션 샘플을 만드는 방법을 보여줍니다.
+이 항목에서는 [Spring Data JPA](https://spring.io/projects/spring-data-jpa)를 사용하여 [Azure Database for MySQL](/azure/mysql/)에서 정보를 저장하고 검색하는 애플리케이션 샘플을 만드는 방법을 보여줍니다.
 
 [JPA(Java Persistence API)](https://en.wikipedia.org/wiki/Java_Persistence_API)는 개체 관계형 매핑을 위한 표준 Java API입니다.
 
@@ -86,4 +86,4 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 Spring Data JPA에 대한 자세한 내용은 Spring의 [참조 설명서](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)를 참조하세요.
 
-Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure](/azure/developer/java/)와 [Azure DevOps 및 Java 사용하기](/azure/devops/)를 참조하세요.
+Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure](../index.yml)와 [Azure DevOps 및 Java 사용하기](/azure/devops/)를 참조하세요.

@@ -4,18 +4,18 @@ description: 자습서 2부, Azure Functions 앱 만들기
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 2aca9c53e254eca7c8a070cc50a88426d3886cdd
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218395"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772626"
 ---
 # <a name="create-the-local-functions-app"></a>로컬 Functions 앱 만들기
 
 [이전 단계: 소개 및 필수 구성 요소](tutorial-vscode-serverless-node-01.md)
 
-이 단계에서는 [HTTP 트리거](https://docs.microsoft.com/azure/azure-functions/functions-reference-node#http-triggers-and-bindings)를 사용하는 함수가 포함된 로컬 Azure Functions 애플리케이션을 만듭니다. Azure Functions 앱에는 [서로 다른 트리거](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)를 가진 함수가 많이 포함될 수 있습니다. HTTP 트리거는 들어오는 HTTP 트래픽을 처리합니다.
+이 단계에서는 [HTTP 트리거](/azure/azure-functions/functions-reference-node#http-triggers-and-bindings)를 사용하는 함수가 포함된 로컬 Azure Functions 애플리케이션을 만듭니다. Azure Functions 앱에는 [서로 다른 트리거](/azure/azure-functions/functions-triggers-bindings)를 가진 함수가 많이 포함될 수 있습니다. HTTP 트리거는 들어오는 HTTP 트래픽을 처리합니다.
 
 1. 터미널 또는 명령 프롬프트의 프로젝트에 적합한 폴더 내에서 Visual Studio Code를 실행합니다.
 

@@ -7,12 +7,12 @@ ms.date: 4/24/2019
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 028d3c9d0270a69ac9894b3176eda305b02a6abc
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.openlocfilehash: f1e47353fdf2e09ceaa1b8ac339f4fc23368574d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478423"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830229"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Azure App Service on Linux를 통해 Spring 및 Cosmos DB를 사용하는 방법
 
@@ -30,12 +30,12 @@ ms.locfileid: "87478423"
 
 - Java 웹앱을 클라우드에 배포하려면 Azure 구독이 필요합니다. Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)을 활성화하거나 [무료 Azure 계정](https://azure.microsoft.com/pricing/free-trial/)에 가입할 수 있습니다.
 - [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)
-- [Java 8 JDK](/azure/developer/java/fundamentals/java-jdk-install)
+- [Java 8 JDK](../fundamentals/java-jdk-install.md)
 - [Maven 3](http://maven.apache.org/)
 
 ## <a name="clone-the-sample-java-web-app-repository"></a>샘플 Java 웹앱 리포지토리 복제
 
-이 연습을 위해 [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data for Cosmos DB](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db) 및 [Azure Cosmos DB](/azure/cosmos-db/sql-api-introduction)를 사용하여 빌드된 Java 애플리케이션인 Spring Todo 앱을 사용합니다.
+이 연습을 위해 [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data for Cosmos DB](./configure-spring-boot-starter-java-app-with-cosmos-db.md) 및 [Azure Cosmos DB](/azure/cosmos-db/sql-api-introduction)를 사용하여 빌드된 Java 애플리케이션인 Spring Todo 앱을 사용합니다.
 1. Spring Todo 앱을 복제하고 **.prep** 폴더의 내용을 복사하여 프로젝트를 초기화합니다.
 
     Bash의 경우:
@@ -303,10 +303,10 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 ## <a name="next-steps"></a>다음 단계
 
 - [App Service Linux 개발자 가이드의 Java](/azure/app-service/containers/app-service-linux-java)
-- [Java 개발자를 위한 Azure](/azure/developer/java/) Spring 및 Azure에 대해 자세히 알아보려면 Azure 설명서 센터의 Spring을 계속합니다.
+- [Java 개발자를 위한 Azure](../index.yml) Spring 및 Azure에 대해 자세히 알아보려면 Azure 설명서 센터의 Spring을 계속합니다.
 
 > [!div class="nextstepaction"]
-> [Azure의 Spring](/azure/developer/java/spring-framework)
+> [Azure의 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>추가 리소스
 
@@ -323,7 +323,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 <!-- URL List -->
 
 [Azure Cosmos DB Documentation]: /azure/cosmos-db/
-[Java 개발자를 위한 Azure]: /azure/developer/java/
+[Java 개발자를 위한 Azure]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
 [Spring Data for Azure Cosmos DB SQL API]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/

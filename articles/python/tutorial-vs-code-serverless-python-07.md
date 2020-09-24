@@ -2,14 +2,14 @@
 title: '7단계: VS Code를 사용하여 Python에서 Azure Functions에 대한 스토리지 바인딩 추가'
 description: 자습서 7단계로, Azure Storage에 메시지를 기록하기 위해 Python에서 바인딩을 추가합니다.
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: ad242e5c9c2258e438846a7d393163871d14db9e
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473618"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772856"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Python에서 Azure Functions에 대한 스토리지 바인딩 추가
 
@@ -21,7 +21,9 @@ Azure Functions에 대한 스토리지 바인딩을 추가할 수 있습니다. 
 
 이 섹션에서는 이 자습서의 앞부분에서 만든 HttpExample 함수에 스토리지 바인딩을 추가합니다. 함수는 이 바인딩을 사용하여 각 요청과 함께 스토리지에 메시지를 씁니다. 해당 스토리지는 함수 앱에서 사용하는 것과 동일한 기본 스토리지 계정을 사용합니다. 그러나 스토리지를 많이 사용하려는 경우에는 별도의 계정을 만드는 것을 고려해보세요.
 
-1. Azure Functions 프로젝트에 대한 원격 설정을 *local.settings.json* 파일에 동기화합니다. 명령 팔레트를 열고 **Azure Functions: 원격 설정 다운로드**를 선택하면 됩니다. *local.settings.json*을 열고 `AzureWebJobsStorage`에 대한 값이 포함되어 있는지 확인합니다. 해당 값은 스토리지 계정에 대한 연결 문자열입니다.
+1. Azure Functions 프로젝트에 대한 원격 설정을 *local.settings.json* 파일에 동기화합니다. 명령 팔레트를 열고 **Azure Functions: 원격 설정 다운로드**를 선택하면 됩니다.
+ 
+    *local.settings.json*을 열고 `AzureWebJobsStorage`에 대한 값이 포함되어 있는지 확인합니다. 해당 값은 스토리지 계정에 대한 연결 문자열입니다.
 
 1. `HttpExample` 폴더에서 *function.json*을 마우스 오른쪽 단추로 클릭하고 **바인딩 추가**를 선택합니다.
 
@@ -49,7 +51,9 @@ Azure Functions에 대한 스토리지 바인딩을 추가할 수 있습니다. 
         }
     ```
 
-1. 이제 바인딩을 구성했으므로 함수 코드에서 사용할 수 있습니다. 다시, 새로 정의된 바인딩은 코드에서 *\_\_init\_\_.py*의 `main` 함수에 대한 인수로 나타납니다. 예를 들어 다음과 일치하도록 HttpExample의 *\_\_init\_\_.py*를 수정할 수 있습니다. 이는 `msg` 인수를 사용하여 요청에 사용된 이름을 가진 타임스탬프 메시지를 작성하는 방법을 보여줍니다. 설명은 특정 변경 내용을 설명합니다.
+1. 이제 바인딩을 구성했으므로 함수 코드에서 사용할 수 있습니다. 다시, 새로 정의된 바인딩은 코드에서 *\_\_init\_\_.py*의 `main` 함수에 대한 인수로 나타납니다.
+
+    예를 들어 다음과 일치하도록 HttpExample의 *\_\_init\_\_.py*를 수정할 수 있습니다. 이는 `msg` 인수를 사용하여 요청에 사용된 이름을 가진 타임스탬프 메시지를 작성하는 방법을 보여줍니다. 설명은 특정 변경 내용을 설명합니다.
 
     ```python
     import logging
@@ -82,7 +86,9 @@ Azure Functions에 대한 스토리지 바인딩을 추가할 수 있습니다. 
             )
     ```
 
-1. 이러한 변경 내용을 로컬에서 테스트하려면 F5 키를 누르거나 **디버그** > **디버깅 시작** 메뉴 명령을 선택하여 Visual Studio Code에서 디버거를 다시 시작합니다. 전과 같이 **출력** 창에 프로젝트의 엔드포인트가 표시됩니다.
+1. 이러한 변경 내용을 로컬에서 테스트하려면 F5 키를 누르거나 **디버그** > **디버깅 시작** 메뉴 명령을 선택하여 Visual Studio Code에서 디버거를 다시 시작합니다.
+
+    전과 같이 **출력** 창에 프로젝트의 엔드포인트가 표시됩니다.
 
 1. 브라우저에서 URL `http://localhost:7071/api/HttpExample?name=VS%20Code`를 방문하여 HttpExample 엔드포인트에 대한 요청을 만듭니다. 또한 큐에 메시지를 써야 합니다.
 
@@ -99,4 +105,3 @@ Azure Functions에 대한 스토리지 바인딩을 추가할 수 있습니다. 
 > [!div class="nextstepaction"]
 > [스토리지 바인딩을 추가했습니다. - 8단계 진행 >>>](tutorial-vs-code-serverless-python-08.md)
 
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

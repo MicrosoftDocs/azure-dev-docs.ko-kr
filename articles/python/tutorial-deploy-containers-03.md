@@ -4,12 +4,12 @@ description: 자습서 3단계, 컨테이너 이미지를 다시 빌드하고 �
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6a2c09e861da9fedaa90f1229f212f02f95a349e
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 79498685492d57a22884b30c551c3a28b6e0fe15
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473496"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772636"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2: 변경 후 컨테이너를 Azure App Service에 다시 배포
 
@@ -31,5 +31,3 @@ ms.locfileid: "89473496"
 
 > [!div class="nextstepaction"]
 > [변경하고 다시 배포했습니다. - 4단계 진행 >>>](tutorial-deploy-containers-04.md)
-
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

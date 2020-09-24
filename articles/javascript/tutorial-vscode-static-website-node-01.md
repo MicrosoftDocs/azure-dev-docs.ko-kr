@@ -3,16 +3,17 @@ title: Visual Studio Code에서 Azure에 정적 Node.js 웹 사이트 배포
 description: 자습서 1부, 소개 및 필수 구성 요소
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d2c66383e654624cf7edce542461340cc248ba62
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792738"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773094"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Visual Studio Code에서 Azure에 정적 웹 사이트 배포
 
-이 자습서에서는 [Azure Storage](https://docs.microsoft.com/azure/storage)를 사용하여 정적 웹 사이트를 만들고 Azure에 배포합니다. 정적 웹 사이트는 HTML, CSS, JavaScript 및 이미지나 글꼴과 같은 기타 정적 파일로 구성됩니다. 정적 사이트는 일반적으로 Angular, React 또는 Vue로 작성된 단일 페이지 애플리케이션(또는 [SPA](https://en.wikipedia.org/wiki/Single-page_application))입니다. 하지만 앱을 디자인하고 웹 서버를 사용하는 대신 _스토리지_에서 직접 이러한 파일을 호스팅하고 제공합니다. 스토리지에서 호스팅하는 것이 웹 서버를 유지 관리하는 것보다 간단하고 비용이 저렴합니다.
+이 자습서에서는 [Azure Storage](/azure/storage)를 사용하여 정적 웹 사이트를 만들고 Azure에 배포합니다. 정적 웹 사이트는 HTML, CSS, JavaScript 및 이미지나 글꼴과 같은 기타 정적 파일로 구성됩니다. 정적 사이트는 일반적으로 Angular, React 또는 Vue로 작성된 단일 페이지 애플리케이션(또는 [SPA](https://en.wikipedia.org/wiki/Single-page_application))입니다. 하지만 앱을 디자인하고 웹 서버를 사용하는 대신 _스토리지_에서 직접 이러한 파일을 호스팅하고 제공합니다. 스토리지에서 호스팅하는 것이 웹 서버를 유지 관리하는 것보다 간단하고 비용이 저렴합니다.
 
 ## <a name="walkthrough-video"></a>연습 비디오
 

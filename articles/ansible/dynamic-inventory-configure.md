@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 동적 인벤토리
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 53cf2e25a89081b314826cda4322e2556fc38c39
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: d4532a0727a70dc1a92c6df21b5ff9f0d92ab850
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682069"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831199"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>자습서: Ansible을 사용하여 Azure 리소스의 동적 인벤토리 구성
 
@@ -35,7 +35,7 @@ Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *�
 
 1. [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040)에 로그인합니다.
 
-1. [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)을 엽니다.
+1. [Cloud Shell](/azure/cloud-shell/overview)을 엽니다.
 
 1. 이 자습서의 가상 머신을 보관할 Azure 리소스 그룹을 만듭니다.
 
@@ -66,7 +66,7 @@ Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *�
 
 ## <a name="tag-a-vm"></a>VM에 태그 지정
 
-사용자 정의 범주별로 [태그를 사용하여 Azure 리소스를 구성](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#azure-cli)할 수 있습니다.
+사용자 정의 범주별로 [태그를 사용하여 Azure 리소스를 구성](/azure/azure-resource-manager/resource-group-using-tags#azure-cli)할 수 있습니다.
 
 ### <a name="using-ansible-version--28"></a>Ansible 2.8 이전 버전 사용
 다음 [az resource tag](/cli/azure/resource#az-resource-tag) 명령을 입력하여 `ansible-inventory-test-vm1` 가상 머신에 `nginx` 키를 사용한 태그를 지정합니다.
@@ -276,7 +276,7 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
 
 이 섹션에서는 가상 머신에 Nginx가 설치되었는지 테스트하는 한 가지 방법을 설명합니다.
 
-1. [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az-vm-list-ip-addresses) 명령을 사용하여 `ansible-inventory-test-vm1` 가상 머신의 IP 주소를 검색합니다. 그런 다음, 반환된 값(가상 머신의 IP 주소)은 가상 머신에 연결하기 위한 SSH 명령에 대한 매개 변수로 사용됩니다.
+1. [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) 명령을 사용하여 `ansible-inventory-test-vm1` 가상 머신의 IP 주소를 검색합니다. 그런 다음, 반환된 값(가상 머신의 IP 주소)은 가상 머신에 연결하기 위한 SSH 명령에 대한 매개 변수로 사용됩니다.
 
     ```azurecli-interactive
     ssh `az vm list-ip-addresses \

@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: b8d145f3f199899d862d048f121d9ba48c75eeac
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: d84e14caf6353d8e53b0a6a004e5f3b9b5a12168
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673239"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738406"
 ---
 ### <a name="perform-in-place-testing"></a>내부 테스트 수행
 

@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 29ea7925e91b1f42e0f83b88fbc7f7d9a8fd3629
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: abf3824dd83d0da27a411694e144a8e6bf7285ac
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672879"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738494"
 ---
 ### <a name="deploy-to-aks"></a>AKS에 배포
 

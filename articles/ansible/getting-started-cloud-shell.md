@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, 플레이북, Bash
 ms.topic: quickstart
 ms.date: 09/14/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 0a03794bdcbd810444f42db045650cdad813724c
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: ddc4ba9f473e5e8d727996a4e902210f0d3055f6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682059"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831189"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Ansible 구성
 
@@ -21,7 +21,7 @@ ms.locfileid: "90682059"
 ## <a name="configure-your-environment"></a>환경 구성
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure Cloud Shell 구성** - Azure Cloud Shell을 처음 접하는 경우 [Azure Cloud Shell의 Bash에 대한 빠른 시작](https://docs.microsoft.com/azure/cloud-shell/quickstart)을 참조하세요.
+- **Azure Cloud Shell 구성** - Azure Cloud Shell을 처음 접하는 경우 [Azure Cloud Shell의 Bash에 대한 빠른 시작](/azure/cloud-shell/quickstart)을 참조하세요.
 
 [!INCLUDE [open-cloud-shell.md](../includes/open-cloud-shell.md)]
 

@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Azure CLI
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682028"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831177"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Ansible 구성
 
@@ -177,4 +177,4 @@ Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자�
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [Azure의 Ansible](/azure/developer/Ansible)
+> [Azure의 Ansible](./index.yml)

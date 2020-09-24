@@ -3,12 +3,12 @@ title: Azure SDK for Go를 사용한 인증
 description: Azure SDK for Go에서 사용할 수 있는 인증 방법 및 그 사용 방법에 대해 알아봅니다.
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: b4bf09dbb3f59c77c2914ae9c9091dc0af31b093
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 61353f2b7f2c13764f4e736105b15127d1355e29
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80319680"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831319"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Azure SDK for Go에서의 인증 방법
 
@@ -111,7 +111,7 @@ Azure Stack 메타 데이터 정보에서 이러한 변수를 검색할 수 있�
 | Development Kit | `https://management.local.azurestack.external/` |
 | 통합 시스템 | `https://management.(region).ext-(machine-name).(FQDN)` |
 
-Azure Stack에서 Go용 Azure SDK를 사용하는 방법에 대한 자세한 정보는 [Azure Stack에서 Go를 사용한 API 버전 프로필 사용](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-go)을 참조하세요.
+Azure Stack에서 Go용 Azure SDK를 사용하는 방법에 대한 자세한 정보는 [Azure Stack에서 Go를 사용한 API 버전 프로필 사용](/azure/azure-stack/user/azure-stack-version-profiles-go)을 참조하세요.
 
 ## <a name="use-file-based-authentication"></a>파일 기반 인증 사용
 

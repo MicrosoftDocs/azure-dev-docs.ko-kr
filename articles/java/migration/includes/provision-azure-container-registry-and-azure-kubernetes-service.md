@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: e72cefaab3ccdbbaae01992cc11285944fb09a36
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: c8cd0672bfedf640077e9ae3b9272b12d8ce0b61
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673209"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738157"
 ---
 ### <a name="provision-azure-container-registry-and-azure-kubernetes-service"></a>Azure Container Registry 및 Azure Kubernetes Service 프로비저닝
 

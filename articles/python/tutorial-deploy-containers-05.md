@@ -4,12 +4,12 @@ description: 자습서 5단계, 지속적인 요금을 방지하기 위해 Azure
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cc5540570bc914d39a17bd102dc0f86f6674025a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 9140f5b695fe4b20e1e9417fe1d5e6ad115bb4eb
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473528"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831419"
 ---
 # <a name="5-clean-up-azure-resources"></a>5: Azure 리소스 정리
 
@@ -23,7 +23,7 @@ ms.locfileid: "89473528"
 
 GitHub: [vscode-docker](https://github.com/Microsoft/vscode-docker) 및 [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice)의 해당 리포지토리를 방문하여 Docker 및 App Service 확장에 대해 자세히 알아볼 수 있습니다. 문제 및 기여도 환영합니다.
 
-AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여 Python에서 사용할 수 있는 Azure 서비스에 대해 자세히 알아보려면 [Azure Python 개발자 센터](https://docs.microsoft.com/python/azure/?view=azure-python)를 참조하세요.
+AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여 Python에서 사용할 수 있는 Azure 서비스에 대해 자세히 알아보려면 [Azure Python 개발자 센터](/python/azure/?preserve-view=true&view=azure-python)를 참조하세요.
 
 도움이 될 수 있는 VS Code에 대한 다른 Azure 확장도 있습니다. 확장 탐색기에서 "Azure"를 검색하기만 하면 됩니다.
 
@@ -37,6 +37,4 @@ AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여
 - [Azure Resource Manager 도구](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [완료했습니다!](https://docs.microsoft.com/python/azure/?view=azure-python)
-
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.
+> [완료했습니다!](/python/azure/?preserve-view=true&view=azure-python)

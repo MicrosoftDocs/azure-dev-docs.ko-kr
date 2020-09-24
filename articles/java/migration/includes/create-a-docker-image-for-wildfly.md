@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 08389c5802d2f6fef5360ac09adb11bb6494beb6
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 10eac11760fdb4688cdb6755d8cb54efe6835bc4
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988829"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738403"
 ---
 ### <a name="create-a-docker-image-for-wildfly"></a>WildFly용 Docker 이미지 만들기
 

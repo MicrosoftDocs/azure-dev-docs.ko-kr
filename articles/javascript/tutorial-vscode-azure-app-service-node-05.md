@@ -3,14 +3,15 @@ title: Visual Studio Code에서 Azure App Service에 배포 후 리소스 정리
 description: 자습서 5부, 리소스 정리
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fc420d98121816157e75017ee453aa42929f68e6
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85793053"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772896"
 ---
-# <a name="clean-up-resources"></a>리소스 정리
+# <a name="part-5-clean-up-resources"></a>5부: 리소스 정리
 
 [이전 단계: 로그 스트리밍](tutorial-vscode-azure-app-service-node-04.md)
 

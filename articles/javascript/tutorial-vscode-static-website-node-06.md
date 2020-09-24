@@ -3,14 +3,15 @@ title: Azure에 정적 Node.js 웹 사이트를 배포한 후 리소스 정리
 description: 자습서 6부, 리소스 정리
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: cfc777d3e6ee4dbee51f5e580043f6950156101f
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 0c24562ff5c4b689854c29ef33557e0bfa9bee8e
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792693"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772583"
 ---
-# <a name="clean-up-resources"></a>리소스 정리
+# <a name="part-6-clean-up-resources"></a>6부: 리소스 정리
 
 [이전 단계: 변경 및 재배포](tutorial-vscode-static-website-node-05.md)
 

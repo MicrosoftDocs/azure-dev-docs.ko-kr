@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 11e2f8c598f961b3a99c078a66d5b07b5b800bdd
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 81ee40a0f67f28bf0afe977239e2d3746eb35cca
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669959"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831936"
 ---
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 문서의 단계를 완료하려면 다음 소프트웨어 구성 요소가 필요한 IntelliJ용 Azure 도구 키트를 설치해야 합니다.
 
-* [Azure 지원 JDK(Java Development Kit)](https://aka.ms/azure-jdks)
+* [Azure 지원 JDK(Java Development Kit)](../../fundamentals/java-jdk-long-term-support.md)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition 또는 Community Edition 설치
 * [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053)를 설치해야 합니다. 자세한 내용은 [IntelliJ의 플러그인 관리 가이드](https://www.jetbrains.com/help/idea/managing-plugins.html)를 참조하세요.
 * Azure Toolkit for IntelliJ를 사용하려면 Azure 계정에 [로그인](../sign-in-instructions.md)해야 합니다.

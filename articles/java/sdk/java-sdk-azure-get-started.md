@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: d8f173fca56af289fb83012a101bc5cb99e4ed12
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379517"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831789"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Azure 에서 Java를 이용하여 클라우드 개발 시작
 
@@ -144,7 +144,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>IntelliJ용 Azure 도구 키트 설치
 
-[Azure 도구 키트](/azure/developer/java/toolkit-for-intellij/installation)는 웹앱이나 API를 프로그래밍 방식으로 설치하지만 현재 다른 개발 유형에는 사용하고 있지 않은 경우에 필요합니다. 다음은 설치 프로세스에 대한 요약입니다. 빠른 시작을 원하는 경우 [Azure Toolkit for IntelliJ 빠른 시작](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app)을 방문하세요.
+[Azure 도구 키트](../toolkit-for-intellij/installation.md)는 웹앱이나 API를 프로그래밍 방식으로 설치하지만 현재 다른 개발 유형에는 사용하고 있지 않은 경우에 필요합니다. 다음은 설치 프로세스에 대한 요약입니다. 빠른 시작을 원하는 경우 [Azure Toolkit for IntelliJ 빠른 시작](../toolkit-for-intellij/create-hello-world-web-app.md)을 방문하세요.
 
 - **파일** 메뉴를 선택한 다음 **설정...** 을 선택합니다.
 
@@ -154,7 +154,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ### <a name="install-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트 설치
 
-[Azure 도구 키트](/azure/developer/java/toolkit-for-eclipse)는 웹앱이나 API를 프로그래밍 방식으로 설치하지만 현재 다른 개발 유형에는 사용하고 있지 않은 경우에 필요합니다. 다음은 설치 프로세스에 대한 요약입니다. 빠른 시작을 원하는 경우 [Azure Toolkit for Eclipse 빠른 시작](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app)을 방문하세요.
+[Azure 도구 키트](../toolkit-for-eclipse/index.yml)는 웹앱이나 API를 프로그래밍 방식으로 설치하지만 현재 다른 개발 유형에는 사용하고 있지 않은 경우에 필요합니다. 다음은 설치 프로세스에 대한 요약입니다. 빠른 시작을 원하는 경우 [Azure Toolkit for Eclipse 빠른 시작](../toolkit-for-eclipse/create-hello-world-web-app.md)을 방문하세요.
 
 - **도움말** 메뉴를 선택하고 **새 소프트웨어 설치**를 선택합니다.
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 92c6c6fe43fe6bd7c1932eeb64a88db87437713d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7a16f5c9f9c6e27a56bace08aa43aef3c4a9bdb6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379387"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831879"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Java 애플리케이션에서 Azure 스토리지 계정 관리
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379387"
 
 ## <a name="run-the-sample"></a>샘플 실행
 
-[인증 파일](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)을 만들고 컴퓨터에서 파일의 전체 경로가 포함된 `AZURE_AUTH_LOCATION` 환경 변수를 설정합니다. 다음을 실행합니다.
+[인증 파일](/azure/java/java-sdk-azure-authenticate#mgmt-file)을 만들고 컴퓨터에서 파일의 전체 경로가 포함된 `AZURE_AUTH_LOCATION` 환경 변수를 설정합니다. 다음을 실행합니다.
 
 ```
 git clone https://github.com/Azure-Samples/storage-java-manage-storage-accounts.git

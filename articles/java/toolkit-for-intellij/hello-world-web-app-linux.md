@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0dd1b0202442a4af5322513f038ddcc9908a7dd1
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: df71e27850a467e03ab58edf6beaf085b195803b
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534722"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831979"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ를 사용하여 Azure Web Apps for Containers에 Java 앱 배포
 
@@ -162,7 +162,7 @@ Docker의 추가 리소스는 공식 [Docker 웹 사이트][Docker]를 참조하
 
 [Azure Portal]: https://portal.azure.com/
 [Azure Portal을 사용하여 프라이빗 Docker 컨테이너 레지스트리 만들기]: /azure/container-registry/container-registry-get-started-portal
-[Azure for Java Developers]: /azure/developer/java
+[Azure for Java Developers]: ../index.yml
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Create Docker Registry using Azure CLI]: /azure/container-registry/container-registry-get-started-azure-cli
 

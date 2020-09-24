@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 28b0e304ee64cb24f098908e83a92d230657741f
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: e457d4fe152f9fa5fa64bafaa4f49311e8ff4475
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534619"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831889"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Eclipse용 Azure Explorer를 사용하여 가상 머신 관리
 
@@ -24,7 +24,7 @@ Eclipse용 Azure 도구 키트의 일부인 Azure Explorer는 Eclipse IDE(통합
 
 ## <a name="create-a-virtual-machine"></a>가상 머신 만들기
 
-1. [Eclipse용 Azure 도구 키트에 대한 로그인 지침](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)을 사용하여 Azure 계정에 로그인합니다.
+1. [Eclipse용 Azure 도구 키트에 대한 로그인 지침](./sign-in-instructions.md)을 사용하여 Azure 계정에 로그인합니다.
 
 1. **Azure Explorer** 보기에서 **Azure** 노드를 확장하고 **Virtual Machines**를 마우스 오른쪽 단추로 클릭한 후 **VM 만들기**를 클릭합니다.
 
@@ -122,8 +122,8 @@ Azure 가상 컴퓨터 크기 및 가격 책정에 대한 자세한 내용은 �
 
 <!-- URL List -->
 
-[Azure에서 Windows 가상 머신에 대한 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure에서 Linux 가상 머신에 대한 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure에서 Windows 가상 머신에 대한 크기]: /azure/virtual-machines/sizes
+[Azure에서 Linux 가상 머신에 대한 크기]: /azure/virtual-machines/sizes
 [Windows 가상 컴퓨터 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 가상 컴퓨터 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

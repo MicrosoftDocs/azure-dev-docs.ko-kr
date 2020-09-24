@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5152b1bfedd02c821d2a9138fa3e20325b5ea086
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: a209f532069741e9c6302bca97dc8c72cde0e396
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534321"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831949"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>IntelliJ용 Azure Explorer를 사용하여 스토리지 계정 관리
 
@@ -86,8 +86,8 @@ Azure Storage 계정, 크기 및 가격 책정에 대한 자세한 내용은 다
 [Azure Storage 확장성 및 성능 목표]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure의 Windows 스토리지 계정 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure의 Linux 스토리지 계정 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure의 Windows 스토리지 계정 크기]: /azure/virtual-machines/sizes
+[Azure의 Linux 스토리지 계정 크기]: /azure/virtual-machines/sizes
 [Windows 스토리지 계정 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 스토리지 계정 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

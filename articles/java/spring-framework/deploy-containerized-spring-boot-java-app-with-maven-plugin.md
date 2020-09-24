@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: c8ee810df90ed9b0de12e92c336898fb700e1c67
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: 960b9c0d8606e14487dab6d505bc701968dc4b0a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681633"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831649"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps의 Maven을 사용하여 Azure에 컨테이너화된 Spring Boot 앱 배포
 
@@ -308,7 +308,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
 
 > [!div class="nextstepaction"]
-> [Azure의 Spring](/azure/developer/java/spring-framework)
+> [Azure의 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>추가 리소스
 
@@ -331,7 +331,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 <!-- URL List -->
 
 [Azure CLI(명령줄 인터페이스)]: /cli/azure/overview
-[Java 개발자를 위한 Azure]: /azure/developer/java/
+[Java 개발자를 위한 Azure]: ../index.yml
 [Azure Portal]: https://portal.azure.com/
 [Docker]: https://www.docker.com/
 [Maven의 Docker 플러그 인]: https://github.com/spotify/docker-maven-plugin
@@ -345,7 +345,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 [Spring Framework]: https://spring.io/
 [Azure Web Apps의 Maven 플러그 인]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->

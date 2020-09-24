@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: dea9ebe0976b45332f166034f3ff5c92ca4cfe99
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: ef404f1d2e3d1ed042a99eccd2469fdd112e931b
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725207"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832019"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>자습서: Jenkins를 사용하여 GitHub에서 Azure App Service로 배포
 
@@ -273,11 +273,11 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
    이러한 Azure CLI 명령에 대한 자세한 내용은 다음 페이지를 참조하세요.
 
-   * [**`az group create`**](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create)
+   * [**`az group create`**](/cli/azure/group?view=azure-cli-latest#az-group-create)
 
-   * [**`az appservice plan create`**](https://docs.microsoft.com/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create)
+   * [**`az appservice plan create`**](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create)
 
-   * [**`az webapp create`**](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+   * [**`az webapp create`**](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
 
 1. Jenkins에서 파이프라인 작업을 선택하고 **지금 빌드**를 선택합니다.
 

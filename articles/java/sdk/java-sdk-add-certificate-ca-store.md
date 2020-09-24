@@ -8,12 +8,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: devx-track-java
-ms.openlocfilehash: 6807374dac927d8a93e1ecf1ac2b1e3fa54877ac
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f40f013d7323c51c25d5ecf97f097824d75e914
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379547"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831679"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>Java CA 인증서 저장소에 루트 인증서 추가
 
@@ -79,6 +79,6 @@ JDK에 루트 인증서를 성공적으로 추가한 후에는 JDK의 내용을 
 
 keytool 유틸리티에 대한 자세한 내용은, <https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html>을 참조합니다.
 
-Java에 대한 자세한 내용은 [Java 개발자용 Azure](/azure/developer/java)를 참조하세요.
+Java에 대한 자세한 내용은 [Java 개발자용 Azure](../index.yml)를 참조하세요.
 
 Azure에서 개발하는 경우 사용 가능한 지원되는 JDK에 대한 자세한 내용은 <https://aka.ms/azure-jdks>를 참조하세요.

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e07bc23a7316352017e1ea99dd87253f0639a559
-ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+ms.openlocfilehash: e4be32594940d2c207610e7d709ccb328c38ecf6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88662984"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831699"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Spring Cloud 애플리케이션을 Azure Spring Cloud로 마이그레이션
 
@@ -158,7 +158,7 @@ Azure Spring Cloud 인스턴스에서 구성 서버를 구성합니다. 자세�
 
 ### <a name="migrate-spring-cloud-vault-secrets-to-azure-keyvault"></a>Spring Cloud Vault 비밀을 Azure KeyVault로 마이그레이션
 
-Azure KeyVault Spring Boot Starter를 사용하여 Spring을 통해 비밀을 애플리케이션에 직접 주입할 수 있습니다. 자세한 내용은 [Azure Key Vault에 Spring Boot Starter를 사용하는 방법](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault)을 참조하세요.
+Azure KeyVault Spring Boot Starter를 사용하여 Spring을 통해 비밀을 애플리케이션에 직접 주입할 수 있습니다. 자세한 내용은 [Azure Key Vault에 Spring Boot Starter를 사용하는 방법](../spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault.md)을 참조하세요.
 
 > [!NOTE]
 > 마이그레이션을 수행하려면 일부 비밀의 이름을 바꿔야 할 수 있습니다. 이에 따라 애플리케이션 코드를 적절히 업데이트하세요.

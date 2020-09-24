@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 6/16/2020
-ms.openlocfilehash: 7b8a29c2769b3c4b04a40053d0470bfc6b1a0cca
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: a718c7b8b481b99f5a4b1303acac7147c88d1550
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275187"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831669"
 ---
 # <a name="migrate-a-tomcat-application-to-azure-spring-cloud"></a>Tomcat 애플리케이션을 Azure Spring Cloud로 마이그레이션
 
@@ -131,7 +131,7 @@ Spring Boot 및 Spring Cloud에는 빌드 및 종속성 관리를 위해 Maven �
 
 1. [Spring Bean](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-spring-beans-and-dependency-injection)으로 다른 모든 JNDI 종속성을 다시 만듭니다. Spring 관용구 메커니즘을 사용(예: 메시징에 [Spring JMS](https://spring.io/guides/gs/messaging-jms/)를 사용)하는 것이 좋습니다.
 
-1. Tomcat 보안영역을 [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review)로 바꿉니다. [Active Directory에 대한 Spring Boot Starter](/azure/developer/java/spring-framework/spring-boot-starters-for-azure#azure-active-directory)를 통해 Azure Active Directory를 권한 부여 관리에 사용하는 것이 좋습니다.
+1. Tomcat 보안영역을 [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review)로 바꿉니다. [Active Directory에 대한 Spring Boot Starter](../spring-framework/spring-boot-starters-for-azure.md#azure-active-directory)를 통해 Azure Active Directory를 권한 부여 관리에 사용하는 것이 좋습니다.
 
 1. [Spring bean](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-as-spring-bean) 또는 [클래스 경로 검색](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-using-scanning)을 사용하여 *web.xml*에 구성된 서블릿 필터를 다시 만듭니다.
 

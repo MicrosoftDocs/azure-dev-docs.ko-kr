@@ -1,15 +1,15 @@
 ---
 title: Python용 Azure 라이브러리의 사용 패턴
 description: Python용 Azure SDK 라이브러리의 일반적인 사용 패턴 개요
-ms.date: 06/09/2020
+ms.date: 09/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: cf44dc4458014972b6c6e16a28acab164d8f0f89
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 63cd6c85e15fa0ffb44a4da01ffcc27d4ae08f17
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983324"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831799"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python용 Azure 라이브러리 사용 패턴
 
@@ -138,7 +138,7 @@ JSON을 사용하는 경우 Azure 라이브러리는 인라인 JSON을 해당 �
 
 개체에 중첩된 개체 인수도 있을 수 있으며, 이런 경우 중첩된 JSON도 사용할 수 있습니다.
 
-예를 들어 [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python) 개체 인스턴스가 있고 해당 [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 호출한다고 가정하겠습니다. 이 경우 세 번째 인수는 [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python) 형식이며 인수 자체에 [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) 형식의 인수를 포함합니다. `VaultProperties`는 [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) 형식 및 [`list[AccessPolicyEntry`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python) 형식의 개체 인수를 차례로 포함합니다. `Sku`는 [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python) 개체를 포함하고 각 `AccessPolicyEntry`는 [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python) 개체를 포함합니다.
+예를 들어 [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python) 개체 인스턴스가 있고 해당 [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 호출한다고 가정하겠습니다. 이 경우 세 번째 인수는 [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python) 형식이며 인수 자체에 [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) 형식의 인수를 포함합니다. `VaultProperties`는 [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) 형식 및 [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python) 형식의 개체 인수를 차례로 포함합니다. `Sku`는 [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python) 개체를 포함하고 각 `AccessPolicyEntry`는 [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python) 개체를 포함합니다.
 
 포함 개체를 사용하여 `create_or_update`를 호출하려면 다음과 같은 코드를 사용합니다(`tenant_id`와 `object_id`가 이미 정의되어 있다고 가정). 또한 함수 호출 전에 필요한 개체를 만들 수 있습니다.
 

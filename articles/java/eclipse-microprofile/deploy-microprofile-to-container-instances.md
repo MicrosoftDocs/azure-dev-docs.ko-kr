@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 5823e2ee6a6467f0eb57b7e57108a191ff225896
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: fa17a1e9758a7b8cc7782658d736fe5c55fdb099
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379887"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831519"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>Docker 및 Azure를 사용하여 클라우드로 MicroProfile 애플리케이션 배포
 
@@ -157,12 +157,12 @@ curl http://$ACI_INSTANCE.$ADCL.azurecontainer.io:8080/api/hello
 [Azure Container Registry 빌드]: /azure/container-registry/container-registry-build-overview
 [MicroProfile.io]: https://microprofile.io
 [Azure Command Line Interface (CLI)]: /cli/azure/overview
-[Azure for Java Developers]: /azure/developer/java/
+[Azure for Java Developers]: ../index.yml
 [Azure portal]: https://portal.azure.com/
 [체험판 Azure 계정]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Maven]: http://maven.apache.org/
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 [Azure Container Instances]: /azure/container-instances/
 [Azure Container Registry]:  /azure/container-registry

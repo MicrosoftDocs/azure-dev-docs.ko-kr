@@ -4,12 +4,12 @@ description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용�
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 459311e76f70e10a5da62c4205a9843427f76cec
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 992232c23368f3f7dcd173f1f711e6c69650bdb6
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275117"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110526"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
 
@@ -108,7 +108,7 @@ Azure Portal 또는 Azure CLI를 통해 그룹이 존재하는지 확인할 수 
 ## <a name="6-clean-up-resources"></a>6: 리소스 정리
 
 ```azurecli
-az group delete -n PythonAzureExample-ResourceGroup-rg
+az group delete -n PythonAzureExample-ResourceGroup-rg  --no-wait
 ```
 
 이 예제에서 리소스 그룹을 프로비저닝된 상태로 유지할 필요가 없는 경우 이 명령을 실행합니다. 리소스 그룹에는 구독에서 진행 중인 요금이 발생하지 않지만, 적극적으로 사용하지 않는 그룹을 정리하는 것이 좋습니다.

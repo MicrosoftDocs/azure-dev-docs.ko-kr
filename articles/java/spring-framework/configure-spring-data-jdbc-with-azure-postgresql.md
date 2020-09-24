@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e6c95da37584db483d5acedaf738bfb0512a1de3
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c700d78fa8cb7568e207fd020714cda25abb2bc5
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378917"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831819"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL에서 Spring Data JDBC 사용
 
@@ -99,4 +99,4 @@ CREATE TABLE todo (id SERIAL PRIMARY KEY, description VARCHAR(255), details VARC
 
 Spring Data JDBC에 대한 자세한 내용은 Spring의 [참조 설명서](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)를 참조하세요.
 
-Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure](/azure/developer/java/)와 [Azure DevOps 및 Java 사용하기](/azure/devops/)를 참조하세요.
+Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure](../index.yml)와 [Azure DevOps 및 Java 사용하기](/azure/devops/)를 참조하세요.

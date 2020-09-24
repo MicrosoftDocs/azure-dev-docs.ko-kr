@@ -12,12 +12,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: b682c3b17e13f8a4491119f995fe2d21cdeda974
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 3835d51bbbc7f3226a1b77ba415d5e965ac8a609
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379337"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831919"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C용 Spring Boot Starter를 사용하여 Java 웹앱을 보호합니다.
 
@@ -359,4 +359,4 @@ ms.locfileid: "86379337"
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
 
 > [!div class="nextstepaction"]
-> [Azure의 Spring](/azure/developer/java/spring-framework)
+> [Azure의 Spring](./index.yml)

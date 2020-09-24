@@ -4,12 +4,12 @@ description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 �
 ms.date: 06/02/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e9a08761fb9af300b5d3f2c4a9704bc7f10e1158
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 17848311fa713fbe480609d2d49481b5f343eff4
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275126"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110546"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>예: Azure 라이브러리를 사용하여 데이터베이스 프로비저닝
 
@@ -224,7 +224,7 @@ python use_db.py
 ## <a name="6-clean-up-resources"></a>6: 리소스 정리
 
 ```azurecli
-az group delete -n PythonAzureExample-DB-rg
+az group delete -n PythonAzureExample-DB-rg  --no-wait
 ```
 
 이 예제에서 프로비저닝된 리소스를 유지할 필요가 없으며 구독에서 지속적인 요금을 방지하려면 이 명령을 실행합니다.

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 4a19b6dff945cb04d2b726b546e362c261a00595
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: 775e547f61f4f4b2c649505607cf4d7310d0c6c3
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614327"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831839"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API에서 Spring Data Gremlin Starter를 사용하는 방법
 
@@ -171,7 +171,7 @@ Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장
 Azure의 Spring에 대해 자세히 알아보려면 Azure의 Spring 설명서를 계속 참조하세요.
 
 > [!div class="nextstepaction"]
-> [Azure의 Spring](/azure/developer/java/spring-framework)
+> [Azure의 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>추가 리소스
 
@@ -208,7 +208,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 <!-- URL List -->
 
 [Azure Cosmos DB 설명서]: /azure/cosmos-db/
-[Java 개발자를 위한 Azure]: /azure/developer/java/
+[Java 개발자를 위한 Azure]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
 [Azure Cosmos DB SQL API용 Spring 데이터]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
 [Spring 데이터 Gremlin Starter]: https://github.com/Microsoft/spring-data-gremlin
@@ -218,7 +218,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[그래프 파티션]: https://docs.microsoft.com/azure/cosmos-db/graph-partitioning
+[그래프 파티션]: /azure/cosmos-db/graph-partitioning
 [azure-spring-data-sample-gremlin]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-data-sample-gremlin
 
 <!-- IMG List -->

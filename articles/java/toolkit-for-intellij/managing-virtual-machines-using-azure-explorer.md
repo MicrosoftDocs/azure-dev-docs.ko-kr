@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 058842e8f7d50d885d2a5d28c56ee144072e637a
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 43aa5efc8a783887c4af0e62f2da7d3b51f652fe
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534374"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831937"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>IntelliJ용 Azure Explorer를 사용하여 Virtual Machines 관리
 
@@ -130,8 +130,8 @@ Azure 가상 컴퓨터 크기 및 가격 책정에 대한 자세한 내용은 �
 <!-- URL List -->
 
 [IntelliJ용 Azure 도구 키트에 대한 로그인 지침]: ./sign-in-instructions.md
-[Azure에서 Windows 가상 머신에 대한 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure에서 Linux 가상 머신에 대한 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure에서 Windows 가상 머신에 대한 크기]: /azure/virtual-machines/sizes
+[Azure에서 Linux 가상 머신에 대한 크기]: /azure/virtual-machines/sizes
 [Windows 가상 컴퓨터 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 가상 컴퓨터 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

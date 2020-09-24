@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Kubernetes, k8s, AKS, 파란색/녹색 배포,
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240995"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832049"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>자습서: 파란색/녹색 배포 패턴을 사용하여 AKS(Azure Kubernetes Service)에 배포
 
@@ -29,7 +29,7 @@ AKS(Azure Kubernetes Service)는 호스팅된 Kubernetes 환경을 관리하므�
 
 ## <a name="prerequisites"></a>사전 요구 사항
 - [GitHub 계정](https://github.com): 샘플 리포지토리를 복제하려면 GitHub 계정이 필요합니다.
-- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest): Azure CLI 2.0을 사용하여 Kubernetes 클러스터를 만들 수 있습니다.
+- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest): Azure CLI 2.0을 사용하여 Kubernetes 클러스터를 만들 수 있습니다.
 - [Chocolatey](https://chocolatey.org): kubectl을 설치하는 데 사용하는 패키지 관리자입니다.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): Kubernetes 클러스터에 대한 명령을 실행하기 위해 사용하는 명령줄 인터페이스입니다.
 - [jq](https://stedolan.github.io/jq/download/): 간단한 명령줄 JSON 프로세서입니다.
@@ -81,7 +81,7 @@ GitHub의 Microsoft 리포지토리에서 Jenkins와 파란색/녹색 배포 패
 - Azure Container Registry 서비스의 인스턴스를 만듭니다.
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Azure CLI 2.0을 사용하여 관리되는 Kubernetes 클러스터 만들기
-[Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)으로 관리되는 Kubernetes 클러스터를 만들려면 Azure CLI 버전 2.0.25 이상을 사용하고 있어야 합니다.
+[Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)으로 관리되는 Kubernetes 클러스터를 만들려면 Azure CLI 버전 2.0.25 이상을 사용하고 있어야 합니다.
 
 1. Azure 계정에 로그인합니다. 다음 명령을 입력하면 로그인을 완료하는 방법을 설명하는 지침이 나타납니다. 
     

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, 클러스터
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6ce3714220a5c1cdff3a40cb8590a36356167616
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240865"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831549"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>자습서: Service Fabric 클러스터에 배포
 
@@ -280,12 +280,12 @@ Jenkins를 설정한 후 다음 섹션, [Jenkins 작업 만들기 및 구성](#c
 
 개발 및 테스트 환경의 경우, 애플리케이션을 배포하도록 Azure 자격 증명이나 클러스터 관리 엔드포인트를 구성할 수 있습니다. 클러스터 관리 엔드포인트를 구성하는 방법에 대한 자세한 내용은 [클러스터 관리 엔드포인트를 사용하여 배포 구성](#configure-deployment-using-cluster-management-endpoint)을 참조하세요.   
 
-1. Azure Active Directory 서비스 주체를 만들고 Azure 구독의 사용 권한을 할당하려면 [포털을 사용하여 Azure Active Directory 애플리케이션 및 서비스 주체 만들기](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)의 단계를 따릅니다. 다음에 주의하세요.
+1. Azure Active Directory 서비스 주체를 만들고 Azure 구독의 사용 권한을 할당하려면 [포털을 사용하여 Azure Active Directory 애플리케이션 및 서비스 주체 만들기](/azure/azure-resource-manager/resource-group-create-service-principal-portal)의 단계를 따릅니다. 다음에 주의하세요.
 
    * 이 토픽의 단계를 수행할 때 다음 값을 복사 및 저장합니다. *애플리케이션 ID*, *애플리케이션 키*, *디렉터리 ID (테넌트 ID)* 및 *구독 ID*. Jenkins에서 Azure 자격 증명을 구성하는 데 필요하기 때문입니다.
-   * 디렉터리에 대해 [필요한 권한](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)이 없는 경우 관리자에게 사용 권한을 부여하거나 사용자를 위한 서비스 주체를 만들 것을 요청해야 합니다. 또는 Jenkins의 작업을 위해 **빌드 후 작업**에서 관리 엔드포인트를 구성해야 합니다.
-   * [Azure Active Directory 애플리케이션 만들기](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application) 섹션에서 **로그온 URL**에 대해 올바른 형식의 URL을 입력할 수 있습니다.
-   * [역할에 애플리케이션 할당](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) 섹션에서 클러스터의 리소스 그룹에 대한 *읽기 권한자* 역할에 애플리케이션을 할당할 수 있습니다.
+   * 디렉터리에 대해 [필요한 권한](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)이 없는 경우 관리자에게 사용 권한을 부여하거나 사용자를 위한 서비스 주체를 만들 것을 요청해야 합니다. 또는 Jenkins의 작업을 위해 **빌드 후 작업**에서 관리 엔드포인트를 구성해야 합니다.
+   * [Azure Active Directory 애플리케이션 만들기](/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application) 섹션에서 **로그온 URL**에 대해 올바른 형식의 URL을 입력할 수 있습니다.
+   * [역할에 애플리케이션 할당](/azure/azure-resource-manager/resource-group-create-service-principal-portal) 섹션에서 클러스터의 리소스 그룹에 대한 *읽기 권한자* 역할에 애플리케이션을 할당할 수 있습니다.
 
 1. Jenkins 작업으로 돌아가 **빌드 후 작업** 탭을 클릭합니다.
 1. **빌드 후 작업** 드롭다운에서 **Service Fabric 프로젝트 배포**를 선택합니다. 

@@ -4,12 +4,12 @@ description: Python용 Azure SDK 라이브러리를 사용하여 Azure Storage �
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: b774d986b886aae528c97c4583511a8d6c0ba0a5
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: ff2064d7113e78cda69d240ca526db569c9d14e0
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275207"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110486"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>예: Python용 Azure 라이브러리를 사용하여 Azure Storage 프로비저닝
 
@@ -157,7 +157,7 @@ python provision_blob.py
 
 1. 애플리케이션 코드에서 이러한 프로비저닝된 리소스를 사용하려는 경우 [예: Azure Storage 사용](azure-sdk-example-storage-use.md)을 시도해보세요.
 
-Azure Storage 관리 라이브러리를 사용하는 다른 예는 [Python 스토리지 샘플 관리](https://docs.microsoft.com/samples/azure-samples/storage-python-manage/storage-python-manage/)를 참조하세요.
+Azure Storage 관리 라이브러리를 사용하는 다른 예는 [Python 스토리지 샘플 관리](/samples/azure-samples/storage-python-manage/storage-python-manage/)를 참조하세요.
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>참조용: 해당 Azure CLI 명령
 
@@ -220,7 +220,7 @@ az storage container create --account-name pythonazurestorage12345 -n blob-conta
 그렇지 않으면 다음 명령을 실행하여 구독 요금이 계속 청구되지 않도록 합니다.
 
 ```azurecli
-az group delete -n PythonAzureExample-Storage-rg
+az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
 [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 사용하여 코드에서 리소스 그룹을 삭제할 수도 있습니다.

@@ -4,12 +4,12 @@ description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage �
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275137"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110496"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>예제: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
@@ -197,7 +197,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 ## <a name="6-clean-up-resources"></a>6: 리소스 정리
 
 ```azurecli
-az group delete -n PythonAzureExample-Storage-rg
+az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
 이 예제에서 프로비저닝된 리소스를 유지할 필요가 없으며 구독에서 지속적인 요금을 방지하려면 이 명령을 실행합니다.

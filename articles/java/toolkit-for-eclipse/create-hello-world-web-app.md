@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 053bca7e41ef9c95a8ad0e20b40d682552d0b384
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 227e1a98bb14474b444a8d2cfb288b62ed5cf8ed
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534526"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831637"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Eclipse를 사용하여 Azure App Service용 Hello World 웹앱 만들기
 
@@ -148,7 +148,7 @@ Azure Web Apps 만들기에 대한 자세한 내용은 [Web Apps 개요]를 참�
 
 <!-- URL List -->
 
-[Azure Toolkit for Eclipse]: azure-toolkit-for-eclipse.md
+[Azure Toolkit for Eclipse]: /azure/developer/java/tookit-for-eclipse
 [Azure Toolkit for IntelliJ]: ../toolkit-for-intellij
 [intellij-hello-world]: ../toolkit-for-intellij/create-hello-world-web-app.md
 [Web Apps 개요]: /azure/app-service/app-service-web-overview

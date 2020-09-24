@@ -7,23 +7,23 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: a0e93cd355560c62c91cee61df843564e738dd25
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 53810dcfc0dc03152ba640a9e9d0bcdd27dc763c
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438357"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831849"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Java 애플리케이션에서 여러 지역에 가상 머신 만들기
 
 [이 샘플](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel)에서는 [Java용 Azure 관리 라이브러리](https://github.com/Azure/azure-sdk-for-java)를 사용하여 서로 다른 Azure 지역에서 동시에 가상 머신을 만듭니다.
 
 > [!IMPORTANT]
-> 샘플에서는 네 개 지역에서 [STANDARD_DS3_V2 크기](https://docs.microsoft.com/azure/virtual-machines/sizes)의 Ubuntu 16.04 LTS를 실행하는 총 48개의 VM을 만듭니다. 샘플 코드는 종료하기 전에 이러한 가상 머신을 삭제합니다. 이 샘플을 VM의 기본 개수로 실행하기 전에 반드시 [서비스 제한 및 할당량을 확인](/azure/azure-subscription-service-limits)하세요.
+> 샘플에서는 네 개 지역에서 [STANDARD_DS3_V2 크기](/azure/virtual-machines/sizes)의 Ubuntu 16.04 LTS를 실행하는 총 48개의 VM을 만듭니다. 샘플 코드는 종료하기 전에 이러한 가상 머신을 삭제합니다. 이 샘플을 VM의 기본 개수로 실행하기 전에 반드시 [서비스 제한 및 할당량을 확인](/azure/azure-subscription-service-limits)하세요.
 
 ## <a name="run-the-sample"></a>샘플 실행
 
-[인증 파일](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)을 만들고 컴퓨터에서 파일의 전체 경로가 포함된 `AZURE_AUTH_LOCATION` 환경 변수를 설정합니다. 다음을 실행합니다.
+[인증 파일](/azure/java/java-sdk-azure-authenticate#mgmt-file)을 만들고 컴퓨터에서 파일의 전체 경로가 포함된 `AZURE_AUTH_LOCATION` 환경 변수를 설정합니다. 다음을 실행합니다.
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel.git

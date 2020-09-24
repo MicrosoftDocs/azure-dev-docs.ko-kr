@@ -4,18 +4,18 @@ description: Azure Monitor에서 메트릭 보고를 검사하고 구성합니�
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 53823a1709e1f1411609957569b79d10d7bdefd1
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 81cb21f3dca640f8c9db2a5556b88c82ea0ffc47
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982585"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832039"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
 이 샘플에서는 Azure에서 리소스(VM 등)의 메트릭을 검색합니다.
 
-필터에 사용할 수 있는 키워드의 전체 목록은 [여기](https://msdn.microsoft.com/library/azure/mt743622.aspx)에 있습니다.
+필터에 사용할 수 있는 키워드의 전체 목록은 [여기](/rest/api/monitor/metrics)에 있습니다.
 
 ```python
 import datetime

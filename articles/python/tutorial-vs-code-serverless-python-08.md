@@ -2,14 +2,14 @@
 title: '8단계: Azure Functions에서 Python 코드에 사용된 리소스 정리'
 description: 자습서 8단계, 지속적인 변경을 방지하기 위해 Azure 리소스 정리
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: fe4f9b0ef5789b307cbeb3c680dfde2eb46a0046
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 885ff8b79ac219d4adaf4760e31fe439d010f9d5
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473518"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832009"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Azure Functions에 대한 Azure 리소스 정리
 
@@ -31,7 +31,7 @@ Azure Functions에 Python 코드를 배포하는 연습을 완료했습니다. �
 
 사용할 수 있는 다른 트리거를 살펴보려면 [Azure Functions 개요](/azure/azure-functions/functions-overview)를 참조하세요.
 
-AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여 Python에서 사용할 수 있는 Azure 서비스에 대해 자세히 알아보려면 [Azure Python 개발자 센터](/azure/python/?view=azure-python)를 참조하세요.
+AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여 Python에서 사용할 수 있는 Azure 서비스에 대해 자세히 알아보려면 [Azure Python 개발자 센터](./index.yml)를 참조하세요.
 
 도움이 될 수 있는 Visual Studio Code에 대한 다른 Azure 확장도 있습니다. 확장 탐색기에서 "Azure"를 검색하기만 하면 됩니다.
 
@@ -45,6 +45,4 @@ AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여
 - [Azure Resource Manager 도구](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [완료했습니다!](https://docs.microsoft.com/python/azure/?view=azure-python)
-
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.
+> [완료했습니다!](/python/azure/?preserve-view=true&view=azure-python)

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 481b3fce5d7d5f62cf4639d53d86c092e364a74f
-ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
+ms.openlocfilehash: 3bbed7be27854514d76b5cd3e5b905ba5741fa72
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86945811"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831829"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>Azure Database for MySQL에서 Spring Data JDBC 사용
 
-이 항목에서는 [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc)를 사용하여 [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/)에서 정보를 저장하고 검색하는 애플리케이션 샘플을 만드는 방법을 보여 줍니다.
+이 항목에서는 [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc)를 사용하여 [Azure Database for MySQL](/azure/mysql/)에서 정보를 저장하고 검색하는 애플리케이션 샘플을 만드는 방법을 보여 줍니다.
 
 [JDBC](https://jcp.org/en/jsr/detail?id=221)는 기존 관계형 데이터베이스에 연결하는 표준 Java API입니다.
 
@@ -103,4 +103,4 @@ CREATE TABLE todo (id SERIAL PRIMARY KEY, description VARCHAR(255), details VARC
 
 Spring Data JDBC에 대한 자세한 내용은 Spring의 [참조 설명서](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)를 참조하세요.
 
-Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure](/azure/developer/java/)와 [Azure DevOps 및 Java 사용하기](/azure/devops/)를 참조하세요.
+Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure](../index.yml)와 [Azure DevOps 및 Java 사용하기](/azure/devops/)를 참조하세요.

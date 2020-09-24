@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: a839da7cf596c356541ee69d341f1b73ca278a44
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 23a16188b7f24265ca4045f684c9e08304788ea1
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672309"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831614"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 
 이 문서의 단계를 완료하려면 다음 소프트웨어 구성 요소가 필요한 IntelliJ용 Azure 도구 키트를 설치해야 합니다.
 
-* [Azure 지원 JDK(Java Development Kit)](https://aka.ms/azure-jdks)
+* [Azure 지원 JDK(Java Development Kit)](../../fundamentals/java-jdk-long-term-support.md)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition 또는 Community Edition 설치
 
 > [!NOTE]

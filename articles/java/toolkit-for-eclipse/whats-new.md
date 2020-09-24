@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e7ebd13d811a30d8b6db5c1bc8b530f9545d87fa
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 77418f8cb958586b375b0e473f03ba25ece9b9c3
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241035"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831739"
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트의 새로운 기능
 
@@ -321,7 +321,7 @@ Azure Plugin for Eclipse - December 2011 CTP has released. New features include:
 
 <!-- URL List -->
 
-[Azure for Java Developers]: /azure/developer/java
+[Azure for Java Developers]: ../index.yml
 [Azul Systems web page for the Zulu OpenJDK]: https://go.microsoft.com/fwlink/?LinkId=402457
 [Azure Service Endpoints]: https://go.microsoft.com/fwlink/?LinkID=699526
 [Azure Storage Account List]: https://go.microsoft.com/fwlink/?LinkID=699528

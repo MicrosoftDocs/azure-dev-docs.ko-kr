@@ -4,12 +4,12 @@ description: 통합 테스트 및 Azure DevOps를 사용하여 Terraform 프로�
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ced6dc9a3ff40ceee3ac37daea3ab6300a529e0e
-ms.sourcegitcommit: 62f78d529c02c7d7895d32ec8ed415bf0946d056
+ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89557556"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831999"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>자습서: Azure에서 Terraform 프로젝트에 대한 통합 테스트 구성
 
@@ -30,9 +30,9 @@ ms.locfileid: "89557556"
 ## <a name="prerequisites"></a>필수 조건
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 조직 및 프로젝트**: 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](https://docs.microsoft.com/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=preview-page).
+- **Azure DevOps 조직 및 프로젝트**: 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops).
 - **Terraform Build & Release Tasks 확장**: [Terraform Build & Release Tasks 확장](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)을 Azure DevOps 조직에 설치합니다.
-- **Azure DevOps 액세스 권한을 Azure 구독에 부여**: Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)을 만듭니다.
+- **Azure DevOps 액세스 권한을 Azure 구독에 부여**: Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)을 만듭니다.
 - **Terraform 설치**: 사용자 환경에 따라 [Terraform을 다운로드하여 설치](https://www.terraform.io/downloads.html)합니다.
 - **테스트 샘플 포크**: [GitHub에서 Terraform 샘플 프로젝트](https://github.com/Azure/terraform)를 포크하고 개발/테스트 컴퓨터에 복제합니다.
 

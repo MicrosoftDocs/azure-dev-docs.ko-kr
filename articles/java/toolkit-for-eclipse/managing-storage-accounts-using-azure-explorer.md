@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 8c7c39fa80568efa3040d5cbfa18c3b0cfcd43bc
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: e5b5c946b5ed4d2480b1040d0925507453cc2408
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534641"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831749"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Eclipse용 Azure Explorer를 사용하여 스토리지 계정 관리
 
@@ -27,7 +27,7 @@ Azure Toolkit for Eclipse의 일부인 Azure Explorer는 Eclipse IDE(통합 개�
 
 ## <a name="create-a-storage-account"></a>스토리지 계정 만들기
 
-1. [Eclipse용 Azure 도구 키트에 대한 로그인 지침](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)을 사용하여 Azure 계정에 로그인합니다.
+1. [Eclipse용 Azure 도구 키트에 대한 로그인 지침](./sign-in-instructions.md)을 사용하여 Azure 계정에 로그인합니다.
 
 1. **Azure Explorer** 보기에서 **Azure** 노드를 확장하고 **스토리지 계정**을 마우스 오른쪽 단추로 클릭한 후 **스토리지 계정 만들기**를 클릭합니다.
 
@@ -87,8 +87,8 @@ Azure Storage 계정, 크기 및 가격 책정에 대한 자세한 내용은 다
 [Azure Storage 확장성 및 성능 목표]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure의 Windows 스토리지 계정 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure의 Linux 스토리지 계정 크기]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure의 Windows 스토리지 계정 크기]: /azure/virtual-machines/sizes
+[Azure의 Linux 스토리지 계정 크기]: /azure/virtual-machines/sizes
 [Windows 스토리지 계정 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 스토리지 계정 가격 책정]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

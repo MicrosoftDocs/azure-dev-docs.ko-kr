@@ -4,16 +4,16 @@ description: 서비스 사용자를 통해 Node.js용 Azure 관리 모듈에 인
 ms.topic: article
 ms.date: 06/17/2017
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 6697e96264a09db1b1b74a74932b6fff78fa8443
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 1d3f0d2930d397c24177f0cee7a9e276c4df9d67
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218860"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110419"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Node.js용 Azure 모듈을 사용하여 인증
 
-모든 서비스 API에는 인스턴스화될 때 `credentials` 개체를 통한 인증이 필요합니다. Node.js용 Azure SDK를 통해 필요한 자격 증명을 인증하고 만드는 세 가지 방법이 있습니다. 
+모든 서비스 API에는 인스턴스화될 때 `credentials` 개체를 통한 인증이 필요합니다. Node.js용 Azure SDK를 통해 필요한 자격 증명을 인증하고 만드는 세 가지 방법이 있습니다.
 
 - 기본 인증
 - 대화형 로그인
@@ -23,18 +23,18 @@ ms.locfileid: "88218860"
 
 ## <a name="basic-authentication"></a>기본 인증
 
-Azure 계정 자격 증명을 사용하여 프로그래밍 방식으로 인증하려면 `loginWithUsernamePassword` 함수를 사용합니다. 다음 JavaScript 코드 조각에서는 환경 변수로 저장된 자격 증명을 통해 기본 인증을 사용하는 방법을 보여 줍니다. 
+Azure 계정 자격 증명을 사용하여 프로그래밍 방식으로 인증하려면 `loginWithUsernamePassword` 함수를 사용합니다. 다음 JavaScript 코드 조각에서는 환경 변수로 저장된 자격 증명을 통해 기본 인증을 사용하는 방법을 보여 줍니다.
 
 ```javascript
 const Azure = require('azure');
 const MsRest = require('ms-rest-azure');
 
-MsRest.loginWithUsernamePassword(process.env.AZURE_USER, 
-                                 process.env.AZURE_PASS, 
+MsRest.loginWithUsernamePassword(process.env.AZURE_USER,
+                                 process.env.AZURE_PASS,
                                  (err, credentials) => {
   if (err) throw err;
 
-  let storageClient = Azure.createARMStorageManagementClient(credentials, 
+  let storageClient = Azure.createARMStorageManagementClient(credentials,
                                                              '<azure-subscription-id>');
 
   // ..use the client instance to manage service resources.
@@ -60,4 +60,8 @@ MsRest.interactiveLogin((err, credentials) => {
 
 ## <a name="service-principal-authentication"></a>서비스 주체 인증
 
-[대화형 로그인](#interactive-login)은 가장 쉬운 인증 방법입니다. 그러나 Node.js SDK를 사용하는 경우 계정 자격 증명을 제공하는 대신 서비스 사용자 인증을 사용하는 것이 좋습니다. [Node.js를 사용하여 Azure 서비스 사용자 만들기](./node-sdk-azure-authenticate-principal.md) 항목에서는 서비스 사용자를 만들고 사용하기 위한 다양한 기술을 설명하고 있습니다. 
+[대화형 로그인](#interactive-login)은 가장 쉬운 인증 방법입니다. 그러나 Node.js SDK를 사용하는 경우 계정 자격 증명을 제공하는 대신 서비스 사용자 인증을 사용하는 것이 좋습니다. [Node.js를 사용하여 Azure 서비스 사용자 만들기](./node-sdk-azure-authenticate-principal.md) 항목에서는 서비스 사용자를 만들고 사용하기 위한 다양한 기술을 설명하고 있습니다.
+
+## <a name="next-steps"></a>다음 단계
+
+* [Visual Studio Code에서 Azure에 정적 웹 사이트 배포](tutorial-vscode-static-website-node-01.md)

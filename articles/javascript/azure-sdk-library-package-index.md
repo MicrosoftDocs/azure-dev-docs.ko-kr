@@ -3,13 +3,13 @@ title: JavaScript용 Azure SDK 라이브러리
 description: JavaScript용 Azure SDK의 모든 라이브러리에 대한 패키지 이름, NPM 링크, docs 링크 및 소스 코드 링크를 나열합니다.
 ms.date: 09/16/2020
 ms.topic: reference
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 9e018160e8b3d244cdfe5b487da8b2bc01ffe0e4
-ms.sourcegitcommit: 53972873f4976a050b67c26eccab9bbe14293743
+ms.custom: devx-track-js
+ms.openlocfilehash: 24e73206552161f5a020b53f8df64d975a955814
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90990482"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208744"
 ---
 # <a name="azure-libraries-packages-for-javascript"></a>JavaScript용 Azure 라이브러리 패키지
 

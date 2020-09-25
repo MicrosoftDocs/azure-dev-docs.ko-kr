@@ -232,7 +232,7 @@
           href: /samples/browse/?languages=javascript%252cnodejs&products=azure-search
         - name: 모든 샘플
           href: /samples/browse/?languages=javascript%252cnodejs
-    - name: NPM 패키지
+    - name: npm 패키지
       href: azure-sdk-library-package-index.md
-    - name: NPM 패키지 설명서
+    - name: npm 패키지 설명서
       href: /javascript/api/overview/azure/?view=azure-node-latest

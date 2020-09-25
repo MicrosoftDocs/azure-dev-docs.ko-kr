@@ -7,20 +7,32 @@ metadata:
   description: 자습서, 도구 및 SDK 참조를 통해 브라우저 또는 Node.js에서 JavaScript용 Azure SDK를 사용하여 앱 개발을 시작하세요.
   author: diberry
   ms.author: diberry
-  ms.date: 07/23/2020
+  ms.date: 09/21/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign
-  ms.openlocfilehash: 372e8cbbfea398d06bbadca0d0d05a769cc1ec4a
-  ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+  ms.openlocfilehash: 85f5a27eb61c90ee3cdafd034daf072b571cea47
+  ms.sourcegitcommit: 53972873f4976a050b67c26eccab9bbe14293743
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/18/2020
-  ms.locfileid: "90772986"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90990456"
 landingContent:
+- title: Azure를 처음 사용하세요?
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Azure 기본 사항
+      url: /learn/paths/azure-fundamentals/
+    - text: 개발 환경 설정
+      url: configure-local-development-environment.md
+    - text: 클라이언트 라이브러리에 대한 인증
+      url: node-sdk-azure-authenticate.md
+    - text: Azure SDK 블로그
+      url: https://devblogs.microsoft.com/azure-sdk/
 - title: Hosting
   linkLists:
   - linkListType: tutorial

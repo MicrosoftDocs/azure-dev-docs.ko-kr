@@ -4,12 +4,12 @@ description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 �
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 9db37e1cc496333c825789cc850ed6750907fa88
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 03a2f8b8f8830916243db0778d16650da1892b04
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275177"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110461"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>예: Azure 라이브러리를 사용하여 웹앱 프로비저닝 및 배포
 
@@ -144,7 +144,7 @@ print(f"Provisioned web app {web_app_result.name} at {web_app_result.default_hos
 #
 # You can call this method again to change the repo.
 
-REPO_URL = 'https://github.com/kraigb/python-docs-hello-world'
+REPO_URL = 'https://github.com/<your_fork>/python-docs-hello-world'
 
 poller = app_service_client.web_apps.create_or_update_source_control(RESOURCE_GROUP_NAME,
     WEB_APP_NAME,
@@ -185,14 +185,14 @@ python provision_deploy_web_app.py
 
     "PythonAzureExample-WebApp-12345"를 웹앱의 특정 이름으로 바꿉니다.
 
-    콘솔에 "Hello World!" 표시되어야 합니다.
+    브라우저에 "Hello, World!"가 표시되어야 합니다.
 
 1. [Azure Portal](https://portal.azure.com)을 방문하여 **리소스 그룹**을 선택하고 "PythonAzureExample-WebApp-rg"가 나열되어 있는지 확인합니다. 그런 다음, 해당 목록으로 이동하여 예상되는 리소스(즉, App Service 계획 및 App Service)가 있는지 확인합니다.
 
 ## <a name="7-clean-up-resources"></a>7: 리소스 정리
 
 ```azurecli
-az group delete -n PythonAzureExample-WebApp-rg
+az group delete -n PythonAzureExample-WebApp-rg --no-wait
 ```
 
 이 예제에서 프로비저닝된 리소스를 유지할 필요가 없으며 구독에서 지속적인 요금을 방지하려면 이 명령을 실행합니다.

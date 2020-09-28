@@ -1,17 +1,17 @@
 ---
 title: Azure Kubernetes Service에서 실행할 Spring Boot 애플리케이션 마이그레이션
 description: 이 가이드에서는 Azure Kubernetes Service 컨테이너에서 실행할 기존 Spring Boot 애플리케이션을 마이그레이션하려는 경우 알아야 할 사항에 대해 설명합니다.
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 84e7bc49d8e52081465ce18b90c3ffe14d41f75c
-ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+ms.openlocfilehash: 4d3da50042074b724f614b718ceb0edc7fb83077
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88662994"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831709"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Spring Boot 애플리케이션을 Azure Kubernetes Service로 마이그레이션
 
@@ -125,9 +125,9 @@ Dockerfile을 만들려면 다음과 같은 필수 조건을 갖추어야 합니
 
 그런 다음, 해당하는 경우 다음 섹션에서 설명하는 단계를 수행할 수 있습니다. Dockerfile 및 Spring Boot 애플리케이션의 시작 지점으로 [Spring Boot 컨테이너 빠른 시작 리포지토리](https://github.com/Azure/spring-boot-container-quickstart)를 사용할 수 있습니다.
 
-#### <a name="configure-keyvault-flexvolume"></a>KeyVault FlexVolume 구성
+#### <a name="configure-azure-key-vault-provider-for-secrets-store-csi-driver"></a>비밀 저장소 CSI 드라이버용 Azure Key Vault 공급자 구성
 
-Azure KeyVault를 만들고 필요한 모든 비밀을 채웁니다. 자세한 내용은 [빠른 시작: Azure CLI를 사용하여 Azure Key Vault에서 비밀을 설정하고 검색합니다](/azure/key-vault/quick-create-cli). 그런 다음, Pod에서 이러한 비밀을 액세스할 수 있도록 [KeyVault FlexVolume](https://github.com/Azure/kubernetes-keyvault-flexvol/blob/master/README.md)을 구성합니다.
+Azure KeyVault를 만들고 필요한 모든 비밀을 채웁니다. 자세한 내용은 [빠른 시작: Azure CLI를 사용하여 Azure Key Vault에서 비밀을 설정하고 검색합니다](/azure/key-vault/quick-create-cli). 그런 다음, Pod에서 비밀에 액세스할 수 있도록 [비밀 저장소 CSI 드라이버용 Azure Key Vault 공급자](https://github.com/Azure/secrets-store-csi-driver-provider-azure)를 구성합니다.
 
 Spring Boot 애플리케이션을 부트스트랩하는 데 사용되는 시작 스크립트도 업데이트해야 합니다. 이 스크립트는 애플리케이션을 시작하기 전에 인증서를 Spring Boot에서 사용하는 키 저장소로 가져와야 합니다.
 
@@ -187,11 +187,11 @@ docker push ${MY_ACR}.azurecr.io/${MY_APP_NAME}
 
 Azure에서 컨테이너 이미지를 빌드하고 저장하는 방법에 대한 자세한 내용은 [Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장](/learn/modules/build-and-store-container-images/) 학습 모듈을 참조하세요.
 
-[Spring Boot 컨테이너 빠른 시작 GitHub 리포지토리](https://github.com/Azure/spring-boot-container-quickstart)를 사용한 경우 시작 시 JVM에 추가되는 사용자 지정 키 저장소를 포함할 수도 있습니다. 키 저장소 파일을 */opt/spring-boot/mycert.crt*에 배치하면 이 추가 작업이 수행됩니다. 앞에서 설명한 대로 이 작업은 파일을 Docker 파일에 직접 추가하거나 KeyVault FlexVolume을 사용하여 수행할 수 있습니다.
+[Spring Boot 컨테이너 빠른 시작 GitHub 리포지토리](https://github.com/Azure/spring-boot-container-quickstart)를 사용한 경우 시작 시 JVM에 추가되는 사용자 지정 키 저장소를 포함할 수도 있습니다. 키 저장소 파일을 */opt/spring-boot/mycert.crt*에 배치하면 이 추가 작업이 수행됩니다. 앞에서 설명한 대로 이 작업은 파일을 Docker 파일에 직접 추가하거나 비밀 저장소 CSI 드라이버용 Azure Key Vault 공급자를 사용하여 수행할 수 있습니다.
 
 [Spring Boot 컨테이너 빠른 시작 GitHub 리포지토리](https://github.com/Azure/spring-boot-container-quickstart)를 사용한 경우 Kubernetes 배포 파일에서 `APPLICATIONINSIGHTS_CONNECTION_STRING` 환경 변수를 설정하여 Application Insights를 사용하도록 설정할 수도 있습니다(환경 변수의 값은 `InstrumentationKey=00000000-0000-0000-0000-000000000000`이어야 함). 자세한 내용은 [Java 코드리스 애플리케이션 모니터링 - Azure Monitor Application Insights](/azure/azure-monitor/app/java-in-process-agent)를 참조하세요.
 
-Docker 이미지를 사용자 지정할 필요가 없는 경우 다른 방법으로 [Maven Jib 플러그 인](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 사용을 검색하거나 AKS에 배포할 수 있습니다. 자세한 내용은 [Azure Kubernetes Service에 Spring Boot 애플리케이션 배포](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes)를 참조하세요.
+Docker 이미지를 사용자 지정할 필요가 없는 경우 다른 방법으로 [Maven Jib 플러그 인](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) 사용을 검색하거나 AKS에 배포할 수 있습니다. 자세한 내용은 [Azure Kubernetes Service에 Spring Boot 애플리케이션 배포](../spring-framework/deploy-spring-boot-java-app-on-kubernetes.md)를 참조하세요.
 
 [!INCLUDE [provision-a-public-ip-address](includes/provision-a-public-ip-address.md)]
 

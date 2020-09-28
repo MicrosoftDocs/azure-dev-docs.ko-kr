@@ -4,14 +4,14 @@ description: Azure에서 Node.js 및 JavaScript를 통해 서비스 사용자 �
 ms.topic: article
 ms.date: 06/17/2017
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218884"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110431"
 ---
-# <a name="create-an-azure-service-principal-with-nodejs"></a>Node.js를 사용하여 Azure 서비스 사용자 만들기 
+# <a name="create-an-azure-service-principal-for-nodejs"></a>Node.js용 Azure 서비스 주체 만들기
 
 앱에서 리소스에 액세스해야 하는 경우 앱에 대한 ID를 설정하고 자체의 자격 증명으로 해당 앱을 인증할 수 있습니다. 이 ID를 *서비스 사용자*라고 합니다. 기본적으로 Azure Active Directory 계정에 대한 키를 만들어 사용자 개입이나 사용자 이름/암호를 요구하는 대신 SDK를 제공하여 인증합니다.
 
@@ -29,7 +29,7 @@ ms.locfileid: "88218884"
 
 ## <a name="create-a-service-principal-using-the-azure-portal"></a>Azure Portal을 사용하여 서비스 사용자 만들기
 
-[포털을 사용하여 리소스에 액세스할 수 있는 Azure Active Directory 애플리케이션 및 서비스 사용자 만들기](https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/) 항목에서 설명하는 단계에 따라 서비스 사용자를 생성합니다.
+[포털을 사용하여 리소스에 액세스할 수 있는 Azure Active Directory 애플리케이션 및 서비스 사용자 만들기](/azure/active-directory/develop/howto-create-service-principal-portal) 항목에서 설명하는 단계에 따라 서비스 사용자를 생성합니다.
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Azure CLI 2.0을 사용하여 서비스 사용자 만들기
 
@@ -45,7 +45,8 @@ ms.locfileid: "88218884"
     $ az login
     ```
 
-4. `az login`을 호출하면 URL과 코드가 표시됩니다. 지정된 URL로 이동하고, 코드를 입력하고, Azure ID로 로그인합니다(이미 로그인한 경우 자동으로 발생할 수 있음). 그러면 CLI를 통해 계정에 액세스할 수 있습니다.
+4. `az login`을 호출하면 URL과 코드가 표시됩니다. 지정된 URL로 이동하고, 코드를 입력하고, Azure ID로 로그인합니다(이미 로그인한 경우 자동으로 발생할 수 있음).
+그러면 CLI를 통해 계정에 액세스할 수 있습니다.
 
 5. 구독 및 테넌트 ID 얻기:
 
@@ -93,7 +94,7 @@ ms.locfileid: "88218884"
 
     **tenant, name 및 password 값은 7단계에서 사용되므로 기록해 두세요.**
 
-7. 환경 변수 설정 - &lt;subscriptionId>, &lt;tenant>, &lt;name> 및 &lt;password> 자리 표시자를 4단계 및 5단계에서 얻은 값으로 바꿉니다. 
+7. 환경 변수 설정 - &lt;subscriptionId>, &lt;tenant>, &lt;name> 및 &lt;password> 자리 표시자를 4단계 및 5단계에서 얻은 값으로 바꿉니다.
 
     **bash 사용**
 
@@ -115,7 +116,7 @@ ms.locfileid: "88218884"
 
 ## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>Node.js용 Azure SDK를 사용하여 서비스 사용자 만들기
 
-JavaScript를 사용하여 프로그래밍 방식으로 서비스 사용자를 만들려면 [ServicePrincipal 스크립트(영문)](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)를 사용합니다.   
+JavaScript를 사용하여 프로그래밍 방식으로 서비스 사용자를 만들려면 [ServicePrincipal 스크립트(영문)](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)를 사용합니다.
 
 ## <a name="using-the-service-principal"></a>서비스 사용자 사용
 
@@ -138,3 +139,7 @@ MsRest.loginWithServicePrincipalSecret(
   }
 );
 ```
+
+## <a name="next-steps"></a>다음 단계
+
+* [Node.js용 Azure 모듈을 사용하여 인증](node-sdk-azure-authenticate.md)

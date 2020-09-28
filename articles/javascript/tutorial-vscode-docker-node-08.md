@@ -3,14 +3,15 @@ title: Visual Studio Code에서 컨테이너화된 Node.js 앱을 배포한 후 
 description: 자습서 8부, 리소스 정리
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: dd71ec5affdd1696544ec166ad8517b376958cab
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d05766092022772c96fa745f9a52aa4901b27f82
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792898"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772706"
 ---
-# <a name="clean-up-resources"></a>리소스 정리
+# <a name="part-8-clean-up-resources"></a>8부 리소스 정리
 
 [이전 단계: 로그 스트리밍](tutorial-vscode-docker-node-07.md)
 

@@ -2,18 +2,18 @@
 title: '2단계: VS Code를 사용하여 Azure Functions에 대한 Python 함수 만들기'
 description: 2단계 자습서로, VS Code에 대한 Azure Functions 확장 사용을 설명합니다.
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 08f301ef4596ae8aac96051a13fd680917bd79be
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: cc0d8f5241cafceb9e087557104a624f5f7adb92
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473568"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773063"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Azure Functions에 대한 Python 함수 만들기
 
-[이전 단계: 필수 구성 요소](tutorial-vs-code-serverless-python-01.md)
+[이전 단계: 환경 구성](tutorial-vs-code-serverless-python-01.md)
 
 이 문서에서는 Visual Studio Code를 사용하여 Azure Functions에 대한 Python 함수를 만듭니다. Azure Functions에 대한 코드는 코드 생성 전에 먼저 만드는 Functions _프로젝트_ 내에서 관리됩니다.
 
@@ -27,7 +27,7 @@ ms.locfileid: "89473568"
     | --- | --- | --- |
     | 프로젝트에 대한 폴더 지정 | 현재 열려 있는 폴더 | 프로젝트를 만들 폴더입니다. 하위 폴더에서 프로젝트를 만들 수 있습니다. |
     | 함수 앱 프로젝트에 대한 언어를 선택합니다. | **Python** | 코드에 사용되는 템플릿을 결정하는 함수에 사용할 언어입니다. |
-    | Python 인터프리터 선택 | (제공된 기본 경로를 사용합니다.) | 가상 환경에 사용할 Python 인터프리터입니다. |
+    | 가상 환경을 만들 Python 인터프리터 선택 | 제공된 기본 경로를 사용하거나 적절한 인터프리터에 대한 경로를 수동으로 입력합니다(제공된 기본 경로가 없을 경우). | 가상 환경에 사용할 Python 인터프리터입니다. |
     | 프로젝트의 첫 번째 함수에 대한 템플릿 선택 | **HTTP 트리거** | HTTP 트리거를 사용하는 함수는 함수 엔드포인트에 대한 HTTP 요청이 있을 때마다 실행됩니다. (Azure Functions에 대한 다양한 트리거가 있습니다. 자세히 알아보려면 [Functions로 할 수 있는 작업은 무엇인가요?](/azure/azure-functions/functions-overview#what-can-i-do-with-functions)를 참조하세요.) |
     | 함수 이름 제공 | HttpExample | 이름은 구성 데이터와 함께 함수 코드를 포함하는 하위 폴더에 사용되며 HTTP 엔드포인트의 이름도 정의합니다. 기본 "HTTPTrigger1"을 허용하는 대신 "HttpExample"을 사용하여 트리거에서 함수 자체를 구분합니다. |
     | 권한 부여 수준 | **익명** | 익명 권한 부여는 누구나 공개적으로 함수에 액세스할 수 있습니다. |
@@ -48,4 +48,3 @@ ms.locfileid: "89473568"
 > [!div class="nextstepaction"]
 > [함수를 만들었습니다. - 3단계 진행 >>>](tutorial-vs-code-serverless-python-03.md)
 
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

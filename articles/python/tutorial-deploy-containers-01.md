@@ -1,25 +1,25 @@
 ---
 title: '자습서: Visual Studio Code를 사용하여 Azure App Service에 Docker 컨테이너 배포'
-description: 자습서 1단계, 컨테이너 작업, 소개 및 필수 구성 요소
+description: 자습서 1단계, 컨테이너에 대한 환경 구성
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: f0fb983a596ca1828809d1d829af5517e8af66df
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 447643662ef3c839823d81d29cfb55cc2ee442b2
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473558"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772613"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Azure App Service에 Docker 컨테이너 배포
 
-이 문서에서는 Visual Studio Code를 사용하여 모든 Visual Studio Code 내에서 컨테이너 레지스트리의 컨테이너 이미지를 [Azure App Service](/azure/app-service/)에 배포하는 과정을 안내합니다.
+이 문서에서는 Visual Studio Code를 사용하여 컨테이너 레지스트리의 컨테이너 이미지를 [Azure App Service](/azure/app-service/)에 배포하는 과정을 안내합니다.
 
-이 자습서의 단계 중 문제가 발생하는 경우 자세한 내용을 알려주시면 감사하겠습니다. 각 문서의 끝에 있는 **문제가 발생했습니다.** 링크를 사용하여 피드백을 제출합니다.
+이 자습서의 단계 중 문제가 발생하는 경우 자세한 내용을 알려주시면 감사하겠습니다. 각 문서의 끝에 있는 **이 페이지** 피드백 단추를 사용합니다.
 
 관련 데모 비디오를 보려면 가상 PyCon 2020에서 <a href="https://www.youtube.com/watch?v=t79HDLC5kQA&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code 개발 컨테이너의 Django 앱</a>(youtube.com)을 참조하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="configure-your-environment"></a>환경 구성
 
 - [Azure 계정](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension)
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -33,5 +33,3 @@ ms.locfileid: "89473558"
 
 > [!div class="nextstepaction"]
 > [Azure에 로그인했습니다. - 2단계 진행 >>>](tutorial-deploy-containers-02.md)
-
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

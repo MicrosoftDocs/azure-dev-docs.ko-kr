@@ -2,14 +2,14 @@
 title: '6단계: VS Code를 사용하여 Azure Functions에 두 번째 Python 함수 추가'
 description: 자습서 6단계, 두 번째 함수를 추가하여 Azure Functions 프로젝트 확장
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 29d625d40868ab761037c1a4a049f7e95e63df26
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: f60bd70a8c67a3b33140b11731906e0f205e98f7
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473578"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772876"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Azure Functions에 두 번째 Python 함수 추가
 
@@ -118,5 +118,3 @@ ms.locfileid: "89473578"
 
 > [!div class="nextstepaction"]
 > [두 번째 함수를 추가했습니다. - 7단계 진행 >>>](tutorial-vs-code-serverless-python-07.md)
-
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

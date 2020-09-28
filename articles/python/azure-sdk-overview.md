@@ -1,15 +1,15 @@
 ---
 title: Python용 Azure 라이브러리(SDK) 사용
 description: 개발자가 Azure 리소스를 프로비저닝, 사용 및 관리하는 경우 생산성을 높이는 데 도움이 되는 Python용 Azure 라이브러리의 특징과 기능에 대해 간략히 설명합니다.
-ms.date: 05/26/2020
+ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: dce4485a65da75d0918805ef55fafe71d55ce0a6
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 6dab8085cd9d18f34ea1dc307a414fa18cdbcb83
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983285"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829959"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python용 Azure 라이브러리(SDK) 사용
 
@@ -65,13 +65,13 @@ SDK의 관리(또는 "관리 평면") 라이브러리는 이름이 모두 `azure
 
 관리 라이브러리를 사용하면 구성 및 배포 스크립트를 작성하여 [Azure Portal](https://portal.azure.com)이나 [Azure CLI](/cli/azure/install-azure-cli)를 통해 수행할 수 있는 동일한 작업을 수행할 수 있습니다. (앞서 언급했듯이 Azure CLI는 Python으로 작성되었으며 관리 라이브러리를 사용하여 다양한 명령을 구현합니다.)
 
-각 관리 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api?view=azure-python) 및 [Azure 샘플](https://docs.microsoft.com/samples/browse/?languages=python&products=azure)에서 찾을 수도 있습니다.
+각 관리 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api?view=azure-python) 및 [Azure 샘플](/samples/browse/?languages=python&products=azure)에서 찾을 수도 있습니다.
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>클라이언트 라이브러리를 사용하여 Azure 리소스에 연결 및 사용
 
 SDK의 클라이언트(또는 "데이터 평면") 라이브러리는 이미 프로비저닝된 서비스와 상호 작용하는 Python 애플리케이션 코드를 작성하는 데 유용합니다. 클라이언트 라이브러리는 클라이언트 API를 지원하는 서비스를 위해서만 존재합니다.
 
-각 클라이언트 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api?view=azure-python) 및 [Azure 샘플](https://docs.microsoft.com/samples/browse/?languages=python&products=azure)에서 찾을 수도 있습니다.
+각 클라이언트 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api?view=azure-python) 및 [Azure 샘플](/samples/browse/?languages=python&products=azure)에서 찾을 수도 있습니다.
 
 ## <a name="get-help-and-connect-with-the-sdk-team"></a>SDK 팀과 교류하고 도움 받기
 

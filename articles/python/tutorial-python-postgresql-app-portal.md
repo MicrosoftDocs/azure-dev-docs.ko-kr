@@ -3,14 +3,14 @@ title: '자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Djang
 description: Azure에서 웹앱 및 PostgreSQL 데이터베이스를 프로비저닝하고 GitHub에서 앱 코드를 배포합니다.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 07/23/2020
+ms.date: 09/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
-ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
+ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89753762"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110533"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -47,9 +47,9 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. [Azure Portal](https://portal.azure.com)을 엽니다.
 
-1. **리소스 만들기**를 선택합니다.
+1. **리소스 만들기**를 선택합니다. 그러면 **새로 만들기** 페이지가 열립니다.
 
-1. **새로 만들기** 페이지의 **인기** 열에서 **웹앱**을 선택합니다. (**웹앱**이 즉시 표시되지 않으면 **Azure Marketplace** 아래에서 **웹**을 선택한 다음, **추천** 아래에서 **웹앱**을 선택합니다.) 
+1. **웹앱**을 검색하여 선택합니다.
 
 1. **웹앱 만들기** 페이지에서 다음 정보를 입력합니다.
 
@@ -74,9 +74,9 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. [Azure Portal](https://portal.azure.com)을 사용하여 새 브라우저 창 또는 탭을 엽니다. 데이터베이스 페이지의 일부 정보를 이전 섹션에서 여전히 열려 있는 웹앱 페이지로 전송해야 하므로 데이터베이스를 프로비저닝하기 위해 새 탭을 사용합니다.
 
-1. **리소스 만들기**를 선택합니다.
+1. **리소스 만들기**를 선택합니다. 그러면 **새로 만들기** 페이지가 열립니다.
 
-1. **새로 만들기** 페이지의 **Azure Marketplace** 아래에서 **데이터베이스**를 선택한 다음, **추천** 아래에서 **Azure Database for PostgreSQL**을 선택합니다.
+1. **Azure Database for PostgreSQL**을 검색하여 선택합니다.
 
 1. 다음 페이지의 **단일 서버** 아래에서 **만들기**를 선택합니다.
 
@@ -90,7 +90,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
     | 데이터 원본 | **없음** |
     | 위치 | 가까운 위치를 선택합니다. |
     | 버전 | 기본값(최신 버전)을 유지합니다. |
-    | 컴퓨팅 + 스토리지 | **서버 구성**을 선택한 다음, **기본** 및 **5세대**를 선택합니다. **vCore**를 1로 설정하고, **스토리지**를 5GB로 설정한 다음, **확인**을 선택합니다. 이러한 선택 항목은 Azure의 PostgreSQL에 사용할 수 있는 가장 저렴한 서버를 프로비저닝합니다. |
+    | 컴퓨팅 + 스토리지 | **서버 구성**을 선택한 다음, **기본** 및 **5세대**를 선택합니다. **vCore**를 1로 설정하고, **스토리지**를 5GB로 설정한 다음, **확인**을 선택합니다. 이러한 선택 항목은 Azure의 PostgreSQL에 사용할 수 있는 가장 저렴한 서버를 프로비저닝합니다. 또한 Azure 계정에 서버 비용이 포함된 크레딧이 있을 수 있습니다. |
     | 관리 사용자 이름, 암호, 암호 확인 | 데이터베이스 서버의 관리자 계정에 대한 자격 증명을 입력합니다. 이 자습서의 뒷부분에서 필요하므로 이러한 자격 증명을 기록합니다. |
 
 1. **검토 + 만들기**를 선택한 다음, **만들기**를 선택합니다. Azure에서 웹앱을 프로비저닝하는 데 몇 분 정도 걸립니다.
@@ -145,7 +145,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
     ![웹앱에 대한 포털 설정 구성](media/tutorial-python-postgresql-app-portal/web-app-settings.png)
 
-1. **새 애플리케이션 설정** 단추를 사용하여 다음 각 값에 대한 설정을 만듭니다.
+1. **새 애플리케이션 설정** 단추를 사용하여 djangoapp 샘플에서 기대하는 다음 각 값에 대한 설정을 만듭니다.
 
     | 설정 이름 | 값 |
     | --- | --- |
@@ -168,7 +168,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. 웹앱에 대한 브라우저 창 또는 탭의 왼쪽에 있는 **배포** 아래에서 **배포 센터**를 선택합니다.
 
-1. **원본 제어** 단계에서 **GitHub**를 선택한 다음, 로그인 프롬프트를 따르거나 **계속**을 선택하여 현재 GitHub 로그인을 사용합니다.
+1. **원본 제어** 단계에서 **GitHub**를 선택한 다음, 필요한 경우 **권한 부여**를 선택합니다. 그런 다음, 로그인 프롬프트를 따르거나 **계속**을 선택하여 현재 GitHub 로그인을 사용합니다.
 
 1. **빌드 공급자** 단계에서 **App Service 빌드 서비스**, **계속**을 차례로 선택합니다.
 

@@ -2,18 +2,18 @@
 title: '2단계: Visual Studio Code를 사용하여 Azure App Service에 컨테이너 이미지 배포'
 description: 자습서 2단계로, 컨테이너 레지스트리에서 Azure App Service로 실제 Docker 이미지를 배포합니다.
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 080f3f5aa82d9944b5f26d3a54fb6f10bfe914cb
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 5255e0d65fda839fbbe86c1743d424ab5801774f
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473548"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830899"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2: Azure App Service에 컨테이너 이미지 배포
 
-[이전 단계: 필수 구성 요소](tutorial-deploy-containers-01.md)
+[이전 단계: 환경 구성](tutorial-deploy-containers-01.md)
 
 레지스트리에 있는 컨테이너 이미지를 사용하면 VS Code의 Docker 확장을 사용하여 컨테이너를 실행하는 Azure App Service를 쉽게 설정할 수 있습니다.
 
@@ -29,9 +29,9 @@ ms.locfileid: "89473548"
 
     ![이미지를 생성하고 Azure App Service에 배포](media/deploy-containers/deploy-image-to-azure-app-service.gif)
 
-    **리소스 그룹**은 앱을 구성하는 여러 리소스의 컬렉션을 말합니다. 앱의 리소스를 단일 그룹에 모두 할당하면 해당하는 리소스들을 하나의 단위로 손쉽게 관리할 수 있습니다. (자세한 내용은 Azure 설명서의 [Azure Resource Manager 개요](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)를 참조하세요.)
+    **리소스 그룹**은 앱을 구성하는 여러 리소스의 컬렉션을 말합니다. 앱의 리소스를 단일 그룹에 모두 할당하면 해당하는 리소스들을 하나의 단위로 손쉽게 관리할 수 있습니다. (자세한 내용은 Azure 설명서의 [Azure Resource Manager 개요](/azure/azure-resource-manager/resource-group-overview)를 참조하세요.)
 
-    **App Service 계획**은 실행 중인 컨테이너를 호스트하는 물리적 리소스(기본 가상 머신)를 정의합니다. 이 자습서의 경우 B1이 Docker 컨테이너를 지원하는 최소 비용의 계획입니다. (자세한 내용은 Azure 설명서의 [App Service 계획 개요](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)를 참조하세요.)
+    **App Service 계획**은 실행 중인 컨테이너를 호스트하는 물리적 리소스(기본 가상 머신)를 정의합니다. 이 자습서의 경우 B1이 Docker 컨테이너를 지원하는 최소 비용의 계획입니다. (자세한 내용은 Azure 설명서의 [App Service 계획 개요](/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)를 참조하세요.)
 
     App Service의 이름은 모든 Azure에서 고유해야 하므로 일반적으로 회사나 사람 이름을 사용합니다. 프로덕션 사이트의 경우 개별적으로 등록된 도메인 이름을 사용하여 App Service를 구성하는 것이 일반적입니다.
 
@@ -47,5 +47,3 @@ ms.locfileid: "89473548"
 
 > [!div class="nextstepaction"]
 > [이미지를 배포했습니다. - 3단계 진행 >>>](tutorial-deploy-containers-03.md)
-
-문제는? 페이지 맨 아래에 있는 "이 페이지" 피드백을 사용하여 GitHub 문제를 제출합니다.

@@ -3,17 +3,17 @@ title: Azure Event Hub를 사용하여 Spring Cloud 스트림 바인더 애플�
 description: Azure Event Hub와 함께 Spring Boot Initializer로 만든 Java 기반 Spring Cloud Stream Binder애플리케이션을 구성하는 방법을 알아보세요.
 services: event-hubs
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 09/11/2020
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 50b6046e8b4435d8e75af1bb8df360be018eb8ec
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: f19f3a8d3e101b6cd8d6e9173e2dd99eae590ef9
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614297"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831279"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hub를 사용하여 Spring Cloud 스트림 바인더 애플리케이션을 만드는 방법
 
@@ -40,38 +40,41 @@ ms.locfileid: "89614297"
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **+ 리소스 만들기**를 클릭한 다음 *Event Hubs**를 검색합니다.
+1. **+ 리소스 만들기**를 선택한 다음, *Event Hubs*를 검색합니다.
 
-1. **만들기**를 클릭합니다.
+1. **만들기**를 선택합니다.
 
-   ![Event Hub 네임스페이스 만들기][IMG01]
+   >[!div class="mx-imgBorder"]
+   >![Event Hub 네임스페이스 만들기][IMG01]
 
 1. **네임스페이스 만들기** 페이지에서 다음 정보를 입력합니다.
 
-   * 이벤트 허브 네임스페이스에 대한 URI의 일부가 되는 고유한 **이름**을 입력합니다. 예: **wingtiptoys**를 **이름**에 입력한 경우 URI는 *wingtiptoys.servicebus.windows.net*입니다.
-   * 가격 책정 계층.
    * 네임스페이스에 사용하려는 **구독**을 선택합니다.
    * 네임스페이스에 새 **리소스 그룹**을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
+   * 이벤트 허브 네임스페이스에 대한 URI의 일부가 될 고유한 **네임스페이스 이름**을 입력합니다. 예: *wingtiptoys-space*를 **네임스페이스 이름**에 입력한 경우 URI는 `wingtiptoys-space.servicebus.windows.net`입니다.
    * 이벤트 허브 네임 스페이스에 대한 **위치**를 지정합니다.
+   * 가격 책정 계층.
    * 네임스페이스에 **처리량 단위**를 지정할 수도 있습니다.
+   
+   >[!div class="mx-imgBorder"]
+   >![Azure Event Hub 네임스페이스 옵션을 지정합니다.][IMG02]
 
-   ![Azure Event Hub 네임스페이스 옵션을 지정합니다.][IMG02]
-
-1. 위에 열거된 이러한 옵션을 지정한 경우 **만들기**를 클릭하여 네임스페이스를 만듭니다.
+1. 위에 나열된 옵션을 지정한 경우 **검토 + 만들기**를 선택하고, 사양을 검토하고, **만들기**를 선택하여 네임스페이스를 만듭니다.
 
 ## <a name="create-an-azure-event-hub-in-your-namespace"></a>네임스페이스에 Event Hub 만들기
 
-네임스페이스가 배포되면 네임스페이스에서 이벤트 허브를 만들 수 있습니다.
+네임스페이스가 배포되면 **리소스로 이동**을 선택하여 **Event Hubs 네임스페이스** 페이지를 엽니다. 여기서 네임스페이스에 이벤트 허브를 만들 수 있습니다.
 
-1. 이전 단계에서 만든 네임스페이스로 이동합니다.
+1. 이전 섹션에서 만든 네임스페이스로 이동합니다.
 
-1. 상단 메뉴 모음에서 **+ 이벤트 허브**를 클릭합니다.
+1. 상단 메뉴 모음에서 **+ Event Hubs**를 선택합니다.
 
 1. 이벤트 허브 이름을 지정합니다.
 
-1. **만들기**를 클릭합니다.
+1. **만들기**를 선택합니다.
 
-   ![이벤트 허브 만들기][IMG05]
+   >[!div class="mx-imgBorder"]
+   >![이벤트 허브 만들기][IMG05]
 
 ### <a name="create-an-azure-storage-account-for-your-event-hub-checkpoints"></a>이벤트 허브 검사점에 대한 Azure Storage 계정 만들기
 
@@ -79,7 +82,7 @@ ms.locfileid: "89614297"
 
 1. <https://portal.azure.com/>에서 Azure Portal로 이동합니다.
 
-1. **+만들기**를 클릭한 다음, **스토리지**를 클릭한 후 **스토리지 계정**을 클릭합니다.
+1. **+리소스 만들기**를 선택하고, **스토리지**를 선택한 다음, **스토리지 계정**을 선택합니다.
 
 1. **스토리지 계정 만들기** 페이지에서 다음 정보를 입력합니다.
 
@@ -87,12 +90,13 @@ ms.locfileid: "89614297"
    * 스토리지 계정에 새 **리소스 그룹**을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
    * 스토리지 계정의 고유한 **이름**을 입력합니다.
    * 스토리지 계정의 **위치**를 지정합니다.
+   
+   >[!div class="mx-imgBorder"]
+   >![Azure Storage 계정 옵션을 지정합니다.][IMG08]
 
-   ![Azure Storage 계정 옵션을 지정합니다.][IMG08]
+1. 위에 나열된 옵션을 지정한 경우 **검토 + 만들기**를 선택하여 스토리지 계정을 만듭니다.
 
-1. 위에 나열된 옵션을 지정한 경우 **검토 + 만들기**를 클릭하여 스토리지 계정을 만듭니다.
-
-1. 사양을 검토하고 **만들기**를 클릭합니다.  배포에는 몇 분 정도 걸릴 수 있습니다.
+1. 사양을 검토하고 **만들기**를 선택합니다.  배포에는 몇 분 정도 걸릴 수 있습니다.
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr를 사용하여 간단한 Spring Boot 애플리케이션 만들기
 
@@ -103,18 +107,19 @@ ms.locfileid: "89614297"
 1. 다음 옵션을 지정합니다.
 
    * **Java**를 사용하는 **Maven** 프로젝트를 생성합니다.
-   * 2\.0 이상의 **Spring Boot** 버전을 지정합니다.
+   * 2\.2 이후의 **Spring Boot** 버전을 지정합니다.
    * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
-   * **Web** 종속성 추가
+   * *Web* 종속성 추가
 
-      ![기본 Spring Initializr 옵션][SI01]
+   >[!div class="mx-imgBorder"]
+   >![기본 Spring Initializr 옵션][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.eventhub*).
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.contoso.eventhubs.sample*).
    >
 
-1. 위에 열거된 이러한 옵션을 지정한 경우 **프로젝트 만들기**를 클릭합니다.
+1. 위에 나열된 이러한 옵션을 지정한 경우 **GENERATE CTRL +** 를 선택합니다.
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 
@@ -124,11 +129,11 @@ ms.locfileid: "89614297"
 
 1. 앱의 루트 디렉터리에서 *pom.xml* 파일을 찾습니다. 예:
 
-   `C:\SpringBoot\eventhub\pom.xml`
+   *C:\SpringBoot\eventhubs-sample\pom.xml*
 
    또는
 
-   `/users/example/home/eventhub/pom.xml`
+   */users/example/home/eventhubs-sample/pom.xml*
 
 1. 텍스트 편집기에서 *pom.xml* 파일을 열고 `<dependencies>` 목록에 Spring Cloud Azure Event Hub Stream Binder starter를 추가합니다.
 
@@ -148,14 +153,14 @@ ms.locfileid: "89614297"
 
 1. Spring Boot 앱의 *리소스* 디렉터리로 이동합니다. 예:
 
-   ```shell
-   cd C:\SpringBoot\eventhub\src\main\resources
+   ```bash
+   cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
    또는
 
-   ```shell
-   cd /users/example/home/eventhub/src/main/resources
+   ```bash
+   cd /users/example/home/eventhubs-sample/src/main/resources
    ```
 
 1. Azure 계정 로그인:
@@ -181,7 +186,7 @@ ms.locfileid: "89614297"
        "state": "Enabled",
        "tenantId": "22222222-2222-2222-2222-222222222222",
        "user": {
-         "name": "gena.soto@wingtiptoys.com",
+         "name": "user@contoso.com",
          "type": "user"
        }
      }
@@ -221,11 +226,11 @@ ms.locfileid: "89614297"
 
 1. 앱의 *리소스* 디렉터리에서 *application.properties* 파일을 찾습니다.
 
-   `C:\SpringBoot\eventhub\src\main\resources\application.properties`
+   *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
 
    또는
 
-   `/users/example/home/eventhub/src/main/resources/application.properties`
+   */users/example/home/eventhubs-sample/src/main/resources/application.properties*
 
 2. 텍스트 편집기에서 *application.properties* 파일을 찾고 다음 줄을 추가하고 샘플 값을 이벤트 허브의 적절한 속성으로 바꿉니다.
 
@@ -263,26 +268,28 @@ ms.locfileid: "89614297"
 
 1. 앱의 패키지 디렉터리에서 기본 애플리케이션 Java 파일을 찾습니다. 예:
 
-   `C:\SpringBoot\eventhub\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java`
+   *C:\SpringBoot\eventhubs-sample\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java*
 
    또는
 
-   `/users/example/home/eventhub/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java`
+   */users/example/home/eventhubs-sample/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java*
 
 1. 텍스트 편집기에서 애플리케이션 Java 파일을 열고 다음 줄을 파일에 추가합니다.
 
    ```java
-   package com.wingtiptoys.eventhub;
-
-   import org.springframework.boot.SpringApplication;
-   import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-   @SpringBootApplication
-   public class EventhubApplication {
-      public static void main(String[] args) {
-         SpringApplication.run(EventhubApplication.class, args);
-      }
-   }
+    package com.contoso.eventhubs.sample;
+    
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
+    @SpringBootApplication
+    public class EventhubsSampleApplication {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(EventhubsSampleApplication.class, args);
+        }
+    
+    }
    ```
 
 1. 기본 애플리케이션 Java 파일을 저장하고 닫습니다.
@@ -291,31 +298,31 @@ ms.locfileid: "89614297"
 
 1. 앱의 패키지 디렉터리에 *EventhubSource.java*라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
 
-   ```java
-   package com.wingtiptoys.eventhub;
-
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.cloud.stream.annotation.EnableBinding;
-   import org.springframework.cloud.stream.messaging.Source;
-   import org.springframework.messaging.support.GenericMessage;
-   import org.springframework.web.bind.annotation.PostMapping;
-   import org.springframework.web.bind.annotation.RequestBody;
-   import org.springframework.web.bind.annotation.RestController;
-
-   @EnableBinding(Source.class)
-   @RestController
-   public class EventhubSource {
-
-      @Autowired
-      private Source source;
-
-      @PostMapping("/messages")
-      public String postMessage(@RequestBody String message) {
-         this.source.output().send(new GenericMessage<>(message));
-         return message;
-      }
-   }
-   ```
+    ```java
+    package com.contoso.eventhubs.sample;
+    
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.cloud.stream.annotation.EnableBinding;
+    import org.springframework.cloud.stream.messaging.Source;
+    import org.springframework.messaging.support.GenericMessage;
+    import org.springframework.web.bind.annotation.PostMapping;
+    import org.springframework.web.bind.annotation.RequestBody;
+    import org.springframework.web.bind.annotation.RestController;
+    
+    @EnableBinding(Source.class)
+    @RestController
+    public class EventhubSource {
+    
+        @Autowired
+        private Source source;
+    
+        @PostMapping("/messages")
+        public String postMessage(@RequestBody String message) {
+            this.source.output().send(new GenericMessage<>(message));
+            return message;
+        }
+    }
+    ```
 1. *EventhubSource.java* 파일을 저장 후 닫습니다.
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>싱크 커넥터에 대한 새 클래스 만들기
@@ -323,10 +330,10 @@ ms.locfileid: "89614297"
 1. 앱의 패키지 디렉터리에 *EventhubSink.java*라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
 
    ```java
-   package com.wingtiptoys.eventhub;
+   package com.contoso.eventhubs.sample;
 
    import com.microsoft.azure.spring.integration.core.AzureHeaders;
-   import com.microsoft.azure.spring.integration.core.api.Checkpointer;
+   import com.microsoft.azure.spring.integration.core.api.reactor.Checkpointer;
    import org.slf4j.Logger;
    import org.slf4j.LoggerFactory;
    import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -360,29 +367,32 @@ ms.locfileid: "89614297"
 
 1. 명령 프롬프트를 열고 디렉터리를 *pom.xml* 파일이 위치한 폴더로 변경합니다. 예:
 
-   `cd C:\SpringBoot\eventhub`
-
+   ```bash
+    cd C:\SpringBoot\eventhubs-sample
+   ```
    또는
 
-   `cd /users/example/home/eventhub`
+   ```bash
+   cd /users/example/home/eventhubs-sample
+   ```
 
 1. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 
-   ```shell
-   mvn clean package
+   ```bash
+   mvn clean package -Dmaven.test.skip=true
    mvn spring-boot:run
    ```
 
-1. 애플리케이션이 실행되면, 애플리케이션을 테스트하기 위해 *curl*을 사용할 수 있습니다. 예:
+1. 애플리케이션이 실행되면, 애플리케이션을 테스트하기 위해 `curl`을 사용할 수 있습니다. 예:
 
-   ```shell
+   ```bash
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   애플리케이션 로그에 "hello"가 표시됩니다. 다음은 그 예입니다.
+   애플리케이션 로그에 "hello"가 표시됩니다. 예를 들면 다음과 같습니다.
 
-   ```shell
-   [Thread-13] INFO com.wingtiptoys.eventhub.EventhubSink - New message received: 'hello'
-   [pool-10-thread-7] INFO com.wingtiptoys.eventhub.EventhubSink - Message 'hello' successfully checkpointed
+   ```text
+   2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
+   2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```
 
 ## <a name="next-steps"></a>다음 단계
@@ -390,13 +400,13 @@ ms.locfileid: "89614297"
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
 
 > [!div class="nextstepaction"]
-> [Azure의 Spring](/azure/developer/java/spring-framework)
+> [Azure의 Spring](./index.yml)
 
 ### <a name="additional-resources"></a>추가 리소스
 
 Event Hub 스트림 바인더에 대한 Azure 지원에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* [Azure Event Hubs 정의](/azure/event-hubs/event-hubs-about)
+* [Azure Event Hubs란?](/azure/event-hubs/event-hubs-about)
 
 * [Azure Portal을 사용하여 Event Hubs 네임스페이스 및 이벤트 허브 만들기](/azure/event-hubs/event-hubs-create)
 
@@ -409,7 +419,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 <!-- URL List -->
 
 [체험판 Azure 계정]: https://azure.microsoft.com/pricing/free-trial/
-[Java 개발자를 위한 Azure]: /azure/developer/java/
+[Java 개발자를 위한 Azure]: ../index.yml
 [Azure DevOps 및 Java 사용하기]: /azure/devops/
 [MSDN 구독자 혜택]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
@@ -420,13 +430,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 
 [IMG01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-01.png
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-02.png
-[IMG03]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-03.png
-[IMG04]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-04.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-05.png
-[IMG06]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-06.png
-[IMG07]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-07.png
 [IMG08]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-08.png
 
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-01.png
-[SI02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-02.png
-[SI03]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-03.png

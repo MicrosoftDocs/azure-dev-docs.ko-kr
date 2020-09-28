@@ -3,14 +3,15 @@ title: Azure CLI에서 Azure App Service에 Deno 앱 배포
 description: 자습서 1부, 소개 및 필수 구성 요소
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 817efd11f5eaf072d10a54efa083823e9b73e356
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 0a725c0c1f59f01fd75e76e68ac533c7918a429b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792568"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772936"
 ---
-# <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code를 사용하여 Azure App Services에 배포
+# <a name="deploy-deno-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code를 사용하여 Azure App Service에 Deno 배포
 
 이 자습서에서는 Azure CLI를 사용하여 Deno 애플리케이션을 Linux 또는 Windows의 Azure App Service에 배포합니다.
 

@@ -3,17 +3,17 @@ title: Azure의 Eclipse MicroProfile 설명서
 summary: MicroProfile은 여러 구현에서 혁신을 거치고 표준화를 목표로 공동 관심 분야에 대해 협력함으로써, Java EE와 같은 Enterprise Java 기술을 분산 마이크로 서비스 아키텍처로 활용하고 진화시키려는 목적을 가진 Eclipse Foundation 프로젝트입니다.
 metadata:
   title: Azure의 Eclipse MicroProfile 설명서
-  description: Eclipse MicroProfile을 사용하여 Enterprise Java 기술을 활용하고 발전시켜 Azure에서 앱을 개발합니다.
-  author: brborges
-  ms.author: brborges
-  ms.date: 03/13/2020
+  description: Azure에서 Eclipse MicroProfile을 사용하여 앱 개발을 시작합니다.
+  author: yoshioterada
+  ms.author: yoterada
+  ms.date: 06/29/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 0b0bb28c4ec0751b1a6d29ff89fadaf53fe57ccd
-  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+  ms.openlocfilehash: 2c478ff485c5a003aef47f2ffeb26bc75d3fdfb2
+  ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88240915"
+  ms.lasthandoff: 09/28/2020
+  ms.locfileid: "91401203"
 landingContent:
 - title: 시작 가이드
   linkLists:
@@ -21,12 +21,22 @@ landingContent:
     links:
     - text: Azure Container Instances에 배포
       url: deploy-microprofile-to-container-instances.md
-    - text: Azure 웹앱에 배포
-      url: deploy-microprofile-to-web-app-for-containers.md
     - text: Azure Key Vault에 대한 소스 구성
       url: configure-microprofile-with-keyvault.md
     - text: Azure DevOps를 사용하는 MicroProfile 애플리케이션의 CI/CD
       url: cicd-microprofile.md
+- title: Maven을 사용하여 Azure App Service에 배포
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Quarkus 배포
+      url: deploy-microprofile-quarkus-java-app-with-maven-plugin.md
+    - text: Helidon 배포
+      url: deploy-microprofile-helidon-java-app-with-maven-plugin.md
+    - text: Payara Micro 배포
+      url: deploy-microprofile-payara-micro-java-app-with-maven-plugin.md
+    - text: KumuluzEE 배포
+      url: deploy-microprofile-kumuluzee-java-app-with-maven-plugin.md
 - title: 코드 샘플
   linkLists:
   - linkListType: sample

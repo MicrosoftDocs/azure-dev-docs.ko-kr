@@ -6,10 +6,17 @@
     - name: 자습서
       expanded: true
       items:
-        - name: Azure Container Instances에 배포
-          href: deploy-microprofile-to-container-instances.md
-        - name: Azure 웹앱에 배포
-          href: deploy-microprofile-to-web-app-for-containers.md
+        - name: Maven을 사용하여 Azure App Service에 배포
+          expanded: false
+          items:
+            - name: Quarkus 배포
+              href: deploy-microprofile-quarkus-java-app-with-maven-plugin.md
+            - name: Helidon 배포
+              href: deploy-microprofile-helidon-java-app-with-maven-plugin.md
+            - name: Payara Micro 배포
+              href: deploy-microprofile-payara-micro-java-app-with-maven-plugin.md
+            - name: KumuluzEE 배포
+              href: deploy-microprofile-kumuluzee-java-app-with-maven-plugin.md
         - name: Azure Key Vault에 대한 소스 구성
           href: configure-microprofile-with-keyvault.md
         - name: Azure Pipelines을 사용하는 MicroProfile 애플리케이션의 CI/CD

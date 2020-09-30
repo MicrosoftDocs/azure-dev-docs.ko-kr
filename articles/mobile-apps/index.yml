@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 07/27/2020
-  ms.openlocfilehash: f7f2f1d9d7b9764904fa995ce575fc7409d3a237
-  ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+  ms.openlocfilehash: f7f7948f16d6d72f963f91cbf7121f02ddb528cc
+  ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87400671"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493091"
 landingContent:
 - title: Azure에서 모바일 시작
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Xamarin.Forms를 사용하여 모바일 앱 빌드
-      url: https://docs.microsoft.com/learn/paths/build-mobile-apps-with-xamarin-forms/
+      url: /learn/paths/build-mobile-apps-with-xamarin-forms/
   - linkListType: video
     links:
     - text: Azure를 사용하여 전체 모바일 앱 빌드
@@ -41,19 +41,19 @@ landingContent:
   - linkListType: overview
     links:
     - text: Azure Functions 및 기타 서비스를 사용하여 서버리스 모바일 애플리케이션 백 엔드 빌드
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: Azure SignalR을 사용하여 실시간 앱 빌드
       url: real-time-communication.md
   - linkListType: quickstart
     links:
     - text: Azure Functions 및 Xamarin 시작
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: Xamarin.Forms와 Azure SignalR Service
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
   - linkListType: learn
     links:
     - text: Xamarin으로 RESTful 웹 서비스 사용
-      url: https://docs.microsoft.com/learn/modules/consume-rest-services
+      url: /learn/modules/consume-rest-services
 - title: 데이터 저장
   linkLists:
   - linkListType: overview
@@ -67,11 +67,11 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Azure Cosmos DB를 사용하여 데이터 저장
-      url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+      url: /azure/cosmos-db/create-sql-api-xamarin-dotnet
     - text: Blob 스토리지 작업
-      url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-xamarin
+      url: /azure/storage/blobs/storage-quickstart-blobs-xamarin
     - text: .NET SDK 및 Azure Cosmos DB의 MongoDB API를 사용하여 Xamarin.Forms 앱 빌드
-      url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-xamarin
+      url: /azure/cosmos-db/create-mongodb-xamarin
 - title: 푸시 알림 보내기
   linkLists:
   - linkListType: overview
@@ -81,29 +81,29 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Azure Portal을 사용하여 Azure 알림 허브 만들기
-      url: https://docs.microsoft.com/azure/notification-hubs/create-notification-hub-portal
+      url: /azure/notification-hubs/create-notification-hub-portal
   - linkListType: tutorial
     links:
     - text: ASP.NET Core 및 Azure Notification Hubs를 사용하여 Xamarin.Forms 앱에 푸시 알림 보내기
       url: notification-hubs-backend-service-xamarin-forms.md
     - text: Android 디바이스에 푸시 알림 보내기
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
+      url: /azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
     - text: 디바이스에 풍부한 콘텐츠 푸시
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
+      url: /azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
 - title: 사용자 인증
   linkLists:
   - linkListType: overview
     links:
     - text: MSAL(Microsoft 인증 라이브러리)을 사용하여 지원되는 인증 흐름
-      url: https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows
+      url: /azure/active-directory/develop/msal-authentication-flows
     - text: 모바일 앱에서 인증 추가 및 사용자 ID 관리
       url: authentication.md
   - linkListType: tutorial
     links:
     - text: Android 애플리케이션에서 사용자 로그인 및 Microsoft Graph 호출
-      url: https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android
+      url: /azure/active-directory/develop/tutorial-v2-android
     - text: Active Directory B2C 테넌트에 네이티브 클라이언트 애플리케이션 추가
-      url: https://docs.microsoft.com/azure/active-directory-b2c/add-native-application
+      url: /azure/active-directory-b2c/add-native-application
   - linkListType: sample
     links:
     - text: Swift iOS 앱을 사용하여 사용자 로그인
@@ -117,15 +117,15 @@ landingContent:
     - text: 연속 빌드 및 통합으로 앱 수명 주기 자동화
       url: continuous-integration.md
     - text: 새로운 Azure Pipelines 사용자를 위한 핵심 개념
-      url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+      url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
   - linkListType: overview
     links:
     - text: App Center를 사용하여 빌드 릴리스
-      url: https://docs.microsoft.com/appcenter/distribution/uploading
+      url: /appcenter/distribution/uploading
   - linkListType: how-to-guide
     links:
     - text: App Center CodePush
-      url: https://docs.microsoft.com/appcenter/distribution/codepush
+      url: /appcenter/distribution/codepush
 - title: 분석 및 충돌 추적
   linkLists:
   - linkListType: concept
@@ -137,15 +137,15 @@ landingContent:
   - linkListType: overview
     links:
     - text: App Center 분석
-      url: https://docs.microsoft.com/appcenter/analytics/overview
+      url: /appcenter/analytics/overview
   - linkListType: how-to-guide
     links:
     - text: 앱에서 진단 사용
-      url: https://docs.microsoft.com/appcenter/diagnostics/enabling-diagnostics
+      url: /appcenter/diagnostics/enabling-diagnostics
   - linkListType: tutorial
     links:
     - text: 실시간 분석 받기
-      url: https://docs.microsoft.com/appcenter/analytics/log-flow
+      url: /appcenter/analytics/log-flow
 - title: SDK를 사용하여 개발
   linkLists:
   - linkListType: download

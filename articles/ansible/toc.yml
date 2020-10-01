@@ -109,7 +109,7 @@
     - name: 릴리스 및 기능
       href: module-version-matrix.md
     - name: Azure의 모든 모듈
-      href: 'https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure'
+      href: 'https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure'
 - name: 리소스
   items:
     - name: Ansible용 Visual Studio Code 확장

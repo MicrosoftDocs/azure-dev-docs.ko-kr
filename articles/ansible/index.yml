@@ -11,12 +11,12 @@ metadata:
   ms.author: tarcher
   ms.date: 04/03/2020
   ms.custom: devx-track-ansible
-  ms.openlocfilehash: 6a0a253e2571fe7147714bbd66fa76a7e21135d4
-  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+  ms.openlocfilehash: 7410a36718677568aa3df8bea4b8576ddd459886
+  ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88240205"
+  ms.lasthandoff: 09/30/2020
+  ms.locfileid: "91585521"
 landingContent:
 - title: Azure의 Ansible 정보
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
     - text: 릴리스 및 기능
       url: module-version-matrix.md
     - text: Azure의 모든 모듈
-      url: https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure
+      url: https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure
 - title: Ansible 설치 및 구성
   linkLists:
   - linkListType: quickstart

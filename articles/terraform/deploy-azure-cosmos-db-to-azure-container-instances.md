@@ -4,12 +4,12 @@ description: Terraform을 사용하여 Azure Cosmos DB를 Azure Container Instan
 ms.topic: how-to
 ms.date: 04/26/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 376d0e3637489ddedde942812dcbf55d46da48db
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 75ee5e19d3cd42d10bd68e2550c391589c5c2d39
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241165"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401523"
 ---
 # <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Azure Container Instances에 Azure Cosmos DB 배포
 
@@ -19,8 +19,6 @@ ms.locfileid: "88241165"
 > * Azure Cosmos DB 인스턴스
 > * Azure Container Instance
 > * 이러한 두 리소스에서 작동하는 앱
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -176,6 +174,8 @@ ms.locfileid: "88241165"
 ```bash
 terraform destroy -auto-approve
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

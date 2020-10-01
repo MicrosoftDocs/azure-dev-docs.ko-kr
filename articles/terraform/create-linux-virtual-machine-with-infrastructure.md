@@ -5,18 +5,16 @@ keywords: azure devops terraform linux vm 가상 머신
 ms.topic: how-to
 ms.date: 06/14/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 387f53b9fb1a78a66b9628346564132002b77fb0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 13c519aeabfdd5a432dc16188e8d61241391c742
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241225"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401623"
 ---
 # <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 
 Terraform을 사용하면 Azure에서 완전한 인프라를 정의하고 만들 수 있습니다. 일관되고 재현 가능한 방식으로 Azure 리소스를 만들고 구성하는 Terraform 템플릿을 이해하기 쉬운 형태로 빌드할 수 있습니다. 이 문서에서는 Terraform을 사용하여 전체 Linux 환경 및 지원 리소스를 만드는 방법을 보여 줍니다. [Terraform 설치 및 구성](get-started-cloud-shell.md) 방법도 알아봅니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -435,8 +433,6 @@ terraform plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
 persisted to local or remote state storage.
-
-
 ...
 
 Note: You didn't specify an "-out" parameter to save this plan, so when
@@ -475,6 +471,8 @@ az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -
 ```bash
 ssh azureuser@<publicIps>
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

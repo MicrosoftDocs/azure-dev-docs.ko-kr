@@ -4,12 +4,12 @@ description: Yeoman을 사용하여 Azure에서 Terraform 기본 템플릿을 �
 ms.topic: how-to
 ms.date: 05/25/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: aa71698735d96bd591b15d6804fd2d142602d326
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f125f6d1fd5b37fc023343dc045a70dd92084840
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241285"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401723"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Yeoman을 사용하여 Azure에 Terraform 기본 템플릿 만들기
 
@@ -21,8 +21,6 @@ ms.locfileid: "88241285"
 > * 두 가지 다른 방법으로 Terraform 템플릿을 테스트합니다.
 > * Docker 파일을 사용하여 Terraform 모듈을 실행합니다.
 > * Azure Cloud Shell에서 기본적으로 Terraform 모듈을 실행합니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -290,6 +288,8 @@ Azure용 Yeoman 생성기(https://github.com/Azure/generator-az-terra-module )�
     ```
 
     ![테스트 통과 결과](media/create-a-base-template-using-yeoman/ymg-pass.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

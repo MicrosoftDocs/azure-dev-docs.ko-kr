@@ -1,15 +1,15 @@
 ---
 title: Azure에 Node.js 컨테이너 배포
 description: Docker 컨테이너를 사용하여 Node.js 웹앱을 Azure에 배포
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, devx-track-javascript
-ms.openlocfilehash: 11fd9e18ba8f673bb51a53706a83677334396b86
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, devx-track-js
+ms.openlocfilehash: e91bbce79baca6dae19fc9f284c7df2bae1fa753
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218629"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364936"
 ---
 # <a name="use-azure-to-deploy-scale-and-manage-nodejs-containers"></a>Azure를 사용하여 Node.js 컨테이너 배포, 크기 조정 및 관리
 

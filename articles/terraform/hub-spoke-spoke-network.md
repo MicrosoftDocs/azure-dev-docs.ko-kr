@@ -4,12 +4,12 @@ description: 허브-스포크 토폴로지에서 허브에 연결된 두 개의 
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 236665b205a602466244a2c5d5cfee5800c51317
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 265c410d8fc8bdb51803406cc8003e6e349014d9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241095"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401483"
 ---
 # <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 스포크 네트워크 만들기
 
@@ -21,8 +21,6 @@ ms.locfileid: "88241095"
 > * HCL(HashiCorp Language)을 사용하여 허브-스포크 토폴로지에서 스포크 VNet 구현
 > * Terraform을 사용하여 스포크 네트워크에서 가상 머신 만들기
 > * Terraform을 사용하여 허브 네트워크와 가상 네트워크 피어링 설정
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -303,6 +301,8 @@ ms.locfileid: "88241095"
      
 1. 파일을 저장하고 편집기를 종료합니다.
   
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"] 

@@ -4,12 +4,12 @@ description: Terraform을 사용하여 Azure 가상 머신 확장 집합을 구�
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e6f83d6f4f138b92576e44cadb65c3e4d018dc66
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241245"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401633"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Terraform을 사용하여 Azure 가상 머신 확장 집합 만들기
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241245"
 
 > [!NOTE]
 > 이 문서에서 사용되는 Terraform 구성 파일의 최신 버전은 [GitHub의 Awesome Terraform 리포지토리](https://github.com/Azure/awesome-terraform/tree/master/codelab-vmss)에 있습니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -395,10 +393,6 @@ Cloud Shell에서 다음 단계를 수행합니다.
     terraform apply
     ```
 
-    명령의 출력은 다음 스크린샷과 유사해야 합니다.
-
-    ![Terraform 가상 머신 확장 집합 리소스 그룹](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents.png)
-
 1. 브라우저를 열고 명령에 의해 반환된 FQDN에 연결합니다.
 
     ![FQDN 검색 결과](./media/create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
@@ -504,12 +498,9 @@ SSH *jumpbox*는 네트워크의 다른 서버에 액세스하기 위해 "점프
    terraform apply
    ```
 
-배포가 완료된 후 리소스 그룹의 콘텐츠는 다음 스크린샷과 비슷합니다.
+**참고**:
 
-![Terraform 가상 머신 확장 집합 리소스 그룹](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents-final.png)
-
-> [!NOTE]
-> 배포한 가상 머신 확장 집합 및 jumpbox에서 암호를 사용하여 로그인하는 기능이 사용하지 않도록 설정되었습니다. 가상 머신에 액세스하려면 SSH를 사용하여 로그인합니다.
+- 배포한 가상 머신 확장 집합 및 jumpbox에서 암호를 사용하여 로그인하는 기능이 사용하지 않도록 설정되었습니다. 가상 머신에 액세스하려면 SSH를 사용하여 로그인합니다.
 
 ## <a name="environment-cleanup"></a>환경 정리
 
@@ -520,6 +511,8 @@ terraform destroy
 ```
 
 소멸 프로세스를 완료하는 데 몇 분 정도가 걸릴 수 있습니다.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -4,12 +4,12 @@ description: Terratest를 사용하여 Terraform 모듈을 테스트하는 방�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: f174c6c3a4a91fe47ded8ade8826ce9c4c09af65
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ec42182fd20ce073f727b8096d15e2a87a3c1207
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241065"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401703"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>자습서: Terratest를 사용한 Azure 내 Terraform 모듈 테스트
 
@@ -27,14 +27,12 @@ Terraform 모듈을 만들 때는 품질 보증을 구현해야 합니다. 아�
 - **Go로 작성되는 테스트 사례** - Terraform을 사용하는 개발자는 대부분 Go 개발자입니다. Go 개발자라면 Terratest를 사용하기 위해 다른 프로그래밍 언어를 학습할 필요가 없습니다.
 - **확장 가능한 인프라** - Azure 관련 기능을 포함하여 Terratest에 기반한 함수를 추가로 확장할 수 있습니다.
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Go 프로그래밍 언어**: 모든 테스트 사례가 [Go](https://golang.org/dl/)로 작성됩니다.
 - **dep**: [dep](https://github.com/golang/dep#installation)는 Go의 종속성 관리 도구입니다.
-- **Azure CLI**: [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)는 Azure 리소스를 관리하는 데 사용할 수 있는 명령줄 도구입니다. (Terraform은 서비스 주체 또는 [Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html)를 통해 Azure를 인증하도록 지원합니다.)
+- **Azure CLI**: [Azure CLI](/cli/azure/install-azure-cli)는 Azure 리소스를 관리하는 데 사용할 수 있는 명령줄 도구입니다. (Terraform은 서비스 주체 또는 [Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html)를 통해 Azure를 인증하도록 지원합니다.)
 - **mage**: [mage 실행 파일](https://github.com/magefile/mage/releases)을 사용하여 Terratest 사례의 실행을 간소화하는 방법을 보여 줍니다. 
 
 ## <a name="create-a-static-webpage-module"></a>정적 웹 페이지 모듈 만들기
@@ -521,6 +519,8 @@ mage에서는 Go 패키지 시스템을 사용하여 단계를 공유할 수도 
 **선택 사항: 수용 테스트를 실행하도록 서비스 주체 환경 변수 설정**
  
 테스트하기 전에 `az login`을 실행하는 대신, 서비스 주체 환경 변수를 설정하여 Azure 인증을 수행할 수 있습니다. Terraform은 [환경 변수 이름 목록](https://www.terraform.io/docs/providers/azurerm/index.html#testing)을 게시합니다. (이러한 환경 변수 중 처음 4개만 필요합니다.) 또한 Terraform은 [이러한 환경 변수의 값을 가져오는 방법](https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html)을 설명하는 자세한 지침도 게시합니다.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: b340802d861ad1dbe1b4f118734e527cdefeec21
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831615"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586176"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>IntelliJ를 사용하여 Azure App Service용 Hello World 웹앱 만들기
 
@@ -61,7 +61,7 @@ ms.locfileid: "90831615"
 
 1. **새 프로젝트** 대화 상자에서 **Maven**을 선택하고, **Archetype에서 만들기** 옵션이 선택되어 있는지 확인합니다. 목록에서 **maven-archetype-webapp**을 선택하고, **다음**을 클릭합니다.
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="maven-archetype-webapp 옵션 선택"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="IntelliJ에서 Azure에 로그인"::: 
 
 1. **아티팩트 좌표** 드롭다운을 펼쳐 모든 입력 필드를 표시하고, 새 웹앱에 대한 다음 정보를 지정하고, **다음**을 클릭합니다.
 
@@ -80,7 +80,7 @@ ms.locfileid: "90831615"
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="index.jsp 파일 열기":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="IntelliJ에서 Azure에 로그인":::
 
 ## <a name="deploying-web-app-to-azure"></a>Azure에 웹앱 배포
 
@@ -90,7 +90,7 @@ ms.locfileid: "90831615"
 
    a. **사용할 수 있는 웹앱이 없습니다. 새 웹앱을 만들려면 클릭하세요.** 를 클릭하여 새 웹앱을 만듭니다. 그렇지 않고 기존 웹앱이 구독에 있으면 WebApp 드롭다운에서 **새 WebApp 만들기**를 선택합니다.
 
-      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="Azure에 배포 대화 상자 창":::
+      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="IntelliJ에서 Azure에 로그인":::
 
    **WebApp 만들기** 팝업 대화 상자에서 다음 정보를 지정하고 **확인**을 클릭합니다. 
 
@@ -107,7 +107,7 @@ ms.locfileid: "90831615"
 
 1. 상태 메시지에 제공된 링크를 사용하여 웹앱으로 이동할 수 있습니다.
 
-   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="웹앱 찾아보기":::
+   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="IntelliJ에서 Azure에 로그인":::
 
 ## <a name="managing-deploy-configurations"></a>배포 구성 관리
 
@@ -116,7 +116,7 @@ ms.locfileid: "90831615"
 
 1. WebApp 배포를 실행하기 전에 웹앱에 대한 드롭다운 메뉴를 클릭하고 **구성 편집**을 선택하여 기본 설정을 수정할 수 있습니다.
 
-   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="구성 편집 메뉴":::
+   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="IntelliJ에서 Azure에 로그인":::
 
 1. **실행/디버그 구성** 대화 상자에서 기본 설정을 수정할 수 있습니다. **확인**을 클릭하여 설정을 저장합니다.
 
@@ -145,7 +145,6 @@ Azure Web Apps 만들기에 대한 자세한 내용은 [Web Apps 개요]를 참�
 [Web Apps 개요]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/
 [Jetty]: http://www.eclipse.org/jetty/
-[Legacy Version]: create-hello-world-web-app-legacy-version.md
 [intelliJ-sign-in-instructions]: sign-in-instructions.md
 
 <!-- IMG List -->

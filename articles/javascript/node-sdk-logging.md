@@ -1,15 +1,15 @@
 ---
 title: JavaScript용 Azure SDK를 사용하여 로깅
 description: JavaScript용 Azure SDK 클라이언트 라이브러리를 사용하여 로깅을 사용하도록 설정하는 방법을 알아봅니다.
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/23/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: fb4be05552a5ed1ea239776985f4f35ca6e900fa
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: b635baa1d1c30e21e43c32b8ef08b22eccf1619b
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218843"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364896"
 ---
 # <a name="logging-with-the-azure-sdk-for-javascript"></a>JavaScript용 Azure SDK를 사용하여 로깅
 

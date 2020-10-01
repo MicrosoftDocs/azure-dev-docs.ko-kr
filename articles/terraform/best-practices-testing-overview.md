@@ -4,20 +4,18 @@ description: Terraform 프로젝트의 유효성을 검사하기 위해 구성�
 ms.topic: overview
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 29f128361030b64da38124f7f7d723619306f582
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6c782b2a6fed14698aede5a7dbfb6eae5ff9cf4a
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241275"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401673"
 ---
 # <a name="tutorial-terraform-testing-overview"></a>자습서: Terraform 테스트 개요
 
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 Terraform은 IaC(Infrastructure as Code) 도구입니다. 이 도구의 범주는 프로젝트의 소스 코드와 마찬가지로 Terraform 파일을 처리한다는 사실을 나타냅니다. 이 프로세스의 일부에는 버전 관리 및 소스 코드 제어가 포함됩니다. 또한 테스트도 프로세스의 일부여야 합니다. 이 문서에서는 Terraform 프로젝트에 대해 실행할 수 있는 다양한 유형의 테스트에 대해 간략히 설명합니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="integration-testing"></a>통합 테스트
 
@@ -59,3 +57,5 @@ E2E 테스트는 일반적으로 3단계 프로세스입니다. 먼저, 구성�
 
 > [!div class="nextstepaction"]
 > [엔드투엔드 테스트에 대한 자세한 정보](best-practices-end-to-end-testing.md)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]

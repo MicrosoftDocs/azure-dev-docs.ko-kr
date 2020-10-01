@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 09/01/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7c6b9d526b2fe42a0210daf70ec8ba919641ced9
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89374564"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586138"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 
@@ -43,19 +43,19 @@ ms.locfileid: "89374564"
 
 1. Azure Spring Cloud 확장을 설치합니다.
 
-    ```Azure CLI
+    ```azurecli
     az extension add --name spring-cloud
     ```
 
 1. Azure Spring Cloud 서비스를 포함할 리소스 그룹을 만듭니다.
 
-    ```Azure CLI
+    ```azurecli
     az group create --location eastus --name <resource group name>
     ```
 
 1. Azure Spring Cloud의 인스턴스를 프로비저닝합니다.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud create -n <service name> -g <resource group name>
     ```
 
@@ -68,7 +68,7 @@ ms.locfileid: "89374564"
 
 1. 구성 서버를 설정합니다. &lt;GitHub ID&gt;를 올바른 값으로 바꿔야 합니다.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud config-server git set -n <your-service-name> --uri https://github.com/<your GitHub id>/piggymetrics --label config
     ```
 
@@ -81,7 +81,7 @@ ms.locfileid: "89374564"
 
 1. **gateway**, **auth-service** 및 **account-service**라는 3개의 마이크로서비스를 만듭니다.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app create --n gateway -s <service name> -g <resource group name>
     az spring-cloud app create --n auth-service -s <service name> -g <resource group name>
     az spring-cloud app create --n account-service -s <service name> -g <resource group name>
@@ -89,7 +89,7 @@ ms.locfileid: "89374564"
 
 1. 애플리케이션을 배포합니다.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app deploy -n gateway -s <service name> -g <resource group name> --jar-path ./gateway/target/gateway.jar
     az spring-cloud app deploy -n account-service -s <service name> -g <resource group name> --jar-path ./account-service/target/account-service.jar
     az spring-cloud app deploy -n auth-service -s <service name> -g <resource group name> --jar-path ./auth-service/target/auth-service.jar
@@ -97,13 +97,13 @@ ms.locfileid: "89374564"
 
 1. 퍼블릭 엔드포인트를 게이트웨이에 할당합니다.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app update -n gateway -s <service name> -g <resource group name> --is-public true
     ```
 
 1. 애플리케이션이 실행되고 있는지 확인할 수 있도록 게이트웨이 애플리케이션을 쿼리하여 URL을 가져옵니다.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app show --name gateway | grep url
     ```
     

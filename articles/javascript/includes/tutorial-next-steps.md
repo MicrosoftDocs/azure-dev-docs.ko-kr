@@ -1,11 +1,11 @@
 ---
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f53c3e372259a01942863827bb8b03abab4db10f
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 0ab980285fcecf03efac3e132566636923e14fec
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772584"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208344"
 ---
 축하합니다! 이 연습을 완료했습니다! 다른 Azure 확장을 확인할 준비가 되었습니다.
 

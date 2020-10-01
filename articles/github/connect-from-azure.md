@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: d7c791aec426e139592e8a32e7779b2f02832d5f
-ms.sourcegitcommit: 5205d15c697bbfd4ecb3f45b5de093f709d11979
+ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026414"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493124"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions를 사용하여 Azure에 연결
 
@@ -30,7 +30,7 @@ Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니�
 
 이 예제에서는 Azure에서 인증하는 데 사용할 수 있는 `AZURE_CREDENTIALS`라는 비밀을 만듭니다.  
 
-1. 기존 애플리케이션이 없는 경우 서비스 주체에 사용할 [새 Active Directory 애플리케이션](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true)을 등록합니다.
+1. 기존 애플리케이션이 없는 경우 서비스 주체에 사용할 [새 Active Directory 애플리케이션](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true)을 등록합니다.
 
     ```azurecli-interactive
         appName="myApp"
@@ -41,7 +41,7 @@ Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니�
         --identifier-uris http://localhost/$appName
     ```
 
-1. Azure Portal에서 앱에 대한 [새 서비스 주체를 만듭니다](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). 
+1. Azure Portal에서 앱에 대한 [새 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -67,11 +67,11 @@ Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니�
 
 1. **비밀**과 **새 비밀**을 차례로 선택합니다.
 
-    :::image type="content" source="media/select-secrets.png" alt-text="비밀 추가 선택":::
+    :::image type="content" source="media/select-secrets.png" alt-text="탐색에서 설정 선택":::
 
 1. 이름이 `AZURE_CREDENTIALS`인 서비스 주체에 대한 JSON 개체를 붙여넣습니다. 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="GitHub에서 비밀 추가":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="탐색에서 설정 선택":::
 
 1. **비밀 추가**를 선택하여 저장합니다.
 
@@ -158,19 +158,19 @@ build-and-deploy:
 
 ### <a name="azure-active-directory"></a>Azure Active Directory 
 
-- [Azure AD(Single Sign-On)를 사용하여 GitHub Enterprise에 로그인](https://docs.microsoft.com/azure/active-directory/saas-apps/github-tutorial)   
+- [Azure AD(Single Sign-On)를 사용하여 GitHub Enterprise에 로그인](/azure/active-directory/saas-apps/github-tutorial)   
 
 ### <a name="power-bi"></a>Power BI
 
-- [GitHub와 Power BI 연결](https://docs.microsoft.com/power-bi/service-connect-to-github)   
+- [GitHub와 Power BI 연결](/power-bi/service-connect-to-github)   
 
 ### <a name="connectors"></a>커넥터
 
-- [Azure Logic Apps, Power Automate 및 Power Apps용 GitHub 커넥터](https://docs.microsoft.com/connectors/github/)   
+- [Azure Logic Apps, Power Automate 및 Power Apps용 GitHub 커넥터](/connectors/github/)   
 
 ### <a name="azure-databricks"></a>Azure Databricks
 
-- [GitHub를 Notebook 버전 제어로 사용](https://docs.microsoft.com/azure/databricks/notebooks/github-version-control) 
+- [GitHub를 Notebook 버전 제어로 사용](/azure/databricks/notebooks/github-version-control) 
 
 > [!div class="nextstepaction"]
 > [GitHub에서 Azure로 앱 배포](deploy-to-azure.md)

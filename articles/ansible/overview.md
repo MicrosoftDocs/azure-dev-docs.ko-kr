@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, 개요, 클라우드 프로비전, 구성 관�
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 2bd996a93952df1f52c2a007d73f7f37e4e0f132
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239965"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586104"
 ---
 # <a name="using-ansible-with-azure"></a>Azure에서 Ansible 사용
 
@@ -24,9 +24,9 @@ ms.locfileid: "88239965"
 
 ## <a name="ansible-modules"></a>Ansible 모듈
 
-Ansible에는 원격 호스트에서 직접 실행하거나 [플레이북](https://docs.ansible.com/ansible/latest/playbooks.html)을 통해 실행하는 [Ansible 모듈](https://docs.ansible.com/ansible/latest/modules_by_category.html) 모음이 포함되어 있습니다. 사용자는 자신의 모듈을 만들 수 있습니다. 모듈은 서비스, 패키지 또는 파일과 같은 시스템 리소스를 제어하거나 시스템 명령을 실행하는 데 사용합니다.
+Ansible에는 원격 호스트에서 직접 실행하거나 [플레이북](https://docs.ansible.com/ansible/latest/playbooks.html)을 통해 실행하는 [Ansible 모듈](https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html) 모음이 포함되어 있습니다. 사용자는 자신의 모듈을 만들 수 있습니다. 모듈은 서비스, 패키지 또는 파일과 같은 시스템 리소스를 제어하거나 시스템 명령을 실행하는 데 사용합니다.
 
-Azure 서비스와 상호 작용하기 위해 Ansible에는 [Ansible 클라우드 모듈](https://docs.ansible.com/ansible/list_of_cloud_modules.html#azure) 모음이 포함되어 있습니다. 이러한 모듈을 사용하여 Azure에서 인프라를 만들고 오케스트레이션할 수 있습니다. 
+Azure 서비스와 상호 작용하기 위해 Ansible에는 [Ansible 클라우드 모듈](https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure) 모음이 포함되어 있습니다. 이러한 모듈을 사용하여 Azure에서 인프라를 만들고 오케스트레이션할 수 있습니다. 
 
 ## <a name="migrate-existing-workload-to-azure"></a>기존 작업을 Azure로 마이그레이션
 

@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 1f994464e6d0cb1c90bc1078eee5061cb91e6778
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: d3c472b66ffc622fb3ff3e5d149a902f99fcd6f1
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401621"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493273"
 ---
 ### <a name="validate-package-name-and-permissions"></a>패키지 이름 및 권한 유효성 검사
 
@@ -111,7 +111,7 @@ ms.locfileid: "87401621"
     ```
 
     > [!NOTE]
-    > 이 클래스는 알림 허브 등록 페이로드의 일부로 고유한 ID([Secure.AndroidId](https://docs.microsoft.com/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9) 사용)를 제공합니다.
+    > 이 클래스는 알림 허브 등록 페이로드의 일부로 고유한 ID([Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9) 사용)를 제공합니다.
 
 1. 다른 **빈 클래스**를 *PushNotificationFirebaseMessagingService.cs*라는 **Services** 폴더에 추가하고 다음 구현을 추가합니다.
 

@@ -4,12 +4,12 @@ description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 �
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 1bc9b2b899157985394165171adc76d988fe7e6a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b7276d3807f00e828c89ee00ffcde2e6e2f0b9a5
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241135"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401461"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 어플라이언스 만들기
 
@@ -24,8 +24,6 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
 > * Terraform을 사용하여 어플라이언스 역할을 하는 Hub Network Virtual Machine 만들기
 > * Terraform을 사용하여 CustomScript 확장을 통해 경로를 사용하도록 설정
 > * Terraform을 사용하여 Hub 및 Spoke 게이트웨이 경로 테이블 만들기
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -270,6 +268,8 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
     ```
 
 1. 파일을 저장하고 편집기를 종료합니다.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

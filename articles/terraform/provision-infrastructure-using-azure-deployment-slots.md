@@ -3,22 +3,20 @@ title: Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비�
 description: Azure 공급자 배포 슬롯에서 Terraform을 사용하는 방법을 알아봅니다.
 keywords: azure devops terraform 배포 슬롯
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad98549bca6b98635d111ee333212bd8b9a9dbba
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241215"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401773"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
 
 [Azure 배포 슬롯](/azure/app-service/deploy-staging-slots)을 사용하여 여러 다른 앱 버전 간을 전환할 수 있습니다. 이 기능을 사용하면 손상된 배포의 영향을 최소화할 수 있습니다. 
 
 이 문서에서는 GitHub 및 Azure를 통해 두 개의 앱을 배포하는 과정을 안내하면서 배포 슬롯을 사용하는 예를 보여줍니다. 하나의 앱이 프로덕션 슬롯에 호스트됩니다. 두 번째 앱은 스테이징 슬롯에 호스트됩니다. ("production" 및 "staging"은 임의의 이름입니다. 시나리오에 적합한 모든 것이 될 수 있습니다.) 배포 슬롯을 구성한 후 필요에 따라 Terraform을 사용하여 두 슬롯 사이를 전환합니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -303,6 +301,8 @@ terraform apply
 ```
 
 앱이 교환되면 원래 구성이 표시됩니다.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

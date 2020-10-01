@@ -4,12 +4,12 @@ description: Terraform을 사용하여 Azure에서 전체 하이브리드 네트
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 7fd6de18404f6c71184f17510699c6eb2a7be16b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 5a9c4541d0dc04413e088587791488133fe61ff9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241125"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401493"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 및 스포크 하이브리드 네트워크 토폴로지 만들기
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241125"
 > * Terraform을 사용하여 Azure에서 개별 워크로드를 스포크 VNets으로 만들기
 > * Terraform을 사용하여 온-프레미스와 Azure 네트워크 간의 게이트웨이 및 연결 설정
 > * Terraform을 사용하여 스포크 네트워크에 대한 VNet 피어링 만들기
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -157,6 +155,8 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
     ```
 
 1. 파일을 저장하고 편집기를 종료합니다.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

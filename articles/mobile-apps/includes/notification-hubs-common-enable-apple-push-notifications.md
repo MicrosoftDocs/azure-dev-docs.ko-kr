@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: f83e5ae060ee6b13523af8dbb271906dff02e027
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 07778fad0d390b297850a10b544f08d9e5ec3569
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401700"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493162"
 ---
 ### <a name="register-your-ios-app-for-push-notifications"></a>푸시 알림에 대해 iOS 앱 등록
 
@@ -51,7 +51,7 @@ ms.locfileid: "87401700"
 
 1. [토큰 기반 인증에 사용할 수 있는 p8 인증서 만들기](#option-2-creating-a-p8-certificate-that-can-be-used-for-token-based-authentication)(*새로운 권장 방법*)
 
-새로운 방법은 [APNS에 대한 토큰 기반(HTTP/2) 인증](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification)에 설명된 것처럼 여러 가지 이점이 있습니다. 필수 단계가 많지 않으며 특정 시나리오에서는 새 방법을 꼭 사용해야 합니다. 그러나 이 자습서에서는 두 방법 모두 사용할 수 있으므로 두 방법의 단계를 모두 제공합니다.
+새로운 방법은 [APNS에 대한 토큰 기반(HTTP/2) 인증](/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification)에 설명된 것처럼 여러 가지 이점이 있습니다. 필수 단계가 많지 않으며 특정 시나리오에서는 새 방법을 꼭 사용해야 합니다. 그러나 이 자습서에서는 두 방법 모두 사용할 수 있으므로 두 방법의 단계를 모두 제공합니다.
 
 ##### <a name="option-1-creating-a-p12-push-certificate-that-can-be-uploaded-directly-to-notification-hub"></a>옵션 1: 알림 허브에 직접 업로드할 수 있는 p12 푸시 인증서 만들기
 
@@ -168,7 +168,7 @@ ms.locfileid: "87401700"
 1. **Select certificates**(인증서 선택) 창에서 코드 서명에 사용하는 개발 인증서를 선택하고, **Continue**(계속)를 선택합니다.
 
     > [!NOTE]
-    > 이 인증서는 [이전 단계](#creating-a-certificate-for-notification-hubs)에서 만든 푸시 인증서가 아니라 개발 인증서입니다. 인증서는 이 자습서의 [필수 구성 요소](#prerequisites)이므로 인증서가 없으면 만들어야 합니다. [Apple 개발자 포털](https://developer.apple.com), [Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) 또는 [Visual Studio](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/)에서 개발자 인증서를 만들 수 있습니다.
+    > 이 인증서는 [이전 단계](#creating-a-certificate-for-notification-hubs)에서 만든 푸시 인증서가 아니라 개발 인증서입니다. 인증서는 이 자습서의 [필수 구성 요소](#prerequisites)이므로 인증서가 없으면 만들어야 합니다. [Apple 개발자 포털](https://developer.apple.com), [Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) 또는 [Visual Studio](/xamarin/ios/get-started/installation/device-provisioning/)에서 개발자 인증서를 만들 수 있습니다.
 
 1. **Certificates, Identifiers & Profiles**(인증서, 식별자 및 프로필) 페이지로 돌아가고, 왼쪽 메뉴에서 **Profiles**(프로필)를 선택한 다음, **+** 를 선택하여 새 프로필을 만듭니다. **Register a New Provisioning Profile**(새 프로비저닝 프로필 등록) 화면이 표시됩니다.
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 569b4b1744e1f0ddad18c9553bc7fc3879c39260
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 800e4d45417c7842d12e92c6e18dfdd6a1bc567f
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831289"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586190"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API에서 Spring Boot Starter를 사용하는 방법
 
@@ -59,7 +59,7 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr를 사용하여 간단한 Spring Boot 애플리케이션 만들기
 
-다음 단계를 사용하여 Azure 지원으로 새 Spring Boot 애플리케이션 프로젝트를 만듭니다. 대안으로 [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) 리포지토리에서 [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmosdb) 샘플을 사용할 수 있습니다. 그런 다음, [앱 빌드 및 테스트](#build-and-test-your-app)로 직접 건너뛸 수 있습니다.
+다음 단계를 사용하여 Azure 지원으로 새 Spring Boot 애플리케이션 프로젝트를 만듭니다. 대안으로 [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) 리포지토리에서 [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmos) 샘플을 사용할 수 있습니다. 그런 다음, [앱 빌드 및 테스트](#build-and-test-your-app)로 직접 건너뛸 수 있습니다.
 
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 
@@ -435,7 +435,7 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 [Java 개발자를 위한 Azure]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java
 [Azure Cosmos DB SQL API용 Spring 데이터]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[Azure용 Spring Boot Cosmos DB Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmosdb
+[Azure용 Spring Boot Cosmos DB Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmos
 [체험판 Azure 계정]: https://azure.microsoft.com/pricing/free-trial/
 [Azure DevOps 및 Java 사용하기]: https://azure.microsoft.com/services/devops/java/
 [MSDN 구독자 혜택]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

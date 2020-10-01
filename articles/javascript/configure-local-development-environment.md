@@ -3,13 +3,13 @@ title: Azure 개발을 위한 로컬 JavaScript 환경 구성
 description: 편집기, Azure SDK 라이브러리, 선택적 도구 및 라이브러리 인증에 필요한 자격 증명을 포함하여 Azure를 사용하기 위한 로컬 JavaScript 개발 환경을 설정하는 방법을 설명합니다.
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 93d76b4268d9d9b1533599ce474fe0c554723e28
-ms.sourcegitcommit: 823d5e5b8bbac36fa08a578a0eb2efaa0239bfb7
+ms.custom: devx-track-js
+ms.openlocfilehash: 6d9f86b026a7104e79228d78d5ac27649049a8a4
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128947"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208684"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure를 위한 로컬 JavaScript 개발 환경 구성
 

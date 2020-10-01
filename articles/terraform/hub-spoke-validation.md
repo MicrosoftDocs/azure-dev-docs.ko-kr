@@ -4,12 +4,12 @@ description: 모든 가상 네트워크가 서로 연결된 허브 및 스포크
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ec21091b45dfe11839e4bfe0f4fe2f37261f16cc
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 684bca6b62847718f34ce799d0c1371b25fdd532
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241115"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401503"
 ---
 # <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 및 스포크 네트워크 유효성 검사
 
@@ -23,8 +23,6 @@ ms.locfileid: "88241115"
 > * Terraform 적용을 사용하여 Azure에서 리소스 만들기
 > * 서로 다른 네트워크 간의 연결 유효성 확인
 > * Terraform을 사용하여 모든 리소스 삭제
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -144,6 +142,8 @@ VPN 오류 해결에 대한 자세한 내용은 [하이브리드 VPN 연결 문�
     ```bash
     rm -r hub-spoke
     ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

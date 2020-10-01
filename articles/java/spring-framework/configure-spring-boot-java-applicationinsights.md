@@ -10,12 +10,12 @@ ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 97825b81869ac6d2845576bd77a972d4573a624d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ee48999f7d83857c4992e74ad4dc4b248bfe195b
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831759"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365216"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Application Insights를 사용하도록 Spring Boot Initializer 앱 구성
 
@@ -102,7 +102,7 @@ ms.locfileid: "90831759"
    spring.application.name=[your app name]
    ```
 
-   Application Insights를 세부적으로 조정하는 방법은 [Application Insights Springboot Starter 추가 정보](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md)를 참조하세요.
+   Application Insights를 세부적으로 조정하는 방법은 [Application Insights Springboot Starter 추가 정보](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md)를 참조하세요.
 
    > [!NOTE]
    > 
@@ -282,7 +282,7 @@ Application Insight는 외부 종속성 및 들어오는 요청과의 상관 관
 
 Azure Application Insights 및 모니터링 기능에 대한 자세한 내용은 **[Application Insights]** 홈페이지를 참조하세요.
 
-Application Insights Spring Boot Starter의 추가 구성 정보에 대한 자세한 내용은 이 [링크](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md)를 참조하십시오.
+Application Insights Spring Boot Starter의 추가 구성 정보에 대한 자세한 내용은 이 [링크](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md)를 참조하십시오.
 
 기능 요청 및 잠재적 버그에 대해서는 [GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues) 리포지토리에서 문제를 제기하십시오.
 

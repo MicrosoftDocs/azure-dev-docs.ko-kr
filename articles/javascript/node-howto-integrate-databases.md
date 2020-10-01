@@ -1,15 +1,15 @@
 ---
 title: Node.js 앱을 통한 Azure 데이터베이스 사용
 description: Azure는 웹 및 기타 Node.js 앱과 함께 사용할 수 있는 다양한 데이터베이스를 제공합니다.
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: efee87ce711616de35979a696539e47784c1868c
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: cc104e09cfcdebc221220769d1b1c33fa9ce173e
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772966"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364926"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Node.js 앱에서 Azure 데이터베이스를 통합하는 방법
 

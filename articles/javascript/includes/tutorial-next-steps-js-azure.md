@@ -1,13 +1,13 @@
 ---
 ms.topic: include
 ms.date: 03/31/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: bb0a37128f8f08c33c77b01cb852165f6d30c114
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 9523db3cbce55c73850f768dd70a8367ddbcae3d
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773113"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91209323"
 ---
 ## <a name="javascript-with-azure-services"></a>Azure 서비스를 사용하는 JavaScript
 

@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 28b1db01e2b509198a837f96dcb19f119cf09335
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 7be758e9f1116f933fbb415e6cff7a1c73ffee9f
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401631"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493274"
 ---
 ### <a name="configure-infoplist-and-entitlementsplist"></a>Info.plist 및 Entitlements.plist 구성
 
@@ -96,7 +96,7 @@ ms.locfileid: "87401631"
     ```
 
     > [!NOTE]
-    > 이 클래스는 고유 ID([UIDevice.IdentifierForVendor](https://docs.microsoft.com/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12) 값 사용) 및 알림 허브 등록 페이로드를 제공합니다.
+    > 이 클래스는 고유 ID([UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12) 값 사용) 및 알림 허브 등록 페이로드를 제공합니다.
 
 1. *Extensions*라는 새 폴더를 **PushDemo.iOS** 프로젝트에 추가하고, 다음 구현을 사용하여 *NSDataExtensions.cs*라는 **빈 클래스**를 해당 폴더에 추가합니다.
 

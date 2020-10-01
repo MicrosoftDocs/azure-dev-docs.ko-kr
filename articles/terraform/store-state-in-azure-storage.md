@@ -4,12 +4,12 @@ description: Terraform 상태를 Azure Storage에 저장하는 방법을 알아�
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d2fd110fec8d23bd8382669cbb572ce46b6fd1e6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241185"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401743"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>자습서: Terraform 상태를 Azure Storage에 저장
 
@@ -20,8 +20,6 @@ Terraform 상태는 Terraform 구성을 사용하여 배포된 리소스를 조�
 - 상태를 로컬로 저장하면 실수로 삭제할 가능성이 높아집니다.
 
 Terraform은 원격 스토리지에서 상태의 지속을 지원합니다. 이러한 지원되는 백 엔드 중 하나는 Azure Storage입니다. 이 문서에서는 이 목적을 위해 Azure Storage를 구성하고 사용하는 방법을 보여 줍니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -126,6 +124,8 @@ Azure Portal 또는 기타 Azure 관리 도구를 통해 Blob을 검토할 때�
 Azure Blob에 저장된 데이터는 영구 저장되기 전에 암호화됩니다. 필요한 경우 Terraform은 백 엔드에서 상태를 검색하여 로컬 메모리에 저장합니다. 이 패턴을 사용하면 상태는 로컬 디스크에 기록되지 않습니다.
 
 Azure Storage 암호화에 대한 자세한 내용은 [미사용 데이터에 대한 Azure Storage 서비스 암호화](/azure/storage/common/storage-service-encryption)를 참조하세요.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

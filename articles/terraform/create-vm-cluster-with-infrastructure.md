@@ -5,12 +5,12 @@ keywords: azure devops terraform vm 가상 머신 클러스터
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b0de2ed0c82f26902470835658ba7bb34f1acd7a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1e383cbe7c7cb8a19f59ba1768f9f598f0e6dc94
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241208"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401643"
 ---
 # <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Terraform 및 HCL로 Azure VM 클러스터 만들기
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241208"
 > * Terraform을 초기화합니다.
 > * Terraform 실행 계획을 만듭니다.
 > * Terraform 실행 계획을 적용하여 Azure 리소스를 만듭니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -252,6 +250,8 @@ Terraform은 구성 파일에 지정된 상태를 구현하는 데 필요한 작
   ```
 
 ![Terraform 실행 계획 적용](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

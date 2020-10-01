@@ -5,12 +5,12 @@ keywords: azure devops terraform 애플리케이션 게이트웨이 수신 aks k
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 4d83e6720958ff76126c7e71e8cfbbcfb13c666a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241265"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401663"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
 
@@ -27,8 +27,6 @@ ms.locfileid: "88241265"
 > * Terraform 및 AKS를 사용하여 Kubernetes 클러스터 만들기
 > * kubectl 도구를 사용하여 Kubernetes 클러스터의 가용성 테스트
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
@@ -37,7 +35,7 @@ ms.locfileid: "88241265"
 
 - **Azure 리소스 그룹**: 데모에 사용할 Azure 리소스 그룹이 없는 경우 [Azure 리소스 그룹을 만듭니다](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). 해당 값이 데모에 사용되므로 리소스 그룹 이름과 위치를 기록해 둡니다.
 
-- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) 문서의 **서비스 주체 만들기** 섹션에 나온 지침을 따릅니다. `appId`, `displayName` 및 `password` 값을 적어 둡니다.
+- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli) 문서의 **서비스 주체 만들기** 섹션에 나온 지침을 따릅니다. `appId`, `displayName` 및 `password` 값을 적어 둡니다.
 
 - **서비스 사용자 개체 ID 가져오기**: Cloud Shell에서 다음 명령을 실행합니다. `az ad sp list --display-name <displayName>`
 
@@ -774,6 +772,8 @@ App Gateway, AKS 및 AGIC가 설치되면, [Azure Cloud Shell](https://shell.azu
 ```azurecli
 az group delete -n <resource-group>
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

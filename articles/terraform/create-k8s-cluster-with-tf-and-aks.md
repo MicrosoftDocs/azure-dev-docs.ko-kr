@@ -5,12 +5,12 @@ keywords: azure devops terraform aks kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 726f4544f4c417792d784dfaddf93a3d79eaec9e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ccf5855f414b233f97642f60a4f52c99848b34cd
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241255"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401653"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Terraform을 사용하여 Azure Kubernetes Service로 Kubernetes 클러스터 만들기
 
@@ -23,15 +23,13 @@ ms.locfileid: "88241255"
 > * Terraform 및 AKS를 사용하여 Kubernetes 클러스터 만들기
 > * kubectl 도구를 사용하여 Kubernetes 클러스터의 가용성 테스트
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
 - **Terraform 구성**: [Terraform 및 Azure에 액세스 구성](get-started-cloud-shell.md) 문서의 지침을 따릅니다.
 
-- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) 문서의 **서비스 주체 만들기** 섹션에 있는 지침을 따릅니다. `appId`, `displayName`, `password` 및 `tenant` 값을 적어 둡니다.
+- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli) 문서의 **서비스 주체 만들기** 섹션에 있는 지침을 따릅니다. `appId`, `displayName`, `password` 및 `tenant` 값을 적어 둡니다.
 
 ## <a name="create-the-directory-structure"></a>디렉터리 구조 만들기
 
@@ -401,6 +399,8 @@ Cloud Shell 세션의 시간이 초과되면 다음 단계를 수행하여 복�
 ## <a name="monitor-health-and-logs"></a>상태 및 로그 모니터링
 
 AKS 클러스터가 생성될 때 클러스터 노드와 Pod의 상태 메트릭을 캡처하기 위해 모니터링이 설정되었습니다. 이 상태 메트릭은 Azure Portal에서 사용할 수 있습니다. 컨테이너 상태 모니터링에 대한 자세한 내용은 [Azure Kubernetes Service 상태 모니터링](/azure/azure-monitor/insights/container-insights-overview)을 참조하세요.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

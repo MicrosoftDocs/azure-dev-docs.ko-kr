@@ -4,12 +4,12 @@ description: 통합 테스트 및 Azure DevOps를 사용하여 Terraform 프로�
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 73f7c279948101af509ba5e3120b1af650f38ca1
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831999"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401733"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>자습서: Azure에서 Terraform 프로젝트에 대한 통합 테스트 구성
 
@@ -25,14 +25,12 @@ ms.locfileid: "90831999"
 > * `terraform plan`을 실행하여 원격 서비스 관점에서 Terraform 구성 파일의 유효성을 검사합니다.
 > * Azure Pipeline을 사용하여 연속 통합을 자동화합니다.
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>필수 조건
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 조직 및 프로젝트**: 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops).
+- **Azure DevOps 조직 및 프로젝트**: 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](/azure/devops/organizations/projects/create-project).
 - **Terraform Build & Release Tasks 확장**: [Terraform Build & Release Tasks 확장](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)을 Azure DevOps 조직에 설치합니다.
-- **Azure DevOps 액세스 권한을 Azure 구독에 부여**: Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)을 만듭니다.
+- **Azure DevOps 액세스 권한을 Azure 구독에 부여**: Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](/azure/devops/pipelines/library/connect-to-azure)을 만듭니다.
 - **Terraform 설치**: 사용자 환경에 따라 [Terraform을 다운로드하여 설치](https://www.terraform.io/downloads.html)합니다.
 - **테스트 샘플 포크**: [GitHub에서 Terraform 샘플 프로젝트](https://github.com/Azure/terraform)를 포크하고 개발/테스트 컴퓨터에 복제합니다.
 
@@ -195,7 +193,7 @@ Terraform 파일에 대한 정적 분석을 제공하는 도구는 다음과 같
 
     ![코드는 어디에 있나요?](media/best-practices-integration-testing/new-pipeline-where-github-yaml.png)
 
-1. 이 시점에서 조직에 대한 액세스 권한을 Azure DevOps에 부여해야 할 수 있습니다. 이 항목에 대한 자세한 내용은 [GitHub 리포지토리 빌드](/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml) 문서를 참조하세요.
+1. 이 시점에서 조직에 대한 액세스 권한을 Azure DevOps에 부여해야 할 수 있습니다. 이 항목에 대한 자세한 내용은 [GitHub 리포지토리 빌드](/azure/devops/pipelines/repos/github) 문서를 참조하세요.
 
 1. 리포지토리 목록에서 GitHub 조직에서 만든 리포지토리의 포크를 선택합니다.
 
@@ -222,6 +220,8 @@ Azure DevOps UI에서 파이프라인을 수동으로 실행할 수 있습니다
 이 단계가 완료되었으면 Azure DevOps의 세부 정보에 액세스하여 모든 항목이 올바르게 실행되었는지 확인합니다.
 
 ![Azure DevOps 파이프라인(녹색)](media/best-practices-integration-testing/azure-devops-green-pipeline.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

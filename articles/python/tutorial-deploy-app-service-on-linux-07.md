@@ -4,12 +4,12 @@ description: 자습서 7 단계, Azure 리소스 정리
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cc1acdd316406d9269c97a4f5b25f465d0303509
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 523a1bb305fbaf566181f87c4affa0dd251e93a5
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831479"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91209376"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7: Visual Studio Code에서 Linux의 Azure App Service에 배포 후 리소스 정리
 
@@ -29,7 +29,7 @@ AI 및 Machine Learning Service와 함께 데이터 스토리지를 포함하여
 
 도움이 될 수 있는 VS Code에 대한 다른 Azure 확장도 있습니다. 확장 탐색기에서 "Azure"를 검색하기만 하면 됩니다.
 
-![Visual Studio Code용 Azure 확장](media/deploy-containers/azure-extensions-for-visual-studio-code.png)
+![Visual Studio Code용 Azure 확장](media/deploy-azure/azure-extensions-for-visual-studio-code.png)
 
 몇 가지 인기 있는 확장은 다음과 같습니다.
 

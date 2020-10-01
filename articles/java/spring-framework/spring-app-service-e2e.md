@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 22455b8f8215e0c3bfb9d4e9d8f75788cb56d844
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 10d08226e0d97622c492f0e87a1fd0b175c76c4a
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405634"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409965"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL을 사용하여 App Service에 Spring 앱 배포
 
@@ -182,13 +182,13 @@ set REGION=<region>
 
 Maven은 이러한 값을 사용하여 사용자가 제공하는 이름으로 Azure 리소스를 만듭니다. 환경 변수를 사용하여 프로젝트 파일에서 계정 비밀을 안전하게 유지할 수 있습니다.
 
-그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.9.1`을 [Azure App Service용 Maven 플러그 인](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)의 최신 버전으로 변경합니다.
+그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.11.0`을 [Azure App Service용 Maven 플러그 인](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)의 최신 버전으로 변경합니다.
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -197,7 +197,7 @@ Maven은 이러한 값을 사용하여 사용자가 제공하는 이름으로 Az
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <deployment>
@@ -390,13 +390,13 @@ show databases;
 </profile>
 ```
 
-그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포 및 MySQL용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.9.1`을 [Azure App Service용 Maven 플러그 인](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)의 최신 버전으로 변경합니다.
+그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포 및 MySQL용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.11.0`을 [Azure App Service용 Maven 플러그 인](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)의 최신 버전으로 변경합니다.
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -405,7 +405,7 @@ show databases;
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <appSettings>

@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 29d6f40a54cf503d12b8b7b87b908e7d05a8857d
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f3245aa3d75510352d89d26c1c61825dbac1e2c8
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982565"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493092"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions를 사용하여 Azure에 배포
 
@@ -75,7 +75,7 @@ Azure Web App 및 Azure Web App for Containers에 배포:
 - [Azure/webapps-deploy action](https://github.com/Azure/webapps-deploy)
 
 정적 웹앱 배포:
-- [Azure/static-web-apps-deploy](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=angular)
+- [Azure/static-web-apps-deploy](/azure/static-web-apps/getting-started?tabs=angular)
 
 
 다음 작업을 사용하여 앱 설정 및 연결 문자열을 구성합니다.

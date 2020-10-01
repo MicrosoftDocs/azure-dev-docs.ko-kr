@@ -1,11 +1,11 @@
 ---
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d79cef2110d7f9244f3d9a35036a5c73378345d4
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: c8380ffd5513425b10feae911901b4df55b8d296
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218864"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208513"
 ---
 > [!NOTE] 
 > Google Chrome에서 쿠키가 처리되는 방식의 예정된 변경에 따라 웹 사이트가 예상대로 작동하는지 확인해야 합니다. 이러한 변경은 CSRF(교차 사이트 요청 위조) 공격을 방지하는 데 도움이 되지만 적절한 해결 방법을 사용하지 않으면 Microsoft 클라우드 서비스 또는 자체 서비스를 포함하여 오늘날의 쿠키 처리 기본값을 사용하는 많은 애플리케이션 및 서비스가 크게 영향을 받습니다. 이 변경은 2020년 2월 4일에 예정된 릴리스 80의 기본 Chrome 동작으로 배포될 것으로 예상됩니다. 앱을 테스트하는 방법에 대한 자세한 내용 및 세부 정보는 [Chrome 버전 79 이상에서 고객 웹 사이트와 Microsoft 제품 및 서비스 중단 가능성](https://support.microsoft.com/help/4522904/potential-disruption-to-customer-websites-in-latest-chrome)을 참조하세요.

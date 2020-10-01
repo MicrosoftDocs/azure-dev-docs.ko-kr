@@ -4,12 +4,12 @@ description: Terraform 프로젝트에서 Terratest를 사용한 엔드투엔드
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 182d403ed227eca50961e9db2df0d6766c4b9f54
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b760908bf1950751b93ba1787f444ca37ee8bf83
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241295"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401713"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>자습서: Terraform 프로젝트에서 엔드투엔드 Terratest 테스트 설정
 
@@ -21,8 +21,6 @@ ms.locfileid: "88241295"
 > * [Terratest](https://github.com/gruntwork-io/terratest)를 사용한 엔드투엔드 테스트의 기본 사항 이해
 > * Golang을 사용하여 엔드투엔드 테스트를 작성하는 방법 알아보기
 > * 코드가 리포지토리에 커밋될 때 Azure DevOps를 사용하여 엔드투엔드 테스트를 자동으로 트리거하는 방법 알아보기
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -155,6 +153,8 @@ go test -v ./ -timeout 10m
 PASS
 ok      test    391.052s
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

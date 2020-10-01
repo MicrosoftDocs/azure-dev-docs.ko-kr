@@ -3,13 +3,13 @@ title: Azure 및 JavaScript를 사용하여 개발하는 방법 알아보기
 description: Microsoft Learn 플랫폼을 사용하여 Azure와 JavaScript에 대한 이해의 폭 확대
 ms.topic: reference
 ms.date: 08/07/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 503348c6c31c0a89461a049ce5f1cdc5bbb81c94
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: ceb0f9dfc2cdbf7180a07275834cf0cb68c80939
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772976"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91209239"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Azure 및 JavaScript를 사용하여 개발하는 방법 알아보기 
 

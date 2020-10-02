@@ -13,13 +13,13 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
-  ms.custom: 2020Aug21Redesign
-  ms.openlocfilehash: a3c909c3cd4202f2a32caa8e0a6044b27dca5d0f
-  ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+  ms.custom: 2020Aug21Redesign, devx-track-js
+  ms.openlocfilehash: 7b97323d2fd2e37f215f9c122f6c01ce290208a0
+  ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/25/2020
-  ms.locfileid: "91364996"
+  ms.lasthandoff: 10/01/2020
+  ms.locfileid: "91621649"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:

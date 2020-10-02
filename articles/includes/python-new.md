@@ -1,18 +1,21 @@
 ---
-ms.openlocfilehash: 851303b93746eb02098bc4a9053c5952d83b8118
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cbe9a3d4db88ac1c12f13a72e8a00ae7a1e4fcf3
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90846404"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91605804"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
 | 앱 구성 | pypi [1.1.0](https://pypi.org/project/azure-appconfiguration/1.1.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/appconfiguration-readme/) | GitHub [1.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-appconfiguration_1.1.0/sdk/appconfiguration/azure-appconfiguration/) |
 | Cognitive Search | pypi [11.0.0](https://pypi.org/project/azure-search-documents/11.0.0)<br>pypi [11.1.0b2](https://pypi.org/project/azure-search-documents/11.1.0b2) | [docs](https://docs.microsoft.com/python/api/overview/azure/search-documents-readme-pre/) | GitHub [11.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-search-documents_11.0.0/sdk/search/azure-search-documents/)<br>GitHub [11.1.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-search-documents_11.1.0b2/sdk/search/azure-search-documents/) |
+| 통신 관리 | pypi [1.0.0b1](https://pypi.org/project/azure-communication-administration/1.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/communication-administration-readme-pre/) | GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-administration_1.0.0b1/sdk/communication/azure-communication-administration/) |
+| 통신 채팅 | pypi [1.0.0b1](https://pypi.org/project/azure-communication-chat/1.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/communication-chat-readme-pre/) | GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-chat_1.0.0b1/sdk/communication/azure-communication-chat/) |
+| 통신 Sms | pypi [1.0.0b1](https://pypi.org/project/azure-communication-sms/1.0.0b1) | [docs](https://docs.microsoft.com/python/api/overview/azure/communication-sms-readme-pre/) | GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-sms_1.0.0b1/sdk/communication/azure-communication-sms/) |
 | 핵심 | pypi [1.8.1](https://pypi.org/project/azure-core/1.8.1) | [docs](https://docs.microsoft.com/python/api/overview/azure/core-readme/) | GitHub [1.8.1](https://github.com/Azure/azure-sdk-for-python/tree/azure-core_1.8.1/sdk/core/azure-core/) |
 | Cosmos | pypi [4.1.0](https://pypi.org/project/azure-cosmos/4.1.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/cosmos-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-cosmos_4.1.0/sdk/cosmos/azure-cosmos/) |
-| Event Grid | pypi [1.3.0](https://pypi.org/project/azure-eventgrid/1.3.0)<br>pypi [2.0.0b1](https://pypi.org/project/azure-eventgrid/2.0.0b1) |  | GitHub [1.3.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventgrid_1.3.0/sdk/eventgrid/azure-eventgrid/)<br>GitHub [2.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventgrid_2.0.0b1/sdk/eventgrid/azure-eventgrid/) |
+| Event Grid | pypi [1.3.0](https://pypi.org/project/azure-eventgrid/1.3.0)<br>pypi [2.0.0b2](https://pypi.org/project/azure-eventgrid/2.0.0b2) |  | GitHub [1.3.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventgrid_1.3.0/sdk/eventgrid/azure-eventgrid/)<br>GitHub [2.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventgrid_2.0.0b2/sdk/eventgrid/azure-eventgrid/) |
 | Event Hubs | pypi [5.2.0](https://pypi.org/project/azure-eventhub/5.2.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-readme/) | GitHub [5.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub_5.2.0/sdk/eventhub/azure-eventhub/) |
 | Event Hubs - Azure Blob Storage 검사점 저장소 | pypi [1.1.1](https://pypi.org/project/azure-eventhub-checkpointstoreblob/1.1.1) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-checkpointstoreblob-readme/) | GitHub [1.1.1](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub-checkpointstoreblob_1.1.1/sdk/eventhub/azure-eventhub-checkpointstoreblob/) |
 | Event Hubs - Azure Blob Storage 검사점 저장소 AIO | pypi [1.1.1](https://pypi.org/project/azure-eventhub-checkpointstoreblob-aio/1.1.1) | [docs](https://docs.microsoft.com/python/api/overview/azure/eventhub-checkpointstoreblob-aio-readme/) | GitHub [1.1.1](https://github.com/Azure/azure-sdk-for-python/tree/azure-eventhub-checkpointstoreblob-aio_1.1.1/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/) |
@@ -34,7 +37,7 @@ ms.locfileid: "90846404"
 | 리소스 관리 - 앱 구성 | pypi [1.0.1](https://pypi.org/project/azure-mgmt-appconfiguration/1.0.1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-appconfiguration-readme/) | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-appconfiguration_1.0.1/sdk/appconfiguration/azure-mgmt-appconfiguration/) |
 | 리소스 관리 - 컴퓨팅 | pypi [17.0.0](https://pypi.org/project/azure-mgmt-compute/17.0.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-compute-readme/) | GitHub [17.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-compute_17.0.0/sdk/compute/azure-mgmt-compute/) |
 | 리소스 관리 - EventHub | pypi [8.0.0](https://pypi.org/project/azure-mgmt-eventhub/8.0.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-eventhub-readme/) | GitHub [8.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-eventhub_8.0.0/sdk/eventhub/azure-mgmt-eventhub/) |
-| 리소스 관리 - KeyVault | pypi [7.0.0](https://pypi.org/project/azure-mgmt-keyvault/7.0.0) |  | GitHub [7.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-keyvault_7.0.0/sdk/keyvault/azure-mgmt-keyvault/) |
+| 리소스 관리 - KeyVault | pypi [7.0.0](https://pypi.org/project/azure-mgmt-keyvault/7.0.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-keyvault-readme/) | GitHub [7.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-keyvault_7.0.0/sdk/keyvault/azure-mgmt-keyvault/) |
 | 리소스 관리 - 모니터 | pypi [1.0.1](https://pypi.org/project/azure-mgmt-monitor/1.0.1) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-monitor-readme/) | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-monitor_1.0.1/sdk/monitor/azure-mgmt-monitor/) |
 | 리소스 관리 - 네트워크 | pypi [16.0.0](https://pypi.org/project/azure-mgmt-network/16.0.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-network-readme/) | GitHub [16.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-network_16.0.0/sdk/network/azure-mgmt-network/) |
 | 관리 리소스 - 리소스 | pypi [15.0.0](https://pypi.org/project/azure-mgmt-resource/15.0.0) | [docs](https://docs.microsoft.com/python/api/overview/azure/mgmt-resource-readme/) | GitHub [15.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-resource_15.0.0/sdk/resources/azure-mgmt-resource/) |

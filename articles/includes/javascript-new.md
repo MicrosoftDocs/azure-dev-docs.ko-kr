@@ -1,22 +1,22 @@
 ---
-ms.openlocfilehash: 732f481e509d8d977f97187225e1fb215aba3bec
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 97ebf0d79650c68c551bfe406044efe5e716576b
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91545570"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91605896"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
 | 앱 구성 | npm [1.1.0](https://www.npmjs.com/package/@azure/app-configuration/v/1.1.0) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/app-configuration-readme/) | GitHub [1.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/app-configuration_1.1.0/sdk/appconfiguration/app-configuration/) |
 | Cognitive Search | npm [11.0.3](https://www.npmjs.com/package/@azure/search-documents/v/11.0.3) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme/) | GitHub [11.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.0.3/sdk/search/search-documents/) |
-| 통신 관리 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-administration/v/1.0.0-beta.1) |  | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-administration_1.0.0-beta.1/sdk/communication/communication-administration/) |
-| 통신 채팅 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-chat/v/1.0.0-beta.1) |  | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-chat_1.0.0-beta.1/sdk/communication/communication-chat/) |
-| 통신 공통 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0-beta.1) |  | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0-beta.1/sdk/communication/communication-common/) |
-| 통신 Sms | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-sms/v/1.0.0-beta.1) |  | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-sms_1.0.0-beta.1/sdk/communication/communication-sms/) |
+| 통신 관리 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-administration/v/1.0.0-beta.1) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/communication-administration-readme-pre/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-administration_1.0.0-beta.1/sdk/communication/communication-administration/) |
+| 통신 채팅 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-chat/v/1.0.0-beta.1) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/communication-chat-readme-pre/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-chat_1.0.0-beta.1/sdk/communication/communication-chat/) |
+| 통신 공통 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0-beta.1) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/communication-common-readme-pre/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0-beta.1/sdk/communication/communication-common/) |
+| 통신 Sms | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-sms/v/1.0.0-beta.1) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/communication-sms-readme-pre/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-sms_1.0.0-beta.1/sdk/communication/communication-sms/) |
 | 핵심 | npm [1.1.8](https://www.npmjs.com/package/@azure/core-http/v/1.1.8) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/core-http-readme/) | GitHub [1.1.8](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-http_1.1.8/sdk/core/core-http/) |
 | Cosmos | npm [3.9.2](https://www.npmjs.com/package/@azure/cosmos/v/3.9.2) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.9.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.9.2/sdk/cosmosdb/cosmos/) |
-| Event Grid | npm [2.0.0](https://www.npmjs.com/package/@azure/eventgrid/v/2.0.0)<br>npm [3.0.0-beta.1](https://www.npmjs.com/package/@azure/eventgrid/v/3.0.0-beta.1) |  | GitHub [](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/eventgrid) |
+| Event Grid | npm [2.0.0](https://www.npmjs.com/package/@azure/eventgrid/v/2.0.0)<br>npm [3.0.0-beta.1](https://www.npmjs.com/package/@azure/eventgrid/v/3.0.0-beta.1) |  | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/eventgrid) |
 | Event Hubs | npm [5.3.0](https://www.npmjs.com/package/@azure/event-hubs/v/5.3.0) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/event-hubs-readme/) | GitHub [5.3.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/event-hubs_5.3.0/sdk/eventhub/event-hubs/) |
 | Event Hubs - Azure Blob Storage 검사점 저장소 | npm [1.0.1](https://www.npmjs.com/package/@azure/eventhubs-checkpointstore-blob/v/1.0.1) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/eventhubs-checkpointstore-blob-readme/) | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/eventhubs-checkpointstore-blob_1.0.1/sdk/eventhub/eventhubs-checkpointstore-blob/) |
 | Form Recognizer | npm [3.0.0](https://www.npmjs.com/package/@azure/ai-form-recognizer/v/3.0.0) | [docs](https://docs.microsoft.com/javascript/api/overview/azure/ai-form-recognizer-readme/) | GitHub [3.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-form-recognizer_3.0.0/sdk/formrecognizer/ai-form-recognizer/) |

@@ -1,15 +1,15 @@
 ---
 title: JavaScript용 Azure SDK 라이브러리
 description: JavaScript용 Azure SDK의 모든 라이브러리에 대한 패키지 이름, NPM 링크, docs 링크 및 소스 코드 링크를 나열합니다.
-ms.date: 09/16/2020
+ms.date: 09/30/2020
 ms.topic: reference
 ms.custom: devx-track-js
-ms.openlocfilehash: 24e73206552161f5a020b53f8df64d975a955814
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.openlocfilehash: a4ca35dbc4a89855e3fd4da100fe1d7b685d2f01
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208744"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621687"
 ---
 # <a name="azure-libraries-packages-for-javascript"></a>JavaScript용 Azure 라이브러리 패키지
 
@@ -17,9 +17,10 @@ JavaScript용 Azure 라이브러리는 다음에서 설치할 수 있습니다.
 * [NPM](https://www.npmjs.com/)
 * [Yarn](https://yarnpkg.com/)
 
-`@azure`와 같은 범위를 사용하는 패키지는 최신 라이브러리입니다.
 
-## <a name="libraries-using-azurecore"></a>azure.core를 사용하는 라이브러리
+[!INCLUDE [Types of SDK client libraries](includes/azure-sdk-types.md)]
+
+## <a name="modern-javascripttypescript-libraries"></a>최신 JavaScript/Typescript 라이브러리
 
 [!INCLUDE [javascript-new-releases](../includes/javascript-new.md)]
 

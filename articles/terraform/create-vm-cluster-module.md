@@ -1,111 +1,72 @@
 ---
-title: 모듈 레지스트리를 사용하여 Terraform으로 Azure VM 클러스터 만들기
+title: Terraform을 사용하여 Azure VM 클러스터 구성
 description: Terraform 모듈을 사용하여 Azure에서 Windows 가상 머신 클러스터를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform vm 가상 머신 클러스터 모듈 레지스트리
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 794551aea159318b37426bb5d5dd7e1a13cca3d1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 73f375090a2178b38b0fc7e0afd4eb8c6b514672
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241235"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401590"
 ---
-# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>모듈 레지스트리를 사용하여 Terraform으로 Azure VM 클러스터 만들기
+# <a name="configure-an-azure-vm-cluster-using-terraform"></a>Terraform을 사용하여 Azure VM 클러스터 구성
 
-이 문서에서는 Terraform [Azure 컴퓨팅 모듈](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)로 소형 VM 클러스터를 만드는 과정을 안내합니다. 이 문서에서는 다음 방법을 알아봅니다.
+이 문서에서는 Azure에서 VM 클러스터를 만들기 위한 Terraform 코드 예제를 보여 줍니다.
 
-> [!div class="checklist"]
-> * Azure로 인증 설정
-> * Terraform 템플릿 만들기
-> * plan으로 변경 내용 시각화
-> * 구성을 적용하여 VM 클러스터 만들기
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-## <a name="set-up-authentication-with-azure"></a>Azure로 인증 설정
+[!INCLUDE [terraform-configure-environment.md](includes/terraform-configure-environment.md)]
 
-> [!TIP]
-> [Terraform 환경 변수를 사용](get-started-cloud-shell.md)하거나 [Azure Cloud Shell](/azure/cloud-shell/overview)에서 다음 예제를 실행하는 경우 이 단계를 건너뜁니다.
-
- Azure 서비스 주체를 만들려면 [Terraform을 설치하고 Azure에 대한 액세스 구성](get-started-cloud-shell.md)을 검토하세요. 이 서비스 주체를 사용하여 빈 디렉터리에 있는 새 파일 `azureProviderAndCreds.tf`를 다음 코드로 채웁니다.
+## <a name="configure-an-azure-vm-cluster"></a>Azure VM 클러스터 구성
 
 ```hcl
-variable subscription_id {}
-variable tenant_id {}
-variable client_id {}
-variable client_secret {}
-
-provider "azurerm" {
-    version = "~>1.40"
-
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-}
-```
-
-## <a name="create-the-template"></a>템플릿 만들기
-
-다음 코드로 `main.tf`라는 새 Terraform 템플릿을 만듭니다.
-
-```hcl
-module mycompute {
-    source = "Azure/compute/azurerm"
-    resource_group_name = "myResourceGroup"
-    location = "East US 2"
-    admin_password = "ComplxP@assw0rd!"
-    vm_os_simple = "WindowsServer"
-    is_windows_image = "true"
-    remote_port = "3389"
-    nb_instances = 2
-    public_ip_dns = ["unique_dns_name"]
-    vnet_subnet_id = module.network.vnet_subnets[0]
+module "windowsservers" {
+  source              = "Azure/compute/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  is_windows_image    = true
+  vm_hostname         = "mywinvm"                         // Line can be removed if only one VM module per resource group
+  admin_password      = "ComplxP@ssw0rd!"                 // See note following code about storing passwords in config files
+  vm_os_simple        = "WindowsServer"
+  public_ip_dns       = ["winsimplevmips"]                // Change to a unique name per data center region
+  vnet_subnet_id      = module.network.vnet_subnets[0]
+    
+  depends_on = [azurerm_resource_group.rg]
 }
 
 module "network" {
-    source = "Azure/network/azurerm"
-    location = "East US 2"
-    resource_group_name = "myResourceGroup"
+  source              = "Azure/network/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  subnet_prefixes     = ["10.0.1.0/24"]
+  subnet_names        = ["subnet1"]
+
+  depends_on = [azurerm_resource_group.rg]
 }
 
-output "vm_public_name" {
-    value = module.mycompute.public_ip_dns_name
+output "windows_vm_public_name" {
+  value = module.windowsservers.public_ip_dns_name
 }
 
 output "vm_public_ip" {
-    value = module.mycompute.public_ip_address
+  value = module.windowsservers.public_ip_address
 }
 
 output "vm_private_ips" {
-    value = module.mycompute.network_interface_private_ip
+  value = module.windowsservers.network_interface_private_ip
 }
 ```
 
-구성 디렉터리에서 `terraform init`을 실행합니다. 0\.10.6이상의 Terraform 버전을 사용하면 다음과 같은 출력이 표시됩니다.
+**참고**:
 
-![Terraform Init](media/create-vm-cluster-module/terraform-init-with-modules.png)
+- 위의 코드 예제에서는 간단한 설명을 위해 `admin_password` 변수에 리터럴 값이 할당됩니다. 암호와 같은 중요한 데이터를 저장하는 방법은 여러 가지가 있습니다. 데이터를 보호하는 방법은 특정 환경과 관련된 개별 선택과 적절한 데이터 노출 수준에 따라 결정됩니다. 예를 들어 소스 제어에 이와 같은 파일을 저장하면 다른 사용자가 암호를 볼 수 있다는 위험이 있습니다. 이 주제에 대한 자세한 내용은 [입력 변수를 선언](https://www.terraform.io/docs/configuration/variables.html)하는 다양한 방법 및 [중요한 데이터(예: 암호)를 관리](https://www.terraform.io/docs/state/sensitive-data.html)하는 기법에 대해 설명하는 HashiCorp의 문서를 참조하세요.
 
-## <a name="visualize-the-changes-with-plan"></a>plan으로 변경 내용 시각화
-
-`terraform plan`을 실행하여 템플릿으로 만든 가상 머신 인프라를 미리 봅니다.
-
-![Terraform Plan](media/create-vm-cluster-with-infrastructure/terraform-plan.png)
-
-
-## <a name="create-the-virtual-machines-with-apply"></a>apply로 가상 머신 만들기
-
-`terraform apply`를 실행하여 Azure에서 VM을 프로비전합니다.
-
-![Terraform Apply](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"] 
-> [Azure Terraform 모듈 목록 찾아보기](https://registry.terraform.io/modules/Azure)
+> [Azure에서 Terraform을 사용하는 방법에 대해 자세히 알아보기](/azure/terraform)

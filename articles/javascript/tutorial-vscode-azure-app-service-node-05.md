@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Azure App Service에 배포 후 리소스 정리
-description: 자습서 5부, 리소스 정리
-ms.topic: conceptual
+description: 'Node.js 자습서 5부: 리소스 정리'
+ms.topic: tutorial
 ms.date: 03/04/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: fc420d98121816157e75017ee453aa42929f68e6
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: d8e3653d7f08ea1352d7ca8fad9d5a7f73e31860
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772896"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365226"
 ---
 # <a name="part-5-clean-up-resources"></a>5부: 리소스 정리
 

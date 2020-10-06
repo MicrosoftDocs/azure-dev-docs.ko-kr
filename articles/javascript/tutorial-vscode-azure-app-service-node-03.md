@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Azure App Service에 앱 배포
-description: '자습서 3부: 웹 사이트 배포'
-ms.topic: conceptual
+description: 'Node.js 자습서 3부: 웹 사이트 배포'
+ms.topic: tutorial
 ms.date: 03/04/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 5d812f9aa6efb308cafcb5d3e3ccb1ce852e93f1
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.custom: devx-track-js
+ms.openlocfilehash: 4907a8466828ccaaef0891394ac4f33694264ccf
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501508"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365256"
 ---
 # <a name="deploy-the-app-to-azure"></a>Azure에 앱 배포
 

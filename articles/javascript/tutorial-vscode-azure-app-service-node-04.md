@@ -1,15 +1,15 @@
 ---
 title: Azure App Service에서 Visual Studio Code로 로그 스트리밍
-description: 자습서 4부, 로그 보기 또는 추적
-ms.topic: conceptual
+description: 'Node.js 자습서 4부: 로그 보기 또는 추적'
+ms.topic: tutorial
 ms.date: 03/04/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6bc01b7691bf4881d610453707dd3c97654554be
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: eed2663f32571dc40fb402553424c1303d43f7b9
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218331"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365236"
 ---
 # <a name="stream-logs-from-azure-app-service"></a>Azure App Service에서 로그 스트리밍
 

@@ -1,15 +1,15 @@
 ---
 title: Azure App Service에서 로그 스트리밍
-description: 자습서 5부, 로그 보기
-ms.topic: conceptual
+description: '자습서 5부: Azure CLI - 로그 보기'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7a962f7e6dc7cdb572f78e40b25e1ff98f102ea3
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 0cb28cc7bafd7d0d713fc980c72a7a41474d5060
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217897"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365146"
 ---
 # <a name="stream-logs-from-app-service"></a>App Service에서 로그 스트리밍
 

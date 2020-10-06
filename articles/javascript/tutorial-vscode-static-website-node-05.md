@@ -1,16 +1,16 @@
 ---
 title: Visual Studio Code에서 정적 Node.js 웹 사이트에 변경 내용 배포
-description: 자습서 5부, 변경 및 재배포
-ms.topic: conceptual
+description: '정적 웹앱 자습서 5부: 변경 및 재배포'
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 5d7a2af9dca7a775ee812b457012fa432c461d9a
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218326"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365286"
 ---
 # <a name="part-5-make-changes-and-redeploy"></a>5부: 변경 및 재배포
 
@@ -32,7 +32,7 @@ ms.locfileid: "88218326"
 
 1. 배포가 완료되면 브라우저에서 사이트를 새로 고치고 변경 내용을 관찰합니다.
 
-    ![재배포 후 앱의 변경 내용](media/static-website/updated-azure-app-angular.png)
+    ![Angular - 배포가 완료되면 브라우저에서 사이트를 새로 고치고 변경 내용 관찰](media/static-website/updated-azure-app-angular.png)
 
 # <a name="react"></a>[React](#tab/react)
 
@@ -48,7 +48,7 @@ ms.locfileid: "88218326"
 
 1. 배포가 완료되면 브라우저에서 사이트를 새로 고치고 변경 내용을 관찰합니다.
 
-    ![재배포 후 앱의 변경 내용](media/static-website/updated-azure-app-react.png)
+    ![React - 재배포 후 앱의 변경 내용](media/static-website/updated-azure-app-react.png)
 
 # <a name="vue"></a>[Vue](#tab/vue)
 
@@ -64,7 +64,7 @@ ms.locfileid: "88218326"
 
 1. 배포가 완료되면 브라우저에서 사이트를 새로 고치고 변경 내용을 관찰합니다.
 
-    ![재배포 후 앱의 변경 내용](media/static-website/updated-azure-app-vue.png)
+    ![Vue - 재배포 후 앱의 변경 내용](media/static-website/updated-azure-app-vue.png)
 
 # <a name="svelte"></a>[Svelte](#tab/svelte)
 
@@ -95,7 +95,7 @@ ms.locfileid: "88218326"
 
 1. 배포가 완료되면 브라우저에서 사이트를 새로 고치고 변경 내용을 관찰합니다.
 
-    ![재배포 후 앱의 변경 내용](media/static-website/updated-azure-app-svelte.png)
+    ![Svelte - 재배포 후 앱의 변경 내용](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

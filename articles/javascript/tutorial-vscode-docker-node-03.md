@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 JavaScript 앱용 컨테이너 이미지 만들기
-description: 자습서 3부, 로컬 Node.js 앱 만들기 및 실행
-ms.topic: conceptual
+description: 'Docker 자습서 3부: 로컬 Node.js 앱 만들기 및 실행'
+ms.topic: tutorial
 ms.date: 03/22/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 77f6c96c7bd817815177c2684f994cb75986d1eb
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 8d3062ae9d82b7b162a5fd760b1b168b8e8ad7fb
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218410"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364713"
 ---
 # <a name="create-and-run-a-local-nodejs-app-from-visual-studio-code"></a>Visual Studio Code에서 로컬 Node.js 앱 만들기 및 실행
 

@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Node.js 앱의 컨테이너 이미지 만들기
-description: 자습서 4부, Node.js 애플리케이션 이미지 만들기
-ms.topic: conceptual
+description: 'Docker 자습서 4부: Node.js 애플리케이션 이미지 만들기'
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 023f5fcba7231a6f767e3e61f6f212ddc2c385c0
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 1ca5386803a5392c3132665f48b9a965b5abfd65
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218434"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365126"
 ---
 # <a name="create-your-nodejs-application-image"></a>Node.js 애플리케이션 이미지 만들기
 

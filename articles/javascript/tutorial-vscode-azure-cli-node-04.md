@@ -1,15 +1,15 @@
 ---
 title: Azure CLI를 사용하여 Azure App Service에 앱 코드 배포
-description: '자습서 4부: 웹 사이트 배포'
-ms.topic: conceptual
+description: '자습서 4부: Azure CLI - 웹 사이트 배포'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e794388280c537261e428195ac3943379f04866b
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 8e6075b8a1e526f916ab43c9a1f52ef1b66e8614
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217942"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364786"
 ---
 # <a name="deploy-the-app-to-app-service"></a>App Service에 앱 배포
 

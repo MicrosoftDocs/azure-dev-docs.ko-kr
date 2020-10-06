@@ -4,12 +4,12 @@ description: Visual Studio Code에서 Azure Terraform 확장을 설치하고 사
 ms.topic: how-to
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: dbb76f2bcdce12ebb55d9ae6002747701858751e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ac8c5c765237a065fbb2531f71de7f39644b70dc
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241325"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401763"
 ---
 # <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>Azure Terraform Visual Studio Code 확장 구성
 
@@ -20,8 +20,6 @@ Azure Terraform Visual Studio Code 확장을 사용하면 편집기에서 Terraf
 > * Terraform을 사용하여 Azure 서비스 프로비저닝 자동화
 > * Azure 서비스용 Terraform Visual Studio Code 확장을 설치하고 사용합니다.
 > * Visual Studio Code를 사용하여 Terraform 계획을 작성, 계획 및 실행합니다.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -137,8 +135,6 @@ Azure Terraform 확장이 설치된 확장 목록에 표시됩니다.
 1. 메뉴 모음에서 **보기 > 명령 팔레트... > Azure Terraform: Init**를 선택합니다.
 
 1. 확인이 표시되면 **확인**을 선택합니다.
-
-    ![Cloud Shell 열기에 대한 확인 대화 상자](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
 
 1. 새 폴더에서 Cloud Shell을 처음 시작하면 웹 애플리케이션을 만들라는 메시지가 표시됩니다. **열기**를 선택합니다.
 
@@ -270,11 +266,9 @@ Visual Studio Code 내에서 Terraform 명령을 사용하려면 먼저 두 Azur
 
 1. 테스트 형식 옵션 목록에서 **lint**를 선택합니다.
 
-    ![테스트 유형 선택](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
+    ![테스트 유형에 "lint" 선택](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
 
 1. 확인이 표시되면 **확인**을 선택하고, 화면 지침을 따릅니다.
-
-    ![Cloud Shell 열기에 대한 확인 대화 상자](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >**lint** 또는 **end to end** 테스트를 실행할 경우 Azure는 컨테이너 서비스를 사용하여 실제 테스트를 수행하기 위해 테스트 컴퓨터를 프로비전합니다. 따라서 일반적으로 테스트 결과가 반환되는 데 몇 분 정도 걸릴 수 있습니다.
@@ -289,11 +283,9 @@ Visual Studio Code 내에서 Terraform 명령을 사용하려면 먼저 두 Azur
 
 1. 테스트 형식 옵션 목록에서 **end to end**를 선택합니다.
 
-    ![테스트 유형 선택](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
+    ![테스트 유형에 "엔드투엔드" 선택](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
 
 1. 확인이 표시되면 **확인**을 선택하고, 화면 지침을 따릅니다.
-
-    ![Cloud Shell 열기에 대한 확인 대화 상자](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >**lint** 또는 **end to end** 테스트를 실행할 경우 Azure는 컨테이너 서비스를 사용하여 실제 테스트를 수행하기 위해 테스트 컴퓨터를 프로비전합니다. 따라서 일반적으로 테스트 결과가 반환되는 데 몇 분 정도 걸릴 수 있습니다.
@@ -302,6 +294,9 @@ Visual Studio Code 내에서 Terraform 명령을 사용하려면 먼저 두 Azur
 
 ![테스트 결과](media/configure-vs-code-extension-for-terraform/tf-end-to-end-test-results.png)
 
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>다음 단계
+
 > [!div class="nextstepaction"]
 > [Azure(및 기타 지원되는 공급자)에 대해 사용 가능한 Terraform 모듈의 목록](https://registry.terraform.io/)

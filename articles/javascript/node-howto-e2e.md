@@ -1,15 +1,15 @@
 ---
 title: VS Code 및 Azure를 사용하여 컨테이너화된 Node.js 앱 배포
 description: Azure에 Node.js 앱을 만들고, 컨테이너화하고, 배포하는 방법을 보여주는 완벽한 엔드투엔드 자습서
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: c036adcd759f26dfafda5126f475e251b503a831
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 9d23e9dc578b89058c0fadeb98978de96712cab6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218919"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364906"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Visual Studio Code 및 Azure를 사용하여 컨테이너화된 Node.js 앱 개발 및 배포
 
@@ -114,7 +114,7 @@ MongoDB 연결 문자열은 `database.localUrl` 속성의 선언에 하드 코�
 
 복사 및 붙여넣기 대신 수동으로 코드를 입력할 때 `process` 뒤에 마침표를 입력하면 Visual Studio Code에 Node.js 프로세스 글로벌 API의 사용 가능한 멤버가 표시됩니다.
 
-![API 멤버를 자동으로 표시하는 자동 완성](./media/node-howto-e2e/visual-studio-code-process-env.png)
+![프로세스 env를 사용하는 VS Code 환경 변수](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 Visual Studio Code가 백그라운드에서(JavaScript의 경우에도) TypeScript를 사용하여 입력할 때 완성 목록을 알려주는 데 사용할 수 있는 형식 정보를 제공하기 때문에 자동 완성이 작동합니다. Visual Studio Code에서는 이 작업이 Node.js 프로젝트임을 감지할 수 있으며, 이에 따라 [NPM에서 Node.js](https://www.npmjs.com/package/@types/node)에 대한 TypeScript 입력 항목 파일을 자동으로 다운로드했습니다. 입력 항목 파일을 사용하면 `fs` 및 `http`와 같은 모든 기본 제공 모듈뿐만 아니라 `Buffer` 및 `setTimeout`과 같은 다른 Node.js 글로벌에 대한 자동 완성도 얻을 수 있습니다.
 

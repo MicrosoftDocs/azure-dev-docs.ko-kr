@@ -1,15 +1,15 @@
 ---
 title: 앱 코드를 변경하고 Azure에 다시 배포
-description: 자습서 6부, 변경 및 재배포
-ms.topic: conceptual
+description: '자습서 6부: Azure CLI - 변경 및 재배포'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e6747551ec80fc7b04873445557e2d2153e3b358
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 1ceec642f0e8eab517e8fee464ac604f760c9229
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217923"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364756"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>6부 변경 및 재배포
 

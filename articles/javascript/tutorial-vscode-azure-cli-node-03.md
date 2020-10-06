@@ -1,15 +1,15 @@
 ---
 title: Azure CLI에서 앱을 호스트하는 Azure App Service 만들기
-description: 자습서 3부, App Service 만들기
-ms.topic: conceptual
+description: '자습서 3부: Azure CLI - App Service 만들기'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d48ee9ba1b1ddb813b0dd7f0f48da52e0cf96e15
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 3279c215b1822b3e989eeacb66a725c91e023a34
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217935"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364796"
 ---
 # <a name="create-the-app-service"></a>App Service 만들기
 

@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 컨테이너화된 Node.js 앱을 배포한 후 리소스 정리
-description: 자습서 8부, 리소스 정리
-ms.topic: conceptual
+description: 'Docker 자습서 8부: 리소스 정리'
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d05766092022772c96fa745f9a52aa4901b27f82
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 670579c82ff5b6d6b95fcd663ad2fa0e856805b9
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772706"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365076"
 ---
 # <a name="part-8-clean-up-resources"></a>8부 리소스 정리
 

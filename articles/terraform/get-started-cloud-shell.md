@@ -1,16 +1,16 @@
 ---
 title: 빠른 시작 - Azure Cloud Shell을 사용하여 Terraform 구성
-description: 이 빠른 시작에서는 Terraform을 설치하고 구성하여 Azure 리소스를 만드는 방법을 알아봅니다.
+description: 이 빠른 시작에서는 Azure Cloud Shell에서 Terraform을 설치하고 구성하는 방법을 알아봅니다.
 keywords: azure devops terraform 설치 구성 cloud shell init 계획 적용 실행 포털 로그인 rbac 서비스 주체 자동화된 스크립트
 ms.topic: quickstart
-ms.date: 08/08/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d8cec2954357269b5605a7b35c96030b8e8b5fa0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f5b1b242479ede712cccb178a8ee25b0b557173c
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241175"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401613"
 ---
 # <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Terraform 구성
  
@@ -20,15 +20,13 @@ ms.locfileid: "88241175"
 
 이 문서에서는 다음 방법을 설명합니다.
 > [!div class="checklist"]
-> * `az login`을 사용하여 Azure에 인증
+> * Azure에 대한 인증
 > * Azure CLI를 사용하여 Azure 서비스 주체 만들기
 > * 서비스 주체를 사용하여 Azure에 인증
 > * 현재 Azure 구독 설정 - 여러 Azure 구독이 있는 경우 사용
-> * Terraform 스크립트를 작성하여 Azure 리소스 그룹 만들기
+> * 기본 Terraform 구성 파일 만들기
 > * Terraform 실행 계획 만들기 및 적용
-> * `terraform plan -destroy` 플래그를 사용하여 실행 계획 되돌리기
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * 실행 계획 되돌리기
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -122,134 +120,15 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
 
     - `az account set`를 호출해도 지정된 Azure 구독으로 전환한 결과가 표시되지 않습니다. 그러나 `az account show`를 사용하여 현재 Azure 구독이 변경되었는지 확인할 수 있습니다.
 
-## <a name="create-a-terraform-configuration-file"></a>Terraform 구성 파일 만들기
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-이 섹션에서는 Azure 리소스 그룹을 만드는 Terraform 구성 파일을 만드는 방법에 대해 알아봅니다.
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. Cloud Shell의 작업이 지속되는 탑재된 파일 공유에 대한 디렉터리를 변경합니다. Cloud Shell 파일을 유지하는 방법에 대한 자세한 내용은 [Microsoft Azure Files 스토리지 연결](/azure/cloud-shell/overview#connect-your-microsoft-azure-files-storage)을 참조하세요.
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```bash
-    cd clouddrive
-    ```
-
-1. 이 데모에 대한 Terraform 파일을 저장할 디렉터리를 만듭니다.
-
-    ```bash
-    mkdir QuickstartTerraformTest
-    ```
-
-1. 디렉터리를 데모 디렉터리로 변경합니다.
-
-    ```bash
-    cd QuickstartTerraformTest
-    ```
-
-1. 선호하는 편집기를 사용하여 Terraform 구성 파일을 만듭니다. 이 문서에서는 기본 제공 [Cloud Shell 편집기](/azure/cloud-shell/using-cloud-shell-editor)를 사용합니다.
-
-    ```bash
-    code QuickstartTerraformTest.tf
-    ```
- 
-1. 다음 HCL을 새 파일에 붙여 넣습니다.
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you are using version 1.x, the "features" block is not allowed.
-      version = "~>2.0"
-      features {}
-    }
-    resource "azurerm_resource_group" "rg" {
-            name = "QuickstartTerraformTest-rg"
-            location = "eastus"
-    }
-    ```
-
-    **참고**:
-
-    - `provider` 블록은 [Azure 공급자(`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html)를 사용하도록 지정합니다.
-    - `azurerm` 공급자 블록 내에서 `version` 및 `features` 특성이 설정됩니다. 주석에 언급된 대로, 용도는 버전에 따라 다릅니다. 환경에 이러한 특성을 설정하는 방법에 대한 자세한 내용은 [AzureRM 공급자의 v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)을 참조하세요.
-    - [resource declaration](https://www.terraform.io/docs/configuration/resources.html)은 [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html) 리소스 종류에 대해서만 적용됩니다. `azure_resource_group`에 필요한 두 개의 인수는 `name` 및 `location`입니다.
-
-1. 파일을 저장합니다( **&lt;Ctrl>S**).
-
-1. 편집기를 종료합니다( **&lt;Ctrl > Q**).
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 실행 계획 만들기 및 적용
-
-이 섹션에서는 *실행 계획*을 만들어 클라우드 인프라에 적용합니다.
-
-1. [terraform init](https://www.terraform.io/docs/commands/init.html)를 사용하여 Terraform 배포를 초기화합니다. 이 단계에서는 Azure 리소스 그룹을 만드는 데 필요한 Azure 모듈을 다운로드합니다.
-
-    ```bash
-    terraform init
-    ```
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 Terraform 구성 파일에서 실행 계획을 만듭니다.
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    **참고:**
-    - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다. 이 패턴을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
-    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. `-out` 매개 변수를 사용하면 검토한 계획이 정확하게 적용됩니다.
-    - 실행 계획 및 보안을 유지하는 방법에 대한 자세한 내용은 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 참조하세요.
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 실행하여 실행 계획을 적용합니다.
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. 실행 계획이 적용되면 [az group show](/cli/azure/group?#az-group-show)를 사용하여 리소스 그룹이 성공적으로 만들어졌는지 테스트할 수 있습니다.
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **참고**:
-
-    - 성공하면 `az group show`는 새로 만든 리소스 그룹의 다양한 특성을 표시합니다.
-
-## <a name="clean-up-resources"></a>리소스 정리
-
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다.
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 Terraform 구성 파일에 표시된 리소스를 삭제하는 실행 계획을 만듭니다.
-
-    ```bash
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **참고**:
-    - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다. 이 패턴을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
-    - `-destroy` 매개 변수는 리소스를 삭제하는 계획을 생성합니다.
-    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. `-out` 매개 변수를 사용하면 검토한 계획이 정확하게 적용됩니다.
-    - 실행 계획 및 보안을 유지하는 방법에 대한 자세한 내용은 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 참조하세요.
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 실행하여 실행 계획을 적용합니다.
-
-    ```bash
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. [az group show](/cli/azure/group?#az-group-show)를 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **참고**:
-    - 성공하면 `az group show`에서 리소스 그룹이 없다는 사실을 표시합니다.
-
-1. 디렉터리를 상위 디렉터리로 변경하고 데모 디렉터리를 제거합니다. `-r` 매개 변수는 디렉터리를 제거하기 전에 디렉터리 콘텐츠를 제거합니다. 디렉터리 콘텐츠에는 이전에 만든 구성 파일과 Terraform 상태 파일이 포함됩니다.
-
-    ```bash
-    cd .. && rm -r QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [Terraform으로 Azure VM 만들기](create-linux-virtual-machine-with-infrastructure.md)
+> [Terraform을 사용하여 Linux VM 만들기](create-linux-virtual-machine-with-infrastructure.md)

@@ -1,16 +1,16 @@
 ---
 title: Visual Studio Code에서 정적 Node.js 앱 만들기
-description: 자습서 2부, 샘플 앱 만들기
-ms.topic: conceptual
+description: '정적 웹앱 자습서 2부: 샘플 앱 만들기'
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 4d35a46323639aa42e7f220b8609f913f57d9027
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: a46fd8c35cf76de65e60a175fb3ccd70767a5dc4
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218224"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364636"
 ---
 # <a name="create-the-app"></a>앱 만들기
 
@@ -140,7 +140,7 @@ CLI가 구성에 대해 질문하면 Enter를 눌러 기본 옵션을 선택합�
 
 1. 브라우저에서 `http://localhost:5000`을 열어 앱이 실행되고 있는지 확인합니다.
 
-    ![실행 중인 샘플 Vue 앱](media/static-website/local-app-svelte.png)
+    ![실행 중인 샘플 svelte 앱](media/static-website/local-app-svelte.png)
 
 1. 터미널 또는 명령 프롬프트에서 **Ctrl**+**C**를 눌러서 서버를 중지합니다.
 

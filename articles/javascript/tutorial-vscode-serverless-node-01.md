@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Node.js 형식으로 Azure Functions 배포
-description: 자습서 1부, 소개 및 필수 구성 요소
-ms.topic: conceptual
+description: '서버리스 자습서 1부: 소개 및 필수 구성 요소'
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 00039e7320e603b025b00887ec548c534a1f1612
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 1d0c1795b7bec0138507ceadea966c421ca12a13
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "91110516"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364646"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>Visual Studio Code에서 Azure Functions 배포
 

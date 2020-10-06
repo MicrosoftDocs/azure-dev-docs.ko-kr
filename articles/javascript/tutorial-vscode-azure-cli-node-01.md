@@ -1,15 +1,15 @@
 ---
 title: Azure CLI를 사용하여 Azure App Service에 Node.js 앱 배포
-description: 자습서 1부, 소개 및 필수 구성 요소
-ms.topic: conceptual
+description: '자습서 1부: Azure CLI 소개 및 필수 구성 요소'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e720cd1ca6f29a42bfd9bf6c79c6184338c2621a
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 4ca11ffff1889d69ef8a1ee7fbca991b714f2163
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772886"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365206"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI를 사용하여 Azure App Service에 배포
 

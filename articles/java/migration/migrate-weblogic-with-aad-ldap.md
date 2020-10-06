@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 277f34fecfd976135077243252bc31aace11dd61
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831389"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365016"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>WebLogic Server의 Java 앱을 Azure로 마이그레이션하기 위한 최종 사용자 권한 부여 및 인증
 
@@ -168,7 +168,7 @@ az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1
 |----------------|---------------|---------|
 | `aadsServerHost` | 서버 호스트 | 이 값은 [Azure Active Directory Domain Services 관리형 도메인 만들기 및 구성](/azure/active-directory-domain-services/tutorial-create-instance)을 완료할 때 저장한 공용 DNS 이름입니다. |
 | `aadsPublicIP` | 보안 LDAP 외부 IP 주소 | 이 값은 [외부 액세스를 위한 DNS 영역 구성](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access) 섹션에서 저장한 **보안 LDAP 외부 IP 주소**입니다.|
-| `wlsLDAPPrincipal` | 주 서버   | *LDP.exe*로 돌아갑니다.  `wlsLDAPPrincipal`에 대한 추가 값을 얻으려면 다음 단계를 수행합니다. <ol><li>**보기** 메뉴에서 **트리**를 선택합니다.</li><li>**트리 보기** 대화 상자에서 **BaseDN**을 비워 두고 **확인**을 선택합니다.</li><li>오른쪽 창에서 마우스 오른쪽 단추를 클릭하고 **출력 지우기**를 선택합니다.</li><li>왼쪽의 트리 보기를 펼치고, "OU=AADDC 사용자"로 시작하는 항목을 선택합니다.</li><li>**찾아보기** 메뉴에서 **검색**을 선택합니다.</li><li>표시되는 대화 상자에서 기본값을 적용하고 **실행**을 선택합니다.</li><li>오른쪽 창에 출력이 표시되면 **실행** 옆에 있는 **닫기**를 선택합니다.</li><li>"AAD DC 관리자" 그룹에 추가한 사용자에 해당하는 **Dn** 항목에 대한 출력을 검사합니다.  **Dn: CN=&lt;사용자 이름&gt;OU=AADDC 사용자"** 로 시작합니다.</li></ol> |
+| `wlsLDAPPrincipal` | 주 서버   | *LDP.exe*로 돌아갑니다.  `wlsLDAPPrincipal`에 대한 추가 값을 얻으려면 다음 단계를 수행합니다. <ol><li>**보기** 메뉴에서 **트리**를 선택합니다.</li><li>**트리 보기** 대화 상자에서 **BaseDN**을 비워 두고 **확인**을 선택합니다.</li><li>오른쪽 창에서 마우스 오른쪽 단추를 클릭하고 **출력 지우기**를 선택합니다.</li><li>왼쪽의 트리 보기를 펼치고, "OU=AADDC 사용자"로 시작하는 항목을 선택합니다.</li><li>**찾아보기** 메뉴에서 **검색**을 선택합니다.</li><li>표시되는 대화 상자에서 기본값을 적용하고 **실행**을 선택합니다.</li><li>오른쪽 창에 출력이 표시되면 **실행** 옆에 있는 **닫기**를 선택합니다.</li><li>"AAD DC 관리자" 그룹에 추가한 사용자에 해당하는 **Dn** 항목에 대한 출력을 검사합니다.  **Dn: CN=&lt;사용자 이름&gt;OU=AADDC 사용자**.</li></ol> |
 | `wlsLDAPGroupBaseDN` 및 `wlsLDAPUserBaseDN` | 사용자 기본 DN 및 그룹 기본 DN | 이 자습서에서는 이러한 두 속성의 값이 모두 동일합니다(첫 번째 쉼표 뒤의 **wlsLDAPPrincipal** 부분).|
 | `wlsLDAPPrincipalPassword` | 보안 주체 암호 | 이 값은 **AAD DC 관리자** 그룹에 추가된 사용자에 대한 암호입니다. |
 | `wlsLDAPProviderName` | Provider Name | 이 값은 기본값으로 둘 수 있습니다.  WLS에서 인증 공급자의 이름으로 사용됩니다. |

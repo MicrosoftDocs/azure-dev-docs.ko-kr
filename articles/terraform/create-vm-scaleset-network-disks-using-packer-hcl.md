@@ -4,12 +4,12 @@ description: Terraform을 사용하여 Packer에서 생성한 사용자 지정 �
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: de8f22311edefcef1f25571731f17e5e5bc96348
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d81c80f1051b615dcfd089205f8c685ecaf1589
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241195"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401603"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Terraform을 사용하여 Packer 사용자 지정 이미지에서 Azure 가상 머신 확장 집합 만들기
 
@@ -24,8 +24,6 @@ ms.locfileid: "88241195"
 > * Packer를 사용하여 사용자 지정 가상 머신 이미지 만들기
 > * 사용자 지정 이미지를 사용하여 가상 머신 확장 집합 만들기 및 배포
 > * jumpbox 만들기 및 배포
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -329,12 +327,7 @@ Azure에서 추가 리소스를 배포합니다.
 terraform apply 
 ```
 
-리소스 그룹의 내용은 다음 이미지와 같습니다.
-
-![Terraform 가상 머신 확장 집합 리소스 그룹](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-vmss-step6-apply.png)
-
-브라우저를 열고 명령에 의해 반환된 정규화된 도메인 이름에 연결합니다. 
-
+브라우저를 열고 명령에 의해 반환된 정규화된 도메인 이름에 연결합니다.
 
 ## <a name="add-a-jumpbox-to-the-existing-network"></a>기존 네트워크에 jumpbox 추가 
 
@@ -434,12 +427,9 @@ jumpbox를 배포합니다.
 terraform apply 
 ```
 
-배포가 완료된 후 리소스 그룹의 콘텐츠는 다음 이미지와 같습니다.
+**참고**:
 
-![Terraform 가상 머신 확장 집합 리소스 그룹](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-create-vmss-step8.png)
-
-> [!NOTE]
-> 배포한 가상 머신 확장 집합 및 jumpbox에서 암호를 사용하여 로그인할 수 없습니다. VM에 액세스하려면 SSH를 사용하여 로그인합니다.
+- 배포한 가상 머신 확장 집합 및 jumpbox에서 암호를 사용하여 로그인할 수 없습니다. VM에 액세스하려면 SSH를 사용하여 로그인합니다.
 
 ## <a name="clean-up-the-environment"></a>환경 정리
 
@@ -450,6 +440,8 @@ terraform destroy
 ```
 
 리소스 삭제를 확인하는 메시지가 표시되면 *예*를 입력합니다. 소멸 프로세스를 완료하는 데 몇 분 정도가 걸릴 수 있습니다.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

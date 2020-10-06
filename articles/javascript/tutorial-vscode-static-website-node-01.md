@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Azure에 정적 Node.js 웹 사이트 배포
-description: 자습서 1부, 소개 및 필수 구성 요소
-ms.topic: conceptual
+description: '정적 웹앱 자습서 1부: 소개 및 필수 구성 요소'
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d2c66383e654624cf7edce542461340cc248ba62
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: bb3c0c552a25729e569abeba86d29d75570bb5e6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773094"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365086"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Visual Studio Code에서 Azure에 정적 웹 사이트 배포
 

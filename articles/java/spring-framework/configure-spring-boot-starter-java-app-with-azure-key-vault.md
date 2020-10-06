@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: d3504137c2c9a8ee2b1af960a17deb902be95d7a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831989"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409975"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>자습서: Spring Boot 애플리케이션의 Azure Key Vault에서 비밀 읽기
 
@@ -398,7 +398,7 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.9.1</version>
+     <version>1.11.0</version>
     </plugin>
    ```
 
@@ -412,7 +412,9 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
    mvn azure-webapp:config
    ```
 
-1. OS에 `linux`가 선택되어 있는지 확인합니다.
+1. `Subscription`의 경우 사용자가 만든 Key Vault와 동일한 구독 ID를 선택해야 합니다.
+1. `Web App`의 경우 기존 웹앱을 선택하거나 `<create>`를 선택하여 새 웹앱을 만들 수 있습니다. 기존 웹앱을 선택하는 경우 마지막 **확인** 단계로 바로 이동합니다.
+1. `OS`에 `linux`가 선택되어 있는지 확인합니다.
 1. `javaVersion`의 경우 Spring Initializr에서 선택한 Java 버전이 선택되어 있는지 확인합니다.  위에서는 `11`을 선택했으므로 여기에 11이 선택되어 있습니다.
 1. 나머지 질문에 대해 기본값을 수락합니다.
 1. 확인하라는 메시지가 표시되면, 계속하려면 Y로 답변하고 질문에 다시 대답하려면 N으로 답변합니다.  플러그인 실행이 완료되면 POM을 편집할 준비가 된 것입니다.
@@ -437,9 +439,10 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.9.1</version>  
+       <version>1.11.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
+         *<subscriptionId>********-****-****-****-************</subscriptionId>
          *<resourceGroup>contosorg</resourceGroup>
          *<appName>contosokeyvault</appName>
          <pricingTier>P1v2</pricingTier>

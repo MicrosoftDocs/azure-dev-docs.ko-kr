@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Azure Functions 애플리케이션 배포
-description: 자습서 4부, 클라우드에 Functions 앱 배포
-ms.topic: conceptual
+description: '서버리스 자습서 4부: 클라우드에 Functions 앱 배포'
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: baf5ba17bb302da193a6eb1bb24e1a4a68c4a37b
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 82e97644f9641b275174d04a2b9c6c72726234de
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218366"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365096"
 ---
 # <a name="deploy-the-functions-app"></a>Functions 앱 배포
 

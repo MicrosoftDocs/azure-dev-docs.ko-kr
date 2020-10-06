@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: 960b9c0d8606e14487dab6d505bc701968dc4b0a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 48a7369a1dce0fe89964ecaaac960a9bb09fb16c
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831649"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409985"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps의 Maven을 사용하여 Azure에 컨테이너화된 Spring Boot 앱 배포
 
@@ -169,13 +169,14 @@ Docker 계정이 있는 경우 Docker 컨테이너 이미지를 로컬에서 빌
 
 1. 텍스트 편집기에서 Spring Boot 애플리케이션에 대한 `pom.xml` 파일을 엽니다.
 
-1. `<containerSettings>` 요소의 `<imageName>` 자식 요소를 찾습니다.
+1. `<runtime>` 요소의 `<image>` 자식 요소를 찾습니다.
 
 1. Docker 계정 이름으로 `${docker.image.prefix}` 값을 업데이트합니다.
    ```xml
-   <containerSettings>
-      <imageName>mydockeraccountname/${project.artifactId}</imageName>
-   </containerSettings>
+   <runtime>
+      ...
+      <image>mydockeraccountname/${project.artifactId}</image>
+   </runtime>
    ```
 
 1. 다음 배포 방법 중 하나를 선택합니다.
@@ -199,17 +200,19 @@ Docker 계정이 있는 경우 Docker 컨테이너 이미지를 로컬에서 빌
    <plugin>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-webapp-maven-plugin</artifactId>
-      <version>0.1.3</version>
+      <version>1.11.0</version>
       <configuration>
-         <authentication>
+         <schemaVersion>V2</schemaVersion>
+         <auth>
             <serverId>azure-auth</serverId>
-         </authentication>
+         </auth>
          <resourceGroup>maven-plugin</resourceGroup>
          <appName>maven-linux-app-${maven.build.timestamp}</appName>
          <region>westus</region>
-         <containerSettings>
-            <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         </containerSettings>
+         <runtime>
+            <os>docker</os>
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+         </runtime>
          <appSettings>
             <property>
                <name>PORT</name>
@@ -224,8 +227,8 @@ Maven 플러그 인에 대해 수정할 수 있는 여러 값이 있으며 이�
 
 | 요소 | Description |
 |---|---|
-| `<version>` | [Azure Web Apps의 Maven 플러그 인] 버전을 지정합니다. [Maven 중앙 리포지토리](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22)에 나열된 버전을 검사하여 최신 버전을 사용하고 있는지 확인해야 합니다. |
-| `<authentication>` | Azure에 대한 인증 정보를 지정합니다. 이 예제에서는 `azure-auth`이 포함된 `<serverId>` 요소를 포함합니다. Maven에서는 해당 값을 사용하여 이 문서의 이전 섹션에 정의된 Maven *settings.xml* 파일에서 Azure 서비스 주체 값을 조회합니다. |
+| `<version>` | [Azure Web Apps의 Maven 플러그 인] 버전을 지정합니다. `V2`를 사용해야 합니다. |
+| `<auth>` | Azure에 대한 인증 정보를 지정합니다. 이 예제에서는 `azure-auth`이 포함된 `<serverId>` 요소를 포함합니다. Maven에서는 해당 값을 사용하여 이 문서의 이전 섹션에 정의된 Maven *settings.xml* 파일에서 Azure 서비스 주체 값을 조회합니다. |
 | `<resourceGroup>` | 대상 리소스 그룹, 즉, 이 예에서 `maven-plugin`을 지정합니다. 리소스 그룹이 아직 존재하지 않는 경우 배포 중에 만들어집니다. |
 | `<appName>` | 웹앱에 대한 대상 이름을 지정합니다. 이 예제에서는 대상 이름은 `maven-linux-app-${maven.build.timestamp}`이며 이 예제에서 충돌을 피하기 위해 여기에 `${maven.build.timestamp}` 접미사가 추가됩니다. (타임스탬프는 선택 사항입니다. 앱 이름에 대한 고유한 문자열을 지정할 수 있습니다.) |
 | `<region>` | 대상 지역을 지정합니다. 이 예제에서는 `westus`입니다. (전체 목록은 [Azure Web Apps의 Maven 플러그 인] 설명서에서 제공됩니다.) |

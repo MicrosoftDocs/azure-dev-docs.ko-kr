@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Azure Functions 애플리케이션을 로컬에서 실행
-description: 자습서 3부, 앱을 로컬에서 실행하여 테스트
-ms.topic: conceptual
+description: '서버리스 자습서 3부: 앱을 로컬에서 실행하여 테스트'
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 2dbc9001da2cef09eb7625b472359d22406ca6a9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.custom: devx-track-js
+ms.openlocfilehash: 94b646d29b7459b2a74a1dbdaafde4a98a348f6b
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240885"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364586"
 ---
 # <a name="test-the-function-locally"></a>로컬에서 함수 테스트
 

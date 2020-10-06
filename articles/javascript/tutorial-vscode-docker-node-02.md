@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code의 컨테이너 레지스트리 사용
-description: 자습서 2부, 컨테이너 레지스트리 사용
-ms.topic: conceptual
+description: 'Docker 자습서 2부: 컨테이너 레지스트리 사용'
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: c0eaa345af7d439cda47672f597ce1d82e78a355
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: eb029d8e4dc2e6eddc68e0ee9112324b38e84ffe
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218426"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365136"
 ---
 # <a name="use-a-container-registry"></a>컨테이너 레지스트리 사용
 

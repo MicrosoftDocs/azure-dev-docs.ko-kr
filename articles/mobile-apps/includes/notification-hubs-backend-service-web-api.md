@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 9d7db7db5a1b7323bd10e7e9cc87ca3b9a95826a
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401676"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493166"
 ---
 ### <a name="create-a-web-project"></a>웹 프로젝트 만들기
 
@@ -36,9 +36,7 @@ ms.locfileid: "87401676"
 
 1. **WeatherForecast.cs**를 삭제합니다.
 
-1. **PushDemoApi** 프로젝트를 **Ctrl** + **클릭**한 다음, **추가** 메뉴에서 **새 파일...** 을 선택합니다.
-
-1. [비밀 관리자 도구](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)를 사용하여 로컬 구성 값을 설정합니다. 솔루션에서 비밀을 분리하면 원본 제어에서 종료되지 않습니다. **터미널**을 연 다음, 프로젝트 파일의 디렉터리로 이동하여 다음 명령을 실행합니다.
+1. [비밀 관리자 도구](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)를 사용하여 로컬 구성 값을 설정합니다. 솔루션에서 비밀을 분리하면 원본 제어에서 종료되지 않습니다. **터미널**을 연 다음, 프로젝트 파일의 디렉터리로 이동하여 다음 명령을 실행합니다.
 
     ```bash
     dotnet user-secrets init
@@ -59,7 +57,7 @@ ms.locfileid: "87401676"
 
 ### <a name="authenticate-clients-using-an-api-key-optional"></a>API 키를 사용하여 클라이언트 인증(선택 사항)
 
-API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분합니다. API 키는 [ASP.NET 미들웨어](https://docs.microsoft.com/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)를 통해 쉽게 구성할 수 있습니다.
+API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분합니다. API 키는 [ASP.NET 미들웨어](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)를 통해 쉽게 구성할 수 있습니다.
 
 1. **API 키**를 로컬 구성 값에 추가합니다.
 
@@ -150,7 +148,7 @@ API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분
     ```
 
     > [!NOTE]
-    > [인증 처리기](https://docs.microsoft.com/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler)는 체계(이 경우 사용자 지정 API 키 체계)의 동작을 구현하는 유형입니다.
+    > [인증 처리기](/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler)는 체계(이 경우 사용자 지정 API 키 체계)의 동작을 구현하는 유형입니다.
 
 1. *ApiKeyAuthenticationBuilderExtensions.cs*라는 다른 **빈 클래스**를 **Authentication** 폴더에 추가하고, 다음 구현을 추가합니다.
 
@@ -181,6 +179,8 @@ API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분
 1. **Startup.cs**의 **services.AddControllers** 메서드에 대한 호출 아래에서 API 키 인증을 구성하도록 **ConfigureServices** 메서드를 업데이트합니다.
 
     ```csharp
+    using PushDemoApi.Authentication;
+    
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -223,7 +223,7 @@ API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분
 
 ### <a name="add-dependencies-and-configure-services"></a>종속성 추가 및 서비스 구성
 
-ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion)를 구현하는 기술인 [DI(종속성 주입)](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) 소프트웨어 디자인 패턴을 지원합니다.  
+ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion)를 구현하는 기술인 [DI(종속성 주입)](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) 소프트웨어 디자인 패턴을 지원합니다.  
 
 백 엔드 작업에 대한 알림 허브 및 [Notification Hubs SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)를 사용하면 서비스 내에 캡슐화됩니다. 서비스는 적절한 추상화를 통해 등록되고 사용할 수 있게 됩니다.
 
@@ -260,9 +260,9 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](https:
     ```
 
     > [!NOTE]
-    > 이 클래스에는 이 시나리오에 필요한 제네릭 및 자동 알림에 대한 토큰화된 알림 페이로드가 포함되어 있습니다. 페이로드는 서비스를 통해 기존 설치를 업데이트하지 않고도 실험을 수행할 수 있도록 [설치](https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) 외부에서 정의됩니다. 설치에 대한 변경을 이 방식으로 처리하는 것은 이 자습서의 범위를 벗어납니다. 프로덕션의 경우 [사용자 지정 템플릿](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)을 사용하는 것이 좋습니다.
+    > 이 클래스에는 이 시나리오에 필요한 제네릭 및 자동 알림에 대한 토큰화된 알림 페이로드가 포함되어 있습니다. 페이로드는 서비스를 통해 기존 설치를 업데이트하지 않고도 실험을 수행할 수 있도록 [설치](/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) 외부에서 정의됩니다. 설치에 대한 변경을 이 방식으로 처리하는 것은 이 자습서의 범위를 벗어납니다. 프로덕션의 경우 [사용자 지정 템플릿](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)을 사용하는 것이 좋습니다.
 
-1. **일반** > **빈 클래스**를 차례로 선택하고, **이름**에 대해 *DeviceInstallation.cs*를 입력한 다음, **새로 만들기**를 클릭하여 다음 구현을 추가합니다.
+1. *DeviceInstallation.cs*라는 다른 **빈 클래스**를 **Models** 폴더에 추가한 후 다음 구현을 추가합니다.
 
     ```csharp
     using System.Collections.Generic;
@@ -326,6 +326,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](https:
 1. *INotificationService.cs*라는 **빈 인터페이스**를 **Services** 폴더에 추가하고, 다음 구현을 추가합니다.
 
     ```csharp
+    using System.Threading;
     using System.Threading.Tasks;
     using PushDemoApi.Models;
 
@@ -510,7 +511,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](https:
     ```
 
     > [!NOTE]
-    > **SendTemplateNotificationAsync**에 제공되는 태그 식은 20개로 제한됩니다. 대부분의 연산자의 경우 6개로 제한되지만, 여기서는 OR(||)만 식에 포함됩니다. 요청에 20개가 넘는 태그가 있으면 여러 요청으로 분할해야 합니다. 자세한 내용은 [라우팅 및 태그 식](https://msdn.microsoft.com/library/azure/Dn530749.aspx?f=255&MSPPError=-2147217396) 설명서를 참조하세요.
+    > **SendTemplateNotificationAsync**에 제공되는 태그 식은 20개로 제한됩니다. 대부분의 연산자의 경우 6개로 제한되지만, 여기서는 OR(||)만 식에 포함됩니다. 요청에 20개가 넘는 태그가 있으면 여러 요청으로 분할해야 합니다. 자세한 내용은 [라우팅 및 태그 식](/previous-versions/azure/azure-services/dn530749(v=azure.100)?f=255&MSPPError=-2147217396) 설명서를 참조하세요.
 
 1. **Startup.cs**에서 **NotificationHubsService**를 **INotificationService**의 싱글톤 구현으로 추가하도록 **ConfigureServices** 메서드를 업데이트합니다.
 
@@ -606,7 +607,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](https:
     >
     > **SSL 인증서 확인** 경고 메시지가 표시되면 **설정**에서 SSL 인증서 확인 요청 **[Postman](https://www.postman.com/downloads)** 설정을 해제할 수 있습니다.
 
-1. 템플릿 기반 클래스 메서드를 다음 코드로 바꿉니다.
+1. **NotificationsController.cs**의 템플릿 기반 클래스 메서드를 다음 코드로 바꿉니다.
 
     ```csharp
     [HttpPut]
@@ -669,7 +670,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](https:
 
 ### <a name="create-the-api-app"></a>API 앱 만들기
 
-이제 백 엔드 서비스를 호스팅하기 위해 [Azure App Service](https://docs.microsoft.com/azure/app-service/)에서 [API 앱](https://azure.microsoft.com/services/app-service/api/)을 만듭니다.  
+이제 백 엔드 서비스를 호스팅하기 위해 [Azure App Service](/azure/app-service/)에서 [API 앱](https://azure.microsoft.com/services/app-service/api/)을 만듭니다.  
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 

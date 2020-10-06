@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Azure App Service에 Deno 앱 배포
-description: '자습서 3부: 웹 사이트 배포'
-ms.topic: conceptual
+description: 'Deno 자습서 3부: 웹 사이트 배포'
+ms.topic: tutorial
 ms.date: 06/01/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: fe7106976f16cbd80de0d3e0692b76287dbecec9
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: ceb55fb184582a4cb355c25f42c798713335b45c
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772916"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364857"
 ---
 # <a name="deploy-deno-apps-to-azure"></a>Azure에 Deno 앱 배포
 

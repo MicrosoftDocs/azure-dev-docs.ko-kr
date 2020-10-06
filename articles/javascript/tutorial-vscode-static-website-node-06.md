@@ -1,15 +1,15 @@
 ---
 title: Azure에 정적 Node.js 웹 사이트를 배포한 후 리소스 정리
-description: 자습서 6부, 리소스 정리
-ms.topic: conceptual
+description: '정적 웹앱 자습서 6부: 리소스 정리'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 0c24562ff5c4b689854c29ef33557e0bfa9bee8e
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: e0cbbbe0471080fc4ca0a3eb46eb9f22e8ecf013
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772583"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365276"
 ---
 # <a name="part-6-clean-up-resources"></a>6부: 리소스 정리
 

@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Node.js 앱의 컨테이너 이미지 배포
-description: 자습서 5부, Azure App Service에 이미지 배포
-ms.topic: conceptual
+description: 'Docker 자습서 5부: Azure App Service에 이미지 배포'
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f9809deacac828cac6ba4a89b5eb08968de1d012
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 996a3ed71fb23e179f80364813ad7df0710e8402
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218442"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364676"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>Azure App Service에 이미지 배포
 

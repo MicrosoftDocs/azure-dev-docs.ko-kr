@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code에서 Deno Azure App Service 만들기
-description: 자습서 2부, Deno 앱 만들기 및 로컬로 실행
-ms.topic: conceptual
+description: 'Deno 자습서 2부: Deno 앱을 만들고 로컬에서 실행'
+ms.topic: tutorial
 ms.date: 06/01/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6440f75d11bd4eb68dfbcf4e1dcf6b2b27c0496f
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: da5ed76459bdd9f00379e9f9c96873589886f8ed
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772926"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364466"
 ---
 # <a name="test-local-deno-apps"></a>로컬 Deno 앱 테스트
 

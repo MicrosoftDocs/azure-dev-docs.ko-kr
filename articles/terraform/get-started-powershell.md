@@ -1,16 +1,16 @@
 ---
 title: 빠른 시작 - Azure PowerShell을 사용하여 Terraform 구성
-description: 이 빠른 시작에서는 Terraform을 설치하고 구성하여 Azure 리소스를 만드는 방법을 알아봅니다.
+description: 이 빠른 시작에서는 Azure PowerShell을 사용하여 Terraform을 설치하고 구성하는 방법을 알아봅니다.
 keywords: azure devops terraform install configure windows init plan apply execution login rbac service principal automated script powershell
 ms.topic: quickstart
-ms.date: 08/18/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 8f95d0bb09d7e9e7ea789b90a27178cdf5426d74
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830059"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401561"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>빠른 시작: Azure PowerShell을 사용하여 Terraform 구성
  
@@ -27,11 +27,9 @@ ms.locfileid: "90830059"
 > * 인증용 Azure 서비스 주체 만들기
 > * 서비스 주체를 사용하여 Azure에 로그인 
 > * Terraform이 Azure 구독에 올바르게 인증하도록 환경 변수 설정
-> * Terraform 스크립트를 작성하여 Azure 리소스 그룹 만들기
+> * 기본 Terraform 구성 파일 만들기
 > * Terraform 실행 계획 만들기 및 적용
-> * `terraform plan -destroy` 플래그를 사용하여 실행 계획 되돌리기
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * 실행 계획 되돌리기
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -45,9 +43,9 @@ ms.locfileid: "90830059"
     $PSVersionTable.PSVersion
     ```
 
-1. [PowerShell을 설치](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)합니다. 이 데모는 Windows 10에서 PowerShell 7.0.2를 사용하여 테스트되었습니다.
+1. [PowerShell을 설치](/powershell/scripting/install/installing-powershell-core-on-windows)합니다. 이 데모는 Windows 10에서 PowerShell 7.0.2를 사용하여 테스트되었습니다.
 
-1. [Terraform을 Azure에 인증](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)하려면 [Azure CLI를 설치](/cli/azure/install-azure-cli-windows?view=azure-cli-latest)해야 합니다. 이 데모는 Azure CLI 버전 2.9.1을 사용하여 테스트되었습니다.
+1. [Terraform을 Azure에 인증](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)하려면 [Azure CLI를 설치](/cli/azure/install-azure-cli-windows)해야 합니다. 이 데모는 Azure CLI 버전 2.9.1을 사용하여 테스트되었습니다.
 
 1. [Terraform을 다운로드](https://www.terraform.io/downloads.html)합니다.
 
@@ -64,9 +62,15 @@ ms.locfileid: "90830059"
     **참고**:
     - Terraform 실행 파일이 있으면 구문 및 사용 가능한 명령이 나열됩니다.
 
-## <a name="create-an-azure-service-principal"></a>Azure 서비스 주체 만들기
+## <a name="authenticate-to-azure"></a>Azure에 대한 인증
 
-PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여 로그인해야 합니다.
+PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여 로그인해야 합니다. 다음 두 섹션에서는 다음 작업을 보여 줍니다.
+
+- [Azure 서비스 주체 만들기](#create-an-azure-service-principal)
+- [서비스 주체를 사용하여 Azure에 로그인](#log-in-to-azure-using-a-service-principal)
+
+
+### <a name="span-idcreate-an-azure-service-principalcreate-an-azure-service-principal"></a><span id="create-an-azure-service-principal"/>Azure 서비스 주체 만들기
 
 서비스 주체를 사용하여 Azure 구독에 로그인하려면 서비스 주체에 대한 액세스 권한이 필요합니다. 서비스 주체가 이미 있는 경우 이 섹션을 건너뛸 수 있습니다.
 
@@ -105,7 +109,7 @@ PowerShell 및 Terraform을 사용하는 경우 서비스 주체를 사용하여
 - 서비스 주체 이름 및 암호 값은 서비스 주체를 사용하여 구독에 로그인하는 데 필요합니다.
 - 분실한 암호는 복구할 수 없습니다. 따라서 암호를 안전한 장소에 저장해야 합니다. 암호를 잊어버린 경우 [서비스 주체 자격 증명을 다시 설정](/powershell/azure/create-azure-service-principal-azureps#reset-credentials)해야 합니다.
 
-## <a name="log-in-to-azure-using-a-service-principal"></a>서비스 주체를 사용하여 Azure에 로그인
+### <a name="span-idlog-in-to-azure-using-a-service-principallog-in-to-azure-using-a-service-principal"></a><span id="log-in-to-azure-using-a-service-principal"/>서비스 주체를 사용하여 Azure에 로그인
 
 서비스 주체를 사용하여 Azure 구독에 로그인하려면 [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount)를 호출하고 [PsCredential](/dotnet/api/system.management.automation.pscredential) 형식의 개체를 지정합니다.
 
@@ -143,124 +147,15 @@ $env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
 $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
-## <a name="create-a-terraform-configuration-file"></a>Terraform 구성 파일 만들기
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-이 섹션에서는 Azure 리소스 그룹을 만드는 Terraform 구성 파일을 코딩합니다.
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. 이 데모에 대한 Terraform 파일을 저장할 디렉터리를 만듭니다.
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```powershell
-    mkdir QuickstartTerraformTest
-    ```
-
-1. 디렉터리를 데모 디렉터리로 변경합니다.
-
-    ```powershell
-    cd QuickstartTerraformTest
-    ```
-
-1. 선호하는 편집기를 사용하여 Terraform 구성 파일을 만듭니다. 이 문서에서는 [Visual Studio Code](https://code.visualstudio.com/Download)를 사용합니다.
-
-    ```powershell
-    code QuickstartTerraformTest.tf
-    ```
-
-1. 다음 HCL 코드를 새 파일에 붙여넣습니다. 자세한 내용은 코드 목록 뒤에 나오는 참고 사항을 참조하세요.
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you're using version 1.x, the "features" block isn't allowed.
-      version = "~>2.0"
-      features {}
-    }
-
-    resource "azurerm_resource_group" "rg" {
-      name     = "QuickstartTerraformTest-rg"
-      location = "eastus"
-    }
-    ```
-
-    **참고**:
-    - 공급자 블록은 [Azure 공급자(azurerm)](https://www.terraform.io/docs/providers/azurerm/index.html)를 사용하도록 지정합니다.
-    - `azurerm` 공급자 블록 내에서 `version` 및 `features` 특성이 설정됩니다. 주석에 언급된 대로, 용도는 버전에 따라 다릅니다. 이러한 특성을 설정하는 방법에 대한 자세한 내용은 [AzureRM Provider v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)을 참조하세요.
-    - [resource declaration](https://www.terraform.io/docs/configuration/resources.html)은 [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html) 리소스 종류에 대해서만 적용됩니다. azure_resource_group에 대한 두 가지 필수 인수는 name 및 location입니다.
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 실행 계획 만들기 및 적용
-
-이 섹션에서는 *실행 계획*을 만들어 클라우드 인프라에 적용합니다.
-
-1. [terraform init](https://www.terraform.io/docs/commands/init.html)를 사용하여 Terraform 배포를 초기화합니다. 이 단계에서는 Azure 리소스 그룹을 만드는 데 필요한 Azure 모듈을 다운로드합니다.
-
-    ```powershell
-    terraform init
-    ```
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 Terraform 구성 파일에서 실행 계획을 만듭니다.
-
-    ```powershell
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    **참고:**
-    - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다. 이 패턴을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
-    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. `-out` 매개 변수를 사용하면 검토한 계획이 정확하게 적용됩니다.
-    - 실행 계획 및 보안을 유지하는 방법에 대한 자세한 내용은 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 참조하세요.
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 실행하여 실행 계획을 적용합니다.
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. 실행 계획이 적용되면 [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 성공적으로 만들어졌는지 테스트할 수 있습니다.
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **참고**:
-
-    - 성공하면 명령은 새로 만들어진 리소스 그룹의 다양한 특성을 표시합니다.
-
-## <a name="clean-up-resources"></a>리소스 정리
-
-더 이상 필요하지 않은 경우 이 문서에서 만든 리소스를 삭제합니다.
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행하여 Terraform 구성 파일에 표시된 리소스를 삭제하는 실행 계획을 만듭니다.
-
-    ```powershell
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **참고:**
-    - `terraform plan` 명령은 실행 계획을 만들지만 실행하지는 않습니다. 대신 구성 파일에 지정된 구성을 만드는 데 필요한 작업을 결정합니다. 이 패턴을 사용하면 실제 리소스를 변경하기 전에 실행 계획이 예상과 일치하는지 확인할 수 있습니다.
-    - `-destroy` 매개 변수는 리소스를 삭제하는 계획을 생성합니다.
-    - 선택 사항인 `-out` 매개 변수를 사용하여 계획의 출력 파일을 지정할 수 있습니다. `-out` 매개 변수를 사용하면 검토한 계획이 정확하게 적용됩니다.
-    - 실행 계획 및 보안을 유지하는 방법에 대한 자세한 내용은 [보안 경고 섹션](https://www.terraform.io/docs/commands/plan.html#security-warning)을 참조하세요.
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html)를 실행하여 실행 계획을 적용합니다.
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup)을 사용하여 리소스 그룹이 삭제되었는지 확인합니다.
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **참고**:
-    - 성공하면 `Get-AzResourceGroup`에서 리소스 그룹이 없다는 사실을 표시합니다.
-
-1. 디렉터리를 상위 디렉터리로 변경하고 데모 디렉터리를 제거합니다. `-r` 매개 변수는 디렉터리를 제거하기 전에 디렉터리 콘텐츠를 제거합니다. 디렉터리 콘텐츠에는 이전에 만든 구성 파일과 Terraform 상태 파일이 포함됩니다.
-
-    ```powershell
-    cd .. && rm -r QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [Terraform으로 Azure VM 만들기](create-linux-virtual-machine-with-infrastructure.md)
+> [Terraform을 사용하여 Linux VM 만들기](create-linux-virtual-machine-with-infrastructure.md)

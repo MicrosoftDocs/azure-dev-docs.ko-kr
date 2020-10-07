@@ -1,15 +1,15 @@
 ---
 title: Node.js를 사용하여 Azure 서비스 사용자 만들기
 description: Azure에서 Node.js 및 JavaScript를 통해 서비스 사용자 인증을 사용하는 방법 알아보기
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/17/2017
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.custom: devx-track-js
+ms.openlocfilehash: 40992b00ff9c0e04bf2b475fadf2d65dd3bd29d5
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110431"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586123"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>Node.js용 Azure 서비스 주체 만들기
 
@@ -23,7 +23,6 @@ ms.locfileid: "91110431"
 
 - Azure portal
 - Azure CLI 2.0
-- Node.js용 Azure SDK
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 
@@ -37,24 +36,11 @@ ms.locfileid: "91110431"
 
 1. [Azure CLI 2.0](/cli/azure/install-az-cli2)을 다운로드합니다.
 
-2. 터미널 창을 엽니다.
+2. 터미널 창을 열고 `az login` 명령을 입력하여 로그인 프로세스를 시작합니다.
 
-3. 다음 명령을 입력하여 로그인 프로세스를 시작합니다.
+3. `az login`을 호출하면 URL과 코드가 표시됩니다. 지정된 URL로 이동하고, 코드를 입력하고, Azure ID로 로그인합니다(이미 로그인한 경우 자동으로 발생할 수 있음). 그러면 CLI를 통해 계정에 액세스할 수 있습니다.
 
-    ```shell
-    $ az login
-    ```
-
-4. `az login`을 호출하면 URL과 코드가 표시됩니다. 지정된 URL로 이동하고, 코드를 입력하고, Azure ID로 로그인합니다(이미 로그인한 경우 자동으로 발생할 수 있음).
-그러면 CLI를 통해 계정에 액세스할 수 있습니다.
-
-5. 구독 및 테넌트 ID 얻기:
-
-    ```shell
-    $ az account list
-    ```
-
-    다음은 출력 예제입니다.
+4. `az account list` 명령을 사용하여 구독 및 테넌트 ID를 가져옵니다. 이는 Azure 패키지를 사용하여 작업할 때 필요합니다. 다음은 이 명령의 출력 예제를 보여 줍니다.
 
     ```shell
     {
@@ -72,74 +58,9 @@ ms.locfileid: "91110431"
     }
     ```
 
-    **구독 ID는 7단계에서 사용되므로 기록해 두세요.**
+5. [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli) 항목에 설명된 단계에 따라 서비스 주체를 생성합니다. 출력의 JSON 개체에는 Azure로 인증하는 데 필요한 정보가 포함됩니다.
 
-6. 서비스 사용자를 만들어 Azure로 인증하는 데 필요한 다른 정보를 포함하는 JSON 개체를 가져옵니다.
-
-    ```shell
-    $ az ad sp create-for-rbac
-    ```
-
-    다음은 출력 예제입니다.
-
-    ```shell
-    {
-    "appId": "<appId>",
-    "displayName": "<displayName>",
-    "name": "<name>",
-    "password": "<password>",
-    "tenant": "<tenant>"
-    }
-    ```
-
-    **tenant, name 및 password 값은 7단계에서 사용되므로 기록해 두세요.**
-
-7. 환경 변수 설정 - &lt;subscriptionId>, &lt;tenant>, &lt;name> 및 &lt;password> 자리 표시자를 4단계 및 5단계에서 얻은 값으로 바꿉니다.
-
-    **bash 사용**
-
-    ```shell
-    export azureSubId='<subscriptionId>'
-    export azureServicePrincipalTenantId='<tenant>'
-    export azureServicePrincipalClientId='<name>'
-    export azureServicePrincipalPassword='<password>'
-    ```
-
-    **PowerShell 사용**
-
-    ```shell
-    $env:azureSubId='<subscriptionId>'
-    $env:azureServicePrincipalTenantId='<tenant>'
-    $env:azureServicePrincipalClientId='<name>'
-    $env:azureServicePrincipalPassword='<password>'
-    ```
-
-## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>Node.js용 Azure SDK를 사용하여 서비스 사용자 만들기
-
-JavaScript를 사용하여 프로그래밍 방식으로 서비스 사용자를 만들려면 [ServicePrincipal 스크립트(영문)](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)를 사용합니다.
 
 ## <a name="using-the-service-principal"></a>서비스 사용자 사용
 
-서비스 사용자가 있는 경우 다음 JavaScript 코드 조각에서는 Node.js용 Azure SDK를 사용하여 서비스 사용자 키를 통해 인증하는 방법을 보여 줍니다. &lt;clientId 또는 appId>, &lt;secret 또는 password>, &lt;domain 또는 tenant> 자리 표시자를 수정합니다.
-
-```javascript
-const Azure = require('azure');
-const MsRest = require('ms-rest-azure');
-
-MsRest.loginWithServicePrincipalSecret(
-  <clientId or appId>,
-  <secret or password>,
-  <domain or tenant>,
-  (err, credentials) => {
-    if (err) throw err
-
-    let storageClient = Azure.createARMStorageManagementClient(credentials, '<azure-subscription-id>');
-
-    // ..use the client instance to manage service resources.
-  }
-);
-```
-
-## <a name="next-steps"></a>다음 단계
-
-* [Node.js용 Azure 모듈을 사용하여 인증](node-sdk-azure-authenticate.md)
+서비스 주체가 있는 경우 [JavaScript용 Azure 관리 모듈로 인증](./node-sdk-azure-authenticate.md) 항목에서 Azure Active Directory를 사용하여 클라이언트를 인증하는 데 사용할 수 있는 자격 증명을 만드는 방법을 참조하세요.

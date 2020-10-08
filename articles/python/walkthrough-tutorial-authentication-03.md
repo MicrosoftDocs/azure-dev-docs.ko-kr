@@ -4,12 +4,12 @@ description: Azure Functions를 사용하여 타사 API를 구현하는 예와 �
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 84078a455843cb28f80a633bb5344bc5ab645ac7
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379535"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764500"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>3부: 타사 API 구현 예
 
@@ -42,9 +42,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 코드를 배포하기 위해 샘플의 프로비저닝 스크립트는 다음 단계를 수행합니다.
 
-1. Azure CLI 명령 [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)를 사용하여 Azure Functions에 대한 백업 스토리지 계정을 만듭니다.
+1. Azure CLI 명령 [`az storage account create`](/cli/azure/storage/account#az-storage-account-create)를 사용하여 Azure Functions에 대한 백업 스토리지 계정을 만듭니다.
 
-1. Azure CLI 명령 [`az function app create`](/cli/azure/functionapp?view=azure-cli-latest#az-functionapp-create)를 사용하여 Azure Functions "앱"을 만듭니다.
+1. Azure CLI 명령 [`az function app create`](/cli/azure/functionapp#az-functionapp-create)를 사용하여 Azure Functions "앱"을 만듭니다.
 
 1. 호스트가 완전히 프로비저닝될 때까지 60초를 기다린 후 [Azure Functions Core Tools](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash) 명령, [`func azure functionapp publish`](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash#project-file-deployment)를 사용하여 코드를 배포합니다.
 

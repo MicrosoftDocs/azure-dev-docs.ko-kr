@@ -4,12 +4,12 @@ description: Python용 Azure SDK 라이브러리의 일반적인 사용 패턴 �
 ms.date: 09/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 63cd6c85e15fa0ffb44a4da01ffcc27d4ae08f17
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831799"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764783"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python용 Azure 라이브러리 사용 패턴
 
@@ -37,9 +37,9 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>비동기 작업
 
-클라이언트 및 관리 클라이언트 개체(예: [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-))를 통해 호출하는 많은 작업에서는 `AzureOperationPoller[<type>]` 형식의 개체를 반환합니다. 여기서 `<type>`은 해당 작업에만 적용됩니다.
+클라이언트 및 관리 클라이언트 개체(예: [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-))를 통해 호출하는 많은 작업에서는 `AzureOperationPoller[<type>]` 형식의 개체를 반환합니다. 여기서 `<type>`은 해당 작업에만 적용됩니다.
 
-[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python) 반환 형식은 비동기 작업임을 의미합니다. 따라서 해당 폴러의 `result` 메서드를 호출하여 실제 작업 결과를 사용할 수 있게 될 때까지 기다려야 합니다.
+[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) 반환 형식은 비동기 작업임을 의미합니다. 따라서 해당 폴러의 `result` 메서드를 호출하여 실제 작업 결과를 사용할 수 있게 될 때까지 기다려야 합니다.
 
 [예제: 웹앱 프로비저닝 및 배포](azure-sdk-example-web-app.md)에서 가져온 다음 코드는 폴러를 사용하여 결과를 기다리는 예제를 보여 줍니다.
 
@@ -58,7 +58,7 @@ poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
 web_app_result = poller.result()
 ```
 
-이 경우 `create_or_update`의 반환 값이 `AzureOperationPoller[Site]` 형식이며, 이는 `poller.result()`의 반환 값이 [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python) 개체임을 의미합니다.
+이 경우 `create_or_update`의 반환 값이 `AzureOperationPoller[Site]` 형식이며, 이는 `poller.result()`의 반환 값이 [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site) 개체임을 의미합니다.
 
 ## <a name="exceptions"></a>예외
 
@@ -112,7 +112,7 @@ Azure REST API에 대한 실패한 HTTP 요청을 포함하여 작업이 의도�
 
 Azure 라이브러리 내의 많은 작업을 통해 개체 인수를 개별 개체 또는 인라인 JSON으로 표현할 수 있습니다.
 
-예를 들어 [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-) 메서드를 통해 리소스 그룹을 생성할 수 있는 [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient?view=azure-python) 개체가 있다고 가정하겠습니다. 이 메서드의 두 번째 인수는 [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup?view=azure-python) 형식입니다.
+예를 들어 [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-) 메서드를 통해 리소스 그룹을 생성할 수 있는 [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient) 개체가 있다고 가정하겠습니다. 이 메서드의 두 번째 인수는 [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup) 형식입니다.
 
 `create_or_update`를 호출하려면 필요한 인수(이 경우 `location`)를 직접 사용하여 개별 `ResourceGroup` 인스턴스를 만들면 됩니다.
 
@@ -138,7 +138,7 @@ JSON을 사용하는 경우 Azure 라이브러리는 인라인 JSON을 해당 �
 
 개체에 중첩된 개체 인수도 있을 수 있으며, 이런 경우 중첩된 JSON도 사용할 수 있습니다.
 
-예를 들어 [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python) 개체 인스턴스가 있고 해당 [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 호출한다고 가정하겠습니다. 이 경우 세 번째 인수는 [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python) 형식이며 인수 자체에 [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) 형식의 인수를 포함합니다. `VaultProperties`는 [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) 형식 및 [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python) 형식의 개체 인수를 차례로 포함합니다. `Sku`는 [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python) 개체를 포함하고 각 `AccessPolicyEntry`는 [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python) 개체를 포함합니다.
+예를 들어 [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient) 개체 인스턴스가 있고 해당 [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 호출한다고 가정하겠습니다. 이 경우 세 번째 인수는 [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters) 형식이며 인수 자체에 [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties) 형식의 인수를 포함합니다. `VaultProperties`는 [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku) 형식 및 [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry) 형식의 개체 인수를 차례로 포함합니다. `Sku`는 [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname) 개체를 포함하고 각 `AccessPolicyEntry`는 [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions) 개체를 포함합니다.
 
 포함 개체를 사용하여 `create_or_update`를 호출하려면 다음과 같은 코드를 사용합니다(`tenant_id`와 `object_id`가 이미 정의되어 있다고 가정). 또한 함수 호출 전에 필요한 개체를 만들 수 있습니다.
 

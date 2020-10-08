@@ -4,12 +4,12 @@ description: 타사 API 엔드포인트를 사용하고 Azure Queue Storage에 �
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e026eca0216147c6614582e0cd070cee81daf99c
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: b6a54f51c53889ba95f86ba194232262f31c2d99
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379525"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764701"
 ---
 # <a name="part-7-main-application-api-endpoint"></a>7부: 기본 애플리케이션 API 엔드포인트
 
@@ -52,7 +52,7 @@ API 호출이 성공하고 숫자 값을 반환한다고 가정하면, 해당 �
 
 여기에서 `code` 변수는 코드 값과 타임스탬프를 포함하는 앱 API에 대한 전체 JSON 응답을 포함합니다. 예제 응답은 `{"code":"ojE-161-pTv","timestamp":"2020-04-15 16:54:48.816549"}`입니다.
 
-단, 이 응답을 반환하기 전에 큐 클라이언트의 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) 메서드를 사용하여 스토리지 큐에 메시지를 작성합니다.
+단, 이 응답을 반환하기 전에 큐 클라이언트의 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) 메서드를 사용하여 스토리지 큐에 메시지를 작성합니다.
 
 ```python
     queue_client.send_message(code)
@@ -62,7 +62,7 @@ API 호출이 성공하고 숫자 값을 반환한다고 가정하면, 해당 �
 
 ## <a name="processing-queue-messages"></a>큐 메시지 처리
 
-큐에 저장된 메시지는 [Azure Portal](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties)을 통해 또는 Azure CLI 명령 [`az storage message get`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-get)을 사용하여 살펴보거나 관리할 수 있습니다. 샘플 리포지토리에는 앱 엔드포인트에서 코드를 요청한 다음, 메시지 큐를 확인하는 스크립트(*test.cmd* 및 *test.sh*)가 포함되어 있습니다. 또한 [`az storage message clear`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-clear) 명령을 사용하여 큐를 지우는 스크립트도 있습니다.
+큐에 저장된 메시지는 [Azure Portal](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties)을 통해 또는 Azure CLI 명령 [`az storage message get`](/cli/azure/storage/message#az-storage-message-get)을 사용하여 살펴보거나 관리할 수 있습니다. 샘플 리포지토리에는 앱 엔드포인트에서 코드를 요청한 다음, 메시지 큐를 확인하는 스크립트(*test.cmd* 및 *test.sh*)가 포함되어 있습니다. 또한 [`az storage message clear`](/cli/azure/storage/message#az-storage-message-clear) 명령을 사용하여 큐를 지우는 스크립트도 있습니다.
 
 일반적으로 이 예제와 같은 앱에는 추가 처리를 위해 큐에서 메시지를 비동기식으로 끌어오는 또 다른 프로세스가 있습니다. 앞서 언급했듯이 이 API 엔드포인트에서 생성된 응답은 2단계 사용자 인증으로 앱의 다른 곳에서 사용될 수 있습니다. 그런 경우 앱은 일정 시간(예: 10분) 후에 코드를 무효화해야 합니다. 이 작업을 수행하는 간단한 방법은 사용자 로그인 절차에서 사용되는 유효한 2단계 인증 코드 테이블을 유지하는 것입니다. 그러면 앱은 다음 논리(의사 코드에서)를 사용하는 간단한 큐 감시 프로세스를 갖게 됩니다.
 
@@ -76,7 +76,7 @@ else:
     call queue_client.send_message(code, visibility_timeout=600)
 </pre>
 
-이 의사 코드는 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) 메서드의 선택적 `visibility_timeout` 매개 변수를 채택합니다. 이 매개 변수는 메시지가 큐에 표시되기까지의 시간(초)을 지정합니다. 기본 시간 제한은 0이므로 API 엔드포인트에서 초기에 작성된 메시지는 큐 감시 프로세스에 즉시 표시됩니다. 그 결과 해당 프로세스는 유효한 코드 테이블에 즉시 저장됩니다. 제한 시간을 통해 동일한 메시지를 다시 큐에 추가함으로써, 프로세스는 10분 후에 코드를 다시 수신한다는 것을 알고, 그 시간이 되면 테이블에서 해당 메시지가 제거됩니다.
+이 의사 코드는 [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) 메서드의 선택적 `visibility_timeout` 매개 변수를 채택합니다. 이 매개 변수는 메시지가 큐에 표시되기까지의 시간(초)을 지정합니다. 기본 시간 제한은 0이므로 API 엔드포인트에서 초기에 작성된 메시지는 큐 감시 프로세스에 즉시 표시됩니다. 그 결과 해당 프로세스는 유효한 코드 테이블에 즉시 저장됩니다. 제한 시간을 통해 동일한 메시지를 다시 큐에 추가함으로써, 프로세스는 10분 후에 코드를 다시 수신한다는 것을 알고, 그 시간이 되면 테이블에서 해당 메시지가 제거됩니다.
 
 ## <a name="implementing-the-main-app-api-endpoint-in-azure-functions"></a>Azure Functions에서 기본 앱 API 엔드포인트 구현
 
@@ -90,7 +90,7 @@ else:
 
 이 예제에서는 앱이 다른 Azure 서비스를 사용하여 인증하는 방법과 앱이 Azure Key Vault를 사용하여 타사 API에 필요한 다른 비밀을 저장하는 방법을 알아보았습니다.
 
-Azure Key Vault 및 Azure Storage를 사용하여 여기에서 설명한 동일한 패턴이 다른 모든 Azure 서비스에도 적용됩니다. 중요한 단계는 Azure Portal 해당 서비스의 페이지 내에서 또는 Azure CLI를 통해 앱에 대한 올바른 역할 권한을 설정하는 것입니다. ([역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)을 참조하세요.) 다른 액세스 정책을 구성해야 하는지 여부를 알아보려면 서비스 설명서를 참조하세요.
+Azure Key Vault 및 Azure Storage를 사용하여 여기에서 설명한 동일한 패턴이 다른 모든 Azure 서비스에도 적용됩니다. 중요한 단계는 Azure Portal 해당 서비스의 페이지 내에서 또는 Azure CLI를 통해 앱에 대한 올바른 역할 권한을 설정하는 것입니다. ([역할 권한을 할당하는 방법](/azure/role-based-access-control/role-assignments-steps)을 참조하세요.) 다른 액세스 정책을 구성해야 하는지 여부를 알아보려면 서비스 설명서를 참조하세요.
 
 로컬 개발에 사용하는 서비스 주체에 동일한 역할과 액세스 정책을 할당해야 한다는 것을 항상 기억해야 합니다.
 

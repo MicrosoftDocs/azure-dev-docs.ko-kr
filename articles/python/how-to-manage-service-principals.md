@@ -4,12 +4,12 @@ description: Azure Portal 또는 Azure CLI를 사용하여 로컬 개발용으�
 ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: b6d3ffbb7e78b7c4f2405e5363446c1906913aa9
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 9d090a4615621c60485b64fac22929472c0cd175
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614511"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764791"
 ---
 # <a name="how-to-manage-service-principals"></a>서비스 주체를 관리하는 방법
 
@@ -37,8 +37,8 @@ ms.locfileid: "88614511"
 
 Azure CLI를 사용하면 Azure Portal을 통해 서비스 주체에 수행할 수 있는 동일한 작업을 많이 수행할 수 있습니다.
 
-- 서비스 주체 생성, 보기, 업데이트 및 삭제: [az ad sp](/cli/azure/ad/sp?view=azure-cli-latest) 명령. [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)도 참조하세요.
-- 역할 할당 관리: [az role assignment](/cli/azure/role/assignment?view=azure-cli-latest) 명령.
+- 서비스 주체 생성, 보기, 업데이트 및 삭제: [az ad sp](/cli/azure/ad/sp) 명령. [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli)도 참조하세요.
+- 역할 할당 관리: [az role assignment](/cli/azure/role/assignment) 명령.
 
 참고 항목:
 

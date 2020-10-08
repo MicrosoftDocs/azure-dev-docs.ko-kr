@@ -4,12 +4,12 @@ description: 기본 앱의 종속성(주로 Azure SDK 라이브러리), 필요�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2da18ac4b1d27e976d0713fba16dbfc0ba644168
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379516"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764735"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>5부: 기본 앱 종속성, import 문, 환경 변수
 
@@ -19,7 +19,7 @@ ms.locfileid: "89379516"
 
 ## <a name="dependencies-and-import-statements"></a>종속성 및 import 문
 
-앱 코드는 다음과 같은 여러 라이브러리에서 필요합니다. Flask, 표준 HTTP 요청 라이브러리, Active Directory([azure.identity](/python/api/overview/azure/identity-readme?view=azure-python)), Key Vault([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme?view=azure-python)) 및 Queue Storage([azure.storage.queue](/python/api/overview/azure/storage-queue-readme?view=azure-python))용 Azure 라이브러리. 이러한 라이브러리는 앱의 *requirements.txt* 파일에 포함되어 있습니다.
+앱 코드는 다음과 같은 여러 라이브러리에서 필요합니다. Flask, 표준 HTTP 요청 라이브러리, Active Directory([azure.identity](/python/api/overview/azure/identity-readme)), Key Vault([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme)) 및 Queue Storage([azure.storage.queue](/python/api/overview/azure/storage-queue-readme))용 Azure 라이브러리. 이러한 라이브러리는 앱의 *requirements.txt* 파일에 포함되어 있습니다.
 
 ```txt
 flask
@@ -57,7 +57,7 @@ from azure.storage.queue import QueueClient
 
 하지만 Azure App Service에 배포할 때는 서버 자체에 액세스할 수 없습니다. 이런 경우 동일한 이름으로 애플리케이션 설정을 만듭니다. 그러면 앱에 환경 변수로 표시됩니다. 
 
-프로비저닝 스크립트는 Azure CLI 명령, [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set)를 사용하여 이러한 설정을 만듭니다. 4개 변수는 모두 단일 명령으로 설정됩니다.
+프로비저닝 스크립트는 Azure CLI 명령, [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set)를 사용하여 이러한 설정을 만듭니다. 4개 변수는 모두 단일 명령으로 설정됩니다.
 
 Azure Portal을 통해 설정을 만들려면 [Azure Portal에서 App Service 앱 구성](/azure/app-service/configure-common)을 참조하세요.
 

@@ -5,12 +5,12 @@ keywords: azure devops terraform linux vm 가상 머신
 ms.topic: how-to
 ms.date: 06/14/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 13c519aeabfdd5a432dc16188e8d61241391c742
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 2beb9a98644d19c556342ee98e72c0b8b04ef355
+ms.sourcegitcommit: bf911950c432bdce257f9968b294a1c33e74c5f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401623"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91717466"
 ---
 # <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기
 
@@ -107,7 +107,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     name                = "myNetworkSecurityGroup"
     location            = "eastus"
     resource_group_name = azurerm_resource_group.myterraformgroup.name
-    
+
     security_rule {
         name                       = "SSH"
         priority                   = 1001
@@ -125,7 +125,6 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     }
 }
 ```
-
 
 ## <a name="create-virtual-network-interface-card"></a>가상 네트워크 인터페이스 카드 만들기
 
@@ -166,7 +165,7 @@ resource "random_id" "randomId" {
         # Generate a new ID only when a new resource group is defined
         resource_group = azurerm_resource_group.myterraformgroup.name
     }
-    
+
     byte_length = 8
 }
 ```
@@ -187,10 +186,9 @@ resource "azurerm_storage_account" "mystorageaccount" {
 }
 ```
 
-
 ## <a name="create-virtual-machine"></a>가상 머신 만들기
 
-마지막 단계에서는 VM을 만들고 생성한 모든 리소스를 사용합니다. 다음 섹션에서는 `myVM`이라는 VM을 만들고 `myNIC`라는 가상 NIC를 연결합니다. 최신 `Ubuntu 16.04-LTS` 이미지를 사용하고, 암호 인증을 사용하지 않도록 설정된 `azureuser`라는 사용자가 만들어집니다.
+마지막 단계에서는 VM을 만들고 생성한 모든 리소스를 사용합니다. 다음 섹션에서는 `myVM`이라는 VM을 만들고 `myNIC`라는 가상 NIC를 연결합니다. 최신 `Ubuntu 18.04-LTS` 이미지를 사용하고, 암호 인증을 사용하지 않도록 설정된 `azureuser`라는 사용자가 만들어집니다.
 
  SSH 키 데이터는 `ssh_keys` 섹션에서 제공됩니다. `key_data` 필드에 공용 SSH 키를 제공합니다.
 
@@ -200,7 +198,7 @@ resource "tls_private_key" "example_ssh" {
   rsa_bits = 4096
 }
 
-output "tls_private_key" { value = "tls_private_key.example_ssh.private_key_pem" }
+output "tls_private_key" { value = tls_private_key.example_ssh.private_key_pem }
 
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
@@ -218,14 +216,14 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     source_image_reference {
         publisher = "Canonical"
         offer     = "UbuntuServer"
-        sku       = "16.04.0-LTS"
+        sku       = "18.04-LTS"
         version   = "latest"
     }
 
     computer_name  = "myvm"
     admin_username = "azureuser"
     disable_password_authentication = true
-        
+
     admin_ssh_key {
         username       = "azureuser"
         public_key     = tls_private_key.example_ssh.public_key_openssh
@@ -301,7 +299,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
     name                = "myNetworkSecurityGroup"
     location            = "eastus"
     resource_group_name = azurerm_resource_group.myterraformgroup.name
-    
+
     security_rule {
         name                       = "SSH"
         priority                   = 1001
@@ -349,7 +347,7 @@ resource "random_id" "randomId" {
         # Generate a new ID only when a new resource group is defined
         resource_group = azurerm_resource_group.myterraformgroup.name
     }
-    
+
     byte_length = 8
 }
 
@@ -371,7 +369,7 @@ resource "tls_private_key" "example_ssh" {
   algorithm = "RSA"
   rsa_bits = 4096
 }
-output "tls_private_key" { value = "${tls_private_key.example_ssh.private_key_pem}" }
+output "tls_private_key" { value = tls_private_key.example_ssh.private_key_pem }
 
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
@@ -390,14 +388,14 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     source_image_reference {
         publisher = "Canonical"
         offer     = "UbuntuServer"
-        sku       = "16.04.0-LTS"
+        sku       = "18.04-LTS"
         version   = "latest"
     }
 
     computer_name  = "myvm"
     admin_username = "azureuser"
     disable_password_authentication = true
-        
+
     admin_ssh_key {
         username       = "azureuser"
         public_key     = tls_private_key.example_ssh.public_key_openssh

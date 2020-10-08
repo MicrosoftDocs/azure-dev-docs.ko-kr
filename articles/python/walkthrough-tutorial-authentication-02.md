@@ -4,12 +4,12 @@ description: 예제 시나리오의 다양한 인증 요구 사항 및 과제와
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: c6719e3c86b590edff551d98e5a961fd08f857c3
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 2e3755f7049fd091c05cd2aca5ddf8276cebff95
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379538"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764431"
 ---
 # <a name="part-2-authentication-needs-in-the-scenario"></a>2부: 시나리오의 인증 요구 사항
 
@@ -33,7 +33,7 @@ ms.locfileid: "89379538"
 
 ## <a name="integrated-authentication-with-managed-identity"></a>관리 ID와 통합 인증
 
-Storage 및 Key Vault와 같은 많은 Azure 서비스가 Azure AD(Azure Active Directory)와 통합되기 때문에 [관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하여 Azure AD로 애플리케이션을 인증하는 경우 다른 연결된 리소스로 자동 인증됩니다. ID에 대한 권한 부여는 [RBAC(역할 기반 액세스 제어)](how-to-assign-role-permissions.md)를 통해 처리되며 다른 액세스 정책을 통해 처리되는 경우도 있습니다.
+Storage 및 Key Vault와 같은 많은 Azure 서비스가 Azure AD(Azure Active Directory)와 통합되기 때문에 [관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하여 Azure AD로 애플리케이션을 인증하는 경우 다른 연결된 리소스로 자동 인증됩니다. ID에 대한 권한 부여는 [RBAC(역할 기반 액세스 제어)](/azure/role-based-access-control/role-assignments-steps)를 통해 처리되며 다른 액세스 정책을 통해 처리되는 경우도 있습니다.
 
 이렇게 통합하면 앱 코드에서 Azure 관련 자격 증명을 처리할 필요가 없으며 개발자 워크스테이션이나 소스 제어에 자격 증명이 나타나지 않습니다. 또한 타사 API 및 서비스에 대한 키 처리는 전적으로 런타임에 수행되므로 해당 키를 안전하게 유지할 수 있습니다.
 
@@ -51,7 +51,7 @@ Storage 및 Key Vault와 같은 많은 Azure 서비스가 Azure AD(Azure Active 
 
 이 자습서의 나머지 부분에서는 예제 시나리오 및 함께 제공되는 샘플 코드의 컨텍스트에서 프로세스의 모든 세부 사항을 보여줍니다.
 
-샘플의 프로비저닝 스크립트에서 모든 리소스는 `auth-scenario-rg`라는 리소스 그룹에 만들어집니다. 이 그룹은 Azure CLI [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) 명령을 사용하여 생성됩니다.
+샘플의 프로비저닝 스크립트에서 모든 리소스는 `auth-scenario-rg`라는 리소스 그룹에 만들어집니다. 이 그룹은 Azure CLI [`az group create`](/cli/azure/group#az-group-create) 명령을 사용하여 생성됩니다.
 
 > [!div class="nextstepaction"]
 > [3부 - 타사 API 구현 예 >>>](walkthrough-tutorial-authentication-03.md)

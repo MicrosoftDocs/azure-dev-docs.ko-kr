@@ -4,12 +4,12 @@ description: Visual Studio Code, Azure SDK 라이브러리 및 라이브러리 �
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 14955bc63ab44884254e2304b0e5ceb97e7bcb0d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614507"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764815"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure를 위한 로컬 Python 개발 환경 구성
 
@@ -122,7 +122,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
     이러한 명령에 표시된 값을 특정 서비스 주체의 값으로 바꿉니다.
 
-    구독 ID를 검색하려면 [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) 명령을 실행하고 출력에서 `id` 속성을 찾습니다.
+    구독 ID를 검색하려면 [`az account show`](/cli/azure/account#az-account-show) 명령을 실행하고 출력에서 `id` 속성을 찾습니다.
 
     편의를 위해 동일한 명령이 포함된 명령줄 스크립트 파일(예: macOS/Linux의 경우 *setenv.sh* 또는 Windows의 경우 *setenv.cmd*)을 만듭니다. 그런 다음, 로컬 테스트를 위해 터미널 또는 명령 프롬프트를 열 때마다 스크립트를 실행하여 변수를 설정할 수 있습니다. 다시 강조하지만, 파일이 사용자 계정에만 남아 있도록 스크립트 파일을 소스 제어에 추가하지 마세요.
 
@@ -138,7 +138,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
 `az ad create-for-rbac` 명령은 "RBAC(역할 기반 인증)"에 대한 서비스 주체를 만듭니다.
 
-- `ad`는 Azure Active Directory를 의미하고, `sp`는 "서비스 주체"를 의미하고, `create-for-rbac`는 Azure의 기본 인증 형태인 "역할 기반 액세스 제어 만들기"를 의미합니다. [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) 명령 참조를 확인하세요.
+- `ad`는 Azure Active Directory를 의미하고, `sp`는 "서비스 주체"를 의미하고, `create-for-rbac`는 Azure의 기본 인증 형태인 "역할 기반 액세스 제어 만들기"를 의미합니다. [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) 명령 참조를 확인하세요.
 
 - `--name` 인수는 조직 내에서 고유해야 하며 일반적으로 서비스 주체를 사용하는 개발자의 이름을 사용합니다. 이 인수를 생략하면 Azure CLI는 `azure-cli-<timestamp>` 형식의 일반 이름을 사용합니다. 원하는 경우 Azure Portal에서 서비스 사용자의 이름을 바꿀 수 있습니다.
 
@@ -238,7 +238,7 @@ git init
 
 여기서 `git add` 및 `git commit` 같은 명령을 실행하여 변경 내용을 커밋할 수 있습니다. 정기적으로 변경 내용을 커밋하면 이전 상태로 되돌릴 수 있는 커밋 기록이 생성됩니다.
 
-온라인으로 프로젝트 백업을 만들려면 리포지토리를 [GitHub](https://github.com) 또는 [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops)에 업로드하는 것이 좋습니다. 로컬 리포지토리를 처음으로 초기화한 경우에는 `git remote add` 명령을 사용하여 로컬 리포지토리를 GitHub 또는 Azure DevOps에 연결합니다.
+온라인으로 프로젝트 백업을 만들려면 리포지토리를 [GitHub](https://github.com) 또는 [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops&preserve-view=true)에 업로드하는 것이 좋습니다. 로컬 리포지토리를 처음으로 초기화한 경우에는 `git remote add` 명령을 사용하여 로컬 리포지토리를 GitHub 또는 Azure DevOps에 연결합니다.
 
 git에 대한 설명서는 [git-scm.com/docs](https://git-scm.com/docs) 및 인터넷에서 찾을 수 있습니다.
 

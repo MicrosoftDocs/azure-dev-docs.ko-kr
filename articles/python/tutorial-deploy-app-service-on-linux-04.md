@@ -4,12 +4,12 @@ description: 자습서 4단계에서는 Django, Flask 및 기타 프레임워크
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 6aa1f03b562eeea01e6e71441e8a12339eeaad26
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501428"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764800"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Azure App Service에서 Python 앱에 대한 사용자 지정 시작 파일 구성
 
@@ -48,7 +48,7 @@ ms.locfileid: "88501428"
 
 1. 변경 내용을 저장하면 App Service가 다시 시작됩니다. 그러나 앱 코드를 아직 배포하지 않았으므로 이 시점에서 사이트를 방문하면 “애플리케이션 오류”가 표시됩니다. 이 메시지는 Gunicorn 서버가 시작되었지만 앱을 찾지 못했으며, 따라서 HTTP 요청에 응답하지 않음을 나타냅니다. 다음 단계에서 앱 코드를 배포합니다.
 
-`--startup-file` 인수를 사용하여 Azure CLI [`az webapp create`명령](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)을 통해 시작 명령을 지정할 수도 있습니다.
+`--startup-file` 인수를 사용하여 Azure CLI [`az webapp create`명령](/cli/azure/webapp#az-webapp-create)을 통해 시작 명령을 지정할 수도 있습니다.
 
 ## <a name="django-startup-commands"></a>Django 시작 명령
 

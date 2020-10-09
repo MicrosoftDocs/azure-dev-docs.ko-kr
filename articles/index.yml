@@ -10,118 +10,118 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 60455122c0ab21dc646938661c4f9489c969bd0d
-  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
+  ms.openlocfilehash: ed689388bddd3083b1718e05d6d8ad6eccc055f2
+  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87260390"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91846664"
 productDirectory:
   items:
   - title: Python
     imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
     links:
-    - url: https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
+    - url: ./python/tutorial-vs-code-serverless-python-01.md
       text: Azure Functions에 서버리스 Python 앱 배포
-    - url: https://docs.microsoft.com/azure/developer/python/tutorial-deploy-app-service-on-linux-01
+    - url: ./python/tutorial-deploy-app-service-on-linux-01.md
       text: Azure App Service에 Python 앱 배포
-    - url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-python
+    - url: /azure/storage/blobs/storage-quickstart-blobs-python
       text: Python용 Azure SDK를 사용하여 스토리지 Blob 관리
-    - url: https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python
+    - url: /azure/sql-database/sql-database-connect-query-python
       text: Python을 사용하여 Azure SQL Database 쿼리
-    - url: https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-python
+    - url: /azure/data-factory/quickstart-create-data-factory-python
       text: Python을 사용하여 Azure Data Factory 만들기
-    - url: https://docs.microsoft.com/azure/developer/python/
+    - url: ./python/index.yml
       text: Python 개발자 센터에서 자세히 보기
   - title: JavaScript
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-static-website-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-static-website-node-01.md?tabs=bash
       text: 정적 웹 사이트 개발
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-azure-app-service-node-01.md?tabs=bash
       text: Azure App Service에 배포
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-serverless-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-serverless-node-01.md?tabs=bash
       text: 서버리스 애플리케이션 배포
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-docker-node-01.md?tabs=bash
       text: Docker 컨테이너 배포
-    - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - url: /azure/cosmos-db/create-mongodb-nodejs?bc=%252fazure%252fdeveloper%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fdeveloper%252fjavascript%252ftoc.json
       text: MongoDB 앱을 Azure Cosmos DB로 마이그레이션
-    - url: https://docs.microsoft.com/azure/developer/javascript/
+    - url: ./javascript/index.yml
       text: 개발자 센터에서 자세히 보기
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install
+    - url: ./java/fundamentals/java-jdk-install.md
       text: Azure 및 Azure Stack용 JDK 설치
-    - url: https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
       text: Azure Portal을 사용하여 Azure Spring Cloud 앱 배포
-    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java
+    - url: /azure/app-service/app-service-web-get-started-java
       text: Azure App Service에서 Java 앱 만들기
-    - url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory
+    - url: ./java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory.md
       text: Azure Active Directory용 Spring Boot Starter 사용
-    - url: https://docs.microsoft.com/azure/developer/java/migration/migration-overview
+    - url: ./java/migration/migration-overview.md
       text: Java 애플리케이션을 Azure로 마이그레이션
-    - url: https://docs.microsoft.com/azure/developer/java/
+    - url: ./java/index.yml
       text: Java 개발자 센터에서 자세히 보기
   - title: .NET
     imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
     links:
-    - url: https://docs.microsoft.com/dotnet/azure/sdk/
+    - url: /dotnet/azure/sdk/
       text: Azure SDK for .NET
-    - url: https://docs.microsoft.com/dotnet/azure/intro
+    - url: /dotnet/azure/intro
       text: Azure 및 .NET 소개
-    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+    - url: /azure/app-service/app-service-web-get-started-dotnet
       text: ASP.NET 웹앱 배포
-    - url: https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio
+    - url: /azure/azure-functions/functions-create-your-first-function-visual-studio
       text: 서버리스 기능 빌드
-    - url: https://docs.microsoft.com/visualstudio/containers/container-tools?view=vs-2019
+    - url: /visualstudio/containers/container-tools?view=vs-2019
       text: ASP.NET Core 및 Docker
-    - url: https://docs.microsoft.com/dotnet/azure/
+    - url: /dotnet/azure/
       text: .NET 개발자 센터에서 자세히 보기
   - title: Azure PowerShell
     imageSrc: https://docs.microsoft.com/media/logos/logo_powershell.svg
     links:
-    - url: https://docs.microsoft.com/powershell/azure/new-azureps-module-az
+    - url: /powershell/azure/new-azureps-module-az
       text: 새 Az 모듈이란?
-    - url: https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az
+    - url: /powershell/azure/migrate-from-azurerm-to-az
       text: AzureRM에서 Az로 마이그레이션
-    - url: https://docs.microsoft.com/powershell/azure/install-az-ps
+    - url: /powershell/azure/install-az-ps
       text: 설치
-    - url: https://docs.microsoft.com/powershell/azure/authenticate-azureps
+    - url: /powershell/azure/authenticate-azureps
       text: 로그인
-    - url: https://docs.microsoft.com/powershell/azure/context-persistence
+    - url: /powershell/azure/context-persistence
       text: 자격 증명 컨텍스트 유지
-    - url: https://docs.microsoft.com/powershell/azure/
+    - url: /powershell/azure/
       text: Azure PowerShell 개발자 센터에서 자세히 보기
   - title: Azure CLI
     imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
     links:
-    - url: https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/get-started-with-azure-cli?view=azure-cli-latest
       text: 시작하기
-    - url: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/install-azure-cli?view=azure-cli-latest
       text: 설치
-    - url: https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/authenticate-azure-cli?view=azure-cli-latest
       text: 로그인
-    - url: https://docs.microsoft.com/en-us/cli/azure/query-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/query-azure-cli?view=azure-cli-latest
       text: CLI 명령의 출력에 대해 쿼리 실행
-    - url: https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
+    - url: /cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
       text: 가상 머신 만들기
-    - url: https://docs.microsoft.com/cli/azure/
+    - url: /cli/azure/
       text: Azure CLI 개발자 센터에서 자세히 보기
   - title: 모바일
     imageSrc: https://static.docs.com/ui/media/product/azure/devices.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/serverless-compute
+    - url: ./mobile-apps/serverless-compute.md
       text: 서버리스 모바일 앱 빌드
-    - url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+    - url: /azure/cosmos-db/create-sql-api-xamarin-dotnet
       text: Azure Cosmos DB를 사용하여 데이터 저장
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/push-notifications
+    - url: ./mobile-apps/push-notifications.md
       text: 참여 사용자에게 푸시 알림 보내기
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/authentication
+    - url: ./mobile-apps/authentication.md
       text: 인증 추가 및 사용자 ID 관리
-    - url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+    - url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
       text: 새로운 Azure Pipelines 사용자를 위한 핵심 개념
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps
+    - url: ./mobile-apps/index.yml
       text: 모바일 앱 개발자 센터에서 자세히 보기
 additionalContent:
   sections:
@@ -132,34 +132,34 @@ additionalContent:
       url: https://code.visualstudio.com/docs/azure/extensions
     - title: REST API
       summary: REST API를 사용하여 HTTP 작업을 통해 서비스의 리소스에 액세스합니다.
-      url: https://docs.microsoft.com/rest/api/
+      url: /rest/api/
     - title: ARM 템플릿
       summary: Azure Resource Manager 템플릿을 사용하여 JSON 파일로 프로젝트를 정의하고 구성합니다.
-      url: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/
+      url: /azure/azure-resource-manager/templates/
     - title: Azure DevOps
       summary: Azure DevOps를 사용하여 작업을 계획하고, 코드 개발에 대한 공동 작업을 수행하고, 애플리케이션을 구축 및 배포합니다.
-      url: https://docs.microsoft.com/azure/devops/?view=azure-devops
+      url: /azure/devops/?view=azure-devops
     - title: Azure 및 GitHub 통합
       summary: GitHub 및 GitHub Actions를 사용하여 리포지토리 내에서 소프트웨어 개발 워크플로를 자동화, 사용자 지정 및 실행합니다.
-      url: https://docs.microsoft.com/azure/developer/github
+      url: ./github/index.yml
     - title: Jenkins
       summary: Jenkins를 사용하여 소프트웨어 프로젝트의 지속적인 통합 및 제공(CI/CD)을 자동화합니다.
-      url: https://docs.microsoft.com/azure/jenkins/
+      url: /azure/jenkins/
     - title: Terraform
       summary: Hashicorp Terraform을 사용하여 클라우드 인프라를 프로비저닝하고 관리합니다.
-      url: https://docs.microsoft.com/azure/terraform/
+      url: /azure/terraform/
     - title: Ansible
       summary: Ansible을 사용하여 클라우드 프로비저닝, 구성 관리 및 애플리케이션 배포를 자동화합니다.
-      url: https://docs.microsoft.com/azure/developer/ansible/
+      url: ./ansible/index.yml
     - title: Chef
       summary: Chef를 사용하여 Azure의 가상 머신 인프라를 코드로 변환합니다.
-      url: https://docs.microsoft.com/azure/developer/chef/
+      url: ./chef/index.yml
     - title: Maven
       summary: Maven을 사용하여 Java 프로젝트를 빌드 및 관리하는 방법을 자동화합니다. 다른 언어에서도 작동합니다.
       url: https://github.com/Microsoft/azure-maven-plugins#readme
     - title: IntelliJ용 Azure 도구 키트
       summary: Azure Toolkit for IntelliJ를 사용하여 IntelliJ IDE 내에서 Azure 애플리케이션을 생성, 개발, 테스트 및 배포합니다.
-      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/
+      url: ./java/toolkit-for-intellij/index.yml
     - title: Eclipse용 Azure 도구 키트
       summary: Azure Toolkit for Eclipse를 사용하여 Eclipse IDE 내에서 Azure 애플리케이션을 생성, 개발, 테스트 및 배포합니다.
-      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-eclipse/
+      url: ./java/toolkit-for-eclipse/index.yml

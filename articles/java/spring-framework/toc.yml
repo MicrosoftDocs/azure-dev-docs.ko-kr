@@ -77,10 +77,6 @@
           href: deploy-spring-boot-java-app-on-linux.md
         - name: Azure Redis Cache
           href: configure-spring-boot-initializer-java-app-with-redis-cache.md
-        - name: Maven을 통해 Docker 컨테이너 배포
-          href: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
-        - name: Azure Container Registry에서 배포
-          href: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
         - name: MySQL을 사용하는 엔드투엔드 App Service
           href: spring-app-service-e2e.md
     - name: 샘플

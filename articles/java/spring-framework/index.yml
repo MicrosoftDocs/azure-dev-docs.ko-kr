@@ -6,12 +6,12 @@ metadata:
   description: Spring은 VMware에서 개발한 오픈 소스 애플리케이션 프레임워크로, Java 애플리케이션을 간편하게 모듈식으로 개발하는 방법을 제공합니다.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 8260997ed17f456b2307a4e2d4092104847ceb6e
-  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+  ms.openlocfilehash: ec6211311b5eb5eef04af15b5ffe82dbade42ae9
+  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/21/2020
-  ms.locfileid: "90831559"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91846384"
 landingContent:
 - title: 시작 가이드
   linkLists:
@@ -47,10 +47,6 @@ landingContent:
       url: deploy-spring-boot-java-app-on-kubernetes.md
     - text: Web Apps for Containers에 앱 배포
       url: deploy-spring-boot-java-app-on-linux.md
-    - text: Maven을 사용하여 Web Apps for Containers에 배포
-      url: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
-    - text: ACR에서 Azure로 앱 배포
-      url: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
 - title: 코드 샘플
   linkLists:
   - linkListType: sample

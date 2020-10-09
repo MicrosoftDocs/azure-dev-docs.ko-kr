@@ -1,15 +1,15 @@
 ---
 title: Azure 개발을 위한 로컬 JavaScript 환경 구성
 description: 편집기, Azure SDK 라이브러리, 선택적 도구 및 라이브러리 인증에 필요한 자격 증명을 포함하여 Azure를 사용하기 위한 로컬 JavaScript 개발 환경을 설정하는 방법을 설명합니다.
-ms.date: 09/22/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
-ms.custom: devx-track-js
-ms.openlocfilehash: 6d9f86b026a7104e79228d78d5ac27649049a8a4
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
+ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
+ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208684"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805944"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure를 위한 로컬 JavaScript 개발 환경 구성
 
@@ -21,8 +21,11 @@ ms.locfileid: "91208684"
 
 Azure 리소스는 Azure 사용의 청구 단위인 구독 내에 생성됩니다. 무료 리소스(각 구독은 대부분의 서비스에 무료 리소스를 제공함)를 만들 수 있지만, 리소스를 프로덕션에 배포할 때 유료 계층 리소스를 만들어야 합니다.
 
-* 구독이 이미 있는 경우 새로 만들 필요가 없습니다. 기존 구독에 액세스하여 [Azure Portal](https://portal.azure.com)에 로그인합니다.
-* [평가판 구독 시작](https://azure.microsoft.com/free/cognitive-services)
+|유형|설명|
+|--|--|
+|[평가판 구독](https://azure.microsoft.com/free/cognitive-services)|_평가판_ 구독을 만듭니다.|
+|[기존 구독](https://portal.azure.com)|구독이 이미 있는 경우 Azure Portal, Azure CLI 또는 JavaScript에서 기존 구독에 액세스합니다.|
+|[여러 구독](/azure/governance/management-groups/create-management-group-javascript)|여러 구독을 관리해야 하는 경우 JavaScript를 사용하여 관리 그룹을 만드는 방법을 알아봅니다.|
 
 ## <a name="one-time-installation"></a>일회성 설치
 
@@ -48,44 +51,39 @@ Azure 리소스는 Azure 사용의 청구 단위인 구독 내에 생성됩니�
 
 ## <a name="one-time-configuration-of-service-principal"></a>서비스 주체의 일회성 구성
 
-각 Azure 서비스에는 인증 메커니즘이 있습니다. 여기에는 키와 엔드포인트, 연결 문자열 또는 기타 메커니즘이 포함될 수 있습니다. 모범 사례를 준수하려면 서비스 주체를 사용하여 리소스를 만들고 리소스를 인증합니다. 서비스 주체를 통해 즉각적인 개발 요구에 대한 액세스 범위를 구체적으로 정의할 수 있습니다.
+각 Azure 서비스에는 인증 메커니즘이 있습니다. 여기에는 키와 엔드포인트, 연결 문자열 또는 기타 메커니즘이 포함될 수 있습니다. 모범 사례를 준수하려면 [서비스 주체](node-sdk-azure-authenticate-principal.md)를 사용하여 리소스를 만들고 리소스를 인증합니다. 서비스 주체를 통해 즉각적인 개발 요구에 대한 액세스 범위를 구체적으로 정의할 수 있습니다.
 
-개념적으로 서비스 주체를 만들고 사용하는 단계는 다음과 같습니다.
+**서비스 주체 생성** 단계: 
 
-* joe@microsoft.com과 같은 개별 사용자 계정으로 Azure에 로그인합니다.
-* 특정 범위의 명명된 서비스 주체를 만듭니다. 대부분의 빠른 시작에서는 Azure 리소스를 만들도록 요청하므로 서비스 주체는 리소스를 만들 수 있어야 합니다.
-* 사용자 계정으로 Azure에서 로그오프합니다.
-* 서비스 주체를 사용하여 프로그래밍 방식으로 Azure에 인증합니다.
-* 서비스 주체는 Azure 리소스를 만들고 서비스와 연결된 서비스를 사용합니다.
+1. 개별 사용자 계정으로 Azure에 로그인합니다.
+1. 특정 범위의 _명명된_ 서비스 주체를 만듭니다. 대부분의 빠른 시작에서는 Azure 리소스를 만들도록 요청하므로 서비스 주체는 리소스를 만들 수 있어야 합니다.
+1. 개별 사용자 계정으로 Azure에서 로그오프합니다.
 
-### <a name="create-service-principal"></a>서비스 주체 만들기
+**서비스 주체 사용** 단계:
 
-서비스 주체를 [만드는 방법](node-sdk-azure-authenticate-principal.md)을 알아봅니다. 생성 단계의 응답을 저장해야 합니다. 서비스 주체를 사용하려면 `appId`, `tenant` 및 `password` 값이 필요합니다.
+1. 인증서, 환경 변수 또는 `.json` 파일을 사용하여 서비스 주체를 통해 프로그래밍 방식으로 Azure에 인증합니다. 
+1. 서비스 주체를 사용하는 Azure 리소스를 만들고 서비스를 사용합니다.
+
+[서비스 주체를 만드는 방법](node-sdk-azure-authenticate-principal.md)을 알아봅니다. 생성 단계의 응답을 저장해야 합니다. 서비스 주체를 사용하려면 응답의 `appId`, `tenant` 및 `password` 값이 필요합니다.
+
+[서비스 주체를 사용하는 Azure 리소스를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal).
 
 ## <a name="steps-for-each-new-development-project-setup"></a>새 개발 프로젝트 설정을 위한 단계
 
-Azure SDK 라이브러리는 각 서비스에 대해 개별적으로 제공되기 때문에 모든 Azure 리소스에 액세스할 수 있는 다운로드 가능한 패키지가 한 개도 없습니다. 사용할 Azure 서비스를 기반으로 각 라이브러리를 설치합니다.
+[Azure SDK 라이브러리](azure-sdk-library-package-index.md)는 각 서비스에 대해 개별적으로 제공됩니다. 사용해야 하는 Azure 서비스를 기반으로 각 라이브러리를 설치합니다.
 
 Azure를 사용하는 각 새 프로젝트는 다음을 수행해야 합니다.
-- Azure 리소스를 만들거나 기존 Azure 리소스에 대한 인증 정보를 찾습니다.
-- NPM 또는 Yarn에서 Azure SDK 라이브러리를 설치합니다. [라이브러리 버전](#library-versions)에 대해 알아보세요.
-- 프로젝트 내의 인증 정보를 안전하게 관리합니다. 일반적인 방법 중 하나는 **[Dotenv](https://www.npmjs.com/package/dotenv)** 를 사용하여 `.env` 파일에서 환경 변수를 읽는 것입니다. `.env` 파일이 소스 제어에 체크 인되지 않도록 `.gitignore` 파일에 `.env` 파일을 추가해야 합니다.
+- Azure 리소스를 만들고 관련 키 또는 구성을 [안전한 위치]()에 저장합니다.
+- NPM 또는 Yarn에서 Azure SDK 라이브러리를 설치합니다. 
+- 서비스 주체를 사용하여 Azure SDK에 인증한 다음, 구성 정보를 사용하여 특정 서비스에 액세스합니다.
 
-### <a name="library-versions"></a>라이브러리 버전
+## <a name="securing-configuration-information"></a>구성 정보 보호
 
-[Azure 라이브러리](azure-sdk-library-package-index.md)는 일반적으로 `@azure` 범위를 사용합니다.
+구성 정보를 저장하는 몇 가지 옵션이 있습니다.
+- [Dotenv](https://www.npmjs.com/package/dotenv)는 `.env` 파일에서 환경 변수를 읽을 때 많이 사용되는 npm 패키지입니다. `.env` 파일이 소스 제어에 체크 인되지 않도록 `.gitignore` 파일에 `.env` 파일을 추가해야 합니다.
+- 클라우드 리소스, 앱 및 솔루션에 액세스하고 암호화하는 키를 만들고 유지 관리하는 Azure [Key Vault](https://docs.microsoft.com/azure/key-vault/)
 
-최신 라이브러리는 `@azure` 범위를 사용합니다. Microsoft의 이전 패키지는 일반적으로 `azure-`로 시작합니다. 대부분의 패키지는 Microsoft가 생성하지 않는 이 이름으로 시작합니다. 패키지의 소유자가 Microsoft인지 Azure인지 확인합니다.
-
-## <a name="create-azure-resource-with-service-principal"></a>서비스 주체를 사용하는 Azure 리소스 만들기
-
-Azure CLI를 사용하여 [서비스 주체를 사용하는 Azure 리소스를 만듭니다](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-a-resource-using-service-principal).
-
-## <a name="use-service-principal-in-javascript"></a>JavaScript에서 서비스 주체 사용
-
-Azure 클라이언트 라이브러리에 인증하는 경우 개인 사용자 계정 대신 [서비스 주체를 사용](node-sdk-azure-authenticate-principal.md#using-the-service-principal)합니다.
-
-## <a name="create-environment-variables-for-the-azure-libraries"></a>Azure 라이브러리에 대한 환경 변수 만들기
+### <a name="create-environment-variables-for-the-azure-libraries"></a>Azure 라이브러리에 대한 환경 변수 만들기
 
 Azure SDK 라이브러리에 필요한 Azure 설정을 사용하여 Azure 클라우드에 액세스하려면 가장 일반적인 값을 환경 변수로 설정합니다. 다음 명령은 환경 변수를 로컬 워크스테이션으로 설정합니다. 또 다른 일반적인 메커니즘은 `DOTENV` NPM 패키지를 사용하여 이러한 설정에 대한 `.env` 파일을 만드는 것입니다. `.env`를 사용하려면 파일을 소스 제어에 체크 인하지 않아야 합니다. git의 `.ignore` 파일에 `.env` 파일을 추가하는 것은 이러한 설정이 소스 제어에 체크 인되도록 하는 기본적인 방법입니다.
 
@@ -113,7 +111,7 @@ set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
 
 이러한 명령에 표시된 값을 특정 서비스 주체의 값으로 바꿉니다.
 
-## <a name="install-npm-packages"></a>NPM 패키지 설치
+## <a name="install-npm-packages"></a>npm 패키지 설치
 
 모든 프로젝트에 대해서는 다음 단계에 따라 항상 별도의 폴더와 해당 폴더 자체의 `package.json` 파일을 만드는 것이 좋습니다.
 

@@ -4,18 +4,18 @@ description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage �
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110496"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764460"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>예제: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
 이 예는 Python 애플리케이션 코드로 Azure 클라이언트 라이브러리를 사용하여 해당 Blob Storage 컨테이너에 파일을 업로드하는 방법을 보여줍니다. 이 예에서는 [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)에 표시된 리소스를 프로비저닝했다고 가정합니다.
 
-이 문서의 모든 명령은 언급되지 않는 한 Linux/Mac OS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
+이 문서의 모든 명령은 언급되지 않는 한 Linux/macOS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: 로컬 개발 환경 설정
 
@@ -115,8 +115,8 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
     ```
 
     참조 링크:
-      - [DefaultAzureCredential(azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python)
-      - [BlobClient(azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python)
+      - [DefaultAzureCredential(azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential)
+      - [BlobClient(azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient)
 
 1. 의도적으로 실패하는 코드 실행을 시도합니다.
 
@@ -126,7 +126,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     사용 중인 로컬 서비스 주체에 Blob 컨테이너에 액세스할 수 있는 권한이 없기 때문에 다음 오류가 표시됩니다. "이 요청은 이 권한을 사용하여 이 작업을 수행할 수 있는 권한이 없습니다."
 
-1. Azure CLI 명령 [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)를 사용하여 서비스 주체에게 컨테이너 권한을 부여합니다.
+1. Azure CLI 명령 [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create)를 사용하여 서비스 주체에게 컨테이너 권한을 부여합니다.
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -154,7 +154,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 1. 권한이 전파될 때까지 1~2분 정도 기다린 후 코드를 다시 실행하여 이제 코드가 작동하는지 확인합니다. 권한 오류가 다시 표시되면 조금 더 기다린 후 코드를 다시 시도합니다.
 
-범위 및 역할 할당에 대한 자세한 내용은 [역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)을 참조하세요.
+역할 할당에 대한 자세한 내용은 [Azure CLI를 사용하여 역할 권한을 할당하는 방법](/azure/role-based-access-control/role-assignments-cli)을 참조하세요.
 
 ### <a name="4b-use-blob-storage-with-a-connection-string"></a>4b: 연결 문자열에 Blob Storage 사용
 
@@ -202,7 +202,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 이 예제에서 프로비저닝된 리소스를 유지할 필요가 없으며 구독에서 지속적인 요금을 방지하려면 이 명령을 실행합니다.
 
-[`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 사용하여 코드에서 리소스 그룹을 삭제할 수도 있습니다.
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>참고 항목
 

@@ -4,12 +4,12 @@ description: 'Node.js 자습서 3부: 웹 사이트 배포'
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4907a8466828ccaaef0891394ac4f33694264ccf
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 4c96aedf678fb4e28875ceb211c6d2c505afea6f
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365256"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764558"
 ---
 # <a name="deploy-the-app-to-azure"></a>Azure에 앱 배포
 
@@ -23,7 +23,7 @@ ms.locfileid: "91365256"
     code .
     ```
 
-1. VS Code에서 소스 제어 아이콘을 선택하여 **소스 제어** 탐색기를 연 다음, **+** 를 선택하여 로컬 Git 리포지토리를 초기화합니다.
+1. VS Code에서 소스 제어 아이콘을 선택하여 **소스 제어** 탐색기를 연 다음, **리포지토리 초기화**를 선택하여 로컬 Git 리포지토리를 초기화합니다.
 
     ![git 리포지토리 초기화](media/deploy-azure/git-init.png)
 

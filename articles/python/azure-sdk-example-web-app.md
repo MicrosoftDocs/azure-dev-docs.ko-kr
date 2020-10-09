@@ -1,21 +1,21 @@
 ---
 title: Azure SDK 라이브러리를 사용하여 웹앱 프로비저닝 및 배포
 description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 사용하여 웹앱을 프로비저닝한 다음, GitHub 리포지토리에서 앱 코드를 배포합니다.
-ms.date: 05/29/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 03a2f8b8f8830916243db0778d16650da1892b04
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 7aa51af92480b0148600786bcb329902aecb44bd
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110461"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764761"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>예: Azure 라이브러리를 사용하여 웹앱 프로비저닝 및 배포
 
 이 예제에서는 Python 스크립트에서 Azure SDK 관리 라이브러리를 사용하여 Azure App Service에서 웹앱을 프로비저닝하고 GitHub 리포지토리에서 앱 코드를 배포하는 방법을 보여줍니다. ([동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.)
 
-이 문서의 모든 명령은 언급되지 않는 한 Linux/Mac OS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
+이 문서의 모든 명령은 언급되지 않는 한 Linux/macOS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: 로컬 개발 환경 설정
 
@@ -28,10 +28,12 @@ ms.locfileid: "91110461"
 다음과 같은 콘텐츠가 포함된 *requirements.txt*라는 파일을 만듭니다.
 
 ```text
-azure-mgmt-resource
+azure-mgmt-resource==10.2.0
 azure-mgmt-web
 azure-cli-core
 ```
+
+azure-mgmt-resource에 대한 특정 버전 요구 사항은 현재 버전의 azure-mgmt-web과 호환되는 버전을 사용하는 것입니다. 이러한 버전은 azure.core를 기반으로 하지 않으므로 인증에 이전 방법을 사용합니다.
 
 가상 환경이 활성화된 터미널 또는 명령 프롬프트에서 다음 요구 사항을 설치합니다.
 
@@ -144,7 +146,7 @@ print(f"Provisioned web app {web_app_result.name} at {web_app_result.default_hos
 #
 # You can call this method again to change the repo.
 
-REPO_URL = 'https://github.com/<your_fork>/python-docs-hello-world'
+REPO_URL = os.environ[REPO_URL]
 
 poller = app_service_client.web_apps.create_or_update_source_control(RESOURCE_GROUP_NAME,
     WEB_APP_NAME,
@@ -166,8 +168,8 @@ print(f"Set source control on web app to {sc_result.branch} branch of {sc_result
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>코드에 사용된 클래스에 대한 참조 링크
 
-- [ResourceManagementClient(azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [WebSiteManagementClient(azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient?view=azure-python)
+- [ResourceManagementClient(azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [WebSiteManagementClient(azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient)
 
 ## <a name="5-run-the-script"></a>5: 스크립트 실행
 
@@ -197,7 +199,7 @@ az group delete -n PythonAzureExample-WebApp-rg --no-wait
 
 이 예제에서 프로비저닝된 리소스를 유지할 필요가 없으며 구독에서 지속적인 요금을 방지하려면 이 명령을 실행합니다.
 
-[`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 사용하여 코드에서 리소스 그룹을 삭제할 수도 있습니다.
+[`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 사용하여 코드에서 리소스 그룹을 삭제할 수도 있습니다.
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>참조용: 해당 Azure CLI 명령
 
@@ -217,7 +219,7 @@ rem You can use --deployment-source-url with the first create command. It's show
 rem to match the sequence of the Python code.
 
 az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-WebApp-plan ^
-    --deployment-source-url https://github.com/<your_fork>/python-docs-hello-world
+    --deployment-source-url %REPO_URL% --runtime "python|3.8"
 
 rem Replace <your_fork> with the specific URL of your forked repository.
 ```

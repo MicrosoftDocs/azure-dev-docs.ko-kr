@@ -1,15 +1,15 @@
 ---
 title: Azure 서비스를 사용하여 Python 애플리케이션을 인증하는 방법
 description: Azure 라이브러리를 사용하여 Azure 서비스로 Python 앱을 인증하는 데 필요한 자격 증명 개체를 얻는 방법
-ms.date: 09/18/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e842e7530cc475e8431fbadfb3767ea56102c33e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831909"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764671"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure에서 Python 앱을 인증하고 권한을 부여하는 방법
 
@@ -53,7 +53,7 @@ Azure에서 앱 ID는 **서비스 주체**에 의해 정의됩니다. (서비스
 
 ## <a name="assign-roles-and-permissions-to-an-identity"></a>ID에 역할 및 권한 할당
 
-Azure에서 그리고 로컬에서 실행할 때 앱의 ID를 알고 나면, RBAC(역할 기반 액세스 제어)를 사용하여 Azure Portal 또는 Azure CLI를 통해 권한을 부여합니다. 자세한 전체 내용은 [앱 ID 또는 서비스 주체에 역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)을 참조하세요.
+Azure에서 그리고 로컬에서 실행할 때 앱의 ID를 알고 나면, RBAC(역할 기반 액세스 제어)를 사용하여 Azure Portal 또는 Azure CLI를 통해 권한을 부여합니다. 자세한 내용은 [앱 ID 또는 서비스 주체에 역할 권한을 할당하는 방법](/azure/role-based-access-control/role-assignments-steps)을 참조하세요.
 
 ## <a name="when-does-authentication-and-authorization-occur"></a>인증 및 권한 부여가 수행되는 시기
 
@@ -108,7 +108,7 @@ secret_client = SecretClient(vault_url=vault_url, credential=credential)
 retrieved_secret = secret_client.get_secret("secret-name-01")
 ```
 
-또한, 코드가 클라이언트 개체를 통해 Azure REST API에 특정 요청을 수행할 때까지 인증이나 권한 부여는 발생하지 않습니다. `DefaultAzureCredential`(다음 섹션 참조)을 만드는 명령문은 메모리에 클라이언트 측 개체만 만들고 다른 검사는 수행하지 않습니다. 
+또한, 코드가 클라이언트 개체를 통해 Azure REST API에 특정 요청을 수행할 때까지 인증이나 권한 부여는 발생하지 않습니다. `DefaultAzureCredential`(다음 섹션 참조)을 만드는 명령문은 메모리에 클라이언트 측 개체만 만들고 다른 검사는 수행하지 않습니다.
 
 SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient) 개체를 만드는 경우에도 해당 리소스와 통신하지 않습니다. `SecretClient` 개체는 기본 Azure REST API 주위의 래퍼일 뿐이며 앱의 런타임 메모리에만 존재합니다. 
 
@@ -126,7 +126,7 @@ from azure.keyvault.secrets import SecretClient
 # Acquire the resource URL
 vault_url = os.environ["KEY_VAULT_URL"]
 
-# Aquire a credential object
+# Acquire a credential object
 credential = DefaultAzureCredential()
 
 # Acquire a client object
@@ -142,38 +142,30 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 코드를 로컬로 실행하면 `DefaultAzureCredential`에서 `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` 및 `AZURE_CLIENT_SECRET`이라는 환경 변수에서 설명하는 서비스 주체를 자동으로 사용합니다. 그런 다음, 클라이언트 개체는 API 엔드포인트를 호출할 때 이러한 값을 HTTP 요청 헤더에 안전하게 포함합니다. 로컬 또는 클라우드에서 실행하는 경우 코드를 변경할 필요가 없습니다. 서비스 주체를 만들고 환경 변수를 설정하는 방법에 대한 자세한 내용은 [Azure를 위한 로컬 Python 개발 환경 구성 - 인증 구성](configure-local-development-environment.md#configure-authentication)을 참조하세요.
 
-두 경우 모두 적절한 리소스에 대한 권한이 관련 ID에 할당되어야 합니다. 일반적인 프로세스는 [역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)에 설명되어 있습니다. 세부 정보는 개별 서비스의 설명서에서 찾을 수 있습니다. 예를 들어 이전 코드에 필요한 Key Vault 권한에 대한 자세한 내용은 [액세스 제어 정책을 사용하여 Key Vault 인증 제공](/azure/key-vault/general/group-permissions-for-apps)을 참조하세요.
-
-<a name="cli-auth-note"></a>
-> [!IMPORTANT]
-> 향후에는 서비스 주체 환경 변수를 사용할 수 없는 경우 `DefaultAzureCredential`에서 `az login`을 통해 Azure CLI에 서명된 ID를 사용합니다. 구독의 소유자 또는 관리자인 경우 이 기능의 실질적 결과는 코드에서 특정 권한을 할당하지 않고도 해당 구독의 리소스 대부분에 고유하게 액세스할 수 있다는 것입니다. 이 동작은 실험에 편리합니다. 그러나 프로덕션 코드 작성을 시작하는 경우 특정 서비스 주체를 사용하고 특정 권한을 할당하는 것이 좋습니다. 이렇게 하면 프로덕션에 배포하기 전에 정확한 권한을 다른 ID에 할당하는 방법을 알아보고 테스트 환경에서 해당 권한의 유효성을 정확하게 검사할 수 있기 때문입니다.
+두 경우 모두 적절한 리소스에 대한 권한이 관련 ID에 할당되어야 합니다. 일반적인 프로세스는 [역할 권한을 할당하는 방법](/azure/role-based-access-control/role-assignments-steps)에 설명되어 있습니다. 세부 정보는 개별 서비스의 설명서에서 찾을 수 있습니다. 예를 들어 이전 코드에 필요한 Key Vault 권한에 대한 자세한 내용은 [액세스 제어 정책을 사용하여 Key Vault 인증 제공](/azure/key-vault/general/group-permissions-for-apps)을 참조하세요.
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>SDK 관리 라이브러리에서 DefaultAzureCredential 사용
 
+`DefaultAzureCredential`은 [azure.core를 사용하는 라이브러리](azure-sdk-library-package-index.md#libraries-using-azurecore) 목록에 표시되는 Azure SDK 관리 라이브러리(이름에 "mgmt"가 포함된 라이브러리) 버전에서 작동합니다. (또한 업데이트된 라이브러리에 대한 pypi 페이지에 변경 내용을 나타내는 "자격 증명 시스템이 완전히 개선됨"이라는 줄이 포함됩니다.)
+
+예를 들어 azure-mgmt-resource 15.0.0 이상 버전에서 `DefaultAzureCredential`을 사용할 수 있습니다.
+
 ```python
-# WARNING: this code fails with azure-mgmt-resource versions < 15
-
 from azure.identity import DefaultAzureCredential
-
-# azure.mgmt.resource is an Azure SDK management library
 from azure.mgmt.resource import SubscriptionClient
 
-# Attempt to retrieve the subscription ID
 credential = DefaultAzureCredential()
 subscription_client = SubscriptionClient(credential)
 
-# If using azure-mgmt-resource < version 15 the following line produces
-# a "no attribute 'signed_session'" error:
-subscription = next(subscription_client.subscriptions.list())
-
-print(subscription.subscription_id)
+sub_list = subscription_client.subscriptions.list()
+print(list(sub_list))
 ```
 
-`DefaultAzureCredential`은 [azure.core를 사용하는 라이브러리](azure-sdk-library-package-index.md#libraries-using-azurecore) 목록에 표시되는 Azure SDK 클라이언트("데이터 평면") 라이브러리 및 업데이트된 버전의 Azure SDK 관리 라이브러리에서만 작동합니다.
+### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>"'DefaultAzureCredential' 개체에 'signed-session 특성이 없음'"
 
-이전 코드를 azure-mgmt-resource 15.0.0 이상 버전에서 실행하면 `subscription_client.subscriptions.list()`에 대한 호출이 성공합니다. 이전 버전의 라이브러리를 사용하는 경우 "'DefaultAzureCredential' 개체에 'signed_session' 특성이 없습니다."라는 약간 모호한 오류로 인해 호출이 실패합니다. 이 오류는 이전 버전의 SDK 관리 라이브러리에서 `DefaultAzureCredential`이 없는 `signed_session` 속성이 자격 증명 개체에 포함되어 있다고 가정하므로 발생합니다.
+azure.core용으로 업데이트되지 않은 라이브러리에서 `DefaultAzureCredential`을 사용하려고 하면 클라이언트 개체를 통한 호출이 실패하고 "'DefaultAzureCredential' 개체에 'signed-session 특성이 없음'"이라는 모호한 오류가 발생합니다. 예를 들어 azure-mgmt-resource 15 미만 버전에서 이전 섹션의 코드를 사용할 경우 이러한 오류가 발생할 수 있습니다.
 
-[azure.core를 사용하는 라이브러리](azure-sdk-library-package-index.md#libraries-using-azurecore) 목록에 있는 최신 버전의 관리 라이브러리를 사용하면 이 오류를 해결할 수 있습니다. 두 라이브러리가 나열되면 가장 높은 버전 번호를 사용합니다. 또한 업데이트된 라이브러리에 대한 pypi 페이지에 변경 내용을 나타내는 "자격 증명 시스템이 완전히 개선됨"이라는 줄이 포함됩니다.
+이 오류는 azure.core 이외 버전의 SDK 관리 라이브러리에서 `DefaultAzureCredential`이 없는 `signed_session` 속성이 자격 증명 개체에 포함되어 있다고 가정하므로 발생합니다.
 
 사용하려는 관리 라이브러리가 아직 업데이트되지 않은 경우 다음과 같은 대체 방법을 사용할 수 있습니다.
 
@@ -201,7 +193,7 @@ print(subscription.subscription_id)
 
 - 대부분의 방법은 명시적 서비스 주체에서만 작동하며 클라우드에 배포된 코드의 관리 ID를 활용하지 않습니다. 프로덕션 코드에서 사용하는 경우 클라우드 애플리케이션에 대한 고유한 서비스 주체를 관리 및 유지 관리해야 합니다.
 
-- CLI 기반 인증과 같은 일부 방법은 로컬 스크립트에서만 작동하며 프로덕션 코드에서 사용할 수 없습니다.
+- CLI 기반 인증과 같은 일부 방법은 로컬 스크립트에서만 작동하며 프로덕션 코드에서 사용할 수 없습니다. CLI 기반 인증은 Azure 로그인의 사용 권한을 사용하며 명시적 역할 할당이 필요하지 않기 때문에 개발 작업 시 편리합니다.
 
 클라우드에 배포된 애플리케이션에 대한 서비스 주체는 구독 Active Directory에서 관리됩니다. 자세한 내용은 [서비스 주체를 관리하는 방법](how-to-manage-service-principals.md)을 참조하세요.
 
@@ -391,6 +383,31 @@ RESOURCE = AZURE_CHINA_CLOUD.endpoints.active_directory_resource_id
 
 ### <a name="cli-based-authentication-development-purposes-only"></a>CLI 기반 인증(개발 용도로만)
 
+이 방법에서는 `az login` Azure CLI 명령을 사용하여 로그인한 사용자의 자격 증명을 사용하여 클라이언트 개체를 만듭니다. CLI 기반 인증은 프로덕션 환경에서 사용할 수 없기 때문에 개발 용도로만 사용할 수 있습니다.
+
+Azure 라이브러리에서 기본 구독 ID를 사용하거나 [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli)를 사용하여 코드를 실행하기 전에 구독을 설정할 수 있습니다.
+
+CLI 기반 인증을 사용하는 경우 애플리케이션이 CLI 로그인 자격 증명에서 허용하는 모든 작업에 대한 권한을 부여 받습니다. 따라서 구독의 소유자 또는 관리자인 경우 코드에서 특정 권한을 할당하지 않고도 해당 구독의 리소스 대부분에 고유하게 액세스할 수 있습니다. 이 동작은 실험에 편리합니다. 그러나 프로덕션 코드 작성을 시작하는 경우 특정 서비스 주체를 사용하고 특정 권한을 할당하는 것이 좋습니다. 이렇게 하면 프로덕션에 배포하기 전에 정확한 권한을 다른 ID에 할당하는 방법을 알아보고 테스트 환경에서 해당 권한의 유효성을 정확하게 검사할 수 있기 때문입니다.
+
+#### <a name="cli-based-authentication-with-azurecore-libraries"></a>azure.core 라이브러리를 사용한 CLI 기반 인증
+
+[azure.core용으로 업데이트된 Azure 라이브러리](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore)를 사용하는 경우 azure-identity 라이브러리(버전 1.4.0 이상)의 [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) 개체를 사용하세요. 예를 들어 다음 코드는 azure-mgmt-resource 15.0.0 이상 버전에서 사용할 수 있습니다.
+
+```python
+from azure.identity import AzureCliCredential
+from azure.mgmt.resource import SubscriptionClient
+
+credential = AzureCliCredential()
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+#### <a name="cli-based-authentication-with-older-non-azurecore-libraries"></a>이전(azure.core 이외) 라이브러리를 사용한 CLI 기반 인증
+
+azure.core용으로 업데이트되지 않은 이전 Azure 라이브러리를 사용하는 경우 azure-cli-core 라이브러리의 [`get_client_from_cli_profile`](/python/api/azure-common/azure.common.client_factory#get-client-from-cli-profile-client-class----kwargs-) 메서드를 사용할 수 있습니다. 예를 들어 다음 코드는 azure-mgmt-resource 15.0.0 미만 버전에서 사용할 수 있습니다.
+
 ```python
 from azure.common.client_factory import get_client_from_cli_profile
 from azure.mgmt.resource import SubscriptionClient
@@ -401,11 +418,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-이 방법에서는 `az login` Azure CLI 명령을 사용하여 로그인한 사용자의 자격 증명을 사용하여 클라이언트 개체를 만듭니다. 애플리케이션에는 사용자로 모든 작업을 수행할 수 있는 권한이 부여됩니다.
-
-SDK에서 기본 구독 ID를 사용하거나 [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli)를 사용하여 코드를 실행하기 전에 구독을 설정할 수 있습니다. 동일한 스크립트에서 다른 구독을 참조해야 하는 경우 이 문서의 앞부분에서 설명한 ['get_client_from_auth_file'](#authenticate-with-a-json-file) 또는 [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) 메서드를 사용합니다.
-
-로그인한 사용자는 일반적으로 소유자 또는 관리자 권한이 있으며 추가 권한 없이 대부분의 리소스에 액세스할 수 있으므로 `get_client_from_cli_profile` 함수는 초기 실험 및 개발 용도로만 사용해야 합니다. 자세한 내용은 [`DefaultAzureCredential`에서 CLI 자격 증명 사용](#cli-auth-note)에 대한 이전 참고 사항을 참조하세요.
+동일한 스크립트에서 다른 구독을 참조해야 하는 경우 이 문서의 앞부분에서 설명한 ['get_client_from_auth_file'](#authenticate-with-a-json-file) 또는 [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) 메서드를 사용합니다.
 
 ### <a name="deprecated-authenticate-with-userpasscredentials"></a>사용되지 않음: UserPassCredentials를 사용하여 인증
 
@@ -414,7 +427,7 @@ SDK에서 기본 구독 ID를 사용하거나 [`az account`](/cli/azure/manage-a
 ## <a name="see-also"></a>참고 항목
 
 - [Azure를 위한 로컬 Python 개발 환경 구성](configure-local-development-environment.md)
-- [역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)
+- [역할 권한을 할당하는 방법](/azure/role-based-access-control/role-assignments-steps)
 - [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
 - [예: Azure Storage 프로비저닝 및 사용](azure-sdk-example-storage.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)

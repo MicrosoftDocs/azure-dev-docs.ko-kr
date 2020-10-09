@@ -1,21 +1,21 @@
 ---
 title: Azure에서 리소스 프로비저닝, 액세스 및 관리
 description: Azure Portal, Azure CLI 및 Azure 라이브러리(SDK)를 포함하여 Azure 리소스 작업에 사용되는 방법에 대한 개요입니다.
-ms.date: 05/27/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 457970eb359be9f10c6269e1ea98efec76612009
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 0dd8de6c1d42ecbb77f34f48034cc9e4c43cd9e3
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983215"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764717"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Azure에서 리소스 프로비저닝, 액세스 및 관리
 
 [이전 문서: 개요](cloud-development-overview.md)
 
-이 시리즈의 이전 문서에서 설명했듯이, 클라우드 애플리케이션 개발에서 중요한 것은 Azure 내에서 코드와 데이터를 배포할 수 있는 필수 리소스를 프로비저닝하는 것입니다.
+이 시리즈의 이전 문서에서 설명했듯이, 클라우드 애플리케이션 개발에서 중요한 것은 Azure 내에서 코드와 데이터를 배포할 수 있는 필수 리소스를 프로비저닝하는 것입니다. 즉, 클라우드 애플리케이션 빌드 과정은 기본적으로 애플리케이션을 배포할 대상 클라우드 컴퓨터를 빌드하는 것으로 시작됩니다. (사용 가능한 리소스 종류를 살펴보려면 [Azure 개발자 가이드](/azure/guides/developer/azure-developer-guide)를 참조하세요.)
 
 이 프로비저닝을 정확하게 수행하려면 어떻게 해야 할까요? 애플리케이션에 사용할 리소스를 할당해 달라고 Azure에 어떻게 요청해야 하고, 그 후에 리소스를 구성하거나 리소스에 액세스하려면 어떻게 해야 할까요? 간단히 말해서, 이 모든 리소스를 준비하려면 Azure 자체와 어떻게 통신해야 할까요?
 
@@ -38,11 +38,11 @@ ms.locfileid: "87983215"
 
 **장점**: 사용자 인터페이스를 통해 서비스와 다양한 구성 옵션을 쉽게 탐색할 수 있습니다. 로컬 워크스테이션에 정보가 저장되지 않기 때문에 구성 값을 안전하게 설정할 수 있습니다.
 
-**단점**: 포털 사용은 수동 프로세스이며 자동화할 수 없습니다. 예를 들어 구성을 변경하기 위해 어떻게 했는지 기억하기 위해, 수행하는 단계를 별도의 문서에 기록해 두어야 합니다.
+**단점**: 포털 사용은 수동 프로세스이며 손쉽게 자동화할 수 없습니다. 예를 들어 구성을 변경하기 위해 어떻게 했는지 기억하기 위해, 일반적으로 수행하는 단계를 별도의 문서에 기록해 두어야 합니다.
 
 ## <a name="azure-cli"></a>Azure CLI
 
-[Azure CLI](/cli/azure/?view=azure-cli-latest)는 Azure의 [오픈 소스](https://github.com/Azure/azure-cli) 명령줄 인터페이스입니다. `az login` 명령을 사용하여 CLI에 로그인한 후에는 포털을 통해 수행할 수 있는 작업과 동일한 작업을 수행할 수 있습니다.
+[Azure CLI](/cli/azure/)는 Azure의 [오픈 소스](https://github.com/Azure/azure-cli) 명령줄 인터페이스입니다. `az login` 명령을 사용하여 CLI에 로그인한 후에는 포털을 통해 수행할 수 있는 작업과 동일한 작업을 수행할 수 있습니다.
   
 **장점**: 스크립트 및 출력 처리를 통해 쉽게 자동화할 수 있습니다. 웹앱 배포와 같은 일반적인 작업에 여러 리소스를 함께 프로비저닝하는 고급 명령을 제공합니다. 스크립트를 소스 제어에서 관리할 수 있습니다.
 
@@ -50,15 +50,17 @@ ms.locfileid: "87983215"
 
 일반적으로 Python 개발자들에게는 Azure CLI의 Linux 스타일 명령이 더 익숙하겠지만, Azure CLI 대신 [Azure PowerShell](/powershell/)을 사용할 수도 있습니다.
 
-로컬 CLI 또는 PowerShell 대신 [https://shell.azure.com/](https://shell.azure.com/)을 통해 Azure Cloud Shell을 직접 사용할 수 있습니다. Cloud Shell은 Azure에서 열리면 Azure Portal을 통해 동일한 기능을 제공하기 때문에 자동으로 인증되어 편리합니다. 그러나 Cloud Shell은 로컬 환경이 아니므로 스크립팅된 자동화보다 포털을 통해 수행하는 것과 같은 단일 작업에 더 적합합니다.
+로컬 CLI 또는 PowerShell 대신 [https://shell.azure.com/](https://shell.azure.com/)을 통해 Azure Cloud Shell을 직접 사용할 수 있습니다. Cloud Shell은 Azure에서 열리면 Azure Portal을 통해 동일한 기능을 제공하기 때문에 자동으로 인증되어 편리합니다. 또한 Cloud Shell은 한두 명령만 실행해야 하는 경우에 특히 로컬에서 설치하기 불편한 여러 도구가 미리 구성된 상태로 출고됩니다.
+
+Cloud Shell은 로컬 환경이 아니므로 스크립팅된 자동화보다 포털을 통해 수행하는 것과 같은 단일 작업에 더 적합합니다. 하지만 Cloud Shell에서 원본 리포지토리(예: GitHub 리포지토리)를 복제할 수 있습니다. 따라서 자동화 스크립트를 로컬에서 개발하고, 리포지토리에 저장하고, Cloud Shell에서 리포지토리를 복제한 다음, 해당 스크립트를 실행할 수 있습니다.
 
 ## <a name="azure-rest-api-and-azure-libraries"></a>Azure REST API 및 Azure 라이브러리
 
-[Azure REST API](/rest/api/?view=Azure)는 Azure의 프로그래밍 인터페이스이며, Azure의 데이터 센터가 기본적으로 인터넷에 연결되기 때문에 HTTP를 사용하는 보안 REST를 통해 제공됩니다. 모든 리소스에는 엄격한 인증 프로토콜 및 액세스 정책에 따라 리소스 관련 API를 지원하는 고유한 URL이 할당됩니다. (실제로 Azure Portal과 Azure CLI는 궁극적으로 REST API를 통해 작업을 수행합니다.)
+[Azure REST API](/rest/api/?view=Azure&preserve-view=true)는 Azure의 프로그래밍 인터페이스이며, Azure의 데이터 센터가 기본적으로 인터넷에 연결되기 때문에 HTTP를 사용하는 보안 REST를 통해 제공됩니다. 모든 리소스에는 엄격한 인증 프로토콜 및 액세스 정책에 따라 리소스 관련 API를 지원하는 고유한 URL이 할당됩니다. (실제로 Azure Portal과 Azure CLI는 궁극적으로 REST API를 통해 작업을 수행합니다.)
 
-개발자를 위해 Azure 라이브러리는 REST API의 기능을 클래스 및 개체처럼 훨씬 편리한 프로그래밍 패러다임으로 변환하는 언어 관련 라이브러리를 제공합니다. Python의 경우 독립 실행형 SDK 전체를 설치하는 대신 항상 `pip install` 명령을 사용하여 개별 라이브러리를 설치합니다. (다른 언어에 경우, [Azure SDK 다운로드](https://azure.microsoft.com/downloads/)를 참조하세요.)
+Azure 라이브러리(Azure SDK라고도 함)는 개발자를 위해 REST API의 기능을 클래스 및 개체처럼 훨씬 편리한 프로그래밍 패러다임으로 변환하는 언어 관련 라이브러리를 제공합니다. Python의 경우 독립 실행형 SDK 전체를 설치하는 대신 항상 `pip install` 명령을 사용하여 개별 라이브러리를 설치합니다. (다른 언어에 경우, [Azure SDK 다운로드](https://azure.microsoft.com/downloads/)를 참조하세요.)
 
-**장점**: 한 작업의 출력을 다른 작업의 입력으로 사용하는 훨씬 직접적인 수단을 포함하여 모든 작업을 정밀하게 제어할 수 있습니다. Python 개발자의 경우 CLI를 사용하는 대신 익숙한 언어 패러다임 내에서 작업할 수 있습니다. 애플리케이션 코드에서 사용하여 관리 시나리오를 자동화할 수도 있습니다.
+**장점**: 한 작업의 출력을 다른 작업의 입력으로 사용하는 훨씬 직접적인 수단을 포함하여 모든 작업을 Azure CLI보다 정밀하게 제어할 수 있습니다. Python 개발자의 경우 CLI를 사용하는 대신 익숙한 언어 패러다임 내에서 작업할 수 있습니다. 애플리케이션 코드에서 사용하여 세부 관리 시나리오를 자동화할 수도 있습니다.
   
 **단점**: CLI 명령 하나로 수행할 수 있는 작업이라도 일반적으로 여러 줄의 코드가 필요하며, 모든 코드는 버그 가능성이 있습니다. Azure CLI 같은 고급 작업을 제공하지 않습니다.
 

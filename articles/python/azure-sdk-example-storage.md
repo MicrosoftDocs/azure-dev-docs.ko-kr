@@ -1,15 +1,15 @@
 ---
 title: Python용 Azure 라이브러리로 Azure Storage 프로비저닝
 description: Python용 Azure SDK 라이브러리를 사용하여 Azure Storage 계정에서 Blob 컨테이너를 프로비저닝한 다음, 이 컨테이너에 파일을 업로드합니다.
-ms.date: 05/29/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ff2064d7113e78cda69d240ca526db569c9d14e0
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 82d7f83a426e56e4e235d1d4bfcfb8c73042e053
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110486"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764548"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>예: Python용 Azure 라이브러리를 사용하여 Azure Storage 프로비저닝
 
@@ -17,7 +17,7 @@ ms.locfileid: "91110486"
 
 리소스를 프로비저닝한 후 [예: Azure Storage 사용](azure-sdk-example-storage-use.md)을 참조하여 Python 애플리케이션 코드에서 Azure 클라이언트 라이브러리를 사용하여 Blob Storage 컨테이너에 파일을 업로드합니다.
 
-이 문서의 모든 명령은 언급되지 않는 한 Linux/Mac OS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
+이 문서의 모든 명령은 언급되지 않는 한 Linux/macOS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: 로컬 개발 환경 설정
 
@@ -32,7 +32,7 @@ ms.locfileid: "91110486"
     ```txt
     azure-mgmt-resource
     azure-mgmt-storage
-    azure-cli-core
+    azure-identity
     ```
 
 1. 가상 환경이 활성화된 터미널에서 다음 요구 사항을 설치합니다.
@@ -52,12 +52,18 @@ import os, random
 
 # Import the needed management objects from the libraries. The azure.common library
 # is installed automatically with the other libraries.
-from azure.common.client_factory import get_client_from_cli_profile
+from azure.identity import AzureCliCredential
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.storage import StorageManagementClient
 
-# Obtain the management object for resources, using the credentials from the CLI login.
-resource_client = get_client_from_cli_profile(ResourceManagementClient)
+# Acquire a credential object using CLI-based authentication.
+credential = AzureCliCredential()
+
+# Retrieve subscription ID from environment variable.
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+
+# Obtain the management object for resources.
+resource_client = ResourceManagementClient(credential, subscription_id)
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.
@@ -65,6 +71,7 @@ RESOURCE_GROUP_NAME = "PythonAzureExample-Storage-rg"
 LOCATION = "centralus"
 
 # Step 1: Provision the resource group.
+
 rg_result = resource_client.resource_groups.create_or_update(RESOURCE_GROUP_NAME,
     { "location": LOCATION })
 
@@ -73,9 +80,10 @@ print(f"Provisioned resource group {rg_result.name}")
 # For details on the previous code, see Example: Provision a resource group
 # at https://docs.microsoft.com/azure/developer/python/azure-sdk-example-resource-group
 
+
 # Step 2: Provision the storage account, starting with a management object.
 
-storage_client = get_client_from_cli_profile(StorageManagementClient)
+storage_client = StorageManagementClient(credential, subscription_id)
 
 # This example uses the CLI profile credentials because we assume the script
 # is being used to provision the resource in the same way the Azure CLI would be used.
@@ -89,14 +97,16 @@ STORAGE_ACCOUNT_NAME = f"pythonazurestorage{random.randint(1,100000):05}"
 
 # Check if the account name is available. Storage account names must be unique across
 # Azure because they're used in URLs.
-availability_result = storage_client.storage_accounts.check_name_availability(STORAGE_ACCOUNT_NAME)
+availability_result = storage_client.storage_accounts.check_name_availability(
+    { "name": STORAGE_ACCOUNT_NAME }
+)
 
 if not availability_result.name_available:
     print(f"Storage name {STORAGE_ACCOUNT_NAME} is already in use. Try another name.")
     exit()
 
 # The name is available, so provision the account
-poller = storage_client.storage_accounts.create(RESOURCE_GROUP_NAME, STORAGE_ACCOUNT_NAME,
+poller = storage_client.storage_accounts.begin_create(RESOURCE_GROUP_NAME, STORAGE_ACCOUNT_NAME,
     {
         "location" : LOCATION,
         "kind": "StorageV2",
@@ -108,6 +118,7 @@ poller = storage_client.storage_accounts.create(RESOURCE_GROUP_NAME, STORAGE_ACC
 # waits for completion.
 account_result = poller.result()
 print(f"Provisioned storage account {account_result.name}")
+
 
 # Step 3: Retrieve the account's primary access key and generate a connection string.
 keys = storage_client.storage_accounts.list_keys(RESOURCE_GROUP_NAME, STORAGE_ACCOUNT_NAME)
@@ -128,14 +139,12 @@ container = storage_client.blob_containers.create(RESOURCE_GROUP_NAME, STORAGE_A
 print(f"Provisioned blob container {container.name}")
 ```
 
-이 코드는 Azure CLI에서 직접 수행할 수 있는 작업을 보여주므로 CLI 기반 인증 메서드(`get_client_from_cli_profile`)를 사용합니다. 두 경우 모두 인증에 동일한 ID를 사용합니다.
-
-프로덕션 스크립트에서 이러한 코드를 사용하려면 대신 [Azure 서비스로 Python 앱을 인증하는 방법](azure-sdk-authenticate.md)에 설명된 대로 `DefaultAzureCredential`(권장) 또는 서비스 주체 기반 메서드를 사용해야 합니다.
+[!INCLUDE [cli-auth-note](includes/cli-auth-note.md)]
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>코드에 사용된 클래스에 대한 참조 링크
 
-- [ResourceManagementClient(azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [StorageManagementClient(azure.mgmt.storage)](/python/api/azure-mgmt-storage/azure.mgmt.storage.storagemanagementclient?view=azure-python)
+- [ResourceManagementClient(azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [StorageManagementClient(azure.mgmt.storage)](/python/api/azure-mgmt-storage/azure.mgmt.storage.storagemanagementclient)
 
 ## <a name="4-run-the-script"></a>4. 스크립트 실행
 
@@ -223,7 +232,7 @@ az storage container create --account-name pythonazurestorage12345 -n blob-conta
 az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
-[`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) 메서드를 사용하여 코드에서 리소스 그룹을 삭제할 수도 있습니다.
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>참고 항목
 

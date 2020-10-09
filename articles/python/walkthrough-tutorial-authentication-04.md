@@ -4,12 +4,12 @@ description: 기본 앱의 구현에 대한 개요이며, 모든 코드를 포�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0b7ffa1fb855d4b676813f49c545071209f6ce79
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379519"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764745"
 ---
 # <a name="part-4-example-main-application-implementation"></a>4부. 기본 애플리케이션 구현 예
 
@@ -23,13 +23,13 @@ ms.locfileid: "89379519"
 
 샘플의 프로비저닝 스크립트는 다음 단계를 수행합니다.
 
-1. App Service 호스트를 만들고 Azure CLI 명령 [`az webapp up`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-up)을 사용하여 코드를 배포합니다.
+1. App Service 호스트를 만들고 Azure CLI 명령 [`az webapp up`](/cli/azure/webapp#az-webapp-up)을 사용하여 코드를 배포합니다.
 
-1. 기본 앱에 대한 Azure Storage 계정을 프로비저닝합니다([`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) 사용).
+1. 기본 앱에 대한 Azure Storage 계정을 프로비저닝합니다([`az storage account create`](/cli/azure/storage/account#az-storage-account-create) 사용).
 
-1. "code-requests"라는 스토리지 계정에 큐를 만듭니다([`az storage queue create`](/cli/azure/storage/queue?view=azure-cli-latest#az-storage-queue-create) 사용).
+1. "code-requests"라는 스토리지 계정에 큐를 만듭니다([`az storage queue create`](/cli/azure/storage/queue#az-storage-queue-create) 사용).
 
-1. 앱이 큐에 쓸 수 있도록 하려면 [`az role assignment create`](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)를 사용하여 "Storage 큐 데이터 기여자" 역할을 앱에 할당합니다. 역할에 대한 자세한 내용은 [역할 권한을 할당하는 방법](how-to-assign-role-permissions.md)을 참조하세요.
+1. 앱이 큐에 쓸 수 있도록 하려면 [`az role assignment create`](/cli/azure/role/assignment#az-role-assignment-create)를 사용하여 "Storage 큐 데이터 기여자" 역할을 앱에 할당합니다. 역할에 대한 자세한 내용은 [Azure CLI를 사용하여 역할 권한을 할당하는 방법](/azure/role-based-access-control/role-assignments-cli)을 참조하세요.
 
 기본 앱 코드는 다음과 같습니다. 중요한 세부 정보에 대한 설명은 이 시리즈의 다음 파트에서 제공됩니다.
 

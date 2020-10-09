@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ab75893e4a61bf190cbb5d0bb736f88a50ff5a90
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 00ac62d5436a11480305f67c2e463c54c8433dbd
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91779179"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91859508"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
@@ -62,11 +62,7 @@ ms.locfileid: "91779179"
 | @azure/arm-appconfiguration | npm [1.3.0](https://www.npmjs.com/package/@azure/arm-appconfiguration/v/1.3.0) |  | GitHub [1.3.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/appconfiguration/arm-appconfiguration) |
 | @azure/arm-appinsights | npm [2.1.0](https://www.npmjs.com/package/@azure/arm-appinsights/v/2.1.0) |  | GitHub [2.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/applicationinsights/arm-appinsights) |
 | @azure/arm-appplatform | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-appplatform/v/1.0.0) |  |  |
-| @azure/arm-appservice | npm [6.1.0](https://www.npmjs.com/package/@azure/arm-appservice/v/6.1.0) | [docs](/javascript/api/overview/azure/appservice?view=azure-node-latest) | GitHub [6.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/appservice/arm-appservice) |
 | @azure/arm-appservice-profile-2019-03-01-hybrid | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-appservice-profile-2019-03-01-hybrid/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/appservice/arm-appservice-profile-2019-03-01-hybrid) |
-| @azure/arm-authorization | npm [8.3.3](https://www.npmjs.com/package/@azure/arm-authorization/v/8.3.3) | [docs](/javascript/api/overview/azure/authorization?view=azure-node-latest) | GitHub [8.3.3](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/authorization/arm-authorization) |
-| @azure/arm-authorization-profile-2019-03-01-hybrid | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-authorization-profile-2019-03-01-hybrid/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/authorization/arm-authorization-profile-2019-03-01-hybrid) |
-| @azure/arm-automation | npm [10.0.0](https://www.npmjs.com/package/@azure/arm-automation/v/10.0.0) | [docs](/javascript/api/overview/azure/automation?view=azure-node-latest) | GitHub [10.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/automation/arm-automation) |
 | @azure/arm-avs | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-avs/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/avs/arm-avs) |
 | @azure/arm-azurestack | npm [2.0.0](https://www.npmjs.com/package/@azure/arm-azurestack/v/2.0.0) |  | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/azurestack/arm-azurestack) |
 | @azure/arm-batch | npm [4.0.0](https://www.npmjs.com/package/@azure/arm-batch/v/4.0.0) |  | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/batch/arm-batch) |

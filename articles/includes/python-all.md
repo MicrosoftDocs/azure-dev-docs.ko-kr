@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cb9ce9fa15b656377e29726c8ca4a3cd37fc7b30
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: f6b756474743fc8495522fa62ef6a2c030fb9440
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91779077"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91859244"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |

@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 27793d827b60a5977968529377b20c7033170ffe
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534672"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010203"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트 설치
 
@@ -48,8 +48,7 @@ Eclipse IDE에서 Eclipse 마켓플레이스 마법사를 사용하면 [Eclipse 
    |---|---| 
    | **Java용 Application Insights 플러그 인** | 애플리케이션 및 서버 인스턴스에 Azure 원격 분석 로깅 및 분석 서비스를 사용할 수 있게 해줍니다. | 
    | **Azure 공통 플러그 인** | 다른 도구 키트 구성 요소에 필요한 공통 기능을 제공합니다. | 
-   | **Eclipse용 Azure Container 도구** | .WAR을 docker 컴퓨터의 Docker 컨테이너로 빌드 및 배포할 수 있게 해줍니다. | 
-   | **Eclipse용 Azure 컨테이너** | .WAR 또는 .JAR 아티팩트를 Azure 가상 머신에 Docker 컨테이너로 배포할 수 있게 해줍니다. | 
+   | **Eclipse용 Azure Container 도구** | .WAR을 docker 컴퓨터의 Docker 컨테이너로 빌드 및 배포할 수 있게 해줍니다. |
    | **Eclipse용 Azure 탐색기** | Azure 리소스를 관리할 수 있는 탐색기 스타일의 인터페이스를 제공합니다. | 
    | **Java용 Azure HDInsight 플러그 인** | Scala에서 Apache Spark 애플리케이션 개발을 사용하도록 설정합니다. |
    | **SQL Server용 Microsoft JDBC Driver 6.1** | SQL Server용 JDBC API와 Java Platform Enterprise Edition 8용 Microsoft Azure SQL Database를 제공합니다. | 
@@ -69,7 +68,7 @@ Eclipse IDE에서 Eclipse 마켓플레이스 마법사를 사용하면 [Eclipse 
 
 1. **도움말** 메뉴를 클릭한 다음, **새 소프트웨어 설치**를 클릭합니다.
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="새 소프트웨어 설치, 도움말 메뉴"::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="마켓플레이스 창, 도움말 메뉴."::: 
 
 1. **사용 가능한 소프트웨어** 대화 상자의 **작업** 텍스트 상자에서 `http://dl.microsoft.com/eclipse/`를 입력합니다.
 
@@ -83,8 +82,7 @@ Eclipse IDE에서 Eclipse 마켓플레이스 마법사를 사용하면 [Eclipse 
    |---|---| 
    | **Java용 Application Insights 플러그 인** | 애플리케이션 및 서버 인스턴스에 Azure 원격 분석 로깅 및 분석 서비스를 사용할 수 있게 해줍니다. | 
    | **Azure 공통 플러그 인** | 다른 도구 키트 구성 요소에 필요한 공통 기능을 제공합니다. | 
-   | **Eclipse용 Azure Container 도구** | .WAR을 docker 컴퓨터의 Docker 컨테이너로 빌드 및 배포할 수 있게 해줍니다. | 
-   | **Eclipse용 Azure 컨테이너** | .WAR 또는 .JAR 아티팩트를 Azure 가상 머신에 Docker 컨테이너로 배포할 수 있게 해줍니다. | 
+   | **Eclipse용 Azure Container 도구** | .WAR을 docker 컴퓨터의 Docker 컨테이너로 빌드 및 배포할 수 있게 해줍니다. |
    | **Eclipse용 Azure 탐색기** | Azure 리소스를 관리할 수 있는 탐색기 스타일의 인터페이스를 제공합니다. | 
    | **Java용 Azure HDInsight 플러그 인** | Scala에서 Apache Spark 애플리케이션 개발을 사용하도록 설정합니다. |
    | **SQL Server용 Microsoft JDBC Driver 6.1** | SQL Server용 JDBC API와 Java Platform Enterprise Edition 8용 Microsoft Azure SQL Database를 제공합니다. | 

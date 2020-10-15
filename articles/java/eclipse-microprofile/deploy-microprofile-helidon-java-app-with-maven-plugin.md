@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.service: app-service
 ms.topic: article
 ms.custom: ''
-ms.openlocfilehash: d41d2b00a36439f0368ca3aa295aa4e13e66846b
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: eaf9d71f469f1b0008a0ea085b13dbebf28f320a
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401904"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846684"
 ---
 # <a name="deploy-a-helidon-web-app-to-azure-app-service-with-maven"></a>Maven을 사용하여 Azure App Service에 Helidon Web App 배포
 
@@ -276,7 +276,7 @@ Azure 리소스가 더 이상 필요하지 않은 경우 리소스 그룹을 삭
 MicroProfile과 Azure에 대해 자세히 알아보려면 Azure의 MicroProfile 설명서 센터로 이동합니다.
 
 > [!div class="nextstepaction"]
-> [Azure의 MicroProfile](/azure/developer/java/eclipse-microprofile)
+> [Azure의 MicroProfile](./index.yml)
 
 ### <a name="additional-resources"></a>추가 리소스
 
@@ -291,7 +291,7 @@ MicroProfile과 Azure에 대해 자세히 알아보려면 Azure의 MicroProfile 
 <!-- URL List -->
 
 [Azure Command-Line Interface (CLI)]: /cli/azure/overview
-[Azure for Java Developers]: /azure/developer/java/
+[Azure for Java Developers]: ../index.yml
 [Azure Portal]: https://portal.azure.com/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
@@ -300,7 +300,7 @@ MicroProfile과 Azure에 대해 자세히 알아보려면 Azure의 MicroProfile 
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Azure Web Apps의 Maven 플러그 인]: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->

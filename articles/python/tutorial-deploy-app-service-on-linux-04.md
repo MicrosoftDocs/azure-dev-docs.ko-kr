@@ -4,12 +4,12 @@ description: 자습서 4단계에서는 Django, Flask 및 기타 프레임워크
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6aa1f03b562eeea01e6e71441e8a12339eeaad26
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 58a16d8508f84f1ccb55430dd9bfe109d984d377
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764800"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846724"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Azure App Service에서 Python 앱에 대한 사용자 지정 시작 파일 구성
 
@@ -55,7 +55,8 @@ ms.locfileid: "91764800"
 기본적으로 App Service는 *wsgi.py* 파일이 포함하는 폴더를 자동으로 찾고, 다음 명령을 사용하여 Gunicorn을 시작합니다.
 
 ```cmd
-# <module> is the path to the folder that contains wsgi.py
+# <module> is the folder that contains wsgi.py. If you need to use a subfolder,
+# specify the parent of <module> using --chdir.
 gunicorn --bind=0.0.0.0 --timeout 600 <module>.wsgi
 ```
 

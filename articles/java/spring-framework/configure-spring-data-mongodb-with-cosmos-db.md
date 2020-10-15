@@ -3,21 +3,19 @@ title: Azure Cosmos DB에서 Spring Data MongoDB API를 사용하는 방법
 description: Azure Cosmos DB에서 Spring Data MongoDB API를 사용하는 방법을 알아보세요.
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/10/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 529fab3977f0398014d74140abcbd807ac129fa5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1d710c6146568011214a330ae0ce4957c6134b3b
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831429"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92009961"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Azure Cosmos DB에서 Spring Data MongoDB API를 사용하는 방법
-
-## <a name="overview"></a>개요
 
 이 문서는 [Spring Data]를 사용하여 샘플 애플리케이션을 만들어 [Azure Cosmos DB MongoDB API](/azure/cosmos-db/mongodb-introduction)를 사용하여 정보를 저장 및 검색하는 것을 보여줍니다.
 
@@ -44,7 +42,7 @@ ms.locfileid: "90831429"
 
    ![Azure Cosmos DB 계정 만들기][COSMOSDB01]
 
-1. 다음 정보를 지정합니다.
+1. 다음 정보를 지정하세요.
 
    - **구독**: 사용할 Azure 구독을 지정합니다.
    - **리소스 그룹**: 새 리소스 그룹을 만들지 기존 리소스 그룹을 선택할지를 지정합니다.
@@ -132,6 +130,10 @@ ms.locfileid: "90831429"
 
 이 자습서에서는, Spring Data를 사용하는 Java 샘플 애플리케이션을 만들어 Azure Cosmos DB MongoDB API를 사용하여 정보를 저장 및 검색했습니다.
 
+## <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 예기치 않은 요금이 청구되지 않도록 [Azure Portal](https://portal.azure.com/)을 사용하여 이 문서에서 만든 리소스를 삭제합니다.
+
 ## <a name="next-steps"></a>다음 단계
 
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
@@ -151,7 +153,6 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 [MSDN 구독자 혜택]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Data]: https://spring.io/projects/spring-data
-[Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->

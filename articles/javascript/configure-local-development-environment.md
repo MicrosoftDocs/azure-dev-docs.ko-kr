@@ -4,12 +4,12 @@ description: 편집기, Azure SDK 라이브러리, 선택적 도구 및 라이�
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
-ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.openlocfilehash: d7f179898c974b1eaf00916bde6ce9df107e0083
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805944"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846714"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure를 위한 로컬 JavaScript 개발 환경 구성
 
@@ -36,7 +36,7 @@ Azure 리소스는 Azure 사용의 청구 단위인 구독 내에 생성됩니�
 |[Node.js](https://www.npmjs.com/)|로컬 워크스테이션 개발을 위한 최신 LTS(장기 지원) 런타임 환경을 설치합니다. |
 | NPM(최신 버전의 node.js와 함께 설치됨) 또는 [Yarn](https://yarnpkg.com/)|Azure SDK 라이브러리를 설치하기 위한 패키지 관리자.|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code는 뛰어난 JavaScript 통합 및 코딩 환경을 제공하지만 반드시 필요한 것은 아닙니다. 모든 코드 편집기를 사용할 수 있습니다. 이 문서에서는 다른 편집기를 사용하는 경우 Azure와의 통합을 확인하거나 Azure CLI를 사용합니다.|
-|[Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI를 사용하여 명령줄, 터미널 또는 Bash 셸에서 Azure 리소스를 다시 만들고 관리할 수 있습니다.|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI를 사용하여 명령줄, 터미널 또는 Bash 셸에서 Azure 리소스를 다시 만들고 관리할 수 있습니다.|
 
 > [!CAUTION]
 > Azure 웹앱 또는 Azure Container Instance와 같은 Azure 리소스를 코드의 런타임 환경으로 사용하려는 경우 로컬 node.js 개발 환경이 사용하려는 Azure 리소스 런타임과 일치하는지 확인해야 합니다.

@@ -4,12 +4,12 @@ description: 자습서 2단계, 애플리케이션 설정
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 36e2c57f556718a0c2d83de90995ce52602a34ad
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 464807b8a4e637db7a0911d23770246dfc7fb0ae
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832029"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846694"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Azure App Service에 배포할 수 있도록 앱 준비
 
@@ -62,15 +62,15 @@ Django 앱이 이 샘플과 같은 로컬 SQLite 데이터베이스를 사용하
 
     ```bash
     sudo apt-get install python3-venv    # If needed
-    python3 -m venv env
-    source env/bin/activate
+    python3 -m venv .venv
+    source .venv/bin/activate
     ```
 
     # <a name="windows"></a>[Windows](#tab/windows)
 
     ```cmd
-    python -m venv env
-    env\scripts\activate
+    py -3 -m venv .venv
+    .venv\scripts\activate
     ```
 
     ---

@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 77418f8cb958586b375b0e473f03ba25ece9b9c3
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 8ec893fa60fe1667a05a4dc8def98a4a18de3a3e
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831739"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846774"
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트의 새로운 기능
 
@@ -323,24 +323,24 @@ Azure Plugin for Eclipse - December 2011 CTP has released. New features include:
 
 [Azure for Java Developers]: ../index.yml
 [Azul Systems web page for the Zulu OpenJDK]: https://go.microsoft.com/fwlink/?LinkId=402457
-[Azure Service Endpoints]: https://go.microsoft.com/fwlink/?LinkID=699526
-[Azure Storage Account List]: https://go.microsoft.com/fwlink/?LinkID=699528
-[Components properties]: https://go.microsoft.com/fwlink/?LinkID=699525#components_properties
+[Azure Service Endpoints]: ./index.yml
+[Azure Storage Account List]: ./index.yml
+[Components properties]: ./index.yml#components_properties
 [Creating a Hello World Application for Azure in Eclipse]: https://go.microsoft.com/fwlink/?LinkID=699533
 [Debugging Azure Applications in Eclipse]: https://go.microsoft.com/fwlink/?LinkID=699535
-[Deploying Large Deployments]: https://go.microsoft.com/fwlink/?LinkID=699536
-[Endpoints properties]: https://go.microsoft.com/fwlink/?LinkID=699525#endpoints_properties
-[Environment variables properties]: https://go.microsoft.com/fwlink/?LinkID=699525#environment_variables_properties
+[Deploying Large Deployments]: ./index.yml
+[Endpoints properties]: ./index.yml#endpoints_properties
+[Environment variables properties]: ./index.yml#environment_variables_properties
 [HDInsight Tools Plugin for Eclipse]: /azure/hdinsight/hdinsight-apache-spark-eclipse-tool-plugin
-[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: https://go.microsoft.com/fwlink/?LinkID=264703
+[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /azure/active-directory/azuread-dev/active-directory-authentication-libraries
 [How to Use SSL Offloading]: https://go.microsoft.com/fwlink/?LinkID=699545
-[Local storage properties]: https://go.microsoft.com/fwlink/?LinkID=699525#local_storage_properties
+[Local storage properties]: ./index.yml#local_storage_properties
 [Microsoft Azure Client API]: https://go.microsoft.com/fwlink/?LinkId=280397
-[Server configuration properties]: https://go.microsoft.com/fwlink/?LinkID=699525#server_configuration_properties
-[Session Affinity]: https://go.microsoft.com/fwlink/?LinkID=699548
+[Server configuration properties]: ./index.yml#server_configuration_properties
+[Session Affinity]: ./index.yml
 [SSL Offloading]: https://go.microsoft.com/fwlink/?LinkID=699549
-[To create a new storage account]: https://go.microsoft.com/fwlink/?LinkID=699528#create_new
-[Virtual Machine and Cloud Service Sizes for Azure]: https://go.microsoft.com/fwlink/?LinkId=466520
+[To create a new storage account]: ./index.yml#create_new
+[Virtual Machine and Cloud Service Sizes for Azure]: /previous-versions/azure/dn197896(v=azure.100)
 
 <!-- IMG List -->
 

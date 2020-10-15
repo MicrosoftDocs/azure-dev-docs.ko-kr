@@ -4,12 +4,12 @@ description: 'Node.js 자습서 2부: Node.js 앱을 만들고 로컬에서 실�
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7d627d97987ed41f90972362ab38d436a6157d33
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: aceeb9016e098cc707f176e3d767cf7bf72a35a2
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365246"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846704"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>로컬 Node.js 앱 만들기 및 실행
 
@@ -22,7 +22,7 @@ ms.locfileid: "91365246"
 1. 다음 명령을 실행하여 Express Generator를 통해 *expressApp1*이라는 새 Express 앱을 만듭니다. (`--view pug --git` 매개 변수는 [pug](https://pugjs.org/api/getting-started.html) 템플릿 엔진(이전 이름: Jade)을 사용하고 *.gitignore* 파일을 만들도록 생성기에 지시합니다.)
 
     ```bash
-    npx express-generator expressApp1 --view pug -–git
+    npx express-generator expressApp1 -–git --view pug 
     ```
 
 1. 앱 폴더로 이동합니다.

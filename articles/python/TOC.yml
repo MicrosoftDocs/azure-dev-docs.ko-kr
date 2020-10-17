@@ -136,6 +136,8 @@
       items:
         - name: 리소스 그룹 프로비저닝
           href: azure-sdk-example-resource-group.md
+        - name: 그룹 및 리소스 나열
+          href: azure-sdk-example-list-resource-groups.md
         - name: Azure Storage 프로비저닝
           href: azure-sdk-example-storage.md
         - name: Azure Storage 사용

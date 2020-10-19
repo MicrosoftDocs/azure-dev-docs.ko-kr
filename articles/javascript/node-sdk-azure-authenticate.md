@@ -2,51 +2,32 @@
 title: Node.js용 Azure 관리 모듈을 사용하여 인증
 description: 서비스 사용자를 통해 Node.js용 Azure 관리 모듈에 인증합니다.
 ms.topic: how-to
-ms.date: 06/17/2017
+ms.date: 09/29/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 150b00c4dbb21d0514d1d7c7d34813272bbf06e1
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 2d7b4047226b28ab71597e523243adf7fc0d4c0d
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586122"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621669"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript용 Azure 관리 모듈을 사용하여 인증
 
-리소스를 관리하는 데 도움이 되는 Azure 서비스에 대한 두 가지 관리 패키지 세트가 있습니다.
-- Node.js용 Azure SDK
-- JavaScript용 Azure SDK
+모든 [SDK 클라이언트 라이브러리](azure-sdk-library-package-index.md)에는 인스턴스화될 때 `credentials` 개체를 통한 인증이 필요합니다. 필요한 자격 증명을 인증하고 만드는 방법에는 여러 가지가 있습니다.
 
-Node.js용 Azure SDK는 다음과 같은 Azure 서비스에 대한 이전 관리 패키지 세트입니다. 
-- Node.js에서만 사용할 수 있으며 브라우저에서는 사용할 수 없음
-- 직접 작성된 형식의 선언 파일을 사용하여 JavaScript로 작성됨
-- 개발이 중지되었고 더 이상 사용되지 않으며 JavaScript용 Azure SDK 패키지로 대체됨
-- 패키지 이름이 `azure-arm-`으로 시작함
-- Azure Active Directory를 사용하여 인증하기 위해 패키지의 클라이언트 클래스에 전달할 수 있는 자격 증명을 만들려면 [m s-rest-azure](https://www.npmjs.com/package/ms-rest-azure) 패키지가 필요함
-- https://github.com/Azure/azure-sdk-for-node 리포지토리에 있음
+필요한 자격 증명을 만드는 일반적인 방법은 다음과 같습니다.
 
-JavaScript용 Azure SDK는 다음과 같은 Azure 서비스에 대한 최신 관리 패키지 세트입니다.
-- Node.js와 브라우저 모두에서 사용 가능
-- TypeScript로 작성되었으며 JavaScript 및 TypeScript 프로젝트 모두에서 사용할 수 있음
-- 현재도 개발 중이며 Azure 서비스에서 리소스 관리 API를 업데이트하면 업데이트를 수신함
-- 패키지 이름이 `@azure/arm-`으로 시작함
-- Azure Active Directory를 사용하여 인증하기 위해 패키지의 클라이언트 클래스에 전달할 수 있는 자격 증명을 만들려면 [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) 패키지가 필요함 애플리케이션이 브라우저에서 실행되는 경우 [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth)를 대신 사용하세요.
-- https://github.com/Azure/azure-sdk-for-js 리포지토리에 있음
+- **서비스 주체** 인증은 _권장 방법_입니다. [Azure 서비스 주체를 생성](node-sdk-azure-authenticate-principal.md)하는 방법을 알아봅니다. 
+- **대화형 로그인**은 가장 쉬운 인증 방법이지만 사용자 계정 및 브라우저로 로그인해야 합니다.
+- 사용자 이름과 암호를 사용한 **기본** 인증. 이는 안전을 위한 최소한의 방법입니다. 
 
-두 패키지 세트를 구분하는 쉬운 방법은 패키지 이름을 확인하는 것입니다.
+## <a name="samples"></a>샘플
 
-모든 서비스 API에는 인스턴스화될 때 `credentials` 개체를 통한 인증이 필요합니다. Node.js용 Azure SDK와 JavaScript용 Azure SDK에서 패키지의 필수 자격 증명을 인증하고 만드는 방법에는 여러 가지가 있습니다.
-
-몇 가지 일반적인 방법은 다음과 같습니다.
-
-- 기본 인증(사용자 이름 및 암호 사용)
-- 대화형 로그인은 가장 쉬운 인증 방법이지만 사용자 계정으로 로그인해야 합니다.
-- 서비스 주체 인증. [Node.js를 사용하여 Azure 서비스 사용자 만들기](./node-sdk-azure-authenticate-principal.md) 항목에서는 서비스 주체를 만들기 위한 다양한 기술을 설명하고 있습니다. 
-
-아래의 각 패키지에 대한 추가 정보는 자격 증명 개체를 가져올 수 있는 다양한 방법에 대한 세부 정보를 참조하세요.
-- [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) - Node.js에서 JavaScript용 Azure SDK의 관리 패키지를 사용하는 경우
-- [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth) - 브라우저에서 JavaScript용 Azure SDK의 관리 패키지를 사용하는 경우
-- [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) - 이전 Node.js용 Azure SDK의 관리 패키지를 사용하는 경우
+|인증 패키지|샘플 인증 스크립트|
+|--|--|
+|[@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) <br>(권장)|[인증서가 있는 서비스 주체](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpCert.ts)<br>[파일의 서비스 주체](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpSecret.ts)<br>[대화형](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/interactivePersonalAccount.ts)<br>[기본](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/usernamePassword.ts)|
+|[@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth)<br>(권장)|[팝업을 사용한 인증(create-react-app)](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/authentication-with-popup)<br>[팝업 없이 반응](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/react-app)<br>[로그인 단추를 사용하는 HTML](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/vanilla)|
+|[ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure)|[서비스 주체](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#service-principal-authentication)<br>[대화형](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#interactive-login)<br>[기본](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#basic-authentication)|
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 

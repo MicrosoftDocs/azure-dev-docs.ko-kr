@@ -4,12 +4,12 @@ description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage �
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764460"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010276"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>예제: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
@@ -207,6 +207,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ## <a name="see-also"></a>참고 항목
 
 - [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
+- [예: 구독의 리소스 그룹 나열](azure-sdk-example-list-resource-groups.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e457d4fe152f9fa5fa64bafaa4f49311e8ff4475
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 82dce0ada2824a00e75e9bb00d8943458e09e44f
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831889"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010177"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Eclipse용 Azure Explorer를 사용하여 가상 머신 관리
 
@@ -103,7 +103,7 @@ Eclipse에서 Azure Explorer를 사용하여 가상 머신을 삭제하려면 �
 
 1. **Azure Explorer** 보기에서 가상 머신을 마우스 오른쪽 단추로 클릭하고 **삭제**를 선택합니다.
 
-1. 확인 창에서 **예**를 클릭합니다.
+1. 확인 창에서 **확인**을 클릭합니다.
 
    ![가상 머신 삭제 확인 창](media/managing-virtual-machines-using-azure-explorer/DE02.png)
 

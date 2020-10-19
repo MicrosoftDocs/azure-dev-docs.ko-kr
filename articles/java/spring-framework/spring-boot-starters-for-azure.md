@@ -2,23 +2,29 @@
 title: Azure용 Spring Boot Starter
 description: 이 문서에서는 Azure에 사용할 수 있는 다양한 Spring Boot Starter를 설명 합니다.
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 09/29/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0d4615b3d6b05ee54538befdf6a7a7d220e77917
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 5b342b722167aa901b76f8117f3fefc9412220ae
+ms.sourcegitcommit: 660b21aee3cf83ee561c447803b64335b2c95ccc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831009"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91882210"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Azure용 Spring Boot Starter
 
 이 문서에서는 Microsoft Azure 작업을 위해 Java 개발자에게 통합 기능을 제공하는 [Spring Initializr]의 여러 Spring Boot Starter에 대해 설명합니다.
 
-![Azure Spring Boot Starter][spring-boot-starters]
+>[!div class="mx-imgBorder"]
+![Initializr를 사용하여 Azure Spring Boot Starters 구성][configure-azure-spring-boot-starters-with-initializr]
+
+> [!NOTE]
+>
+> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
+> 
 
 현재 다음 Spring Boot Starter를 Azure에 사용할 수 있습니다.
 
@@ -37,6 +43,11 @@ ms.locfileid: "90831009"
 * **[Azure Storage](#azure-storage)**
 
    Azure Storage 서비스에 대한 Spring Boot 지원을 제공합니다.
+   
+   > [!NOTE]
+   >
+   > Azure Storage에 대한 새 버전의 Spring Boot Starter는 현재 Spring Initializr 내에서 Azure Storage 종속성을 추가하는 것을 지원하지 않습니다. 그러나 프로젝트가 생성된 후 *pom.xml* 파일을 수정하여 종속성을 추가할 수 있습니다.
+   > 
 
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Azure Support
@@ -54,18 +65,33 @@ ms.locfileid: "90831009"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 기본 `spring-boot-starter` 종속성은 다음으로 바뀝니다.
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-spring-boot</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 다음 섹션이 파일에 추가됩니다.
 
@@ -99,18 +125,33 @@ ms.locfileid: "90831009"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 기본 `spring-boot-starter` 종속성은 다음으로 바뀝니다.
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-active-directory-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-active-directory-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 다음 섹션이 파일에 추가됩니다.
 
@@ -144,18 +185,33 @@ ms.locfileid: "90831009"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 기본 `spring-boot-starter` 종속성은 다음으로 바뀝니다.
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-keyvault-secrets-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-keyvault-secrets-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 다음 섹션이 파일에 추가됩니다.
 
@@ -181,7 +237,7 @@ ms.locfileid: "90831009"
 이 스타터가 제공하는 Azure Storage 기능을 사용하는 방법의 예는 다음을 참조하세요.
 
 * [Azure Storage에 Spring Boot Starter를 사용하는 방법](configure-spring-boot-starter-java-app-with-azure-storage.md)
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-storage-blob>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-resource>
 
 이 스타터를 Spring Boot 프로젝트에 추가할 때는 *pom.xml* 파일에서 다음을 변경합니다.
 
@@ -190,18 +246,32 @@ ms.locfileid: "90831009"
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * 기본 `spring-boot-starter` 종속성은 다음으로 바뀝니다.
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-storage-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>spring-starter-azure-storage</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * 다음 섹션이 파일에 추가됩니다.
 
@@ -245,4 +315,4 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 
 <!-- IMG List -->
 
-[spring-boot-starters]: media/spring-boot-starters-for-azure/spring-boot-starters-cropped.png
+[configure-azure-spring-boot-starters-with-initializr]: media/spring-boot-starters-for-azure/configure-azure-spring-boot-starters-with-initializr.png

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d0dbc16a16ca3a5ff367e6c67fceabcb37e2cce6
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: d9e3b0de0c6ea20996c54b6ab5cb03083ed25a65
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534429"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947548"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트에 대한 로그인 지침
 
@@ -52,9 +52,9 @@ Eclipse용 Azure 도구 키트는 Azure 계정에 로그인하는 두 가지 방
 
 1. 브라우저에서, 마지막 단계에서 **복사 및 열기**를 클릭할 때 복사한 디바이스 코드를 붙여넣은 후 **다음**을 클릭합니다.
 
-1. Azure 계정을 선택하고 로그인하는 데 필요한 모든 인증 절차를 완료합니다.
+1. Azure 계정을 선택하고, 로그인하는 데 필요한 모든 인증 절차를 완료합니다.
 
-1. 로그인한 후 브라우저를 닫고 Eclipse IDE로 다시 전환합니다. **구독 선택** 대화 상자에서 사용할 구독을 선택한 다음, **확인**을 클릭합니다.
+1. 로그인하면 브라우저를 닫고 Eclipse IDE로 다시 전환합니다. **구독 선택** 대화 상자에서 사용할 구독을 선택한 다음, **확인**을 클릭합니다.
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>서비스 주체에 의해 Azure 계정에 로그인
 

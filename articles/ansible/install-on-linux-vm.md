@@ -3,14 +3,14 @@ title: 빠른 시작 - Azure CLI를 사용하여 Ansible 구성
 description: 이 빠른 시작에서는 Ubuntu, CentOS 및 SLES에서 Azure 리소스를 관리하기 위해 Ansible을 설치 및 구성하는 방법을 알아봅니다.
 keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Azure CLI
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 09/30/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: aba725cee4b61aeae98ed8d0eb89b3090241ff49
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831177"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621629"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Ansible 구성
 
@@ -66,7 +66,7 @@ Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 �
     az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. [az vm create](/cli/azure/vm#az-vm-create)를 사용하여 가상 머신을 만듭니다.
+1. [az vm create](/cli/azure/vm#az-vm-create)를 사용하여 가상 머신을 만듭니다. 자리 표시자를 SSH **공개** 키 파일 이름의 정규화된 이름으로 바꿉니다.
 
     ```azurecli
     az vm create \
@@ -108,7 +108,7 @@ az vm extension set \
 
 ## <a name="connect-to-your-virtual-machine-via-ssh"></a>SSH를 통해 가상 머신에 연결
 
-SSH 명령을 사용하여 가상 머신에 연결합니다.
+SSH 명령을 사용하여 가상 머신에 연결합니다. 자리 표시자를 반환된 적절한 값으로 바꿉니다.
 
 ```azurecli
 ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
@@ -126,15 +126,15 @@ Ansible Tower 또는 Jenkins를 사용하는 경우 서비스 주체 값을 환�
 다음 방법 중 하나를 사용하여 Ansible 자격 증명을 구성합니다.
 
 - [Ansible 자격 증명 파일 만들기](#file-credentials)
-- [Ansible 환경 변수 사용](#env-credentials)
+- [Ansible 환경 변수 정의](#env-credentials)
 
-### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Ansible 자격 증명 파일 만들기
+#### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Ansible 자격 증명 파일 만들기
 
 이 섹션에서는 Ansible에 자격 증명을 제공하는 로컬 자격 증명 파일을 만듭니다.
 
 Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자격 증명 제공](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)을 참조하세요.
 
-1. 개발 환경의 경우 다음과 같이 호스트 가상 머신에 `credentials`라는 파일을 만듭니다.
+1. 호스트 가상 머신에 성공적으로 연결되면 `credentials`라는 파일을 만들고 엽니다.
 
     ```bash
     mkdir ~/.azure
@@ -153,20 +153,16 @@ Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자�
 
 1. 파일을 저장하고 닫습니다.
 
-### <a name="span-idenv-credentialsuse-ansible-environment-variables"></a><span id="env-credentials"/>Ansible 환경 변수 사용
+#### <a name="span-idenv-credentialsdefine-ansible-environment-variables"></a><span id="env-credentials"/>Ansible 환경 변수 정의
 
-이 섹션에서는 서비스 주체 값을 내보내서 Ansible 자격 증명을 구성합니다.
+호스트 가상 머신에서 서비스 주체 값을 내보내서 Ansible 자격 증명을 구성합니다.
 
-1. 터미널 창을 엽니다.
-
-1. 다음과 같이 서비스 주체 값을 내보냅니다.
-
-    ```bash
-    export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-    export AZURE_CLIENT_ID=<security-principal-appid>
-    export AZURE_SECRET=<security-principal-password>
-    export AZURE_TENANT=<security-principal-tenant>
-    ```
+```bash
+export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
+export AZURE_CLIENT_ID=<security-principal-appid>
+export AZURE_SECRET=<security-principal-password>
+export AZURE_TENANT=<security-principal-tenant>
+```
 
 ## <a name="test-ansible-installation"></a>Ansible 설치 테스트
 

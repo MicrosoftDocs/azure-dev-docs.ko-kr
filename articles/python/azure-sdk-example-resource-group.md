@@ -4,12 +4,12 @@ description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용�
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8a3eb230e40954d25a890db53d33382c07899b7d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 24450fb8b7db3f9df3d08086c90cdf26265b474a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764635"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010283"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
 
@@ -21,7 +21,7 @@ ms.locfileid: "91764635"
 
 아직 수행하지 않은 경우 [Azure에 대한 로컬 Python 개발 환경 구성](configure-local-development-environment.md)의 모든 지침을 따르세요.
 
-로컬 개발을 위한 서비스 주체를 만들고 이 프로젝트의 가상 환경을 만들어 활성화해야 합니다.
+이 프로젝트에 대한 가상 환경을 만들고 활성화해야 합니다.
 
 ## <a name="2-install-the-azure-library-packages"></a>2: Azure 라이브러리 패키지 설치
 
@@ -90,6 +90,7 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>코드에 사용된 클래스에 대한 참조 링크
 
+- [AzureCliCredential(azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient(azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 
 ## <a name="4-run-the-script"></a>4: 스크립트 실행
@@ -130,6 +131,7 @@ az group create -n PythonAzureExample-rg -l centralus
 
 ## <a name="see-also"></a>참고 항목
 
+- [예: 구독의 리소스 그룹 나열](azure-sdk-example-list-resource-groups.md)
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)

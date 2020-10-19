@@ -4,12 +4,12 @@ description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 �
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: b1f04dbf2fa12aeab58a05191319a27072db6d28
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: bf205e133f093be654c88e5245eb0a4524f71502
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764685"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010293"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>예: Azure 라이브러리를 사용하여 데이터베이스 프로비저닝
 
@@ -276,6 +276,7 @@ az mysql db create -g PythonAzureExample-DB-rg --server PythonAzureExample-MySQL
 ## <a name="see-also"></a>참고 항목
 
 - [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
+- [예: 구독의 리소스 그룹 나열](azure-sdk-example-list-resource-groups.md)
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)

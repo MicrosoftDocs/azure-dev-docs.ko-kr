@@ -6,22 +6,20 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 06/04/2020
+ms.date: 10/10/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 3835d51bbbc7f3226a1b77ba415d5e965ac8a609
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: df9b9f659d504c18c9dfd9afb3b5f201448d4866
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831919"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010122"
 ---
-# <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C용 Spring Boot Starter를 사용하여 Java 웹앱을 보호합니다.
-
-## <a name="overview"></a>개요
+# <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C용 Spring Boot Starter를 사용하여 Java 웹앱 보호
 
 이 문서에서는 Azure AD(Azure Active Directory)용 Spring Boot Starter를 사용하는 [Spring Initializr](https://start.spring.io/)를 통한 Java 앱 만들기를 보여줍니다.
 
@@ -49,11 +47,15 @@ ms.locfileid: "90831919"
 
     * **프로젝트** 아래에서 **Maven 프로젝트**를 선택합니다.
     * **언어** 아래에서 **Java**를 선택합니다.
-    * **Spring Boot** 아래에서 **2.2.7**을 선택합니다.
+    * **Spring Boot** 아래에서 **2.3.4**를 선택합니다.
     * **그룹**, **아티팩트** 및 **이름**에서 간단한 설명이 포함된 문자열을 사용하여 동일한 값을 입력합니다. 입력함에 따라 UI에서 이러한 항목 중 일부를 자동으로 채울 수 있습니다.
     * **종속성** 창에서 **종속성 추가**를 선택합니다. UI를 사용하여 **Spring 웹** 및 **Spring 보안**에 대한 종속성을 추가합니다.
 
-   ![프로젝트를 생성하기 위한 값 입력](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
+   ![프로젝트를 생성하기 위한 값 입력](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
+
+    > [!NOTE]
+    > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
+
 
 3. **프로젝트 생성**을 선택한 다음, 프로젝트를 로컬 컴퓨터의 경로에 다운로드합니다. 다운로드한 파일을 프로젝트의 이름을 딴 디렉터리로 이동하고, 파일의 압축을 풉니다. 파일 레이아웃은 다음과 같으며, 이 경우 `yourProject` 대신 **그룹**에 대해 입력한 값을 사용합니다.
 
@@ -152,11 +154,11 @@ ms.locfileid: "90831919"
 
     [자습서: Azure Active Directory B2C에서 사용자 흐름 만들기](/azure/active-directory-b2c/tutorial-create-user-flows)의 모든 단계를 수행하여 "가입 및 로그인", "프로필 편집" 및 "암호 재설정"에 대한 사용자 흐름을 만듭니다.
 
-    AAD B2C는 로컬 계정 및 소셜 ID 공급자를 지원합니다. GitHub ID 공급자를 만드는 방법에 대한 예제는 [Azure Active Directory B2C를 사용하여 GitHub 계정으로 가입 및 로그인 설정](/azure/active-directory-b2c/identity-provider-github)을 참조하세요.
+    Azure AD B2C는 로컬 계정 및 소셜 ID 공급자를 지원합니다. GitHub ID 공급자를 만드는 방법에 대한 예제는 [Azure Active Directory B2C를 사용하여 GitHub 계정으로 가입 및 로그인 설정](/azure/active-directory-b2c/identity-provider-github)을 참조하세요.
 
 ## <a name="configure-and-compile-your-app"></a>앱 구성 및 컴파일
 
-이제 AAD B2C 인스턴스 및 일부 사용자 흐름을 만들었으므로 Spring 앱을 AAD B2C 인스턴스에 연결합니다.
+이제 Azure AD B2C 인스턴스 및 일부 사용자 흐름을 만들었으므로 Spring 앱을 Azure AD B2C 인스턴스에 연결합니다.
 
 1. 명령줄에서 cd를 사용하여 Spring Initializr에서 다운로드한 .zip 파일의 압축을 푼 디렉터리로 이동합니다.
 
@@ -182,9 +184,9 @@ ms.locfileid: "90831919"
     </dependency>
     ```
 
-    `azure-active-directory-b2c-spring-boot-starter`에 대해 사용 가능한 최신 버전을 사용합니다. 이는 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter)을 사용하여 확인할 수 있습니다. 이 문서를 작성할 당시 최신 버전은 `2.2.4`입니다.
+    `azure-active-directory-b2c-spring-boot-starter`에 대해 사용 가능한 최신 버전을 사용합니다. 이는 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter)을 사용하여 확인할 수 있습니다. 이를 업데이트할 당시 최신 버전은 `2.3.5`입니다.
 
-    `spring-boot-starter-thymeleaf`에 대해 위에서 선택한 Spring Boot의 버전에 해당하는 버전을 사용합니다(예: `2.2.7.RELASE`).
+    `spring-boot-starter-thymeleaf`에 대해 위에서 선택한 Spring Boot의 버전에 해당하는 버전을 사용합니다(예: `2.3.4.RELASE`).
 
     `thymeleaf-extras-springsecurity5`에 대해 사용 가능한 최신 버전을 사용합니다. 이는 [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5)을 사용하여 확인할 수 있습니다. 이 문서를 작성할 당시 최신 버전은 `3.0.4.RELEASE`입니다.
 
@@ -353,6 +355,10 @@ ms.locfileid: "90831919"
 ## <a name="summary"></a>요약
 
 이 자습서에서는 Azure Active Directory B2C 스타터를 사용하여 새 Java 웹 애플리케이션을 만들고, 새 Azure AD B2C 테넌트를 구성하고, 새 애플리케이션을 이 테너트에 등록한 다음, Spring 주석 및 클래스를 사용하여 웹앱을 보호하도록 애플리케이션을 구성했습니다.
+
+## <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 예기치 않은 요금이 청구되지 않도록 [Azure Portal](https://portal.azure.com/)을 사용하여 이 문서에서 만든 리소스를 삭제합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

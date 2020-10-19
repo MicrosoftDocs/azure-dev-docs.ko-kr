@@ -4,12 +4,12 @@ description: Python 및 Azure SDK 관리 라이브러리를 사용하여 Azure �
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 134b3bc14fa8fafe2ee3953ab6a7c713853d9398
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: e01121047d42200e956345df611f82706b1e081e
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764481"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010229"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>예제: Azure 라이브러리를 사용하여 가상 머신 프로비저닝
 
@@ -211,6 +211,7 @@ print(f"Provisioned virtual machine {vm_result.name}")
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>코드에 사용된 클래스에 대한 참조 링크
 
+- [AzureCliCredential(azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient(azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 - [NetworkManagementClient(azure.mgmt.network)](/python/api/azure-mgmt-network/azure.mgmt.network.networkmanagementclient)
 - [ComputeManagementClient(azure.mgmt.compute)](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient)
@@ -309,6 +310,7 @@ az group delete -n PythonAzureExample-VM-rg  --no-wait
 ## <a name="see-also"></a>참고 항목
 
 - [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
+- [예: 구독의 리소스 그룹 나열](azure-sdk-example-list-resource-groups.md)
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)

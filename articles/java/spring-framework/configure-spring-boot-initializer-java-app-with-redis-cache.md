@@ -3,17 +3,17 @@ title: Spring Boot Initializer 앱 만들기 - Azure Redis Cache
 description: Spring Initializer를 사용하여 만든 Spring Boot 애플리케이션을 구성하여 Azure Redis Cache를 사용하여 클라우드에서 Redis를 사용합니다.
 services: redis-cache
 documentationcenter: java
-ms.date: 02/06/2020
+ms.date: 10/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: 330f0b3b1cfa5e92a4e876121b966c3a0b174f02
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830209"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846604"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache를 사용하여 클라우드에서 Redis를 사용하도록 Spring Boot Initializer 앱 구성
 
@@ -57,7 +57,7 @@ ms.locfileid: "90830209"
 
 1. **데이터베이스**를 클릭하고 **Redis Cache**를 클릭합니다.
 
-   ![Azure portal][AZ02]
+   ![Azure Portal에서 Redis Cache를 선택합니다.][AZ02]
 
 1. **새 Redis Cache** 페이지에서 다음 정보를 지정합니다.
 
@@ -72,15 +72,15 @@ ms.locfileid: "90830209"
 
    이러한 옵션을 지정한 경우 **만들기**를 클릭하여 캐시를 만듭니다.
 
-   ![Azure portal][AZ03]
+   ![Azure Portal에서 캐시를 만듭니다.][AZ03]
 
 1. 캐시가 완료되면 Azure **대시보드**뿐만 아니라 **모든 리소스** 및 **Redis Caches** 페이지에서도 나열된 것을 확인할 수 있습니다. 해당 위치 중 하나에서 캐시를 클릭하여 캐시의 속성 페이지를 열 수 있습니다.
 
-   ![Azure portal][AZ04]
+   ![Azure Portal에서 프로비저닝된 리소스입니다.][AZ04]
 
 1. 캐시의 속성 목록이 포함된 페이지가 표시되면 **액세스 키**를 클릭하고 캐시의 액세스 키를 복사합니다.
 
-   ![Azure portal][AZ05]
+   ![액세스 키 섹션 아래에서 액세스 키를 복사합니다.][AZ05]
 
 ## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a>Redis Cache를 사용하도록 사용자 지정 Spring Boot 구성
 
@@ -198,7 +198,7 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 
 Azure에서 Spring Boot 애플리케이션을 사용 하는 방법에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* [Azure App Service에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-on-linux.md)
 
 * [Azure Container Service의 Kubernetes 클러스터에 Spring Boot 애플리케이션 실행](deploy-spring-boot-java-app-on-kubernetes.md)
 

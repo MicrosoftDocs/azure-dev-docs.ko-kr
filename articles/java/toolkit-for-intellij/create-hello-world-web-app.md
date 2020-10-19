@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 6506aae7aacf26d08bcb6c47ef947dfb8f6cef46
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586176"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947518"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>IntelliJ를 사용하여 Azure App Service용 Hello World 웹앱 만들기
 
@@ -53,7 +53,7 @@ ms.locfileid: "91586176"
 
 1. Azure 계정을 선택하고, 로그인하는 데 필요한 모든 인증 절차를 완료합니다.
 
-1. 로그인하면 브라우저를 닫고 IntelliJ IDE로 다시 전환합니다. **구독 선택** 대화 상자에서 사용하려는 구독을 선택한 다음, **확인**을 클릭합니다.
+1. 로그인하면 브라우저를 닫고 IntelliJ IDE로 다시 전환합니다. **구독 선택** 대화 상자에서 사용하려는 구독을 선택한 다음, **선택**을 클릭합니다.
 
 ## <a name="creating-a-new-web-app-project"></a>새 웹앱 프로젝트 만들기
 
@@ -71,7 +71,7 @@ ms.locfileid: "91586176"
 
 1. Maven 설정을 사용자 지정하거나 기본값을 적용하고, **다음**을 클릭합니다.
 
-1. 왼쪽 **프로젝트** 탭에서 프로젝트로 이동하여 **src/main/webapp/WEB-INF/index.jsp** 파일을 엽니다. 코드를 다음으로 바꾸고, **변경 내용을 저장**합니다.
+1. 왼쪽 **프로젝트** 탭에서 프로젝트로 이동하여 **src/main/webapp/index.jsp** 파일을 엽니다. 코드를 다음으로 바꾸고, **변경 내용을 저장**합니다.
 
    ```html
    <html>

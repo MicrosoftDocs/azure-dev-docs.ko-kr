@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 57cb6f2b731ee6d9522787d70efbaf35e029c632
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: a318d5aa7f411add20ee201d48d3640983efefee
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586151"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010259"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Eclipse를 사용하여 Azure App Service용 Hello World 웹앱 만들기
 
@@ -53,7 +53,7 @@ ms.locfileid: "91586151"
 
 1. Azure 계정을 선택하고, 로그인하는 데 필요한 모든 인증 절차를 완료합니다.
 
-1. 로그인하면 브라우저를 닫고 Eclipse IDE로 다시 전환합니다. **구독 선택** 대화 상자에서 사용하려는 구독을 선택한 다음, **확인**을 클릭합니다.
+1. 로그인하면 브라우저를 닫고 Eclipse IDE로 다시 전환합니다. **구독 선택** 대화 상자에서 사용하려는 구독을 선택한 다음, **선택**을 클릭합니다.
 
 ### <a name="install-required-software-optional"></a>필수 소프트웨어 설치 *(선택 사항)*
 

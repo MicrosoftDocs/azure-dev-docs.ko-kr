@@ -4,29 +4,29 @@ description: 이 문서에서는 Spring Cloud Stream Binder를 사용하여 Azur
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1ecedc4f3b3fb3eb92b66403f00aa14660323ce2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379047"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010010"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Spring Cloud Azure Stream Binder를 Azure Service Bus에 사용하는 방법
 
 [!INCLUDE [spring-boot-20-note.md](includes/spring-boot-20-note.md)]
 
-Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0") 표준을 기반으로 하는 [Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview)("Azure Service Bus")라는 비동기 메시징 플랫폼을 제공합니다. Service Bus는 지원되는 Azure 플랫폼 범위에서 사용할 수 있습니다.
-
 이 문서에서는 Spring Cloud Stream Binder를 사용하여 Service Bus `queues` 및 `topics`에서 메시지를 보내고 받는 방법을 보여 줍니다.
+
+Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0") 표준을 기반으로 하는 [Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview)("Azure Service Bus")라는 비동기 메시징 플랫폼을 제공합니다. Service Bus는 지원되는 Azure 플랫폼 범위에서 사용할 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
 이 문서에는 다음 필수 구성 요소가 필요합니다.
 
-1. Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)을 활성화하거나 [무료 계정](https://azure.microsoft.com/free/)에 등록할 수 있습니다.
+1. Azure 구독: Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)을 활성화하거나 [체험 계정](https://azure.microsoft.com/free/)에 등록할 수 있습니다.
 
 1. 지원되는 JDK(Java Development Kit) 버전 8 이상. Azure에서 개발하는 경우 사용할 수 있는 JDK에 대한 자세한 내용은 <https://aka.ms/azure-jdks>를 참조하세요.
 
@@ -40,7 +40,10 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 1. 구성된 Service Bus 큐 또는 토픽이 없는 경우 Azure Portal을 사용하여 [Service Bus 큐를 만들거나](/azure/service-bus-messaging/service-bus-quickstart-portal)[Service Bus 토픽을 만듭니다](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). 네임스페이스가 이전 단계에서 지정된 요구 사항을 충족하는지 확인합니다. 또한 이 자습서의 테스트 앱에 필요한 네임스페이스의 연결 문자열을 적어둡니다.
 
-1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer를 사용하여 **Maven** 프로젝트를 만듭니다](https://start.spring.io/). **Maven Project**(Maven 프로젝트)를 선택하고, **Dependencies**(종속성) 아래에서 **Web**(웹) 종속성을 추가해야 합니다.
+1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer](https://start.spring.io/)를 사용하여 **Maven** 프로젝트를 만듭니다. **Maven 프로젝트**를 선택하고, **종속성** 아래에서 **웹** 종속성을 추가하고, **8** Java 버전을 선택합니다.
+
+    > [!NOTE]
+    > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Spring Cloud Stream Binder 스타터 사용
 
@@ -56,7 +59,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 1. Service Bus 큐 또는 토픽을 사용하는지 여부에 따라 다음 코드 블록을 **&lt;dependencies>** 요소 아래에 추가합니다.
 
-    **Azure Service Bus 큐**
+    **Service Bus 큐**
 
     ```xml
     <dependency>
@@ -99,7 +102,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 1. Service Bus 큐 또는 토픽을 사용하는지 여부에 따라 적절한 코드를 *application.properties* 파일의 끝에 추가합니다. [필드 설명 표](#fd)를 사용하여 샘플 값을 Service Bus에 적절한 속성으로 바꿉니다.
 
-    **Azure Service Bus 큐**
+    **Service Bus 큐**
 
     ```yaml
     spring.cloud.azure.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -126,8 +129,8 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
     |               `spring.cloud.stream.bindings.input.destination`                 |                            이 자습서에서 사용한 Service Bus 큐 또는 Service Bus 토픽을 지정합니다.                         |
     |                  `spring.cloud.stream.bindings.input.group`                    |                                            Service Bus 토픽을 사용한 경우 토픽 구독을 지정합니다.                                |
     |               `spring.cloud.stream.bindings.output.destination`                |                               입력 대상에 사용한 것과 동일한 값을 지정합니다.                        |
-    | `spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`를 지정합니다.                                                   |
-    | `spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`를 지정합니다.                                                   |
+    | `spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`을 지정합니다.                                                   |
+    | `spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`을 지정합니다.                                                   |
 
 1. *application.properties* 파일을 저장하고 닫습니다.
 

@@ -4,17 +4,17 @@ titleSuffix: Azure Kubernetes Service
 description: 이 자습서에서는 Microsoft Azure에서 Kubernetes 클러스터에 Spring Boot 애플리케이션을 배포하는 단계를 안내합니다.
 services: container-service
 documentationcenter: java
-ms.date: 11/12/2019
+ms.date: 10/06/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: b4b36df09811e8e9e6a9bae944119e280258d751
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cecd6b593d1805b7394a9fe73317e6faa8b689a5
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830079"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846484"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Azure Kubernetes Service에 Spring Boot 애플리케이션 배포
 
@@ -297,7 +297,7 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 
 Azure에서 Spring Boot를 사용하는 방법에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* [Azure App Service에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-on-linux.md)
 
 Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure]와 [Azure DevOps 및 Java 사용하기]를 참조하세요.
 

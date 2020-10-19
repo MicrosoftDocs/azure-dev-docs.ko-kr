@@ -3,18 +3,18 @@ title: Azure App Service에서 Linux에 Spring Boot 웹앱 배포
 description: 이 자습서에서는 Microsoft Azure에서 Linux Web App으로 Spring Boot 애플리케이션을 배포하는 단계를 설명합니다.
 services: azure app service
 documentationcenter: java
-ms.date: 12/31/2019
+ms.date: 10/06/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 97f6ef6e1d53b8923a8d29aa7747442ee6ac7efc
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ec24ba4ab6b10bd615af06c2cdbd37397d0b2a83
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830069"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846454"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포
 
@@ -174,7 +174,7 @@ ms.locfileid: "90830069"
 
    * **다음: Docker**를 클릭합니다.
 
-   ![웹앱 설정 구성][LX02]
+   ![다음을 클릭합니다. 계속하려면 Docker 단추를 클릭합니다.][LX02]
 
       **웹앱** 페이지에서 **Docker**를 선택하고 다음 정보를 입력합니다.
 
@@ -190,7 +190,7 @@ ms.locfileid: "90830069"
 
    위 정보를 모두 입력한 후 **검토 + 만들기**를 클릭합니다.
 
-   ![웹앱 설정 구성][LX02-A]
+   ![검토 + 만들기를 선택하여 완료합니다.][LX02-A]
 
    * **검토 + 만들기**를 클릭합니다.
 
@@ -248,16 +248,15 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 
 Azure에서 Spring Boot 애플리케이션을 사용 하는 방법에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* [Azure App Service에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
 * [Azure Container Service의 Kubernetes 클러스터에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-on-kubernetes.md)
 
 Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure]와 [Azure DevOps 및 Java 사용하기]를 참조하세요.
 
 Spring Boot on Docker 샘플 프로젝트에 대한 자세한 정보는 [Spring Boot on Docker 시작]을 참조하세요.
 
-자체 Spring Boot 애플리케이션을 시작하는 데 도움이 필요하면 https://start.spring.io/ 에서 **Spring Initializr**를 참조하세요.
+자체 Spring Boot 애플리케이션을 시작하는 데 도움이 필요하면 https://start.spring.io/에서 **Spring Initializr**를 참조하세요.
 
-간단한 Spring Boot 애플리케이션을 만들기 시작하는 방법에 대한 자세한 내용은 https://start.spring.io/ 에서 Spring Initializr를 참조하세요.
+간단한 Spring Boot 애플리케이션을 만들기 시작하는 방법에 대한 자세한 내용은 https://start.spring.io/에서 Spring Initializr를 참조하세요.
 
 Azure와 함께 사용자 지정 Docker 이미지를 사용하는 방법에 대한 추가 예제를 보려면 [Azure Web App on Linux에 대한 사용자 지정 Docker 이미지 사용]을 참조하세요.
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 2891b0c09c43b652fd7dd41e354290c2821bad46
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 27442efda23ba24abe6b40f20f7685f6ac7a524e
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534575"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010238"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>IntelliJ용 Azure 도구 키트에 대한 로그인 지침
 
@@ -50,7 +50,7 @@ ms.locfileid: "90534575"
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>서비스 주체에 의해 Azure 계정에 로그인
 
-이 섹션에서는 서비스 주체 데이터를 포함하는 자격 증명 파일을 만드는 과정을 안내합니다. 이 프로세스를 완료하면 IntelliJ에서는 사용자가 프로젝트를 열 때 해당 자격 증명 파일을 사용해서 Azure에 자동으로 로그인합니다.
+이 섹션에서는 서비스 주체 데이터를 포함하는 자격 증명 파일을 만드는 과정을 안내합니다. 이 프로세스를 완료하면 IntelliJ에서는 사용자가 프로젝트를 열 때 해당 자격 증명 파일을 사용하여 Azure에 자동으로 로그인합니다.
 
 1. IntelliJ IDEA로 프로젝트를 엽니다.
 

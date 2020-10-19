@@ -5,18 +5,18 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/02/2019
+ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 800e4d45417c7842d12e92c6e18dfdd6a1bc567f
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586190"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846534"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API에서 Spring Boot Starter를 사용하는 방법
 
@@ -37,7 +37,7 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 1. **데이터베이스**를 클릭한 후 **Azure Cosmos DB**를 클릭합니다.
 
-    ![Azure portal][AZ02]
+    ![Azure Portal에서 Azure Cosmos DB를 선택합니다.][AZ02]
 
 1. **Azure Cosmos DB** 페이지에서 다음 정보를 입력합니다.
 
@@ -49,13 +49,13 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
     이러한 옵션이 지정되면 **검토 + 만들기**를 클릭하고 사양을 검토한 후 **만들기**를 클릭합니다.
 
-    ![Azure portal][AZ03]
+    ![검토 + 만들기를 선택하여 계속 진행합니다.][AZ03]
 
 1. 데이터베이스를 만든 경우 Azure **대시보드** 뿐 아니라 **모든 리소스** 및 **Azure Cosmos DB** 페이지에도 나열됩니다. 해당 위치 중 하나에서 데이터베이스를 클릭하여 캐시에 대한 속성 페이지를 열 수 있습니다.
 
 1. 데이터베이스에 대한 속성 페이지가 표시되면 **키**를 클릭하고 데이터베이스에 대한 URI 및 액세스 키를 복사합니다. 이러한 값은 Spring Boot 애플리케이션에서 사용하게 됩니다.
 
-    ![Azure portal][AZ05]
+    ![키 섹션에서 URI 및 액세스 키를 복사합니다.][AZ05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr를 사용하여 간단한 Spring Boot 애플리케이션 만들기
 
@@ -421,7 +421,7 @@ Azure에서 Spring Boot 애플리케이션을 사용 하는 방법에 대한 자
 
 * [Azure용 Spring Boot Cosmos DB Starter]
 
-* [Azure App Service에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-on-linux.md)
 
 * [Azure Container Service의 Kubernetes 클러스터에 Spring Boot 애플리케이션 실행](deploy-spring-boot-java-app-on-kubernetes.md)
 

@@ -3,16 +3,16 @@ title: Azure App Service on Linux를 통해 Spring 및 Cosmos DB를 사용하는
 description: 이 문서에서는 Azure App Service on Linux에서 Java 웹앱을 빌드, 구성, 배포, 문제 해결 및 확장하는 프로세스를 단계별로 연습합니다.
 documentationcenter: java
 ms.reviewer: joshuapa
-ms.date: 4/24/2019
+ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: f1e47353fdf2e09ceaa1b8ac339f4fc23368574d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: d3343940cd35767aa6887244d8ae9d7cca221646
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830229"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846524"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Azure App Service on Linux를 통해 Spring 및 Cosmos DB를 사용하는 방법
 
@@ -312,7 +312,7 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 
 Azure에서 Spring Boot 애플리케이션을 사용 하는 방법에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* [Azure App Service에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-on-linux.md)
 
 * [Azure Container Service의 Kubernetes 클러스터에 Spring Boot 애플리케이션 실행](deploy-spring-boot-java-app-on-kubernetes.md)
 

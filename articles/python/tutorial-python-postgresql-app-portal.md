@@ -3,14 +3,14 @@ title: '자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Djang
 description: Azure에서 웹앱 및 PostgreSQL 데이터베이스를 프로비저닝하고 GitHub에서 앱 코드를 배포합니다.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 09/23/2020
+ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110533"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947538"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -57,7 +57,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
     | --- | --- |
     | Subscription | 기본값과 다른 경우 사용하려는 구독을 선택합니다. |
     | Resource group | **새로 만들기**를 선택하고, "DjangoPostgres-Tutorial-rg"를 입력합니다. |
-    | 앱 이름 | 모든 Azure에서 고유한 웹앱의 이름입니다(앱 URL은 `https://\<app-name>.azurewebsites.net`임). 허용되는 문자는 `A`-`Z`, `0`-`9` 및 `-`입니다. 회사 이름과 앱 식별자를 조합하여 사용하는 것이 좋습니다. |
+    | 앱 이름 | 모든 Azure에서 고유한 웹앱의 이름입니다(앱 URL은 `https://<app-name>.azurewebsites.net`임). 허용되는 문자는 `A`-`Z`, `0`-`9` 및 `-`입니다. 회사 이름과 앱 식별자를 조합하여 사용하는 것이 좋습니다. |
     | 게시 | **코드**를 선택합니다. |
     | 런타임 스택 | 드롭다운 목록에서 **Python 3.8**을 선택합니다. |
     | 지역 | 가까운 위치를 선택합니다. |
@@ -86,7 +86,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
     | --- | --- |
     | Subscription | 기본값과 다른 경우 사용하려는 구독을 선택합니다. |
     | Resource group | 이전 섹션에서 만든 "DjangoPostgres-Tutorial-rg" 그룹을 선택합니다. |
-    | 서버 이름 | 모든 Azure에서 고유한 데이터베이스 서버의 이름입니다(앱 URL은 `https://\<server-name>.postgres.database.azure.com`임). 허용되는 문자는 `A`-`Z`, `0`-`9` 및 `-`입니다. 회사 이름과 서버 식별자를 조합하여 사용하는 것이 좋습니다. |
+    | 서버 이름 | 모든 Azure에서 고유한 데이터베이스 서버의 이름입니다(데이터베이스 서버의 URL은 `https://<server-name>.postgres.database.azure.com`이 됨). 허용되는 문자는 `A`-`Z`, `0`-`9` 및 `-`입니다. 회사 이름과 서버 식별자를 조합하여 사용하는 것이 좋습니다. |
     | 데이터 원본 | **없음** |
     | 위치 | 가까운 위치를 선택합니다. |
     | 버전 | 기본값(최신 버전)을 유지합니다. |
@@ -119,7 +119,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
     psql --host=<server-name>.postgres.database.azure.com --port=5432 --username=<user-name>@<server-name> --dbname=postgres
     ```
 
-    서버를 구성하는 경우 `<server-name>` 및 `<user-name>`을 이전 섹션에서 사용한 이름으로 바꿉니다. 전체 사용자 이름 값은 `<user-name>@<server-name>`입니다.
+    서버를 구성하는 경우 `<server-name>` 및 `<user-name>`을 이전 섹션에서 사용한 이름으로 바꿉니다. Postgres에 필요한 전체 사용자 이름 값은 `<user-name>@<server-name>`입니다.
 
     마우스 오른쪽 단추를 클릭한 다음, **붙여넣기**를 선택하여 위의 명령을 복사하여 Cloud Shell에 붙여넣을 수 있습니다.
 
@@ -150,9 +150,9 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
     | 설정 이름 | 값 |
     | --- | --- |
     | DJANGO_ENV | `production`(이 값은 [샘플 개요](#fork-the-sample-repository)의 앞부분에서 설명한 대로 프로덕션 구성을 사용하도록 앱에 지시합니다.) |
-    | DBHOST | 이전 섹션의 데이터베이스 서버에 대한 URL(`<server-name>.postgres.database.azure.com` 형식)입니다. 전체 URL은 데이터베이스 서버의 [개요] 페이지에서 복사할 수 있습니다. |
+    | DBHOST | 이전 섹션의 데이터베이스 서버 이름입니다. 즉, `.postgres.database.azure.com` 앞에 오는 서버 URL의 `<server-name>` 부분입니다. (*azuresite/production.py*의 코드는 전체 URL을 자동으로 생성합니다.) |
     | DBNAME | `pollsdb` |
-    | DBUSER | 이전 섹션에서 사용한 전체 관리자 사용자 이름입니다. 전체 사용자 이름은 다시 `<user-name>@<server-name>`입니다. |
+    | DBUSER | 데이터베이스를 프로비저닝할 때 사용되는 관리자 사용자 이름입니다. (샘플 코드는 `@<server-name>` 부분을 자동으로 추가합니다. *azuresite/production.py*를 참조하세요.) |
     | DBPASS | 이전에 만든 관리자 암호입니다. |
 
 1. **저장**을 선택한 다음, **계속**을 선택하여 설정을 적용합니다.

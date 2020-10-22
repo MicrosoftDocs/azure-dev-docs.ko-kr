@@ -2,18 +2,18 @@
 title: Azure Database for PostgreSQL에서 Spring Data JPA 사용
 description: Azure Database for PostgreSQL 데이터베이스에서 Spring Data JPA를 사용하는 방법을 알아봅니다.
 documentationcenter: java
-ms.date: 06/19/2020
+ms.date: 10/12/2020
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3a17e09f257bb4d06320fea8aaa6b423c4f2027b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1099b9568a66c2915b000c31c8e84e8e02b1d3d6
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830973"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200591"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL에서 Spring Data JPA 사용
 
@@ -34,8 +34,10 @@ ms.locfileid: "90830973"
 다음을 입력하여 명령줄에서 애플리케이션을 생성합니다.
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+> [!NOTE]
+> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Azure Database for PostgreSQL을 사용하도록 Spring Boot 구성
 
@@ -70,11 +72,11 @@ spring.jpa.hibernate.ddl-auto=create-drop
 다음으로, JPA를 사용하여 PostgreSQL 서버에서 데이터를 저장하고 검색하는 Java 코드를 추가합니다.
 
 [!INCLUDE [spring-data-jpa-create-application.md](includes/spring-data-jpa-create-application.md)]
-
+    
 이러한 cURL 요청의 스크린샷은 다음과 같습니다.
 
 [![cURL을 사용한 테스트](media/configure-spring-data-jpa-with-azure-postgresql/create-postgresql-02.png)](media/configure-spring-data-jpa-with-azure-postgresql/create-postgresql-02.png#lightbox)
-
+    
 축하합니다! JPA를 사용하여 Azure Database for PostgreSQL에서 데이터를 저장하고 검색하는 Spring Boot 애플리케이션을 만들었습니다.
 
 [!INCLUDE [spring-data-conclusion.md](includes/spring-data-conclusion.md)]

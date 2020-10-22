@@ -128,6 +128,8 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: 리소스 정리
               href: tutorial-vscode-azure-app-service-node-05.md
+        - name: Storage Blob에 이미지 업로드
+          href: tutorial-visualstudiocode-browser-file-upload-feedback.yml?preview=tutorialFeedback
         - name: MongoDB를 사용하는 Express.js
           href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml?tabs=bash&preview=tutorialFeedback
         - name: VS Code를 사용하여 Deno를 App Service에 배포

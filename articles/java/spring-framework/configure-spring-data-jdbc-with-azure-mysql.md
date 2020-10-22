@@ -2,18 +2,18 @@
 title: Azure Database for MySQL에서 Spring Data JDBC 사용
 description: Azure Database for MySQL 데이터베이스에서 Spring Data JDBC를 사용하는 방법을 알아보세요.
 documentationcenter: java
-ms.date: 04/07/2020
+ms.date: 10/12/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3bbed7be27854514d76b5cd3e5b905ba5741fa72
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 5a69307743226be661b95692d2a2681cce5b5d79
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831829"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200578"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>Azure Database for MySQL에서 Spring Data JDBC 사용
 
@@ -34,8 +34,10 @@ ms.locfileid: "90831829"
 다음을 입력하여 명령줄에서 애플리케이션을 생성합니다.
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+> [!NOTE]
+> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>Azure Database for MySQL을 사용하도록 Spring Boot 구성
 

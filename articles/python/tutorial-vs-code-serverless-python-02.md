@@ -4,12 +4,12 @@ description: 2단계 자습서로, VS Code에 대한 Azure Functions 확장 사�
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 24e158023ba748e6137471ae4833a970a185853b
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: c21207e9269326ba2189da3c2b5bbbcba1b23c02
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846734"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137142"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Azure Functions에 대한 Python 함수 만들기
 
@@ -47,3 +47,5 @@ ms.locfileid: "91846734"
 
 > [!div class="nextstepaction"]
 > [함수를 만들었습니다. - 3단계 진행 >>>](tutorial-vs-code-serverless-python-03.md)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/python-functions-qs-ms-survey)

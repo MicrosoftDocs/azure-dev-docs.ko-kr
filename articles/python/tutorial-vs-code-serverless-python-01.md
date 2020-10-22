@@ -4,12 +4,12 @@ description: 자습서 1단계, Azure Functions에 대한 로컬 환경 구성
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772763"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137222"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포
 
@@ -80,3 +80,5 @@ Azure Functions 로고로 시작하는 출력(출력을 위쪽으로 스크롤 �
 
 > [!div class="nextstepaction"]
 > [Azure에 로그인했습니다. - 2단계 진행 >>>](tutorial-vs-code-serverless-python-02.md)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/python-functions-qs-ms-survey)

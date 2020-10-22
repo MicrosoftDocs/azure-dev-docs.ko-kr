@@ -4,12 +4,12 @@ description: 자습서 3단계, Azure Functions에서 제공하는 템플릿 Pyt
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a88c62bb017cc666b7c8e6c5cabe6df0768a17b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: f2f39b4ba2c6274c81052b21b4d66d1c7c854ede
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764523"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137182"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Visual Studio Code에서 Python 코드 파일 검사
 
@@ -93,3 +93,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 > [!div class="nextstepaction"]
 > [코드 파일을 검사했습니다. - 4단계 진행 >>>](tutorial-vs-code-serverless-python-04.md)
 
+[문제가 있나요? 알려주세요.](https://aka.ms/python-functions-qs-ms-survey)

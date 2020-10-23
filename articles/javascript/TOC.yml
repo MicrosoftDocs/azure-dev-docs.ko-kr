@@ -4,13 +4,13 @@
     - name: JavaScript로 Azure에서 시작
       items:
         - name: 개발 환경 설정
-          href: configure-local-development-environment.md
+          href: core/configure-local-development-environment.md
         - name: 서비스 주체 설정
-          href: node-sdk-azure-authenticate-principal.md
+          href: core/node-sdk-azure-authenticate-principal.md
         - name: Azure에 대한 인증
-          href: node-sdk-azure-authenticate.md
+          href: core/node-sdk-azure-authenticate.md
     - name: 빠른 시작
-      expanded: true
+      expanded: false
       items:
         - name: 앱 호스팅
           items:
@@ -30,8 +30,6 @@
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: Linux VM
               href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: MongoDB를 사용하는 Express.js
-              href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml
         - name: DevOps
           items:
             - name: Azure Repos
@@ -104,6 +102,10 @@
               href: node-sdk-logging.md
     - name: 자습서
       items:
+        - name: Storage Blob에 이미지 업로드
+          href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+        - name: MongoDB를 사용하는 Express.js
+          href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
         - name: VS Code로 Azure Functions 배포
           items:
             - name: 소개 및 필수 구성 요소
@@ -128,10 +130,6 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: 리소스 정리
               href: tutorial-vscode-azure-app-service-node-05.md
-        - name: Storage Blob에 이미지 업로드
-          href: tutorial-visualstudiocode-browser-file-upload-feedback.yml?preview=tutorialFeedback
-        - name: MongoDB를 사용하는 Express.js
-          href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml?tabs=bash&preview=tutorialFeedback
         - name: VS Code를 사용하여 Deno를 App Service에 배포
           items:
             - name: 소개 및 필수 구성 요소
@@ -195,19 +193,19 @@
     - name: 방법 가이드
       items:
         - name: VS Code를 사용한 종단 간 Node.js
-          href: node-howto-e2e.md
+          href: how-to/develop-nodejs-on-azure.md
         - name: 웹 앱 배포
-          href: node-howto-deploy-web-app.md
+          href: how-to/deploy-web-app.md
         - name: 컨테이너 배포
-          href: node-howto-deploy-containers.md
+          href: how-to/deploy-containers.md
         - name: 지속적인 업데이트를 통해 배포
           href: /azure/devops/pipelines/languages/javascript?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: 데이터베이스와 통합
-          href: node-howto-integrate-databases.md
+          href: how-to/integrate-database.md
         - name: 서버리스 코드 쓰기
-          href: node-howto-write-serverless-code.md
+          href: how-to/develop-serverless-apps.md
         - name: 정적(JAMstack) 사이트 만들기
-          href: node-howto-create-static-site-jamstack.md
+          href: how-to/create-static-site.md
         - name: 모니터링 자동화
           href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: REST API 만들기

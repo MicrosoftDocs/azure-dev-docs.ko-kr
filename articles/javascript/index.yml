@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 7b97323d2fd2e37f215f9c122f6c01ce290208a0
-  ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
+  ms.openlocfilehash: 8fa0ba6c5191c407c3501dd5b4df09a041bb4160
+  ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 10/01/2020
-  ms.locfileid: "91621649"
+  ms.lasthandoff: 10/22/2020
+  ms.locfileid: "92435017"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -28,9 +28,9 @@ landingContent:
     - text: Azure 기본 사항
       url: /learn/paths/azure-fundamentals/
     - text: 개발 환경 설정
-      url: configure-local-development-environment.md
+      url: core/configure-local-development-environment.md
     - text: 클라이언트 라이브러리에 대한 인증
-      url: node-sdk-azure-authenticate.md
+      url: core/node-sdk-azure-authenticate.md
     - text: Azure SDK 블로그
       url: https://devblogs.microsoft.com/azure-sdk/
 - title: Hosting
@@ -48,7 +48,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: 전체 스택(서버리스 API 및 프런트 엔드)
-      url: node-howto-create-static-site-jamstack.md
+      url: how-to/create-static-site.md
 - title: 서버리스 Functions
   linkLists:
   - linkListType: tutorial
@@ -58,7 +58,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: 서버리스 코드 쓰기
-      url: node-howto-write-serverless-code.md
+      url: how-to/develop-serverless-apps.md
 - title: 데이터
   linkLists:
   - linkListType: quickstart

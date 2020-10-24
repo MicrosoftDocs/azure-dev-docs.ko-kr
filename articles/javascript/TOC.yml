@@ -1,6 +1,8 @@
 - name: JavaScript 및 Node.js 개발자용 Azure
   href: index.yml
   items:
+    - name: 문서의 새로운 기능
+      href: whats-new-docs.md
     - name: JavaScript로 Azure에서 시작
       items:
         - name: 개발 환경 설정
@@ -50,8 +52,6 @@
               href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
             - name: VS Code에서 로컬 Node.js 앱 디버그
               href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
-        - name: 도구 및 확장
-          href: node-azure-tools.md
         - name: 데이터 저장
           items:
             - name: Blob Storage
@@ -96,10 +96,6 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: 음성 인식
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: 로깅 및 메트릭
-          items:
-            - name: Azure SDK를 사용하여 로깅
-              href: node-sdk-logging.md
     - name: 자습서
       items:
         - name: Storage Blob에 이미지 업로드
@@ -190,6 +186,8 @@
               href: tutorial-vscode-static-website-node-06.md
     - name: Learn
       href: learn-azure-javascript.md
+    - name: Azure 도구
+      href: node-azure-tools.md
     - name: 방법 가이드
       items:
         - name: VS Code를 사용한 종단 간 Node.js
@@ -206,10 +204,10 @@
           href: how-to/develop-serverless-apps.md
         - name: 정적(JAMstack) 사이트 만들기
           href: how-to/create-static-site.md
-        - name: 모니터링 자동화
-          href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: REST API 만들기
           href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+        - name: 로깅 및 메트릭
+          href: how-to/node-sdk-logging.md
     - name: 샘플
       items:
         - name: 웹앱 및 서버리스

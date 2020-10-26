@@ -4,17 +4,19 @@ description: 이 자습서에서는 Azure Application Gateway를 부하 분산 �
 author: edburns
 ms.author: edburns
 ms.topic: tutorial
-ms.date: 08/05/2020
-ms.openlocfilehash: 166e6f90218eb519242da0d89ae6146a2d589863
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.date: 10/15/2020
+ms.openlocfilehash: 7a4f130e82338dea7c4fd344cfbedb2ed7f88c67
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057548"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137092"
 ---
 # <a name="tutorial-migrate-a-weblogic-server-cluster-to-azure-with-azure-application-gateway-as-a-load-balancer"></a>자습서: Azure Application Gateway를 부하 분산 장치로 사용하여 WebLogic Server 클러스터를 Azure로 마이그레이션
 
 이 자습서에서는 Azure Application Gateway로 WebLogic Server(WLS)를 배포하는 과정을 안내합니다.  Key Vault를 만들고, Key Vault에 SSL 인증서를 저장하고, SSL 종료를 위해 해당 인증서를 사용하는 구체적인 단계를 설명합니다.  이러한 요소는 모두 각각 적절히 문서화되어 있지만 이 자습서에서는 이러한 모든 요소를 결합하여 Azure 기반 WLS에 대한 간단하면서도 강력한 부하 분산 솔루션을 만드는 구체적인 방법을 보여 줍니다.
+
+<!-- Diagram source at https://github.com/wls-eng/arm-oraclelinux-wls/blob/master/src/main/resources/weblogic-app-gateway-key-vault.vsdx -->
 
 :::image type="content" border="false" source="media/migrate-weblogic-with-app-gateway/weblogic-app-gateway-key-vault.png" alt-text="WLS, App Gateway 및 Key Vault 간의 관계를 보여 주는 다이어그램":::
 
@@ -144,7 +146,7 @@ Key Vault를 만들었고 암호가 비어 있지 않은 유효한 SSL 인증서
 
 WLS 클러스터 및 Application Gateway를 만들려면 다음 단계를 수행합니다.
 
-1. [Oracle 설명서](https://aka.ms/arm-oraclelinux-wls-cluster-oracle-docs)에 설명된 대로 WebLogic Server 클러스터를 프로비저닝하는 단계를 시작합니다. 하지만 여기에 표시된 **Azure Application Gateway** 블레이드에 도달하면 이 페이지로 돌아갑니다.
+1. [Azure Portal의 WebLogic Server 클러스터](https://portal.azure.com/#create/oracle.20191007-arm-oraclelinux-wls-cluster20191007-arm-oraclelinux-wls-cluster) 제품을 사용하여 [Oracle 설명서](https://aka.ms/arm-oraclelinux-wls-cluster-oracle-docs)에 설명된 대로 WebLogic Server 클러스터를 프로비저닝합니다. 하지만 여기에 표시된 **Azure Application Gateway** 블레이드에 도달하면 이 페이지로 돌아갑니다.
 
    :::image type="content" source="media/migrate-weblogic-with-app-gateway/weblogic-app-gateway-blade.png" alt-text="WLS, App Gateway 및 Key Vault 간의 관계를 보여 주는 다이어그램":::
 

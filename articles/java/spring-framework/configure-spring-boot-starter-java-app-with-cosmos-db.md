@@ -5,18 +5,18 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: fdc0892298c18e3be5db1b97b1ad5fe77ac6a537
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846534"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200628"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API에서 Spring Boot Starter를 사용하는 방법
 
@@ -26,34 +26,32 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-이 문서의 단계를 수행하기 위해 다음 필수 구성 요소가 필요합니다.
-
 * Azure 구독. Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택]을 활성화하거나 [체험판 Azure 계정]에 등록할 수 있습니다.
 * 지원되는 JDK(Java Development Kit) Azure에서 개발하는 경우 사용할 수 있는 JDK에 대한 자세한 내용은 <https://aka.ms/azure-jdks>를 참조하세요.
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>Azure Portal을 사용하여 Azure Cosmos DB 만들기
 
-1. Azure Portal(<https://portal.azure.com/>)로 이동하고 **리소스 만들기**를 클릭합니다.
+1. Azure Portal(<https://portal.azure.com/>)로 이동하고 **리소스 만들기** 를 클릭합니다.
 
-1. **데이터베이스**를 클릭한 후 **Azure Cosmos DB**를 클릭합니다.
+1. **데이터베이스** 를 클릭한 후 **Azure Cosmos DB** 를 클릭합니다.
 
     ![Azure Portal에서 Azure Cosmos DB를 선택합니다.][AZ02]
 
 1. **Azure Cosmos DB** 페이지에서 다음 정보를 입력합니다.
 
-    * 데이터베이스에 사용하려는 **구독**을 선택합니다.
-    * 데이터베이스에 새 **리소스 그룹**을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
-    * 데이터베이스에 대한 URI로 사용할 고유한 **계정 이름**을 입력합니다. 예를 들어 *wingtiptoysdata*입니다.
+    * 데이터베이스에 사용하려는 **구독** 을 선택합니다.
+    * 데이터베이스에 새 **리소스 그룹** 을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
+    * 데이터베이스에 대한 URI로 사용할 고유한 **계정 이름** 을 입력합니다. 예를 들어 *wingtiptoysdata* 입니다.
     * API에 대한 **Core(SQL)** 를 선택합니다.
-    * 데이터베이스의 **위치**를 지정합니다.
+    * 데이터베이스의 **위치** 를 지정합니다.
 
-    이러한 옵션이 지정되면 **검토 + 만들기**를 클릭하고 사양을 검토한 후 **만들기**를 클릭합니다.
+    이러한 옵션이 지정되면 **검토 + 만들기** 를 클릭하고 사양을 검토한 후 **만들기** 를 클릭합니다.
 
     ![검토 + 만들기를 선택하여 계속 진행합니다.][AZ03]
 
 1. 데이터베이스를 만든 경우 Azure **대시보드** 뿐 아니라 **모든 리소스** 및 **Azure Cosmos DB** 페이지에도 나열됩니다. 해당 위치 중 하나에서 데이터베이스를 클릭하여 캐시에 대한 속성 페이지를 열 수 있습니다.
 
-1. 데이터베이스에 대한 속성 페이지가 표시되면 **키**를 클릭하고 데이터베이스에 대한 URI 및 액세스 키를 복사합니다. 이러한 값은 Spring Boot 애플리케이션에서 사용하게 됩니다.
+1. 데이터베이스에 대한 속성 페이지가 표시되면 **키** 를 클릭하고 데이터베이스에 대한 URI 및 액세스 키를 복사합니다. 이러한 값은 Spring Boot 애플리케이션에서 사용하게 됩니다.
 
     ![키 섹션에서 URI 및 액세스 키를 복사합니다.][AZ05]
 
@@ -63,12 +61,21 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 
-1. **Java**에서 **Maven 프로젝트**를 생성하도록 지정하고, **Spring Boot** 버전을 지정하고, 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 입력하고, **Azure 지원**을 종속성에 추가한 다음, **프로젝트 생성** 단추를 클릭합니다.
+1. 다음 옵션을 지정합니다.
 
-    ![기본 Spring Initializr 옵션][SI01]
+   * **Java** 를 사용하는 **Maven** 프로젝트를 생성합니다.
+   * **Spring Boot** 버전을 지정합니다.
+   * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
+   * Java 버전에 대해 **8** 을 선택합니다.
+   * 종속성에서 **Azure 지원** 을 추가합니다.
 
-    > [!NOTE]
-    > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.example.wingtiptoysdata*).
+   >[!div class="mx-imgBorder"]
+   >![기본 Spring Initializr 옵션][SI01]
+
+   > [!NOTE]
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.example.wingtiptoysdata* ).
+
+1. 위에 나열된 옵션이 지정되면 **생성** 을 선택합니다.
 
 1. 메시지가 표시되면 프로젝트를 로컬 컴퓨터의 경로에 다운로드하고 파일을 추출합니다.
 
@@ -136,7 +143,7 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 ### <a name="define-a-base-class-for-storing-user-data"></a>사용자 데이터를 저장하는 기본 클래스 정의
 
-1. 기본 애플리케이션 Java 파일과 동일한 디렉터리에 *User.java*라는 새 파일을 만듭니다.
+1. 기본 애플리케이션 Java 파일과 동일한 디렉터리에 *User.java* 라는 새 파일을 만듭니다.
 
 1. 텍스트 편집기에서 *User.java* 파일을 다음 줄을 파일에 추가하여 데이터베이스에서 값을 저장하고 검색하는 일반 사용자 클래스를 정의합니다.
 
@@ -211,7 +218,7 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 ### <a name="define-a-data-repository-interface"></a>데이터 리포지토리 인터페이스 정의
 
-1. 기본 애플리케이션 Java 파일과 동일한 디렉터리에 *UserRepository.java*라는 새 파일을 만듭니다.
+1. 기본 애플리케이션 Java 파일과 동일한 디렉터리에 *UserRepository.java* 라는 새 파일을 만듭니다.
 
 1. 텍스트 편집기에서 *UserRepository.java* 파일을 열고 파일에 다음 줄을 추가하여 기본 `ReactiveCosmosRepository` 인터페이스를 확장하는 사용자 리포지토리 인터페이스를 정의합니다.
 

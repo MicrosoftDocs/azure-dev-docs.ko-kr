@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java
-ms.openlocfilehash: a944739722a657636200d31bd7bf04242c8ea040
-ms.sourcegitcommit: a4131409651d6d4f56733fe8311ca77b2004bc59
+ms.openlocfilehash: 18b02ab5ffbb5fc84878685d4301f284d431a216
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88830407"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337151"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage에 Spring Boot Starter를 사용하는 방법
 
-이 문서에서는 **Spring Initializr**을 사용하여 사용자 정의 애플리케이션을 만든 다음 애플리케이션에 Azure Storage 스타터를 추가하고 애플리케이션을 사용하여 Azure Storage 계정에 BLOB를 업로드하는 방법을 안내합니다.
+이 문서에서는 **Spring Initializr** 을 사용하여 사용자 정의 애플리케이션을 만든 다음 애플리케이션에 Azure Storage 스타터를 추가하고 애플리케이션을 사용하여 Azure Storage 계정에 BLOB를 업로드하는 방법을 안내합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -39,23 +39,23 @@ ms.locfileid: "88830407"
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **+리소스 만들기**를 클릭한 다음 **스토리지**를 클릭하고 **스토리지 계정**을 클릭합니다.
+1. **+리소스 만들기** 를 클릭한 다음 **스토리지** 를 클릭하고 **스토리지 계정** 을 클릭합니다.
 
    ![Azure Storage 계정 만들기][IMG01]
 
 1. **스토리지 계정 만들기** 페이지에서 다음 정보를 입력합니다.
 
-   * **구독**을 선택합니다.
-   * **리소스 그룹**을 선택하거나 새 리소스 그룹을 만듭니다.
-   * 스토리지 계정에 대한 URI의 일부가 될 고유한 **스토리지 계정 이름**을 입력합니다. 예: **wingtiptoysstorage**를 **이름**에 입력한 경우 URI는 *wingtiptoysstorage.core.windows.net*입니다.
-   * 스토리지 계정의 **위치**를 지정합니다.
-1. 위에 열거된 이러한 옵션을 지정한 경우 **검토 + 만들기**를 클릭합니다. 
-1. 사양을 검토한 후 **만들기**를 클릭하여 스토리지 계정을 만듭니다.
-1. 배포가 완료되면 **리소스로 이동**을 클릭합니다.
-1. **컨테이너**를 클릭합니다.
-1. **+ 컨테이너**를 클릭합니다.
+   * **구독** 을 선택합니다.
+   * **리소스 그룹** 을 선택하거나 새 리소스 그룹을 만듭니다.
+   * 스토리지 계정에 대한 URI의 일부가 될 고유한 **스토리지 계정 이름** 을 입력합니다. 예: **wingtiptoysstorage** 를 **이름** 에 입력한 경우 URI는 *wingtiptoysstorage.core.windows.net* 입니다.
+   * 스토리지 계정의 **위치** 를 지정합니다.
+1. 위에 열거된 이러한 옵션을 지정한 경우 **검토 + 만들기** 를 클릭합니다. 
+1. 사양을 검토한 후 **만들기** 를 클릭하여 스토리지 계정을 만듭니다.
+1. 배포가 완료되면 **리소스로 이동** 을 클릭합니다.
+1. **컨테이너** 를 클릭합니다.
+1. **+ 컨테이너** 를 클릭합니다.
    * 컨테이너 이름을 지정합니다.
-   * 드롭다운 목록에서 *Blob*을 선택합니다.
+   * 드롭다운 목록에서 *Blob* 을 선택합니다.
 
    ![Blob 컨테이너 만들기][IMG02]
 
@@ -70,7 +70,7 @@ ms.locfileid: "88830407"
 1. 다음 옵션을 지정합니다.
 
    * **Maven** 프로젝트를 생성합니다.
-   * **Java**를 지정합니다.
+   * **Java** 를 지정합니다.
    * 2\.0 이상의 **Spring Boot** 버전을 지정합니다.
    * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
    * **Web** 종속성 추가
@@ -79,10 +79,10 @@ ms.locfileid: "88830407"
 
    > [!NOTE]
    >
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.storage*).
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.storage* ).
    >
 
-1. 위에 열거된 이러한 옵션을 지정한 경우 **생성**을 클릭합니다.
+1. 위에 열거된 이러한 옵션을 지정한 경우 **생성** 을 클릭합니다.
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 
@@ -107,6 +107,22 @@ ms.locfileid: "88830407"
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-starter-azure-storage</artifactId>
       <version>1.2.7</version>
+   </dependency>
+   ```
+
+1. JDK 버전 9 이상을 사용하는 경우 다음 종속성을 추가합니다.
+
+   ```xml
+   <dependency>
+       <groupId>javax.xml.bind</groupId>
+       <artifactId>jaxb-api</artifactId>
+       <version>2.3.1</version>
+   </dependency>
+   <dependency>
+       <groupId>org.glassfish.jaxb</groupId>
+       <artifactId>jaxb-runtime</artifactId>
+       <version>2.3.1</version>
+       <scope>runtime</scope>
    </dependency>
    ```
 
@@ -256,7 +272,7 @@ ms.locfileid: "88830407"
 
 ### <a name="add-a-blob-controller-class"></a>Blob 컨트롤러 클래스 추가
 
-1. 앱의 패키지 디렉터리에 *BlobController.java*라는 새 Java 파일을 작성합니다. 예:
+1. 앱의 패키지 디렉터리에 *BlobController.java* 라는 새 Java 파일을 작성합니다. 예:
 
    `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\BlobController.java`
 
@@ -264,7 +280,7 @@ ms.locfileid: "88830407"
 
    `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/BlobController.java`
 
-1. 텍스트 편집기에서 Blob 컨트롤러 Java 파일을 열고 다음 줄을 파일에 추가합니다.  *wingtiptoys*를 적절한 리소스 그룹으로 변경하고 *storage*를 아티팩트 이름으로 변경합니다.
+1. 텍스트 편집기에서 Blob 컨트롤러 Java 파일을 열고 다음 줄을 파일에 추가합니다.  *wingtiptoys* 를 적절한 리소스 그룹으로 변경하고 *storage* 를 아티팩트 이름으로 변경합니다.
 
    ```java
    package com.wingtiptoys.storage;
@@ -320,7 +336,7 @@ ms.locfileid: "88830407"
    mvn spring-boot:run
    ```
 
-1. 애플리케이션이 실행되면, 애플리케이션을 테스트하기 위해 *curl*을 사용할 수 있습니다. 예:
+1. 애플리케이션이 실행되면, 애플리케이션을 테스트하기 위해 *curl* 을 사용할 수 있습니다. 예:
 
    a. 파일의 내용을 업데이트하려면 POST 요청을 보냅니다.
 

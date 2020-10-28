@@ -1,15 +1,14 @@
 ---
-ms.openlocfilehash: 63e76c32ec52889a9b255b6f9aa4b949ca60065d
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: 4b66048ee665f62957c4cd0daedfcad3f9473740
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92157917"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755617"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
 | 앱 구성 | pypi [1.1.1](https://pypi.org/project/azure-appconfiguration/1.1.1) | [docs](/python/api/overview/azure/appconfiguration-readme/) | GitHub [1.1.1](https://github.com/Azure/azure-sdk-for-python/tree/azure-appconfiguration_1.1.1/sdk/appconfiguration/azure-appconfiguration/) |
-| azure-ai-metricsadvisor | pypi [1.0.0b1](https://pypi.org/project/azure-ai-metricsadvisor/1.0.0b1) | [docs](/python/api/overview/azure/ai-metricsadvisor-readme-pre/) | GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-metricsadvisor_1.0.0b1/sdk/metricsadvisor/azure-ai-metricsadvisor/) |
 | Cognitive Search | pypi [11.0.0](https://pypi.org/project/azure-search-documents/11.0.0)<br>pypi [11.1.0b3](https://pypi.org/project/azure-search-documents/11.1.0b3) | [docs](/python/api/overview/azure/search-documents-readme-pre/) | GitHub [11.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-search-documents_11.0.0/sdk/search/azure-search-documents/)<br>GitHub [11.1.0b3](https://github.com/Azure/azure-sdk-for-python/tree/azure-search-documents_11.1.0b3/sdk/search/azure-search-documents/) |
 | 통신 관리 | pypi [1.0.0b2](https://pypi.org/project/azure-communication-administration/1.0.0b2) | [docs](/python/api/overview/azure/communication-administration-readme-pre/) | GitHub [1.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-administration_1.0.0b2/sdk/communication/azure-communication-administration/) |
 | 통신 채팅 | pypi [1.0.0b2](https://pypi.org/project/azure-communication-chat/1.0.0b2) | [docs](/python/api/overview/azure/communication-chat-readme-pre/) | GitHub [1.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-chat_1.0.0b2/sdk/communication/azure-communication-chat/) |
@@ -26,6 +25,7 @@ ms.locfileid: "92157917"
 | Key Vault - 키 | pypi [4.3.0](https://pypi.org/project/azure-keyvault-keys/4.3.0) | [docs](/python/api/overview/azure/keyvault-keys-readme/) | GitHub [4.3.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-keyvault-keys_4.3.0/sdk/keyvault/azure-keyvault-keys/) |
 | Key Vault - 비밀 | pypi [4.2.0](https://pypi.org/project/azure-keyvault-secrets/4.2.0) | [docs](/python/api/overview/azure/keyvault-secrets-readme/) | GitHub [4.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-keyvault-secrets_4.2.0/sdk/keyvault/azure-keyvault-secrets/) |
 | Key Vault 관리 | pypi [4.0.0b2](https://pypi.org/project/azure-keyvault-administration/4.0.0b2) | [docs](/python/api/overview/azure/keyvault-administration-readme-pre/) | GitHub [4.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-keyvault-administration_4.0.0b2/sdk/keyvault/azure-keyvault-administration/) |
+| Metrics Advisor | pypi [1.0.0b1](https://pypi.org/project/azure-ai-metricsadvisor/1.0.0b1) | [docs](/python/api/overview/azure/ai-metricsadvisor-readme-pre/) | GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-metricsadvisor_1.0.0b1/sdk/metricsadvisor/azure-ai-metricsadvisor/) |
 | 스키마 레지스트리 | pypi [1.0.0b1](https://pypi.org/project/azure-schemaregistry/1.0.0b1) | [docs](/python/api/overview/azure/schemaregistry-readme-pre/) | GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-schemaregistry_1.0.0b1/sdk/schemaregistry/azure-schemaregistry/) |
 | 스키마 레지스트리 Avro 직렬 변환기 | pypi [1.0.0b1](https://pypi.org/project/azure-schemaregistry-avroserializer/1.0.0b1) | [docs](/python/api/overview/azure/schemaregistry-avroserializer-readme-pre/) | GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-schemaregistry-avroserializer_1.0.0b1/sdk/schemaregistry/azure-schemaregistry-avroserializer/) |
 | Service Bus | pypi [0.50.3](https://pypi.org/project/azure-servicebus/0.50.3)<br>pypi [7.0.0b7](https://pypi.org/project/azure-servicebus/7.0.0b7) | [docs](/python/api/overview/azure/servicebus-readme-pre/) | GitHub [0.50.3](https://github.com/Azure/azure-sdk-for-python/tree/azure-servicebus_0.50.3/sdk/servicebus/azure-servicebus/)<br>GitHub [7.0.0b7](https://github.com/Azure/azure-sdk-for-python/tree/azure-servicebus_7.0.0b7/sdk/servicebus/azure-servicebus/) |

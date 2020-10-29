@@ -9,12 +9,13 @@ metadata:
   author: N-Usha
   ms.author: ushan
   ms.date: 05/05/2020
-  ms.openlocfilehash: a1ece0966a985e0532f2eb751b8a489d4d01d887
-  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+  ms.custom: github-actions-azure
+  ms.openlocfilehash: 2e25fcbe07742d0fbca64565dea8dadc50939949
+  ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83631679"
+  ms.lasthandoff: 10/28/2020
+  ms.locfileid: "92898710"
 landingContent:
 - title: Azure에 대한 GitHub 작업
   linkLists:

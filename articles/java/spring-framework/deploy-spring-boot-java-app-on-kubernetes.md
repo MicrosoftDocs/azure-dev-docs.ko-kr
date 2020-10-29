@@ -8,13 +8,13 @@ ms.date: 10/06/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.custom: mvc, devx-track-java
-ms.openlocfilehash: cecd6b593d1805b7394a9fe73317e6faa8b689a5
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.custom: mvc, devx-track-java, devx-track-azurecli
+ms.openlocfilehash: d902219a7dd5f59abc54343ff3aca60f4b7f46e4
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846484"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689190"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Azure Kubernetes Service에 Spring Boot 애플리케이션 배포
 
@@ -167,7 +167,7 @@ ms.locfileid: "91846484"
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Azure CLI를 사용하여 AKS에서 Kubernetes 클러스터 만들기
 
-1. Azure Kubernetes Service에서 Kubernetes 클러스터 만들기 다음 명령은 *kubernetes* 클러스터를 *wingtiptoys-kubernetes* 리소스 그룹에 만듭니다. 여기서는 클러스터 이름으로 *wingtiptoys-akscluster*를 사용하고, ACR(Azure Container Registry) `wingtiptoysregistry`를 연결하고, DNS 접두사로 *wingtiptoys-kubernetes*를 사용합니다.
+1. Azure Kubernetes Service에서 Kubernetes 클러스터 만들기 다음 명령은 *kubernetes* 클러스터를 *wingtiptoys-kubernetes* 리소스 그룹에 만듭니다. 여기서는 클러스터 이름으로 *wingtiptoys-akscluster* 를 사용하고, ACR(Azure Container Registry) `wingtiptoysregistry`를 연결하고, DNS 접두사로 *wingtiptoys-kubernetes* 를 사용합니다.
 
    ```azurecli
    az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \
@@ -244,7 +244,7 @@ ms.locfileid: "91846484"
    ```
 
 > [!IMPORTANT]
-> AKS 클러스터에서 RBAC를 사용하는 경우, 대시보드에 올바르게 액세스하려면 먼저 *ClusterRoleBinding*을 만들어야 합니다. 기본적으로 Kubernetes 대시보드는 최소한의 읽기 권한을 사용하여 배포되고 RBAC 액세스 오류를 표시합니다. Kubernetes 대시보드는 액세스 수준을 확인하는 사용자 제공 자격 증명을 현재 지원하지 않으며, 대신 서비스 계정에 부여된 역할을 사용합니다. 클러스터 관리자는 *kubernetes 대시보드* 서비스 계정에 대한 추가 액세스 권한을 부여하도록 선택할 수 있지만 이는 권한 상승에 대한 벡터일 수 있습니다. 또한 더 세분화된 수준의 액세스를 제공하려면 Azure Active Directory 인증을 통합할 수 있습니다.
+> AKS 클러스터에서 RBAC를 사용하는 경우, 대시보드에 올바르게 액세스하려면 먼저 *ClusterRoleBinding* 을 만들어야 합니다. 기본적으로 Kubernetes 대시보드는 최소한의 읽기 권한을 사용하여 배포되고 RBAC 액세스 오류를 표시합니다. Kubernetes 대시보드는 액세스 수준을 확인하는 사용자 제공 자격 증명을 현재 지원하지 않으며, 대신 서비스 계정에 부여된 역할을 사용합니다. 클러스터 관리자는 *kubernetes 대시보드* 서비스 계정에 대한 추가 액세스 권한을 부여하도록 선택할 수 있지만 이는 권한 상승에 대한 벡터일 수 있습니다. 또한 더 세분화된 수준의 액세스를 제공하려면 Azure Active Directory 인증을 통합할 수 있습니다.
 >
 > 바인딩을 만들려면 [kubectl create clusterrolebinding] 명령을 사용합니다. 다음 예제에서는 샘플 바인딩을 만드는 방법을 보여 주지만, 이 샘플 바인딩은 추가 인증 구성 요소를 적용하지 않으며 안전하게 사용하지 못할 수 있습니다. Kubernetes 대시보드는 URL 액세스 권한을 가진 모든 사용자에게 열립니다. Kubernetes 대시보드를 공개적으로 공개하지 마세요.
 >
@@ -254,25 +254,25 @@ ms.locfileid: "91846484"
 >
 > 다른 인증 방법을 사용하는 방법에 대한 자세한 내용은 [dashboard-authentication]의 Kubernetes 대시보드 wiki를 참조하세요.
 
-1. 브라우저에서 Kubernetes 구성 웹 사이트가 열리면 해당 링크를 선택하여 **컨테이너화된 앱을 배포**합니다.
+1. 브라우저에서 Kubernetes 구성 웹 사이트가 열리면 해당 링크를 선택하여 **컨테이너화된 앱을 배포** 합니다.
 
    ![여기에 표시할 항목이 없다는 메시지가 표시된 Kubernetes 구성 웹 사이트][KB01]
 
 1. **Resource Creation** 페이지가 표시되면 다음 옵션을 지정합니다.
 
-   a. **앱 만들기**를 선택합니다.
+   a. **앱 만들기** 를 선택합니다.
 
-   b. **앱 이름**에 Spring Boot 애플리케이션 이름을 입력합니다(예: *gs-spring-boot-docker*).
+   b. **앱 이름** 에 Spring Boot 애플리케이션 이름을 입력합니다(예: *gs-spring-boot-docker* ).
 
-   다. **컨테이너 이미지**에 대해 이전의 로그인 서버 및 컨테이너 이미지를 입력합니다(예: *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*).
+   다. **컨테이너 이미지** 에 대해 이전의 로그인 서버 및 컨테이너 이미지를 입력합니다(예: *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest* ).
 
-   d. **Service**에 대해 **External**을 선택합니다.
+   d. **Service** 에 대해 **External** 을 선택합니다.
 
    e. **Port** 및 **Target Port** 텍스트 상자에 외부 및 내부 포트를 지정합니다.
 
    ![Kubernetes 구성 웹 사이트 앱 만들기 페이지][KB02]
 
-1. **Deploy**를 선택하여 컨테이너를 배포합니다.
+1. **Deploy** 를 선택하여 컨테이너를 배포합니다.
 
    ![Kubernetes 배포][KB05]
 
@@ -280,7 +280,7 @@ ms.locfileid: "91846484"
 
    ![Kubernetes 웹 사이트, 서비스 목록][KB06]
 
-1. **External endpoints**에 대한 링크를 선택하면 Azure에서 Spring Boot 애플리케이션이 실행되는 것을 볼 수 있습니다.
+1. **External endpoints** 에 대한 링크를 선택하면 Azure에서 Spring Boot 애플리케이션이 실행되는 것을 볼 수 있습니다.
 
    ![Kubernetes 웹 사이트, 서비스 목록, 외부 엔드포인트가 강조 표시됨][KB07]
 

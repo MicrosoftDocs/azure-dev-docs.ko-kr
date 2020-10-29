@@ -4,12 +4,12 @@ description: create-storage-resource.md 포함 파일
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a4eb48afd578de7ddc3426a3907b8b4192387cbb
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344246"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755737"
 ---
 자습서의 이 섹션에서는 Visual Studio 확장을 사용하여 Azure Storage 리소스를 만든 다음, Azure Portal에서 이 리소스를 구성합니다. 
 
@@ -123,9 +123,9 @@ SAS 토큰 및 스토리지 계정 이름이 `src/uploadToBlob.ts` 파일에 설
 ## <a name="want-to-know-more"></a>자세히 알고 싶으세요? 
 
 Storage 계정을 구성하는 다른 방법은 다음과 같습니다.
-* [PowerShell을 사용하는 SAS 토큰](/azure/powershell/module/azure.storage/new-azurestorageblobsastoken)
+* [PowerShell을 사용하는 SAS 토큰](/powershell/module/azure.storage/new-azurestorageblobsastoken)
 * 포털을 사용하는 SAS 토큰
-* [PowerShell을 사용하는 CORS](/azure/powershell/module/azure.storage/set-azurestoragecorsrule)
+* [PowerShell을 사용하는 CORS](/powershell/module/azure.storage/set-azurestoragecorsrule)
 * 포털을 사용하는 CORS
 
-[공유 액세스 서명](/azure/storage/common/storage-sas-overview.md)에 대해 자세히 알아보세요.
+[공유 액세스 서명](/azure/storage/common/storage-sas-overview)에 대해 자세히 알아보세요.

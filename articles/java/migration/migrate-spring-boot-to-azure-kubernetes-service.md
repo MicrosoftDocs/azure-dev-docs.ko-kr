@@ -5,13 +5,13 @@ author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 4d3da50042074b724f614b718ceb0edc7fb83077
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 77ad38a4fb1290e392ee933a04aaf802a910e577
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831709"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689044"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Spring Boot 애플리케이션을 Azure Kubernetes Service로 마이그레이션
 
@@ -65,7 +65,7 @@ Spring Boot 1.x를 사용하는 애플리케이션의 경우 [Spring Boot 2.0 �
 
 ### <a name="inventory-external-resources"></a>인벤토리 외부 리소스
 
-데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서 이러한 리소스의 구성은 일반적으로 *src/main/directory* 폴더의 *application.properties* 또는 *application.yml*이라는 파일에서 찾을 수 있습니다. 또한 프로덕션 배포의 환경 변수에서 관련 구성 설정을 확인합니다.
+데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서 이러한 리소스의 구성은 일반적으로 *src/main/directory* 폴더의 *application.properties* 또는 *application.yml* 이라는 파일에서 찾을 수 있습니다. 또한 프로덕션 배포의 환경 변수에서 관련 구성 설정을 확인합니다.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
@@ -187,7 +187,7 @@ docker push ${MY_ACR}.azurecr.io/${MY_APP_NAME}
 
 Azure에서 컨테이너 이미지를 빌드하고 저장하는 방법에 대한 자세한 내용은 [Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장](/learn/modules/build-and-store-container-images/) 학습 모듈을 참조하세요.
 
-[Spring Boot 컨테이너 빠른 시작 GitHub 리포지토리](https://github.com/Azure/spring-boot-container-quickstart)를 사용한 경우 시작 시 JVM에 추가되는 사용자 지정 키 저장소를 포함할 수도 있습니다. 키 저장소 파일을 */opt/spring-boot/mycert.crt*에 배치하면 이 추가 작업이 수행됩니다. 앞에서 설명한 대로 이 작업은 파일을 Docker 파일에 직접 추가하거나 비밀 저장소 CSI 드라이버용 Azure Key Vault 공급자를 사용하여 수행할 수 있습니다.
+[Spring Boot 컨테이너 빠른 시작 GitHub 리포지토리](https://github.com/Azure/spring-boot-container-quickstart)를 사용한 경우 시작 시 JVM에 추가되는 사용자 지정 키 저장소를 포함할 수도 있습니다. 키 저장소 파일을 */opt/spring-boot/mycert.crt* 에 배치하면 이 추가 작업이 수행됩니다. 앞에서 설명한 대로 이 작업은 파일을 Docker 파일에 직접 추가하거나 비밀 저장소 CSI 드라이버용 Azure Key Vault 공급자를 사용하여 수행할 수 있습니다.
 
 [Spring Boot 컨테이너 빠른 시작 GitHub 리포지토리](https://github.com/Azure/spring-boot-container-quickstart)를 사용한 경우 Kubernetes 배포 파일에서 `APPLICATIONINSIGHTS_CONNECTION_STRING` 환경 변수를 설정하여 Application Insights를 사용하도록 설정할 수도 있습니다(환경 변수의 값은 `InstrumentationKey=00000000-0000-0000-0000-000000000000`이어야 함). 자세한 내용은 [Java 코드리스 애플리케이션 모니터링 - Azure Monitor Application Insights](/azure/azure-monitor/app/java-in-process-agent)를 참조하세요.
 

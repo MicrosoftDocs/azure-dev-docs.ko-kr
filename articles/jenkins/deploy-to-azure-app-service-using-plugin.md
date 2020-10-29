@@ -4,13 +4,13 @@ description: Azure App Service Jenkins 플러그 인을 사용하여 Jenkins에�
 keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2018
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 1be8e126a5fee2dd83682ece559998a45645ac36
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 2179002df5f387e2656cf116b369d035c7c68e18
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831689"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688636"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>자습서: Jenkins 플러그 인을 사용하여 Azure App Service에 배포
 
@@ -58,11 +58,11 @@ Web App for Containers에 배포하려면 Jenkins 마스터 또는 빌드에 사
 Azure에 배포하려면 Azure 서비스 주체가 필요합니다. 
 
 
-1. Azure 서비스 주체를 만들려면 [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) 또는 [Azure Portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal)을 사용합니다.
+1. Azure 서비스 주체를 만들려면 [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) 또는 [Azure Portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal)을 사용합니다.
 
-1. Jenkins 대시보드에서 **자격 증명** > **시스템**을 선택합니다. 그런 다음 **전역 자격 증명(제한 없음)** 을 선택합니다.
+1. Jenkins 대시보드에서 **자격 증명** > **시스템** 을 선택합니다. 그런 다음 **전역 자격 증명(제한 없음)** 을 선택합니다.
 
-1. Microsoft Azure 서비스 주체를 추가하려면 **자격 증명 추가**를 선택합니다. **구독 ID**, **클라이언트 ID**, **클라이언트 암호** 및 **OAuth 2.0 토큰 엔드포인트** 필드에 대한 값을 제공합니다. **ID** 필드를 **mySp**로 설정합니다. 이 ID는 이 문서의 후속 단계에서 사용됩니다.
+1. Microsoft Azure 서비스 주체를 추가하려면 **자격 증명 추가** 를 선택합니다. **구독 ID** , **클라이언트 ID** , **클라이언트 암호** 및 **OAuth 2.0 토큰 엔드포인트** 필드에 대한 값을 제공합니다. **ID** 필드를 **mySp** 로 설정합니다. 이 ID는 이 문서의 후속 단계에서 사용됩니다.
 
 
 ## <a name="configure-jenkins-to-deploy-web-apps-by-uploading-files"></a>파일을 업로드하여 Web Apps를 배포하도록 Jenkins 구성
@@ -100,20 +100,20 @@ Jenkins에서 작업을 설정하기 전에 Java 앱을 실행하려면 웹앱�
 
 1. [Azure용 간단한 Java 웹앱](https://github.com/azure-devops/javawebappsample)의 로컬 분기를 사용하도록 **소스 코드 관리** 필드를 구성합니다. **리포지토리 URL** 값을 제공합니다. 예: http:\//github.com/&lt;your_ID>/javawebappsample
 
-1. **셸 실행** 명령을 추가하여 Maven을 사용하여 프로젝트를 빌드하는 단계를 추가합니다. 이 예제의 경우 대상 폴더의 \*.war 파일의 이름을 **ROOT.war**로 바꾸기 위한 추가 명령이 필요합니다.   
+1. **셸 실행** 명령을 추가하여 Maven을 사용하여 프로젝트를 빌드하는 단계를 추가합니다. 이 예제의 경우 대상 폴더의 \*.war 파일의 이름을 **ROOT.war** 로 바꾸기 위한 추가 명령이 필요합니다.   
 
     ```bash
     mvn clean package
     mv target/*.war target/ROOT.war
     ```
 
-1. **Azure 웹앱 게시**를 선택하여 빌드 후 작업을 추가합니다.
+1. **Azure 웹앱 게시** 를 선택하여 빌드 후 작업을 추가합니다.
 
-1. **mySp**를 Azure 서비스 주체로 제공합니다. 이 주체는 이전 단계에서 [Azure 자격 증명](#service-principal)으로 저장되었습니다.
+1. **mySp** 를 Azure 서비스 주체로 제공합니다. 이 주체는 이전 단계에서 [Azure 자격 증명](#service-principal)으로 저장되었습니다.
 
 1. **앱 구성** 섹션에서 구독의 리소스 그룹 및 웹앱을 선택합니다. Jenkins 플러그 인은 웹앱이 Windows 기반인지 또는 Linux 기반인지를 자동으로 감지합니다. Windows 웹앱의 경우 **파일 게시** 옵션이 표시됩니다.
 
-1. 배포할 파일을 입력합니다. 예를 들어, Java를 사용하는 경우 WAR 패키지를 지정합니다. 선택적인 **소스 디렉터리** 및 **대상 디렉터리** 매개 변수를 사용하여 파일 업로드에 사용할 소스 및 대상 폴더를 지정합니다. Azure의 Java 웹앱은 Tomcat 서버에서 실행됩니다. 따라서 Java의 경우 WAR 패키지를 webapps 폴더에 업로드합니다. 예를 들어 **소스 디렉터리** 값을 **target**으로 설정하고 **대상 디렉터리** 값을 **webapps**로 설정합니다.
+1. 배포할 파일을 입력합니다. 예를 들어, Java를 사용하는 경우 WAR 패키지를 지정합니다. 선택적인 **소스 디렉터리** 및 **대상 디렉터리** 매개 변수를 사용하여 파일 업로드에 사용할 소스 및 대상 폴더를 지정합니다. Azure의 Java 웹앱은 Tomcat 서버에서 실행됩니다. 따라서 Java의 경우 WAR 패키지를 webapps 폴더에 업로드합니다. 예를 들어 **소스 디렉터리** 값을 **target** 으로 설정하고 **대상 디렉터리** 값을 **webapps** 로 설정합니다.
 
 1. 프로덕션 이외의 슬롯에 배포하려는 경우 **슬롯** 이름도 설정할 수 있습니다.
 
@@ -138,19 +138,19 @@ Azure App Service Jenkins 플러그 인은 파이프 라인을 지원합니다. 
 
 ### <a name="create-a-jenkins-pipeline"></a>Jenkins 파이프라인 만들기
 
-1. 웹 브라우저에서 Jenkins를 엽니다. **새 항목**을 선택합니다.
+1. 웹 브라우저에서 Jenkins를 엽니다. **새 항목** 을 선택합니다.
 
-1. 작업 이름을 제공하고 **파이프라인**을 선택합니다. **확인**을 선택합니다.
+1. 작업 이름을 제공하고 **파이프라인** 을 선택합니다. **확인** 을 선택합니다.
 
 1. **파이프라인** 탭을 선택합니다.
 
-1. **정의** 값에 **SCM의 파이프라인 스크립트**를 선택합니다.
+1. **정의** 값에 **SCM의 파이프라인 스크립트** 를 선택합니다.
 
-1. **SCM** 값에 **Git**를 선택합니다. 분기 리포지토리의 GitHub URL을 입력합니다. 예: https://&lt;your_forked_repo>.git.
+1. **SCM** 값에 **Git** 를 선택합니다. 분기 리포지토리의 GitHub URL을 입력합니다. 예: https://&lt;your_forked_repo>.git.
 
-1. **스크립트 경로** 값을 **Jenkinsfile_ftp_plugin**으로 업데이트합니다.
+1. **스크립트 경로** 값을 **Jenkinsfile_ftp_plugin** 으로 업데이트합니다.
 
-1. **저장**을 선택하고 작업을 실행합니다.
+1. **저장** 을 선택하고 작업을 실행합니다.
 
 ## <a name="configure-jenkins-to-deploy-web-app-for-containers"></a>Web App for Containers를 배포하도록 Jenkins 구성
 
@@ -175,13 +175,13 @@ Jenkins에서 작업을 설정하기 전에 Linux에 웹앱이 필요합니다. 
     mvn clean package
     ```
 
-1. **Azure 웹앱 게시**를 선택하여 빌드 후 작업을 추가합니다.
+1. **Azure 웹앱 게시** 를 선택하여 빌드 후 작업을 추가합니다.
 
-1. **mySp**를 Azure 서비스 주체로 제공합니다. 이 주체는 이전 단계에서 [Azure 자격 증명](#service-principal)으로 저장되었습니다.
+1. **mySp** 를 Azure 서비스 주체로 제공합니다. 이 주체는 이전 단계에서 [Azure 자격 증명](#service-principal)으로 저장되었습니다.
 
 1. **앱 구성** 섹션에서 구독의 리소스 그룹 및 Linux 웹앱을 선택합니다.
 
-1. **Docker를 통해 게시**를 선택합니다.
+1. **Docker를 통해 게시** 를 선택합니다.
 
 1. **Dockerfile** 경로 값을 입력합니다. 기본값/Dockerfile을 유지할 수 있습니다. **Docker 레지스트리 URL** 값의 경우 Azure Container Registry를 사용한다면 https://&lt;yourRegistry>.azurecr.io 형식을 사용하여 URL을 제공합니다. DockerHub를 사용하는 경우 값을 비워 둡니다.
 
@@ -192,7 +192,7 @@ Jenkins에서 작업을 설정하기 전에 Linux에 웹앱이 필요합니다. 
     az acr credential show -n <yourRegistry>
     ```
 
-1. **고급** 탭의 Docker 이미지 이름 및 태그 값은 선택 사항입니다. 기본적으로 이미지 이름의 값은 Azure Portal에서(**Docker 컨테이너** 설정에) 구성한 이미지 이름에서 가져옵니다. 태그는 $BUILD_NUMBER에서 생성됩니다. Azure Portal에 이미지 이름을 지정하거나 **고급** 탭의 **Docker 이미지** 값을 입력합니다. 이 예제의 경우 **Docker 이미지** 값을 &lt;your_Registry>.azurecr.io/calculator로 설정하고 **Docker 이미지 태그** 값을 비워 둡니다.
+1. **고급** 탭의 Docker 이미지 이름 및 태그 값은 선택 사항입니다. 기본적으로 이미지 이름의 값은 Azure Portal에서( **Docker 컨테이너** 설정에) 구성한 이미지 이름에서 가져옵니다. 태그는 $BUILD_NUMBER에서 생성됩니다. Azure Portal에 이미지 이름을 지정하거나 **고급** 탭의 **Docker 이미지** 값을 입력합니다. 이 예제의 경우 **Docker 이미지** 값을 &lt;your_Registry>.azurecr.io/calculator로 설정하고 **Docker 이미지 태그** 값을 비워 둡니다.
 
 1. 기본 제공 Docker 이미지 설정을 사용할 경우 배포가 실패합니다. Azure Portal의 **Docker 컨테이너** 설정에서 사용자 지정 이미지를 사용하도록 Docker 구성을 변경합니다. 기본 제공 이미지의 경우 파일 업로드 방법을 사용하여 배포합니다.
 
@@ -223,19 +223,19 @@ Jenkins에서 작업을 설정하기 전에 Linux에 웹앱이 필요합니다. 
 
 ### <a name="create-a-jenkins-pipeline"></a>Jenkins 파이프라인 만들기    
 
-1. 웹 브라우저에서 Jenkins를 엽니다. **새 항목**을 선택합니다.
+1. 웹 브라우저에서 Jenkins를 엽니다. **새 항목** 을 선택합니다.
 
-1. 작업 이름을 제공하고 **파이프라인**을 선택합니다. **확인**을 선택합니다.
+1. 작업 이름을 제공하고 **파이프라인** 을 선택합니다. **확인** 을 선택합니다.
 
 1. **파이프라인** 탭을 선택합니다.
 
-1. **정의** 값에 **SCM의 파이프라인 스크립트**를 선택합니다.
+1. **정의** 값에 **SCM의 파이프라인 스크립트** 를 선택합니다.
 
-1. **SCM** 값에 **Git**를 선택합니다. 분기 리포지토리의 GitHub URL을 입력합니다. 예: `https://&lt;your_forked_repo>.git.`
+1. **SCM** 값에 **Git** 를 선택합니다. 분기 리포지토리의 GitHub URL을 입력합니다. 예: `https://&lt;your_forked_repo>.git.`
 
-1. **스크립트 경로** 값을 **Jenkinsfile_container_plugin**으로 업데이트합니다.
+1. **스크립트 경로** 값을 **Jenkinsfile_container_plugin** 으로 업데이트합니다.
 
-1. **저장**을 선택하고 작업을 실행합니다.
+1. **저장** 을 선택하고 작업을 실행합니다.
 
 ## <a name="verify-your-web-app"></a>웹앱 확인
 

@@ -3,13 +3,13 @@ title: Python용 Azure SDK 라이브러리를 사용하여 가상 머신 프로�
 description: Python 및 Azure SDK 관리 라이브러리를 사용하여 Azure 가상 머신을 프로비저닝하는 방법입니다.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e01121047d42200e956345df611f82706b1e081e
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010229"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689248"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>예제: Azure 라이브러리를 사용하여 가상 머신 프로비저닝
 
@@ -37,7 +37,7 @@ ms.locfileid: "92010229"
     azure-identity
     ```
 
-1. 가상 환경이 활성화된 터미널 또는 명령 프롬프트에서 *requirements.txt*에 나열된 관리 라이브러리를 설치합니다.
+1. 가상 환경이 활성화된 터미널 또는 명령 프롬프트에서 *requirements.txt* 에 나열된 관리 라이브러리를 설치합니다.
 
     ```cmd
     pip install -r requirements.txt
@@ -45,7 +45,7 @@ ms.locfileid: "92010229"
 
 ## <a name="3-write-code-to-provision-a-virtual-machine"></a>3: 가상 머신을 프로비저닝하는 코드 작성
 
-다음 코드를 사용하여 *provision_vm.py*라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
+다음 코드를 사용하여 *provision_vm.py* 라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
 
 ```python
 # Import the needed credential and management objects from the libraries.

@@ -6,18 +6,19 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: f3245aa3d75510352d89d26c1c61825dbac1e2c8
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.custom: github-actions-azure
+ms.openlocfilehash: dd0e13f5756a337e1b1f820b9d810924af966fe8
+ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493092"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92898739"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions를 사용하여 Azure에 배포
 
 [GitHub Actions](https://help.github.com/articles/about-github-actions)를 통해 개발자는 자동화된 소프트웨어 개발 수명 주기 워크플로를 빌드할 수 있습니다.  
 
-Azure용 GitHub Actions를 사용하면 Azure에 빌드, 테스트, 패키지, 릴리스 및 **배포**하기 위해 리포지토리로 설정할 수 있는 워크플로를 만들 수 있습니다. [Azure와 다른 모든 통합에 대해 자세히 알아봅니다](https://aka.ms/GitHubonAzure).
+Azure용 GitHub Actions를 사용하면 Azure에 빌드, 테스트, 패키지, 릴리스 및 **배포** 하기 위해 리포지토리로 설정할 수 있는 워크플로를 만들 수 있습니다. [Azure와 다른 모든 통합에 대해 자세히 알아봅니다](https://aka.ms/GitHubonAzure).
 
 지금 [체험 Azure 계정](https://azure.com/free/open-source)으로 시작하세요!
 

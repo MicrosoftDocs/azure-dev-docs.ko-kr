@@ -4,13 +4,13 @@ description: Ansible에서 Azure Key Vault를 사용하여 VM 보안을 구성�
 keywords: ansible, azure, devops, 키 자격 증명 모음, 보안, 자격 증명, 비밀, 키, 인증서, azure용 ansible 모듈, 리소스 그룹, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 472a155b172de06cff4df99db7a4861f1cb60f52
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682014"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688946"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>자습서: Ansible에서 Linux 가상 머신으로 Azure Key Vault 사용
 
@@ -40,7 +40,7 @@ ms.locfileid: "90682014"
 
 Azure CLI를 사용하여 Azure용 Ansible 모듈을 사용할 때 필요한 Azure 구독 정보를 가져옵니다. 
 
-1. `az account show` 명령을 사용하여 Azure 구독 ID 및 Azure 구독 테넌트 ID를 가져옵니다. `<Subscription>` 자리 표시자에는 Azure 구독 이름 또는 Azure 구독 ID를 지정합니다. 이 명령은 기본 Azure 구독과 연결된 여러 키 값을 표시합니다. 구독이 여러 개인 경우 [az account set](/cli/azure/account#az-account-set) 명령을 통해 현재 구독을 설정해야 할 수도 있습니다. 명령의 출력에서 **ID**와 **tenantID** 값을 둘 다 적어둡니다.
+1. `az account show` 명령을 사용하여 Azure 구독 ID 및 Azure 구독 테넌트 ID를 가져옵니다. `<Subscription>` 자리 표시자에는 Azure 구독 이름 또는 Azure 구독 ID를 지정합니다. 이 명령은 기본 Azure 구독과 연결된 여러 키 값을 표시합니다. 구독이 여러 개인 경우 [az account set](/cli/azure/account#az-account-set) 명령을 통해 현재 구독을 설정해야 할 수도 있습니다. 명령의 출력에서 **ID** 와 **tenantID** 값을 둘 다 적어둡니다.
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
@@ -48,7 +48,7 @@ Azure CLI를 사용하여 Azure용 Ansible 모듈을 사용할 때 필요한 Azu
 
 1. Azure 구독에 대한 서비스 주체가 없는 경우, [Azure CLI를 사용하여 Azure 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli). 명령의 출력에서 **appId** 값을 적어둡니다.
 
-1. `az ad sp show` 명령을 사용하여 서비스 주체의 개체 ID를 가져옵니다. `<ApplicationID>` 자리 표시자에는 서비스 주체 appId를 지정합니다. `--query` 매개 변수는 *stdout*에 출력할 값을 나타냅니다. 이 경우에는 서비스 주체 개체 ID입니다.
+1. `az ad sp show` 명령을 사용하여 서비스 주체의 개체 ID를 가져옵니다. `<ApplicationID>` 자리 표시자에는 서비스 주체 appId를 지정합니다. `--query` 매개 변수는 *stdout* 에 출력할 값을 나타냅니다. 이 경우에는 서비스 주체 개체 ID입니다.
 
     ```azurecli
     az ad sp show --id <ApplicationID> --query objectId
@@ -163,33 +163,33 @@ tasks:
 
 1. [Azure Portal](https://portal.azure.com)로 이동합니다.
 
-1. 페이지의 기본 검색 상자에 `key vaults`를 입력하고 **서비스**에서 **키 자격 증명 모음**을 선택합니다.
+1. 페이지의 기본 검색 상자에 `key vaults`를 입력하고 **서비스** 에서 **키 자격 증명 모음** 을 선택합니다.
 
 1. 이전 섹션에서 만든 키 자격 증명 모음을 선택합니다. (이 이름은 플레이북에서 stdout에 출력되었습니다.)
 
-1. **액세스 정책**을 선택합니다.
+1. **액세스 정책** 을 선택합니다.
 
 1. 지정한 서비스 주체를 나타내는 Azure Active Directory ID와 함께 단일 액세스 정책이 표시됩니다.
 
-1. **액세스 정책 추가**를 선택합니다.
+1. **액세스 정책 추가** 를 선택합니다.
 
-1. **주체 선택**을 선택합니다.
+1. **주체 선택** 을 선택합니다.
 
 1. **주체** 탭의 검색 상자에 자신의 이메일 주소를 입력합니다.
 
 1. 필터링된 목록에서 적절한 항목을 선택합니다.
 
-1. 선택한 사용자에 대한 정보가 **선택한 멤버** 목록에 복사됩니다. **선택**을 선택합니다.
+1. 선택한 사용자에 대한 정보가 **선택한 멤버** 목록에 복사됩니다. **선택** 을 선택합니다.
 
-1. **키 권한**, **비밀 권한**, **인증서 권한**에 대해 적절한 옵션을 선택합니다. 이 데모에서는 **비밀 권한**을 선택한 다음, **Get**, **List**, **Set**을 선택하면 충분합니다.
+1. **키 권한** , **비밀 권한** , **인증서 권한** 에 대해 적절한 옵션을 선택합니다. 이 데모에서는 **비밀 권한** 을 선택한 다음, **Get** , **List** , **Set** 을 선택하면 충분합니다.
 
-1. **추가**를 선택합니다.
+1. **추가** 를 선택합니다.
 
 1. 이제 선택한 사용자에 대한 새로운 액세스 정책이 **액세스 정책** 페이지에 표시됩니다.
 
-1. **저장**을 선택합니다.
+1. **저장** 을 선택합니다.
 
-1. 포털의 오른쪽 위 모서리에서 **알림**을 선택합니다. 액세스 정책이 업데이트될 때까지 기다린 후, 다음 단계를 진행합니다.
+1. 포털의 오른쪽 위 모서리에서 **알림** 을 선택합니다. 액세스 정책이 업데이트될 때까지 기다린 후, 다음 단계를 진행합니다.
 
 ## <a name="create-a-key-vault-secret"></a>키 자격 증명 모음 비밀 만들기
 
@@ -218,7 +218,7 @@ tasks:
 
 - [azure_rm_keyvaultsecret 모듈](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvaultsecret_module.html)은 키 자격 증명 모음 비밀을 만드는 데 사용됩니다.
 - 간단한 설명을 위해 데모에는 `secret_name`과 `secret_value`가 포함됩니다. 하지만 플레이북은 프로젝트의 다른 소스 코드와 마찬가지로 IaC(infrastructure-as-code) 파일입니다. 따라서, 이러한 값은 프로덕션 환경에서 사용할 경우 일반 텍스트 파일에 저장하지 않아야 합니다.
-- 이 코드를 실행한 후에는 키 자격 증명 모음의 **비밀** 탭에 `testsecret`이라는 새로 추가된 비밀이 나열됩니다. 이것을 보려면 비밀을 선택하고, 현재 버전을 선택하고 **비밀 값 표시**를 선택합니다.
+- 이 코드를 실행한 후에는 키 자격 증명 모음의 **비밀** 탭에 `testsecret`이라는 새로 추가된 비밀이 나열됩니다. 이것을 보려면 비밀을 선택하고, 현재 버전을 선택하고 **비밀 값 표시** 를 선택합니다.
 
 ## <a name="get-a-key-vault-secret"></a>키 자격 증명 모음 비밀 가져오기
 
@@ -241,7 +241,7 @@ tasks:
 
 **참고:**
 
-- **azure_rm_keyvaultsecret_info 모듈**은 키 자격 증명 모음 비밀을 가져오는 데 사용됩니다. 이 모듈은 Azure 모듈용 Ansible 컬렉션을 사용하는 경우에만 사용할 수 있습니다. 
+- **azure_rm_keyvaultsecret_info 모듈** 은 키 자격 증명 모음 비밀을 가져오는 데 사용됩니다. 이 모듈은 Azure 모듈용 Ansible 컬렉션을 사용하는 경우에만 사용할 수 있습니다. 
 - 이 코드 조각을 실행하는 동안 오류가 발생하면 [사전 요구 사항 섹션](#prerequisites)의 모든 지침을 따랐는지 확인하세요.
 - 간단한 설명을 위해 데모에는 `secret_name`과 `secret_value`가 포함됩니다. 하지만 플레이북은 프로젝트의 다른 소스 코드와 마찬가지로 IaC(infrastructure-as-code) 파일입니다. 따라서, 이러한 값은 프로덕션 환경에서 사용할 경우 일반 텍스트 파일에 저장하지 않아야 합니다.
 

@@ -3,13 +3,13 @@ title: Azure CLI를 사용하여 Azure App Service에 앱 코드 배포
 description: '자습서 4부: Azure CLI - 웹 사이트 배포'
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 8e6075b8a1e526f916ab43c9a1f52ef1b66e8614
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 6006c25b9f2cb77ed472d8e4cb7d0eb96e85da48
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364786"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689125"
 ---
 # <a name="deploy-the-app-to-app-service"></a>App Service에 앱 배포
 
@@ -17,7 +17,7 @@ ms.locfileid: "91364786"
 
 이 단계에서는 로컬 Git 리포지토리를 Azure로 푸시하는 기본 프로세스를 사용하여 Node.js 앱 코드를 Azure App Service에 배포합니다.
 
-1. 터미널 또는 명령 프롬프트에서 다음 명령을 실행하여 로컬 Git 리포지토리를 초기화하고 초기 커밋을 수행합니다. (*node_modules* 폴더는 이전에 Express Generator를 실행할 때 생성된 *.gitignore* 파일에 지정되어 있으므로 무시됩니다.)
+1. 터미널 또는 명령 프롬프트에서 다음 명령을 실행하여 로컬 Git 리포지토리를 초기화하고 초기 커밋을 수행합니다. ( *node_modules* 폴더는 이전에 Express Generator를 실행할 때 생성된 *.gitignore* 파일에 지정되어 있으므로 무시됩니다.)
 
     ```bash
     git init
@@ -45,7 +45,7 @@ ms.locfileid: "91364786"
     }
     </pre>
 
-1. 다음 명령을 실행하여 이전 단계 *omitting the username*(사용자 이름 생략)의 URL을 사용하여 Git에서 `azure`라는 새 원격 항목을 설정합니다. 이전 단계의 예를 사용하면, 명령은 다음과 같습니다.
+1. 다음 명령을 실행하여 이전 단계 *omitting the username* (사용자 이름 생략)의 URL을 사용하여 Git에서 `azure`라는 새 원격 항목을 설정합니다. 이전 단계의 예를 사용하면, 명령은 다음과 같습니다.
 
     ```bash
     git remote add azure https://msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git

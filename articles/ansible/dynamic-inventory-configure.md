@@ -4,17 +4,17 @@ description: Ansible을 사용하여 Azure 동적 인벤토리를 관리하는 �
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 동적 인벤토리
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-ansible
-ms.openlocfilehash: d4532a0727a70dc1a92c6df21b5ff9f0d92ab850
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 42ac7ef120a2bb364197509d8c36bb7e1a300242
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831199"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688624"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>자습서: Ansible을 사용하여 Azure 리소스의 동적 인벤토리 구성
 
-Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *동적 인벤토리*로 인벤토리 정보를 가져오는 데 사용할 수 있습니다. 
+Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *동적 인벤토리* 로 인벤토리 정보를 가져오는 데 사용할 수 있습니다. 
 
 [!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 

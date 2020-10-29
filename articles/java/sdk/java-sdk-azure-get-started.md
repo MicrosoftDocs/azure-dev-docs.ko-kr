@@ -7,13 +7,13 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
+ms.openlocfilehash: a2dbb6a83837e716f48304a8013ba198280e9624
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831789"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689188"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Azure 에서 Java를 이용하여 클라우드 개발 시작
 
@@ -148,7 +148,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 - **파일** 메뉴를 선택한 다음 **설정...** 을 선택합니다.
 
-- **저장소 찾아보기...** 를 선택하고 “Azure”를 검색한 다음 **Intellij용 Azure 도구 키트**를 설치합니다.
+- **저장소 찾아보기...** 를 선택하고 “Azure”를 검색한 다음 **Intellij용 Azure 도구 키트** 를 설치합니다.
 
 - Intellij를 다시 시작합니다.
 
@@ -156,7 +156,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 [Azure 도구 키트](../toolkit-for-eclipse/index.yml)는 웹앱이나 API를 프로그래밍 방식으로 설치하지만 현재 다른 개발 유형에는 사용하고 있지 않은 경우에 필요합니다. 다음은 설치 프로세스에 대한 요약입니다. 빠른 시작을 원하는 경우 [Azure Toolkit for Eclipse 빠른 시작](../toolkit-for-eclipse/create-hello-world-web-app.md)을 방문하세요.
 
-- **도움말** 메뉴를 선택하고 **새 소프트웨어 설치**를 선택합니다.
+- **도움말** 메뉴를 선택하고 **새 소프트웨어 설치** 를 선택합니다.
 
 - **작업:** 필드에 `http://dl.microsoft.com/eclipse/`를 입력하고 Enter를 누릅니다.
 

@@ -4,13 +4,13 @@ description: 이 빠른 시작에서는 Azure Cloud Shell에서 Terraform을 설
 keywords: azure devops terraform 설치 구성 cloud shell init 계획 적용 실행 포털 로그인 rbac 서비스 주체 자동화된 스크립트
 ms.topic: quickstart
 ms.date: 09/27/2020
-ms.custom: devx-track-terraform
-ms.openlocfilehash: f5b1b242479ede712cccb178a8ee25b0b557173c
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: 70a7c1dc9db76c51d5923fc3b82200eca2976b2c
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401613"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688917"
 ---
 # <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>빠른 시작: Azure Cloud Shell을 사용하여 Terraform 구성
  
@@ -44,7 +44,7 @@ ms.locfileid: "91401613"
 
 1. 이전에 Cloud Shell을 사용하지 않은 경우 환경 및 스토리지 설정을 구성합니다. 이 문서에서는 Bash 환경을 사용합니다.
 
-**참고**:
+**참고** :
 - Cloud Shell에는 자동으로 최신 버전의 Terraform이 설치됩니다. 또한 Terraform은 현재 Azure 구독의 정보를 자동으로 사용합니다. 따라서 설치 또는 구성이 필요하지 않습니다.
 
 ## <a name="authenticate-to-azure"></a>Azure에 대한 인증
@@ -64,14 +64,14 @@ Terraform은 Azure에 인증하기 위한 몇 가지 옵션을 지원합니다. 
 az login
 ```
 
-**참고**:
+**참고** :
 
 - 로그인에 성공하면 `az login`은 로그인 Microsoft 계정에 연결된 Azure 구독 목록을 표시합니다.
 - 사용 가능한 각 Azure 구독의 속성 목록이 표시됩니다. `isDefault` 속성은 사용 중인 Azure 구독을 식별합니다. 다른 Azure 구독으로 전환하는 방법에 대한 자세한 내용은 [현재 Azure 구독 설정](#set-the-current-azure-subscription) 섹션을 참조하세요.
 
 ### <a name="authenticate-via-azure-service-principal"></a>Azure 서비스 주체를 통해 인증
 
-**Azure 서비스 주체 만들기**: 서비스 주체를 사용하여 Azure 구독에 로그인하려면 먼저 서비스 주체에 액세스할 수 있어야 합니다. 서비스 주체가 이미 있는 경우 섹션의 이 부분을 건너뛸 수 있습니다.
+**Azure 서비스 주체 만들기** : 서비스 주체를 사용하여 Azure 구독에 로그인하려면 먼저 서비스 주체에 액세스할 수 있어야 합니다. 서비스 주체가 이미 있는 경우 섹션의 이 부분을 건너뛸 수 있습니다.
 
 Azure 서비스를 배포하거나 사용하는 자동화된 도구(예: Terraform)에는 항상 제한된 권한이 있어야 합니다. Azure는 애플리케이션에서 모든 권한이 있는 사용자로 로그인하도록 하는 대신 서비스 주체를 제공합니다. 하지만 로그인할 서비스 주체가 없는 경우 어떻게 될까요? 이 시나리오에서는 사용자 자격 증명을 사용하여 로그인한 다음, 서비스 주체를 만들 수 있습니다. 서비스 주체를 만든 후에는 나중에 로그인을 시도할 때 해당 정보를 사용할 수 있습니다.
 
@@ -83,12 +83,12 @@ Azure 서비스를 배포하거나 사용하는 자동화된 도구(예: Terrafo
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
-**참고**:
+**참고** :
 
 - 성공적으로 완료되면 `az ad sp create-for-rbac`에서 여러 값을 표시합니다. `name`, `password` 및 `tenant` 값은 다음 단계에서 사용됩니다.
 - 분실한 암호는 복구할 수 없습니다. 따라서 암호를 안전한 장소에 저장해야 합니다. 암호를 잊어버린 경우 [서비스 주체 자격 증명을 다시 설정](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)해야 합니다.
 
-**Azure 서비스 주체를 사용한 로그인**: 다음 `az login` 호출의 자리 표시자를 서비스 주체의 정보로 바꿉니다.
+**Azure 서비스 주체를 사용한 로그인** : 다음 `az login` 호출의 자리 표시자를 서비스 주체의 정보로 바꿉니다.
 
 ```azurecli
 az login --service-principal -u <service_principal_name> -p "<service_principal_password>" --tenant "<service_principal_tenant>"
@@ -116,7 +116,7 @@ Microsoft 계정은 여러 Azure 구독과 연결할 수 있습니다. 다음 �
     az account set --subscription="<subscription_id>"
     ```
 
-    **참고**:
+    **참고** :
 
     - `az account set`를 호출해도 지정된 Azure 구독으로 전환한 결과가 표시되지 않습니다. 그러나 `az account show`를 사용하여 현재 Azure 구독이 변경되었는지 확인할 수 있습니다.
 

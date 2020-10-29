@@ -4,12 +4,12 @@ description: tutorial-azure-web-app-mongodb-00.md 포함 파일
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: c0d904935992b54b63f45f76a022947375414c55
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 9903ca1ae761cb2e16a7f72fcc4c0942f7fa5991
+ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183914"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92437321"
 ---
 이 자습서에서는 MongoDB 네이티브 API를 사용하여 MongoDB 데이터베이스와 함께 Node.js 앱을 사용합니다. Node.js 애플리케이션을 Linux의 Azure App Service에 배포한 다음, 클라우드 기반 앱이 작동하는지 확인합니다. 
 
@@ -43,7 +43,7 @@ GitHub에서 사용할 수 있는 [Node.js 앱 샘플](https://github.com/Azure-
 
 ## <a name="limited-time-to-work-on-the-tutorial"></a>자습서의 작업 시간이 제한되어 있나요?
 
-이 자습서에서는 Azure에서 MongoDB 데이터베이스를 호스팅하는 방법인 Cosmos DB용 Azure 리소스를 만듭니다. 이 리소스 만들기 프로세스에는 최대 20분이 걸릴 수 있습니다. 시간이 제한된 경우 [지금 이 프로세스를 시작](../../tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml?tutorial-step=5)할 수 있으며, 필요한 경우 리소스를 사용할 수 있습니다. 
+이 자습서에서는 Azure에서 MongoDB 데이터베이스를 호스팅하는 방법인 Cosmos DB용 Azure 리소스를 만듭니다. 이 리소스 만들기 프로세스에는 최대 20분이 걸릴 수 있습니다. 시간이 제한된 경우 [지금 이 프로세스를 시작](../../tutorial/web-app-mongodb.yml?tutorial-step=5)할 수 있으며, 필요한 경우 리소스를 사용할 수 있습니다. 
 
 ## <a name="want-to-know-more"></a>자세히 알고 싶으세요? 
 

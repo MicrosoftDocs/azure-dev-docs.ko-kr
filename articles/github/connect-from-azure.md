@@ -6,13 +6,13 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
-ms.custom: github-actions-azure
-ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.custom: github-actions-azure, devx-track-azurecli
+ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493124"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689216"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions를 사용하여 Azure에 연결
 
@@ -61,11 +61,11 @@ Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니�
     }
     ```
 
-1. GitHub 리포지토리를 열고 **설정**으로 이동합니다.
+1. GitHub 리포지토리를 열고 **설정** 으로 이동합니다.
 
     :::image type="content" source="media/github-repo-settings.png" alt-text="탐색에서 설정 선택":::
 
-1. **비밀**과 **새 비밀**을 차례로 선택합니다.
+1. **비밀** 과 **새 비밀** 을 차례로 선택합니다.
 
     :::image type="content" source="media/select-secrets.png" alt-text="탐색에서 설정 선택":::
 
@@ -73,7 +73,7 @@ Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니�
 
     :::image type="content" source="media/azure-secret-add.png" alt-text="탐색에서 설정 선택":::
 
-1. **비밀 추가**를 선택하여 저장합니다.
+1. **비밀 추가** 를 선택하여 저장합니다.
 
 ## <a name="use-the-azure-login-action"></a>Azure 로그인 작업 사용
 

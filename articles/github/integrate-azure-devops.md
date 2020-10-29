@@ -6,12 +6,13 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 112a2ba595e04e23524ae375c9585e3b944c5e4c
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.custom: github-actions-azure
+ms.openlocfilehash: 39d4df3f8dacc2d274c1566966af4e74a67fd9a9
+ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631618"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92898699"
 ---
 # <a name="work-with-azure-devops-and-github"></a>Azure DevOps 및 GitHub로 작업 
 

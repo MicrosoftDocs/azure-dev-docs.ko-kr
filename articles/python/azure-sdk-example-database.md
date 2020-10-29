@@ -3,13 +3,13 @@ title: Azure SDK 라이브러리를 사용하여 Azure MySQL 데이터베이스 
 description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 사용하여 Azure MySQL, PostgresSQL 또는 MariaDB 데이터베이스를 프로비저닝합니다.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: bf205e133f093be654c88e5245eb0a4524f71502
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 873b854ac2702ac62484a8ed37a5367084eb4b00
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010293"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689011"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>예: Azure 라이브러리를 사용하여 데이터베이스 프로비저닝
 
@@ -27,7 +27,7 @@ ms.locfileid: "92010293"
 
 ## <a name="2-install-the-needed-azure-library-packages"></a>2: 필요한 Azure 라이브러리 패키지 설치
 
-다음과 같은 콘텐츠가 포함된 *requirements.txt*라는 파일을 만듭니다.
+다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
 
 ```text
 azure-mgmt-resource==10.2.0
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ## <a name="3-write-code-to-provision-the-database"></a>3: 코드를 작성하여 데이터베이스 프로비저닝
 
-다음 코드를 사용하여 *provision_db.py*라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
+다음 코드를 사용하여 *provision_db.py* 라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
 
 ```python
 import random, os
@@ -170,7 +170,7 @@ python provision_db.py
 
 ## <a name="5-insert-a-record-and-query-the-database"></a>5: 레코드 삽입 및 데이터베이스 쿼리
 
-다음 코드를 사용하여 *use_db.py*라는 파일을 만듭니다. 프로비저닝 코드의 값으로 채워야 하는 `DB_SERVER_NAME`, `DB_ADMIN_NAME` 및 `DB_ADMIN_PASSWORD` 환경 변수의 종속성을 기록합니다.
+다음 코드를 사용하여 *use_db.py* 라는 파일을 만듭니다. 프로비저닝 코드의 값으로 채워야 하는 `DB_SERVER_NAME`, `DB_ADMIN_NAME` 및 `DB_ADMIN_PASSWORD` 환경 변수의 종속성을 기록합니다.
 
 이 코드는 MySQL에서만 작동합니다. PostgreSQL 및 MariaDB에 대해서는 다른 라이브러리를 사용합니다.
 

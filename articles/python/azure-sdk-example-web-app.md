@@ -3,13 +3,13 @@ title: Azure SDK 라이브러리를 사용하여 웹앱 프로비저닝 및 배�
 description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 사용하여 웹앱을 프로비저닝한 다음, GitHub 리포지토리에서 앱 코드를 배포합니다.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 3312b55927e7a72d4ee1e0fee3658c1b2f5a513d
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: ac678bef07fb660ca3ad094d56455e3b85db9f19
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010307"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688987"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>예: Azure 라이브러리를 사용하여 웹앱 프로비저닝 및 배포
 
@@ -25,7 +25,7 @@ ms.locfileid: "92010307"
 
 ## <a name="2-install-the-needed-azure-library-packages"></a>2: 필요한 Azure 라이브러리 패키지 설치
 
-다음과 같은 콘텐츠가 포함된 *requirements.txt*라는 파일을 만듭니다.
+다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
 
 ```text
 azure-mgmt-resource==10.2.0
@@ -65,7 +65,7 @@ REPO_URL=<url_of_your_fork>
 
 ## <a name="4-write-code-to-provision-and-deploy-a-web-app"></a>4: 웹앱을 프로비저닝 및 배포하기 위한 코드 작성
 
-다음 코드를 사용하여 *provision_deploy_webapp.py*라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
+다음 코드를 사용하여 *provision_deploy_webapp.py* 라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
 
 ```python
 import random, os
@@ -190,7 +190,7 @@ python provision_deploy_web_app.py
 
     브라우저에 "Hello, World!"가 표시되어야 합니다.
 
-1. [Azure Portal](https://portal.azure.com)을 방문하여 **리소스 그룹**을 선택하고 "PythonAzureExample-WebApp-rg"가 나열되어 있는지 확인합니다. 그런 다음, 해당 목록으로 이동하여 예상되는 리소스(즉, App Service 계획 및 App Service)가 있는지 확인합니다.
+1. [Azure Portal](https://portal.azure.com)을 방문하여 **리소스 그룹** 을 선택하고 "PythonAzureExample-WebApp-rg"가 나열되어 있는지 확인합니다. 그런 다음, 해당 목록으로 이동하여 예상되는 리소스(즉, App Service 계획 및 App Service)가 있는지 확인합니다.
 
 ## <a name="7-clean-up-resources"></a>7: 리소스 정리
 

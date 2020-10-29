@@ -6,13 +6,13 @@ documentationcenter: java
 ms.date: 12/19/2018
 ms.service: event-hubs
 ms.topic: article
-ms.custom: devx-track-java
-ms.openlocfilehash: 523d7b7eb0465bc9b1e367b7b450591319f5995a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 452119b467d3b92e7b8deec3b0e22d2d1d18ee9e
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831269"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689201"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Azure Event Hub를 사용하여 Apache Kafka에 대한 Spring Boot Starter를 사용하는 방법
 
@@ -37,25 +37,25 @@ ms.locfileid: "90831269"
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **+ 리소스 만들기**를 클릭하고 **사물 인터넷**을 클릭한 다음, *Event Hubs**를 검색합니다.
+1. **+ 리소스 만들기** 를 클릭하고 **사물 인터넷** 을 클릭한 다음, *Event Hubs**를 검색합니다.
 
-1. **만들기**를 클릭합니다.
+1. **만들기** 를 클릭합니다.
 
    ![Event Hub 네임스페이스 만들기][IMG01]
 
 1. **네임스페이스 만들기** 페이지에서 다음 정보를 입력합니다.
 
-   * 이벤트 허브 네임스페이스에 대한 URI의 일부가 되는 고유한 **이름**을 입력합니다. 예: **wingtiptoys**를 **이름**에 입력한 경우 URI는 *wingtiptoys.servicebus.windows.net*입니다.
+   * 이벤트 허브 네임스페이스에 대한 URI의 일부가 되는 고유한 **이름** 을 입력합니다. 예: **wingtiptoys** 를 **이름** 에 입력한 경우 URI는 *wingtiptoys.servicebus.windows.net* 입니다.
    * 가격 책정 계층.
-   * 네임스페이스에 대해 **Kafka 사용**을 지정합니다.
-   * 네임스페이스에 사용하려는 **구독**을 선택합니다.
-   * 네임스페이스에 새 **리소스 그룹**을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
-   * 이벤트 허브 네임 스페이스에 대한 **위치**를 지정합니다.
-   * 네임스페이스에 **처리량 단위**를 지정할 수도 있습니다.
+   * 네임스페이스에 대해 **Kafka 사용** 을 지정합니다.
+   * 네임스페이스에 사용하려는 **구독** 을 선택합니다.
+   * 네임스페이스에 새 **리소스 그룹** 을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
+   * 이벤트 허브 네임 스페이스에 대한 **위치** 를 지정합니다.
+   * 네임스페이스에 **처리량 단위** 를 지정할 수도 있습니다.
 
    ![Azure Event Hub 네임스페이스 옵션을 지정합니다.][IMG02]
 
-1. 위에 열거된 이러한 옵션을 지정한 경우 **만들기**를 클릭하여 네임스페이스를 만듭니다.
+1. 위에 열거된 이러한 옵션을 지정한 경우 **만들기** 를 클릭하여 네임스페이스를 만듭니다.
 
 ### <a name="create-an-azure-event-hub-in-your-namespace"></a>네임스페이스에 Event Hub 만들기
 
@@ -63,11 +63,11 @@ ms.locfileid: "90831269"
 
 1. 이전 단계에서 만든 네임스페이스로 이동합니다.
 
-1. 상단 메뉴 모음에서 **+ 이벤트 허브**를 클릭합니다.
+1. 상단 메뉴 모음에서 **+ 이벤트 허브** 를 클릭합니다.
 
 1. 이벤트 허브 이름을 지정합니다.
 
-1. **만들기**를 클릭합니다.
+1. **만들기** 를 클릭합니다.
 
    ![이벤트 허브 만들기][IMG05]
 
@@ -77,7 +77,7 @@ ms.locfileid: "90831269"
 
 1. 다음 옵션을 지정합니다.
 
-   * **Java**를 사용하는 **Maven** 프로젝트를 생성합니다.
+   * **Java** 를 사용하는 **Maven** 프로젝트를 생성합니다.
    * 2\.0 이상의 **Spring Boot** 버전을 지정합니다.
    * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
    * **Web** 종속성 추가
@@ -86,10 +86,10 @@ ms.locfileid: "90831269"
 
    > [!NOTE]
    >
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.kafka*).
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.kafka* ).
    >
 
-1. 위에 열거된 이러한 옵션을 지정한 경우 **프로젝트 만들기**를 클릭합니다.
+1. 위에 열거된 이러한 옵션을 지정한 경우 **프로젝트 만들기** 를 클릭합니다.
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 
@@ -271,7 +271,7 @@ ms.locfileid: "90831269"
 
 ### <a name="create-a-new-class-for-the-source-connector"></a>원본 커넥터에 대한 새 클래스 만들기
 
-1. 앱의 패키지 디렉터리에 *KafkaSource.java*라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
+1. 앱의 패키지 디렉터리에 *KafkaSource.java* 라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
 
    ```java
    package com.wingtiptoys.kafka;
@@ -303,7 +303,7 @@ ms.locfileid: "90831269"
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>싱크 커넥터에 대한 새 클래스 만들기
 
-1. 앱의 패키지 디렉터리에 *KafkaSink.java*라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
+1. 앱의 패키지 디렉터리에 *KafkaSink.java* 라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
 
    ```java
    package com.wingtiptoys.kafka;
@@ -344,7 +344,7 @@ ms.locfileid: "90831269"
    mvn spring-boot:run
    ```
 
-1. 애플리케이션이 실행되면, 애플리케이션을 테스트하기 위해 *curl*을 사용할 수 있습니다. 예:
+1. 애플리케이션이 실행되면, 애플리케이션을 테스트하기 위해 *curl* 을 사용할 수 있습니다. 예:
 
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
@@ -360,7 +360,7 @@ ms.locfileid: "90831269"
 
 > [!NOTE]
 > 
-> 테스트를 위해 *KafkaSource.java*를 수정하여 다음 예제와 같은 간단한 HTML 양식을 포함할 수 있습니다.
+> 테스트를 위해 *KafkaSource.java* 를 수정하여 다음 예제와 같은 간단한 HTML 양식을 포함할 수 있습니다.
 > 
 > ```java
 > package com.wingtiptoys.kafka;

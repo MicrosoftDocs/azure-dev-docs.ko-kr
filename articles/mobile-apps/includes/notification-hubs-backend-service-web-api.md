@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 3103fd6c75dbaeed3b5a0dd23d7cd68b6394ee76
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: 7a7128a475b428243f3c7280fc154d1d4c8fe8a6
+ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337189"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92438352"
 ---
 ### <a name="create-a-web-project"></a>웹 프로젝트 만들기
 
@@ -518,6 +518,10 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotne
 1. **Startup.cs** 에서 **NotificationHubsService** 를 **INotificationService** 의 싱글톤 구현으로 추가하도록 **ConfigureServices** 메서드를 업데이트합니다.
 
     ```csharp
+    
+    using PushDemoApi.Models;
+    using PushDemoApi.Services;
+
     public void ConfigureServices(IServiceCollection services)
     {
         ...

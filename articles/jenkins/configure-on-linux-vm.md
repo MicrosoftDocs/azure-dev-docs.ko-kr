@@ -4,13 +4,13 @@ description: Jenkins를 Azure Linux 가상 머신에 설치하고 Java 애플리
 keywords: Jenkins, Azure, DevOps, 포털, Linux, 가상 머신
 ms.topic: quickstart
 ms.date: 08/21/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 7e7c8de6353a29af949231709675a4d2785405c3
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 6fc5eafbec8917b517b38d7a02c3149512675ac9
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831369"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689133"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Jenkins 구성
 
@@ -39,7 +39,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
-1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 열고(아직 열지 않은 경우) **Bash**로 전환합니다.
+1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 열고(아직 열지 않은 경우) **Bash** 로 전환합니다.
 
 1. `cloud-init-jenkins.txt`라는 파일을 만듭니다.
 
@@ -60,7 +60,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
       - service jenkins restart
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
+1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
 
 1. [az group create](/cli/azure/group#az-group-create)를 사용하여 리소스 그룹을 만듭니다. `--location` 매개 변수를 사용자 환경에 적절한 값으로 바꿔야 할 수 있습니다.
 
@@ -109,7 +109,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
     --output tsv
     ```
 
-    **참고**:
+    **참고** :
 
     - `--query` 매개 변수는 가상 머신의 공용 IP 주소로 출력을 제한합니다.
 
@@ -119,7 +119,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
     ssh azureuser@<ip_address>
     ```
 
-    **참고**:
+    **참고** :
 
     - 연결에 성공하면 Cloud Shell 프롬프트에 사용자 이름 및 가상 머신 이름(`azureuser@QuickstartJenkins-vm`)이 포함됩니다.
 
@@ -137,65 +137,65 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
 
 1. IP 주소를 사용하여 브라우저에서 다음 URL을 엽니다. `http://<ip_address>:8080`
 
-1. 앞서 검색한 암호를 입력하고 **계속**을 선택합니다.
+1. 앞서 검색한 암호를 입력하고 **계속** 을 선택합니다.
 
     ![Jenkins 잠금을 해제하는 초기 페이지](./media/configure-on-linux-vm/unlock-jenkins.png)
 
-1. **설치할 플러그인 선택**을 선택합니다.
+1. **설치할 플러그인 선택** 을 선택합니다.
 
     ![선택한 플러그 인을 설치하는 옵션을 선택합니다.](./media/configure-on-linux-vm/select-plugins.png)
 
-1. 페이지 맨 위에 있는 필터 상자에 `github`를 입력합니다. GitHub 플러그인을 선택하고 **설치**를 선택합니다.
+1. 페이지 맨 위에 있는 필터 상자에 `github`를 입력합니다. GitHub 플러그인을 선택하고 **설치** 를 선택합니다.
 
     ![GitHub 플러그 인 설치](./media/configure-on-linux-vm/install-github-plugin.png)
 
-1. 첫 번째 관리 사용자의 정보를 입력하고 **저장 및 계속**을 선택합니다.
+1. 첫 번째 관리 사용자의 정보를 입력하고 **저장 및 계속** 을 선택합니다.
 
     ![첫 번째 관리 사용자에 대한 정보 입력](./media/configure-on-linux-vm/create-first-user.png)
 
-1. **인스턴스 구성** 페이지에서 **저장 및 마침**을 선택합니다.
+1. **인스턴스 구성** 페이지에서 **저장 및 마침** 을 선택합니다.
 
     ![인스턴스 구성의 확인 페이지](./media/configure-on-linux-vm/instance-configuration.png)
 
-1. **Jenkins 사용 시작**을 선택합니다.
+1. **Jenkins 사용 시작** 을 선택합니다.
 
     ![Jenkins가 준비되었습니다.](./media/configure-on-linux-vm/start-using-jenkins.png)
 
 ## <a name="create-your-first-job"></a>첫 번째 작업 만들기
 
-1. Jenkins 홈페이지에서 **작업 만들기**를 선택합니다.
+1. Jenkins 홈페이지에서 **작업 만들기** 를 선택합니다.
 
     ![Jenkins 콘솔 홈페이지](./media/configure-on-linux-vm/jenkins-home-page.png)
 
-1. 작업 이름에 `mySampleApp`을 입력하고 **프리스타일 프로젝트**를 선택한 후 **확인**을 선택합니다.
+1. 작업 이름에 `mySampleApp`을 입력하고 **프리스타일 프로젝트** 를 선택한 후 **확인** 을 선택합니다.
 
     ![새 작업 만들기](./media/configure-on-linux-vm/new-job.png)
 
-1. **소스 코드 관리** 탭을 선택합니다. **Git**을 사용하도록 설정하고 **리포지토리 URL** 값에 다음 URL을 입력합니다. `https://github.com/spring-guides/gs-spring-boot.git`
+1. **소스 코드 관리** 탭을 선택합니다. **Git** 을 사용하도록 설정하고 **리포지토리 URL** 값에 다음 URL을 입력합니다. `https://github.com/spring-guides/gs-spring-boot.git`
 
     ![Git 리포지토리 정의](./media/configure-on-linux-vm/source-code-management.png)
 
-1. **빌드** 탭을 선택한 후 **빌드 단계 추가**를 선택합니다.
+1. **빌드** 탭을 선택한 후 **빌드 단계 추가** 를 선택합니다.
 
     ![새 빌드 단계 추가](./media/configure-on-linux-vm/add-build-step.png)
 
-1. 드롭다운 메뉴에서 **Gradle 스크립트 호출**을 선택합니다.
+1. 드롭다운 메뉴에서 **Gradle 스크립트 호출** 을 선택합니다.
 
     ![Gradle 스크립트 옵션 선택](./media/configure-on-linux-vm/invoke-gradle-script-option.png)
 
-1. **Gradle 래퍼 사용**을 선택한 후 **래퍼 위치**에 `complete`를 입력하고 **작업**에 `build`를 입력합니다.
+1. **Gradle 래퍼 사용** 을 선택한 후 **래퍼 위치** 에 `complete`를 입력하고 **작업** 에 `build`를 입력합니다.
 
     ![Gradle 스크립트 옵션](./media/configure-on-linux-vm/gradle-script-options.png)
 
-1. **고급**을 선택하고 **루트 빌드 스크립트** 필드에 `complete`를 입력합니다.
+1. **고급** 을 선택하고 **루트 빌드 스크립트** 필드에 `complete`를 입력합니다.
 
     ![고급 Gradle 스크립트 옵션](./media/configure-on-linux-vm/root-build-script.png)
 
-1. 페이지의 아래쪽으로 스크롤하고 **저장**을 선택합니다.
+1. 페이지의 아래쪽으로 스크롤하고 **저장** 을 선택합니다.
 
 ## <a name="build-the-sample-java-app"></a>샘플 Java 앱 빌드
 
-1. 프로젝트에 대한 홈페이지가 표시되면 **지금 빌드**를 선택하여 코드를 컴파일하고 샘플 앱을 패키징합니다.
+1. 프로젝트에 대한 홈페이지가 표시되면 **지금 빌드** 를 선택하여 코드를 컴파일하고 샘플 앱을 패키징합니다.
 
     ![프로젝트 홈페이지](./media/configure-on-linux-vm/project-home-page.png)
 

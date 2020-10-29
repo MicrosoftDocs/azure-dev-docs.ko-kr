@@ -4,12 +4,12 @@ description: tutorial-azure-web-app-mongodb-03.md 포함 파일
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: adea87271b1332f77ab254530410787d1a9baa3c
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 9d6fb0beaa19503541196c72ecbdae52a642648b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183933"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755449"
 ---
 자습서의 이 섹션에서는 샘플 애플리케이션을 Azure에 배포합니다. 그런 다음, 브라우저에서 원격으로 실행되는 앱을 볼 수 있습니다. 
 
@@ -55,6 +55,6 @@ Visual Studio Code 확장을 사용하여 앱 서비스 리소스를 만들고 �
 초기 웹 서비스는 8080 포트에서 실행되도록 구성되며 공개적으로 사용할 수 있습니다. 이러한 유형의 웹 사이트 설정을 구성할 수 있습니다.
 * [앱 설정](/azure/app-service/configure-common)
 * [인증](/azure/app-service/configure-authentication-provider-microsoft)
-* [네트워크를 통한 액세스 제한](/azure/azure/app-service/app-service-ip-restrictions)
+* [네트워크를 통한 액세스 제한](/azure/app-service/app-service-ip-restrictions)
 
 이 앱 서비스 확장을 사용하여 웹 사이트를 Azure 클라우드에 배포하는 경우 [해당 배포를 구성](https://github.com/microsoft/vscode-azureappservice/wiki/Configuring-Zip-Deployment#additional-zip-deploy-configuration-settings)하는 방법에 대해 자세히 알아보는 것이 좋습니다

@@ -3,13 +3,13 @@ title: Azure CLI를 사용하여 Azure에 배포할 Node.js 앱 만들기
 description: '자습서 2부: Azure CLI - 앱 코드 만들기'
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 6d11f21dfda82a5881e177908c5f16c948df78cf
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 89e979dabca91e47083f48e42543453facc57130
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365196"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689143"
 ---
 # <a name="create-the-app-code-using-express"></a>Express를 사용하여 앱 코드 만들기
 
@@ -40,7 +40,7 @@ ms.locfileid: "91365196"
 
     ![로컬에서 Express 앱 실행](media/azure-cli/local-app.png)
 
-1. 앱 테스트가 완료되면 `npm start`를 실행한 터미널에서 **Ctrl**+**C**를 눌러서 서버를 중지합니다.
+1. 앱 테스트가 완료되면 `npm start`를 실행한 터미널에서 **Ctrl**+**C** 를 눌러서 서버를 중지합니다.
 
 > [!div class="nextstepaction"]
 > [앱을 만들었습니다.](tutorial-vscode-azure-cli-node-03.md) [문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=express)

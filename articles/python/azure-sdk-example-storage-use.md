@@ -3,13 +3,13 @@ title: Python용 Azure SDK에서 Azure Storage 사용
 description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage 계정에서 미리 프로비저닝된 Blob 컨테이너를 액세스한 다음, 이 컨테이너에 파일을 업로드합니다.
 ms.date: 08/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: f1ada9de2cdf52fac1b4219f1f9b8253d58ca881
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010276"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689239"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>예제: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
@@ -49,7 +49,7 @@ ms.locfileid: "92010276"
 
 ## <a name="3-create-a-file-to-upload"></a>3: 업로드할 파일 만들기
 
-다음과 같은 콘텐츠가 포함된 *sample-source.txt*라는 소스 파일(코드에 필요함)을 만듭니다.
+다음과 같은 콘텐츠가 포함된 *sample-source.txt* 라는 소스 파일(코드에 필요함)을 만듭니다.
 
 ```text
 Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
@@ -91,7 +91,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     이 환경 변수는 이 예에서만 사용되며 Azure 라이브러리에서 사용되지 않습니다.
 
-1. 다음 코드를 사용하여 *use_blob_auth.py*라는 파일을 만듭니다. 주석은 단계를 설명합니다.
+1. 다음 코드를 사용하여 *use_blob_auth.py* 라는 파일을 만듭니다. 주석은 단계를 설명합니다.
 
     ```python
     import os
@@ -160,7 +160,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 1. 스토리지 계정의 전체 연결 문자열의 값인 `AZURE_STORAGE_CONNECTION_STRING`이라는 환경 변수를 생성합니다. (이 환경 변수는 다양한 Azure CLI 설명에도 사용됩니다.)
 
-1. 다음 코드를 사용하여 *use_blob_conn_string.py*라는 Python 파일을 만듭니다. 주석은 단계를 설명합니다.
+1. 다음 코드를 사용하여 *use_blob_conn_string.py* 라는 Python 파일을 만듭니다. 주석은 단계를 설명합니다.
 
     ```python
     import os
@@ -190,7 +190,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="5-verify-blob-creation"></a>5. Blob 생성 확인
 
-두 방법 중 하나의 코드를 실행한 후 [Azure Portal](https://portal.azure.com)에서 Blob 컨테이너로 이동하여 *sample-source.txt* 파일과 콘텐츠가 동일한 *sample-blob.txt*라는 새 Blob이 있는지 확인합니다.
+두 방법 중 하나의 코드를 실행한 후 [Azure Portal](https://portal.azure.com)에서 Blob 컨테이너로 이동하여 *sample-source.txt* 파일과 콘텐츠가 동일한 *sample-blob.txt* 라는 새 Blob이 있는지 확인합니다.
 
 ![업로드한 파일을 보여주는 Blob 컨테이너의 Azure Portal 페이지](media/azure-sdk-example-storage/portal-blob-container-file.png)
 

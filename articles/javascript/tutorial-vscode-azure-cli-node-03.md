@@ -3,13 +3,13 @@ title: Azure CLI에서 앱을 호스트하는 Azure App Service 만들기
 description: '자습서 3부: Azure CLI - App Service 만들기'
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 3279c215b1822b3e989eeacb66a725c91e023a34
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: c22896484e07c8657582265e70dda41b12efb155
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364796"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688653"
 ---
 # <a name="create-the-app-service"></a>App Service 만들기
 
@@ -17,7 +17,7 @@ ms.locfileid: "91364796"
 
 이 단계에서는 Azure CLI를 사용하여 앱 코드를 호스트하는 Azure App Service를 만듭니다.
 
-1. 터미널 또는 명령 프롬프트에서 다음 명령을 사용하여 App Service에 대한 **리소스 그룹**을 만듭니다. 리소스 그룹은 기본적으로 Azure에 있는 앱 리소스의 명명된 컬렉션(예: 웹 사이트, 데이터베이스, Azure Functions 등)입니다.
+1. 터미널 또는 명령 프롬프트에서 다음 명령을 사용하여 App Service에 대한 **리소스 그룹** 을 만듭니다. 리소스 그룹은 기본적으로 Azure에 있는 앱 리소스의 명명된 컬렉션(예: 웹 사이트, 데이터베이스, Azure Functions 등)입니다.
 
     ```azurecli
     az group create --name myResourceGroup --location westus
@@ -33,7 +33,7 @@ ms.locfileid: "91364796"
     az configure --defaults group=myResourceGroup location=westus
     ```
 
-1. 다음 명령을 실행하여 App Service에 사용되는 기본 가상 머신을 정의하는 **App Service 계획**을 만듭니다.
+1. 다음 명령을 실행하여 App Service에 사용되는 기본 가상 머신을 정의하는 **App Service 계획** 을 만듭니다.
 
     ```azurecli
     az appservice plan create --name myPlan --sku F1

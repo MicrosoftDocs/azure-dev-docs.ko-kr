@@ -4,13 +4,13 @@ description: GitHub 및 CD(지속적인 배포)에서 Java 웹앱용 Azure App S
 keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: ef404f1d2e3d1ed042a99eccd2469fdd112e931b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 30b916cadc2c15f1226ab06f6925a87f6be4b3a7
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832019"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688685"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>자습서: Jenkins를 사용하여 GitHub에서 Azure App Service로 배포
 
@@ -50,7 +50,7 @@ ms.locfileid: "90832019"
 
    `https://<Jenkins-server-name>.<Azure-region>.cloudapp.azure.com`
 
-1. Jenkins 주 페이지에서 **Jenkins 관리** > **플러그 인 관리**를 선택합니다.
+1. Jenkins 주 페이지에서 **Jenkins 관리** > **플러그 인 관리** 를 선택합니다.
 
    ![Jenkins 플러그 인 관리](media/deploy-from-github-to-azure-app-service/manage-plug-ins-for-azure.png)
 
@@ -63,15 +63,15 @@ ms.locfileid: "90832019"
 
    이러한 플러그 인이 나타나지 않는 경우 **설치됨** 탭을 확인하여 아직 설치되지 않았는지 확인합니다.
 
-1. 선택한 플러그 인을 설치하려면 **지금 다운로드하고 다시 시작한 후 설치**를 선택합니다.
+1. 선택한 플러그 인을 설치하려면 **지금 다운로드하고 다시 시작한 후 설치** 를 선택합니다.
 
-1. 완료한 후에 Jenkins 메뉴에서 **Jenkins 관리**를 선택하여 이후 단계를 위한 Jenkins 관리 페이지로 돌아갑니다.
+1. 완료한 후에 Jenkins 메뉴에서 **Jenkins 관리** 를 선택하여 이후 단계를 위한 Jenkins 관리 페이지로 돌아갑니다.
 
 ## <a name="fork-sample-github-repo"></a>샘플 GitHub 리포지토리 포크
 
 1. [Spring Boot 샘플 앱을 위해 GitHub 리포지토리에 로그인](https://github.com/spring-guides/gs-spring-boot)합니다. 
 
-1. GitHub의 오른쪽 위 모서리에서 **포크**를 선택합니다.
+1. GitHub의 오른쪽 위 모서리에서 **포크** 를 선택합니다.
 
    ![GitHub에서 샘플 리포지토리 포크](media/deploy-from-github-to-azure-app-service/fork-github-repo.png)
 
@@ -89,27 +89,27 @@ Jenkins가 GitHub를 모니터링하고, GitHub 포크의 웹앱으로 새 커�
 > 그러나 GitHub 계정이 다단계 인증을 사용하는 경우 GitHub에서 토큰을 만들고, 해당 토큰을 대신 사용하도록 Jenkins를 설정합니다. 
 > 자세한 내용은 [Jenkins GitHub 플러그 인](https://wiki.jenkins.io/display/JENKINS/GitHub+Plugin) 설명서를 참조하세요.
 
-1. **Jenkins 관리** 페이지에서 **시스템 구성**을 선택합니다. 
+1. **Jenkins 관리** 페이지에서 **시스템 구성** 을 선택합니다. 
 
    ![Jenkins에서 시스템 구성](media/deploy-from-github-to-azure-app-service/manage-jenkins-configure-system.png)
 
-1. **GitHub** 섹션에서 GitHub 서버에 대한 세부 정보를 제공합니다. **GitHub 서버 추가** 목록에서 **GitHub 서버**를 선택합니다. 
+1. **GitHub** 섹션에서 GitHub 서버에 대한 세부 정보를 제공합니다. **GitHub 서버 추가** 목록에서 **GitHub 서버** 를 선택합니다. 
 
    ![Jenkins에 GitHub 서버 추가](media/deploy-from-github-to-azure-app-service/add-GitHub-server.png)
 
-1. **후크 관리** 속성을 선택하지 않은 경우 이 속성을 선택합니다. 기타 설정을 지정할 수 있도록 **고급**을 선택합니다. 
+1. **후크 관리** 속성을 선택하지 않은 경우 이 속성을 선택합니다. 기타 설정을 지정할 수 있도록 **고급** 을 선택합니다. 
 
    ![GitHub 서버에 대한 고급 Jenkins 설정 지정](media/deploy-from-github-to-azure-app-service/advanced-GitHub-settings.png)
 
-1. **추가 GitHub 작업 관리** 목록에서 **로그인 및 암호를 토큰으로 변환**을 선택합니다.
+1. **추가 GitHub 작업 관리** 목록에서 **로그인 및 암호를 토큰으로 변환** 을 선택합니다.
 
    ![로그인 및 암호를 GitHub에 대한 토큰으로 변환](media/deploy-from-github-to-azure-app-service/manage-additional-actions.png)
 
-1. GitHub 사용자 이름 및 암호를 입력할 수 있도록 **로그인 및 암호에서**를 선택합니다. 완료되면 **토큰 자격 증명 만들기**를 선택합니다. 그러면 [GitHub PAT(개인용 액세스 토큰)](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)가 만들어집니다.   
+1. GitHub 사용자 이름 및 암호를 입력할 수 있도록 **로그인 및 암호에서** 를 선택합니다. 완료되면 **토큰 자격 증명 만들기** 를 선택합니다. 그러면 [GitHub PAT(개인용 액세스 토큰)](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)가 만들어집니다.   
 
    ![로그인 및 암호에서 GitHub PAT 만들기](media/deploy-from-github-to-azure-app-service/create-github-token-credentials.png)
 
-1. **GitHub 서버** 섹션의 **자격 증명** 목록에서 새 토큰을 선택합니다. **테스트 연결**을 선택하여 인증이 작동하는지 확인합니다.
+1. **GitHub 서버** 섹션의 **자격 증명** 목록에서 새 토큰을 선택합니다. **테스트 연결** 을 선택하여 인증이 작동하는지 확인합니다.
 
    ![새 PAT를 사용하여 GitHub 서버에 대한 연결 확인](media/deploy-from-github-to-azure-app-service/check-github-connection.png)
 
@@ -125,7 +125,7 @@ Jenkins가 GitHub를 모니터링하고, GitHub 포크의 웹앱으로 새 커�
 az ad sp create-for-rbac
 ```
 
-**참고**:
+**참고** :
 
 - 성공적으로 완료되면 `az ad sp create-for-rbac`에서 여러 값을 표시합니다. `name`, `password` 및 `tenant` 값은 다음 단계에서 사용됩니다.
 - 기본적으로 서비스 주체는 Azure 계정에 대한 전체 읽기 및 쓰기 권한이 있는 **기여자** 역할을 사용하여 생성됩니다. RBAC(역할 기반 액세스 제어)와 역할에 대한 자세한 내용은 [RBAC: 기본 제공 역할](/azure/active-directory/role-based-access-built-in-roles)을 참조하세요.
@@ -134,13 +134,13 @@ az ad sp create-for-rbac
 
 ## <a name="add-service-principal-to-jenkins"></a>Jenkins에 서비스 주체 추가
 
-1. Jenkins 주 페이지에서 **자격 증명** > **시스템**을 선택합니다. 
+1. Jenkins 주 페이지에서 **자격 증명** > **시스템** 을 선택합니다. 
 
-1. **시스템** 페이지의 **도메인**에서 **전역 자격 증명(무제한)** 을 선택합니다.
+1. **시스템** 페이지의 **도메인** 에서 **전역 자격 증명(무제한)** 을 선택합니다.
 
-1. 왼쪽 메뉴에서 **자격 증명 추가**를 선택합니다.
+1. 왼쪽 메뉴에서 **자격 증명 추가** 를 선택합니다.
 
-1. **종류** 목록에서 **Azure 서비스 주체**를 선택합니다.
+1. **종류** 목록에서 **Azure 서비스 주체** 를 선택합니다.
 
 1. 이 단계에서는 표에 설명된 속성에서 서비스 주체 및 Azure 구독에 대한 정보를 제공합니다.
 
@@ -148,13 +148,13 @@ az ad sp create-for-rbac
 
    | 속성 | 값 | 설명 | 
    |----------|-------|-------------| 
-   | **구독 ID** | <*yourAzureSubscription-ID*> | Azure 구독에 대한 GUID 값입니다. <p>**팁**: Azure 구독 ID를 모르는 경우 명령줄 또는 Cloud Shell에서 이 Azure CLI 명령을 실행한 후 `id` GUID 값을 사용합니다. <p>`az account list` | 
+   | **구독 ID** | <*yourAzureSubscription-ID*> | Azure 구독에 대한 GUID 값입니다. <p>**팁** : Azure 구독 ID를 모르는 경우 명령줄 또는 Cloud Shell에서 이 Azure CLI 명령을 실행한 후 `id` GUID 값을 사용합니다. <p>`az account list` | 
    | **클라이언트 ID** | <*yourAzureServicePrincipal-ID*> | Azure 서비스 주체에 대해 이전에 생성된 `appId` GUID 값입니다. | 
    | **클라이언트 암호** | <*yourSecurePassword*> | Azure 서비스 주체에 대해 제공한 `password` 값 또는 "비밀"입니다. | 
    | **테넌트 ID** | <*yourAzureActiveDirectoryTenant-ID*> | Azure Active Directory 테넌트에 대한 `tenant` GUID 값입니다. | 
    | **ID** | <*yourAzureServicePrincipalName*> | Azure 서비스 주체에 대한 `displayName` 값입니다. | 
 
-1. 서비스 주체가 작동하는지 확인하려면 **서비스 주체 확인**을 선택합니다. 완료되면 **확인**을 선택합니다.
+1. 서비스 주체가 작동하는지 확인하려면 **서비스 주체 확인** 을 선택합니다. 완료되면 **확인** 을 선택합니다.
 
 다음으로, 앱을 빌드하고 배포하는 Jenkins 파이프라인을 만듭니다.
 
@@ -162,17 +162,17 @@ az ad sp create-for-rbac
 
 Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 만듭니다.
 
-1. Jenkins 홈페이지로 돌아간 후 **새 항목**을 선택합니다. 
+1. Jenkins 홈페이지로 돌아간 후 **새 항목** 을 선택합니다. 
 
    ![Jenkins 파이프라인 만들기](media/deploy-from-github-to-azure-app-service/jenkins-select-new-item.png)
 
-1. 파이프라인 작업의 이름(예: "My-Java-Web-App")을 제공하고 **파이프라인**을 선택합니다. 아래쪽에서 **확인**을 선택합니다.  
+1. 파이프라인 작업의 이름(예: "My-Java-Web-App")을 제공하고 **파이프라인** 을 선택합니다. 아래쪽에서 **확인** 을 선택합니다.  
 
    ![Jenkins 파이프라인 작업 이름 지정](media/deploy-from-github-to-azure-app-service/jenkins-select-pipeline.png)
 
 1. 사용자 고유의 자격 증명을 사용하지 않아도 Jenkins에서 Azure에 배포할 수 있도록 서비스 주체를 사용하여 Jenkins를 설정합니다.
 
-   1. **일반** 탭에서 **Prepare an environment for the run**(실행 환경 준비)을 선택합니다. 
+   1. **일반** 탭에서 **Prepare an environment for the run** (실행 환경 준비)을 선택합니다. 
 
    1. 표시되는 **속성 콘텐츠** 상자에서 이러한 환경 변수 및 해당 값을 추가합니다. 
 
@@ -184,7 +184,7 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
       ![실행을 위한 환경 준비 및 환경 변수 설정](media/deploy-from-github-to-azure-app-service/prepare-environment-for-jenkins-run.png)
 
-1. 완료되면 **저장**을 선택합니다.
+1. 완료되면 **저장** 을 선택합니다.
 
 다음으로, Jenkins에 대한 빌드 및 배포 스크립트를 만듭니다.
 
@@ -239,17 +239,17 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
    ![웹앱에 대한 Jenkins 파이프라인 작업 선택](media/deploy-from-github-to-azure-app-service/select-pipeline-job.png)
 
-1. 왼쪽 메뉴에서 **구성**을 선택합니다.
+1. 왼쪽 메뉴에서 **구성** 을 선택합니다.
 
-1. **파이프라인** 탭의 **정의** 목록에서 **SCM의 파이프라인 스크립트**를 선택합니다.
+1. **파이프라인** 탭의 **정의** 목록에서 **SCM의 파이프라인 스크립트** 를 선택합니다.
 
-   1. 나타나는 **SCM** 상자에서 원본 제어로 **Git**를 선택합니다. 
+   1. 나타나는 **SCM** 상자에서 원본 제어로 **Git** 를 선택합니다. 
 
-   1. **리포지토리** 섹션에서 **리포지토리 URL**로 GitHub 포크의 URL을 입력합니다. 예를 들면 다음과 같습니다. 
+   1. **리포지토리** 섹션에서 **리포지토리 URL** 로 GitHub 포크의 URL을 입력합니다. 예를 들면 다음과 같습니다. 
 
       `https://github.com/<your-GitHub-username>/gs-spring-boot`
 
-   1. **자격 증명**에 대해 이전에 만든 GitHub 개인용 액세스 토큰을 선택합니다.
+   1. **자격 증명** 에 대해 이전에 만든 GitHub 개인용 액세스 토큰을 선택합니다.
 
    1. **스크립트 경로** 상자에서 "Jenkinsfile" 스크립트의 경로를 추가합니다.
 
@@ -257,7 +257,7 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
    ![스크립트에서 Jenkins 파이프라인 가리키기](media/deploy-from-github-to-azure-app-service/set-up-jenkins-github.png)
 
-1. 완료되면 **저장**을 선택합니다.
+1. 완료되면 **저장** 을 선택합니다.
 
 다음으로, 앱을 빌드하고 Azure App Service에 배포합니다. 
 
@@ -279,7 +279,7 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
    * [**`az webapp create`**](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
 
-1. Jenkins에서 파이프라인 작업을 선택하고 **지금 빌드**를 선택합니다.
+1. Jenkins에서 파이프라인 작업을 선택하고 **지금 빌드** 를 선택합니다.
 
    빌드가 완료되면 Jenkins는 앱을 배포하며 이 앱은 현재 Azure의 게시 URL에 라이브되어 있습니다. 예를 들면 다음과 같습니다. 
 
@@ -293,7 +293,7 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
    `complete/src/main/java/Hello/Application.java`
    
-1. GitHub의 오른쪽 위 모서리에서 **이 파일 편집**을 선택합니다.
+1. GitHub의 오른쪽 위 모서리에서 **이 파일 편집** 을 선택합니다.
 
 1. `commandLineRunner()` 메서드를 이와 같이 변경하고 리포지토리의 `master` 분기에 대한 변경 내용을 커밋합니다. `master` 분기의 이 커밋은 Jenkins에서 빌드를 시작합니다. 
    

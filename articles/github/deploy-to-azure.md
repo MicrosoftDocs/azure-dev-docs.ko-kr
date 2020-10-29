@@ -6,12 +6,13 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 67093168d1daa18350f20a181eed438c6d253a04
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.custom: github-actions-azure
+ms.openlocfilehash: 098c9d35c541f7f6f05cb8470418c8bee4f01ea7
+ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805934"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92898733"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>GitHub에서 Azure로 앱 배포 
 

@@ -4,13 +4,13 @@ description: 이 빠른 시작에서는 Ubuntu, CentOS 및 SLES에서 Azure 리�
 keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Azure CLI
 ms.topic: quickstart
 ms.date: 09/30/2020
-ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: aba725cee4b61aeae98ed8d0eb89b3090241ff49
-ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
+ms.custom: devx-track-ansible,devx-track-cli, devx-track-azurecli
+ms.openlocfilehash: 7103c40c0b95ae07c60fcccff03ea60e9667a331
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91621629"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688950"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Ansible 구성
 
@@ -38,14 +38,14 @@ Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 �
 
 키 기반 인증에는 두 가지 키가 있습니다.
 
-- **공개 키**: 공개 키는 VM과 같은 호스트에 저장됩니다(이 문서 참조).
-- **프라이빗 키**: 프라이빗 키를 사용하면 호스트에 안전하게 연결할 수 있습니다. 프라이빗 키는 사실상 내 암호이며 내 암호처럼 보호해야 합니다.
+- **공개 키** : 공개 키는 VM과 같은 호스트에 저장됩니다(이 문서 참조).
+- **프라이빗 키** : 프라이빗 키를 사용하면 호스트에 안전하게 연결할 수 있습니다. 프라이빗 키는 사실상 내 암호이며 내 암호처럼 보호해야 합니다.
         
 다음 단계는 SSH 키 쌍을 만드는 과정을 안내합니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
-1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 열고(아직 열지 않은 경우) **Bash**로 전환합니다.
+1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 열고(아직 열지 않은 경우) **Bash** 로 전환합니다.
 
 1. [ssh-keygen](https://www.ssh.com/ssh/keygen/)을 사용하여 SSH 키를 만듭니다.
 
@@ -53,7 +53,7 @@ Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 �
     ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-    **참고**:
+    **참고** :
 
     - `ssh-keygen` 명령은 생성된 키 파일의 위치를 표시합니다. 가상 머신을 만들 때 이 디렉터리 이름이 필요합니다.
     - 공개 키는 `ansible_rsa.pub`에 저장되고 프라이빗 키는 `ansible_rsa`에 저장됩니다.
@@ -83,7 +83,7 @@ Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 �
     az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-    **참고**:
+    **참고** :
 
     - `az vm list` 명령의 출력에는 SSH를 통해 가상 머신에 연결하는 데 사용되는 공용 IP 주소가 포함됩니다.
 

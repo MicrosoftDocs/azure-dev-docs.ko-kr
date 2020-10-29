@@ -3,13 +3,13 @@ title: Python용 Azure 라이브러리로 Azure Storage 프로비저닝
 description: Python용 Azure SDK 라이브러리를 사용하여 Azure Storage 계정에서 Blob 컨테이너를 프로비저닝한 다음, 이 컨테이너에 파일을 업로드합니다.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: afc56afac9940a3fc6ffda11bfa68a0570cba0b9
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: f3b27dd0a09bbf17c5797e3a5c0be9bc7d48b416
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010271"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689023"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>예: Python용 Azure 라이브러리를 사용하여 Azure Storage 프로비저닝
 
@@ -45,7 +45,7 @@ ms.locfileid: "92010271"
 
 이 섹션에서는 Python 코드에서 스토리지 리소스를 프로비저닝하는 방법을 설명합니다. 원하는 경우 Azure Portal을 통해 또는 [동등 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)를 통해 리소스를 프로비저닝할 수도 있습니다.
 
-다음 코드를 사용하여 *provision_blob.py*라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
+다음 코드를 사용하여 *provision_blob.py* 라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
 
 ```python
 import os, random
@@ -157,11 +157,11 @@ python provision_blob.py
 
 ## <a name="5-verify-the-resources"></a>5: 리소스 확인
 
-1. [Azure Portal](https://portal.azure.com)을 열고 리소스 그룹과 스토리지 계정이 예상대로 프로비저닝되었는지 확인합니다. Python 스크립트에서 프로비저닝된 스토리지 계정을 보려면 리소스 그룹에서 **숨겨진 형식 표시**를 선택해야 할 수도 있습니다.
+1. [Azure Portal](https://portal.azure.com)을 열고 리소스 그룹과 스토리지 계정이 예상대로 프로비저닝되었는지 확인합니다. Python 스크립트에서 프로비저닝된 스토리지 계정을 보려면 리소스 그룹에서 **숨겨진 형식 표시** 를 선택해야 할 수도 있습니다.
 
     ![스토리지 계정을 보여주는 새 리소스 그룹의 Azure Portal 페이지](media/azure-sdk-example-storage/portal-show-hidden-types.png)
 
-1. 스토리지 계정을 선택한 다음, 왼쪽 메뉴에서 **Blob service** > **컨테이너**를 선택하여 "bloc-container-01"이 나타나는지 확인합니다.
+1. 스토리지 계정을 선택한 다음, 왼쪽 메뉴에서 **Blob service** > **컨테이너** 를 선택하여 "bloc-container-01"이 나타나는지 확인합니다.
 
     ![Blob 컨테이너를 보여주는 스토리지 계정의 Azure Portal 페이지](media/azure-sdk-example-storage/portal-show-blob-containers.png)
 

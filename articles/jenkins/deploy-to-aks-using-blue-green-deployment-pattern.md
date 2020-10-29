@@ -4,13 +4,13 @@ description: Jenkins와 파란색/녹색 배포 패턴을 사용하여 AKS(Azure
 keywords: Jenkins, Azure, DevOps, Kubernetes, k8s, AKS, 파란색/녹색 배포, 지속적인 업데이트, CD
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832049"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688660"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>자습서: 파란색/녹색 배포 패턴을 사용하여 AKS(Azure Kubernetes Service)에 배포
 
@@ -42,7 +42,7 @@ GitHub의 Microsoft 리포지토리에서 Jenkins와 파란색/녹색 배포 패
 
     ![Microsoft GitHub 리포지토리의 샘플 앱 스크린샷](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-msft.png)
 
-1. 페이지 오른쪽 상단의 **포크**를 선택하여 리포지토리를 포크하고 안내에 따라 GitHub 계정에서 리포지토리를 포크합니다.
+1. 페이지 오른쪽 상단의 **포크** 를 선택하여 리포지토리를 포크하고 안내에 따라 GitHub 계정에서 리포지토리를 포크합니다.
 
     ![포크할 GitHub 옵션의 스크린샷](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-msft-fork.png)
 
@@ -50,7 +50,7 @@ GitHub의 Microsoft 리포지토리에서 Jenkins와 파란색/녹색 배포 패
 
     ![GitHub 계정 이름 및 메모의 스크린샷](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-msft-forked.png)
 
-1. **복제 또는 다운로드**를 선택합니다.
+1. **복제 또는 다운로드** 를 선택합니다.
 
     ![리포지토리를 복제 또는 다운로드하기 위한 GitHub 옵션의 스크린샷](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-clone.png)
 
@@ -212,7 +212,7 @@ GitHub의 Microsoft 리포지토리에서 Jenkins와 파란색/녹색 배포 패
    
 1. Jenkins 대시보드 내에서 다음 단계를 수행하여 Jenkins에서 플러그 인을 설치합니다.
 
-    1. **Jenkins 관리 > 플러그 인 관리 > 사용 가능**을 차례로 선택합니다.
+    1. **Jenkins 관리 > 플러그 인 관리 > 사용 가능** 을 차례로 선택합니다.
     1. Azure Container Service 플러그 인을 검색하여 설치합니다.
 
 1. Azure에서 리소스를 관리하려면 자격 증명을 추가합니다. 플러그 인이 아직 없는 경우 **Azure 자격 증명** 플러그 인을 설치합니다.
@@ -248,7 +248,7 @@ GitHub의 Microsoft 리포지토리에서 Jenkins와 파란색/녹색 배포 패
 ## <a name="create-the-job"></a>작업 만들기
 1. **파이프라인** 형식에 새 작업을 추가합니다.
 
-1. **파이프라인** > **정의** > **SCM의 파이프라인 스크립트**를 선택합니다.
+1. **파이프라인** > **정의** > **SCM의 파이프라인 스크립트** 를 선택합니다.
 
 1. SCM 리포지토리 URL을 &lt;your-forked-repo>로 입력합니다.
 

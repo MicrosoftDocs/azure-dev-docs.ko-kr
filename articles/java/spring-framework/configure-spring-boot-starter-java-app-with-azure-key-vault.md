@@ -8,13 +8,13 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
-ms.custom: devx-track-java
-ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
-ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: c6a81f5fb08985626909fe499584e67351a70ad0
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409975"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688843"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>자습서: Spring Boot 애플리케이션의 Azure Key Vault에서 비밀 읽기
 
@@ -96,7 +96,7 @@ Spring Boot 애플리케이션은 사용자 이름 및 암호와 같은 중요�
 
 ### <a name="create-a-service-principal-for-use-in-by-your-app"></a>앱에서 사용할 서비스 주체 만들기
 
-Azure AD *서비스 주체*는 구독 내 Azure 리소스에 대한 액세스를 제공합니다. 서비스 주체를 서비스의 사용자 ID로 생각할 수 있습니다.  "서비스"는 이 자습서에서 빌드된 샘플 앱을 포함하여 Azure 리소스에 액세스해야 하는 애플리케이션, 서비스 또는 플랫폼입니다. 지정한 리소스에 대해서만 액세스 권한이 있는 서비스 주체를 구성할 수 있습니다. 그런 다음, 서비스 주체의 자격 증명을 사용하여 해당 리소스에 액세스하도록 애플리케이션이나 서비스를 구성합니다.
+Azure AD *서비스 주체* 는 구독 내 Azure 리소스에 대한 액세스를 제공합니다. 서비스 주체를 서비스의 사용자 ID로 생각할 수 있습니다.  "서비스"는 이 자습서에서 빌드된 샘플 앱을 포함하여 Azure 리소스에 액세스해야 하는 애플리케이션, 서비스 또는 플랫폼입니다. 지정한 리소스에 대해서만 액세스 권한이 있는 서비스 주체를 구성할 수 있습니다. 그런 다음, 서비스 주체의 자격 증명을 사용하여 해당 리소스에 액세스하도록 애플리케이션이나 서비스를 구성합니다.
 
 이 명령을 사용하여 서비스 주체를 만듭니다.
 
@@ -236,18 +236,18 @@ Key Vault를 만들고 비밀을 저장했으면, 다음 섹션에서는 Spring 
 
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 1. 이 목록 다음에 나오는 그림에 표시된 대로 항목을 선택합니다.
-   1. **프로젝트**: `Maven Project`
-   1. **언어**: `Java`
-   1. **Spring Boot**: `2.3.3`
-   1. **그룹**: `com.contoso`(여기에 유효한 Java 패키지 이름을 입력할 수 있습니다.)
-   1. **아티팩트**: *keyvault*(여기에 유효한 Java 클래스 이름을 입력할 수 있습니다.)
-   1. **패키징**: `Jar`
-   1. **Java**: `11`(8을 선택할 수 있지만 이 자습서에서는 11로 유효성이 검사되었습니다.)
+   1. **프로젝트** : `Maven Project`
+   1. **언어** : `Java`
+   1. **Spring Boot** : `2.3.3`
+   1. **그룹** : `com.contoso`(여기에 유효한 Java 패키지 이름을 입력할 수 있습니다.)
+   1. **아티팩트** : *keyvault* (여기에 유효한 Java 클래스 이름을 입력할 수 있습니다.)
+   1. **패키징** : `Jar`
+   1. **Java** : `11`(8을 선택할 수 있지만 이 자습서에서는 11로 유효성이 검사되었습니다.)
 1. **종속성 추가...** 를 선택합니다.
 1. 텍스트 필드에 `Spring Web`을 입력하고 Ctrl + Enter를 누릅니다.
 1. 텍스트 필드에 `Azure Key Vault`를 입력하고 Enter를 누릅니다.  화면이 다음과 같이 표시됩니다.
    :::image type="content" source="media/configure-spring-boot-starter-java-app-with-azure-key-vault/spring-initializr-choices.png" alt-text="올바른 항목이 선택된 Spring Initializr":::
-1. 페이지 맨 아래에서 **생성**을 선택합니다.
+1. 페이지 맨 아래에서 **생성** 을 선택합니다.
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.  설명을 위해 현재 사용자의 홈 디렉터리에 *keyvault* 디렉터리를 사용합니다.  위의 값은 해당 디렉터리에 *keyvault.zip* 파일을 제공합니다.
 
 다음 단계에 따라 애플리케이션을 검사하고 로컬에서 실행합니다.
@@ -261,15 +261,15 @@ Key Vault를 만들고 비밀을 저장했으면, 다음 섹션에서는 Spring 
    ├── pom.xml
    └── src
        ├── main
-       │   ├── java
-       │   │   └── com
-       │   │       └── contoso
-       │   │           └── keyvault
-       │   │               └── KeyvaultApplication.java
-       │   └── resources
-       │       ├── application.properties
-       │       ├── static
-       │       └── templates
+       │   ├── java
+       │   │   └── com
+       │   │       └── contoso
+       │   │           └── keyvault
+       │   │               └── KeyvaultApplication.java
+       │   └── resources
+       │       ├── application.properties
+       │       ├── static
+       │       └── templates
    ```
 
 1. 텍스트 편집기에서 *KeyvaultApplication.java* 파일을 엽니다.  파일을 다음과 같이 수정합니다.
@@ -323,11 +323,11 @@ Key Vault를 만들고 비밀을 저장했으면, 다음 섹션에서는 Spring 
 
 다음 단계에서는 Spring Boot 애플리케이션 `KeyvaultApplication`에 필요한 수정 사항을 보여줍니다.
 
-Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 것이 가능하듯이 Spring 구성을 통해 코드에서 구성을 외부화할 수 있습니다.  Spring 구성의 가장 간단한 형태는 *application.properties* 파일입니다.  Maven 프로젝트에서는 *src/main/resources/application.properties*에 이 파일이 있습니다.  Spring Initializer는 이 위치에 길이가 0인 파일이 포함되어 있습니다.
+Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 것이 가능하듯이 Spring 구성을 통해 코드에서 구성을 외부화할 수 있습니다.  Spring 구성의 가장 간단한 형태는 *application.properties* 파일입니다.  Maven 프로젝트에서는 *src/main/resources/application.properties* 에 이 파일이 있습니다.  Spring Initializer는 이 위치에 길이가 0인 파일이 포함되어 있습니다.
 
 다음 단계를 수행하여 이 파일에 필요한 구성을 추가합니다.
 
-1. 편집기에서 *src/main/resources/application.properties*를 열고 다음 내용에서 Azure 구독에 대한 값을 조정하여 포함시킵니다.
+1. 편집기에서 *src/main/resources/application.properties* 를 열고 다음 내용에서 Azure 구독에 대한 값을 조정하여 포함시킵니다.
 
    ```txt
    azure.keyvault.client-id=685on005-ns8q-4o04-8s16-n7os38o2ro5n
@@ -353,7 +353,7 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
 
 *KeyvaultApplication.java* 파일(또는 해당하는 클래스 이름)을 간단히 변경합니다.
 
-1. 텍스트 편집기에서 *src/main/java/com/contoso/keyvault/KeyvaultApplication.java*를 엽니다.
+1. 텍스트 편집기에서 *src/main/java/com/contoso/keyvault/KeyvaultApplication.java* 를 엽니다.
 1. 아래의 가져오기를 추가합니다.
 
    ```java
@@ -398,14 +398,14 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.11.0</version>
+     <version>1.12.0</version>
     </plugin>
    ```
 
    > [!NOTE]
    > 형식은 신경 쓸 필요가 없습니다.  이 프로세스 중에 `azure-webapp-maven-plugin`이 전체 POM의 형식을 다시 지정합니다.
 
-1. *pom.xml*을 저장하고 닫습니다.
+1. *pom.xml* 을 저장하고 닫습니다.
 1. 명령줄에서 새로 추가된 플러그인의 `config` 목표를 호출합니다.  Maven 플러그인에 몇 가지 질문이 표시되고, 답변에 기반하여 *pom.xml* 파일이 편집됩니다.  사용자가 POM을 추가로 편집합니다.
 
    ```bash
@@ -439,7 +439,7 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.11.0</version>  
+       <version>1.12.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
          *<subscriptionId>********-****-****-****-************</subscriptionId>
@@ -449,8 +449,8 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
          *<region>eastus</region>
          <runtime>
            <os>linux</os>
-           <javaVersion>java11</javaVersion>
-           <webContainer>java11</webContainer>
+           <javaVersion>java 11</javaVersion>
+           <webContainer>Java SE</webContainer>
          </runtime>
          *<!-- Begin of App Settings  -->
          *<appSettings>
@@ -530,7 +530,7 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
    }
    ```
 
-1. 이전 단계에서 만든 Azure 리소스에 대한 관리 ID의 이름을 지정하도록 *application.properties*를 편집합니다.
+1. 이전 단계에서 만든 Azure 리소스에 대한 관리 ID의 이름을 지정하도록 *application.properties* 를 편집합니다.
 
    1. `azure.keyvault.client-key`를 제거합니다.
    1. 이전 단계의 `principalId` 값을 갖도록 `azure.keyvault.client-id`를 업데이트합니다.  완성된 파일은 다음과 같은 모습입니다.
@@ -608,7 +608,7 @@ Azure Spring Cloud는 Azure에서 Spring Boot 애플리케이션을 배포하고
    | runtime-version | Java 런타임 버전입니다.  **이 값은 위의 Spring Initializr에서 선택한 값과 일치해야 합니다.** |
    | 서비스 | 기존 서비스의 이름입니다. |
 
-   *service*와 *app*의 차이를 이해하려면 [Azure Spring Cloud의 앱 및 배포 이해](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment)를 참조하세요.
+   *service* 와 *app* 의 차이를 이해하려면 [Azure Spring Cloud의 앱 및 배포 이해](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment)를 참조하세요.
 
 1. Azure 리소스에 대한 관리 ID를 가져옵니다.  이 앱에서 액세스를 허용하도록 기존 Key Vault를 구성하는 데 사용합니다.
 
@@ -638,7 +638,7 @@ Azure Spring Cloud는 Azure에서 Spring Boot 애플리케이션을 배포하고
 
 ## <a name="summary"></a>요약
 
-**Spring Initializr**를 사용하여 새로운 Java 웹 애플리케이션을 만들었습니다.  중요한 정보를 저장하기 위해 Azure Key Vault를 만든 다음, Key Vault의 정보를 검색하도록 애플리케이션을 구성했습니다.  로컬에서 테스트한 후 Azure App Service 및 Azure Spring Cloud에 앱을 배포했습니다.
+**Spring Initializr** 를 사용하여 새로운 Java 웹 애플리케이션을 만들었습니다.  중요한 정보를 저장하기 위해 Azure Key Vault를 만든 다음, Key Vault의 정보를 검색하도록 애플리케이션을 구성했습니다.  로컬에서 테스트한 후 Azure App Service 및 Azure Spring Cloud에 앱을 배포했습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

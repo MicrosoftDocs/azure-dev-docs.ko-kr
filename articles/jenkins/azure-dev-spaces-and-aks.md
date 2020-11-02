@@ -4,13 +4,13 @@ description: 지속적인 통합 파이프라인에서 Azure Dev Spaces 플러�
 keywords: jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 39a730507df89186b8934d4ded7d2ff92c07b420
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831379"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689100"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>자습서: Azure Kubernetes Service에서 Azure Dev Spaces 사용
 
@@ -38,7 +38,7 @@ Azure Dev Spaces를 사용하면 종속 요소를 복제하거나 모방할 필�
 
 * [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 버전 2.0.43 이상
 
-* Jenkins 마스터 서버입니다. Jenkins 마스터가 없는 경우 이  [빠른 시작](/azure/jenkins/install-jenkins-solution-template)의 단계에 따라 Azure에 [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) 를 배포합니다. 
+* Jenkins 마스터 서버입니다. Jenkins 마스터가 없는 경우 이 [빠른 시작](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)의 단계에 따라 Azure에 [Jenkins](/azure/jenkins/install-jenkins-solution-template)를 배포합니다. 
 
 * 이 자습서의 뒷부분에 설명된 것처럼, Jenkins 서버에 Helm과 kubectl이 모두 설치되어 있고 Jenkins 계정에 사용할 수 있어야 합니다.
 
@@ -80,7 +80,7 @@ Azure Dev Spaces를 사용하면 종속 요소를 복제하거나 모방할 필�
 
 ## <a name="deploy-sample-apps-to-the-aks-cluster"></a>AKS 클러스터에 샘플 앱 배포
 
-이 섹션에서는 개발 공간을 설정하고 이전 섹션에서 만든 AKS 클러스터에 샘플 애플리케이션을 배포합니다. 이 애플리케이션은 *webfrontend* 및 *mywebapi*로 구성됩니다. 두 구성 요소 모두 개발 공간에 배포됩니다. 이 자습서의 뒷부분에서 mywebapi에 대한 끌어오기 요청을 제출하여 jenkins에서 CI 파이프라인을 트리거하겠습니다.
+이 섹션에서는 개발 공간을 설정하고 이전 섹션에서 만든 AKS 클러스터에 샘플 애플리케이션을 배포합니다. 이 애플리케이션은 *webfrontend* 및 *mywebapi* 로 구성됩니다. 두 구성 요소 모두 개발 공간에 배포됩니다. 이 자습서의 뒷부분에서 mywebapi에 대한 끌어오기 요청을 제출하여 jenkins에서 CI 파이프라인을 트리거하겠습니다.
 
 Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발을 사용하는 방법에 대한 자세한 내용은 [Azure Dev Spaces에서 Java를 사용하여 시작](/azure/dev-spaces/get-started-java) 및 [Azure Dev Spaces로 다중 서비스 개발](/azure/dev-spaces/multi-service-java)을 참조하세요. 두 자습서는 여기에 없는 추가 배경 정보를 제공합니다.
 
@@ -118,7 +118,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
     }
     ```
 
-4. **보기**, **터미널**을 차례로 클릭하여 VS Code에서 통합 터미널을 엽니다.
+4. **보기** , **터미널** 을 차례로 클릭하여 VS Code에서 통합 터미널을 엽니다.
 
 5. `azds prep` 명령을 실행하여 개발 공간에서 실행할 애플리케이션을 준비합니다. 애플리케이션을 올바르게 준비하려면 이 명령을 반드시 `dev-spaces/samples/java/getting-started/webfrontend`에서 실행해야 합니다.
 
@@ -147,7 +147,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
     ```
     브라우저 창에서 이 URL을 열면 웹앱이 보입니다. 컨테이너가 실행될 때 `stdout` 및 `stderr` 출력이 터미널 창으로 스트리밍됩니다.
 
-8. 다음으로, *mywebapi*를 설정하고 배포합니다.
+8. 다음으로, *mywebapi* 를 설정하고 배포합니다.
 
     1. 디렉터리를 `dev-spaces/samples/java/getting-started/mywebapi`로 변경합니다.
 
@@ -173,7 +173,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
 
 ### <a name="install-plug-ins"></a>플러그 인 설치
 
-1. Jenkins 서버에 로그인합니다. **Jenkins 관리 > 플러그 인 관리**를 선택합니다.
+1. Jenkins 서버에 로그인합니다. **Jenkins 관리 > 플러그 인 관리** 를 선택합니다.
 2. **사용 가능** 탭에서 다음 플러그 인을 선택합니다.
     * [Azure Dev Spaces](https://plugins.jenkins.io/azure-dev-spaces)
     * [Azure Container Registry 작업](https://plugins.jenkins.io/azure-container-registry-tasks)
@@ -182,13 +182,13 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
 
     이러한 플러그 인이 목록에 표시되지 않으면 **설치됨** 탭을 확인하여 플러그 인이 이미 설치되어 있는지 확인합니다.
 
-3. 플러그 인을 설치하려면 **지금 다운로드 및 다시 시작한 후 설치**를 선택합니다.
+3. 플러그 인을 설치하려면 **지금 다운로드 및 다시 시작한 후 설치** 를 선택합니다.
 
 4. Jenkins 서버를 다시 시작하여 설치를 완료합니다.
 
 ### <a name="install-helm-and-kubectl"></a>Helm 및 kubectl 설치
 
-샘플 파이프라인은 Helm 및 kubectl을 사용하여 개발 공간에 배포합니다. Jenkins를 설치하면 *jenkins*라는 관리자 계정이 생성됩니다. Helm와 kubectl 둘 다 jenkins 사용자가 액세스할 수 있어야 합니다.
+샘플 파이프라인은 Helm 및 kubectl을 사용하여 개발 공간에 배포합니다. Jenkins를 설치하면 *jenkins* 라는 관리자 계정이 생성됩니다. Helm와 kubectl 둘 다 jenkins 사용자가 액세스할 수 있어야 합니다.
 
 1. SSH를 통해 Jenkins 마스터에 연결합니다. 
 
@@ -203,7 +203,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
 
 ### <a name="add-credentials-to-jenkins"></a>Jenkins에 자격 증명 추가
 
-1. Jenkins에서 Azure 서비스 주체는 Azure 리소스를 인증하고 액세스해야 합니다. 서비스 주체를 만드는 방법은 Azure App Service에 배포 자습서의  [서비스 주체 만들기](deploy-from-github-to-azure-app-service.md#create-service-principal) 섹션을 참조하세요. 다음 단계를 완료하려면 필요하므로 `create-for-rbac`의 출력 복사본을 꼭 저장해야 합니다. 출력은 다음과 같이 표시됩니다.
+1. Jenkins에서 Azure 서비스 주체는 Azure 리소스를 인증하고 액세스해야 합니다. 서비스 주체를 만드는 방법은 Azure App Service에 배포 자습서의 [서비스 주체 만들기](deploy-from-github-to-azure-app-service.md#create-service-principal) 섹션을 참조하세요. 다음 단계를 완료하려면 필요하므로 `create-for-rbac`의 출력 복사본을 꼭 저장해야 합니다. 출력은 다음과 같이 표시됩니다.
 
     ```json
     {
@@ -221,7 +221,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
 
     ![Jenkins에 서비스 주체 자격 증명 추가](media/azure-dev-spaces-and-aks/add-service-principal-credentials.png)
 
-    **설명**은 선택 사항입니다. 자세한 지침은 Azure App Service에 배포 자습서의 [Jenkins에 서비스 주체 추가](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) 섹션을 참조하세요. 
+    **설명** 은 선택 사항입니다. 자세한 지침은 Azure App Service에 배포 자습서의 [Jenkins에 서비스 주체 추가](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) 섹션을 참조하세요. 
 
 
 
@@ -249,7 +249,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
     }
     ```
 
-4. *사용자 이름 및 암호* 자격 증명 유형을 Jenkins에 추가합니다. **username**은 이전 단계의 사용자 이름이며, 이 예제에서는 `acr01`입니다. **password**는 첫 번째 암호의 값이며, 이 예제에서는 `vGBP=zzzzzzzzzzzzzzzzzzzzzzzzzzz`입니다. 이 자격 증명의 **ID**는 ACR_CRED_ID의 값입니다.
+4. *사용자 이름 및 암호* 자격 증명 유형을 Jenkins에 추가합니다. **username** 은 이전 단계의 사용자 이름이며, 이 예제에서는 `acr01`입니다. **password** 는 첫 번째 암호의 값이며, 이 예제에서는 `vGBP=zzzzzzzzzzzzzzzzzzzzzzzzzzz`입니다. 이 자격 증명의 **ID** 는 ACR_CRED_ID의 값입니다.
 
 5. AKS 자격 증명을 설정합니다. *Kubernetes 구성(kubeconfig)* 자격 증명 유형을 Jenkins에 추가합니다("직접 입력" 옵션 사용). AKS 클러스터에 대한 액세스 자격 증명을 얻으려면 다음 명령을 실행합니다.
 
@@ -257,7 +257,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
     az aks get-credentials -g MyResourceGroup -n <yourAKSName> -f -
     ```
 
-   이 자격 증명의 **ID**는 다음 섹션에 나오는 KUBE_CONFIG_ID의 값입니다.
+   이 자격 증명의 **ID** 는 다음 섹션에 나오는 KUBE_CONFIG_ID의 값입니다.
 
 ## <a name="create-a-pipeline"></a>파이프라인 만들기
 
@@ -267,15 +267,15 @@ Jenkins 파이프라인 구성과 Jenkinsfile은 CI 파이프라인의 단계를
 
 ![Jenkins 파이프라인 흐름](media/azure-dev-spaces-and-aks/jenkins-pipeline-flow.png)
 
-1. [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi)에서 수정된 *mywebapi* 프로젝트 버전을 다운로드합니다. 이 프로젝트는 *Jenkinsfile*, *Dockerfiles* 및 Helm 차트를 포함하여 파이프라인을 만드는 데 필요한 여러 파일을 포함하고 있습니다.
+1. [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi)에서 수정된 *mywebapi* 프로젝트 버전을 다운로드합니다. 이 프로젝트는 *Jenkinsfile* , *Dockerfiles* 및 Helm 차트를 포함하여 파이프라인을 만드는 데 필요한 여러 파일을 포함하고 있습니다.
 
-2. Jenkins에 로그인합니다. 왼쪽 메뉴에서 **항목 추가**를 선택합니다.
+2. Jenkins에 로그인합니다. 왼쪽 메뉴에서 **항목 추가** 를 선택합니다.
 
-3. **파이프라인**을 선택한 다음, **항목 이름 입력** 상자에 이름을 입력합니다. **확인**을 선택하면 파이프라인 구성 화면이 자동으로 열립니다.
+3. **파이프라인** 을 선택한 다음, **항목 이름 입력** 상자에 이름을 입력합니다. **확인** 을 선택하면 파이프라인 구성 화면이 자동으로 열립니다.
 
-4. **일반** 탭에서 **Prepare an environment for the run**(실행 환경 준비)을 선택합니다. 
+4. **일반** 탭에서 **Prepare an environment for the run** (실행 환경 준비)을 선택합니다. 
 
-5. **Keep Jenkins Environment Variables**(Jenkins 환경 변수 유지) 및 **Keep Jenkins Build Variables**(Jenkins 빌드 변수 유지)를 선택합니다.
+5. **Keep Jenkins Environment Variables** (Jenkins 환경 변수 유지) 및 **Keep Jenkins Build Variables** (Jenkins 빌드 변수 유지)를 선택합니다.
 
 6. **속성 콘텐츠** 상자에 다음 환경 변수를 입력합니다.
 
@@ -298,11 +298,11 @@ Jenkins 파이프라인 구성과 Jenkinsfile은 CI 파이프라인의 단계를
 
     ![Jenkins 파이프라인 환경 변수](media/azure-dev-spaces-and-aks/jenkins-pipeline-environment.png)
 
-7. **파이프라인 > 정의**에서 **SCM의 파이프라인 스크립트**를 선택합니다.
-8. **SCM**에서 **Git**를 선택한 다음, 리포지토리 URL을 입력합니다.
-9. **분기 지정자**에 `refs/remotes/origin/${GITHUB_PR_SOURCE_BRANCH}`를 입력합니다.
+7. **파이프라인 > 정의** 에서 **SCM의 파이프라인 스크립트** 를 선택합니다.
+8. **SCM** 에서 **Git** 를 선택한 다음, 리포지토리 URL을 입력합니다.
+9. **분기 지정자** 에 `refs/remotes/origin/${GITHUB_PR_SOURCE_BRANCH}`를 입력합니다.
 10. SCM 리포지토리 URL 및 스크립트 경로 "Jenkinsfile"을 입력합니다.
-11. **경량 체크 아웃**이 선택됩니다.
+11. **경량 체크 아웃** 이 선택됩니다.
 
 ## <a name="create-a-pull-request-to-trigger-the-pipeline"></a>파이프라인을 트리거하는 끌어오기 요청 만들기
 
@@ -343,15 +343,15 @@ Jenkins 파이프라인 구성과 Jenkinsfile은 CI 파이프라인의 단계를
     }
     ```
 
-2. Jenkins에 로그인하고 파이프라인 이름을 선택한 다음, **지금 작성**을 선택합니다. 
+2. Jenkins에 로그인하고 파이프라인 이름을 선택한 다음, **지금 작성** 을 선택합니다. 
 
-    Jenkins 파이프라인을 자동으로 트리거하도록 *webhook*를 설정할 수도 있습니다. 끌어오기 요청을 입력하면 GitHub가 Jenkins에 POST를 발급하고 파이프라인을 트리거합니다. webhook 설정에 대한 자세한 내용은 [GitHub에 Jenkins 연결](deploy-from-github-to-azure-app-service.md#connect-jenkins-to-github)을 참조하세요.
+    Jenkins 파이프라인을 자동으로 트리거하도록 *webhook* 를 설정할 수도 있습니다. 끌어오기 요청을 입력하면 GitHub가 Jenkins에 POST를 발급하고 파이프라인을 트리거합니다. webhook 설정에 대한 자세한 내용은 [GitHub에 Jenkins 연결](deploy-from-github-to-azure-app-service.md#connect-jenkins-to-github)을 참조하세요.
 
 3. 현재 공유 버전과 변경 내용 비교:
 
     1. 브라우저를 열고 공유 버전 `https://webfrontend.XXXXXXXXXXXXXXXXXXX.eastus.aksapp.io`로 이동합니다. TEST_ENDPOINT에는 URL이 포함됩니다.
 
-    2. 다른 탭을 열고 PR 개발 공간 URL을 입력합니다. `https://<yourdevspacename>.s.webfrontend.XXXXXXXXXXXXXXXXXXX.eastus.aksapp.io`와 유사합니다. Jenkins 작업의 **빌드 기록 > <build#> > 콘솔 출력**에서 링크를 찾을 수 있습니다. 페이지에서 `aksapp`을 검색하거나, 접두사만 보려면 `azdsprefix`를 검색합니다.
+    2. 다른 탭을 열고 PR 개발 공간 URL을 입력합니다. `https://<yourdevspacename>.s.webfrontend.XXXXXXXXXXXXXXXXXXX.eastus.aksapp.io`와 유사합니다. Jenkins 작업의 **빌드 기록 > <build#> > 콘솔 출력** 에서 링크를 찾을 수 있습니다. 페이지에서 `aksapp`을 검색하거나, 접두사만 보려면 `azdsprefix`를 검색합니다.
 
  
 
@@ -359,7 +359,7 @@ Jenkins 파이프라인 구성과 Jenkinsfile은 CI 파이프라인의 단계를
 
 끌어오기 요청을 제출하면 Jenkins는 팀의 공유 개발 공간에 따라 자식 개발 공간을 만들고, 해당 자식 개발 공간의 끌어오기 요청에 있는 코드를 실행합니다. 자식 개발 공간의 URL은 `http://$env.azdsprefix.<test_endpoint>` 형식입니다. 
 
-**$env.azdsprefix**는 Azure Dev Spaces 플러그 인의 파이프라인 실행 중에 **devSpacesCreate**를 통해 설정됩니다.
+**$env.azdsprefix** 는 Azure Dev Spaces 플러그 인의 파이프라인 실행 중에 **devSpacesCreate** 를 통해 설정됩니다.
 
 ```Groovy
 stage('create dev space') {

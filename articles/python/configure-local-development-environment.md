@@ -3,13 +3,13 @@ title: Azure 개발을 위한 로컬 Python 환경 구성
 description: Visual Studio Code, Azure SDK 라이브러리 및 라이브러리 인증에 필요한 자격 증명을 포함하여 Azure를 사용하기 위한 로컬 Python 개발 환경을 설정하는 방법을 설명합니다.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e3ddedf44c339aaf4f30933d99d5b27052f1aea3
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 8f18d579259e1510c0aac0f7d66bb219cb327d1b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846754"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688584"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure를 위한 로컬 Python 개발 환경 구성
 
@@ -23,7 +23,7 @@ ms.locfileid: "91846754"
 
 워크스테이션을 구성한 후에는 최소한의 구성만 추가하면 이 개발자 센터와 Azure 설명서의 다른 곳에서 다양한 빠른 시작과 자습서를 완료할 수 있습니다.
 
-로컬 개발을 위한 이 설정은 Azure에서 애플리케이션의 *클라우드 환경*을 구성하는 [프로비저닝 리소스](cloud-development-flow.md)와는 별개의 문제입니다. 개발 프로세스에서는 해당 클라우드 리소스에 액세스할 수 있는 로컬 개발 환경에서 코드를 실행하지만, 코드는 아직 클라우드의 [적절한 호스팅 서비스](quickstarts-app-hosting.md)에 배포되지 않았습니다. 이 배포 단계는 [Azure 개발 흐름](cloud-development-flow.md) 문서에 설명된 대로 나중에 제공됩니다.
+로컬 개발을 위한 이 설정은 Azure에서 애플리케이션의 *클라우드 환경* 을 구성하는 [프로비저닝 리소스](cloud-development-flow.md)와는 별개의 문제입니다. 개발 프로세스에서는 해당 클라우드 리소스에 액세스할 수 있는 로컬 개발 환경에서 코드를 실행하지만, 코드는 아직 클라우드의 [적절한 호스팅 서비스](quickstarts-app-hosting.md)에 배포되지 않았습니다. 이 배포 단계는 [Azure 개발 흐름](cloud-development-flow.md) 문서에 설명된 대로 나중에 제공됩니다.
 
 ## <a name="install-components"></a>구성 요소 설치
 
@@ -94,7 +94,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
     az ad sp create-for-rbac --name localtest-sp-rbac --skip-assignment --sdk-auth > local-sp.json
     ```
 
-    이 명령은 *local-sp.json*에 출력을 저장합니다. 명령 및 인수에 대한 자세한 내용은 [create-for-rbac 명령의 기능](#what-the-create-for-rbac-command-does)을 참조하세요.
+    이 명령은 *local-sp.json* 에 출력을 저장합니다. 명령 및 인수에 대한 자세한 내용은 [create-for-rbac 명령의 기능](#what-the-create-for-rbac-command-does)을 참조하세요.
 
     조직에 속한 개발자는 구독에서 이 명령을 실행할 수 있는 권한이 없을 수도 있습니다. 이 경우 구독 소유자에게 연락하여 서비스 주체를 만들어 달라고 요청합니다.
 
@@ -124,7 +124,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
     구독 ID를 검색하려면 [`az account show`](/cli/azure/account#az-account-show) 명령을 실행하고 출력에서 `id` 속성을 찾습니다.
 
-    편의를 위해 동일한 명령이 포함된 명령줄 스크립트 파일(예: macOS/Linux의 경우 *setenv.sh* 또는 Windows의 경우 *setenv.cmd*)을 만듭니다. 그런 다음, 로컬 테스트를 위해 터미널 또는 명령 프롬프트를 열 때마다 스크립트를 실행하여 변수를 설정할 수 있습니다. 다시 강조하지만, 파일이 사용자 계정에만 남아 있도록 스크립트 파일을 소스 제어에 추가하지 마세요.
+    편의를 위해 동일한 명령이 포함된 명령줄 스크립트 파일(예: macOS/Linux의 경우 *setenv.sh* 또는 Windows의 경우 *setenv.cmd* )을 만듭니다. 그런 다음, 로컬 테스트를 위해 터미널 또는 명령 프롬프트를 열 때마다 스크립트를 실행하여 변수를 설정할 수 있습니다. 다시 강조하지만, 파일이 사용자 계정에만 남아 있도록 스크립트 파일을 소스 제어에 추가하지 마세요.
 
 1. 항상 워크스테이션의 특정 사용자 계정 내에 남아 있도록 클라이언트 ID와 클라이언트 암호(및 클라이언트 암호를 저장하는 모든 파일)를 보호합니다. 이러한 속성을 소스 제어에 저장하거나 다른 개발자와 공유하지 마세요. 필요한 경우 서비스 주체를 삭제하고 새로 만들 수 있습니다.
 
@@ -144,7 +144,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
 - `--skip-assignment` 인수는 기본 권한 없는 서비스 주체를 만듭니다. 그 후에는 로컬에서 실행되는 코드가 리소스에 액세스할 수 있도록 서비스 주체에게 특정 권한을 할당해야 합니다. 서비스 주체에게 관련 리소스에 대한 권한을 부여하는 방법을 자세히 설명하는 여러 빠른 시작과 자습서가 있습니다.
 
-- 이 명령은 *local-sp.json*이라는 파일에 저장되는 JSON 출력을 예로서 제공합니다.
+- 이 명령은 *local-sp.json* 이라는 파일에 저장되는 JSON 출력을 예로서 제공합니다.
 
 - `--sdk-auth` 인수는 다음 값과 유사한 JSON 출력을 생성합니다. ID 값과 비밀은 완전히 다릅니다.
 
@@ -182,7 +182,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
 ## <a name="use-python-virtual-environments"></a>Python 가상 환경 사용
 
-모든 프로젝트에서 다음 단계에 따라 항상 *가상 환경*을 만들고 활성화하는 것이 좋습니다.
+모든 프로젝트에서 다음 단계에 따라 항상 *가상 환경* 을 만들고 활성화하는 것이 좋습니다.
 
 1. 터미널 또는 명령 프롬프트를 엽니다.
 
@@ -226,7 +226,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
 가상 환경은 특정 Python 인터프리터의 복사본을 격리하는 프로젝트 내의 폴더입니다. 환경을 활성화한 후(Visual Studio Code에서 자동으로 활성화) `pip install` 명령을 실행하면 해당 환경에만 라이브러리가 설치됩니다. 그런 다음, Python 코드를 실행하면 모든 라이브러리의 특정 버전을 사용하여 환경의 정확한 컨텍스트에서 코드가 실행됩니다. 그리고 `pip freeze` 명령을 실행하면 해당 라이브러리의 정확한 목록이 표시됩니다. (이 설명서의 여러 예제에서는 필요한 라이브러리에 대한 *requirements.txt* 파일을 만든 다음, `pip install -r requirements.txt` 명령을 사용합니다. 요구 사항 파일은 일반적으로 Azure에 코드를 배포할 때 필요합니다.
 
-가상 환경을 사용하지 않는 경우 Python은*글로벌 환경*에서 실행됩니다. 글로벌 환경을 사용하면 빠르고 편리하지만, 프로젝트 또는 실험을 위해 라이브러리를 계속 설치해야 하므로 시간이 지나면서 점점 커지는 경향이 있습니다. 뿐만 아니라 한 프로젝트의 라이브러리를 업데이트하면 해당 라이브러리의 다른 버전에 종속된 다른 프로젝트가 손상될 수 있습니다. 그리고 여러 프로젝트에서 환경을 공유하기 때문에 `pip freeze` 명령을 사용하여 한 프로젝트 종속성 목록을 검색할 수 없습니다.
+가상 환경을 사용하지 않는 경우 Python은 *글로벌 환경* 에서 실행됩니다. 글로벌 환경을 사용하면 빠르고 편리하지만, 프로젝트 또는 실험을 위해 라이브러리를 계속 설치해야 하므로 시간이 지나면서 점점 커지는 경향이 있습니다. 뿐만 아니라 한 프로젝트의 라이브러리를 업데이트하면 해당 라이브러리의 다른 버전에 종속된 다른 프로젝트가 손상될 수 있습니다. 그리고 여러 프로젝트에서 환경을 공유하기 때문에 `pip freeze` 명령을 사용하여 한 프로젝트 종속성 목록을 검색할 수 없습니다.
 
 글로벌 환경에서는 여러 프로젝트에 사용할 도구 패키지를 개발자가 설치합니다. 예를 들어 글로벌 환경에서 `pip install gunicorn` 명령을 실행하여 어디서나 gunicorn 웹 서버를 사용 가능하게 만들 수 있습니다.
 

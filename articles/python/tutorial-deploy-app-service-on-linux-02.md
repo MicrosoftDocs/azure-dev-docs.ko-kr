@@ -4,12 +4,12 @@ description: 자습서 2단계, 애플리케이션 설정
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 464807b8a4e637db7a0911d23770246dfc7fb0ae
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 4aaaa1833a42c40786fc6923b10876561adac859
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846694"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688898"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Azure App Service에 배포할 수 있도록 앱 준비
 
@@ -23,7 +23,7 @@ ms.locfileid: "91846694"
 
 ## <a name="option-1-vs-code-flask-tutorial-sample"></a>옵션 1: VS Code Flask 자습서 샘플
 
-[Flask 자습서](https://code.visualstudio.com/docs/python/tutorial-flask)의 결과인 [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial)을 다운로드하거나 복제합니다.
+[Flask 자습서](https://code.visualstudio.com/docs/python/tutorial-flask)의 결과인 [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial)을 다운로드하거나 복제합니다. 앱 코드는 정확히 *hello_app* 폴더에 있습니다. 샘플의 *readme.md* 파일에서 앱 로컬 실행 지침을 살펴보세요.
 
 ## <a name="option-2-vs-code-django-tutorial-sample"></a>옵션 2: VS Code Django 자습서 샘플
 
@@ -37,7 +37,7 @@ Django 앱이 이 샘플과 같은 로컬 SQLite 데이터베이스를 사용하
 
 이 섹션에서는 이 연습에서 사용되는 최소 Flask 앱에 대해 설명합니다.
 
-1. 새 폴더를 만들고, VS Code에서 열고, 아래 콘텐츠가 포함된 *hello.py*라는 파일을 추가합니다. 앱 개체는 의도적으로 `myapp`이라고 이름이 지정되어 나중에 설명하는 것처럼 App Service의 시작 명령에 이름이 사용되는 방법을 보여 줍니다.
+1. 새 폴더를 만들고, VS Code에서 열고, 아래 콘텐츠가 포함된 *hello.py* 라는 파일을 추가합니다. 앱 개체는 의도적으로 `myapp`이라고 이름이 지정되어 나중에 설명하는 것처럼 App Service의 시작 명령에 이름이 사용되는 방법을 보여 줍니다.
 
     ```python
     from flask import Flask
@@ -48,13 +48,13 @@ Django 앱이 이 샘플과 같은 로컬 SQLite 데이터베이스를 사용하
         return "Hello Flask, on Azure App Service for Linux"
     ```
 
-1. 다음과 같은 콘텐츠가 포함된 *requirements.txt*라는 파일을 만듭니다.
+1. 다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
 
     ```text
     Flask==1.1.2
     ```
 
-1. 메뉴 명령 **터미널** > **새 터미널**을 사용하여 터미널을 엽니다.
+1. 메뉴 명령 **터미널** > **새 터미널** 을 사용하여 터미널을 엽니다.
 
 1. 터미널에서 `env`라는 가상 환경을 만들고 활성화합니다.
 

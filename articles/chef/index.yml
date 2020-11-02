@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Azure의 Chef Software 설명서
-summary: Chef Software 제품을 사용하여 Azure 리소스를 배포하고 관리하는 방법을 알아봅니다.
+summary: (2020년 10월 28일) Azure에서 Chef를 사용하기 위한 설명서는 이제 Chef Software 웹 사이트(https://docs.chef.io/azure_portal)에 있습니다.
 metadata:
   title: Azure의 Chef Software 설명서
   description: Chef Software 제품을 사용하여 Azure 리소스를 배포하고 관리하는 방법을 알아봅니다.
@@ -9,13 +9,13 @@ metadata:
   ms.topic: landing-page
   author: TomArcherMsft
   ms.author: tarcher
-  ms.date: 09/17/2019
-  ms.openlocfilehash: a969cf384592ad92bd5a2cf1280db725f723a0f3
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.date: 10/28/2020
+  ms.openlocfilehash: 04cd239211c2b576708b1bde536c4e7c200e019c
+  ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "80893182"
+  ms.lasthandoff: 10/29/2020
+  ms.locfileid: "93024137"
 landingContent:
 - title: Azure의 Chef Software 정보
   linkLists:

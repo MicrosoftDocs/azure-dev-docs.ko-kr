@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 8fa0ba6c5191c407c3501dd5b4df09a041bb4160
-  ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+  ms.openlocfilehash: dcbcaa2cd94c51e7b5d73a3f92e892532f64f8f1
+  ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 10/22/2020
-  ms.locfileid: "92435017"
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "93278408"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -42,7 +42,7 @@ landingContent:
     - text: App Service를 사용한 Node.js
       url: tutorial-vscode-azure-app-service-node-01.md
     - text: App Service를 사용한 Deno
-      url: tutorial-visual-studio-code-azure-app-service-deno-01.md
+      url: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
     - text: 컨테이너
       url: tutorial-vscode-docker-node-01.md
   - linkListType: how-to-guide

@@ -41,16 +41,8 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: 리소스 정리
               href: tutorial-vscode-azure-app-service-node-05.md
-        - name: VS Code를 사용하여 Deno를 App Service에 배포
-          items:
-            - name: 소개 및 필수 구성 요소
-              href: tutorial-visual-studio-code-azure-app-service-deno-01.md
-            - name: 앱 만들기
-              href: tutorial-visual-studio-code-azure-app-service-deno-02.md
-            - name: Azure에 앱 배포
-              href: tutorial-visual-studio-code-azure-app-service-deno-03.md
-            - name: 리소스 정리
-              href: tutorial-visual-studio-code-azure-app-service-deno-04.md
+        - name: Deno를 App Service에 배포
+          href: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
         - name: VS Code를 사용하여 컨테이너 배포
           items:
             - name: 소개 및 필수 구성 요소

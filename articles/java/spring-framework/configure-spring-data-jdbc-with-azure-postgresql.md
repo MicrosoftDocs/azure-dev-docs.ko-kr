@@ -2,18 +2,18 @@
 title: Azure Database for PostgreSQL에서 Spring Data JDBC 사용
 description: Azure Database for PostgreSQL 데이터베이스에서 Spring Data JDBC를 사용하는 방법을 알아봅니다.
 documentationcenter: java
-ms.date: 05/18/2020
+ms.date: 10/13/2020
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c700d78fa8cb7568e207fd020714cda25abb2bc5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: a7d0c007b2f4c21dc6387e28d5753e67d504cd3a
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831819"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066192"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL에서 Spring Data JDBC 사용
 
@@ -34,9 +34,11 @@ ms.locfileid: "90831819"
 다음 명령을 사용하여 명령 줄에서애플리케이션을 생성합니다.
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
-
+ > [!NOTE]
+ > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
+ 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Azure Database for PostgreSQL을 사용하도록 Spring Boot 구성
 
 *src/main/resources/application.properties* 파일을 열고 다음 텍스트를 추가합니다.

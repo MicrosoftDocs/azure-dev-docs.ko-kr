@@ -3,13 +3,13 @@ title: Azure Functions를 사용하는 서버리스 Node.js 코드
 description: Azure Functions가 제공하는 서버리스 코드 인프라로 응답성이 뛰어난 주문형 HTTP 엔드포인트를 만들 수 있습니다.
 ms.topic: how-to
 ms.date: 10/27/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: bcf8528bbb5011f10fdbb57b31b08a426fd8d8d8
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
+ms.openlocfilehash: eb33717761d492051737b0c4ec86a93a6e2b6256
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898769"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192545"
 ---
 # <a name="use-azure-functions-to-develop-nodejs-serverless-code"></a>Azure Functions를 사용하여 Node.js 서버리스 코드 개발
 
@@ -37,7 +37,7 @@ Azure Function 리소스는 단일 Azure 지리적 위치의 모든 관련 함�
 
 함수는 요청 및 컨텍스트 정보와 함께 내보내진 비동기 함수입니다. Azure Portal의 다음과 같은 부분 스크린샷은 함수 코드를 보여 줍니다. 
 
-:::image type="content" source="../media/howto-serverless/portal-screenshot-azure-function-http.png" alt-text="여러 가지 일반적인 함수에서 원하는 함수를 선택하거나 직접 만들 수 있습니다.":::
+:::image type="content" source="../media/howto-serverless/portal-screenshot-azure-function-http.png" alt-text="Azure Portal에서 Azure Function의 부분 스크린샷":::
 
 ## <a name="develop-functions-locally-with-visual-studio-code-and-extensions"></a>Visual Studio Code 및 확장을 사용하여 로컬로 함수 개발
 

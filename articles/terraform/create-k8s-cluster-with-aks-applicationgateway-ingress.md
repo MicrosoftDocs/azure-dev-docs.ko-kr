@@ -3,14 +3,14 @@ title: Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만�
 description: Azure Kubernetes Service를 사용하여 수신 컨트롤러로 Application Gateway를 사용하는 Kubernetes 클러스터를 만드는 방법을 알아봅니다.
 keywords: azure devops terraform 애플리케이션 게이트웨이 수신 aks kubernetes
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401663"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192555"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
 
@@ -31,13 +31,13 @@ ms.locfileid: "91401663"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform 구성**: [Terraform 및 Azure에 액세스 구성](get-started-cloud-shell.md) 문서의 지침을 따릅니다.
+- **Terraform 구성** : [Terraform 및 Azure에 액세스 구성](get-started-cloud-shell.md) 문서의 지침을 따릅니다.
 
-- **Azure 리소스 그룹**: 데모에 사용할 Azure 리소스 그룹이 없는 경우 [Azure 리소스 그룹을 만듭니다](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). 해당 값이 데모에 사용되므로 리소스 그룹 이름과 위치를 기록해 둡니다.
+- **Azure 리소스 그룹** : 데모에 사용할 Azure 리소스 그룹이 없는 경우 [Azure 리소스 그룹을 만듭니다](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). 해당 값이 데모에 사용되므로 리소스 그룹 이름과 위치를 기록해 둡니다.
 
-- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli) 문서의 **서비스 주체 만들기** 섹션에 나온 지침을 따릅니다. `appId`, `displayName` 및 `password` 값을 적어 둡니다.
+- **Azure 서비스 주체** : [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli) 문서의 **서비스 주체 만들기** 섹션에 나온 지침을 따릅니다. `appId`, `displayName` 및 `password` 값을 적어 둡니다.
 
-- **서비스 사용자 개체 ID 가져오기**: Cloud Shell에서 다음 명령을 실행합니다. `az ad sp list --display-name <displayName>`
+- **서비스 사용자 개체 ID 가져오기** : Cloud Shell에서 다음 명령을 실행합니다. `az ad sp list --display-name <displayName>`
 
 ## <a name="create-the-directory-structure"></a>디렉터리 구조 만들기
 
@@ -90,7 +90,7 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
     }
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
+1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
 
 ## <a name="define-input-variables"></a>입력 변수 정의
 
@@ -131,42 +131,42 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
     }
 
     variable "virtual_network_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "VNET address prefix"
       default     = "15.0.0.0/8"
     }
 
     variable "aks_subnet_name" {
-      description = "AKS Subnet Name."
+      description = "Subnet Name."
       default     = "kubesubnet"
     }
 
     variable "aks_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet address prefix."
       default     = "15.0.0.0/16"
     }
 
     variable "app_gateway_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet server IP address."
       default     = "15.1.0.0/16"
     }
 
     variable "app_gateway_name" {
-      description = "Name of the Application Gateway."
+      description = "Name of the Application Gateway"
       default = "ApplicationGateway1"
     }
 
     variable "app_gateway_sku" {
-      description = "Name of the Application Gateway SKU."
+      description = "Name of the Application Gateway SKU"
       default = "Standard_v2"
     }
 
     variable "app_gateway_tier" {
-      description = "Tier of the Application Gateway SKU."
+      description = "Tier of the Application Gateway tier"
       default = "Standard_v2"
     }
 
     variable "aks_name" {
-      description = "Name of the AKS cluster."
+      description = "AKS cluster name"
       default     = "aks-cluster1"
     }
     variable "aks_dns_prefix" {
@@ -185,27 +185,27 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
     }
 
     variable "aks_agent_vm_size" {
-      description = "The size of the Virtual Machine."
+      description = "VM size"
       default     = "Standard_D3_v2"
     }
 
     variable "kubernetes_version" {
-      description = "The version of Kubernetes."
+      description = "Kubernetes version"
       default     = "1.11.5"
     }
 
     variable "aks_service_cidr" {
-      description = "A CIDR notation IP range from which to assign service cluster IPs."
+      description = "CIDR notation IP range from which to assign service cluster IPs"
       default     = "10.0.0.0/16"
     }
 
     variable "aks_dns_service_ip" {
-      description = "Containers DNS server IP address."
+      description = "DNS server IP address"
       default     = "10.0.0.10"
     }
 
     variable "aks_docker_bridge_cidr" {
-      description = "A CIDR notation IP for Docker bridge."
+      description = "CIDR notation IP for Docker bridge."
       default     = "172.17.0.1/16"
     }
 
@@ -233,10 +233,11 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
     }
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
+1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
 
-## <a name="define-the-resources"></a>리소스 정의 
-모든 리소스를 만드는 Terraform 구성 파일을 만듭니다. 
+## <a name="define-the-resources"></a>리소스 정의
+
+모든 리소스를 만드는 Terraform 구성 파일을 만듭니다.
 
 1. Cloud Shell에서 이름이 `resources.tf`인 파일을 만듭니다.
 
@@ -473,7 +474,7 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
 
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
+1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
 
 이 섹션에 제시된 코드는 클러스터의 이름, 위치 및 resource_group_name을 설정합니다. 클러스터에 액세스하는 데 사용되는 FQDN(정규화된 도메인 이름)의 일부를 형성하는 `dns_prefix` 값이 설정됩니다.
 
@@ -531,19 +532,19 @@ AKS를 사용하면 작업자 노드에 대해서만 지불합니다. `agent_poo
     }
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
+1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
 
 ## <a name="configure-azure-storage-to-store-terraform-state"></a>Terraform 상태를 저장하도록 Azure Storage 구성
 
 Terraform은 `terraform.tfstate` 파일을 통해 로컬로 상태를 추적합니다. 이 패턴은 단일 작업자 환경에서 잘 작동합니다. 그러나 실제의 다중 작업자 환경에서는 [Azure 스토리지](/azure/storage/)를 사용하여 서버의 상태를 추적해야 합니다. 이 섹션에서는 필요한 스토리지 계정 정보를 검색하고 스토리지 컨테이너를 만드는 방법을 알아봅니다. 그런 다음, Terraform 상태 정보를 해당 컨테이너에 저장합니다.
 
-1. Azure Portal의 **Azure 서비스**에서 **스토리지 계정**을 선택합니다. (**스토리지 계정** 옵션이 주 페이지에 표시되지 않으면 **더 많은 서비스**를 선택한 다음, 이를 찾아서 선택합니다.)
+1. Azure Portal의 **Azure 서비스** 에서 **스토리지 계정** 을 선택합니다. ( **스토리지 계정** 옵션이 주 페이지에 표시되지 않으면 **더 많은 서비스** 를 선택한 다음, 이를 찾아서 선택합니다.)
 
 1. **스토리지 계정** 페이지에서 Terraform가 상태를 저장하도록 설정할 스토리지 계정의 이름을 선택합니다. 예를 들어, Cloud Shell을 처음 열 때 만들어진 스토리지 계정을 사용할 수 있습니다.  Cloud Shell에서 만든 스토리지 계정 이름은 일반적으로 `cs`로 시작되고 그 뒤에 숫자 및 문자로 이루어진 임의의 문자열이 나옵니다. 
 
     선택한 스토리지 계정이 나중에 필요하므로 적어 둡니다.
 
-1. [스토리지 계정] 페이지에서 **액세스 키**를 선택합니다.
+1. [스토리지 계정] 페이지에서 **액세스 키** 를 선택합니다.
 
     ![스토리지 계정 메뉴](./media/terraform-k8s-cluster-appgw-with-tf-aks/storage-account.png)
 
@@ -591,7 +592,7 @@ Terraform은 `terraform.tfstate` 파일을 통해 로컬로 상태를 추적합�
         
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
+1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
 
 1. `terraform plan` 명령을 실행하여 인프라 요소를 정의하는 Terraform 계획을 만듭니다. 
 
@@ -613,7 +614,7 @@ Terraform은 `terraform.tfstate` 파일을 통해 로컬로 상태를 추적합�
 
     ![“terraform apply” 결과의 예](./media/terraform-k8s-cluster-appgw-with-tf-aks/terraform-apply-complete.png)
 
-1. Azure Portal에서 왼쪽 메뉴에 있는 **리소스 그룹**을 선택하여 선택한 리소스 그룹에서 새 Kubernetes 클러스터용으로 생성된 리소스를 확인합니다.
+1. Azure Portal에서 왼쪽 메뉴에 있는 **리소스 그룹** 을 선택하여 선택한 리소스 그룹에서 새 Kubernetes 클러스터용으로 생성된 리소스를 확인합니다.
 
     ![Cloud Shell 프롬프트](./media/terraform-k8s-cluster-appgw-with-tf-aks/k8s-resources-created.png)
 
@@ -656,7 +657,7 @@ Cloud Shell 세션의 시간이 초과되면 다음 단계를 사용하여 복�
     kubectl get nodes
     ```
 
-    작업자 노드의 세부 정보가 표시됩니다. 노드는 다음 이미지에 나온 대로 모두 **Ready**상태여야 합니다.
+    작업자 노드의 세부 정보가 표시됩니다. 노드는 다음 이미지에 나온 대로 모두 **Ready** 상태여야 합니다.
 
     ![kubectl 도구를 사용하여 Kubernetes 클러스터의 상태 확인](./media/terraform-k8s-cluster-appgw-with-tf-aks/kubectl-get-nodes.png)
 
@@ -670,13 +671,13 @@ Azure Active Directory Pod ID는 [Azure Resource Manager](/azure/azure-resource-
   - [MIC(Managed Identity Controller)](https://github.com/Azure/aad-pod-identity#managed-identity-controllermic) 구성 요소
   - [NMI(Node Managed Identity)](https://github.com/Azure/aad-pod-identity#node-managed-identitynmi) 구성 요소
 
-RBAC를 **사용하도록 설정**한 경우 다음 명령을 실행하여 Azure AD Pod ID를 클러스터에 설치합니다.
+RBAC를 **사용하도록 설정** 한 경우 다음 명령을 실행하여 Azure AD Pod ID를 클러스터에 설치합니다.
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
 ```
 
-RBAC를 **사용하지 않도록 설정**한 경우 다음 명령을 실행하여 Azure AD Pod ID를 클러스터에 설치합니다.
+RBAC를 **사용하지 않도록 설정** 한 경우 다음 명령을 실행하여 Azure AD Pod ID를 클러스터에 설치합니다.
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
@@ -686,7 +687,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 
 이 섹션의 코드는 [Helm](/azure/aks/kubernetes-helm)(Kubernetes 패키지 관리자)을 사용하여 `application-gateway-kubernetes-ingress` 패키지를 설치합니다.
 
-1. RBAC를 **사용하도록 설정**한 경우 다음 명령 집합을 실행하여 Helm을 설치하고 구성합니다.
+1. RBAC를 **사용하도록 설정** 한 경우 다음 명령 집합을 실행하여 Helm을 설치하고 구성합니다.
 
     ```bash
     kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -694,7 +695,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
     helm init --tiller-namespace kube-system --service-account tiller-sa
     ```
 
-1. RBAC를 **사용하지 않도록 설정**한 경우 다음 명령을 실행하여 Helm을 설치하고 구성합니다.
+1. RBAC를 **사용하지 않도록 설정** 한 경우 다음 명령을 실행하여 Helm을 설치하고 구성합니다.
 
     ```bash
     helm init

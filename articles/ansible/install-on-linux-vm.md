@@ -4,13 +4,13 @@ description: 이 빠른 시작에서는 Ubuntu, CentOS 및 SLES에서 Azure 리�
 keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Azure CLI
 ms.topic: quickstart
 ms.date: 09/30/2020
-ms.custom: devx-track-ansible,devx-track-cli, devx-track-azurecli
-ms.openlocfilehash: 7103c40c0b95ae07c60fcccff03ea60e9667a331
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: b01cf6925f19ae6dc561358546f9ee3b945cad4f
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688950"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066252"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Ansible 구성
 

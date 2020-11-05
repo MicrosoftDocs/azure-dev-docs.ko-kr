@@ -6,12 +6,12 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: f2fb9a1af0634e0cecb3b6d990ae423b31da6210
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cf565e233e505cc1d55a8d05883026e710f1e506
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90829989"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192395"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 개발자 가이드
 
@@ -121,7 +121,7 @@ class AddressService {
     @Autowired
     AddressRepository repository;
 
-    final Address newAddress = new Address("12345", "city");
+    final Address newAddress = new Address("12345", "Seattle");
 
     // There's no need to specify a partition key in the save operation.
     repository.save(updatedAddress);
@@ -222,7 +222,7 @@ public CosmosDBConfig getConfig() {
 
 Spring Data Cosmos DB SDK의 버전 2.2.x는 응답 진단 문자열과 쿼리 메트릭을 지원합니다.
 
-쿼리 메트릭을 사용하도록 설정하려면 `application.properties` 파일에서 `populateQueryMetrics` 플래그를 **true**로 설정합니다. 그런 다음, `ResponseDiagnosticsProcessor` 인터페이스를 확장하고, 진단 정보를 기록하도록 `processResponseDiagnostics` 메서드를 구현합니다. 마지막으로, 구현 인스턴스를 `CosmosDbConfig.setResponseDiagnosticsProcessor` 메서드로 전달합니다. 다음 코드에서는 구현 예제를 보여줍니다.
+쿼리 메트릭을 사용하도록 설정하려면 `application.properties` 파일에서 `populateQueryMetrics` 플래그를 **true** 로 설정합니다. 그런 다음, `ResponseDiagnosticsProcessor` 인터페이스를 확장하고, 진단 정보를 기록하도록 `processResponseDiagnostics` 메서드를 구현합니다. 마지막으로, 구현 인스턴스를 `CosmosDbConfig.setResponseDiagnosticsProcessor` 메서드로 전달합니다. 다음 코드에서는 구현 예제를 보여줍니다.
 
 ```java
 @Configuration

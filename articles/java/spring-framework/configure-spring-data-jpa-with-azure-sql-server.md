@@ -2,18 +2,18 @@
 title: Azure SQL Database에서 Spring Data JPA 사용
 description: Azure SQL Database에서 Spring Data JPA를 사용하는 방법을 알아봅니다.
 documentationcenter: java
-ms.date: 06/19/2020
+ms.date: 10/14/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e00c4e6c35756094c3c40e0194edff0b8ebd1b89
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ae162061e62c8cab6db79a9fe044f709e2c7aff9
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831969"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192485"
 ---
 # <a name="use-spring-data-jpa-with-azure-sql-database"></a>Azure SQL Database에서 Spring Data JPA 사용
 
@@ -36,6 +36,9 @@ ms.locfileid: "90831969"
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Azure SQL Database를 사용하도록 Spring Boot 구성
 

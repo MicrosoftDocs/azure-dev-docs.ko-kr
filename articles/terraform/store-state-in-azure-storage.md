@@ -4,12 +4,12 @@ description: Terraform 상태를 Azure Storage에 저장하는 방법을 알아�
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d3d2ab0ff605883926260928d3e7174a5c526781
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401743"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278418"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>자습서: Terraform 상태를 Azure Storage에 저장
 
@@ -43,7 +43,7 @@ az group create --name $RESOURCE_GROUP_NAME --location eastus
 az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_ACCOUNT_NAME --sku Standard_LRS --encryption-services blob
 
 # Get storage account key
-ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query [0].value -o tsv)
+ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv)
 
 # Create blob container
 az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME --account-key $ACCOUNT_KEY
@@ -59,10 +59,10 @@ echo "access_key: $ACCOUNT_KEY"
 
 Terraform 상태 백 엔드는 `terraform init` 명령을 실행할 때 구성됩니다. 상태 백 엔드를 구성하려면 다음 데이터가 필요합니다.
 
-- **storage_account_name**: Azure Storage 계정의 이름입니다.
-- **container_name**: Blob 컨테이너의 이름입니다.
-- **키**: 만들 상태 저장소 파일의 이름입니다.
-- **access_key**: 스토리지 액세스 키입니다.
+- **storage_account_name** : Azure Storage 계정의 이름입니다.
+- **container_name** : Blob 컨테이너의 이름입니다.
+- **키** : 만들 상태 저장소 파일의 이름입니다.
+- **access_key** : 스토리지 액세스 키입니다.
 
 이러한 각 값은 Terraform 구성 파일이나 명령줄에서 지정할 수 있습니다. `access_key` 값에는 환경 변수를 사용하는 것이 좋습니다. 환경 변수를 사용하면 키가 디스크에 쓰이는 것을 방지할 수 있습니다.
 

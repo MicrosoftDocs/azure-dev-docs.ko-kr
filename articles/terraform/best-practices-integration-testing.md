@@ -2,14 +2,14 @@
 title: 자습서 - Terraform 및 Azure를 사용한 통합 테스트
 description: 통합 테스트 및 Azure DevOps를 사용하여 Terraform 프로젝트에 대한 연속 통합을 구성하는 방법을 알아봅니다.
 ms.topic: tutorial
-ms.date: 07/31/2020
+ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 73f7c279948101af509ba5e3120b1af650f38ca1
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: bd05bfa2a07ee6cfa2f4a5dc4f4771559af9a2e7
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401733"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192565"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>자습서: Azure에서 Terraform 프로젝트에 대한 통합 테스트 구성
 
@@ -28,11 +28,11 @@ ms.locfileid: "91401733"
 ## <a name="prerequisites"></a>필수 조건
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 조직 및 프로젝트**: 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](/azure/devops/organizations/projects/create-project).
-- **Terraform Build & Release Tasks 확장**: [Terraform Build & Release Tasks 확장](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)을 Azure DevOps 조직에 설치합니다.
-- **Azure DevOps 액세스 권한을 Azure 구독에 부여**: Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](/azure/devops/pipelines/library/connect-to-azure)을 만듭니다.
-- **Terraform 설치**: 사용자 환경에 따라 [Terraform을 다운로드하여 설치](https://www.terraform.io/downloads.html)합니다.
-- **테스트 샘플 포크**: [GitHub에서 Terraform 샘플 프로젝트](https://github.com/Azure/terraform)를 포크하고 개발/테스트 컴퓨터에 복제합니다.
+- **Azure DevOps 조직 및 프로젝트** : 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](/azure/devops/organizations/projects/create-project).
+- **Terraform Build & Release Tasks 확장** : [Terraform Build & Release Tasks 확장](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)을 Azure DevOps 조직에 설치합니다.
+- **Azure DevOps 액세스 권한을 Azure 구독에 부여** : Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](/azure/devops/pipelines/library/connect-to-azure)을 만듭니다.
+- **Terraform 설치** : 사용자 환경에 따라 [Terraform을 다운로드하여 설치](https://www.terraform.io/downloads.html)합니다.
+- **테스트 샘플 포크** : [GitHub에서 Terraform 샘플 프로젝트](https://github.com/Azure/terraform)를 포크하고 개발/테스트 컴퓨터에 복제합니다.
 
 ## <a name="validate-a-local-terraform-configuration"></a>로컬 Terraform 구성 유효성 검사
 
@@ -78,7 +78,7 @@ ms.locfileid: "91401733"
 
 이전 섹션에서는 Terraform 구성의 유효성을 검사하는 방법을 살펴보았습니다. 이러한 테스트 수준은 구문에만 적용되었습니다. 이 테스트는 Azure에 이미 배포되었을 수 있는 항목을 고려하지 않았습니다.
 
-Terraform은 원하는 항목을 최종 결과로 선언한다는 것을 의미하는 *선언적 언어*입니다. 예를 들어 리소스 그룹에 10개의 가상 머신이 있다고 가정해 보겠습니다. 그런 다음, 세 개의 가상 머신을 정의하는 Terraform 파일을 만듭니다. 이 계획을 적용해도 총 수는 13개로 증가하지 않습니다. 대신 Terraform에서 7개의 가상 머신을 삭제하여 3개로 끝납니다. `terraform plan`을 실행하면 실행 계획을 적용한 잠재적 결과를 확인하여 예기치 않은 결과를 방지할 수 있습니다.
+Terraform은 원하는 항목을 최종 결과로 선언한다는 것을 의미하는 *선언적 언어* 입니다. 예를 들어 리소스 그룹에 10개의 가상 머신이 있다고 가정해 보겠습니다. 그런 다음, 세 개의 가상 머신을 정의하는 Terraform 파일을 만듭니다. 이 계획을 적용해도 총 수는 13개로 증가하지 않습니다. 대신 Terraform에서 7개의 가상 머신을 삭제하여 3개로 끝납니다. `terraform plan`을 실행하면 실행 계획을 적용한 잠재적 결과를 확인하여 예기치 않은 결과를 방지할 수 있습니다.
 
 Terraform 실행 계획을 생성하려면 [terraform plan](https://www.terraform.io/docs/commands/plan.html)을 실행합니다. 이 명령은 대상 Azure 구독에 연결하여 이미 배포된 구성 부분을 확인합니다. 그런 다음, Terraform에서 Terraform 파일에 명시된 요구 사항을 충족하는 데 필요한 변경 내용을 결정합니다. 이 단계에서는 Terraform에서 아무것도 배포하지 않습니다. 계획을 적용하는 경우 발생하는 상황을 알려주는 것입니다.
 
@@ -205,9 +205,9 @@ Terraform 파일에 대한 정적 분석을 제공하는 도구는 다음과 같
 
     ![기존 YAML 파이프라인 선택](media/best-practices-integration-testing/select-existing-yaml-pipeline.png)
 
-1. **계속**을 선택하여 GitHub에서 Azure YAML 파이프라인을 로드합니다.
+1. **계속** 을 선택하여 GitHub에서 Azure YAML 파이프라인을 로드합니다.
 
-1. **파이프라인 YAML 검토** 페이지가 표시되면 **실행**을 선택하여 처음으로 파이프라인을 만들고 수동으로 트리거합니다.
+1. **파이프라인 YAML 검토** 페이지가 표시되면 **실행** 을 선택하여 처음으로 파이프라인을 만들고 수동으로 트리거합니다.
 
     ![Azure Pipeline 실행](media/best-practices-integration-testing/run-pipeline.png)
 

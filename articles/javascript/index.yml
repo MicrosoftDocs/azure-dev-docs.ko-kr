@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: dcbcaa2cd94c51e7b5d73a3f92e892532f64f8f1
-  ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
+  ms.openlocfilehash: 7c2334b5c562cf36c390ddedc5284622c6522df2
+  ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/03/2020
-  ms.locfileid: "93278408"
+  ms.lasthandoff: 11/06/2020
+  ms.locfileid: "94333851"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -54,7 +54,7 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: 개발 및 배포
-      url: tutorial-vscode-serverless-node-01.md
+      url: tutorial/tutorial-vscode-serverless-node-install.md
   - linkListType: how-to-guide
     links:
     - text: 서버리스 코드 쓰기

@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: ed689388bddd3083b1718e05d6d8ad6eccc055f2
-  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+  ms.openlocfilehash: 6254638727109d25e95820d371743250d4c68831
+  ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 10/08/2020
-  ms.locfileid: "91846664"
+  ms.lasthandoff: 11/06/2020
+  ms.locfileid: "94333781"
 productDirectory:
   items:
   - title: Python
@@ -40,7 +40,7 @@ productDirectory:
       text: 정적 웹 사이트 개발
     - url: ./javascript/tutorial-vscode-azure-app-service-node-01.md?tabs=bash
       text: Azure App Service에 배포
-    - url: ./javascript/tutorial-vscode-serverless-node-01.md?tabs=bash
+    - url: ./javascript/tutorial/tutorial-vscode-serverless-node-install.md?tabs=bash
       text: 서버리스 애플리케이션 배포
     - url: ./javascript/tutorial-vscode-docker-node-01.md?tabs=bash
       text: Docker 컨테이너 배포

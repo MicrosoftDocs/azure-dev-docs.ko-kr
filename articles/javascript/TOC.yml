@@ -17,18 +17,18 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: MongoDB를 사용하는 Express.js
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
-        - name: VS Code로 Azure Functions 배포
+        - name: 서버리스 함수 만들기 및 배포
           items:
-            - name: 소개 및 필수 구성 요소
-              href: tutorial-vscode-serverless-node-01.md
-            - name: Functions 앱 만들기
-              href: tutorial-vscode-serverless-node-02.md
-            - name: 로컬에서 함수 테스트
-              href: tutorial-vscode-serverless-node-03.md
-            - name: Functions 앱 배포
-              href: tutorial-vscode-serverless-node-04.md
-            - name: 리소스 정리
-              href: tutorial-vscode-serverless-node-05.md
+            - name: 1. 소개 및 필수 구성 요소
+              href: tutorial/tutorial-vscode-serverless-node-install.md
+            - name: 2. Functions 앱 만들기
+              href: tutorial/tutorial-vscode-serverless-node-create-local.md
+            - name: 3. 로컬에서 함수 테스트
+              href: tutorial/tutorial-vscode-serverless-node-test-local.md
+            - name: 4. Functions 앱 배포
+              href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
+            - name: 5. 리소스 정리
+              href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
         - name: VS Code를 사용하여 Node.js를 App Service에 배포
           items:
             - name: 소개 및 필수 구성 요소

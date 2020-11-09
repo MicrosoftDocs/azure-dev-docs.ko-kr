@@ -3,14 +3,14 @@ title: 자습서 - Ansible을 사용하여 Azure 리소스의 동적 인벤토�
 description: Ansible을 사용하여 Azure 동적 인벤토리를 관리하는 방법을 알아봅니다.
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 동적 인벤토리
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: 42ac7ef120a2bb364197509d8c36bb7e1a300242
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688624"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192355"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>자습서: Ansible을 사용하여 Azure 리소스의 동적 인벤토리 구성
 
@@ -42,7 +42,7 @@ Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *�
     > [!IMPORTANT]
     > 이 단계에서 만든 Azure 리소스 그룹에는 모두 소문자로 구성된 이름이 있어야 합니다. 그렇지 않으면 동적 인벤토리를 생성하지 못합니다.
 
-    ```azurecli-interactive
+    ```azurecli
     az group create --resource-group ansible-inventory-test-rg --location eastus
     ```
 
@@ -52,13 +52,13 @@ Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *�
 
     - **Azure CLI** - Cloud Shell에서 다음 명령을 각각 실행하여 두 가상 머신을 만듭니다.
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm1 \
                      --image UbuntuLTS --generate-ssh-keys
         ```
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm2 \
                      --image UbuntuLTS --generate-ssh-keys
@@ -71,14 +71,14 @@ Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *�
 ### <a name="using-ansible-version--28"></a>Ansible 2.8 이전 버전 사용
 다음 [az resource tag](/cli/azure/resource#az-resource-tag) 명령을 입력하여 `ansible-inventory-test-vm1` 가상 머신에 `nginx` 키를 사용한 태그를 지정합니다.
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
 ### <a name="using-ansible-version--28"></a>Ansible 2.8 이상 버전 사용
 다음 [az resource tag](/cli/azure/resource#az-resource-tag) 명령을 입력하여 `ansible-inventory-test-vm1` 가상 머신에 `Ansible=nginx` 키를 사용한 태그를 지정합니다.
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
@@ -92,36 +92,23 @@ Ansible은 Azure 리소스의 동적 인벤토리를 생성하는 [azure_rm.py](
 
 1. GNU `wget` 명령을 사용하여 `azure_rm.py` 스크립트를 검색합니다.
 
-    ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
+    ```bash
+    wget https://raw.githubusercontent.com/ansible-collections/azure/dev/plugins/inventory/azure_rm.py
     ```
 
 1. `chmod` 명령을 사용하여 `azure_rm.py` 스크립트에 대한 액세스 권한을 변경합니다. 다음 명령은 `+x` 매개 변수를 사용하여 지정된 파일(`azure_rm.py`)의 실행을 허용합니다.
 
-    ```python
+    ```bash
     chmod +x azure_rm.py
     ```
 
-1. [ansible 명령](https://docs.ansible.com/ansible/2.4/ansible.html)을 사용하여 리소스 그룹에 연결합니다. 
+1. [ansible 명령](https://docs.ansible.com/ansible/2.4/ansible.html)을 사용하여 리소스 그룹에 연결합니다.
 
-    ```python
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping 
+    ```bash
+    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
     ```
 
-1. 연결되면 다음과 비슷한 결과가 표시됩니다.
-
-    ```output
-    ansible-inventory-test-vm1 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ansible-inventory-test-vm2 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ```
+1. 연결되면 만들어지는 가상 머신의 결과를 나타내는 결과가 표시됩니다.
 
 ### <a name="ansible-version--28"></a>Ansible 2.8 이상 버전
 
@@ -146,7 +133,7 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. 위의 명령을 실행하는 경우 다음과 같은 오류가 나타날 수 있습니다.
+1. 위의 명령을 실행하면 다음과 같은 오류가 발생할 수 있습니다. 이 오류는 다음과 같은 이유로 인해 호스트에 연결하지 못했음을 나타냅니다. 
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
@@ -278,7 +265,7 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
 
 1. [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) 명령을 사용하여 `ansible-inventory-test-vm1` 가상 머신의 IP 주소를 검색합니다. 그런 다음, 반환된 값(가상 머신의 IP 주소)은 가상 머신에 연결하기 위한 SSH 명령에 대한 매개 변수로 사용됩니다.
 
-    ```azurecli-interactive
+    ```azurecli
     ssh `az vm list-ip-addresses \
     -n ansible-inventory-test-vm1 \
     --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv`

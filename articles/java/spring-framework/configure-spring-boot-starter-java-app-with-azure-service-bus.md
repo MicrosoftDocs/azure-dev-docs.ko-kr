@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: efccf07733cb4ae509753f5e384453a46e2bf678
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379217"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192455"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Spring Boot Starter를 Azure Service Bus JMS에 사용하는 방법
 
@@ -42,7 +42,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 구성된 Service Bus 큐 또는 토픽이 없는 경우 Azure Portal을 사용하여 [Service Bus 큐를 만들거나](/azure/service-bus-messaging/service-bus-quickstart-portal)[Service Bus 토픽을 만듭니다](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). 네임스페이스가 이전 단계에서 지정된 요구 사항을 충족하는지 확인합니다. 또한 이 자습서의 테스트 앱에 필요한 네임스페이스의 연결 문자열을 적어둡니다.
 
-1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer를 사용하여 **Maven** 프로젝트를 만듭니다](https://start.spring.io/). **Maven Project**(Maven 프로젝트)를 선택하고, **Dependencies**(종속성) 아래에서 **Web**(웹) 종속성을 추가해야 합니다.
+1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer를 사용하여 **Maven** 프로젝트를 만듭니다](https://start.spring.io/). **Maven Project** (Maven 프로젝트)를 선택하고, **Dependencies** (종속성) 아래에서 **Web** (웹) 종속성을 추가해야 합니다.
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Azure Service Bus JMS 스타터 사용
 
@@ -86,7 +86,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 텍스트 편집기에서 *application.properties* 파일을 엽니다.
 
-1. 다음 코드를 *application.properties* 파일의 끝에 추가합니다. 샘플 값을 Service Bus에 적절한 값으로 바꿉니다.
+1. 다음 코드를 *application.properties* 파일의 끝에 추가합니다. 자리 표시자 값을 적절한 서비스 버스 값으로 바꿉니다. 값을 따옴표로 묶지 마세요.
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -114,11 +114,11 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 텍스트 편집기에서 *application.properties* 파일을 엽니다.
 
-1. 다음 코드를 *application.properties* 파일의 끝에 추가합니다. 샘플 값을 Service Bus에 적절한 값으로 바꿉니다.
+1. 다음 코드를 *application.properties* 파일의 끝에 추가합니다. 자리 표시자 값을 적절한 서비스 버스 값으로 바꿉니다. 값을 따옴표로 묶지 마세요.
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
-    spring.jms.servicebus.topic-client-id=<ServiceBusTopicClientId>
+    spring.jms.servicebus.topic-client-id=<ServiceBusSubscriptionID>
     spring.jms.servicebus.idle-timeout=<IdleTimeout>
     ```
 
@@ -127,7 +127,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
     | 필드                                     | Description                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Azure Portal의 Service Bus 네임스페이스에서 가져온 연결 문자열을 지정합니다.   |
-    | `spring.jms.servicebus.topic-client-id`   | 지속성 구독을 통해 Azure Service Bus 토픽을 사용하는 경우 JMS 클라이언트 ID를 지정합니다. |
+    | `spring.jms.servicebus.topic-client-id`   | JMS 클라이언트 ID를 지정합니다. 이 ID는 Azure Portal에서 Service Bus 구독 ID입니다.                | 
     | `spring.jms.servicebus.idle-timeout`      | 유휴 시간 제한을 밀리초 단위로 지정합니다. 이 자습서의 추천 값은 1,800,000입니다.     |
 
 1. *application.properties* 파일을 저장하고 닫습니다.
@@ -169,7 +169,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 ### <a name="define-a-test-java-class"></a>테스트 Java 클래스 정의
 
-1. 텍스트 편집기를 사용하여 *User.java*라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
+1. 텍스트 편집기를 사용하여 *User.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
 
 1. 사용자 이름을 저장하고 검색하는 일반 사용자 클래스를 정의합니다.
 
@@ -209,7 +209,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 ### <a name="create-a-new-class-for-the-message-send-controller"></a>메시지 송신 컨트롤러에 대한 새 클래스 만들기
 
-1. 텍스트 편집기를 사용하여 *SendController.java*라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
+1. 텍스트 편집기를 사용하여 *SendController.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
 
 1. 다음 코드를 새 파일에 추가합니다.
 
@@ -246,13 +246,13 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
     > [!NOTE]
     > `<DestinationName>`을 Service Bus 네임스페이스에 구성된 사용자 고유의 큐 이름 또는 토픽 이름으로 바꿉니다.
 
-1. *SendController.java*를 저장하고 닫습니다.
+1. *SendController.java* 를 저장하고 닫습니다.
 
 ### <a name="create-a-class-for-the-message-receive-controller"></a>메시지 수신 컨트롤러에 대한 클래스 만들기
 
 #### <a name="receive-messages-from-a-service-bus-queue"></a>Service Bus 큐에서 메시지 받기
 
-1. 텍스트 편집기를 사용하여 *QueueReceiveController.java*라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
+1. 텍스트 편집기를 사용하여 *QueueReceiveController.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
 
 1. 다음 코드를 새 파일에 추가합니다.
 
@@ -285,7 +285,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 #### <a name="receive-messages-from-a-service-bus-subscription"></a>Service Bus 구독에서 메시지 받기
 
-1. 텍스트 편집기를 사용하여 *TopicReceiveController.java*라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다. 
+1. 텍스트 편집기를 사용하여 *TopicReceiveController.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다. 
 
 1. 다음 코드를 새 파일에 추가합니다. `<ServiceBusTopicName>` 자리 표시자를 Service Bus 네임스페이스에 구성된 사용자 고유의 토픽 이름으로 바꿉니다. `<ServiceBusSubscriptionName>` 자리 표시자를 Service Bus 토픽에 대한 사용자 고유의 구독 이름으로 바꿉니다.
 
@@ -318,7 +318,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 ## <a name="build-and-test-your-application"></a>애플리케이션 빌드 및 테스트
 
-1. 명령 프롬프트를 열고, 디렉터리를 *pom.xml*의 위치로 변경합니다. 예를 들어 다음과 같습니다.
+1. 명령 프롬프트를 열고, 디렉터리를 *pom.xml* 의 위치로 변경합니다. 예를 들어 다음과 같습니다.
 
     `cd C:\SpringBoot\servicebus`
 
@@ -332,7 +332,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
     mvn clean spring-boot:run
     ```
 
-1. 애플리케이션이 실행되면 *curl*을 사용하여 애플리케이션을 테스트할 수 있습니다.
+1. 애플리케이션이 실행되면 *curl* 을 사용하여 애플리케이션을 테스트할 수 있습니다.
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

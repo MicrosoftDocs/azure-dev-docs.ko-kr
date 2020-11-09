@@ -2,16 +2,16 @@
 title: Azure의 JavaScript 개발자용 도구
 description: Azure에 Node.js 및 JavaScript 개발을 위한 개별 도구 설치
 ms.topic: reference
-ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: fbfc22eb0c9455900b6fe511b52f443289815931
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.date: 10/30/2020
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 80b42337f6acccda4a6d85b64908107cb4230195
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689168"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066262"
 ---
-# <a name="azure-tools-for-javascript-developers"></a>JavaScript 개발자용 Azure 도구
+# <a name="tools-for-javascript-developers"></a>JavaScript 개발자용 도구
 Azure의 JavaScript 앱을 개발하는 데 다음과 같은 도구를 사용하는 것이 좋습니다.
 
 ## <a name="azure-cli"></a>Azure CLI
@@ -22,6 +22,19 @@ Azure CLI는 명령줄에서 Azure 리소스를 관리하기 위해 최적화되
 > [!div class="nextstepaction"]
 > [Azure CLI 2.0 설치](/cli/azure/install-az-cli2)
 
+> [!div class="nextstepaction"]
+> [Azure CLI 2.0 컨테이너 사용](/cli/azure/run-azure-cli-docker)
+
+## <a name="typescript"></a>TypeScript
+
+[TypeScript](https://www.typescriptlang.org/)는 JavaScript와의 비정상적인 관계를 나타냅니다. TypeScript는 다음과 같은 JavaScript 기능 및 추가 레이어를 모두 제공합니다. TypeScript의 형식 시스템.
+
+작동 중인 기존 JavaScript 코드도 TypeScript 코드라는 의미입니다. TypeScript의 주요 이점은 코드의 예기치 않은 동작을 강조 표시하여 버그 가능성을 낮추는 것입니다.
+
+> [!div class="nextstepaction"]
+> [TypeScript 설치](https://www.typescriptlang.org/download)
+
+
 ## <a name="visual-studio-code"></a>Visual Studio Code
 모든 OS에서 JavaScript 앱을 편집하고 디버그합니다.
 
@@ -30,7 +43,7 @@ Azure CLI는 명령줄에서 Azure 리소스를 관리하기 위해 최적화되
 > [!div class="nextstepaction"]
 > [Visual Studio Code 다운로드](https://code.visualstudio.com)
 
-### <a name="azure-extensions"></a>Azure 확장
+## <a name="visual-studio-code-extensions"></a>Visual Studio Code 확장
 Visual Studio Code에서 직접 Azure 서비스를 통해 인터페이스에 다음과 같은 사용 가능한 확장을 사용합니다.
 
 | 도구 | Description  |

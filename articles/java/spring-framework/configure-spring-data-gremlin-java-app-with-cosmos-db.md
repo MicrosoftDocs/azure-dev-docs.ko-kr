@@ -3,26 +3,24 @@ title: Azure Cosmos DB SQL API에서 Spring Data Gremlin Starter를 사용하는
 description: Azure Cosmos DB SQL API에서 Spring Boot Initializr를 사용하여 만든 애플리케이션을 구성하는 방법에 대해 알아봅니다.
 services: cosmos-db
 documentationcenter: java
-ms.date: 08/03/2020
+ms.date: 10/14/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b1fe15704e325316febc405289df27be1cfea37c
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846584"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192472"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API에서 Spring Data Gremlin Starter를 사용하는 방법
 
-## <a name="overview"></a>개요
+이 문서에서는 Azure Portal을 사용하여 Gremlin API에 사용할 Azure Cosmos DB 리소스를 만드는 방법을 보여줍니다. 그런 다음, [Spring Initializr]를 사용하여 사용자 지정 Java 애플리케이션을 만든 다음, Gremlin을 사용하여 데이터에 액세스하는 Spring Data Gremlin Starter 기능을 추가하는 방법을 보여줍니다.
 
 Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장소에서 사용할 수 있는 Apache의 Gremlin 쿼리 언어에 대한 Spring 데이터 지원을 제공합니다.
-
-이 문서에서는 Gremlin API와 함께 사용할 Azure Portal을 사용하여 Azure Cosmos DB를 만들고, **[Spring Initializr]** 를 사용하여 사용자 지정 java 애플리케이션을 만들고, Spring Data Gremlin Starter 기능을 사용자 지정 애플리케이션에 추가하여 데이터를 저장하고 Gremlin을 사용하여 Azure Cosmos DB에서 데이터를 검색하는 방법을 보여줍니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -62,9 +60,9 @@ Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장
 
 1. 사양을 검토하고, `Create`를 선택하여 데이터베이스를 만듭니다.
 
-1. 데이터베이스가 만들어지면 **리소스로 이동**을 선택합니다. Azure **대시보드**뿐 아니라 **모든 리소스** 및 **Azure Cosmos DB** 페이지에도 나열됩니다. 해당 위치 중 하나에서 데이터베이스를 선택하여 캐시에 대한 속성 페이지를 열 수 있습니다.
+1. 데이터베이스가 만들어지면 **리소스로 이동** 을 선택합니다. Azure **대시보드** 뿐 아니라 **모든 리소스** 및 **Azure Cosmos DB** 페이지에도 나열됩니다. 해당 위치 중 하나에서 데이터베이스를 선택하여 캐시에 대한 속성 페이지를 열 수 있습니다.
 
-1. 데이터베이스에 대한 속성 페이지가 표시되면 **키**를 선택하고 데이터베이스에 대한 URI 및 액세스 키를 복사합니다. 이러한 값은 Spring Boot 애플리케이션에서 사용하게 됩니다.
+1. 데이터베이스에 대한 속성 페이지가 표시되면 **키** 를 선택하고 데이터베이스에 대한 URI 및 액세스 키를 복사합니다. 이러한 값은 Spring Boot 애플리케이션에서 사용하게 됩니다.
 
 ### <a name="add-a-graph-to-your-azure-cosmos-database"></a>Azure Cosmos 데이터베이스에 그래프를 추가 합니다.
 
@@ -96,15 +94,14 @@ Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장
 
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 
-1. **Java**에서 **Maven** 프로젝트를 생성한다고 지정하고, 애플리케이션 **그룹** 및 **아티팩트** 이름을 입력한 다음, **Spring Boot** 버전을 2.3.1 버전으로 지정하고 **GENERATE**를 선택합니다.
-
-> [!NOTE]
->
-> Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: `com.example.wintiptoysdata`).
-
+1. **Java** 에서 **Maven** 프로젝트를 생성한다고 지정하고, 애플리케이션 **그룹** 및 **아티팩트** 이름을 입력한 다음, **Spring Boot** 버전을 2.3.4 버전으로 지정하고 **GENERATE(생성)** 를 선택합니다.
 
    >[!div class="mx-imgBorder"]
    >![spring-initializr][spring-initializr-01]
+   
+   > [!NOTE]
+   > 1. Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: `com.example.wintiptoysdata`).
+   > 2. Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 
@@ -143,12 +140,12 @@ Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장
 
    | 필드              | 설명                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | `endpoint`         | 이 빠른 시작의 앞부분에서 Azure Cosmos DB를 만들 때 지정한 고유한 **ID**에서 파생된 데이터베이스의 Gremlin URI를 지정합니다.                                                 |
-   | `port`             | TCP/IP 포트를 지정합니다. HTTPS의 경우 **443**입니다.                                                                                                                                                           |
-   | `username`         | 이 빠른 시작의 앞부분에 그래프를 추가할 때 사용한 고유한 **데이터베이스 ID**와 **그래프 ID**를 지정합니다. "/dbs/ **{Database ID}** /colls/ **{Graph ID}** " 구문을 사용하여 입력해야 합니다. |
-   | `password`         | 이 빠른 시작의 앞부분에서 복사한 기본 또는 보조 **액세스 키**를 지정합니다.                                                                                                                      |
+   | `endpoint`         | 이 빠른 시작의 앞부분에서 Azure Cosmos DB를 만들 때 지정한 고유한 **ID** 에서 파생된 데이터베이스의 Gremlin URI를 지정합니다.                                                 |
+   | `port`             | TCP/IP 포트를 지정합니다. HTTPS의 경우 **443** 입니다.                                                                                                                                                           |
+   | `username`         | 이 빠른 시작의 앞부분에 그래프를 추가할 때 사용한 고유한 **데이터베이스 ID** 와 **그래프 ID** 를 지정합니다. "/dbs/ **{Database ID}** /colls/ **{Graph ID}** " 구문을 사용하여 입력해야 합니다. |
+   | `password`         | 이 빠른 시작의 앞부분에서 복사한 기본 또는 보조 **액세스 키** 를 지정합니다.                                                                                                                      |
    | `sslEnabled`       | SSL을 사용하도록 설정할지 여부를 지정합니다.                                                                                                                                                                                           |
-   | `telemetryAllowed` | 원격 분석을 사용하려는 경우 **true**를, 그렇지 않으면 **false**를 지정합니다.
+   | `telemetryAllowed` | 원격 분석을 사용하려는 경우 **true** 를, 그렇지 않으면 **false** 를 지정합니다.
    | `maxContentLength` | 최대 콘텐츠 길이를 지정합니다.                                                                                                                                                                                           |
 
 ## <a name="build-and-run-the-project"></a>프로젝트 빌드 및 실행
@@ -165,6 +162,10 @@ Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장
    >[!div class="mx-imgBorder"]
    >![execute-result][execute-result-01]
 
+
+## <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 예기치 않은 요금이 청구되지 않도록 [Azure Portal](https://portal.azure.com/)을 사용하여 이 문서에서 만든 리소스를 삭제합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

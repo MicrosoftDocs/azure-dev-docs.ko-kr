@@ -1,0 +1,38 @@
+### YamlMime:Tutorial
+title: Azure CLI에서 Azure App Service에 Deno 앱 배포
+metadata:
+  title: Azure CLI에서 Azure App Service에 Deno 앱 배포
+  description: 이 자습서에서는 Azure CLI를 사용하여 Deno 애플리케이션을 Linux 또는 Windows의 Azure App Service에 배포합니다.
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 10/13/2020
+  ms.topic: tutorial
+  ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
+  ms.openlocfilehash: 71caf561f5bbff42ffe066c3f89eb168595e7086
+  ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "93278674"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [Tutorial introduction](../includes/tutorial-deno/introduction.md)]
+- title: 환경 구성
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Tutorial introduction](../includes/tutorial-deno/configure-your-environment.md)]
+- title: 로컬 Deno 앱 만들기
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Test local Deno apps](../includes/tutorial-deno/create-local-deno-app.md)]
+- title: Azure에 Deno 앱 배포
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Deploy Deno apps to Azure](../includes/tutorial-deno/deploy-to-azure.md)]
+- title: 정리
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clean up](../includes/tutorial-deno/cleanup.md)]
+- content: '[!INCLUDE [Completed tutorial](../includes/tutorial-deno/completed.md)]'

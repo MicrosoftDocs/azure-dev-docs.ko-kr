@@ -3,14 +3,14 @@ title: '자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Djang
 description: Azure에서 웹앱 및 PostgreSQL 데이터베이스를 프로비저닝하고 GitHub에서 앱 코드를 배포합니다.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 10/09/2020
+ms.date: 11/02/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
-ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
+ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
+ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629937"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93284533"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -38,8 +38,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 **(선택 사항) 샘플 정보:** djangoapp 샘플에는 Django 설명서의 [첫 번째 Django 앱 작성](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)에 따라 가져오는 데이터 기반 Django 설문 조사 앱이 포함되어 있습니다. 또한 이 샘플은 [Django 배포 검사 목록](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/)을 사용하여 Azure App Service와 같은 프로덕션 환경에서 실행되도록 수정됩니다. (이러한 변경은 모든 프로덕션 환경에 적용되며 Azure에만 국한되지 않습니다.)
 
 - 프로덕션 설정은 *azuresite/production.py* 파일에 있습니다. 개발 세부 정보는 *azuresite/settings.py* 에 있습니다.
-
-- `DJANGO_ENV` 환경 변수가 "production"으로 설정되면 앱에서 프로덕션 설정을 사용합니다. 이 환경 변수는 자습서의 뒷부분에서 PostgreSQL 데이터베이스 구성에 사용된 다른 환경 변수와 함께 만듭니다.
+- `WEBSITE_HOSTNAME` 환경 변수가 설정되면 앱에서 프로덕션 설정을 사용합니다. Azure App Service는 자동으로 이 변수를 웹앱의 URL로 설정합니다(예: `msdocs-django.azurewebsites.net`).
 
 [문제가 있나요? 알려주세요.](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -149,7 +148,6 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
     | 설정 이름 | 값 |
     | --- | --- |
-    | DJANGO_ENV | `production`(이 값은 [샘플 개요](#fork-the-sample-repository)의 앞부분에서 설명한 대로 프로덕션 구성을 사용하도록 앱에 지시합니다.) |
     | DBHOST | 이전 섹션의 데이터베이스 서버 이름입니다. 즉, `.postgres.database.azure.com` 앞에 오는 서버 URL의 `<server-name>` 부분입니다. ( *azuresite/production.py* 의 코드는 전체 URL을 자동으로 생성합니다.) |
     | DBNAME | `pollsdb` |
     | DBUSER | 데이터베이스를 프로비저닝할 때 사용되는 관리자 사용자 이름입니다. (샘플 코드는 `@<server-name>` 부분을 자동으로 추가합니다. *azuresite/production.py* 를 참조하세요.) |

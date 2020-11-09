@@ -3,17 +3,17 @@ title: Azure Storage에 Spring Boot Starter를 사용하는 방법
 description: Azure Storage 스타터에 Spring Boot Initializer 앱을 구성하는 방법을 알아봅니다.
 services: storage
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/14/2020
 ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 3ea7c5ef098cbf9a6bed2b541db00b09451a12d6
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688704"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192435"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage에 Spring Boot Starter를 사용하는 방법
 
@@ -35,11 +35,11 @@ ms.locfileid: "92688704"
 
 ## <a name="create-an-azure-storage-account-and-blob-container-for-your-application"></a>애플리케이션에 대 한 Azure Storage 계정 및 Blob 컨테이너 만들기
 
-다음 절차에서는 Azure Storage 계정 및 컨테이너를 만듭니다.
+다음은 포털에서 Azure 스토리지 계정 및 컨테이너를 만드는 절차입니다.
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **+리소스 만들기** 를 클릭한 다음 **스토리지** 를 클릭하고 **스토리지 계정** 을 클릭합니다.
+1. **리소스 만들기** 를 선택하고 **시작** 을 선택한 다음, **스토리지 계정** 을 선택합니다.
 
    ![Azure Storage 계정 만들기][IMG01]
 
@@ -49,11 +49,11 @@ ms.locfileid: "92688704"
    * **리소스 그룹** 을 선택하거나 새 리소스 그룹을 만듭니다.
    * 스토리지 계정에 대한 URI의 일부가 될 고유한 **스토리지 계정 이름** 을 입력합니다. 예: **wingtiptoysstorage** 를 **이름** 에 입력한 경우 URI는 *wingtiptoysstorage.core.windows.net* 입니다.
    * 스토리지 계정의 **위치** 를 지정합니다.
-1. 위에 열거된 이러한 옵션을 지정한 경우 **검토 + 만들기** 를 클릭합니다. 
-1. 사양을 검토한 후 **만들기** 를 클릭하여 스토리지 계정을 만듭니다.
-1. 배포가 완료되면 **리소스로 이동** 을 클릭합니다.
-1. **컨테이너** 를 클릭합니다.
-1. **+ 컨테이너** 를 클릭합니다.
+1. 위에 나열된 옵션을 지정한 후에는 **검토 + 만들기** 를 선택합니다. 
+1. 사양을 검토한 다음, **만들기** 를 선택하여 스토리지 계정을 만듭니다.
+1. 배포가 완료되면 **리소스로 이동** 을 선택합니다.
+1. **컨테이너** 를 선택합니다.
+1. **컨테이너** 를 선택합니다.
    * 컨테이너 이름을 지정합니다.
    * 드롭다운 목록에서 *Blob* 을 선택합니다.
 
@@ -61,6 +61,40 @@ ms.locfileid: "92688704"
 
 1. Azure portal은 Blob 컨테이너 생성 후 이를 나열 합니다.
 
+Azure CLI를 사용하여 다음 단계에 따라 Azure 스토리지 계정 및 컨테이너를 만들 수도 있습니다. 꺾쇠 괄호로 묶인 자리 표시자 값을 사용자 고유의 값으로 바꿔야 합니다.
+
+1. 명령 프롬프트를 엽니다.
+1. Azure 계정 로그인:
+
+   ```azurecli
+   az login
+   ```
+   
+1. 리소스 그룹이 없는 경우 다음 명령을 사용하여 리소스 그룹을 만듭니다.
+   
+   ```azurecli
+   az group create \
+      --name <resource-group> \
+      --location <location>
+   ```
+   
+1. 다음 명령을 사용하여 스토리지 계정을 만듭니다.
+  
+   ```azurecli
+    az storage account create \
+      --name <storage-account> \
+      --resource-group <resource-group> \
+      --location <location> 
+   ```
+
+1. 컨테이너를 만들려면 다음 명령을 사용합니다.
+   
+   ```azurecli
+    az storage container create \
+      --account-name <storage-account-name> \
+      --name <container-name> \
+      --auth-mode login
+   ```
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr를 사용하여 간단한 Spring Boot 애플리케이션 만들기
 
 다음 절차에서는 Spring Boot 애플리케이션을 만듭니다.
@@ -70,19 +104,18 @@ ms.locfileid: "92688704"
 1. 다음 옵션을 지정합니다.
 
    * **Maven** 프로젝트를 생성합니다.
-   * **Java** 를 지정합니다.
-   * 2\.0 이상의 **Spring Boot** 버전을 지정합니다.
+   * **Java 8** 을 지정합니다.
+   * **Spring Boot** 2.3 이상 버전을 지정합니다.
    * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
-   * **Web** 종속성 추가
+   * **Spring Web** 종속성을 추가합니다.
 
       ![기본 Spring Initializr 옵션][SI01]
 
    > [!NOTE]
-   >
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.storage* ).
-   >
+   > 1. Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.storage* ).
+   > 2. Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
-1. 위에 열거된 이러한 옵션을 지정한 경우 **생성** 을 클릭합니다.
+1. 위에 나열된 옵션이 지정되면 **생성** 을 선택합니다.
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 
@@ -106,7 +139,7 @@ ms.locfileid: "92688704"
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-starter-azure-storage</artifactId>
-      <version>1.2.7</version>
+      <version>1.2.8</version>
    </dependency>
    ```
 
@@ -136,13 +169,13 @@ ms.locfileid: "92688704"
 
 1. Spring Boot 앱의 *리소스* 디렉터리로 이동합니다. 예:
 
-   ```shell
+   ```cmd
    cd C:\SpringBoot\storage\src\main\resources
    ```
 
    또는
 
-   ```shell
+   ```bash
    cd /users/example/home/storage/src/main/resources
    ```
 
@@ -323,11 +356,15 @@ ms.locfileid: "92688704"
 
 1. 명령 프롬프트를 열고 디렉터리를 *pom.xml* 파일이 위치한 폴더로 변경합니다. 예:
 
-   `cd C:\SpringBoot\storage`
+   ```cmd
+   cd C:\SpringBoot\storage
+   ```
 
    또는
-
-   `cd /users/example/home/storage`
+   
+   ```bash
+   cd /users/example/home/storage
+   ```
 
 1. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 
@@ -358,6 +395,11 @@ ms.locfileid: "92688704"
 
 이 자습서에서는 **[Spring Initializr]** 를 사용하여 새로운 Java 애플리케이션을 만들었으며, 애플리케이션에 Azure 스토리지 스타터를 추가했고 BLOB를 Azure 스토리지 계정에 업로드하도록 애플리케이션을 구성했습니다.
 
+
+## <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 예기치 않은 요금이 청구되지 않도록 [Azure Portal](https://portal.azure.com/)을 사용하여 이 문서에서 만든 리소스를 삭제합니다.
+
 ## <a name="next-steps"></a>다음 단계
 
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
@@ -379,9 +421,5 @@ Spring Boot 애플리케이션에서 호출할 수 있는 다른 Azure Storage A
 
 [IMG01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-01.png
 [IMG02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-02.png
-[IMG03]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-03.png
-[IMG04]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-04.png
-[IMG05]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-05.png
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-01.png
-[SI02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-02.png

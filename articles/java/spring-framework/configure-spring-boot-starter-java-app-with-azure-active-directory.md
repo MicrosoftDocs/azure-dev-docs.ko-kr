@@ -3,22 +3,20 @@ title: Azure Active Directory에 Spring Boot Starter를 사용하는 방법
 description: Azure Active Directory 스타터에 Spring Boot Initializer 앱을 구성하는 방법을 알아봅니다.
 services: active-directory
 documentationcenter: java
-ms.date: 03/05/2020
+ms.date: 10/14/2020
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 0e247a912429f8f798c174af3e79bb074e3da2ed
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: e21e1ada221473c3b645da24736d179b92cff07f
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337171"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192532"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>자습서: Azure Active Directory용 Spring Boot Starter를 사용하여 Java 웹앱 보호하기
-
-## <a name="overview"></a>개요
 
 이 문서에서는 Azure Active Directory(Azure AD)용 Spring Boot Starter를 사용하는 **[Spring Initializr]** 를 통한 Java 앱 만들기를 보여 줍니다.
 
@@ -44,10 +42,13 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 1. **Java** 에서 **Maven** 프로젝트를 생성한다고 지정하고, 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 입력합니다.
 1. **Spring Web** , **Azure Active Directory** 및 **Spring Security** 에 대한 **Dependencies** (종속성)를 추가합니다.
-1. 페이지 아래쪽에서 **Generate(생성)** 단추를 클릭합니다.
+1. 페이지 아래쪽에서 **GENERATE(생성)** 단추를 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![그룹 및 아티팩트 이름 지정, 종속성 선택][create-spring-app-01]
+
+   > [!NOTE]
+   > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 
@@ -57,7 +58,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 1. <https://portal.azure.com>에 로그인합니다.
 
-1. **+리소스 만들기** , **ID** , **Azure Active Directory** 를 차례로 클릭합니다.
+1. **리소스 만들기** , **ID** , **Azure Active Directory** 를 차례로 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![새 Azure Active Directory 인스턴스 만들기][create-directory-01]
@@ -67,12 +68,12 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
     사용자 디렉터리의 전체 URL을 복사합니다. 이는 자습서의 뒷부분에서 사용자 계정을 추가 하는 데 사용됩니다. (예: azuresampledirectory.onmicrosoft.com.).
 
-    완료되면 **만들기** 를 클릭합니다. 새 리소스를 만드는 데 몇 분 정도 걸립니다.
+    작업이 완료되면 **만들기** 를 선택합니다. 새 리소스를 만드는 데 몇 분 정도 걸립니다.
    
    >[!div class="mx-imgBorder"]
    >![Azure Active Directory 이름 지정][create-directory-02]
 
-1. 완료되면 클릭하여 새 디렉터리에 액세스합니다.
+1. 완료되면 새 디렉터리를 선택하여 액세스합니다.
    
    >[!div class="mx-imgBorder"]
    >![Azure 계정 이름을 선택합니다.][create-directory-03]
@@ -84,12 +85,12 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Spring Boot 앱에 대한 애플리케이션 등록 추가
 
-1. 포털 메뉴에서 **앱 등록** 을 클릭한 다음, **애플리케이션 등록** 을 클릭합니다.
+1. 포털 메뉴에서 **앱 등록** 을 선택한 다음, **애플리케이션 등록** 을 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![새 앱 등록 추가][create-app-registration-01]
 
-1. 애플리케이션을 지정한 다음, **등록** 을 클릭합니다.
+1. 애플리케이션을 지정한 다음, **등록** 을 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![새 앱 등록 만들기][create-app-registration-02]
@@ -99,7 +100,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    >[!div class="mx-imgBorder"]
    >![앱 등록 키 복사][create-app-registration-03]
 
-1. 왼쪽 탐색 창에서 **인증서 및 비밀** 을 클릭합니다.  그런 다음, **새 클라이언트 암호** 를 클릭합니다.
+1. 왼쪽 탐색 창에서 **인증서 및 비밀** 을 클릭합니다.  그런 다음, **새 클라이언트 암호** 를 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![앱 등록 키 만들기][create-app-registration-03-5]
@@ -121,22 +122,22 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    >[!div class="mx-imgBorder"]
    >![액세스 권한 추가][create-app-registration-08]
    
-1. **Azure Sample에 대한 관리자 동의 허용** 을 클릭하고 **예** 를 클릭합니다.
+1. **Azure Sample에 대한 관리자 동의 허용** 을 클릭하고 **예** 를 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![액세스 권한 부여][create-app-registration-05]
 
-1. 앱 등록의 기본 페이지에서 **인증** 을 클릭하고 **플랫폼 추가** 를 클릭합니다.  그런 다음, **웹 애플리케이션** 을 클릭합니다.
+1. 앱 등록의 기본 페이지에서 **인증** 을 선택하고 **플랫폼 추가** 를 선택합니다.  그런 다음, **웹 애플리케이션** 을 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![회신 URL 편집][create-app-registration-09]
 
-1. 'http://localhost:8080/login/oauth2/code/azure '를 새 **리디렉션 URI** 로 입력한 다음, **구성** 을 클릭합니다.
+1. *http://localhost:8080/login/oauth2/code/azure* 를 **리디렉션 URI** 로 입력한 다음, **구성** 을 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![새 회신 URL 추가][create-app-registration-10]
 
-1. 앱 등록을 위한 기본 페이지에서 **매니페스트** 를 클릭하고 `oauth2AllowIdTokenImplicitFlow` 및 `oauth2AllowImplicitFlow` 매개 변수의 값을 `true`로 설정하고 **저장** 을 클릭합니다.
+1. 앱 등록을 위한 기본 페이지에서 **매니페스트** 를 선택하고, `oauth2AllowIdTokenImplicitFlow` 및 `oauth2AllowImplicitFlow` 매개 변수의 값을 `true`로 설정하고, **저장** 을 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![앱 매니페스트 구성][create-app-registration-11]
@@ -146,12 +147,12 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>디렉터리에 사용자 계정을 추가하고 해당 계정을 그룹에 추가합니다
 
-1. Active Directory의 **개요** 페이지에서 **사용자** 와 **새 사용자** 를 차례로 클릭합니다.
+1. Active Directory의 **개요** 페이지에서 **사용자** , **새 사용자** 를 차례로 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![새 사용자 계정 추가하기][create-user-01]
 
-1. **사용자** 패널이 표시되면, **사용자 이름** 및 **이름** 을 입력합니다.  그런 다음, **만들기** 를 클릭합니다.
+1. **사용자** 패널이 표시되면, **사용자 이름** 및 **이름** 을 입력합니다.  그런 다음 **만들기** 를 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![사용자 계정 정보 입력][create-user-02]
@@ -161,15 +162,15 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    >
    > `test-user@azuresampledirectory.onmicrosoft.com`
 
-1. Active Directory의 **개요** 페이지에서 **그룹** 을 클릭한 다음, 애플리케이션에서 권한을 부여하는 데 사용할 **새 그룹** 을 클릭합니다.
+1. Active Directory의 **개요** 페이지에서 **그룹** 을 선택한 다음, 애플리케이션에서 권한을 부여하는 데 사용할 **새 그룹** 을 선택합니다.
 
-1. 그런 다음, **선택한 멤버가 없음** 을 클릭합니다. (이 자습서에서는 *Users* 라는 그룹을 만듭니다.)  이전 단계에서 만든 사용자를 검색합니다.  **선택** 을 클릭하여 사용자를 그룹에 추가합니다.  그런 다음, **만들기** 를 클릭하여 새 그룹을 만듭니다.
-   
+1. **선택한 구성원이 없습니다** 를 선택합니다. (이 자습서에서는 *users* 라는 그룹을 만듭니다.)  이전 단계에서 만든 사용자를 검색합니다.  **선택** 을 선택하여 사용자를 그룹에 추가합니다.  그런 다음, **만들기** 를 선택하여 새 그룹을 만듭니다.
+
    >[!div class="mx-imgBorder"]
    >![그룹에 대한 사용자 선택][create-user-03]
 
-1. **사용자** 패널로 돌아가서 테스트 사용자를 선택하고, **암호 재설정** 을 클릭하고, 암호를 복사합니다. 이 암호는 이 자습서의 뒷부분에서 애플리케이션에 로그인할 때 사용됩니다.
-   
+1. **사용자** 패널로 돌아가서 테스트 사용자를 선택하고, **암호 재설정** 을 선택하고, 암호를 복사합니다. 이 암호는 이 자습서의 뒷부분에서 애플리케이션에 로그인할 때 사용됩니다.
+
    >[!div class="mx-imgBorder"]
    >![암호 표시][create-user-04]
 

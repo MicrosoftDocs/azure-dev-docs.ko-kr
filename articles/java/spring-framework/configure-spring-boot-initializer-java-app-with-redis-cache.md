@@ -3,17 +3,17 @@ title: Spring Boot Initializer 앱 만들기 - Azure Redis Cache
 description: Spring Initializer를 사용하여 만든 Spring Boot 애플리케이션을 구성하여 Azure Redis Cache를 사용하여 클라우드에서 Redis를 사용합니다.
 services: redis-cache
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 7d8ee875339adb741fbddeba6d4328eb22cd3e46
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846604"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066279"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache를 사용하여 클라우드에서 Redis를 사용하도록 Spring Boot Initializer 앱 구성
 
@@ -31,16 +31,16 @@ ms.locfileid: "91846604"
 
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 
-1. **Java**에서 **Maven** 프로젝트를 생성한다고 지정하고, 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 입력합니다.
+1. **Java** 에서 **Maven** 프로젝트를 생성한다고 지정하고, Java 버전 **8** 을 선택하고, 애플리케이션의 **그룹** 및 **아티팩트** 이름을 입력합니다.
 
 1. **Spring Web** 섹션에 대한 종속성을 추가하고 **웹** 상자를 선택한 다음, **NoSQL** 섹션까지 아래로 스크롤하여 **Spring Data Reactive Redis** 상자를 선택합니다. 
-1. 페이지 하단까지 스크롤하고 버튼을 클릭하여 **프로젝트를 생성**합니다.
+1. 페이지 하단까지 스크롤하고 버튼을 클릭하여 **프로젝트를 생성** 합니다.
 
    ![기본 Spring Initializr 옵션][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.contoso.myazuredemo*).
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.contoso.myazuredemo* ).
    >
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
@@ -53,32 +53,32 @@ ms.locfileid: "91846604"
 
 ## <a name="create-a-redis-cache-on-azure"></a>Azure에 Redis 캐시 만들기
 
-1. Azure Portal(<https://portal.azure.com/>)이동하고 **+새로 만들기**를 클릭합니다.
+1. Azure Portal(<https://portal.azure.com/>)이동하고 **+새로 만들기** 를 클릭합니다.
 
-1. **데이터베이스**를 클릭하고 **Redis Cache**를 클릭합니다.
+1. **데이터베이스** 를 클릭하고 **Redis Cache** 를 클릭합니다.
 
    ![Azure Portal에서 Redis Cache를 선택합니다.][AZ02]
 
 1. **새 Redis Cache** 페이지에서 다음 정보를 지정합니다.
 
-   * 캐시에 대한 **DNS 이름**을 입력합니다.
-   * **구독**, **리소스 그룹**, **위치** 및 **가격 책정 계층**을 지정합니다.
-   * 이 자습서에서는 **포트 6379 차단 해제**를 선택합니다.
+   * 캐시에 대한 **DNS 이름** 을 입력합니다.
+   * **구독** , **리소스 그룹** , **위치** 및 **가격 책정 계층** 을 지정합니다.
+   * 이 자습서에서는 **포트 6379 차단 해제** 를 선택합니다.
 
    > [!NOTE]
    >
    > Redis 캐시와 함께 SSL을 사용할 수 있지만 Jedis와 같은 다른 Redis 클라이언트를 사용해야 합니다. 자세한 내용은 [Java와 함께 Azure Redis Cache를 사용하는 방법][Redis Cache with Java]을 참조하세요.
    >
 
-   이러한 옵션을 지정한 경우 **만들기**를 클릭하여 캐시를 만듭니다.
+   이러한 옵션을 지정한 경우 **만들기** 를 클릭하여 캐시를 만듭니다.
 
    ![Azure Portal에서 캐시를 만듭니다.][AZ03]
 
-1. 캐시가 완료되면 Azure **대시보드**뿐만 아니라 **모든 리소스** 및 **Redis Caches** 페이지에서도 나열된 것을 확인할 수 있습니다. 해당 위치 중 하나에서 캐시를 클릭하여 캐시의 속성 페이지를 열 수 있습니다.
+1. 캐시가 완료되면 Azure **대시보드** 뿐만 아니라 **모든 리소스** 및 **Redis Caches** 페이지에서도 나열된 것을 확인할 수 있습니다. 해당 위치 중 하나에서 캐시를 클릭하여 캐시의 속성 페이지를 열 수 있습니다.
 
    ![Azure Portal에서 프로비저닝된 리소스입니다.][AZ04]
 
-1. 캐시의 속성 목록이 포함된 페이지가 표시되면 **액세스 키**를 클릭하고 캐시의 액세스 키를 복사합니다.
+1. 캐시의 속성 목록이 포함된 페이지가 표시되면 **액세스 키** 를 클릭하고 캐시의 액세스 키를 복사합니다.
 
    ![액세스 키 섹션 아래에서 액세스 키를 복사합니다.][AZ05]
 
@@ -123,7 +123,7 @@ ms.locfileid: "91846604"
 
 1. *application.properties* 파일을 저장하고 닫습니다.
 
-1. 패키지의 소스 폴더 아래에서 *controller*라는 폴더를 만듭니다.
+1. 패키지의 소스 폴더 아래에서 *controller* 라는 폴더를 만듭니다.
 
    `C:\SpringBoot\myazuredemo\src\main\java\com\contoso\myazuredemo\controller`
 
@@ -131,7 +131,7 @@ ms.locfileid: "91846604"
 
    `/users/example/home/myazuredemo/src/main/java/com/contoso/myazuredemo/controller`
 
-1. *컨트롤러* 폴더에 *HelloController.java*라는 새 파일을 만듭니다. 텍스트 편집기에서 파일을 열고 다음 코드를 추가합니다.
+1. *컨트롤러* 폴더에 *HelloController.java* 라는 새 파일을 만듭니다. 텍스트 편집기에서 파일을 열고 다음 코드를 추가합니다.
 
    ```java
    package com.contoso.myazuredemo;

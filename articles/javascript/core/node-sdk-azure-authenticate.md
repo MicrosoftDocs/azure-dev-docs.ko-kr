@@ -2,26 +2,107 @@
 title: Node.js용 Azure 관리 모듈을 사용하여 인증
 description: 서비스 사용자를 통해 Node.js용 Azure 관리 모듈에 인증합니다.
 ms.topic: how-to
-ms.date: 09/29/2020
+ms.date: 10/19/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 084a7154bf52314886c0dfb57db3e9c879c8e2c0
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: a3f51cd40f1f1029fbdd6e8e806cb1f7c3cd02c7
+ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437254"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93024067"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript용 Azure 관리 모듈을 사용하여 인증
 
 모든 [SDK 클라이언트 라이브러리](../azure-sdk-library-package-index.md)에는 인스턴스화될 때 `credentials` 개체를 통한 인증이 필요합니다. 필요한 자격 증명을 인증하고 만드는 방법에는 여러 가지가 있습니다.
 
-필요한 자격 증명을 만드는 일반적인 방법은 다음과 같습니다.
+모든 소프트웨어 및 서비스와 마찬가지로 인증은 수년에 걸쳐 개선되었습니다. 해당 서비스에서 사용하는 인증 라이브러리를 알고 있어야 합니다. 
 
-- **서비스 주체** 인증은 _권장 방법_ 입니다. [Azure 서비스 주체를 생성](node-sdk-azure-authenticate-principal.md)하는 방법을 알아봅니다. 
-- **대화형 로그인** 은 가장 쉬운 인증 방법이지만 사용자 계정 및 브라우저로 로그인해야 합니다.
-- 사용자 이름과 암호를 사용한 **기본** 인증. 이는 안전을 위한 최소한의 방법입니다. 
+다음과 같은 인증 라이브러리가 있습니다.
 
-## <a name="samples"></a>샘플
+* @azure/identity - 최신 인증 패키지
+* @azure/ms-rest-nodeauth
+* @azure/ms-rest-browserauth
+
+이전 인증 패키지를 사용하고 있습니다. 이전 패키지를 사용 중인 경우 보다 안전하고 강력한 환경을 구축할 수 있도록 이전 인증 방법의 마이그레이션을 고려해야 합니다. 
+
+## <a name="best-practices-with-azure-sdk-client-library-authentication"></a>Azure SDK 클라이언트 라이브러리 인증을 사용한 모범 사례
+
+각 npm 패키지는 해당 클라이언트 라이브러리의 인증을 보여줍니다. 모든 패키지가 npm 패키지 페이지에서 동일한 인증 패키지를 사용하지 않는 한 인증 패키지와 코드를 혼합해서 사용하지 마세요. 
+
+## <a name="azure-identity-library"></a>Azure ID 라이브러리
+
+Azure ID 라이브러리는 Azure용 최신 인증 패키지입니다. Azure ID를 사용하여 [지원되는 라이브러리 목록](https://www.npmjs.com/package/@azure/identity#client-libraries-supporting-authentication-with-azure-identity)을 검토하세요.
+
+[@azure/identity](https://www.npmjs.com/package/@azure/identity) 라이브러리는 Azure SDK용 Azure Active Directory 라이브러리 인증을 간소화합니다. 이 라이브러리는 SDK 라이브러리로 전달하여 API 요청을 인증할 수 있는 TokenCredential 구현 세트를 제공합니다. Azure Active Directory 서비스 주체 또는 관리 ID를 사용하는 토큰 인증을 지원합니다.
+
+```javascript
+const { DefaultAzureCredential } = require("@azure/identity");
+const { BlobServiceClient } = require("@azure/storage-blob");
+ 
+// Enter your storage account name
+const account = "<account>";
+const defaultAzureCredential = new DefaultAzureCredential();
+ 
+const blobServiceClient = new BlobServiceClient(
+  `https://${account}.blob.core.windows.net`,
+  defaultAzureCredential
+);
+```
+
+## <a name="azure-ms-rest--libraries"></a>Azure ms-rest-* 라이브러리
+`@azure` 범위 지정 [클라이언트 라이브러리](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries)를 사용하려면 서비스를 사용하기 위한 토큰이 필요합니다. 자격 증명을 반환하는 Azure SDK 클라이언트 인증 방법을 사용하여 토큰을 가져옵니다. 
+
+```javascript
+const msRestNodeAuth = require("@azure/ms-rest-nodeauth");
+msRestNodeAuth.interactiveLogin().then((credential) => {
+}).catch((err) => {
+    // service code goes here
+    console.error(err);
+});
+```
+
+다음 코드 샘플에서 사용하는 Storage 서비스와 같은 특정 Azure 서비스 클라이언트 라이브러리에 자격 증명을 전달합니다. 클라이언트 라이브러리에서 해당 자격 증명을 사용하여 토큰을 생성합니다. 서비스에서 해당 토큰을 사용하여 요청의 유효성을 검사합니다. 
+
+```javascript
+// service code - this is an example only and not best practices for code flow
+const { BlobServiceClient } = require('@azure/storage-blob');
+const billingManagementClient = new billing.BillingManagementClient(credential, subscriptionId);
+billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
+    console.log("The result is:");
+    console.log(result);
+})
+```
+
+클라이언트 라이브러리는 토큰을 관리하며, 토큰을 언제 새로 고쳐야 하는지 알고 있습니다. 코드 베이스를 사용하는 개발자는 이를 관리할 필요가 없습니다.
+
+## <a name="older-azure-sdk-client-authentication"></a>이전 Azure SDK 클라이언트 인증 
+
+이전 Azure SDK 클라이언트는 궁극적으로 위에서 사용한 새로운 최신 인증으로 마이그레이션됩니다. 이 마이그레이션이 완료될 때까지 이전 클라이언트 라이브러리는 여러 인증 클라이언트를 사용하거나 리소스 키처럼 완전히 분리된 메커니즘을 사용하여 인증할 수 있습니다. 
+
+이전 클라이언트 라이브러리에서 최상의 결과를 얻기 위해 다음과 같은 동작이 수행됩니다. 
+* 각 npm 패키지는 해당 클라이언트 라이브러리의 인증을 보여줍니다. 
+* 현재 코드에서 @azure/ms를 사용하는 경우
+
+## <a name="authentication-with-azure-services-while-developing"></a>개발 중에 Azure 서비스를 사용하여 인증
+
+개발 중에 필요한 자격 증명을 만드는 일반적인 방법은 다음과 같습니다.
+
+| Azure 인증 유형|용도|
+|--|--|
+|**서비스 주체**|이 인증은 _권장하는 방법_ 입니다. [Azure 서비스 주체를 생성](node-sdk-azure-authenticate-principal.md)하는 방법을 알아봅니다. 서비스 주체를 사용하면 개인 Azure 계정과 별개인 Azure에 연결할 수 있습니다. 임시 계정일 수도 있고 장기간 동안 활성 상태를 유지하면서 개인 계정을 대신하는 계정일 수도 있습니다.|
+| **대화형**| Azure 서비스를 시도할 때 가장 쉽게 인증하는 방법입니다. 브라우저를 통해 개인 계정으로 로그인해야 합니다. |
+|**기본**|이 인증을 사용하려면 개인 사용자 이름 및 암호를 입력해야 합니다. 가장 안전하지 않은 방법이므로 권장하지 않습니다.| 
+
+## <a name="authentication-with-azure-services-and-production-code"></a>Azure 서비스 및 프로덕션 코드를 사용하여 인증
+
+프로덕션 코드에서 필요한 자격 증명을 만드는 일반적인 방법은 다음과 같습니다.
+
+|Azure 인증 유형|용도|
+|--|--|
+|**MSI(관리되는 서비스 ID)**|[MSI 인증](/azure/active-directory/managed-identities-azure-resources/overview)은 프로덕션 시나리오에 가장 적합합니다. 로컬 개발 환경에서는 사용하지 않습니다. MSI를 지원하는 [서비스](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)에 사용됩니다.|
+|**인증서**|[포털](/azure/cloud-services/cloud-services-configure-ssl-certificate-portal)을 사용하여 Azure에 [인증서](/azure/cloud-services/cloud-services-certs-create)를 업로드해야 합니다.|
+
+## <a name="javascript-authentication-samples-for-azure"></a>Azure용 JavaScript 인증 샘플
 
 |인증 패키지|샘플 인증 스크립트|
 |--|--|
@@ -33,4 +114,5 @@ ms.locfileid: "92437254"
 
 ## <a name="next-steps"></a>다음 단계   
 
-* [Visual Studio Code에서 Azure에 정적 웹 사이트 배포](../tutorial-vscode-static-website-node-01.md)
+* [Azure npm 패키지](../azure-sdk-library-package-index.md)
+* [Azure npm 패키지 설명서](/javascript/api/overview/azure/?view=azure-node-latest)

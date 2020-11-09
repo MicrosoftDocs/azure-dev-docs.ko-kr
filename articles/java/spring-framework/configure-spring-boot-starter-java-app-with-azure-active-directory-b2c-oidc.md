@@ -6,18 +6,18 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 10/10/2020
+ms.date: 10/23/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 7cd477bfa511f44cf8dfacbd7d10e0f6299ad4f5
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.openlocfilehash: aa2d60f969895acbcb56f74e909993ceb9b0d7d5
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898785"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066304"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C용 Spring Boot Starter를 사용하여 Java 웹앱 보호
 
@@ -110,29 +110,31 @@ ms.locfileid: "92898785"
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Spring Boot 앱에 대한 애플리케이션 등록 추가
 
-1. 왼쪽의 **관리** 창에서 **애플리케이션** , **추가** 를 차례로 선택합니다.
+1. 왼쪽의 **관리** 페이지에서 **앱 등록** 을 선택한 다음, **새 등록** 을 선택합니다.
 
-    ![새 앱 등록 추가](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
+   ![Azure AD B2C 앱 등록 화면을 보여주는 Azure Portal의 스크린샷](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. **이름** 필드에서 위의 **그룹** 에 대한 값을 입력한 다음, **웹앱/웹 API 포함** 컨트롤을 **예** 로 설정합니다.
+2. **이름** 필드에서, 위의 **그룹** 값을 입력한 다음, **리디렉션 URI(권장)** 를 *http://localhost:8080/home* 으로 설정하고 **등록** 을 선택합니다.
 
-3. **회신 URL** 을 `http://localhost:8080/home`으로 설정합니다.
+   ![새 앱 등록 구성](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
 
-4. 다른 필드는 기본값으로 둡니다.
+3. **관리** 창으로 돌아가서 **애플리케이션(레거시)** 을 선택한 다음, 본인이 만든 애플리케이션을 선택합니다.
 
-5. **만들기** 를 선택합니다. 애플리케이션이 표시되는 데 약간의 시간이 걸릴 수 있습니다.
+   ![애플리케이션 업데이트](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c5-n.png)
 
-    ![애플리케이션 리디렉션 URI 추가](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+4. **속성** 을 선택한 다음, **암시적 흐름 허용** 컨트롤을 **예** 로 설정합니다.
+   
+5. 다른 필드는 기본값으로 둡니다.
+    
+6. **저장** 을 선택합니다. 애플리케이션이 준비될 때까지 잠시 시간이 걸릴 수 있습니다.
+    
+   ![앱 키 업데이트](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c6-n.png)
 
-6. **개요** , **애플리케이션** 을 차례로 선택합니다.
+7. **일반** 창에서 **키** 를 선택한 다음, **키 생성** 을 선택합니다.
 
-7. 애플리케이션 테이블에서 프로젝트 이름이 있는 행을 선택합니다.
+8. **앱 키** 를 위에서 입력한 **그룹** 값으로 바꿉니다.
 
-8. **일반** 창에서 [키]를 선택한 다음, **키 생성** 을 선택합니다.
-
-9. **앱 키** 를 `yourGroupIdkey`로 설정하고, `yourGroupId`를 위에서 입력한 **그룹** 에 대한 값으로 바꿉니다.
-
-10. **저장** 을 선택합니다. 앱 키 섹션에 키가 표시될 때까지 기다린 다음, 이 문서의 뒷부분에서 사용할 수 있도록 복사합니다.
+9. **저장** 을 선택합니다. 앱 키 섹션에 키가 표시될 때까지 기다린 다음, 이 문서의 뒷부분에서 사용할 수 있도록 복사합니다.
 
     > [!NOTE]
     > **키** 섹션을 종료하고 다시 돌아오면 해당 키 값을 볼 수 없습니다. 이 경우 다른 키를 만들어 나중에 사용할 수 있도록 복사해야 합니다.
@@ -140,11 +142,11 @@ ms.locfileid: "92898785"
 
     ![비밀 만들기](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
-11. **개요** 를 선택합니다.
+10. **개요** 를 선택합니다.
 
-12. 왼쪽 창의 **정책** 섹션에서 **사용자 흐름** , **새 사용자 흐름** 을 차례로 선택합니다.
+11. 왼쪽 창의 **정책** 섹션에서 **사용자 흐름** , **새 사용자 흐름** 을 차례로 선택합니다.
 
-13. 이제 이 자습서를 종료하고, 다른 자습서를 실행하고, 완료되면 이 자습서로 돌아갑니다. 다른 자습서로 이동하는 경우 유의해야 할 몇 가지 사항은 다음과 같습니다.
+12. 이제 이 자습서를 종료하고, 다른 자습서를 실행하고, 완료되면 이 자습서로 돌아갑니다. 다른 자습서로 이동하는 경우 유의해야 할 몇 가지 사항은 다음과 같습니다.
 
     * **새 사용자 흐름** 을 선택하도록 요청하는 단계부터 시작합니다.
     * 이 자습서에서 `webapp1`을 참조하는 경우 **그룹** 에 대해 입력한 값을 대신 사용합니다.

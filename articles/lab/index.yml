@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: 개발자 환경 랩
+summary: >
+  빠른 시작, 방법 가이드, 코드 샘플 등을 통해 Azure의 기능을 살펴봅니다.
+metadata:
+  title: 개발자 환경 랩
+  description: '...'
+  author: diberry
+  ms.author: diberry
+  ms.date: 09/21/2020
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  robots: noindex
+  ms.openlocfilehash: 30decb3bc113d9bd56ebdba4e91a262d43e13086
+  ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 11/05/2020
+  ms.locfileid: "93405350"
+landingContent:
+- title: 자습서 랩
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Python flask 단일 페이지
+      url: quickstart-python-flask.md
+    - text: Python flask 다중 페이지
+      url: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+    - text: Python flask 단일 페이지 최소화
+      url: quickstart-python-flask-minimized.md

@@ -1,0 +1,11 @@
+- name: 개발자 환경 랩
+  href: index.yml
+  items:
+    - name: 자습서 형식 랩
+      items:
+        - name: Python flask 단일 페이지
+          href: quickstart-python-flask.md
+        - name: Python flask 다중 페이지
+          href: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+        - name: Python flask 단일 페이지 최소화
+          href: quickstart-python-flask-minimized.md

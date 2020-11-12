@@ -10,12 +10,12 @@ metadata:
   ms.author: ushan
   ms.date: 05/05/2020
   ms.custom: github-actions-azure
-  ms.openlocfilehash: 2e25fcbe07742d0fbca64565dea8dadc50939949
-  ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+  ms.openlocfilehash: f2dddbae2eac63fdab7e5956ebcda6003e3c2028
+  ms.sourcegitcommit: 2540e91f7b6aa077158e25a0b718737abff904d4
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 10/28/2020
-  ms.locfileid: "92898710"
+  ms.lasthandoff: 11/10/2020
+  ms.locfileid: "94432784"
 landingContent:
 - title: Azure에 대한 GitHub 작업
   linkLists:
@@ -47,3 +47,9 @@ landingContent:
     links:
     - text: Azure 및 기타 서비스에서 GitHub로 연결
       url: connect-from-azure.md
+- title: GitHub를 사용하여 Azure 정책 관리
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: GitHub를 사용하여 Azure 정책을 코드로 관리
+      url: manage-azure-policy.md

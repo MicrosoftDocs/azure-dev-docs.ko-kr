@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 7a7128a475b428243f3c7280fc154d1d4c8fe8a6
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 6fbc1036b06a318d81729691331adb6b868e1d5c
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92438352"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93406677"
 ---
 ### <a name="create-a-web-project"></a>웹 프로젝트 만들기
 
@@ -732,7 +732,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotne
 다음으로, 모든 디바이스에서 액세스할 수 있도록 앱을 API 앱에 배포합니다.  
 
 >[!NOTE]
-> 다음 단계는 [Mac용 Visual Studio](https://visualstudio.microsoft.com/vs/mac/)에만 적용됩니다. Windows에서 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)를 사용하는 경우 게시 흐름이 달라집니다. [Windows의 Azure App Service에 게시](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)를 참조하세요.
+> 다음 단계는 [Mac용 Visual Studio](https://visualstudio.microsoft.com/vs/mac/)에만 적용됩니다. Windows에서 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)를 사용하는 경우 게시 흐름이 달라집니다. [Windows의 Azure App Service에 게시](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)를 참조하세요.
 
 1. 구성을 **디버그** 에서 **릴리스** 로 아직 변경하지 않은 경우 이렇게 변경합니다.
 

@@ -4,12 +4,12 @@ description: '자습서 7부: Azure CLI - 리소스 정리'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 037bc51c8f11faaf5b0c9bd0051a6c28197dd17b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0c3404067f6324a37d7863568e715b806511a226
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688612"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405992"
 ---
 # <a name="part-7-clean-up-resources"></a>7부: 리소스 정리
 
@@ -24,4 +24,4 @@ az group delete --name myResourceGroup
 또한 [Azure Portal](https://portal.azure.com)을 방문하여 왼쪽 탐색 창에서 **리소스 그룹** 을 선택하고, 이 자습서의 프로세스에서 만든 리소스 그룹을 선택한 다음, **리소스 그룹 삭제** 명령을 사용합니다.
 
 > [!div class="nextstepaction"]
-> [완료했습니다.](node-howto-deploy-web-app.md) [문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=clean-up-resources)
+> [완료했습니다.](./how-to/deploy-web-app.md) [문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=clean-up-resources)

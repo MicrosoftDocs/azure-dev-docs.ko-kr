@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a6e51b3fca9e2ae633a69b6372d7f622d2697812
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: fe73a2c6b6f18a5e85d342f8fed7ed547b272be9
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405754"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93406764"
 ---
 | 샘플  | Description |
 |---|---|
@@ -19,10 +19,10 @@ ms.locfileid: "86405754"
 | **확장 집합 만들기** ||
 | [부하 분산 장치를 사용하여 가상 머신 확장 집합 만들기][7] | VM 확장 집합을 만들고, 부하 분산 장치를 설정하고, 확장 집합 VM에 SSH 연결 문자열을 가져옵니다. |
 
-[1]: ../java-sdk-manage-virtual-machines.md
+[1]: ../index.yml
 [2]: https://github.com/Azure-Samples/managed-disk-java-create-virtual-machine-using-custom-image/
 [3]: https://github.com/Azure-Samples/managed-disk-java-create-virtual-machine-using-specialized-disk-from-vhd/
 [4]: https://github.com/Azure-Samples/compute-java-manage-virtual-machines-in-parallel/
-[5]: ../java-sdk-virtual-machines-in-parallel.md
-[6]: ../java-sdk-manage-virtual-networks.md
+[5]: ../index.yml
+[6]: ../index.yml
 [7]: ../java-sdk-manage-vm-scalesets.md

@@ -1,0 +1,58 @@
+### YamlMime:Tutorial
+title: '빠른 시작: Azure App Service on Linux에서 Python 앱 만들기'
+metadata:
+  title: '빠른 시작: Python 앱 만들기'
+  description: 첫 번째 Python 앱을 App Service의 Linux 컨테이너에 배포하여 Azure App Service를 시작하세요.
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 09/22/2020
+  ms.topic: tutorial
+  robots: noindex
+  ms.openlocfilehash: bc789056970531a624009293f483d6c0f489434b
+  ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 11/05/2020
+  ms.locfileid: "93405236"
+items:
+- durationInMinutes: 2
+  content: >
+    [!INCLUDE [Tutorial introduction](includes/python-tutorial-multipage/intro.md)]
+- title: 1. 초기 환경 설정
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Set up your initial environment](includes/python-tutorial-multipage/set-up-environment.md)]
+- title: 2. 샘플 복제
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clone the sample](includes/python-tutorial-multipage/clone-sample.md)]
+- title: 3. 샘플 실행
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Run the sample](includes/python-tutorial-multipage/run-sample.md)]
+- title: 4. 샘플 배포
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Deploy the sample](includes/python-tutorial-multipage/deploy-sample.md)]
+- title: 5. 앱으로 이동
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Browse to the app](includes/python-tutorial-multipage/browse-app.md)]
+- title: 6. 업데이트 재배포
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [ Redeploy updates](includes/python-tutorial-multipage/redeploy-updates.md)]
+- title: 7. 로그 스트리밍
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Stream logs](includes/python-tutorial-multipage/stream-logs.md)]
+- title: 8. Azure 앱 관리
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Manage the Azure app](includes/python-tutorial-multipage/manage-app.md)]
+- title: 9. 리소스 정리
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clean up resources](includes/python-tutorial-multipage/clean-up-resources.md)]
+- content: '[!INCLUDE [Completed tutorial](includes/python-tutorial-multipage/next-steps.md)]'

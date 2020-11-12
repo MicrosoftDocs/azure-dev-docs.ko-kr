@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 098c9d35c541f7f6f05cb8470418c8bee4f01ea7
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.openlocfilehash: db05f984c92a2c7ba99ec2df07fc3924d90107f2
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898733"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405702"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>GitHub에서 Azure로 앱 배포 
 
@@ -31,4 +31,4 @@ ms.locfileid: "92898733"
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
 - [GitHub Actions를 사용하여 Kubernetes에 배포](/azure/aks/kubernetes-action)  
-- [GitHub Actions를 사용하여 Azure Dev Spaces에 배포](https://docs.microsoft.com/azure/dev-spaces/how-to/github-actions)
+- [GitHub Actions를 사용하여 Azure Dev Spaces에 배포](/azure/dev-spaces/how-to/github-actions)

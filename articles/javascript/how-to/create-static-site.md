@@ -4,12 +4,12 @@ description: Azure를 사용하여 JAMstack 앱(JavaScript, API 및 태그)을 �
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: b126cb60341733451be555fa7759773aac99f6ce
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 421464b76a8276ef87b84596a6434e991a3c2b25
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437286"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333801"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js를 사용하여 Azure에서 JAMstack(정적 사이트) 웹앱 빌드
 
@@ -34,7 +34,7 @@ Azure에서 정적/JAMstack 사이트를 구현하려면 다음과 같은 다양
   
 - **서버리스 API** :
 
-  - [Visual Studio Code에서 Azure Functions 배포](../tutorial-vscode-serverless-node-01.md)로 시작합니다. 여기에서는 Visual Studio Code의 컨텍스트에서 Azure Functions를 소개하여 많은 세부 정보를 간소화합니다.
+  - [Visual Studio Code에서 Azure Functions 배포](../tutorial/tutorial-vscode-serverless-node-install.md)로 시작합니다. 여기에서는 Visual Studio Code의 컨텍스트에서 Azure Functions를 소개하여 많은 세부 정보를 간소화합니다.
   - 문서가 완료되면 HTTP 엔드포인트와 동일한 함수의 이름이 지정된 하위 폴더가 포함된 Azure Functions 프로젝트(폴더)가 있습니다. 이 함수 폴더에는 코드가 포함된 *index.js* 파일이 포함되어 있습니다.
   - 필요에 따라 해당 함수를 수정하고, 더 많은 함수를 프로젝트에 추가한 다음, 공개적으로 사용할 수 있는 Azure에 다시 배포할 수 있습니다.
   - 서버리스 개발에 대한 추가 리소스는 [Azure에서 서버리스 Node.js 코드를 작성하는 방법](develop-serverless-apps.md)을 참조하세요.

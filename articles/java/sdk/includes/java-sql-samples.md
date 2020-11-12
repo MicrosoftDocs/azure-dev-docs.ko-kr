@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 069524ad8c17db20f90114b1c6c630dce6866290
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.openlocfilehash: bbe9f1e3d12fe45a6465aa5b2b15220789ec8f4e
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91829207"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93406782"
 ---
 |샘플   |Description  |
 |---------|---------|
@@ -15,5 +15,5 @@ ms.locfileid: "91829207"
 
 [1]: https://github.com/Azure-Samples/sql-database-java-manage-db/
 [2]: https://github.com/Azure-Samples/sql-database-java-manage-sql-databases-across-regions
-[3]: ../java-sdk-manage-sql-elastic-pools.md
+[3]: ../index.yml
 [4]: /azure/sql-database/sql-database-connect-query-java

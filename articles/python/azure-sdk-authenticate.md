@@ -4,20 +4,20 @@ description: Azure 라이브러리를 사용하여 Azure 서비스로 Python 앱
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764671"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405903"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure에서 Python 앱을 인증하고 권한을 부여하는 방법
 
 Azure에 배포된 대부분의 클라우드 애플리케이션은 스토리지, 데이터베이스, 저장된 비밀 등과 같은 다른 Azure 리소스에 액세스해야 합니다. 이러한 리소스에 액세스하려면 애플리케이션이 인증되고 권한이 부여되어야 합니다.
 
-- **인증**은 Azure Active Directory를 사용하여 앱의 ID를 확인합니다.
+- **인증** 은 Azure Active Directory를 사용하여 앱의 ID를 확인합니다.
 
-- **권한 부여**는 인증된 앱이 지정된 리소스에 대해 수행할 수 있는 작업을 결정합니다. 권한이 부여된 작업은 해당 리소스의 앱 ID에 할당된 **역할**을 통해 정의됩니다. 앱 ID에 할당된 추가 **액세스 정책**에 의해 권한 부여가 결정되는 경우(예: Azure Key Vault)도 있습니다.
+- **권한 부여** 는 인증된 앱이 지정된 리소스에 대해 수행할 수 있는 작업을 결정합니다. 권한이 부여된 작업은 해당 리소스의 앱 ID에 할당된 **역할** 을 통해 정의됩니다. 앱 ID에 할당된 추가 **액세스 정책** 에 의해 권한 부여가 결정되는 경우(예: Azure Key Vault)도 있습니다.
 
 이 문서에서는 인증 및 권한 부여에 대해 자세히 설명합니다.
 
@@ -28,13 +28,13 @@ Azure에 배포된 대부분의 클라우드 애플리케이션은 스토리지,
 
 ## <a name="how-to-assign-an-app-identity"></a>앱 ID를 할당하는 방법
 
-Azure에서 앱 ID는 **서비스 주체**에 의해 정의됩니다. (서비스 주체는 앱 또는 서비스를 식별하는 데 사용되는 특정 유형의 "보안 주체"이며, 인간 사용자나 사용자 그룹이 아닌 코드 조각입니다.)
+Azure에서 앱 ID는 **서비스 주체** 에 의해 정의됩니다. (서비스 주체는 앱 또는 서비스를 식별하는 데 사용되는 특정 유형의 "보안 주체"이며, 인간 사용자나 사용자 그룹이 아닌 코드 조각입니다.)
 
 관련된 서비스 주체는 앱이 실행되는 위치에 따라 달라지며, 다음 섹션에 설명되어 있습니다.
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Azure에서 앱을 실행하는 경우 ID
 
-클라우드에서 실행하는 경우(예: 프로덕션 환경) 앱은 **시스템이 할당한 관리 ID**를 가장 일반적으로 사용합니다. [관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하면 리소스에 대한 역할 및 권한을 할당할 때 앱 이름을 사용합니다. Azure에서는 기본 서비스 주체가 자동으로 관리되고 다른 Azure 리소스를 사용하여 앱이 자동으로 인증됩니다. 따라서 서비스 주체를 직접 처리할 필요가 없습니다. 또한 앱 코드가 Azure 리소스에 대한 액세스 토큰, 비밀 또는 연결 문자열을 처리할 필요가 없기 때문에 이러한 정보가 유출되거나 손상될 위험이 적습니다.
+클라우드에서 실행하는 경우(예: 프로덕션 환경) 앱은 **시스템이 할당한 관리 ID** 를 가장 일반적으로 사용합니다. [관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하면 리소스에 대한 역할 및 권한을 할당할 때 앱 이름을 사용합니다. Azure에서는 기본 서비스 주체가 자동으로 관리되고 다른 Azure 리소스를 사용하여 앱이 자동으로 인증됩니다. 따라서 서비스 주체를 직접 처리할 필요가 없습니다. 또한 앱 코드가 Azure 리소스에 대한 액세스 토큰, 비밀 또는 연결 문자열을 처리할 필요가 없기 때문에 이러한 정보가 유출되거나 손상될 위험이 적습니다.
 
 관리 ID 구성은 앱을 호스트하는 데 사용하는 서비스에 따라 달라집니다. 각 서비스에 대한 지침 링크는 [관리 ID를 지원하는 서비스](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities) 문서를 참조하세요. 예를 들어 Azure App Service에 배포된 웹앱의 경우 Azure Portal에서 **ID** > **시스템 할당 항목** 옵션을 사용하거나 Azure CLI에서 `az webapp identity assign` 명령을 사용하여 관리 ID를 사용하도록 설정합니다.
 
@@ -225,7 +225,7 @@ azure.core용으로 업데이트되지 않은 라이브러리에서 `DefaultAzur
     > [!TIP]
     > [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)에서 설명한 대로 이 JSON 형식은 `--sdk-auth` 매개 변수가 포함된 [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) 명령을 사용하여 직접 생성할 수 있습니다.
 
-1. 코드에서 액세스할 수 있는 안전한 위치에 파일을 *credentials.json*이라는 이름으로 저장합니다. 자격 증명을 안전하게 유지하려면 이 파일을 원본 제어에서 생략하고 다른 개발자와 공유하지 않아야 합니다. 즉, 서비스 주체의 테넌트 ID, 클라이언트 ID 및 클라이언트 암호는 항상 개발 워크스테이션에서 격리되어 있어야 합니다.
+1. 코드에서 액세스할 수 있는 안전한 위치에 파일을 *credentials.json* 이라는 이름으로 저장합니다. 자격 증명을 안전하게 유지하려면 이 파일을 원본 제어에서 생략하고 다른 개발자와 공유하지 않아야 합니다. 즉, 서비스 주체의 테넌트 ID, 클라이언트 ID 및 클라이언트 암호는 항상 개발 워크스테이션에서 격리되어 있어야 합니다.
 
 1. JSON 파일의 경로를 값으로 사용하여 `AZURE_AUTH_LOCATION`이라는 환경 변수를 만듭니다.
 
@@ -243,7 +243,7 @@ azure.core용으로 업데이트되지 않은 라이브러리에서 `DefaultAzur
 
     ---
 
-    이러한 예제에서는 JSON 파일의 이름이 *credentials.json*이고 프로젝트의 부모 폴더에 있다고 가정합니다.
+    이러한 예제에서는 JSON 파일의 이름이 *credentials.json* 이고 프로젝트의 부모 폴더에 있다고 가정합니다.
 
 1. [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory#get-client-from-auth-file-client-class--auth-path-none----kwargs-) 메서드를 사용하여 클라이언트 개체를 만듭니다.
 
@@ -391,7 +391,7 @@ CLI 기반 인증을 사용하는 경우 애플리케이션이 CLI 로그인 자
 
 #### <a name="cli-based-authentication-with-azurecore-libraries"></a>azure.core 라이브러리를 사용한 CLI 기반 인증
 
-[azure.core용으로 업데이트된 Azure 라이브러리](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore)를 사용하는 경우 azure-identity 라이브러리(버전 1.4.0 이상)의 [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) 개체를 사용하세요. 예를 들어 다음 코드는 azure-mgmt-resource 15.0.0 이상 버전에서 사용할 수 있습니다.
+[azure.core용으로 업데이트된 Azure 라이브러리](./azure-sdk-library-package-index.md#libraries-using-azurecore)를 사용하는 경우 azure-identity 라이브러리(버전 1.4.0 이상)의 [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) 개체를 사용하세요. 예를 들어 다음 코드는 azure-mgmt-resource 15.0.0 이상 버전에서 사용할 수 있습니다.
 
 ```python
 from azure.identity import AzureCliCredential

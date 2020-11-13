@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a2dbb6a83837e716f48304a8013ba198280e9624
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: a6022875af3a15f7140e4db7fcc669d47f55b3d2
+ms.sourcegitcommit: dee8dc9ce6c255c53913e27813dc3659ff238a01
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689188"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94379003"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Azure 에서 Java를 이용하여 클라우드 개발 시작
 
@@ -25,22 +25,17 @@ ms.locfileid: "92689188"
 
 - Azure 계정. 계정이 없으면 [체험 계정을 얻습니다](https://azure.microsoft.com/free/).
 - [Azure Cloud Shell](/azure/cloud-shell/quickstart) 또는 [Azure CLI 2.0](/cli/azure/install-az-cli2)
-- [Java 8](https://www.azul.com/downloads/zulu/)(Azure Cloud Shell에 포함되어 있음)
+- [Java 8](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-long-term-support)(Azure Cloud Shell에 포함되어 있음)
 - [Maven 3](https://maven.apache.org/download.cgi)(Azure Cloud Shell에 포함되어 있음)
 
 ## <a name="set-up-authentication"></a>인증 설정
 
 이 자습서에서 샘플 코드를 실행하려면 Azure 구독에 대한 읽기 및 만들기 권한이 Java 애플리케이션에 필요합니다. 서비스 사용자를 만들고 해당 자격 증명을 사용하여 실행되도록 애플리케이션을 구성합니다. 서비스 주체는 앱에서 실행하는 데 필요한 권한만 부여하는 ID와 연결되는 비대화형 계정을 만드는 방법을 제공합니다.
 
-[Azure CLI 2.0을 사용하여 서비스 사용자를 만들고](/cli/azure/create-an-azure-service-principal-azure-cli) 출력을 캡처합니다. 암호 인수에 `MY_SECURE_PASSWORD` 대신 [보안 암호](/azure/active-directory/active-directory-passwords-policy)를 제공합니다. 암호는 8~16자이고 다음 4개 기준 중 3개 이상에 부합해야 합니다.
-
-* 소문자 포함
-* 대문자 포함
-* 숫자 포함
-* @ # $ % ^ & *-_! 기호 중 하나 포함 + = [ ] { } | \ : ' , . ? / ` ~ " ( ) ;
+[Azure CLI 2.0을 사용하여 서비스 사용자를 만들고](/cli/azure/create-an-azure-service-principal-azure-cli) 출력을 캡처합니다.
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name AzureJavaTest --password "MY_SECURE_PASSWORD"
+az ad sp create-for-rbac --name AzureJavaTest
 ```
 
 다음 형식으로 답장 제공:
@@ -50,7 +45,7 @@ az ad sp create-for-rbac --name AzureJavaTest --password "MY_SECURE_PASSWORD"
   "appId": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
   "displayName": "AzureJavaTest",
   "name": "http://AzureJavaTest",
-  "password": password,
+  "password": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
   "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
 }
 ```
@@ -61,7 +56,7 @@ az ad sp create-for-rbac --name AzureJavaTest --password "MY_SECURE_PASSWORD"
 # sample management library properties file
 subscription=ssssssss-ssss-ssss-ssss-ssssssssssss
 client=cccccccc-cccc-cccc-cccc-cccccccccccc
-key=kkkkkkkkkkkkkkkk
+key=aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 tenant=tttttttt-tttt-tttt-tttt-tttttttttttt
 managementURI=https\://management.core.windows.net/
 baseURL=https\://management.azure.com/
@@ -110,14 +105,9 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ```XML
 <dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure</artifactId>
-    <version>1.3.0</version>
-</dependency>
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure-storage</artifactId>
-    <version>5.0.0</version>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-storage-blob</artifactId>
+      <version>12.8.0</version>
 </dependency>
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
@@ -144,7 +134,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>IntelliJ용 Azure 도구 키트 설치
 
-[Azure 도구 키트](../toolkit-for-intellij/installation.md)는 웹앱이나 API를 프로그래밍 방식으로 설치하지만 현재 다른 개발 유형에는 사용하고 있지 않은 경우에 필요합니다. 다음은 설치 프로세스에 대한 요약입니다. 빠른 시작을 원하는 경우 [Azure Toolkit for IntelliJ 빠른 시작](../toolkit-for-intellij/create-hello-world-web-app.md)을 방문하세요.
+[Azure 도구 키트](../toolkit-for-intellij/index.yml)는 웹앱이나 API를 프로그래밍 방식으로 설치하지만 현재 다른 개발 유형에는 사용하고 있지 않은 경우에 필요합니다. 다음은 설치 프로세스에 대한 요약입니다. 빠른 시작을 원하는 경우 [Azure Toolkit for IntelliJ 빠른 시작](../toolkit-for-intellij/create-hello-world-web-app.md)을 방문하세요.
 
 - **파일** 메뉴를 선택한 다음 **설정...** 을 선택합니다.
 
@@ -164,7 +154,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ## <a name="create-a-linux-virtual-machine"></a>Linux 가상 머신 만들기
 
-프로젝트의 `src/main/java/com/fabirkam` 디렉터리에 `AzureApp.java`라는 새 파일을 만들고 다음 코드 블록에 붙여넣습니다. `userName` 및 `sshKey` 변수를 컴퓨터에 대한 실제 값으로 업데이트합니다. 이 코드에서는 미국 동부 Azure 지역에서 실행되는 `sampleResourceGroup` 리소스 그룹에 `testLinuxVM`이라는 새 Linux VM을 만듭니다.
+프로젝트의 `src/main/java/com/fabrikam` 디렉터리에 `AzureApp.java`라는 새 파일을 만들고 다음 코드 블록에 붙여넣습니다. `userName` 및 `sshKey` 변수를 컴퓨터에 대한 실제 값으로 업데이트합니다. 이 코드에서는 미국 동부 Azure 지역에서 실행되는 `sampleResourceGroup` 리소스 그룹에 `testLinuxVM`이라는 새 Linux VM을 만듭니다.
 
 ```java
 package com.fabrikam;
@@ -184,14 +174,19 @@ import com.microsoft.azure.management.resources.fluentcore.utils.SdkContext;
 
 import com.microsoft.rest.LogLevel;
 
-import com.microsoft.azure.storage.*;
-import com.microsoft.azure.storage.blob.*;
+import com.azure.storage.blob.BlobClient;
+import com.azure.storage.blob.BlobContainerClient;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
+import com.azure.storage.blob.models.PublicAccessType;
+import com.azure.storage.common.StorageSharedKeyCredential;
 
-import java.io.File;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 public class AzureApp {
 
@@ -406,26 +401,32 @@ public static void main(String[] args) {
 
         // create a storage container to hold the file
         List<StorageAccountKey> keys = storage.getKeys();
-        final String storageConnection = "DefaultEndpointsProtocol=https;"
-                + "AccountName=" + storage.name()
-                + ";AccountKey=" + keys.get(0).value()
-                + ";EndpointSuffix=core.windows.net";
+        PublicEndpoints endpoints = storage.endPoints();
+        String accountName = storage.name();
+        String accountKey = keys.get(0).value();
+        String endpoint = endpoints.primary().blob();
 
-        CloudStorageAccount account = CloudStorageAccount.parse(storageConnection);
-        CloudBlobClient serviceClient = account.createCloudBlobClient();
+        StorageSharedKeyCredential credential = new StorageSharedKeyCredential(accountName, accountKey);
 
-        // Container name must be lower case.
-        CloudBlobContainer container = serviceClient.getContainerReference("helloazure");
-        container.createIfNotExists();
+        BlobServiceClient storageClient =new BlobServiceClientBuilder()
+                                    .endpoint(endpoint)
+                                    .credential(credential)
+                                    .buildClient();
+
+        // Container name must be lower case
+        BlobContainerClient blobContainerClient = storageClient.getBlobContainerClient("helloazure");
+        blobContainerClient.create();
 
         // Make the container public
-        BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
-        containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
-        container.uploadPermissions(containerPermissions);
+        blobContainerClient.setAccessPolicy(PublicAccessType.CONTAINER, null);
 
         // write a blob to the container
-        CloudBlockBlob blob = container.getBlockBlobReference("helloazure.txt");
-        blob.uploadText("hello Azure");
+        String fileName = "helloazure.txt";
+        String textNew = "Hello Azure";
+
+        BlobClient blobClient = blobContainerClient.getBlobClient(fileName);
+        InputStream is = new ByteArrayInputStream(textNew.getBytes());
+        blobClient.upload(is, textNew.length());
 
     } catch (Exception e) {
         System.out.println(e.getMessage());

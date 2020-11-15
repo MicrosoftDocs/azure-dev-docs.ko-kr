@@ -17,6 +17,22 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: MongoDB를 사용하는 Express.js
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
+        - name: Linux 가상 머신에 앱 배포
+          items:
+            - name: 1. 소개 및 필수 구성 요소
+              href: tutorial/nodejs-virtual-machine-vm/introduction.md
+            - name: 2. Application Insights 리소스 만들기
+              href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
+            - name: 3. 가상 머신 만들기
+              href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
+            - name: 4. Linux 가상 머신에 연결
+              href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
+            - name: 5. 앱에 클라우드 로깅 추가
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
+            - name: 6. 로그 보기
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
+            - name: 7. 리소스 정리
+              href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
         - name: 서버리스 함수 만들기 및 배포
           items:
             - name: 1. 소개 및 필수 구성 요소

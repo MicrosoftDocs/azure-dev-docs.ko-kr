@@ -4,12 +4,12 @@ description: tutorial-azure-web-app-mongodb-01.md 포함 파일
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a8c9fcca1b7374ae5122cfabb3fcbfc6ba8cdd07
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 61bb61d147e01061dcf58701132feddd09c53b59
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183909"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94341031"
 ---
 자습서의 이 섹션에서 이 자습서를 사용하려면 Azure 구독 및 모든 소프트웨어가 필요합니다.
 
@@ -19,7 +19,7 @@ ms.locfileid: "92183909"
 
 ## <a name="install-software"></a>소프트웨어 설치
 
-- [Node.js 및 npm](https://nodejs.org/en/download) - 로컬 컴퓨터에 설치된 Node.js 패키지 관리자입니다.
+- [Node.js 8.x+ 및 npm](https://nodejs.org/en/download) - 로컬 컴퓨터에 설치된 Node.js 패키지 관리자입니다.
 - [Docker](https://docs.docker.com/get-docker/) - Docker는 MongoDB를 설치하지 않고도 로컬 MongoDB 데이터베이스를 제공하는 데 사용됩니다. 
     - Docker를 사용하여 로컬 MongoDB 데이터베이스를 가져와야 하는 경우 다음 항목도 사용해야 합니다.
         -  Visual Studio [개발 컨테이너](https://code.visualstudio.com/docs/remote/containers)는 JavaScript 개발을 위한 몇 가지 공통 컨테이너를 제공합니다. 

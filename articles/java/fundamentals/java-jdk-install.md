@@ -4,12 +4,12 @@ description: Windows, Linux 및 Mac을 사용하여 Azure 개발용 Azul Zulu JD
 ms.date: 04/19/2019
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: e5b9f0874202373400640687df2b1558f7f41526
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: bb6bc020f7165c81699a624b9fd7a55c4f289c24
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473495"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515164"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>Azure 및 Azure Stack용 JDK 설치
 
@@ -92,7 +92,7 @@ OpenJDK 64-Bit Server VM (Zulu 8.44.0.11-linux64)-Microsoft-Azure-restricted (bu
 
 Azul Zulu JDK는 Azul에 의해 [Yum 리포지토리](https://repos.azul.com/azure-only/zulu-azure.repo)에서 제공됩니다.
 
-**Java 8용 Azul Zulu JDK를 설치하려면 CLI에서 다음 명령을 실행합니다.**
+Java 8용 Azul Zulu JDK를 설치하려면 CLI에서 다음 명령을 실행합니다.
 
 ```cli
 sudo rpm --import http://repos.azul.com/azul-repo.key
@@ -110,13 +110,13 @@ sudo yum -q -y update
 sudo yum -q -y install zulu-11-azure-jdk
 ```
 
-Java 13(미리 보기)의 경우 다음을 실행합니다.
+Java 15의 경우 다음을 실행합니다.
 
 ```cli
 sudo rpm --import http://repos.azul.com/azul-repo.key
 sudo curl http://repos.azul.com/azure-only/zulu-azure.repo -o /etc/yum.repos.d/zulu-azure.repo
 sudo yum -q -y update
-sudo yum -q -y install zulu-13-azure-jdk
+sudo yum -q -y install zulu-15-azure-jdk
 ```
 
 **Yum 리포지토리에서 Zulu JDK 8 패키지를 업데이트하려면 다음을 수행합니다.**
@@ -139,7 +139,7 @@ sudo yum -y erase zulu-8-azure-jdk
 
 Azul Zulu JDK는 Azul에 의해 [apt-get 리포지토리](https://repos.azul.com/azure-only/zulu/apt)에서도 제공됩니다.
 
-**apt-get를 사용하여 Java 8용 Azul Zulu JDK를 설치하려면 CLI에서 다음 명령을 실행합니다.**
+apt-get를 사용하여 Java 8용 Azul Zulu JDK를 설치하려면 CLI에서 다음 명령을 실행합니다.
 
 ```cli
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
@@ -157,7 +157,7 @@ sudo apt-get -q update
 sudo apt-get -y install zulu-11-azure-jdk
 ```
 
-Java 13(미리 보기)의 경우 다음을 실행합니다.
+Java 15의 경우 다음을 실행합니다.
 
 ```cli
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9

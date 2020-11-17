@@ -4,12 +4,12 @@ description: '자습서 1부: Azure CLI 소개 및 필수 구성 요소'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a23a09cfdd36cd67b8fc09a1cb3bac266c2db813
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 2ff59026c3f250f3ef83982f799633094a5cd9f7
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688672"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515184"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI를 사용하여 Azure App Service에 배포
 
@@ -20,25 +20,15 @@ ms.locfileid: "92688672"
 - [Azure 구독](#azure-subscription).
 - [Node.js 및 npm 6.x 이상](https://nodejs.org/en/download)(Node.js 패키지 관리자)
 - [Git](https://git-scm.com/downloads)(뒤에 나오는 `git --version` 명령에 버전 번호를 표시해야 함)
-- [Azure CLI](/cli/azure/install-azure-cli)
-
-대안으로, Azure CLI 스크립트를 작성할 때 구문 색 지정, IntelliSense(완료) 및 코드 조각을 제공하는 [Visual Studio Code용 Azure CLI 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)을 대신 사용할 수도 있습니다.
-
-두 번째 대안은 [Azure Cloud Shell](/azure/cloud-shell/overview)이며, [Azure Account 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)을 사용하여 Visual Studio Code 내에서 사용할 수 있습니다.
+[!INCLUDE [Azure CLI](~/../azure-docs/includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ### <a name="azure-subscription"></a>Azure 구독
 
 Azure 구독이 없는 경우 지금 200달러의 Azure 크레딧으로 체험 계정에 [지금 가입](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-node-git&mktingSource=vscode-tutorial-node-git)하여 서비스 조합을 사용해 볼 수 있습니다.
 
-### <a name="sign-in-to-the-azure-cli"></a>Azure CLI에 로그인
+### <a name="sign-in-to-azure-with-azure-cli"></a>Azure CLI를 사용하여 Azure에 로그인
 
-Azure CLI가 설치되면 터미널 또는 명령 프롬프트에서 다음 명령을 실행합니다.
-
-```azurecli
-az login
-```
-
-이 명령은 Azure에 로그인하라는 메시지가 표시되는 브라우저 창을 엽니다. 로그인하면 터미널 창에 구독 세부 정보가 포함된 JSON 출력이 표시됩니다.
+[!INCLUDE [Sign in ](../azure-cli/includes/interactive-login.md)]
 
 ## <a name="check-npm-version"></a>npm 버전 확인
 

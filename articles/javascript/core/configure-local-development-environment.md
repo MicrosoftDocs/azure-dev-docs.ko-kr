@@ -1,15 +1,15 @@
 ---
 title: Azure 개발을 위한 로컬 JavaScript 환경 구성
 description: 편집기, Azure SDK 라이브러리, 선택적 도구 및 라이브러리 인증에 필요한 자격 증명을 포함하여 Azure를 사용하기 위한 로컬 JavaScript 개발 환경을 설정하는 방법을 설명합니다.
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 2e61facd2065773dcbef7d0cdd20353671121422
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437311"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333831"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure를 위한 로컬 JavaScript 개발 환경 구성
 
@@ -21,59 +21,44 @@ ms.locfileid: "92437311"
 
 Azure 리소스는 Azure 사용의 청구 단위인 구독 내에 생성됩니다. 무료 리소스(각 구독은 대부분의 서비스에 무료 리소스를 제공함)를 만들 수 있지만, 리소스를 프로덕션에 배포할 때 유료 계층 리소스를 만들어야 합니다.
 
-|유형|설명|
+|유형|Description|
 |--|--|
-|[평가판 구독](https://azure.microsoft.com/free/cognitive-services)|_평가판_ 구독을 만듭니다.|
-|[기존 구독](https://portal.azure.com)|구독이 이미 있는 경우 Azure Portal, Azure CLI 또는 JavaScript에서 기존 구독에 액세스합니다.|
-|[여러 구독](/azure/governance/management-groups/create-management-group-javascript)|여러 구독을 관리해야 하는 경우 JavaScript를 사용하여 관리 그룹을 만드는 방법을 알아봅니다.|
+|평가판 구독|_평가판_ [구독](https://azure.microsoft.com/free/)을 만듭니다.|
+|기존 구독|구독이 이미 있는 경우 [Azure Portal](https://portal.azure.com), [Azure CLI]() 또는 JavaScript에서 기존 구독에 액세스합니다.|
+|여러 구독|여러 구독을 관리해야 하는 경우 JavaScript를 사용하여 관리 그룹을 [만드는 방법](/azure/governance/management-groups/create-management-group-javascript)을 알아봅니다.|
 
-## <a name="one-time-installation"></a>일회성 설치
+## <a name="one-time-software-installation"></a>일회성 소프트웨어 설치
 
 로컬 워크스테이션에서 JavaScript를 사용하여 Azure 리소스를 사용하여 개발하려면 다음이 설치되어 있어야 합니다.
 
-|이름/설치 프로그램|설명|
+|이름/설치 프로그램|Description|
 |--|--|
-|[Node.js](https://www.npmjs.com/)|로컬 워크스테이션 개발을 위한 최신 LTS(장기 지원) 런타임 환경을 설치합니다. |
-| NPM(최신 버전의 node.js와 함께 설치됨) 또는 [Yarn](https://yarnpkg.com/)|Azure SDK 라이브러리를 설치하기 위한 패키지 관리자.|
+[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code는 뛰어난 JavaScript 통합 및 코딩 환경을 제공하지만 반드시 필요한 것은 아닙니다. 모든 코드 편집기를 사용할 수 있습니다. 이 문서에서는 다른 편집기를 사용하는 경우 Azure와의 통합을 확인하거나 Azure CLI를 사용합니다.|
-|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI를 사용하여 명령줄, 터미널 또는 Bash 셸에서 Azure 리소스를 다시 만들고 관리할 수 있습니다.|
 
 > [!CAUTION]
 > Azure 웹앱 또는 Azure Container Instance와 같은 Azure 리소스를 코드의 런타임 환경으로 사용하려는 경우 로컬 node.js 개발 환경이 사용하려는 Azure 리소스 런타임과 일치하는지 확인해야 합니다.
 
-### <a name="optional-local-installations"></a>선택적 설치 항목
+### <a name="recommended-local-installations"></a>권장 로컬 설치 항목
 
-로컬 개발 작업에 도움이 되는 다음과 같은 일반적인 로컬 워크스테이션 설치는 선택 사항입니다.
+로컬 개발 작업에 도움이 되는 다음과 같은 일반적인 로컬 워크스테이션 설치는 권장 사항입니다.
 
-|이름/설치 프로그램|설명|
+|이름/설치 프로그램|Description|
 |--|--|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) 또는 [Azure용 Visual Studio Code 확장](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Azure로 작업하는 경우 일반적으로 Azure와 함께 작동하는 [Azure Portal](https://ms.portal.azure.com/), Azure CLI 또는 특정 Visual Studio Code 확장을 사용하여 완료됩니다. 빠른 시작 또는 자습서에 지정되지 않은 이상 Azure CLI가 꼭 필요한 것은 아니지만 Azure와 함께 작동하는 단일 도구이며, Visual Studio Code는 서비스별 확장 단위로 동일한 기능을 제공합니다.|
 | [git](https://git-scm.com/downloads) | 소스 제어를 위한 명령줄 도구입니다. 원한다면 다른 소스 제어 도구를 사용해도 됩니다. |
+
 
 ## <a name="one-time-configuration-of-service-principal"></a>서비스 주체의 일회성 구성
 
 각 Azure 서비스에는 인증 메커니즘이 있습니다. 여기에는 키와 엔드포인트, 연결 문자열 또는 기타 메커니즘이 포함될 수 있습니다. 모범 사례를 준수하려면 [서비스 주체](node-sdk-azure-authenticate-principal.md)를 사용하여 리소스를 만들고 리소스를 인증합니다. 서비스 주체를 통해 즉각적인 개발 요구에 대한 액세스 범위를 구체적으로 정의할 수 있습니다.
 
-**서비스 주체 생성** 단계: 
-
-1. 개별 사용자 계정으로 Azure에 로그인합니다.
-1. 특정 범위의 _명명된_ 서비스 주체를 만듭니다. 대부분의 빠른 시작에서는 Azure 리소스를 만들도록 요청하므로 서비스 주체는 리소스를 만들 수 있어야 합니다.
-1. 개별 사용자 계정으로 Azure에서 로그오프합니다.
-
-**서비스 주체 사용** 단계:
-
-1. 인증서, 환경 변수 또는 `.json` 파일을 사용하여 서비스 주체를 통해 프로그래밍 방식으로 Azure에 인증합니다. 
-1. 서비스 주체를 사용하는 Azure 리소스를 만들고 서비스를 사용합니다.
-
-[서비스 주체를 만드는 방법](node-sdk-azure-authenticate-principal.md)을 알아봅니다. 생성 단계의 응답을 저장해야 합니다. 서비스 주체를 사용하려면 응답의 `appId`, `tenant` 및 `password` 값이 필요합니다.
-
-[서비스 주체를 사용하는 Azure 리소스를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal).
-
-## <a name="steps-for-each-new-development-project-setup"></a>새 개발 프로젝트 설정을 위한 단계
+## <a name="working-with-azure-and-the-azure-sdk-client-libraries"></a>Azure 및 Azure SDK 클라이언트 라이브러리 작업
 
 [Azure SDK 라이브러리](../azure-sdk-library-package-index.md)는 각 서비스에 대해 개별적으로 제공됩니다. 사용해야 하는 Azure 서비스를 기반으로 각 라이브러리를 설치합니다.
 
 Azure를 사용하는 각 새 프로젝트는 다음을 수행해야 합니다.
-- Azure 리소스를 만들고 관련 키 또는 구성을 [안전한 위치]()에 저장합니다.
+- Azure 리소스를 만들고 관련 키 또는 구성을 [안전한 위치](#securing-configuration-information)에 저장합니다.
 - NPM 또는 Yarn에서 Azure SDK 라이브러리를 설치합니다. 
 - 서비스 주체를 사용하여 Azure SDK에 인증한 다음, 구성 정보를 사용하여 특정 서비스에 액세스합니다.
 
@@ -81,7 +66,7 @@ Azure를 사용하는 각 새 프로젝트는 다음을 수행해야 합니다.
 
 구성 정보를 저장하는 몇 가지 옵션이 있습니다.
 - [Dotenv](https://www.npmjs.com/package/dotenv)는 `.env` 파일에서 환경 변수를 읽을 때 많이 사용되는 npm 패키지입니다. `.env` 파일이 소스 제어에 체크 인되지 않도록 `.gitignore` 파일에 `.env` 파일을 추가해야 합니다.
-- 클라우드 리소스, 앱 및 솔루션에 액세스하고 암호화하는 키를 만들고 유지 관리하는 Azure [Key Vault](https://docs.microsoft.com/azure/key-vault/)
+- 클라우드 리소스, 앱 및 솔루션에 액세스하고 암호화하는 키를 만들고 유지 관리하는 Azure [Key Vault](/azure/key-vault/)
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>Azure 라이브러리에 대한 환경 변수 만들기
 

@@ -7,22 +7,20 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689216"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405752"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions를 사용하여 Azure에 연결
 
 [Azure PowerShell](https://github.com/Azure/PowerShell) 또는 [Azure CLI](https://github.com/Azure/CLI)에서 [Azure 로그인](https://github.com/Azure/login)을 사용하여 Azure 리소스와 상호 작용하는 방법을 알아봅니다.
 
-Azure PowerShell 또는 Azure CLI를 사용하려면 먼저 [Azure 로그인](https://github.com/marketplace/actions/azure-login)을 사용하여 로그인해야 합니다. Azure 로그인 작업은 서비스 주체를 사용하여 Azure 구독을 GitHub에 연결합니다.
+GitHub Actions 워크플로에서 Azure PowerShell 또는 Azure CLI를 사용하려면 먼저 [Azure 로그인](https://github.com/marketplace/actions/azure-login) 작업을 사용하여 로그인해야 합니다. Azure 로그인 작업을 사용하면 [Azure AD 서비스 주체](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)의 컨텍스트에서 워크플로의 명령을 실행할 수 있습니다.
 
-로그인 작업을 설정한 후에는 Azure CLI 또는 Azure PowerShell을 사용할 수 있습니다.  
-Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니다. Azure PowerShell은 Azure PowerShell 모듈을 사용하여 GitHub 작업 실행기 환경을 설정합니다.
-
+로그인 작업을 설정한 후에는 Azure CLI 또는 Azure PowerShell을 사용할 수 있습니다. 기본적으로 이 작업은 Azure CLI를 사용하여 로그인한 다음, Azure CLI에 대한 GitHub 작업 실행기 환경을 설정합니다. Azure 로그인 작업의 enable-AzPSSession 속성을 사용하면 Azure PowerShell을 사용할 수 있습니다.  이 방식으로 Azure PowerShell 모듈을 사용하여 GitHub 작업 실행기 환경을 설정합니다.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>서비스 주체를 만들어서 GitHub 비밀에 추가
 
@@ -67,11 +65,11 @@ Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니�
 
 1. **비밀** 과 **새 비밀** 을 차례로 선택합니다.
 
-    :::image type="content" source="media/select-secrets.png" alt-text="탐색에서 설정 선택":::
+    :::image type="content" source="media/select-secrets.png" alt-text="비밀 추가 선택":::
 
 1. 이름이 `AZURE_CREDENTIALS`인 서비스 주체에 대한 JSON 개체를 붙여넣습니다. 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="탐색에서 설정 선택":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="GitHub에서 비밀 추가":::
 
 1. **비밀 추가** 를 선택하여 저장합니다.
 
@@ -79,9 +77,9 @@ Azure CLI는 Azure CLI에 맞게 GitHub 작업 실행기 환경을 설정합니�
 
 [Azure 로그인 작업](https://github.com/Azure/login)에서 서비스 주체 비밀을 사용하여 Azure에 인증합니다.
 
-이 워크플로에서 `secrets.AZURE_CREDENTIALS`를 사용하여 인증한 다음, Azure CLI 작업을 실행합니다.
+이 워크플로에서는 `secrets.AZURE_CREDENTIALS`에 저장된 서비스 주체 세부 정보를 Azure 로그인 작업에서 사용하여 인증합니다. 그런 다음, Azure CLI 작업을 실행합니다. 워크플로 파일의 GitHub 비밀 참조에 대한 자세한 내용은 GitHub Docs의 [워크플로에서 암호화된 비밀 사용](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)을 참조하세요.
 
-작동하는 Azure 로그인이 있으면 Azure PowerShell 또는 Azure CLI 작업을 사용할 수 있습니다. [Azure 웹앱 배포](https://github.com/Azure/webapps-deploy) 및 [Azure 함수](https://github.com/Azure/functions-action)와 같은 다른 Azure 작업을 사용할 수도 있습니다.
+제대로 작동하는 Azure 로그인 단계가 있으면 [Azure PowerShell](https://github.com/Azure/PowerShell) 또는 [Azure CLI](https://github.com/Azure/CLI) 작업을 사용할 수 있습니다. [Azure 웹앱 배포](https://github.com/Azure/webapps-deploy) 및 [Azure 함수](https://github.com/Azure/functions-action)와 같은 다른 Azure 작업을 사용할 수도 있습니다.
 
 ```yaml
 on: [push]
@@ -100,7 +98,7 @@ jobs:
 
 ## <a name="use-the-azure-powershell-action"></a>Azure PowerShell 작업 사용
 
-이 예제에서는 [Azure 로그인 작업](https://github.com/Azure/login)을 사용하여 로그인한 다음, [Azure CLI 작업](https://github.com/azure/powershell)을 사용하여 리소스 그룹을 검색합니다.
+이 예제에서는 [Azure 로그인 작업](https://github.com/Azure/login)을 사용하여 로그인한 다음, [Azure PowerShell 작업](https://github.com/azure/powershell)을 사용하여 리소스 그룹을 검색합니다.
 
 ```yaml
 on: [push]

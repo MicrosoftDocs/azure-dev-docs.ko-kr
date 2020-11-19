@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010010"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601255"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Spring Cloud Azure Stream Binder를 Azure Service Bus에 사용하는 방법
 
@@ -40,7 +40,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 1. 구성된 Service Bus 큐 또는 토픽이 없는 경우 Azure Portal을 사용하여 [Service Bus 큐를 만들거나](/azure/service-bus-messaging/service-bus-quickstart-portal)[Service Bus 토픽을 만듭니다](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). 네임스페이스가 이전 단계에서 지정된 요구 사항을 충족하는지 확인합니다. 또한 이 자습서의 테스트 앱에 필요한 네임스페이스의 연결 문자열을 적어둡니다.
 
-1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer](https://start.spring.io/)를 사용하여 **Maven** 프로젝트를 만듭니다. **Maven 프로젝트**를 선택하고, **종속성** 아래에서 **웹** 종속성을 추가하고, **8** Java 버전을 선택합니다.
+1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer](https://start.spring.io/)를 사용하여 **Maven** 프로젝트를 만듭니다. **Maven 프로젝트** 를 선택하고, **종속성** 아래에서 **웹** 종속성을 추가하고, **8** Java 버전을 선택합니다.
 
     > [!NOTE]
     > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
@@ -63,32 +63,29 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-queue-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-queue</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-queue;current} -->
     </dependency>
     ```
-
-    ![Service Bus 큐에 대한 pom.xml 파일을 편집합니다.](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-queue.png)
 
     **Service Bus 토픽**
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-topic-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-topic</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-topic;current} -->
     </dependency>
     ```
 
-    ![Service Bus 토픽에 대한 pom.xml 파일을 편집합니다.](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-topic.png)
 
 1. *pom.xml* 파일을 저장하고 닫습니다.
 
 ## <a name="configure-the-app-for-your-service-bus"></a>Service Bus용 앱 구성
 
-연결 문자열 또는 자격 증명 파일을 기반으로 하여 앱을 구성할 수 있습니다. 이 자습서에서는 연결 문자열을 사용합니다. 자격 증명 파일을 사용하는 방법에 대한 자세한 내용은 [Service Bus 큐용 Spring Cloud Azure Stream Binder 코드 샘플](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-queue-binder-sample#credential-file-based-usage
-) 및 [Service Bus 토픽용 Spring Cloud Azure Stream Binder 코드 샘플](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-topic-binder-sample#credential-file-based-usage)을 참조하세요.
+연결 문자열 또는 자격 증명 파일을 기반으로 하여 앱을 구성할 수 있습니다. 이 자습서에서는 연결 문자열을 사용합니다. 자격 증명 파일을 사용하는 방법에 대한 자세한 내용은 [Service Bus 큐용 Spring Cloud Azure Stream Binder 코드 샘플](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-servicebus-queue-binder
+) 및 [Service Bus 토픽용 Spring Cloud Azure Stream Binder 코드 샘플](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-cloud-stream-binder-servicebus-topic)을 참조하세요.
 
 1. 앱의 *리소스* 디렉터리에서 *application.properties* 파일을 찾습니다.
 
@@ -171,7 +168,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 ### <a name="create-a-new-class-for-the-source-connector"></a>원본 커넥터에 대한 새 클래스 만들기
 
-1. 텍스트 편집기를 사용하여 *StreamBinderSource.java*라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
+1. 텍스트 편집기를 사용하여 *StreamBinderSource.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
 
 1. 다음 코드를 새 파일에 추가합니다.
 
@@ -205,7 +202,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>싱크 커넥터에 대한 새 클래스 만들기
 
-1. 텍스트 편집기를 사용하여 *StreamBinderSink.java*라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
+1. 텍스트 편집기를 사용하여 *StreamBinderSink.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
 
 1. 다음 코드 줄을 새 파일에 추가합니다.
 
@@ -255,7 +252,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
     mvn clean spring-boot:run
     ```
 
-3. 애플리케이션이 실행되면 *curl*을 사용하여 애플리케이션을 테스트할 수 있습니다.
+3. 애플리케이션이 실행되면 *curl* 을 사용하여 애플리케이션을 테스트할 수 있습니다.
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

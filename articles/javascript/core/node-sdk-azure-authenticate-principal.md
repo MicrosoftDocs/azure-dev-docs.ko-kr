@@ -3,13 +3,13 @@ title: Node.js를 사용하여 Azure 서비스 사용자 만들기
 description: Azure에서 Node.js 및 JavaScript를 통해 서비스 사용자 인증을 사용하는 방법 알아보기
 ms.topic: how-to
 ms.date: 11/05/2020
-ms.custom: devx-track-js
-ms.openlocfilehash: e7f885b0af5e7a25d0e706c235a1521bb44c4b36
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: e837ca7f83f115a9d7c2bbe34e46d884a02dffe0
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515174"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872774"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>Node.js용 Azure 서비스 주체 만들기
 

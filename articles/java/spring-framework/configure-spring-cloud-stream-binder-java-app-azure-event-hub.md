@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 2cee5871b49574fd4e4643b206c1454404219b9b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0cc3289243c1a146cf59ecb15c5150327f49c236
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688695"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560306"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hub를 사용하여 Spring Cloud 스트림 바인더 애플리케이션을 만드는 방법
 
@@ -112,7 +112,7 @@ ms.locfileid: "92688695"
    >![기본 Spring Initializr 옵션][SI01]
 
    > [!NOTE]
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.contoso.eventhubs.sample* ).
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.contoso.eventhubs.sample*).
 
 1. 위에 나열된 옵션이 지정되면 **생성** 을 선택합니다.
 
@@ -164,7 +164,7 @@ ms.locfileid: "92688695"
 
 1. Spring Boot 앱의 *리소스* 디렉터리로 이동합니다. 예:
 
-   ```bash
+   ```cmd
    cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
@@ -378,7 +378,7 @@ ms.locfileid: "92688695"
 
 1. 명령 프롬프트를 열고 디렉터리를 *pom.xml* 파일이 위치한 폴더로 변경합니다. 예:
 
-   ```bash
+   ```cmd
     cd C:\SpringBoot\eventhubs-sample
    ```
    또는
@@ -401,7 +401,7 @@ ms.locfileid: "92688695"
    ```
    애플리케이션 로그에 "hello"가 표시됩니다. 예를 들면 다음과 같습니다.
 
-   ```text
+   ```output
    2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
    2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```

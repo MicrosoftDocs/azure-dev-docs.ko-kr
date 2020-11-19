@@ -6,15 +6,15 @@ metadata:
   audience: Developer
   level: Beginner
   displayType: one-column
-  ms.date: 10/13/2020
+  ms.date: 11/13/2020
   ms.topic: tutorial
   ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-  ms.openlocfilehash: 4e100a32c96df402560dfd010ede112ea50edb90
-  ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+  ms.openlocfilehash: 2b7bd903dc60a3449a2bd3fae064ca65db62128f
+  ms.sourcegitcommit: a2a51e0c6530eb5794a2fe667cf4c9a60b2a7470
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 10/22/2020
-  ms.locfileid: "92437241"
+  ms.lasthandoff: 11/13/2020
+  ms.locfileid: "94625104"
 items:
 - durationInMinutes: 2
   content: >

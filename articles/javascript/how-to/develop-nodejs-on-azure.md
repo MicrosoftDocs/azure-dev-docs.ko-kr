@@ -3,13 +3,13 @@ title: VS Code 및 Azure를 사용하여 컨테이너화된 Node.js 앱 배포
 description: Azure에 Node.js 앱을 만들고, 컨테이너화하고, 배포하는 방법을 보여주는 완벽한 엔드투엔드 자습서
 ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 658d25726b8cdedb8925ebaac5bdc4da66eafd0f
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437301"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872894"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Visual Studio Code 및 Azure를 사용하여 컨테이너화된 Node.js 앱 개발 및 배포
 
@@ -38,7 +38,7 @@ ms.locfileid: "92437301"
 
 1. **F1** 키를 눌러 명령 팔레트를 표시합니다.
 
-1. 명령 팔레트 프롬프트에 `gitcl`을 입력하고 **Git: Clone** (Git: 복제) 명령을 선택하고 **Enter** 키를 누릅니다.
+1. 명령 팔레트 프롬프트에 `gitcl`을 입력하고 **Git: Clone**(Git: 복제) 명령을 선택하고 **Enter** 키를 누릅니다.
 
     ![Visual Studio Code 명령 팔레트 프롬프트의 gitcl 명령](../media/node-howto-e2e/visual-studio-code-git-clone.png)
 
@@ -82,7 +82,7 @@ Yarn을 통해 앱의 종속성을 설치한 후 나중에 조금도 놀라지 �
 
 1. 앱에 대한 시작 스크립트인 *server.js* 를 선택합니다.
 
-1. 마우스로 **database** (6번 줄에서 가져옴) 변수 위를 가리켜서 해당 형식을 표시합니다. 파일 내의 변수/모듈/형식을 빠르게 검사하는 이 기능은 프로젝트를 개발하는 동안 유용합니다. 
+1. 마우스로 **database**(6번 줄에서 가져옴) 변수 위를 가리켜서 해당 형식을 표시합니다. 파일 내의 변수/모듈/형식을 빠르게 검사하는 이 기능은 프로젝트를 개발하는 동안 유용합니다. 
 
     ![Visual Studio Code에서 호버 도움말을 사용하여 유형 검색](../media/node-howto-e2e/visual-studio-code-hover-help.png)
 
@@ -90,7 +90,7 @@ Yarn을 통해 앱의 종속성을 설치한 후 나중에 조금도 놀라지 �
 
     ![Visual Studio Code를 사용하여 모든 참조 찾기](../media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
-1. 마우스로 변수 위를 가리켜서 형식을 검색하는 것 외에도 다른 파일에 있는 변수의 정의를 검사할 수 있습니다. 예를 들어, 마우스 오른쪽 단추로 **database.localUrl** (12번 줄)을 클릭하고 컨텍스트 메뉴에서 **정의 피킹** 을 선택합니다.
+1. 마우스로 변수 위를 가리켜서 형식을 검색하는 것 외에도 다른 파일에 있는 변수의 정의를 검사할 수 있습니다. 예를 들어, 마우스 오른쪽 단추로 **database.localUrl**(12번 줄)을 클릭하고 컨텍스트 메뉴에서 **정의 피킹** 을 선택합니다.
 
     ![Visual Studio Code에서 변수 정의 살펴보기](../media/node-howto-e2e/visual-studio-code-peek-definition.png)
 
@@ -132,7 +132,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 ## <a name="running-the-app"></a>앱 실행
 
-코드에 대해 약간 알아보았으면 앱을 실행할 차례입니다. Visual Studio Code에서 앱을 실행하려면 **F5** 키를 누릅니다. **F5** (디버그 모드) 키를 통해 코드를 실행하면 Visual Studio Code에서 앱을 실행하고, 앱의 stdout(표준 출력)을 보여 주는 **디버그 콘솔** 창을 표시합니다.
+코드에 대해 약간 알아보았으면 앱을 실행할 차례입니다. Visual Studio Code에서 앱을 실행하려면 **F5** 키를 누릅니다. **F5**(디버그 모드) 키를 통해 코드를 실행하면 Visual Studio Code에서 앱을 실행하고, 앱의 stdout(표준 출력)을 보여 주는 **디버그 콘솔** 창을 표시합니다.
 
 ![디버그 콘솔을 통한 앱의 stdout 모니터링](../media/node-howto-e2e/visual-studio-code-debug-console.png)
 
@@ -140,7 +140,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 ![디버그 콘솔에 입력 항목 코드 추가](../media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
-현재 열려 있는 파일이 JavaScript 파일( *server.js* )이므로 **F5** 키를 눌러 앱을 실행할 수 있었습니다. 결과적으로 Visual Studio Code에서는 프로젝트가 Node.js 앱이라고 가정합니다. Visual Studio Code의 모든 JavaScript 파일을 닫은 다음, **F5** 키를 누르면 Visual Studio Code에서 사용자를 다음 환경으로 쿼리합니다.
+현재 열려 있는 파일이 JavaScript 파일(*server.js*)이므로 **F5** 키를 눌러 앱을 실행할 수 있었습니다. 결과적으로 Visual Studio Code에서는 프로젝트가 Node.js 앱이라고 가정합니다. Visual Studio Code의 모든 JavaScript 파일을 닫은 다음, **F5** 키를 누르면 Visual Studio Code에서 사용자를 다음 환경으로 쿼리합니다.
 
 ![런타임 환경 지정](../media/node-howto-e2e/visual-studio-code-select-environment.png)
 
@@ -208,7 +208,7 @@ Visual Stdio 코드 관련 구성 없이 Node.js 코드를 실행하고 디버�
 
 Visual Studio Code에서 앱의 시작 스크립트가 *server.js* 임을 감지할 수 있었습니다.
 
-*launch.json* 파일을 연 상태에서 **구성 추가** (오른쪽 아래)를 선택하고 **Chrome: Launch with userDataDir** (Chrome: userDataDir로 시작)을 선택합니다.
+*launch.json* 파일을 연 상태에서 **구성 추가**(오른쪽 아래)를 선택하고 **Chrome: Launch with userDataDir**(Chrome: userDataDir로 시작)을 선택합니다.
 
 ![Visual Studio Code에 Chrome 구성 추가](../media/node-howto-e2e/visual-studio-code-add-chrome-config.png)
 
@@ -240,7 +240,7 @@ Chrome에 새 실행 구성을 추가하면 프런트 엔드 JavaScript 코드�
 ]
 ```
 
-**compounds.configurations** 배열에 지정된 문자열 값은 **configurations** 목록에 있는 개별 항목의 **name** 을 참조합니다. 이러한 이름을 수정한 경우 배열을 적절히 변경해야 합니다. 예를 들어, 디버그 탭으로 전환하고, 선택한 구성을 **Full-Stack** (복합 구성의 이름)으로 변경한 다음, **F5** 키를 눌러 해당 구성을 실행합니다.
+**compounds.configurations** 배열에 지정된 문자열 값은 **configurations** 목록에 있는 개별 항목의 **name** 을 참조합니다. 이러한 이름을 수정한 경우 배열을 적절히 변경해야 합니다. 예를 들어, 디버그 탭으로 전환하고, 선택한 구성을 **Full-Stack**(복합 구성의 이름)으로 변경한 다음, **F5** 키를 눌러 해당 구성을 실행합니다.
 
 ![Visual Studio Code에서 구성 실행](../media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
@@ -278,11 +278,11 @@ Docker 확장을 설치하고 Visual Studio Code를 다시 로드합니다.
 
 Visual Studio Code의 Docker 확장에는 기존 프로젝트를 위한 *Dockerfile* 및 *docker-compose.yml* 파일을 생성하는 명령이 포함되어 있습니다.
 
-사용 가능한 Docker 명령을 보려면 명령 팔레트를 표시( **F1** )하고 `docker`를 입력합니다.
+사용 가능한 Docker 명령을 보려면 명령 팔레트를 표시(**F1**)하고 `docker`를 입력합니다.
 
 ![Visual Studio Code용 Docker 확장에서 지원되는 명령 ](../media/node-howto-e2e/visual-studio-code-available-docker-codes.png)
 
-**Docker: Add docker files to workspace** (Docker: 작업 영역에 Docker 파일 추가)를 선택하고, **Node.js** 를 앱 플랫폼으로 선택한 다음, 앱에서 `8080` 포트를 공개하도록 지정합니다.
+**Docker: Add docker files to workspace**(Docker: 작업 영역에 Docker 파일 추가)를 선택하고, **Node.js** 를 앱 플랫폼으로 선택한 다음, 앱에서 `8080` 포트를 공개하도록 지정합니다.
 
 Docker 명령은 즉시 사용할 수 있는 완전한 *Dockerfile* 및 Docker 작성 파일을 생성합니다.
 
@@ -308,7 +308,7 @@ FROM mhart
 
 앱 빌드 및 배포가 가능한 빨리 수행되기를 원하므로 일반적으로 이미지가 작을수록 더 효율적이며, 이에 따라 배포와 크기 조정이 더 빠릅니다.
 
-이제 *Dockerfile* 을 생성했으므로 실제 Docker 이미지를 빌드해야 합니다. 다시금 말하지만 Visual Studio Code에 설치한 Docker 확장 명령을 사용할 수 있습니다. **F1** 키를 누르고, 명령 팔레트에서 `dockerb`를 입력한 다음, **Docker: Build Image** (Docker: 이미지 빌드) 명령을 선택합니다. 방금 생성하여 수정한 *Dockerfile* 을 선택합니다. DockerHub 사용자 이름(예: `lostintangent/node`)이 포함된 태그를 지정합니다. **Enter** 키를 눌러 빌드되는 Docker 이미지의 출력을 표시하는 통합 터미널 창을 시작합니다.
+이제 *Dockerfile* 을 생성했으므로 실제 Docker 이미지를 빌드해야 합니다. 다시금 말하지만 Visual Studio Code에 설치한 Docker 확장 명령을 사용할 수 있습니다. **F1** 키를 누르고, 명령 팔레트에서 `dockerb`를 입력한 다음, **Docker: Build Image**(Docker: 이미지 빌드) 명령을 선택합니다. 방금 생성하여 수정한 *Dockerfile* 을 선택합니다. DockerHub 사용자 이름(예: `lostintangent/node`)이 포함된 태그를 지정합니다. **Enter** 키를 눌러 빌드되는 Docker 이미지의 출력을 표시하는 통합 터미널 창을 시작합니다.
 
 ![Docker 이미지 빌드 출력](../media/node-howto-e2e/docker-build-image-output.png)
 
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 ## <a name="scaling-up-and-out"></a>강화 및 확장
 
-어느 시점에서는 증가된 트래픽 및 운영 요구 사항을 처리하기에는 할당된 리소스(CPU 및 RAM)가 충분하지 않을 만큼 웹앱이 충분히 인기가 있을 수 있습니다. 이전에 만든 App Service 계획( **B1** )에는 하나의 CPU 코어와 1.75GB RAM이 포함되어 있어서 쉽게 오버로드될 수 있습니다. **B2** 계획은 이러한 CPU와 RAM의 두 배가 됩니다. 따라서 둘 중 어느 하나가 부족하게 되면 앱에서 다음 명령을 실행하여 기본 가상 머신을 강화할 수 있습니다.
+어느 시점에서는 증가된 트래픽 및 운영 요구 사항을 처리하기에는 할당된 리소스(CPU 및 RAM)가 충분하지 않을 만큼 웹앱이 충분히 인기가 있을 수 있습니다. 이전에 만든 App Service 계획(**B1**)에는 하나의 CPU 코어와 1.75GB RAM이 포함되어 있어서 쉽게 오버로드될 수 있습니다. **B2** 계획은 이러한 CPU와 RAM의 두 배가 됩니다. 따라서 둘 중 어느 하나가 부족하게 되면 앱에서 다음 명령을 실행하여 기본 가상 머신을 강화할 수 있습니다.
 
 ```shell
 az appservice plan update -n nina-demo-plan --sku B2
@@ -491,7 +491,7 @@ az appservice plan update -n nina-demo-plan --sku B2
 
 잠시 후 요청된 하드웨어로 웹앱이 마이그레이션되어 관련 리소스를 이용할 수 있습니다. 강화 외에도 더 낮은 가격으로 더 적은 리소스를 제공하는 `--sku` 옵션을 지정하여 위와 동일한 명령을 실행하여 규모를 축소할 수 있습니다.
 
-가상 머신 사양을 강화하는 것 외에도, 상태 비저장 웹앱인 경우 기본 가상 머신 인스턴스를 더 많이 추가하여 *확장* 하는 옵션이 있습니다. 이전에 만든 App Service 계획에는 단일 가상 머신( *작업자* )만 있으므로 들어오는 모든 트래픽은 최종적으로 해당 인스턴스 하나의 사용 가능한 리소스 제한을 따릅니다. 두 번째 가상 머신 인스턴스를 추가하려는 경우 이전에 실행한 동일한 명령을 실행해도 되지만 SKU를 강화하는 대신 작업자 가상 머신의 수를 확장합니다.
+가상 머신 사양을 강화하는 것 외에도, 상태 비저장 웹앱인 경우 기본 가상 머신 인스턴스를 더 많이 추가하여 *확장* 하는 옵션이 있습니다. 이전에 만든 App Service 계획에는 단일 가상 머신(*작업자*)만 있으므로 들어오는 모든 트래픽은 최종적으로 해당 인스턴스 하나의 사용 가능한 리소스 제한을 따릅니다. 두 번째 가상 머신 인스턴스를 추가하려는 경우 이전에 실행한 동일한 명령을 실행해도 되지만 SKU를 강화하는 대신 작업자 가상 머신의 수를 확장합니다.
 
 ```shell
 az appservice plan update -n nina-demo-plan --number-of-workers 2

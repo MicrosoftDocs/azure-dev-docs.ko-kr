@@ -2,18 +2,18 @@
 title: Azure SQL Database에서 Spring Data JDBC 사용
 description: Azure SQL Database를 통해 Spring Data JDBC를 사용하는 방법을 알아보세요.
 documentationcenter: java
-ms.date: 05/18/2020
+ms.date: 10/13/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: abf197e0626925dd836243a207ddf0c49ee32470
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 2bfa70765c8c98b4a590b86cacb979a2ca0d95ce
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831249"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560246"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Azure SQL Database에서 Spring Data JDBC 사용
 
@@ -36,6 +36,9 @@ ms.locfileid: "90831249"
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Azure SQL Database를 사용하도록 Spring Boot 구성
 
@@ -68,7 +71,7 @@ spring.datasource.initialization-mode=always
 
 ### <a name="create-the-database-schema"></a>데이터베이스 스키마 만들기
 
-Spring Boot는 데이터베이스 스키마를 만들기 위해 *src/main/resources/schema.sql*을 자동으로 실행합니다. 해당 파일을 만들고 다음 콘텐츠를 추가합니다.
+Spring Boot는 데이터베이스 스키마를 만들기 위해 *src/main/resources/schema.sql* 을 자동으로 실행합니다. 해당 파일을 만들고 다음 콘텐츠를 추가합니다.
 
 ```sql
 DROP TABLE IF EXISTS todo;
@@ -100,3 +103,7 @@ CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), detail
 Spring Data JDBC에 대한 자세한 내용은 Spring의 [참조 설명서](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)를 참조하세요.
 
 Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure](../index.yml)와 [Azure DevOps 및 Java 사용하기](/azure/devops/)를 참조하세요.
+
+### <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 예기치 않은 요금이 청구되지 않도록 [Azure Portal](https://portal.azure.com/)을 사용하여 이 문서에서 만든 리소스를 삭제합니다.

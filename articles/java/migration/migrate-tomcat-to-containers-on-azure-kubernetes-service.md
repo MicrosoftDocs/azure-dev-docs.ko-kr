@@ -5,13 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 29e446c28cb6935ffe0eeb51fa3a4b21c93e78a4
-ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 7311aba602ec2fd482d11e2a8a37751f0d742eae
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88662964"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872874"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Tomcat 애플리케이션을 Azure Kubernetes Service의 컨테이너로 마이그레이션
 
@@ -56,7 +56,7 @@ Quartz 스케줄러 작업 또는 cron 작업과 같은 예약된 작업은 컨�
 
 [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html)에는 지속형 XML 파일이 필요합니다. Kubernetes에서는 이 파일을 컨테이너 이미지에 추가하거나 [컨테이너에 사용할 수 있는 공유 스토리지](#identify-session-persistence-mechanism)에 업로드해야 합니다. 이에 따라 `pathName` 매개 변수를 적절하게 수정해야 합니다.
 
-`MemoryRealm`이 현재 사용되고 있는지 확인하려면 *server.xml* 및 * context.xml* 파일을 검사하고 `className` 특성이 `org.apache.catalina.realm.MemoryRealm`으로 설정된 `<Realm>` 요소를 찾습니다.
+`MemoryRealm`이 현재 사용되고 있는지 확인하려면 *server.xml* 및 *context.xml* 파일을 검사하고 `className` 특성이 `org.apache.catalina.realm.MemoryRealm`으로 설정된 `<Realm>` 요소를 찾습니다.
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>SSL 세션 추적이 사용되는지 확인
 
@@ -123,7 +123,7 @@ az aks create -g $resourceGroup -n $aksName --attach-acr $acrName --network-plug
 
 #### <a name="open-ports-for-clustering-if-needed"></a>필요한 경우 클러스터링을 위한 포트 열기
 
-AKS에서 [Tomcat 클러스터링](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)을 사용하려는 경우 필요한 포트 범위가 Dockerfile에 공개되어 있는지 확인합니다. *server.xml*에서 서버 IP 주소를 지정하려면 컨테이너 시작 시 초기화되는 변수의 값을 Pod의 IP 주소로 사용해야 합니다.
+AKS에서 [Tomcat 클러스터링](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)을 사용하려는 경우 필요한 포트 범위가 Dockerfile에 공개되어 있는지 확인합니다. *server.xml* 에서 서버 IP 주소를 지정하려면 컨테이너 시작 시 초기화되는 변수의 값을 Pod의 IP 주소로 사용해야 합니다.
 
 또는 복제본에서 사용할 수 있도록 세션 상태를 [대체 위치로 유지](#identify-session-persistence-mechanism)할 수 있습니다.
 
@@ -131,7 +131,7 @@ AKS에서 [Tomcat 클러스터링](https://tomcat.apache.org/tomcat-9.0-doc/clus
 
 #### <a name="add-jndi-resources"></a>JNDI 리소스 추가
 
-*server.xml*을 편집하여 마이그레이션 전 단계에서 준비한 리소스(예: 데이터 원본)를 추가합니다.
+*server.xml* 을 편집하여 마이그레이션 전 단계에서 준비한 리소스(예: 데이터 원본)를 추가합니다.
 
 다음은 그 예입니다.
 
@@ -173,7 +173,7 @@ AKS에서 사용할 수 있도록 이미지를 빌드하고 ACR(Azure Container 
 az acr build -t "${acrName}.azurecr.io/petclinic:{{.Run.ID}}" -r $acrName --build-arg APP_FILE=petclinic.war --build-arg=prod.server.xml .
 ```
 
-WAR 파일의 이름이 *ROOT.war*인 경우 `--build-arg APP_FILE...` 매개 변수를 생략할 수 있습니다. 서버 XML 파일의 이름이 *server.xml*인 경우 `--build-arg SERVER_XML...` 매개 변수를 생략할 수 있습니다. 두 파일은 모두 *Dockerfile*과 동일한 디렉터리에 있어야 합니다.
+WAR 파일의 이름이 *ROOT.war* 인 경우 `--build-arg APP_FILE...` 매개 변수를 생략할 수 있습니다. 서버 XML 파일의 이름이 *server.xml* 인 경우 `--build-arg SERVER_XML...` 매개 변수를 생략할 수 있습니다. 두 파일은 모두 *Dockerfile* 과 동일한 디렉터리에 있어야 합니다.
 
 또는 Docker CLI를 사용하여 이미지를 로컬로 빌드할 수 있습니다. 이 방법을 사용하면 ACR에 처음 배포하기 전에 이미지를 테스트하고 구체화하는 작업을 간소화할 수 있습니다. 그러나 Docker CLI를 설치하고 Docker 디먼을 실행해야 합니다.
 

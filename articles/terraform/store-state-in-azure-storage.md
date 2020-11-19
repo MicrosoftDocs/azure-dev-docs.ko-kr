@@ -3,13 +3,13 @@ title: 자습서 - Terraform 상태를 Azure Storage에 저장
 description: Terraform 상태를 Azure Storage에 저장하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.custom: devx-track-terraform
-ms.openlocfilehash: 33a49a9c6b8f62dd5f9a47f7171ba1cd3c55195b
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: 7f1c200a96efa16d65a8f94bc3bc70a236f969a7
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333791"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872884"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>자습서: Terraform 상태를 Azure Storage에 저장
 
@@ -59,10 +59,10 @@ echo "access_key: $ACCOUNT_KEY"
 
 Terraform 상태 백 엔드는 `terraform init` 명령을 실행할 때 구성됩니다. 상태 백 엔드를 구성하려면 다음 데이터가 필요합니다.
 
-- **storage_account_name** : Azure Storage 계정의 이름입니다.
-- **container_name** : Blob 컨테이너의 이름입니다.
-- **키** : 만들 상태 저장소 파일의 이름입니다.
-- **access_key** : 스토리지 액세스 키입니다.
+- **storage_account_name**: Azure Storage 계정의 이름입니다.
+- **container_name**: Blob 컨테이너의 이름입니다.
+- **키**: 만들 상태 저장소 파일의 이름입니다.
+- **access_key**: 스토리지 액세스 키입니다.
 
 이러한 각 값은 Terraform 구성 파일이나 명령줄에서 지정할 수 있습니다. `access_key` 값에는 환경 변수를 사용하는 것이 좋습니다. 환경 변수를 사용하면 키가 디스크에 쓰이는 것을 방지할 수 있습니다.
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 70a0a5366d30de58b14f0e18e032fee86f974d21
-ms.sourcegitcommit: dee8dc9ce6c255c53913e27813dc3659ff238a01
+ms.openlocfilehash: 958882122c1bba4a104960de92f03f620c0b8266
+ms.sourcegitcommit: b42029674abd1c82c3b945ef00773f24b7ec00d6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386668"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94716745"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
@@ -19,7 +19,7 @@ ms.locfileid: "94386668"
 | AutoRest - AZ | npm [1.6.1](https://www.npmjs.com/package/@autorest/az/v/1.6.1) |  | GitHub [1.6.1](https://github.com/Azure/autorest.az/tree/1.4.0) |
 | AutoRest - Azure 리소스 스키마 | npm [3.0.92](https://www.npmjs.com/package/@autorest/azureresourceschema/v/3.0.92) |  | GitHub [3.0.92](https://github.com/Azure/autorest.azureresourceschema) |
 | AutoRest - CLI | npm [0.1.889](https://www.npmjs.com/package/@autorest/cli/v/0.1.889) |  | GitHub [0.1.889](https://github.com/Azure/autorest.cli) |
-| AutoRest - CLI 일반 | npm [0.5.6](https://www.npmjs.com/package/@autorest/clicommon/v/0.5.6) |  | GitHub [0.5.6](https://github.com/Azure/autorest.clicommon/tree/0.4.12) |
+| AutoRest - CLI 일반 | npm [0.5.7](https://www.npmjs.com/package/@autorest/clicommon/v/0.5.7) |  | GitHub [0.5.7](https://github.com/Azure/autorest.clicommon/tree/0.4.12) |
 | AutoRest - 코드 모델 | npm [3.0.137](https://www.npmjs.com/package/@azure/autorest.codemodel-v3/v/3.0.137) |  |  |
 | AutoRest - 비교 | npm [0.3.1](https://www.npmjs.com/package/@autorest/compare/v/0.3.1) |  | GitHub [0.3.1](https://github.com/Azure/autorest.compare) |
 | AutoRest - Core | npm [3.0.6320](https://www.npmjs.com/package/@autorest/core/v/3.0.6320) |  | GitHub [3.0.6320](https://github.com/Azure/autorest/tree/master/core) |
@@ -29,16 +29,16 @@ ms.locfileid: "94386668"
 | AutoRest - Functions TypeScript | npm [0.0.1-preview](https://www.npmjs.com/package/@autorest/azure-functions-typescript/v/0.0.1-preview) |  |  |
 | AutoRest - Modeler Four | npm [4.1.60](https://www.npmjs.com/package/@autorest/modelerfour/v/4.1.60) |  | GitHub [4.1.60](https://github.com/Azure/autorest.modelerfour) |
 | AutoRest - PowerShell | npm [3.0.403](https://www.npmjs.com/package/@autorest/powershell/v/3.0.403) |  | GitHub [3.0.403](https://github.com/Azure/autorest.powershell) |
-| AutoRest - Python | npm [5.4.1](https://www.npmjs.com/package/@autorest/python/v/5.4.1) |  | GitHub [5.4.1](https://github.com/Azure/autorest.python/tree/v5.1.0-preview.7) |
+| AutoRest - Python | npm [5.5.0](https://www.npmjs.com/package/@autorest/python/v/5.5.0) |  | GitHub [5.5.0](https://github.com/Azure/autorest.python/tree/v5.1.0-preview.7) |
 | AutoRest - Remodeler | npm [2.1.27](https://www.npmjs.com/package/@autorest/remodeler/v/2.1.27) |  | GitHub [2.1.27](https://github.com/Azure/autorest.remodeler) |
 | AutoRest - 테스트 | npm [0.1.69](https://www.npmjs.com/package/@autorest/test/v/0.1.69) |  | GitHub [0.1.69](https://github.com/Azure/autorest.test) |
 | AutoRest - 서버 테스트 | npm [3.0.27](https://www.npmjs.com/package/@autorest/test-server/v/3.0.27) |  |  |
 | 자동 제안 | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-autosuggest/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-autosuggest) |
 | Avocado | npm [0.7.2](https://www.npmjs.com/package/@azure/avocado/v/0.7.2) |  | GitHub [0.7.2](https://github.com/Azure/avocado) |
 | Batch | npm [8.0.0](https://www.npmjs.com/package/@azure/batch/v/8.0.0) |  | GitHub [8.0.0](https://github.com/azure/azure-sdk-for-js/tree/master/sdk/batch/batch) |
-| Cognitive Search | npm [11.0.3](https://www.npmjs.com/package/@azure/search-documents/v/11.0.3)<br>npm [11.1.0-beta.1](https://www.npmjs.com/package/@azure/search-documents/v/11.1.0-beta.1) | [docs](/javascript/api/overview/azure/search-documents-readme-pre/) | GitHub [11.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.0.3/sdk/search/search-documents/)<br>GitHub [11.1.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.1.0-beta.1/sdk/search/search-documents/) |
+| Cognitive Search | npm [11.0.3](https://www.npmjs.com/package/@azure/search-documents/v/11.0.3)<br>npm [11.1.0-beta.2](https://www.npmjs.com/package/@azure/search-documents/v/11.1.0-beta.2) | [docs](/javascript/api/overview/azure/search-documents-readme-pre/) | GitHub [11.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.0.3/sdk/search/search-documents/)<br>GitHub [11.1.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.1.0-beta.2/sdk/search/search-documents/) |
 | 통신 관리 | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/communication-administration/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/communication-administration-readme-pre/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-administration_1.0.0-beta.2/sdk/communication/communication-administration/) |
-| 통신 통화 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-calling/v/1.0.0-beta.1) |  |  |
+| 통신 통화 | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/communication-calling/v/1.0.0-beta.2) |  |  |
 | 통신 채팅 | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/communication-chat/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/communication-chat-readme-pre/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-chat_1.0.0-beta.2/sdk/communication/communication-chat/) |
 | 통신 공통 | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/communication-common-readme-pre/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0-beta.2/sdk/communication/communication-common/) |
 | 통신 신호 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/communication-signaling/v/1.0.0-beta.1) |  |  |
@@ -338,7 +338,7 @@ ms.locfileid: "94386668"
 | 커넥터 - Zenkraft | npm [0.0.1-alpha](https://www.npmjs.com/package/@azure/connectors-zenkraft/v/0.0.1-alpha) |  |  |
 | Content Moderator | npm [5.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-contentmoderator/v/5.0.1) |  | GitHub [5.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-contentmoderator) |
 | 코어 | npm [1.2.0](https://www.npmjs.com/package/@azure/core-http/v/1.2.0) | [docs](/javascript/api/overview/azure/core-http-readme/) | GitHub [1.2.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-http_1.2.0/sdk/core/core-http/) |
-| 코어 - AMQP | npm [1.1.7](https://www.npmjs.com/package/@azure/core-amqp/v/1.1.7) | [docs](/javascript/api/overview/azure/core-amqp-readme/) | GitHub [1.1.7](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-amqp_1.1.7/sdk/core/core-amqp/) |
+| 코어 - AMQP | npm [2.0.0](https://www.npmjs.com/package/@azure/core-amqp/v/2.0.0) | [docs](/javascript/api/overview/azure/core-amqp-readme/) | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-amqp_2.0.0/sdk/core/core-amqp/) |
 | 코어 - ARM | npm [1.0.0-preview.7](https://www.npmjs.com/package/@azure/core-arm/v/1.0.0-preview.7) |  | GitHub [1.0.0-preview.7](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-arm_1.0.0-preview.7/sdk/core/core-arm/) |
 | 코어 - Asynciterator Polyfill | npm [1.0.0](https://www.npmjs.com/package/@azure/core-asynciterator-polyfill/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-asynciterator-polyfill_1.0.0/sdk/core/core-asynciterator-polyfill/) |
 | 코어 - 인증 | npm [1.1.3](https://www.npmjs.com/package/@azure/core-auth/v/1.1.3) | [docs](/javascript/api/overview/azure/core-auth-readme/) | GitHub [1.1.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-auth_1.1.3/sdk/core/core-auth/) |
@@ -348,19 +348,19 @@ ms.locfileid: "94386668"
 | 코어 - 페이징 | npm [1.1.3](https://www.npmjs.com/package/@azure/core-paging/v/1.1.3) | [docs](/javascript/api/overview/azure/core-paging-readme/) | GitHub [1.1.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-paging_1.1.3/sdk/core/core-paging/) |
 | 코어 - 추적 | npm [1.0.0-preview.9](https://www.npmjs.com/package/@azure/core-tracing/v/1.0.0-preview.9) | [docs](/javascript/api/overview/azure/core-tracing-readme-pre/) | GitHub [1.0.0-preview.9](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-tracing_1.0.0-preview.9/sdk/core/core-tracing/) |
 | 코어 - XML | npm [1.0.0-alpha.20200925.1](https://www.npmjs.com/package/@azure/core-xml/v/1.0.0-alpha.20200925.1) |  |  |
-| Cosmos DB | npm [3.9.2](https://www.npmjs.com/package/@azure/cosmos/v/3.9.2) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.9.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.9.2/sdk/cosmosdb/cosmos/) |
-| Cosmos DB - 언어 서비스 | npm [0.0.4](https://www.npmjs.com/package/@azure/cosmos-language-service/v/0.0.4) |  | GitHub [0.0.4](https://github.com/Azure/cosmos-sql-language-service) |
+| Cosmos DB | npm [3.9.3](https://www.npmjs.com/package/@azure/cosmos/v/3.9.3) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.9.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.9.3/sdk/cosmosdb/cosmos/) |
+| Cosmos DB - 언어 서비스 | npm [0.0.5](https://www.npmjs.com/package/@azure/cosmos-language-service/v/0.0.5) |  | GitHub [0.0.5](https://github.com/Azure/cosmos-sql-language-service) |
 | Cosmos DB - 서명 | npm [1.0.2](https://www.npmjs.com/package/@azure/cosmos-sign/v/1.0.2) |  | GitHub [1.0.2](https://github.com/Azure/cosmos-sign/tree/v1.0.2) |
 | Custom Image Search | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-customimagesearch/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customimagesearch) |
 | 사용자 지정 검색 | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-customsearch/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customsearch) |
 | Custom Vision 예측 | npm [5.1.2](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction/v/5.1.2) |  | GitHub [5.1.2](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-prediction) |
-| Custom Vision 학습 | npm [5.1.2](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training/v/5.1.2) |  | GitHub [5.1.2](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-training) |
+| Custom Vision 학습 | npm [5.2.0](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training/v/5.2.0) |  | GitHub [5.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-training) |
 | Digital Twins | npm [1.0.0-preview.1](https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1) | [docs](/javascript/api/overview/azure/digital-twins-readme-pre/) |  |
 | Digital Twins - 코어 | npm [1.0.0](https://www.npmjs.com/package/@azure/digital-twins-core/v/1.0.0) |  |  |
 | Entity Search | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-entitysearch/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-entitysearch) |
 | Eslint 플러그 인 Azure SDK | npm [2.0.1](https://www.npmjs.com/package/@azure/eslint-plugin-azure-sdk/v/2.0.1) |  |  |
 | Event Grid | npm [2.0.0](https://www.npmjs.com/package/@azure/eventgrid/v/2.0.0)<br>npm [3.0.0-beta.1](https://www.npmjs.com/package/@azure/eventgrid/v/3.0.0-beta.1) |  | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/eventgrid) |
-| Event Hubs | npm [5.3.0](https://www.npmjs.com/package/@azure/event-hubs/v/5.3.0) | [docs](/javascript/api/overview/azure/event-hubs-readme/) | GitHub [5.3.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/event-hubs_5.3.0/sdk/eventhub/event-hubs/) |
+| Event Hubs | npm [5.3.1](https://www.npmjs.com/package/@azure/event-hubs/v/5.3.1) | [docs](/javascript/api/overview/azure/event-hubs-readme/) | GitHub [5.3.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/event-hubs_5.3.1/sdk/eventhub/event-hubs/) |
 | Event Hubs - Azure Blob Storage 검사점 저장소 | npm [1.0.1](https://www.npmjs.com/package/@azure/eventhubs-checkpointstore-blob/v/1.0.1) | [docs](/javascript/api/overview/azure/eventhubs-checkpointstore-blob-readme/) | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/eventhubs-checkpointstore-blob_1.0.1/sdk/eventhub/eventhubs-checkpointstore-blob/) |
 | Event Hubs - 이벤트 프로세서 | npm [2.1.1](https://www.npmjs.com/package/@azure/event-processor-host/v/2.1.1) |  | GitHub [2.1.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/event-processor-host_2.1.1/sdk/eventhub/event-processor-host/) |
 | Face | npm [4.1.0](https://www.npmjs.com/package/@azure/cognitiveservices-face/v/4.1.0) |  | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-face) |
@@ -368,7 +368,7 @@ ms.locfileid: "94386668"
 | Form Recognizer | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-formrecognizer/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-formrecognizer) |
 | Git Rest API SDK | npm [0.3.3](https://www.npmjs.com/package/git-rest-api-sdk/v/0.3.3) |  | GitHub [0.3.3](https://github.com/azure/git-rest-api) |
 | 그래프 | npm [5.0.1](https://www.npmjs.com/package/@azure/graph/v/5.0.1) |  | GitHub [5.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/graphrbac/graph) |
-| ID | npm [1.1.0](https://www.npmjs.com/package/@azure/identity/v/1.1.0)<br>npm [1.2.0-beta.2](https://www.npmjs.com/package/@azure/identity/v/1.2.0-beta.2) | [docs](/javascript/api/overview/azure/identity-readme-pre/) | GitHub [1.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/identity_1.1.0/sdk/identity/identity/)<br>GitHub [1.2.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/identity_1.2.0-beta.2/sdk/identity/identity/) |
+| ID | npm [1.2.0](https://www.npmjs.com/package/@azure/identity/v/1.2.0) | [docs](/javascript/api/overview/azure/identity-readme/) | GitHub [1.2.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/identity_1.2.0/sdk/identity/identity/) |
 | Image Search | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-imagesearch/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-imagesearch) |
 | IoT AMQP 기본 | npm [2.4.7](https://www.npmjs.com/package/azure-iot-amqp-base/v/2.4.7) |  | GitHub [2.4.7](https://github.com/Azure/azure-iot-sdk-node) |
 | IoT 일반 | npm [1.12.7](https://www.npmjs.com/package/azure-iot-common/v/1.12.7) |  | GitHub [1.12.7](https://github.com/Azure/azure-iot-sdk-node/tree/master/common) |
@@ -400,7 +400,7 @@ ms.locfileid: "94386668"
 | 로거 JS | npm [1.3.2](https://www.npmjs.com/package/@azure/logger-js/v/1.3.2) |  | GitHub [1.3.2](https://github.com/Azure/logger-js) |
 | LUIS 작성 | npm [4.0.0-preview.3](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring/v/4.0.0-preview.3) |  | GitHub [4.0.0-preview.3](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-authoring) |
 | LUIS 런타임 | npm [5.0.0](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime/v/5.0.0) |  | GitHub [5.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-runtime) |
-| Metrics Advisor | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/ai-metrics-advisor/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/ai-metrics-advisor-readme-pre/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-metrics-advisor_1.0.0-beta.1/sdk/metricsadvisor/ai-metrics-advisor/) |
+| Metrics Advisor | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/ai-metrics-advisor/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/ai-metrics-advisor-readme-pre/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-metrics-advisor_1.0.0-beta.2/sdk/metricsadvisor/ai-metrics-advisor/) |
 | Monitor - Opentelemetry 내보내기 | npm [1.0.0-preview.6](https://www.npmjs.com/package/@azure/monitor-opentelemetry-exporter/v/1.0.0-preview.6) | [docs](/javascript/api/overview/azure/monitor-opentelemetry-exporter-readme-pre/) | GitHub [1.0.0-preview.6](https://github.com/microsoft/opentelemetry-azure-monitor-js/tree/1.0.0-preview.4/packages/azure-opentelemetry-exporter) |
 | MsRest - Azure Env | npm [2.0.0](https://www.npmjs.com/package/@azure/ms-rest-azure-env/v/2.0.0) |  | GitHub [2.0.0](https://github.com/Azure/ms-rest-azure-env) |
 | MsRest - Azure JS | npm [2.0.1](https://www.npmjs.com/package/@azure/ms-rest-azure-js/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/ms-rest-azure-js) |
@@ -414,26 +414,26 @@ ms.locfileid: "94386668"
 | OpenAPI Markdown | npm [0.9.2](https://www.npmjs.com/package/@azure/openapi-markdown/v/0.9.2) |  | GitHub [0.9.2](https://github.com/Azure/openapi-markdown) |
 | Personalizer | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-personalizer/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-personalizer) |
 | 파이프라인 결과 게시 | npm [0.1.2](https://www.npmjs.com/package/@azure/publish-pipeline-result/v/0.1.2) |  |  |
-| QnA Maker | npm [3.1.1](https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker/v/3.1.1) |  | GitHub [3.1.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-qnamaker) |
+| QnA Maker | npm [3.2.0](https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker/v/3.2.0) |  | GitHub [3.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-qnamaker) |
 | QnA Maker 런타임 | npm [1.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker-runtime/v/1.0.1) |  | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-qnamaker-runtime) |
 | RestAPI 사양 스크립트 | npm [0.14.0](https://www.npmjs.com/package/@azure/rest-api-specs-scripts/v/0.14.0) |  | GitHub [0.14.0](https://github.com/Azure/rest-api-specs-scripts) |
 | 스키마 레지스트리 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/schema-registry/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/schema-registry-readme-pre/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/schema-registry_1.0.0-beta.1/sdk/schemaregistry/schema-registry/) |
 | 스키마 레지스트리 Avro 직렬 변환기 | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/schema-registry-avro/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/schema-registry-avro-readme-pre/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/schema-registry-avro_1.0.0-beta.1/sdk/schemaregistry/schema-registry-avro/) |
 | 검색 | npm [11.0.0-preview.1](https://www.npmjs.com/package/@azure/search/v/11.0.0-preview.1) |  |  |
-| Service Bus | npm [1.1.10](https://www.npmjs.com/package/@azure/service-bus/v/1.1.10)<br>npm [7.0.0-preview.7](https://www.npmjs.com/package/@azure/service-bus/v/7.0.0-preview.7) |  | GitHub [1.1.10](https://github.com/Azure/azure-sdk-for-js/tree/@azure/service-bus_1.1.10/sdk/servicebus/service-bus/)<br>GitHub [7.0.0-preview.7](https://github.com/Azure/azure-sdk-for-js/tree/@azure/service-bus_7.0.0-preview.7/sdk/servicebus/service-bus/) |
+| Service Bus | npm [1.1.10](https://www.npmjs.com/package/@azure/service-bus/v/1.1.10)<br>npm [7.0.0-preview.8](https://www.npmjs.com/package/@azure/service-bus/v/7.0.0-preview.8) |  | GitHub [1.1.10](https://github.com/Azure/azure-sdk-for-js/tree/@azure/service-bus_1.1.10/sdk/servicebus/service-bus/)<br>GitHub [7.0.0-preview.8](https://github.com/Azure/azure-sdk-for-js/tree/@azure/service-bus_7.0.0-preview.8/sdk/servicebus/service-bus/) |
 | Service Fabric | npm [5.0.0](https://www.npmjs.com/package/@azure/servicefabric/v/5.0.0) | [docs](/javascript/api/overview/azure/service-fabric) |  |
 | 맞춤법 검사 | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-spellcheck/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-spellcheck) |
-| 스토리지 - Blob | npm [12.2.1](https://www.npmjs.com/package/@azure/storage-blob/v/12.2.1)<br>npm [12.3.0-beta.1](https://www.npmjs.com/package/@azure/storage-blob/v/12.3.0-beta.1) | [docs](/javascript/api/overview/azure/storage-blob-readme-pre/) | GitHub [12.2.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-blob_12.2.1/sdk/storage/storage-blob/)<br>GitHub [12.3.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-blob_12.3.0-beta.1/sdk/storage/storage-blob/) |
+| 스토리지 - Blob | npm [12.3.0](https://www.npmjs.com/package/@azure/storage-blob/v/12.3.0) | [docs](/javascript/api/overview/azure/storage-blob-readme/) | GitHub [12.3.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-blob_12.3.0/sdk/storage/storage-blob/) |
 | 스토리지 - Blob ChangeFeed | npm [12.0.0-preview.2](https://www.npmjs.com/package/@azure/storage-blob-changefeed/v/12.0.0-preview.2) | [docs](/javascript/api/overview/azure/storage-blob-changefeed-readme-pre/) | GitHub [12.0.0-preview.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-blob-changefeed_12.0.0-preview.2/sdk/storage/storage-blob-changefeed/) |
 | 스토리지 - Files Data Lake | npm [0.2.0](https://www.npmjs.com/package/@azure/storage-datalake/v/0.2.0) |  | GitHub [0.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-datalake) |
-| 스토리지 - Files Data Lake | npm [12.1.1](https://www.npmjs.com/package/@azure/storage-file-datalake/v/12.1.1)<br>npm [12.2.0-beta.1](https://www.npmjs.com/package/@azure/storage-file-datalake/v/12.2.0-beta.1) | [docs](/javascript/api/overview/azure/storage-file-datalake-readme-pre/) | GitHub [12.1.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-file-datalake_12.1.1/sdk/storage/storage-file-datalake/)<br>GitHub [12.2.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-file-datalake_12.2.0-beta.1/sdk/storage/storage-file-datalake/) |
+| 스토리지 - Files Data Lake | npm [12.2.0](https://www.npmjs.com/package/@azure/storage-file-datalake/v/12.2.0) | [docs](/javascript/api/overview/azure/storage-file-datalake-readme/) | GitHub [12.2.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-file-datalake_12.2.0/sdk/storage/storage-file-datalake/) |
 | 스토리지 - 파일 공유 | npm [10.3.0](https://www.npmjs.com/package/@azure/storage-file/v/10.3.0) |  |  |
-| 스토리지 - 파일 공유 | npm [12.2.0](https://www.npmjs.com/package/@azure/storage-file-share/v/12.2.0)<br>npm [12.3.0-beta.1](https://www.npmjs.com/package/@azure/storage-file-share/v/12.3.0-beta.1) | [docs](/javascript/api/overview/azure/storage-file-share-readme-pre/) | GitHub [12.2.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-file-share_12.2.0/sdk/storage/storage-file-share/)<br>GitHub [12.3.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-file-share_12.3.0-beta.1/sdk/storage/storage-file-share/) |
-| 스토리지 - 큐 | npm [12.1.0](https://www.npmjs.com/package/@azure/storage-queue/v/12.1.0) | [docs](/javascript/api/overview/azure/storage-queue-readme/) | GitHub [12.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-queue_12.1.0/sdk/storage/storage-queue/) |
+| 스토리지 - 파일 공유 | npm [12.3.0](https://www.npmjs.com/package/@azure/storage-file-share/v/12.3.0) | [docs](/javascript/api/overview/azure/storage-file-share-readme/) | GitHub [12.3.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-file-share_12.3.0/sdk/storage/storage-file-share/) |
+| 스토리지 - 큐 | npm [12.2.0](https://www.npmjs.com/package/@azure/storage-queue/v/12.2.0) | [docs](/javascript/api/overview/azure/storage-queue-readme/) | GitHub [12.2.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-queue_12.2.0/sdk/storage/storage-queue/) |
 | Stream Analytics CI/CD | npm [2.0.0](https://www.npmjs.com/package/azure-streamanalytics-cicd/v/2.0.0) |  |  |
 | Swagger 유효성 검사 일반 | npm [0.1.2](https://www.npmjs.com/package/@azure/swagger-validation-common/v/0.1.2) |  |  |
 | Synapse | npm [1.0.0-preview.1](https://www.npmjs.com/package/@azure/synapse/v/1.0.0-preview.1) |  | GitHub [1.0.0-preview.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/synapse/synapse) |
-| 테이블 | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/data-tables/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/data-tables-readme-pre/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/data-tables_1.0.0-beta.2/sdk/tables/data-tables/) |
+| 테이블 | npm [1.0.0-beta.3](https://www.npmjs.com/package/@azure/data-tables/v/1.0.0-beta.3) | [docs](/javascript/api/overview/azure/data-tables-readme-pre/) | GitHub [1.0.0-beta.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/data-tables_1.0.0-beta.3/sdk/tables/data-tables/) |
 | 텍스트 분석 | npm [5.0.1](https://www.npmjs.com/package/@azure/ai-text-analytics/v/5.0.1)<br>npm [5.1.0-beta.2](https://www.npmjs.com/package/@azure/ai-text-analytics/v/5.1.0-beta.2) | [docs](/javascript/api/overview/azure/ai-text-analytics-readme-pre/) | GitHub [5.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-text-analytics_5.0.1/sdk/textanalytics/ai-text-analytics/)<br>GitHub [5.1.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-text-analytics_5.1.0-beta.2/sdk/textanalytics/ai-text-analytics/) |
 | Text Analytics | npm [4.0.0](https://www.npmjs.com/package/@azure/cognitiveservices-textanalytics/v/4.0.0) |  |  |
 | 도구 - ADL | npm [0.1.229](https://www.npmjs.com/package/@azure-tools/adl/v/0.1.229) |  | GitHub [0.1.229](https://github.com/Azure/adl/tree/master/adl) |
@@ -586,4 +586,6 @@ ms.locfileid: "94386668"
 | 리소스 관리 - VMware CloudSimple | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-vmwarecloudsimple/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/vmwarecloudsimple/arm-vmwarecloudsimple) |
 | 리소스 관리 - 웹 서비스 | npm [0.1.1](https://www.npmjs.com/package/@azure/arm-webservices/v/0.1.1) |  | GitHub [0.1.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/machinelearning/arm-webservices) |
 | 리소스 관리 - 작업 영역 | npm [0.1.1](https://www.npmjs.com/package/@azure/arm-workspaces/v/0.1.1) |  | GitHub [0.1.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/machinelearning/arm-workspaces) |
-| @autorest/go | npm [4.0.0-preview.2](https://www.npmjs.com/package/@autorest/go/v/4.0.0-preview.2) |  |  |
+| @autorest/go | npm [4.0.0-preview.5](https://www.npmjs.com/package/@autorest/go/v/4.0.0-preview.5) |  |  |
+| @azure/arm-databoxedge | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-databoxedge/v/1.0.0) |  |  |
+| @azure/arm-healthcareapis | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-healthcareapis/v/1.0.0) |  |  |

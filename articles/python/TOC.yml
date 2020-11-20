@@ -148,6 +148,8 @@
           href: azure-sdk-example-database.md
         - name: 가상 머신 프로비전
           href: azure-sdk-example-virtual-machines.md
+        - name: VM에서 Azure Managed Disks 사용
+          href: azure-sdk-samples-managed-disks.md
     - name: 로깅 구성
       href: azure-sdk-logging.md
     - name: 프록시 구성

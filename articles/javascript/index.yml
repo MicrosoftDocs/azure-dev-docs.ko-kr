@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 7c2334b5c562cf36c390ddedc5284622c6522df2
-  ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+  ms.openlocfilehash: 65dbdbaaeedd1602782c114052a61aabcda43bb6
+  ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/06/2020
-  ms.locfileid: "94333851"
+  ms.lasthandoff: 11/20/2020
+  ms.locfileid: "94983952"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -38,11 +38,13 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: 프런트 엔드 앱
-      url: /azure/static-web-apps/getting-started
+      url: tutorial/static-web-app/introduction.md
     - text: App Service를 사용한 Node.js
       url: tutorial-vscode-azure-app-service-node-01.md
     - text: App Service를 사용한 Deno
       url: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
+    - text: Linux 가상 머신에 앱 배포
+      url: tutorial/nodejs-virtual-machine-vm/introduction.md
     - text: 컨테이너
       url: tutorial-vscode-docker-node-01.md
   - linkListType: how-to-guide
@@ -64,7 +66,7 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: MongoDB
-      url: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+      url: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
     - text: MySql
       url: /azure/mysql/connect-nodejs
     - text: PostgreSQL
@@ -84,7 +86,7 @@ landingContent:
     - text: 텍스트 번역
       url: /azure/cognitive-services/translator/quickstart-translator?pivots=programming-language-javascript
     - text: 이미지에서 개체 검색
-      url: /azure/cognitive-services/computer-vision/quickstarts-sdk/client-library?pivots=programming-language-javascript
+      url: tutorial/static-web-app/introduction.md
 - title: 보안, 메시징 및 로그
   linkLists:
   - linkListType: quickstart

@@ -11,12 +11,12 @@ metadata:
   ms.author: tarcher
   ms.date: 02/24/2020
   ms.custom: devx-track-jenkins
-  ms.openlocfilehash: 3b46fe61590cc4a3410275a37fde3c6ce2ad98eb
-  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+  ms.openlocfilehash: b00d65638bdc9d695a064183f3de058728164b13
+  ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88240815"
+  ms.lasthandoff: 11/20/2020
+  ms.locfileid: "94983552"
 landingContent:
 - title: Azure에서 Jenkins 정보
   linkLists:
@@ -64,20 +64,12 @@ landingContent:
       url: deploy-from-github-to-aks.md
     - text: 파란색/녹색 패턴을 사용하여 AKS에 배포
       url: deploy-to-aks-using-blue-green-deployment-pattern.md
-    - text: Azure Dev Spaces 플러그 인을 사용하여 배포
-      url: azure-dev-spaces-and-aks.md
 - title: App Service에 대한 CI/CD
   linkLists:
   - linkListType: tutorial
     links:
     - text: 파이프라인 작업에서 Azure 리소스 만들기
       url: deploy-to-azure-app-service-using-azure-cli.md
-    - text: GitHub에서 App Service로 배포
-      url: deploy-from-github-to-azure-app-service.md
-  - linkListType: how-to-guide
-    links:
-    - text: App Service 플러그 인을 사용하여 배포
-      url: deploy-to-azure-app-service-using-plugin.md
 - title: Azure DevOps에 대한 CI/CD
   linkLists:
   - linkListType: tutorial

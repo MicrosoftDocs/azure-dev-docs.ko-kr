@@ -4,15 +4,15 @@ description: 이 문서에서는 Spring JMS Starter를 사용하여 Azure Servic
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 4d035ae35c8e1e8a4db886f7b5743b143de1992c
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192455"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560291"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Spring Boot Starter를 Azure Service Bus JMS에 사용하는 방법
 
@@ -28,11 +28,11 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 이 문서에는 다음 필수 구성 요소가 필요합니다.
 
-1. Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)을 활성화하거나 [무료 계정](https://azure.microsoft.com/free/)에 등록할 수 있습니다.
+1. Azure 구독: Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)을 활성화하거나 [체험 계정](https://azure.microsoft.com/free/)에 등록할 수 있습니다.
 
 1. 지원되는 JDK(Java Development Kit) 버전 8 이상. Azure에서 개발하는 경우 사용할 수 있는 JDK에 대한 자세한 내용은 <https://aka.ms/azure-jdks>를 참조하세요.
 
-1. [Apache Maven](http://maven.apache.org/) 버전 3.2 이상.
+1. [Apache Maven](http://maven.apache.org/) 버전 3.2 이상
 
 1. 이미 구성된 Service Bus 큐 또는 토픽이 있는 경우 Service Bus 네임스페이스에서 다음 요구 사항을 충족하는지 확인합니다.
 
@@ -42,17 +42,20 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 구성된 Service Bus 큐 또는 토픽이 없는 경우 Azure Portal을 사용하여 [Service Bus 큐를 만들거나](/azure/service-bus-messaging/service-bus-quickstart-portal)[Service Bus 토픽을 만듭니다](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). 네임스페이스가 이전 단계에서 지정된 요구 사항을 충족하는지 확인합니다. 또한 이 자습서의 테스트 앱에 필요한 네임스페이스의 연결 문자열을 적어둡니다.
 
-1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer를 사용하여 **Maven** 프로젝트를 만듭니다](https://start.spring.io/). **Maven Project** (Maven 프로젝트)를 선택하고, **Dependencies** (종속성) 아래에서 **Web** (웹) 종속성을 추가해야 합니다.
+1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer](https://start.spring.io/)를 사용하여 **Maven** 프로젝트를 만듭니다. **Maven Project**(Maven 프로젝트)를 선택하고, **Dependencies**(종속성) 아래에서 **Web**(웹) 종속성을 추가해야 합니다.
+
+   > [!NOTE]
+   > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Azure Service Bus JMS 스타터 사용
 
 1. 앱의 부모 디렉터리에서 *pom.xml* 파일을 찾습니다. 예를 들어 다음과 같습니다.
 
-    `C:\SpringBoot\servicebus\pom.xml`
+    *C:\SpringBoot\servicebus\pom.xml*
 
-    또는
+    -또는-
 
-    `/users/example/home/servicebus/pom.xml`
+    */users/example/home/servicebus/pom.xml*
 
 1. 텍스트 편집기에서 *pom.xml* 파일을 엽니다.
 
@@ -62,7 +65,7 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7</version>
+        <version>2.3.5</version>
     </dependency>
     ```
 
@@ -78,11 +81,11 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 앱의 *리소스* 디렉터리에서 *application.properties* 파일을 찾습니다.
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
-    또는
+    -또는-
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. 텍스트 편집기에서 *application.properties* 파일을 엽니다.
 
@@ -106,11 +109,11 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 앱의 *리소스* 디렉터리에서 *application.properties* 파일을 찾습니다.
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
-    또는
+    -또는-
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. 텍스트 편집기에서 *application.properties* 파일을 엽니다.
 
@@ -140,11 +143,11 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 앱의 패키지 디렉터리에서 기본 애플리케이션 Java 파일을 찾습니다. 예:
 
-    `C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java`
+    *C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java*
 
-    또는
+    -또는-
 
-    `/users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java`
+    */users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java*
 
 1. 텍스트 편집기에서 기본 애플리케이션 Java 파일을 엽니다.
 
@@ -320,11 +323,15 @@ Azure Service Bus JMS용 Spring Boot Starter는 Spring과 Service Bus를 통합�
 
 1. 명령 프롬프트를 열고, 디렉터리를 *pom.xml* 의 위치로 변경합니다. 예를 들어 다음과 같습니다.
 
-    `cd C:\SpringBoot\servicebus`
+    ```cmd
+    cd C:\SpringBoot\servicebus 
+    ```
 
     또는
 
-    `cd cd /users/example/home/servicebus`
+    ```bash
+    cd /users/example/home/servicebus 
+    ```
 
 1. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다.
 

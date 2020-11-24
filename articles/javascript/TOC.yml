@@ -13,6 +13,20 @@
           href: core/node-sdk-azure-authenticate.md
     - name: 자습서
       items:
+        - name: 정적 웹앱 만들기
+          items:
+            - name: 1. 소개 및 필수 구성 요소
+              href: tutorial/static-web-app/introduction.md
+            - name: 2. 로컬에서 앱 다운로드 및 실행
+              href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
+            - name: 3. Computer Vision 리소스 만들기
+              href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
+            - name: 4. 정적 웹앱 빌드 및 배포
+              href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
+            - name: 5. Computer Vision React 코드 검토
+              href: tutorial/static-web-app/add-computer-vision-react-app.md
+            - name: 6. 리소스 정리
+              href: tutorial/static-web-app/clean-up-resources.md
         - name: Storage Blob에 이미지 업로드
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: MongoDB를 사용하는 Express.js
@@ -93,7 +107,7 @@
               href: tutorial-vscode-azure-cli-node-06.md
             - name: 리소스 정리
               href: tutorial-vscode-azure-cli-node-07.md
-        - name: VS Code를 사용하여 정적 웹 사이트 만들기
+        - name: Azure Storage에서 정적 웹 사이트 만들기
           items:
             - name: 소개 및 필수 구성 요소
               href: tutorial-vscode-static-website-node-01.md

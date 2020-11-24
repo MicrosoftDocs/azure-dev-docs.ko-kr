@@ -3,16 +3,16 @@ title: Azure Event Hub를 사용하여 Apache Kafka에 대한 Spring Boot Starte
 description: Azure Event Hub를 사용하는 Azure Kafka를 사용하도록 Spring Boot Initializer를 사용하여 만든 애플리케이션을 구성하는 방법에 대해 알아봅니다.
 services: event-hubs
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/13/2018
 ms.service: event-hubs
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 452119b467d3b92e7b8deec3b0e22d2d1d18ee9e
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 53a50a7a32ff9e555f821d69688cc566fb7a3c62
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689201"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560424"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Azure Event Hub를 사용하여 Apache Kafka에 대한 Spring Boot Starter를 사용하는 방법
 
@@ -26,10 +26,9 @@ ms.locfileid: "92689201"
 * 지원되는 JDK(Java Development Kit) Azure에서 개발하는 경우 사용할 수 있는 JDK에 대한 자세한 내용은 <https://aka.ms/azure-jdks>를 참조하세요.
 * [Apache Maven](http://maven.apache.org/), 버전 3.0 이상
 
-> [!IMPORTANT]
->
-> 이 문서의 단계를 완료하려면 Spring Boot 버전 2.0 이상이 필요합니다.
->
+> [!NOTE]
+> * 이 문서의 단계를 완료하려면 Spring Boot 버전 2.0 이상이 필요합니다.
+> * Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Azure Portal을 사용하여 Azure Event Hub 만들기
 
@@ -37,25 +36,26 @@ ms.locfileid: "92689201"
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **+ 리소스 만들기** 를 클릭하고 **사물 인터넷** 을 클릭한 다음, *Event Hubs**를 검색합니다.
+1. **리소스 만들기** 를 선택한 다음, **Marketplace 검색** 을 선택하고 *Event Hubs* 를 검색합니다.
 
-1. **만들기** 를 클릭합니다.
+1. **만들기** 를 선택합니다.
 
    ![Event Hub 네임스페이스 만들기][IMG01]
 
 1. **네임스페이스 만들기** 페이지에서 다음 정보를 입력합니다.
 
-   * 이벤트 허브 네임스페이스에 대한 URI의 일부가 되는 고유한 **이름** 을 입력합니다. 예: **wingtiptoys** 를 **이름** 에 입력한 경우 URI는 *wingtiptoys.servicebus.windows.net* 입니다.
-   * 가격 책정 계층.
-   * 네임스페이스에 대해 **Kafka 사용** 을 지정합니다.
    * 네임스페이스에 사용하려는 **구독** 을 선택합니다.
    * 네임스페이스에 새 **리소스 그룹** 을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
+   * 이벤트 허브 네임스페이스에 대한 URI의 일부가 될 고유한 **네임스페이스 이름** 을 입력합니다. 예를 들어 *wingtiptoys-space* 를 **이름** 으로 입력한 경우 URI는 `wingtiptoys-space.servicebus.windows.net`입니다.
    * 이벤트 허브 네임 스페이스에 대한 **위치** 를 지정합니다.
+   * **가격 책정 계층** 을 지정합니다. 지정한 계층에 따라 사용 시나리오가 제한됩니다.
    * 네임스페이스에 **처리량 단위** 를 지정할 수도 있습니다.
 
    ![Azure Event Hub 네임스페이스 옵션을 지정합니다.][IMG02]
 
-1. 위에 열거된 이러한 옵션을 지정한 경우 **만들기** 를 클릭하여 네임스페이스를 만듭니다.
+1. 위에 나열된 옵션을 지정한 후에는 **검토 + 만들기** 를 선택합니다.
+
+1. 사양을 검토하고, **만들기** 를 선택하여 네임스페이스를 만듭니다.
 
 ### <a name="create-an-azure-event-hub-in-your-namespace"></a>네임스페이스에 Event Hub 만들기
 
@@ -63,11 +63,11 @@ ms.locfileid: "92689201"
 
 1. 이전 단계에서 만든 네임스페이스로 이동합니다.
 
-1. 상단 메뉴 모음에서 **+ 이벤트 허브** 를 클릭합니다.
+1. 상단 메뉴 모음에서 **이벤트 허브** 를 선택합니다.
 
 1. 이벤트 허브 이름을 지정합니다.
 
-1. **만들기** 를 클릭합니다.
+1. **만들기** 를 선택합니다.
 
    ![이벤트 허브 만들기][IMG05]
 
@@ -85,9 +85,8 @@ ms.locfileid: "92689201"
       ![기본 Spring Initializr 옵션][SI01]
 
    > [!NOTE]
-   >
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.kafka* ).
-   >
+   > 1. Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.kafka*).
+   > 2. Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 1. 위에 열거된 이러한 옵션을 지정한 경우 **프로젝트 만들기** 를 클릭합니다.
 
@@ -99,28 +98,21 @@ ms.locfileid: "92689201"
 
 1. 앱의 루트 디렉터리에서 *pom.xml* 파일을 찾습니다. 예:
 
-   `C:\SpringBoot\kafka\pom.xml`
+   *C:\SpringBoot\kafka\pom.xml*
 
-   또는
+   -또는-
 
-   `/users/example/home/kafka/pom.xml`
+   */users/example/home/kafka/pom.xml*
 
-1. 텍스트 편집기에서 *pom.xml* 파일을 열고 `<dependencies>` 목록에 Spring Cloud Kafka Stream 및 Azure Event Hub starter를 추가합니다.
+1. 텍스트 편집기에서 *pom.xml* 파일을 열고, `<dependencies>` 목록에 Event Hubs Kafka 스타터를 추가합니다.
 
    ```xml
    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-stream-kafka</artifactId>
-      <version>2.0.1.RELEASE</version>
-   </dependency>
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-starter-eventhub</artifactId>
-      <version>1.0.0.M2</version>
+     <groupId>com.microsoft.azure</groupId>
+     <artifactId>spring-cloud-starter-azure-eventhubs-kafka</artifactId>
+     <version>1.2.8</version>
    </dependency>
    ```
-
-   ![pom.xml 파일을 편집합니다.][SI03]
 
 1. *pom.xml* 파일을 저장하고 닫습니다.
 
@@ -130,14 +122,14 @@ ms.locfileid: "92689201"
 
 1. Spring Boot 앱의 *리소스* 디렉터리로 이동합니다. 예:
 
-   ```shell
-   cd C:\SpringBoot\eventhub\src\main\resources
+   ```cmd
+   cd C:\SpringBoot\kafka\src\main\resources
    ```
 
    또는
 
-   ```shell
-   cd /users/example/home/eventhub/src/main/resources
+   ```bash
+   cd /users/example/home/kafka/src/main/resources
    ```
 
 1. Azure 계정 로그인:
@@ -203,11 +195,11 @@ ms.locfileid: "92689201"
 
 1. 앱의 *리소스* 디렉터리에서 *application.properties* 파일을 찾습니다.
 
-   `C:\SpringBoot\eventhub\src\main\resources\application.properties`
+   *C:\SpringBoot\kafka\src\main\resources\application.properties*
 
-   또는
+   -또는-
 
-   `/users/example/home/eventhub/src/main/resources/application.properties`
+   */users/example/home/kafka/src/main/resources/application.properties*
 
 2. 텍스트 편집기에서 *application.properties* 파일을 찾고 다음 줄을 추가하고 샘플 값을 이벤트 허브의 적절한 속성으로 바꿉니다.
 
@@ -244,11 +236,11 @@ ms.locfileid: "92689201"
 
 1. 앱의 패키지 디렉터리에서 기본 애플리케이션 Java 파일을 찾습니다. 예:
 
-   `C:\SpringBoot\kafka\src\main\java\com\wingtiptoys\kafka\KafkaApplication.java`
+   *C:\SpringBoot\kafka\src\main\java\com\wingtiptoys\kafka\EventhubApplication.java*
+   
+   -또는-
 
-   또는
-
-   `/users/example/home/kafka/src/main/java/com/wingtiptoys/kafka/KafkaApplication.java`
+   */users/example/home/kafka/src/main/java/com/wingtiptoys/kafka/EventhubApplication.java*
 
 1. 텍스트 편집기에서 애플리케이션 Java 파일을 열고 다음 줄을 파일에 추가합니다.
 
@@ -259,9 +251,9 @@ ms.locfileid: "92689201"
    import org.springframework.boot.autoconfigure.SpringBootApplication;
 
    @SpringBootApplication
-   public class KafkaApplication {
+   public class EventhubApplication {
       public static void main(String[] args) {
-         SpringApplication.run(KafkaApplication.class, args);
+         SpringApplication.run(EventhubApplication.class, args);
       }
    }
    ```
@@ -331,16 +323,20 @@ ms.locfileid: "92689201"
 
 1. 명령 프롬프트를 열고 디렉터리를 *pom.xml* 파일이 위치한 폴더로 변경합니다. 예:
 
-   `cd C:\SpringBoot\kafka`
-
+   ```cmd
+   cd C:\SpringBoot\kafka
+   ```
+   
    또는
 
-   `cd /users/example/home/kafka`
-
+   ```bash
+   cd /users/example/home/kafka
+   ```
+   
 1. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 
    ```shell
-   mvn clean package
+   mvn clean package -Dmaven.test.skip=true
    mvn spring-boot:run
    ```
 
@@ -349,12 +345,13 @@ ms.locfileid: "92689201"
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   애플리케이션 로그에 "hello"가 표시됩니다. 다음은 그 예입니다.
+   애플리케이션 로그에 "hello"가 표시됩니다. 예를 들면 다음과 같습니다.
 
-   ```shell
-   [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2
-   [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 2a121f7b1d402825
-   [wingtiptoyshub.container-0-C-1] INFO com.wingtiptoys.kafka.KafkaSink - New message received: hello
+   ```output
+   2020-10-12 16:56:19.827  INFO 13272 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.1
+   2020-10-12 16:56:19.828  INFO 13272 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 0efa8fb0f4c73d92
+   2020-10-12 16:56:19.830  INFO 13272 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1602492979827
+   2020-10-12 16:56:22.277  INFO 13272 --- [container-0-C-1] com.wingtiptoys.kafka.KafkaSink          : New message received: hello
    ```
 
 
@@ -407,6 +404,10 @@ ms.locfileid: "92689201"
 > ![웹 브라우저 내 애플리케이션 응답][TB02]
 > 
 
+## <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 예기치 않은 요금이 청구되지 않도록 [Azure Portal](https://portal.azure.com/)을 사용하여 이 문서에서 만든 리소스를 삭제합니다.
+
 ## <a name="next-steps"></a>다음 단계
 
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
@@ -418,9 +419,9 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 
 Event Hub 스트림 바인더 및 Apache Kafka에 대한 Azure 지원에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* [Azure Event Hubs 정의](/azure/event-hubs/event-hubs-about)
+* [Azure Event Hubs란?](/azure/event-hubs/event-hubs-about)
 
-* [Apache Kafka용 Azure Event Hub](/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)
+* [Apache Kafka용 Azure Event Hubs](/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)
 
 * [Azure Portal을 사용하여 Event Hubs 네임스페이스 및 이벤트 허브 만들기](/azure/event-hubs/event-hubs-create)
 
@@ -444,16 +445,9 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 
 [IMG01]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-01.png
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-02.png
-[IMG03]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-03.png
-[IMG04]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-04.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-05.png
-[IMG06]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-06.png
-[IMG07]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-07.png
-[IMG08]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-08.png
 
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-project-01.png
-[SI02]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-project-02.png
-[SI03]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-project-03.png
 
 [TB01]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/test-browser-01.png
 [TB02]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/test-browser-02.png

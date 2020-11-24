@@ -3,17 +3,17 @@ title: Azure Cosmos DB에서 Spring Data Apache Cassandra API를 사용하는 �
 description: Azure Cosmos DB에서 Spring Data Apache Cassandra API를 사용하는 방법을 알아보세요.
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 52fbaa611f0c9367eede649dac644fd478f8855e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 7879a47bdcbc9b1a4cf41210fc9fb49ad28d8dd8
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831259"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560344"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>Azure Cosmos DB에서 Spring Data Apache Cassandra API를 사용하는 방법
 
@@ -41,25 +41,28 @@ ms.locfileid: "90831259"
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **+리소스 만들기**를 클릭한 다음 **데이터베이스**를 클릭하고 **Azure Cosmos DB**를 클릭합니다.
-
-   ![Azure Cosmos DB 계정 만들기][COSMOSDB01]
+1. **리소스 만들기** 를 선택하고 **시작** 을 선택한 다음, **Azure Cosmos DB** 를 선택합니다.
+    
+   >[!div class="mx-imgBorder"]
+   >![Azure Cosmos DB 계정 만들기][COSMOSDB01]
 
 1. 다음 정보를 지정합니다.
 
    - **구독**: 사용할 Azure 구독을 지정합니다.
    - **리소스 그룹**: 새 리소스 그룹을 만들지 기존 리소스 그룹을 선택할지를 지정합니다.
    - **계정 이름**: Cosmos DB 계정의 고유명을 선택합니다. 이 고유명은 *wingtiptoyscassandra.documents.azure.com* 같은 정규화된 도메인 이름을 만드는 데 사용됩니다.
-   - **API**: 이 자습서의 경우 `Cassandra`를 지정합니다.
+   - **API**: 이 자습서에서는 *Cassandra* 를 지정합니다.
    - **위치**: 데이터베이스에 가장 가까운 Azure 지역을 지정합니다.
-
-   ![Cosmos DB 계정 설정 지정하기][COSMOSDB02]
    
-1. 위 정보를 모두 입력하고 **검토 + 만들기**를 클릭합니다.
+   >[!div class="mx-imgBorder"]
+   >![Cosmos DB 계정 설정 지정하기][COSMOSDB02]
+   
+1. 위 정보를 모두 입력하고 **검토 + 만들기** 를 클릭합니다.
 
-1. 검토 페이지의 모든 항목이 올바르면, **만들기**를 클릭합니다.
-
-   ![Cosmos DB 계정 설정 검토하기][COSMOSDB03]
+1. 검토 페이지의 모든 항목이 올바르면, **만들기** 를 클릭합니다.
+   
+   >[!div class="mx-imgBorder"]
+   >![Cosmos DB 계정 설정 검토하기][COSMOSDB03]
 
 데이터베이스를 배포하는 데 몇 분 정도 걸립니다.
 
@@ -67,21 +70,26 @@ ms.locfileid: "90831259"
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **모든 리소스**를 클릭한 다음, 방금 만든Azure Cosmos DB 계정을 클릭합니다.
+1. **모든 리소스** 를 선택한 다음, 방금 만든 Azure Cosmos DB 계정을 선택합니다.
 
-1. **데이터 탐색기**를 클릭한 다음 **새 키스페이스**를 클릭합니다. **키스페이스 id**의 고유 식별자를 입력한 다음 **확인**을 클릭합니다.
-
-   ![Cosmos DB 키스페이스 만들기][COSMOSDB05]
+1. **데이터 탐색기** 를 선택하고 아래쪽 화살표를 선택한 다음, **새 키스페이스** 를 선택합니다. **키스페이스 id** 의 고유 식별자를 입력한 다음, **확인** 을 선택합니다.
+    
+   >[!div class="mx-imgBorder"]
+   >![새 키스페이스 선택][COSMOSDB05]
+   
+   >[!div class="mx-imgBorder"]
+   >![Cosmos DB 키스페이스 만들기][COSMOSDB05-1]
 
 ### <a name="retrieve-the-connection-settings-for-your-azure-cosmos-db-account"></a>Azure Cosmos DB 계정의 연결 문자열 검색하기
 
 1. <https://portal.azure.com/>에서 Azure Portal을 찾아 로그인합니다.
 
-1. **모든 리소스**를 클릭한 다음, 방금 만든Azure Cosmos DB 계정을 클릭합니다.
+1. **모든 리소스** 를 선택한 다음, 방금 만든 Azure Cosmos DB 계정을 선택합니다.
 
-1. **연결 문자열**을 클릭하고 **접점**, **포트**, **사용자 이름**, 및 **기본 암호** 필드 값을 복사합니다. 이 값은 나중에 애플리케이션을 구성하는 데 사용됩니다.
-
-   ![Cosmos DB 연결 문자열 검색하기][COSMOSDB06]
+1. **연결 문자열** 을 선택하고 **접점**, **포트**, **사용자 이름** 및 **기본 암호** 필드 값을 복사합니다. 이 값은 나중에 애플리케이션을 구성하는 데 사용됩니다.
+   
+   >[!div class="mx-imgBorder"]
+   >![Cosmos DB 연결 문자열 검색하기][COSMOSDB06]
 
 ## <a name="configure-the-sample-application"></a>샘플 애플리케이션 구성
 
@@ -98,19 +106,19 @@ ms.locfileid: "90831259"
 1. 텍스트 편집기에서 *application.properties* 파일을 열어 파일에 다음 줄을 추가하거나 구성하고 샘플 값을 앞서 다룬 적절한 값으로 바꿉니다.
 
    ```yaml
-   spring.data.cassandra.contact-points=wingtiptoyscassandra.cassandra.cosmosdb.azure.com
+   spring.data.cassandra.contact-points=wingtiptoyscassandra.cassandra.cosmos.azure.com
    spring.data.cassandra.port=10350
    spring.data.cassandra.username=wingtiptoyscassandra
    spring.data.cassandra.password=********
    ```
    위치:
 
-   | 매개 변수 | Description |
+   | 매개 변수 | 설명 |
    |---|---|
-   | `spring.data.cassandra.contact-points` | 이 문서에서 앞서 다룬 **접점**을 지정합니다. |
-   | `spring.data.cassandra.port` | 이 문서에서 앞서 다룬 **포트**를 지정합니다. |
-   | `spring.data.cassandra.username` | 이 문서에서 앞서 다룬 **사용자 이름**을 지정합니다. |
-   | `spring.data.cassandra.password` | 이 문서에서 앞서 다룬 **기본 암호**를 지정합니다. |
+   | `spring.data.cassandra.contact-points` | 이 문서에서 앞서 다룬 **접점** 을 지정합니다. |
+   | `spring.data.cassandra.port` | 이 문서에서 앞서 다룬 **포트** 를 지정합니다. |
+   | `spring.data.cassandra.username` | 이 문서에서 앞서 다룬 **사용자 이름** 을 지정합니다. |
+   | `spring.data.cassandra.password` | 이 문서에서 앞서 다룬 **기본 암호** 를 지정합니다. |
 
 1. *application.properties* 파일을 저장하고 닫습니다.
 
@@ -162,6 +170,10 @@ ms.locfileid: "90831259"
 
 이 자습서에서는, Spring Data를 사용하는 Java 샘플 애플리케이션을 만들어 Azure Cosmos DB Cassandra API를 사용하여 정보를 저장 및 검색했습니다.
 
+## <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 예기치 않은 요금이 청구되지 않도록 [Azure Portal](https://portal.azure.com/)을 사용하여 이 문서에서 만든 리소스를 삭제합니다.
+
 ## <a name="next-steps"></a>다음 단계
 
 Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
@@ -189,6 +201,6 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 [COSMOSDB01]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-01.png
 [COSMOSDB02]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-02.png
 [COSMOSDB03]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-03.png
-[COSMOSDB04]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-04.png
 [COSMOSDB05]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05.png
+[COSMOSDB05-1]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05-1.png
 [COSMOSDB06]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-06.png

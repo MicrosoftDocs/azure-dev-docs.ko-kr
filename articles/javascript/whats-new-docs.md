@@ -2,17 +2,28 @@
 title: 'JavaScript의 새로운 기능 문서: '
 description: 2020년 10월 JavaScript의 새로운 기능 문서
 ms.topic: conceptual
-ms.date: 10/28/2020
-ms.openlocfilehash: 1b95a18d3ea8cb5947dfd5525326d69460c3a00b
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.date: 11/13/2020
+ms.openlocfilehash: dba173f640205bbd43ce0f9e11387eba02c7a20e
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405952"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601275"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript 문서: 2020년 10월의 새로운 기능
 
 JavaScript 및 TypeScript 개발자를 위한 새로운 콘텐츠 및 업데이트된 콘텐츠를 찾아보세요.
+
+
+## <a name="2020-november"></a>2020년 11월
+
+2020년 11월 JavaScript의 새로운 기능 문서에 오신 것을 환영합니다. 해당 기간 동안 이루어진 문서의 주요 변경 사항을 소개합니다.
+
+### <a name="whats-new"></a>새로운 기능
+
+|속성|메모|
+|---------------------------------------|--|
+|[자습서: Linux 가상 머신에 앱 배포](./tutorial/nodejs-virtual-machine-vm/introduction.md)|이 자습서에서는 Express.js 앱에 대한 Linux VM(가상 머신)을 만듭니다. 이 VM은 cloud-init 구성 파일을 통해 구성되며 NGINX 및 Express.js 앱용 GitHub 리포지토리를 포함합니다. VM이 실행되면 SSH를 통해 VM에 연결하고, 추적 로깅을 포함하도록 웹앱을 변경하고, 웹 브라우저에서 공용 Express.js 서버 앱을 볼 수 있습니다.|
 
 ## <a name="2020-october"></a>2020년 10월
 

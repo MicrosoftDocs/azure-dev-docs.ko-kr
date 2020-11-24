@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 9636ae27950f0ffabf6c9a433c802b3101447dab
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 10efa527f60d2dae15f84ca2c34862e5c899fa65
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192405"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560276"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>자습서: Spring Boot 애플리케이션의 Azure Key Vault에서 비밀 읽기
 
@@ -236,13 +236,13 @@ Key Vault를 만들고 비밀을 저장했으면, 다음 섹션에서는 Spring 
 
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 1. 이 목록 다음에 나오는 그림에 표시된 대로 항목을 선택합니다.
-   1. **프로젝트** : `Maven Project`
-   1. **언어** : `Java`
-   1. **Spring Boot** : `2.3.3`
-   1. **그룹** : `com.contoso`(여기에 유효한 Java 패키지 이름을 입력할 수 있습니다.)
-   1. **아티팩트** : *keyvault* (여기에 유효한 Java 클래스 이름을 입력할 수 있습니다.)
-   1. **패키징** : `Jar`
-   1. **Java** : `11`(8을 선택할 수 있지만 이 자습서에서는 11로 유효성이 검사되었습니다.)
+   1. **프로젝트**: `Maven Project`
+   1. **언어**: `Java`
+   1. **Spring Boot**: `2.3.3`
+   1. **그룹**: `com.contoso`(여기에 유효한 Java 패키지 이름을 입력할 수 있습니다.)
+   1. **아티팩트**: *keyvault*(여기에 유효한 Java 클래스 이름을 입력할 수 있습니다.)
+   1. **패키징**: `Jar`
+   1. **Java**: `11`(8을 선택할 수 있지만 이 자습서에서는 11로 유효성이 검사되었습니다.)
 1. **종속성 추가...** 를 선택합니다.
 1. 텍스트 필드에 `Spring Web`을 입력하고 Ctrl + Enter를 누릅니다.
 1. 텍스트 필드에 `Azure Key Vault`를 입력하고 Enter를 누릅니다.  화면이 다음과 같이 표시됩니다.
@@ -646,7 +646,7 @@ Azure Spring Cloud는 Azure에서 Spring Boot 애플리케이션을 배포하고
 
 ## <a name="next-steps"></a>다음 단계
 
-Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터를 참조합니다.
+Spring 및 Azure에 대해 자세히 알아보려면 Azure 설명서 센터의 Spring에 대한 다음 토픽을 계속 진행하세요.
 
 > [!div class="nextstepaction"]
-> [Application Insights를 사용하도록 Spring Boot Initializer 앱 구성](configure-spring-boot-java-applicationinsights.md)
+> [Spring Boot Starter를 Azure Service Bus JMS에 사용하는 방법](configure-spring-boot-starter-java-app-with-azure-service-bus.md)

@@ -1,15 +1,15 @@
 ---
 title: Python용 Azure 라이브러리의 사용 패턴
 description: Python용 Azure SDK 라이브러리의 일반적인 사용 패턴 개요
-ms.date: 09/21/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764783"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601395"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python용 Azure 라이브러리 사용 패턴
 
@@ -37,9 +37,11 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>비동기 작업
 
-클라이언트 및 관리 클라이언트 개체(예: [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-))를 통해 호출하는 많은 작업에서는 `AzureOperationPoller[<type>]` 형식의 개체를 반환합니다. 여기서 `<type>`은 해당 작업에만 적용됩니다.
+클라이언트 및 관리 클라이언트 개체(예: [`ComputeManagementClient.virtual_machines.begin_create_or_update`](/python/api/azure-mgmt-compute/azure.mgmt.compute.v2020_06_01.operations.virtualmachinesoperations#begin-create-or-update-resource-group-name--vm-name--parameters----kwargs-) 및 [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-))를 통해 호출하는 많은 작업에서는 `AzureOperationPoller[<type>]` 형식의 개체를 반환합니다. 여기서 `<type>`은 해당 작업에만 적용됩니다.
 
-[`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) 반환 형식은 비동기 작업임을 의미합니다. 따라서 해당 폴러의 `result` 메서드를 호출하여 실제 작업 결과를 사용할 수 있게 될 때까지 기다려야 합니다.
+두 메서드 모두 비동기 메서드입니다. 메서드 이름이 다른 이유는 버전이 다르기 때문입니다. azure.core를 기반으로 하지 않는 이전 라이브러리는 일반적으로 `create_or_update` 형식의 이름을 사용합니다. azure.core 기반의 라이브러리는 비동기 메서드라는 것을 나타내기 위해 메서드 이름에 `begin_` 접두사를 추가합니다. 이전 코드를 최신 azure.core 기반 라이브러리로 마이그레이션하면 일반적으로 메서드 이름에 `begin_` 접두사가 추가됩니다. 대부분의 메서드 서명이 동일하게 유지되기 때문입니다.
+
+어떤 경우든 [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) 반환 형식은 작업이 비동기 작업이라는 것을 의미합니다. 따라서 해당 폴러의 `result` 메서드를 호출한 후, 작업이 완료되고 작업 결과를 얻게 될 때까지 기다려야 합니다.
 
 [예제: 웹앱 프로비저닝 및 배포](azure-sdk-example-web-app.md)에서 가져온 다음 코드는 폴러를 사용하여 결과를 기다리는 예제를 보여 줍니다.
 

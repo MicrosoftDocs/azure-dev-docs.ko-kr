@@ -2,12 +2,19 @@
   href: index.yml
   items:
     - name: Azure에 대한 GitHub 작업
-      href: github-actions.md
-    - name: GitHub에서 Azure로 앱 배포
-      href: deploy-to-azure.md
-    - name: GitHub 작업을 위한 도구 통합
-      href: deploy-with-visual-studio.md
-    - name: Azure DevOps 및 GitHub 통합
+      expanded: true
+      items:
+        - name: Azure용 GitHub Actions 소개
+          href: github-actions.md
+        - name: Azure에서 GitHub로 인증
+          href: connect-from-azure.md
+        - name: Azure에 앱 배포
+          href: deploy-to-azure.md
+        - name: Azure로 데이터베이스 배포
+          href: database-actions-deploy.md
+        - name: Azure Policy 관리
+          href: manage-azure-policy.md
+    - name: Azure DevOps & GitHub
       href: integrate-azure-devops.md
-    - name: Azure에서 GitHub로 연결
-      href: connect-from-azure.md
+    - name: Visual Studio 및 Visual Studio Code
+      href: deploy-with-visual-studio.md

@@ -1,15 +1,15 @@
 ---
 title: Azure 서비스를 사용하여 Python 애플리케이션을 인증하는 방법
 description: Azure 라이브러리를 사용하여 Azure 서비스로 Python 앱을 인증하는 데 필요한 자격 증명 개체를 얻는 방법
-ms.date: 10/05/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405903"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601365"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure에서 Python 앱을 인증하고 권한을 부여하는 방법
 
@@ -146,7 +146,7 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>SDK 관리 라이브러리에서 DefaultAzureCredential 사용
 
-`DefaultAzureCredential`은 [azure.core를 사용하는 라이브러리](azure-sdk-library-package-index.md#libraries-using-azurecore) 목록에 표시되는 Azure SDK 관리 라이브러리(이름에 "mgmt"가 포함된 라이브러리) 버전에서 작동합니다. (또한 업데이트된 라이브러리에 대한 pypi 페이지에 변경 내용을 나타내는 "자격 증명 시스템이 완전히 개선됨"이라는 줄이 포함됩니다.)
+`DefaultAzureCredential`은 최신 버전의 Azure SDK 관리 라이브러리에서 작동합니다. 즉, 이름에 "mgmt"가 포함된 "리소스 관리" 라이브러리도 [azure.core를 사용하는 라이브러리](azure-sdk-library-package-index.md#libraries-using-azurecore) 목록에 표시됩니다. (또한 업데이트된 라이브러리에 대한 pypi 페이지에는 변경 내용을 나타내는 "자격 증명 시스템이 완전히 개선됨"이라는 줄이 포함됩니다.)
 
 예를 들어 azure-mgmt-resource 15.0.0 이상 버전에서 `DefaultAzureCredential`을 사용할 수 있습니다.
 
@@ -160,6 +160,8 @@ subscription_client = SubscriptionClient(credential)
 sub_list = subscription_client.subscriptions.list()
 print(list(sub_list))
 ```
+
+라이브러리가 업데이트되지 않은 경우 `DefaultAzureCredential`을 사용하는 코드는 다음 섹션에 설명된 대로 "개체에 'signed-session' 특성이 없음"이라는 메시지를 표시합니다.
 
 ### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>"'DefaultAzureCredential' 개체에 'signed-session 특성이 없음'"
 
@@ -303,6 +305,37 @@ print(subscription.subscription_id)
 
 ### <a name="authenticate-with-token-credentials"></a>토큰 자격 증명을 사용하여 인증
 
+클라이언트 암호와 함께 명시적인 구독, 테넌트 및 클라이언트 식별자를 사용하여 Azure 라이브러리를 인증할 수 있습니다.
+
+azure.core 기반의 최신 SDK 라이브러리를 사용하는 경우 [azure.identity 라이브러리의 `ClientSecretCredential` 개체](#using-clientsecretcredential-azureidentity)를 사용합니다. 이전 버전의 SDK 라이브러리를 사용하는 경우 [azure.common 라이브러리의 `ServicePrincipalCredentials`](#using-serviceprincipalcredentials-azurecommon)를 사용합니다.
+
+`ServicePrincipalCredentials`를 사용하는 기존 코드를 최신 라이브러리 버전으로 마이그레이션하려면 다음 섹션에 나와 있는 것처럼 이 클래스를 `ClientSecretCredential`로 바꿉니다. 두 생성자의 매개 변수 이름이 약간 다릅니다. `tenant`는 `tenant_id`가 되고 `secret`은 `client_secret`이 됩니다.
+
+#### <a name="using-clientsecretcredential-azureidentity"></a>ClientSecretCredential 사용(azure.identity)
+
+```python
+import os
+from azure.mgmt.resource import SubscriptionClient
+from azure.identity import ClientSecretCredential
+
+# Retrieve the IDs and secret to use with ClientSecretCredential
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
+
+credential = ClientSecretCredential(tenant_id=tenant_id, client_id=client_id, client_secret=client_secret)
+
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+마찬가지로 azure.core 기반의 최신 라이브러리에 사용되는 이 방법에서는 Azure Key Vault 또는 환경 변수와 같은 보안 스토리지에서 가져온 자격 증명을 사용하여 [`ClientSecretCredential`](/python/api/azure-identity/azure.identity.clientsecretcredential) 개체를 만듭니다. 이전 코드에서는 [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)에서 설명한 환경 변수를 만들었다고 가정합니다.
+
+#### <a name="using-serviceprincipalcredentials-azurecommon"></a>ServicePrincipalCredentials 사용(azure.common)
+
 ```python
 import os
 from azure.mgmt.resource import SubscriptionClient
@@ -322,9 +355,11 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-이 방법에서는 Azure Key Vault 또는 환경 변수와 같은 보안 스토리지에서 가져온 자격 증명을 사용하여 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) 개체를 만듭니다. 이전 코드에서는 [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)에서 설명한 환경 변수를 만들었다고 가정합니다.
+마찬가지로 azure.core 기반이 아닌 이전 버전의 라이브러리에 사용되는 이 방법에서는 Azure Key Vault 또는 환경 변수와 같은 보안 스토리지에서 가져온 자격 증명을 사용하여 [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) 개체를 만듭니다. 이전 코드에서는 [로컬 개발 환경 구성](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)에서 설명한 환경 변수를 만들었다고 가정합니다.
 
-이 방법을 사용하면 클라이언트 개체에 대해 `base_url` 인수를 지정하여 Azure 퍼블릭 클라우드 대신 [Azure 소버린 클라우드 또는 국가별 클라우드](/azure/active-directory/develop/authentication-national-cloud)를 사용할 수 있습니다.
+#### <a name="use-an-azure-sovereign-national-cloud"></a>Azure 소버린 국가별 클라우드 사용
+
+다음과 같은 토큰 자격 증명 방법 중 하나를 사용하면 클라이언트 개체에 대해 `base_url` 인수를 지정하여 Azure 퍼블릭 클라우드 대신 [Azure 소버린 클라우드 또는 국가별 클라우드](/azure/active-directory/develop/authentication-national-cloud)를 사용할 수 있습니다.
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD

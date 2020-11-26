@@ -3,14 +3,14 @@ title: 자습서 - Jenkins 및 Azure CLI를 사용하여 Azure App Service에 �
 description: Azure CLI를 사용하여 Jenkins 파이프라인을 통해 Azure에 Java 웹앱을 배포하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
-ms.date: 08/08/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 4a6fde1eb8830c897c438fa89e7da6fe93b5a3a8
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 88db3702221b8e18acff71514fcddc9ff7e875b0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831339"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983642"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용해 Azure App Service에 배포
 
@@ -32,7 +32,7 @@ Azure 자격 증명 플러그 인을 사용하면 Microsoft Azure 서비스 주�
 
 버전 1.2 이상이 있는지 확인합니다.
 
-* Jenkins 대시보드 내에서 **Jenkins 관리->플러그 인 관리자->** 를 클릭하고 **Azure 자격 증명**을 검색합니다. 
+* Jenkins 대시보드 내에서 **Jenkins 관리->플러그 인 관리자->** 를 클릭하고 **Azure 자격 증명** 을 검색합니다. 
 * 버전이 1.2보다 이전이면 플러그 인을 업데이트합니다.
 
 Java JDK 및 Maven도 Jenkins 마스터에 필요합니다. 설치하려면 SSH를 사용하여 Jenkins 마스터에 로그인하고 다음 명령을 실행합니다.
@@ -47,7 +47,7 @@ sudo apt-get install -y maven
 Azure CLI를 실행하려면 Azure 자격 증명이 필요합니다.
 
 * Jenkins 대시보드 내에서 **자격 증명->시스템->** 을 클릭합니다. **전역 자격 증명(제한 없음)** 을 클릭합니다.
-* **자격 증명 추가**를 클릭한 다음 구독 ID, 클라이언트 ID, 클라이언트 암호 및 OAuth 2.0 토큰 엔드포인트를 입력하여 [Microsoft Azure 서비스 주체](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json)를 추가합니다. 이후 단계에서 사용할 ID를 제공합니다.
+* **자격 증명 추가** 를 클릭한 다음 구독 ID, 클라이언트 ID, 클라이언트 암호 및 OAuth 2.0 토큰 엔드포인트를 입력하여 [Microsoft Azure 서비스 주체](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json)를 추가합니다. 이후 단계에서 사용할 ID를 제공합니다.
 
 ![자격 증명 추가](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
 
@@ -82,7 +82,7 @@ az appservice plan create \
 
 ### <a name="create-an-azure-web-app"></a>Azure 웹앱 만들기
 
- [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) CLI 명령을 사용하여 `myAppServicePlan` App Service 계획에서 웹앱 정의를 만듭니다. 웹앱 정의는 애플리케이션에 액세스하는 URL을 제공하고 Azure에 코드를 배포하는 몇 가지 옵션을 구성합니다. 
+ [az webapp create](/cli/azure/webapp#az-webapp-create) CLI 명령을 사용하여 `myAppServicePlan` App Service 계획에서 웹앱 정의를 만듭니다. 웹앱 정의는 애플리케이션에 액세스하는 URL을 제공하고 Azure에 코드를 배포하는 몇 가지 옵션을 구성합니다. 
 
 ```azurecli-interactive
 az webapp create \
@@ -144,22 +144,22 @@ az webapp config set \
     
 ## <a name="create-jenkins-pipeline"></a>Jenkins 파이프라인 만들기
 
-웹 브라우저에서 Jenkins를 열고 **새 항목**을 클릭합니다.
+웹 브라우저에서 Jenkins를 열고 **새 항목** 을 클릭합니다.
 
 1. 작업의 이름을 입력합니다.
-1. **파이프라인**을 선택합니다. 
-1. **확인**을 선택합니다.
-1. **파이프라인**을 선택합니다.
-1. **정의**에서 **SCM의 파이프라인 스크립트**를 선택합니다.
-1. **SCM**에서 **Git**을 선택합니다.
+1. **파이프라인** 을 선택합니다. 
+1. **확인** 을 선택합니다.
+1. **파이프라인** 을 선택합니다.
+1. **정의** 에서 **SCM의 파이프라인 스크립트** 를 선택합니다.
+1. **SCM** 에서 **Git** 을 선택합니다.
 1. 포크된 리포지토리에 대한 GitHub URL(`https:\<your forked repo\>.git`)을 입력합니다.
-1. **저장**을 선택합니다.
+1. **저장** 을 선택합니다.
 
 ## <a name="test-your-pipeline"></a>파이프라인 테스트
 
 1. 만든 파이프라인으로 이동합니다.
-1. **지금 빌드**를 클릭합니다.
-1. 빌드가 완료되면 **콘솔 출력**을 선택하여 빌드 세부 정보를 확인합니다.
+1. **지금 빌드** 를 클릭합니다.
+1. 빌드가 완료되면 **콘솔 출력** 을 선택하여 빌드 세부 정보를 확인합니다.
 
 ## <a name="verify-your-web-app"></a>웹앱 확인
 

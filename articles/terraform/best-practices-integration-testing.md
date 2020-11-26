@@ -4,12 +4,12 @@ description: 통합 테스트 및 Azure DevOps를 사용하여 Terraform 프로�
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bd05bfa2a07ee6cfa2f4a5dc4f4771559af9a2e7
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: b9a533475bd291cc0d1fd9fffa418b0ce4498fb0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192565"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983992"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>자습서: Azure에서 Terraform 프로젝트에 대한 통합 테스트 구성
 
@@ -28,11 +28,11 @@ ms.locfileid: "93192565"
 ## <a name="prerequisites"></a>필수 조건
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 조직 및 프로젝트** : 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](/azure/devops/organizations/projects/create-project).
-- **Terraform Build & Release Tasks 확장** : [Terraform Build & Release Tasks 확장](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)을 Azure DevOps 조직에 설치합니다.
-- **Azure DevOps 액세스 권한을 Azure 구독에 부여** : Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](/azure/devops/pipelines/library/connect-to-azure)을 만듭니다.
-- **Terraform 설치** : 사용자 환경에 따라 [Terraform을 다운로드하여 설치](https://www.terraform.io/downloads.html)합니다.
-- **테스트 샘플 포크** : [GitHub에서 Terraform 샘플 프로젝트](https://github.com/Azure/terraform)를 포크하고 개발/테스트 컴퓨터에 복제합니다.
+- **Azure DevOps 조직 및 프로젝트**: 조직이 없는 경우 [Azure DevOps 조직을 만듭니다](/azure/devops/organizations/projects/create-project).
+- **Terraform Build & Release Tasks 확장**: [Terraform Build & Release Tasks 확장](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)을 Azure DevOps 조직에 설치합니다.
+- **Azure DevOps 액세스 권한을 Azure 구독에 부여**: Azure Pipelines에서 Azure 구독에 연결할 수 있도록 `terraform-basic-testing-azure-connection`이라는 [Azure 서비스 연결](/azure/devops/pipelines/library/connect-to-azure)을 만듭니다.
+- **Terraform 설치**: 사용자 환경에 따라 [Terraform을 다운로드하여 설치](https://www.terraform.io/downloads.html)합니다.
+- **테스트 샘플 포크**: [GitHub에서 Terraform 샘플 프로젝트](https://github.com/Azure/terraform)를 포크하고 개발/테스트 컴퓨터에 복제합니다.
 
 ## <a name="validate-a-local-terraform-configuration"></a>로컬 Terraform 구성 유효성 검사
 
@@ -99,8 +99,8 @@ terraform plan
 Terraform 파일에 대한 정적 분석을 제공하는 도구는 다음과 같습니다.
 
 - [Checkov](https://github.com/bridgecrewio/checkov/)
-- [Terrascan](https://github.com/cesar-rodriguez/terrascan)
-- [tfsec](https://github.com/liamg/tfsec) 
+- [Terrascan](https://github.com/accurics/terrascan)
+- [tfsec](https://github.com/tfsec/tfsec)
 - [Deepsource](https://deepsource.io/blog/release-terraform-static-analysis/) 
 
 정적 분석이 연속 통합 파이프라인의 일부로 실행되는 경우가 많습니다. 이러한 테스트에서 실행 계획 또는 배포를 만들 필요가 없습니다. 결과적으로 다른 테스트보다 빠르게 실행되며 일반적으로 연속 통합 프로세스에서 먼저 실행됩니다.

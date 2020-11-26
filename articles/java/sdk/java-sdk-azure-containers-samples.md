@@ -2,17 +2,18 @@
 title: Azure Container Service용 Java 소스 샘플
 description: Java 앱에서 Azure Container Service를 사용하기 위한 샘플 코드를 얻습니다.
 keywords: Azure, Java, SDK, API, Kubernetes, 컨테이너, Docker, ACS, 레지스트리, 이미지
-author: rloutlaw
+author: bmitchell287
+ms.author: brendm
 ms.date: 07/31/2017
 ms.topic: article
 ms.service: multiple
 ms.custom: seo-java-july2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: e12e9b3007f8c542563013af3c00df40352c0036
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: e1cfcda6674cf1f01d5dea370ec241b093c9e4b5
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379527"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983922"
 ---
 # <a name="java-samples-for-azure-container-service"></a>Azure Container Service용 Java 샘플
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 32ed1a4870a1fe9b42d516ed5f0e6c51a2618e1c
-ms.sourcegitcommit: b42029674abd1c82c3b945ef00773f24b7ec00d6
+ms.openlocfilehash: 07bdaa6a843c9af48f5493ffa8e0b5ee19419b7f
+ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94717033"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96152592"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
@@ -37,7 +37,7 @@ ms.locfileid: "94717033"
 | Custom Vision | pypi [3.1.0](https://pypi.org/project/azure-cognitiveservices-vision-customvision/3.1.0) | [docs](/python/api/overview/azure/cognitiveservices-vision-customvision-readme/) | GitHub [3.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-cognitiveservices-vision-customvision_3.1.0/sdk/cognitiveservices/azure-cognitiveservices-vision-customvision/) |
 | 데이터 네임스페이스 패키지 | pypi [1.0.0](https://pypi.org/project/azure-data-nspkg/1.0.0) | [docs](/python/api/overview/azure/data-nspkg-readme/) |  |
 | 개발 도구 | pypi [1.2.0](https://pypi.org/project/azure-devtools/1.2.0) |  | GitHub [1.2.0](https://github.com/Azure/azure-python-devtools/tree/1.2.0/src/azure_devtools) |
-| Digital Twins - 코어 | pypi [](https://pypi.org/project/azure-digitaltwins-core/) |  |  |
+| Digital Twins - 코어 | pypi  |  |  |
 | Digital Twins 네임스페이스 패키지 | pypi [1.0.0](https://pypi.org/project/azure-digitaltwins-nspkg/1.0.0) |  |  |
 | Doc Warden | pypi [0.7.1](https://pypi.org/project/doc-warden/0.7.1) |  | GitHub [0.7.1](https://github.com/Azure/azure-sdk-tools/tree/doc-warden_0.7.1/packages/python-packages/doc-warden) |
 | Entity Search | pypi [2.0.0](https://pypi.org/project/azure-cognitiveservices-search-entitysearch/2.0.0) |  | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-cognitiveservices-search-entitysearch_2.0.0/sdk/cognitiveservices/azure-cognitiveservices-search-entitysearch/) |
@@ -123,9 +123,9 @@ ms.locfileid: "94717033"
 | 리소스 관리 - 통신 서비스 | pypi [1.0.0b2](https://pypi.org/project/azure-mgmt-communication/1.0.0b2) | [docs](/python/api/overview/azure/mgmt-communication-readme-pre/) | GitHub [1.0.0b2](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-communication_1.0.0b2/sdk/communication/azure-mgmt-communication/) |
 | 리소스 관리 - 컴퓨팅 | pypi [17.0.0](https://pypi.org/project/azure-mgmt-compute/17.0.0) | [docs](/python/api/overview/azure/mgmt-compute-readme/) | GitHub [17.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-compute_17.0.0/sdk/compute/azure-mgmt-compute/) |
 | 리소스 관리 - 사용 | pypi [3.0.0](https://pypi.org/project/azure-mgmt-consumption/3.0.0) | [docs](/python/api/overview/azure/consumption) | GitHub [3.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-consumption_3.0.0/sdk/consumption/azure-mgmt-consumption/) |
-| 리소스 관리 - 컨테이너 인스턴스 | pypi [2.0.0](https://pypi.org/project/azure-mgmt-containerinstance/2.0.0)<br>pypi [7.0.0b1](https://pypi.org/project/azure-mgmt-containerinstance/7.0.0b1) | [docs](/python/api/overview/azure/mgmt-containerinstance-readme-pre/) | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerinstance_2.0.0/sdk/containerinstance/azure-mgmt-containerinstance/)<br>GitHub [7.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerinstance_7.0.0b1/sdk/containerinstance/azure-mgmt-containerinstance/) |
-| 리소스 관리 - Container Registry | pypi [](https://pypi.org/project/azure-mgmt-containerregistry/) | [docs](/python/api/overview/azure/container-registry) | GitHub [](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerregistry_2.8.0/azure-mgmt-containerregistry/) |
-| 리소스 관리 - 컨테이너 서비스 | pypi [10.0.0](https://pypi.org/project/azure-mgmt-containerservice/10.0.0)<br>pypi [14.0.0b1](https://pypi.org/project/azure-mgmt-containerservice/14.0.0b1) | [docs](/python/api/overview/azure/mgmt-containerservice-readme-pre/) | GitHub [10.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerservice_10.0.0/sdk/containerservice/azure-mgmt-containerservice/)<br>GitHub [14.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerservice_14.0.0b1/sdk/containerservice/azure-mgmt-containerservice/) |
+| 리소스 관리 - 컨테이너 인스턴스 | pypi [2.0.0](https://pypi.org/project/azure-mgmt-containerinstance/2.0.0)<br>pypi [7.0.0b1](https://pypi.org/project/azure-mgmt-containerinstance/7.0.0b1) | [docs](/python/api/overview/azure/mgmt-containerinstance-readme/) | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerinstance_2.0.0/sdk/containerinstance/azure-mgmt-containerinstance/)<br>GitHub [7.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerinstance_7.0.0b1/sdk/containerinstance/azure-mgmt-containerinstance/) |
+| 리소스 관리 - Container Registry | pypi | [docs](/python/api/overview/azure/container-registry) | GitHub |
+| 리소스 관리 - 컨테이너 서비스 | pypi [10.0.0](https://pypi.org/project/azure-mgmt-containerservice/10.0.0)<br>pypi [14.0.0b1](https://pypi.org/project/azure-mgmt-containerservice/14.0.0b1) | [docs](/python/api/overview/azure/mgmt-containerservice-readme/) | GitHub [10.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerservice_10.0.0/sdk/containerservice/azure-mgmt-containerservice/)<br>GitHub [14.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerservice_14.0.0b1/sdk/containerservice/azure-mgmt-containerservice/) |
 | 리소스 관리 - Content Delivery Network | pypi [5.1.0](https://pypi.org/project/azure-mgmt-cdn/5.1.0) | [docs](/python/api/overview/azure/mgmt-cdn-readme/) | GitHub [5.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-cdn_5.1.0/sdk/cdn/azure-mgmt-cdn/) |
 | 리소스 관리 - 코어 | pypi [1.2.2](https://pypi.org/project/azure-mgmt-core/1.2.2) | [docs](/python/api/overview/azure/mgmt-core-readme/) | GitHub [1.2.2](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-core_1.2.2/sdk/core/azure-mgmt-core/) |
 | 리소스 관리 - Cosmos DB | pypi [1.0.0](https://pypi.org/project/azure-mgmt-cosmosdb/1.0.0)<br>pypi [6.0.0b1](https://pypi.org/project/azure-mgmt-cosmosdb/6.0.0b1) | [docs](/python/api/overview/azure/cosmosdb) | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-cosmosdb_1.0.0/sdk/cosmos/azure-mgmt-cosmosdb/)<br>GitHub [6.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-cosmosdb_6.0.0b1/sdk/cosmos/azure-mgmt-cosmosdb/) |
@@ -207,7 +207,7 @@ ms.locfileid: "94717033"
 | 리소스 관리 - Service Bus | pypi [1.0.0](https://pypi.org/project/azure-mgmt-servicebus/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-servicebus_0.6.0/azure-mgmt-servicebus/) |
 | 리소스 관리 - Service Fabric | pypi [0.5.0](https://pypi.org/project/azure-mgmt-servicefabric/0.5.0) |  | GitHub [0.5.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-servicefabric_0.5.0/sdk/servicefabric/azure-mgmt-servicefabric/) |
 | 리소스 관리 - SignalR | pypi [0.4.0](https://pypi.org/project/azure-mgmt-signalr/0.4.0) |  | GitHub [0.4.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-signalr_0.4.0/sdk/signalr/azure-mgmt-signalr/) |
-| 리소스 관리 - SQL | pypi [0.24.0](https://pypi.org/project/azure-mgmt-sql/0.24.0)<br>pypi [1.0.0b1](https://pypi.org/project/azure-mgmt-sql/1.0.0b1) | [docs](/python/api/overview/azure/mgmt-sql-readme-pre/) | GitHub [0.24.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-sql_0.24.0/sdk/sql/azure-mgmt-sql/)<br>GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-sql_1.0.0b1/sdk/sql/azure-mgmt-sql/) |
+| 리소스 관리 - SQL | pypi [0.24.0](https://pypi.org/project/azure-mgmt-sql/0.24.0)<br>pypi [1.0.0b1](https://pypi.org/project/azure-mgmt-sql/1.0.0b1) | [docs](/python/api/overview/azure/mgmt-sql-readme/) | GitHub [0.24.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-sql_0.24.0/sdk/sql/azure-mgmt-sql/)<br>GitHub [1.0.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-sql_1.0.0b1/sdk/sql/azure-mgmt-sql/) |
 | 리소스 관리 - SQL Virtual Machine | pypi [0.5.0](https://pypi.org/project/azure-mgmt-sqlvirtualmachine/0.5.0) |  | GitHub [0.5.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-sqlvirtualmachine_0.5.0/sdk/sql/azure-mgmt-sqlvirtualmachine/) |
 | 리소스 관리 - 스토리지 | pypi [16.0.0](https://pypi.org/project/azure-mgmt-storage/16.0.0) | [docs](/python/api/overview/azure/mgmt-storage-readme/) | GitHub [16.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storage_16.0.0/sdk/storage/azure-mgmt-storage/) |
 | 리소스 관리 - 스토리지 캐시 | pypi [0.3.0](https://pypi.org/project/azure-mgmt-storagecache/0.3.0) |  | GitHub [0.3.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-storagecache_0.3.0/sdk/storage/azure-mgmt-storagecache/) |

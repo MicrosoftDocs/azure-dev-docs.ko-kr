@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Kubernetes, k8s, AKS, 파란색/녹색 배포,
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: b4284fdfa82ada4098df4a37983e364bdcd70d90
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688660"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984012"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>자습서: 파란색/녹색 배포 패턴을 사용하여 AKS(Azure Kubernetes Service)에 배포
 
@@ -29,7 +29,7 @@ AKS(Azure Kubernetes Service)는 호스팅된 Kubernetes 환경을 관리하므�
 
 ## <a name="prerequisites"></a>사전 요구 사항
 - [GitHub 계정](https://github.com): 샘플 리포지토리를 복제하려면 GitHub 계정이 필요합니다.
-- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest): Azure CLI 2.0을 사용하여 Kubernetes 클러스터를 만들 수 있습니다.
+- [Azure CLI 2.0](/cli/azure/install-azure-cli): Azure CLI 2.0을 사용하여 Kubernetes 클러스터를 만들 수 있습니다.
 - [Chocolatey](https://chocolatey.org): kubectl을 설치하는 데 사용하는 패키지 관리자입니다.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): Kubernetes 클러스터에 대한 명령을 실행하기 위해 사용하는 명령줄 인터페이스입니다.
 - [jq](https://stedolan.github.io/jq/download/): 간단한 명령줄 JSON 프로세서입니다.
@@ -81,7 +81,7 @@ GitHub의 Microsoft 리포지토리에서 Jenkins와 파란색/녹색 배포 패
 - Azure Container Registry 서비스의 인스턴스를 만듭니다.
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Azure CLI 2.0을 사용하여 관리되는 Kubernetes 클러스터 만들기
-[Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)으로 관리되는 Kubernetes 클러스터를 만들려면 Azure CLI 버전 2.0.25 이상을 사용하고 있어야 합니다.
+[Azure CLI 2.0](/cli/azure/install-azure-cli)으로 관리되는 Kubernetes 클러스터를 만들려면 Azure CLI 버전 2.0.25 이상을 사용하고 있어야 합니다.
 
 1. Azure 계정에 로그인합니다. 다음 명령을 입력하면 로그인을 완료하는 방법을 설명하는 지침이 나타납니다. 
     

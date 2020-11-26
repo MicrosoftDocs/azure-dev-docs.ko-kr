@@ -5,14 +5,16 @@ keywords: Jenkins, plugis, Azure, DevOps
 ms.date: 04/25/2020
 ms.topic: article
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a8738ad8a66f85467527051f383975890fb5dcd2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d5f470c7355314b488d811f03f175379ad211c96
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240615"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035451"
 ---
 # <a name="jenkins-plug-ins-for-azure"></a>Azure용 Jenkins 플러그 인
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 많은 Azure 서비스와 기능은 Jenkins 플러그 인을 통해 액세스할 수 있습니다. 이러한 서비스는 DevOps 환경에 대한 CI/CD(연속 통합 및 지속적인 배포)와 관련된 다양한 가능성을 지원합니다. Jenkins 플러그 인을 클릭하면 해당 플러그 인에 대한 자세한 내용을 확인할 수 있습니다.
 

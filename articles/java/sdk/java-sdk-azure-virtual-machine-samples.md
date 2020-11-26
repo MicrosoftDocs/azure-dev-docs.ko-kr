@@ -2,18 +2,19 @@
 title: Java 가상 컴퓨터 샘플용 Azure 관리 라이브러리
 description: Java용 Azure 관리 라이브러리를 사용하여 Azure 가상 머신을 만들고 업데이트하기 위한 샘플 코드를 얻습니다.
 keywords: Azure, Java, SDK, API, Maven, Gradle, 가상 머신
-author: rloutlaw
+author: bmitchell287
+ms.author: brendm
 ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 1eeb166f-8253-4fde-82d2-43997fda7819
 ms.custom: devx-track-java
-ms.openlocfilehash: 4d347c7d145af39db3494240d6a5f658629f549e
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 944f26c90e1a065ba89a565c27ed8807fd1b8054
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405744"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983832"
 ---
 # <a name="azure-management-libraries-for-java---virtual-machine-samples"></a>Java - 가상 머신 샘플용 Azure 관리 라이브러리
 

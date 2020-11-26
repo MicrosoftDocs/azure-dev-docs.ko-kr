@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5b342b722167aa901b76f8117f3fefc9412220ae
-ms.sourcegitcommit: 660b21aee3cf83ee561c447803b64335b2c95ccc
+ms.openlocfilehash: 3e73fda380f2743f6a3d4b2fb726ee62173b8563
+ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91882210"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96035371"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Azure용 Spring Boot Starter
 
@@ -116,7 +116,7 @@ ms.locfileid: "91882210"
 
 이 스타터가 제공하는 Azure Active Directory 기능을 사용하는 방법의 예는 다음을 참조하세요.
 
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/>
 
 이 스타터를 Spring Boot 프로젝트에 추가할 때는 *pom.xml* 파일에서 다음을 변경합니다.
 
@@ -237,7 +237,7 @@ ms.locfileid: "91882210"
 이 스타터가 제공하는 Azure Storage 기능을 사용하는 방법의 예는 다음을 참조하세요.
 
 * [Azure Storage에 Spring Boot Starter를 사용하는 방법](configure-spring-boot-starter-java-app-with-azure-storage.md)
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-resource>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-queue-operation>
 
 이 스타터를 Spring Boot 프로젝트에 추가할 때는 *pom.xml* 파일에서 다음을 변경합니다.
 
@@ -302,7 +302,7 @@ Azure에서 [Spring Boot] 애플리케이션을 사용하는 방법에 대한 �
 
 Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 개발자를 위한 Azure]와 [Azure DevOps 및 Java 사용하기]를 참조하세요.
 
-자체 Spring Boot 애플리케이션을 시작하는 데 도움이 필요하면 https://start.spring.io/에서 **Spring Initializr**를 참조하세요.
+자체 Spring Boot 애플리케이션을 시작하는 데 도움이 필요하면 https://start.spring.io/에서 **Spring Initializr** 를 참조하세요.
 
 <!-- URL List -->
 

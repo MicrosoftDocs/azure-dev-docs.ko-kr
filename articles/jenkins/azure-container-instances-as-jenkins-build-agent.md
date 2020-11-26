@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, DevOps, Container Instances, 빌드 에이전트
 ms.topic: article
 ms.date: 08/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 20e8180ab0ac721366c2071fdfaa0882f913f945
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240905"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035441"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>자습서: Azure Container Instances를 Jenkins 빌드 에이전트로 사용
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 ACI(Azure Container Instances)는 컨테이너화된 워크로드를 실행하기 위한 격리된 주문형, 버스터블 환경을 제공합니다. 이러한 특성 때문에 ACI는 Jenkins 빌드 작업을 대규모로 실행할 수 있는 우수한 플랫폼을 만들어 줍니다. 이 문서에서는 ACI를 통해 빌드 대상으로 미리 구성된 Jenkins 서버를 배포하고 사용하는 방법을 안내합니다.
 
@@ -20,9 +22,9 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
 
 ## <a name="deploy-a-jenkins-server"></a>Jenkins 서버 배포
 
-1. Azure Portal에서 **리소스 만들기**를 선택하고 **Jenkins**를 검색합니다. 게시자가 **Microsoft**인 Jenkins를 선택하고 **만들기**를 선택합니다.
+1. Azure Portal에서 **리소스 만들기** 를 선택하고 **Jenkins** 를 검색합니다. 게시자가 **Microsoft** 인 Jenkins를 선택하고 **만들기** 를 선택합니다.
 
-2. **기본** 양식에서 다음 정보를 입력하고 **확인**을 선택합니다.
+2. **기본** 양식에서 다음 정보를 입력하고 **확인** 을 선택합니다.
 
    - **Name**: Jenkins 배포의 이름을 입력합니다.
    - **사용자 이름**: Jenkins 가상 머신의 관리 사용자 이름을 입력합니다.
@@ -33,25 +35,25 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
 
    ![Jenkins 포털 배포의 기본 설정](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-01.png)
 
-3. **추가 설정 양식**에서 다음 항목을 완료합니다.
+3. **추가 설정 양식** 에서 다음 항목을 완료합니다.
 
    - **Size**: Jenkins 가상 머신에 적합한 크기 지정 옵션을 선택합니다.
    - **VM 디스크 유형**: Jenkins 서버의 **HDD**(하드 디스크 드라이브) 또는 **SSD**(반도체 드라이브)를 지정합니다.
    - **가상 네트워크**: 기본 설정을 수정하려면 화살표를 선택합니다.
-   - **서브넷**: 화살표를 선택하고, 정보를 확인하고, **확인**을 선택합니다.
+   - **서브넷**: 화살표를 선택하고, 정보를 확인하고, **확인** 을 선택합니다.
    - **공용 IP 주소**: 화살표를 선택하여 공용 IP 주소의 사용자 지정 이름을 지정하고, SKU를 구성하고, 메서드 할당을 설정합니다.
    - **도메인 이름 레이블**: Jenkins 가상 머신에 대한 정규화된 URL을 만드는 값을 지정합니다.
    - **Jenkins 릴리스 종류**: 다음 옵션에서 원하는 릴리스 종류를 선택합니다. **LTS**, **주간 빌드** 또는 **Azure 검증 완료**.
 
    ![Jenkins 포털 배포의 추가 설정](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-02.png)
 
-4. 서비스 주체 통합의 경우 **자동(MSI)** 을 선택하여 [Azure 리소스에 대한 관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하여 Jenkins 인스턴스에 대한 인증 ID를 자동으로 만들도록 합니다. 사용자 고유의 서비스 주체 자격 증명을 입력하려면 **수동**을 선택합니다.
+4. 서비스 주체 통합의 경우 **자동(MSI)** 을 선택하여 [Azure 리소스에 대한 관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하여 Jenkins 인스턴스에 대한 인증 ID를 자동으로 만들도록 합니다. 사용자 고유의 서비스 주체 자격 증명을 입력하려면 **수동** 을 선택합니다.
 
-5. 클라우드 에이전트는 Jenkins 빌드 작업을 위한 클라우드 기반 플랫폼을 구성합니다. 이 문서에서는 **ACI**를 선택합니다. ACI 클라우드 에이전트를 사용하면 각 Jenkins 빌드 작업이 하나의 컨테이너 인스턴스에서 실행됩니다.
+5. 클라우드 에이전트는 Jenkins 빌드 작업을 위한 클라우드 기반 플랫폼을 구성합니다. 이 문서에서는 **ACI** 를 선택합니다. ACI 클라우드 에이전트를 사용하면 각 Jenkins 빌드 작업이 하나의 컨테이너 인스턴스에서 실행됩니다.
 
    ![Jenkins 포털 배포의 클라우드 통합 설정](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-03.png)
 
-6. 통합 설정을 마쳤으면 **확인**을 선택한 다음, 유효성 검사 요약에서 **확인**을 다시 선택합니다. **사용 약관** 요약에서 **만들기**를 선택합니다. Jenkins 서버가 배포될 때까지 몇 분 정도 걸립니다.
+6. 통합 설정을 마쳤으면 **확인** 을 선택한 다음, 유효성 검사 요약에서 **확인** 을 다시 선택합니다. **사용 약관** 요약에서 **만들기** 를 선택합니다. Jenkins 서버가 배포될 때까지 몇 분 정도 걸립니다.
 
 ## <a name="configure-jenkins"></a>Jenkins 구성
 
@@ -71,11 +73,11 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
    sudo cat /var/lib/jenkins/secrets/initialAdminPassword
    ```
 
-5. SSH 세션과 터널이 계속 실행되도록 그대로 두고, 브라우저에서 `http://localhost:8080`으로 이동합니다. 상자에 초기 관리자 암호를 붙여넣고 **계속**을 선택합니다.
+5. SSH 세션과 터널이 계속 실행되도록 그대로 두고, 브라우저에서 `http://localhost:8080`으로 이동합니다. 상자에 초기 관리자 암호를 붙여넣고 **계속** 을 선택합니다.
 
    ![관리자 암호 상자가 있는 "Jenkins 잠금 해제" 화면](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-05.png)
 
-6. **권장 플러그 인 설치**를 선택하여 권장 Jenkins 플러그 인을 모두 설치합니다.
+6. **권장 플러그 인 설치** 를 선택하여 권장 Jenkins 플러그 인을 모두 설치합니다.
 
    !["권장 플러그인 설치"를 선택한 "Jenkins 사용자 지정" 화면](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-06.png)
 
@@ -83,7 +85,7 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
 
    ![자격 증명을 입력한 "첫 번째 관리 사용자 만들기" 화면](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-07.png)
 
-8. **저장 및 끝내기**를 선택한 다음, **Jenkins를 사용하여 시작**을 선택하여 구성을 완료합니다.
+8. **저장 및 끝내기** 를 선택한 다음, **Jenkins를 사용하여 시작** 을 선택하여 구성을 완료합니다.
 
 이제 Jenkins는 코드를 빌드하고 배포할 준비가 완료되었습니다. 이 예에서는 간단한 Java 애플리케이션을 사용하여 Azure Container Instances에서 Jenkins 빌드를 시연합니다.
 
@@ -91,25 +93,25 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
 
 이제 Jenkins 빌드 작업을 만들어서 Azure Container Instance에서 Jenkins 빌드를 보여줍니다.
 
-1. **새 항목**을 선택하고, 빌드 프로젝트의 이름을 지정하고(예: **aci-demo**), **프리스타일 프로젝트**를 선택하고, **확인**을 선택합니다.
+1. **새 항목** 을 선택하고, 빌드 프로젝트의 이름을 지정하고(예: **aci-demo**), **프리스타일 프로젝트** 를 선택하고, **확인** 을 선택합니다.
 
    ![빌드 작업 이름 상자와 프로젝트 형식 목록](./media/azure-container-instances-as-jenkins-build-agent/jenkins-new-job.png)
 
-2. **일반**에서 **이 프로젝트를 실행할 수 있는 위치 제한**을 선택합니다. 레이블 식에 **linux**를 입력합니다. 이렇게 구성하면 이 빌드 작업이 ACI 클라우드에서 실행됩니다.
+2. **일반** 에서 **이 프로젝트를 실행할 수 있는 위치 제한** 을 선택합니다. 레이블 식에 **linux** 를 입력합니다. 이렇게 구성하면 이 빌드 작업이 ACI 클라우드에서 실행됩니다.
 
    ![구성 세부 정보가 제공되는 "일반" 탭](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-01.png)
 
-3. **빌드** 아래에서 **빌드 단계 추가**를 선택하고 **셸 실행**을 선택합니다. `echo "aci-demo"`를 명령으로 입력합니다.
+3. **빌드** 아래에서 **빌드 단계 추가** 를 선택하고 **셸 실행** 을 선택합니다. `echo "aci-demo"`를 명령으로 입력합니다.
 
    ![빌드 단계에 대한 선택 영역이 있는 "빌드" 탭](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-02.png)
 
-5. **저장**을 선택합니다.
+5. **저장** 을 선택합니다.
 
 ## <a name="run-the-build-job"></a>빌드 작업 실행
 
 빌드 작업을 테스트하고 빌드 플랫폼으로 Azure Container Instances를 관찰하려면 수동으로 빌드를 시작합니다.
 
-1. **지금 빌드**를 선택하여 빌드 작업을 시작합니다. 작업이 시작될 때까지 몇 분 정도 걸립니다. 다음 이미지와 비슷한 상태가 표시됩니다.
+1. **지금 빌드** 를 선택하여 빌드 작업을 시작합니다. 작업이 시작될 때까지 몇 분 정도 걸립니다. 다음 이미지와 비슷한 상태가 표시됩니다.
 
    ![작업 상태가 포함된 "빌드 기록" 정보](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-status.png)
 

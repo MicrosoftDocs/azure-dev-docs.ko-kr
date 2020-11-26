@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, DevOps, 파이프라인, CI/CD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: eb4c12fe249b485941221d382ab0090f7aa88227
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: debcd94b885813a8f1a1640d4eb46e75b36c4d6c
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689050"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035461"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>자습서: GitHub 및 Docker를 사용하여 Jenkins 파이프라인 만들기
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 애플리케이션 개발의 빌드 및 테스트 단계를 자동화하려면 CI/CD(지속적인 통합 및 배포) 파이프라인을 사용할 수 있습니다. 이 자습서에서는 Azure VM에서 CI/CD 파이프라인을 만들며 다음 방법이 포함됩니다.
 
@@ -138,11 +140,11 @@ GitHub를 통해 통합을 구성하려면 Azure 샘플 리포지토리에서 [N
 만든 분기 내부에 웹후크를 만듭니다.
 
 - **설정** 을 선택한 다음, 왼쪽에 있는 **웹후크** 를 선택합니다.
-- **Add webhook** (웹후크 추가)를 선택한 다음, 필터 상자에서 *Jenkins* 를 입력합니다.
-- **Payload URL** (페이로드 URL)에 대해 `http://<publicIps>:8080/github-webhook/`를 입력합니다. 후행 슬래시(/)를 포함해야 합니다.
-- **Content type** (콘텐츠 형식)에 대해 *application/x-www-form-urlencoded* 를 선택합니다.
-- **Which events would you like to trigger this webhook?** (이 웹후크가 트리거되도록 하려는 이벤트는 무엇입니까?)에 대해 *Just the push event* (푸시 이벤트만)를 선택합니다.
-- **Active** (활성)를 선택합니다.
+- **Add webhook**(웹후크 추가)를 선택한 다음, 필터 상자에서 *Jenkins* 를 입력합니다.
+- **Payload URL**(페이로드 URL)에 대해 `http://<publicIps>:8080/github-webhook/`를 입력합니다. 후행 슬래시(/)를 포함해야 합니다.
+- **Content type**(콘텐츠 형식)에 대해 *application/x-www-form-urlencoded* 를 선택합니다.
+- **Which events would you like to trigger this webhook?** (이 웹후크가 트리거되도록 하려는 이벤트는 무엇입니까?)에 대해 *Just the push event*(푸시 이벤트만)를 선택합니다.
+- **Active**(활성)를 선택합니다.
 - **Add webhook** 를 클릭합니다.
 
 ![분기된 리포지토리에 GitHub 웹후크 추가](media/pipeline-with-github-and-docker/github-webhook.png)

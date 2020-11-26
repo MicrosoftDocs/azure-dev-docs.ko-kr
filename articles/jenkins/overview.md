@@ -3,14 +3,14 @@ title: Jenkins 및 Azure 개요
 description: Azure에서 Jenkins 빌드 및 배포 자동화 서버를 호스트하고 Azure 컴퓨팅 및 스토리지 리소스를 사용하여 CI/CD(지속적인 통합 및 배포) 파이프라인을 확장합니다.
 keywords: Jenkins, Azure, DevOps, 개요
 ms.topic: overview
-ms.date: 08/08/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 43e38bd609f00257859c5976dc0b4e0fa4ae9e8f
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d7de868651c50b7c3e39f1a0286ddd3ebf740b21
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240635"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983562"
 ---
 # <a name="azure-and-jenkins"></a>Azure 및 Jenkins
 
@@ -37,5 +37,4 @@ Jenkins CI/CD 파이프라인의 일부로 Azure에 애플리케이션을 배포
 
  플러그 인은 다음과 같은 서비스 및 환경에 배포하는 데 사용할 수 있습니다.
 
-- [Linux에서의 Azure App Service](/azure/app-service/containers/app-service-linux-intro). 시작하려면 [자습서](deploy-from-github-to-azure-app-service.md)를 참조하세요.
-- [Azure App Service](/azure/app-service/overview). 시작하려면 [방법](deploy-to-azure-app-service-using-plugin.md)을 참조하세요.
+- [Linux에서의 Azure App Service](/azure/app-service/containers/app-service-linux-intro). 시작하려면 [자습서](deploy-to-azure-app-service-using-azure-cli.md)를 참조하세요.

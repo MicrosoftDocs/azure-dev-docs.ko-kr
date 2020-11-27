@@ -12,6 +12,8 @@
           href: deploy-to-azure.md
         - name: Azure로 데이터베이스 배포
           href: database-actions-deploy.md
+        - name: 변수 대체 사용
+          href: github-variable-substitution.md
         - name: Azure Policy 관리
           href: manage-azure-policy.md
     - name: Azure DevOps & GitHub

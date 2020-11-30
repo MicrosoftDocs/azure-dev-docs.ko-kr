@@ -2,14 +2,14 @@
 title: '5단계: VS Code를 사용하여 Linux에서 Azure App Service에 Python 웹앱 배포'
 description: 자습서 5단계, 웹앱 코드 배포
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e7c600314f1535589ca15daaa3bbbd9ffdc69b9d
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 7b3743d417ed3455c59f5b9887ee54728fb7318a
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501458"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95485716"
 ---
 # <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5: Azure App Service on Linux에 Python 웹앱 배포
 
@@ -27,6 +27,9 @@ Azure App Service에 Python 앱을 배포하려면 다음 절차를 따르세요
 
     - "배포할 폴더 선택"에 대해 현재 앱 폴더를 선택합니다.
     - "웹앱 선택"에 대해 이전 단계에서 만든 App Service를 선택합니다.
+    - 빌드 구성을 업데이트하여 빌드 명령을 실행하라는 메시지가 표시되면 **예** 로 대답합니다.
+    - 기존 배포를 덮어쓸지 묻는 메시지가 표시되면 **배포** 로 대답합니다.
+    - "항상 작업 영역 배포"라는 메시지가 표시되면 **예** 로 대답합니다.
 
 1. 배포 프로세스가 진행되는 동안 VS Code **출력** 창에서 진행률을 볼 수 있습니다.
 
@@ -38,11 +41,13 @@ Azure App Service에 Python 앱을 배포하려면 다음 절차를 따르세요
 
     ![앱이 App Service에서 성공적으로 실행되고 있습니다.](media/deploy-azure/web-app-running-successfully-on-app-service.png)
 
-1. 파일이 배포되었는지 확인하려면 **Azure: App Service** 탐색기에서 App Service를 확장한 다음, **파일**을 확장합니다.
+1. 기본 앱이 계속 표시되는 경우 배포 후 컨테이너가 다시 시작될 때까지 1-2분 정도 기다렸다가 다시 시도합니다. 사용자 지정 시작 명령을 사용 중이며 명령이 올바른 것으로 확인되었으면 6단계를 계속 진행하여 로그를 확인합니다.
+
+1. 파일이 배포되었는지 확인하려면 **Azure: App Service** 탐색기에서 App Service를 확장한 다음, **파일** 을 확장합니다.
 
     ![App Service 탐색기를 통해 배포 파일 확인](media/deploy-azure/expand-files-node-to-check-deployment-of-web-app-files.png)
 
-    *antenv* 폴더는 App Service에서 종속성이 있는 가상 환경을 만드는 위치입니다. 이 노드를 확장하면 *requirements.txt*에서 이름을 지정한 패키지가 *antenv/lib/python3.7/site-packages*에 설치되었는지 확인할 수 있습니다.
+    참고로 *.deployment*, *antenv.tar.gz* 및 *oryx-manifest.toml* 파일은 App Service 빌드 시스템에서 사용합니다. *hostingstart.html* 은 기본 앱 페이지입니다.
 
 > [!div class="nextstepaction"]
 > [앱을 배포했습니다. - 6단계 진행 >>>](tutorial-deploy-app-service-on-linux-06.md)

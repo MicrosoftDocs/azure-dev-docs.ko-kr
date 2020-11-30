@@ -4,12 +4,12 @@ description: 개발자가 Azure 리소스를 프로비저닝, 사용 및 관리�
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 3c1cd0deb0c1df31ef3b191a9526bc99ad01fbc1
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 276230cf5e5999f7d188d138e3b4e7361c3e4114
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764691"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932387"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python용 Azure 라이브러리(SDK) 사용
 
@@ -17,7 +17,7 @@ Python용 오픈 소스 Azure 라이브러리는 Python 애플리케이션 코�
 
 ## <a name="the-details-you-really-want-to-know"></a>꼭 알아야 하는 정보
 
-- Azure 라이브러리는 로컬로 또는 클라우드에서 실행하는 Python 코드*에서* Azure 서비스와 통신하는 방법입니다. (특정 서비스의 범위 내에서 Python 코드를 실행할 수 있는지 여부는 해당 서비스 자체에서 현재 Python을 지원하는지에 따라 달라집니다.)
+- Azure 라이브러리는 로컬로 또는 클라우드에서 실행하는 Python 코드 *에서* Azure 서비스와 통신하는 방법입니다. (특정 서비스의 범위 내에서 Python 코드를 실행할 수 있는지 여부는 해당 서비스 자체에서 현재 Python을 지원하는지에 따라 달라집니다.)
 
 - 라이브러리는 Python 2.7 및 Python 3.5.3 이상을 지원하며 PyPy 5.4 이상에서도 테스트되었습니다.
 
@@ -27,7 +27,7 @@ Python용 오픈 소스 Azure 라이브러리는 Python 애플리케이션 코�
 
 - [Python SDK 패키지 인덱스](azure-sdk-library-package-index.md)의 라이브러리 이름을 사용하여 `pip install <library_name>`에 필요한 라이브러리를 설치합니다. 자세한 내용은 [Azure 라이브러리 설치](azure-sdk-install.md)를 참조하세요.
 
-- "관리" 및 "클라이언트" 라이브러리("관리 평면" 및 "데이터 평면" 라이브러리라고도 함)가 별도로 있습니다. 각 세트는 서로 다른 용도로 사용되며 서로 다른 종류의 코드에 사용됩니다. 자세한 내용은 이 문서의 뒷부분에서 다음 섹션을 참조하십시오.
+- **관리** 및 **클라이언트** 라이브러리("관리 평면" 및 "데이터 평면" 라이브러리라고도 함)가 별도로 있습니다. 각 세트는 서로 다른 용도로 사용되며 서로 다른 종류의 코드에 사용됩니다. 자세한 내용은 이 문서의 뒷부분에서 다음 섹션을 참조하십시오.
   - [관리 라이브러리를 사용하여 Azure 리소스 프로비저닝 및 관리](#provision-and-manage-azure-resources-with-management-libraries)
   - [클라이언트 라이브러리를 사용하여 Azure 리소스에 연결 및 사용](#connect-to-and-use-azure-resources-with-client-libraries)
 
@@ -65,11 +65,37 @@ SDK의 관리(또는 "관리 평면") 라이브러리는 이름이 모두 `azure
 
 관리 라이브러리를 사용하면 구성 및 배포 스크립트를 작성하여 [Azure Portal](https://portal.azure.com)이나 [Azure CLI](/cli/azure/install-azure-cli)를 통해 수행할 수 있는 동일한 작업을 수행할 수 있습니다. (앞서 언급했듯이 Azure CLI는 Python으로 작성되었으며 관리 라이브러리를 사용하여 다양한 명령을 구현합니다.)
 
-각 관리 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api) 및 [Azure 샘플](/samples/browse/?languages=python&products=azure)에서 찾을 수도 있습니다.
+다음 예제에서는 기본 관리 라이브러리 중 일부를 사용하는 방법을 보여줍니다.
+
+- [리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
+- [구독의 리소스 그룹 나열](azure-sdk-example-list-resource-groups.md)
+- [Azure Storage 프로비저닝](azure-sdk-example-storage.md)
+- [웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
+- [데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
+- [가상 머신 프로비전](azure-sdk-example-virtual-machines.md)
+
+각 관리 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api) 및 [Azure 샘플](/samples/browse/?languages=python&term=Getting%20started%20-%20Managing)에서 찾을 수도 있습니다.
+
+이전 버전의 관리 라이브러리에서 코드를 마이그레이션하는 경우 다음 세부 정보를 참조하세요.
+
+- `ServicePrincipalCredentials` 클래스를 사용하는 경우 [인증 방법 - 토큰 자격 증명 사용](azure-sdk-authenticate.md#authenticate-with-token-credentials)을 참조하세요.
+- [라이브러리 사용 패턴 - 비동기 작업](azure-sdk-library-usage-patterns.md#asynchronous-operations)에 설명된 대로 비동기 API의 이름이 변경되었습니다. 간단히 말해서, 최신 라이브러리의 비동기 API 이름은 `begin_`으로 시작합니다. 대부분의 경우 API 서명은 동일하게 유지됩니다.
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>클라이언트 라이브러리를 사용하여 Azure 리소스에 연결 및 사용
 
 SDK의 클라이언트(또는 "데이터 평면") 라이브러리는 이미 프로비저닝된 서비스와 상호 작용하는 Python 애플리케이션 코드를 작성하는 데 유용합니다. 클라이언트 라이브러리는 클라이언트 API를 지원하는 서비스를 위해서만 존재합니다.
+
+문서 [예제: Azure Storage 사용](azure-sdk-example-storage-use.md)에서는 클라이언트 라이브러리 사용에 대한 기본적인 설명을 제공합니다.
+
+그 외에도 이러한 라이브러리의 사용 예제를 제공하는 여러 Azure 서비스가 있습니다. 추가 링크는 다음 인덱스 페이지를 참조하세요.
+
+- [앱 호스팅](quickstarts-app-hosting.md)
+- [Cognitive Services](quickstarts-cognitive-services.md)
+- [데이터 솔루션](quickstarts-data-solutions.md)
+- [ID 및 보안](quickstarts-identity-security.md)
+- [기계 학습](quickstarts-machine-learning.md)
+- [메시지 및 IoT](quickstarts-messaging-iot.md)
+- [기타 서비스](quickstarts-other-services.md)
 
 각 클라이언트 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api) 및 [Azure 샘플](/samples/browse/?languages=python&products=azure)에서 찾을 수도 있습니다.
 

@@ -5,18 +5,18 @@ keywords: jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Servic
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3652d0bc1dc418c4037296fdacc3a56384b592c3
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689100"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983712"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>자습서: Azure Kubernetes Service에서 Azure Dev Spaces 사용
 
 Azure Dev Spaces를 사용하면 종속 요소를 복제하거나 모방할 필요 없이 AKS(Azure Kubernetes Service)에서 실행되는 마이크로서비스 애플리케이션을 테스트하고 반복적으로 개발할 수 있습니다. Jenkins용 Azure Dev Spaces 플러그 인을 사용하면 CI/CD(지속적인 통합 및 업데이트) 파이프라인에서 Dev Spaces를 사용할 수 있습니다.
 
-이 자습서에서는 ACR(Azure Container Registry)도 사용합니다. ACR은 이미지를 저장하고, ACR 작업은 Docker 및 Helm 아티팩트를 빌드합니다. ACR 및 ACR 작업을 아티팩트 생성에 사용하면 Jenkins 서버에 Docker 같은 추가 소프트웨어를 설치할 필요가 없습니다. 
+이 자습서에서는 ACR(Azure Container Registry)도 사용합니다. ACR은 이미지를 저장하고, ACR 작업은 Docker 및 Helm 아티팩트를 빌드합니다. ACR 및 ACR 작업을 아티팩트 생성에 사용하면 Jenkins 서버에 Docker 같은 추가 소프트웨어를 설치할 필요가 없습니다.
 
 이 자습서에서는 다음 작업을 수행합니다.
 
@@ -36,9 +36,9 @@ Azure Dev Spaces를 사용하면 종속 요소를 복제하거나 모방할 필�
 
 * [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) 확장 프로그램이 설치된 [Visual Studio Code](https://code.visualstudio.com/download)
 
-* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 버전 2.0.43 이상
+* [Azure CLI](/cli/azure/install-azure-cli) 버전 2.0.43 이상
 
-* Jenkins 마스터 서버입니다. Jenkins 마스터가 없는 경우 이 [빠른 시작](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)의 단계에 따라 Azure에 [Jenkins](/azure/jenkins/install-jenkins-solution-template)를 배포합니다. 
+* Jenkins 서버. Jenkins가 없는 경우 이 [빠른 시작](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)의 단계에 따라 Azure에 [Jenkins](/azure/jenkins/install-jenkins-solution-template)를 배포합니다. 
 
 * 이 자습서의 뒷부분에 설명된 것처럼, Jenkins 서버에 Helm과 kubectl이 모두 설치되어 있고 Jenkins 계정에 사용할 수 있어야 합니다.
 
@@ -118,7 +118,7 @@ Azure Dev Spaces 사용 방법 및 Azure Dev Spaces로 다중 서비스 개발�
     }
     ```
 
-4. **보기** , **터미널** 을 차례로 클릭하여 VS Code에서 통합 터미널을 엽니다.
+4. **보기**, **터미널** 을 차례로 클릭하여 VS Code에서 통합 터미널을 엽니다.
 
 5. `azds prep` 명령을 실행하여 개발 공간에서 실행할 애플리케이션을 준비합니다. 애플리케이션을 올바르게 준비하려면 이 명령을 반드시 `dev-spaces/samples/java/getting-started/webfrontend`에서 실행해야 합니다.
 
@@ -267,15 +267,15 @@ Jenkins 파이프라인 구성과 Jenkinsfile은 CI 파이프라인의 단계를
 
 ![Jenkins 파이프라인 흐름](media/azure-dev-spaces-and-aks/jenkins-pipeline-flow.png)
 
-1. [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi)에서 수정된 *mywebapi* 프로젝트 버전을 다운로드합니다. 이 프로젝트는 *Jenkinsfile* , *Dockerfiles* 및 Helm 차트를 포함하여 파이프라인을 만드는 데 필요한 여러 파일을 포함하고 있습니다.
+1. [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi)에서 수정된 *mywebapi* 프로젝트 버전을 다운로드합니다. 이 프로젝트는 *Jenkinsfile*, *Dockerfiles* 및 Helm 차트를 포함하여 파이프라인을 만드는 데 필요한 여러 파일을 포함하고 있습니다.
 
 2. Jenkins에 로그인합니다. 왼쪽 메뉴에서 **항목 추가** 를 선택합니다.
 
 3. **파이프라인** 을 선택한 다음, **항목 이름 입력** 상자에 이름을 입력합니다. **확인** 을 선택하면 파이프라인 구성 화면이 자동으로 열립니다.
 
-4. **일반** 탭에서 **Prepare an environment for the run** (실행 환경 준비)을 선택합니다. 
+4. **일반** 탭에서 **Prepare an environment for the run**(실행 환경 준비)을 선택합니다. 
 
-5. **Keep Jenkins Environment Variables** (Jenkins 환경 변수 유지) 및 **Keep Jenkins Build Variables** (Jenkins 빌드 변수 유지)를 선택합니다.
+5. **Keep Jenkins Environment Variables**(Jenkins 환경 변수 유지) 및 **Keep Jenkins Build Variables**(Jenkins 빌드 변수 유지)를 선택합니다.
 
 6. **속성 콘텐츠** 상자에 다음 환경 변수를 입력합니다.
 

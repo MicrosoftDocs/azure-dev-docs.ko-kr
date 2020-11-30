@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 10efa527f60d2dae15f84ca2c34862e5c899fa65
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: e075c4dbc26e0d7c09d3dfedf8d2d6da0ef731fc
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560276"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983822"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>자습서: Spring Boot 애플리케이션의 Azure Key Vault에서 비밀 읽기
 
@@ -412,7 +412,7 @@ Key Vault를 통해 애플리케이션 코드에서 비밀을 외부화하는 �
    mvn azure-webapp:config
    ```
 
-1. `Subscription`의 경우 사용자가 만든 Key Vault와 동일한 구독 ID를 선택해야 합니다.
+1. `Subscription`의 경우 앞에서 만든 Key Vault와 동일한 구독 ID를 선택해야 합니다.
 1. `Web App`의 경우 기존 웹앱을 선택하거나 `<create>`를 선택하여 새 웹앱을 만들 수 있습니다. 기존 웹앱을 선택하는 경우 마지막 **확인** 단계로 바로 이동합니다.
 1. `OS`에 `linux`가 선택되어 있는지 확인합니다.
 1. `javaVersion`의 경우 Spring Initializr에서 선택한 Java 버전이 선택되어 있는지 확인합니다.  위에서는 `11`을 선택했으므로 여기에 11이 선택되어 있습니다.

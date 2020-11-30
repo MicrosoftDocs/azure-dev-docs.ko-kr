@@ -5,14 +5,16 @@ keywords: jenkins, azure, devops, java, azure functions
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7258e3d20262e214bbe9461564210c0d84fe2e89
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240934"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035388"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>자습서: Jenkins를 사용하여 Azure Functions에 배포
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 [Azure Functions](/azure/azure-functions/)는 서버리스 컴퓨팅 서비스입니다. Azure Functions를 사용하여 프로비저닝하거나 인프라를 관리하지 않고 요청 시 코드를 실행할 수 있습니다. 이 자습서에서는 Azure Functions 플러그 인을 사용하여 Azure Functions에 Java 함수를 배포하는 방법을 보여줍니다.
 
@@ -21,12 +23,13 @@ ms.locfileid: "88240934"
 - **Azure 구독**: Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)을 만듭니다.
 - **Jenkins 서버**: Jenkins 서버가 설치되어 있지 않다면 [Azure에서 Jenkins 서버 만들기](./configure-on-linux-vm.md) 문서를 참조하세요.
 
-  > [!TIP]
-  > 이 자습서에 사용된 소스 코드는 [Visual Studio China GitHub 리포지토리](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java)에 있습니다.
+## <a name="view-the-source-code"></a>소스 코드 보기
+
+이 자습서에 사용된 소스 코드는 [Visual Studio China GitHub 리포지토리](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java)에 있습니다.
 
 ## <a name="create-a-java-function"></a>Java 함수 만들기
 
-Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal](https://portal.azure.com) 또는 [Azure CLI](/cli/azure/?view=azure-cli-latest) 중 하나를 사용합니다.
+Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal](https://portal.azure.com) 또는 [Azure CLI](/cli/azure/) 중 하나를 사용합니다.
 
 다음 단계에서는 Azure CLI를 사용하여 Java 함수를 만드는 방법을 보여줍니다.
 
@@ -84,7 +87,7 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
 
 1. [홀수 또는 짝수 샘플 앱에 대한 GitHub 리포지토리에 로그인](https://github.com/VSChina/odd-or-even-function.git)합니다.
 
-1. GitHub의 오른쪽 위 모서리에서 **포크**를 선택합니다.
+1. GitHub의 오른쪽 위 모서리에서 **포크** 를 선택합니다.
 
 1. 지시에 따라 GitHub 계정을 선택하고 분기를 완료합니다.
 
@@ -94,9 +97,9 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
 
 1. Jenkins 대시보드에서 파이프라인을 만듭니다.
 
-1. **실행을 위한 환경을 준비**를 사용합니다.
+1. **실행을 위한 환경을 준비** 를 사용합니다.
 
-1. 자리 표시자를 사용자 환경에 적절한 값으로 바꿔서 다음 환경 변수를 **속성 콘텐츠**에 추가합니다.
+1. 자리 표시자를 사용자 환경에 적절한 값으로 바꿔서 다음 환경 변수를 **속성 콘텐츠** 에 추가합니다.
 
     ```
     AZURE_CRED_ID=<service_principal_credential_id>
@@ -104,7 +107,7 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
     FUNCTION_NAME=<function_name>
     ```
     
-1. **파이프라인 > 정의** 섹션에서 **SCM의 파이프라인 스크립트**를 선택합니다.
+1. **파이프라인 > 정의** 섹션에서 **SCM의 파이프라인 스크립트** 를 선택합니다.
 
 1. [JenkinsFile 예제](https://github.com/VSChina/odd-or-even-function/blob/master/doc/resources/jenkins/JenkinsFile)에서 사용할 GitHub 포크의 URL 및 스크립트 경로("doc/resources/jenkins/JenkinsFile")를 입력합니다.
 

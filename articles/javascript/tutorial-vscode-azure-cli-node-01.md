@@ -4,12 +4,12 @@ description: '자습서 1부: Azure CLI 소개 및 필수 구성 요소'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 2ff59026c3f250f3ef83982f799633094a5cd9f7
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: fab8d3af108fb5b81f8360ec84320da5e4ca5c15
+ms.sourcegitcommit: 291768a67862336267c67819e913c16710e3875e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515184"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95820671"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI를 사용하여 Azure App Service에 배포
 
@@ -20,7 +20,7 @@ ms.locfileid: "94515184"
 - [Azure 구독](#azure-subscription).
 - [Node.js 및 npm 6.x 이상](https://nodejs.org/en/download)(Node.js 패키지 관리자)
 - [Git](https://git-scm.com/downloads)(뒤에 나오는 `git --version` 명령에 버전 번호를 표시해야 함)
-[!INCLUDE [Azure CLI](~/../azure-docs/includes/azure-cli-prepare-your-environment-no-header.md)]
+- [Azure CLI를 설치](/cli/azure/install-azure-cli)하거나 [Azure Cloud Shell](https://shell.azure.com.) 사용
 
 ### <a name="azure-subscription"></a>Azure 구독
 

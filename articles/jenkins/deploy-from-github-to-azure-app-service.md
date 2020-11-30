@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 30b916cadc2c15f1226ab06f6925a87f6be4b3a7
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 560697c580d942395aea077dd8a2133dc51d5b7e
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688685"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983792"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>자습서: Jenkins를 사용하여 GitHub에서 Azure App Service로 배포
 
@@ -125,7 +125,7 @@ Jenkins가 GitHub를 모니터링하고, GitHub 포크의 웹앱으로 새 커�
 az ad sp create-for-rbac
 ```
 
-**참고** :
+**참고**:
 
 - 성공적으로 완료되면 `az ad sp create-for-rbac`에서 여러 값을 표시합니다. `name`, `password` 및 `tenant` 값은 다음 단계에서 사용됩니다.
 - 기본적으로 서비스 주체는 Azure 계정에 대한 전체 읽기 및 쓰기 권한이 있는 **기여자** 역할을 사용하여 생성됩니다. RBAC(역할 기반 액세스 제어)와 역할에 대한 자세한 내용은 [RBAC: 기본 제공 역할](/azure/active-directory/role-based-access-built-in-roles)을 참조하세요.
@@ -148,7 +148,7 @@ az ad sp create-for-rbac
 
    | 속성 | 값 | 설명 | 
    |----------|-------|-------------| 
-   | **구독 ID** | <*yourAzureSubscription-ID*> | Azure 구독에 대한 GUID 값입니다. <p>**팁** : Azure 구독 ID를 모르는 경우 명령줄 또는 Cloud Shell에서 이 Azure CLI 명령을 실행한 후 `id` GUID 값을 사용합니다. <p>`az account list` | 
+   | **구독 ID** | <*yourAzureSubscription-ID*> | Azure 구독에 대한 GUID 값입니다. <p>**팁**: Azure 구독 ID를 모르는 경우 명령줄 또는 Cloud Shell에서 이 Azure CLI 명령을 실행한 후 `id` GUID 값을 사용합니다. <p>`az account list` | 
    | **클라이언트 ID** | <*yourAzureServicePrincipal-ID*> | Azure 서비스 주체에 대해 이전에 생성된 `appId` GUID 값입니다. | 
    | **클라이언트 암호** | <*yourSecurePassword*> | Azure 서비스 주체에 대해 제공한 `password` 값 또는 "비밀"입니다. | 
    | **테넌트 ID** | <*yourAzureActiveDirectoryTenant-ID*> | Azure Active Directory 테넌트에 대한 `tenant` GUID 값입니다. | 
@@ -172,7 +172,7 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
 1. 사용자 고유의 자격 증명을 사용하지 않아도 Jenkins에서 Azure에 배포할 수 있도록 서비스 주체를 사용하여 Jenkins를 설정합니다.
 
-   1. **일반** 탭에서 **Prepare an environment for the run** (실행 환경 준비)을 선택합니다. 
+   1. **일반** 탭에서 **Prepare an environment for the run**(실행 환경 준비)을 선택합니다. 
 
    1. 표시되는 **속성 콘텐츠** 상자에서 이러한 환경 변수 및 해당 값을 추가합니다. 
 
@@ -273,11 +273,11 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
    이러한 Azure CLI 명령에 대한 자세한 내용은 다음 페이지를 참조하세요.
 
-   * [**`az group create`**](/cli/azure/group?view=azure-cli-latest#az-group-create)
+   * [**`az group create`**](/cli/azure/group#az-group-create)
 
-   * [**`az appservice plan create`**](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create)
+   * [**`az appservice plan create`**](/cli/azure/appservice/plan#az-appservice-plan-create)
 
-   * [**`az webapp create`**](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+   * [**`az webapp create`**](/cli/azure/webapp#az-webapp-create)
 
 1. Jenkins에서 파이프라인 작업을 선택하고 **지금 빌드** 를 선택합니다.
 
@@ -303,7 +303,7 @@ Jenkins에서 앱을 빌드하고 배포하기 위한 파이프라인 작업을 
 
 1. 빌드가 완료되고 Jenkins가 Azure에 다시 배포하면 업데이트가 표시되도록 앱을 새로 고칩니다.
 
-   ![Azure에서 배포된 앱 보기](media/deploy-from-github-to-azure-app-service/greetings-edited.png)
+   ![Azure에서 업데이트된 앱 보기](media/deploy-from-github-to-azure-app-service/greetings-edited.png)
 
 ## <a name="troubleshooting-the-jenkins-plug-in"></a>Jenkins 플러그 인 문제 해결
 

@@ -3,12 +3,12 @@ title: 'JavaScript의 새로운 기능 문서: '
 description: 2020년 10월 JavaScript의 새로운 기능 문서
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: dba173f640205bbd43ce0f9e11387eba02c7a20e
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: db784cead94e66fd69232abd782039891ab7e63e
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601275"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983672"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript 문서: 2020년 10월의 새로운 기능
 
@@ -23,7 +23,14 @@ JavaScript 및 TypeScript 개발자를 위한 새로운 콘텐츠 및 업데이�
 
 |속성|메모|
 |---------------------------------------|--|
+|[자습서: React Static 웹앱을 빌드하여 Azure에 배포](./tutorial/static-web-app/introduction.md)|이 자습서에서는 GitHub 작업을 사용하여 React 클라이언트 애플리케이션을 빌드하고 Azure Static Web App에 배포합니다.<br>create-react-app을 사용하여 Cognitive Services Computer Vision으로 이미지를 분석할 수 있습니다. 특정 원격 분기에 대한 푸시가 발생하면 GitHub 작업이 시작되어 React(create-react-app) 클라이언트를 빌드하고, 결과 파일을 Azure Static 웹앱 리소스로 이동합니다.|
 |[자습서: Linux 가상 머신에 앱 배포](./tutorial/nodejs-virtual-machine-vm/introduction.md)|이 자습서에서는 Express.js 앱에 대한 Linux VM(가상 머신)을 만듭니다. 이 VM은 cloud-init 구성 파일을 통해 구성되며 NGINX 및 Express.js 앱용 GitHub 리포지토리를 포함합니다. VM이 실행되면 SSH를 통해 VM에 연결하고, 추적 로깅을 포함하도록 웹앱을 변경하고, 웹 브라우저에서 공용 Express.js 서버 앱을 볼 수 있습니다.|
+
+### <a name="whats-updated"></a>업데이트 내용
+
+|속성|메모|
+|---------------------------------------|--|
+|[Learn](learn-azure-javascript.md)|JavaScript에 대한 새 모듈 및 인증.|
 
 ## <a name="2020-october"></a>2020년 10월
 

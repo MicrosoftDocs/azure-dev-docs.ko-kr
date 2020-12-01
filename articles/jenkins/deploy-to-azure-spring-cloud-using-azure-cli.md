@@ -3,14 +3,14 @@ title: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 description: 지속적인 통합 및 배포 파이프라인에서 Azure CLI를 사용하여 마이크로서비스를 Azure Spring Cloud 서비스에 배포하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586138"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983972"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 
@@ -26,9 +26,7 @@ ms.locfileid: "91586138"
 ## <a name="prerequisites"></a>전제 조건
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-
 - **Jenkins**: [Linux VM에 Jenkins 설치](configure-on-linux-vm.md)
-
 - **GitHub 계정**: GitHub 계정이 없는 경우 시작하기 전에 [체험 계정](https://github.com/)을 만듭니다.
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>서비스 인스턴스 프로비저닝 및 Java Spring 애플리케이션 시작
@@ -36,10 +34,11 @@ ms.locfileid: "91586138"
 [Piggy Metrics](https://github.com/Azure-Samples/piggymetrics)를 Microsoft 서비스 애플리케이션 샘플로 사용하고, [빠른 시작: Azure CLI를 사용하여 Java Spring 애플리케이션 시작](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)의 동일한 단계에 따라 서비스 인스턴스를 프로비저닝하고 애플리케이션을 설정합니다. 동일한 프로세스를 이미 수행한 경우 다음 섹션으로 건너뛸 수 있습니다. 그렇지 않으면 Azure CLI 명령이 다음에 포함됩니다. 추가 배경 정보를 얻으려면 [빠른 시작: Azure CLI를 사용하여 Java Spring 애플리케이션 시작](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)을 참조하세요.
 
 로컬 머신은 Jenkins 빌드 서버와 동일한 필수 구성 요소를 충족해야 합니다. 마이크로서비스 애플리케이션을 빌드하고 배포하려면 다음이 설치되어 있어야 합니다.
-    * [Git](https://git-scm.com/)
-    * [JDK 8](/java/azure/jdk/?view=azure-java-stable)
-    * [Maven 3.0 이상](https://maven.apache.org/download.cgi)
-    * [Azure CLI 설치](/cli/azure/install-azure-cli?view=azure-cli-latest), 2.0.67 버전 이상
+
+* [Git](https://git-scm.com/)
+* [JDK 8](/java/azure/jdk)
+* [Maven 3.0 이상](https://maven.apache.org/download.cgi)
+* [Azure CLI 설치](/cli/azure/install-azure-cli), 2.0.67 버전 이상
 
 1. Azure Spring Cloud 확장을 설치합니다.
 
@@ -79,7 +78,7 @@ ms.locfileid: "91586138"
     mvn clean package -D skipTests
     ```
 
-1. **gateway**, **auth-service** 및 **account-service**라는 3개의 마이크로서비스를 만듭니다.
+1. **gateway**, **auth-service** 및 **account-service** 라는 3개의 마이크로서비스를 만듭니다.
 
     ```azurecli
     az spring-cloud app create --n gateway -s <service name> -g <resource group name>
@@ -115,7 +114,7 @@ ms.locfileid: "91586138"
 
 ### <a name="install-plug-ins"></a>플러그 인 설치
 
-1. Jenkins 서버에 로그인합니다. **Jenkins 관리 > 플러그 인 관리**를 선택합니다.
+1. Jenkins 서버에 로그인합니다. **Jenkins 관리 > 플러그 인 관리** 를 선택합니다.
 
 1. **사용 가능** 탭에서 다음 플러그 인을 선택합니다.
 
@@ -124,13 +123,13 @@ ms.locfileid: "91586138"
 
     이러한 플러그 인이 목록에 표시되지 않으면 **설치됨** 탭을 확인하여 플러그 인이 이미 설치되어 있는지 확인합니다.
 
-1. 플러그 인을 설치하려면 **지금 다운로드 및 다시 시작한 후 설치**를 선택합니다.
+1. 플러그 인을 설치하려면 **지금 다운로드 및 다시 시작한 후 설치** 를 선택합니다.
 
 1. Jenkins 서버를 다시 시작하여 설치를 완료합니다.
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Jenkins 자격 증명 저장소에 Azure 서비스 주체 자격 증명 추가
 
-1. Azure에 배포하려면 Azure 서비스 주체가 필요합니다. 자세한 내용은 'Azure App Service에 배포' 자습서의  [서비스 주체 만들기](deploy-from-github-to-azure-app-service.md#create-service-principal) 섹션을 참조하세요. `az ad sp create-for-rbac`의 출력은 다음과 같습니다.
+1. Azure에 배포하려면 Azure 서비스 주체가 필요합니다. 자세한 내용은 [Azure App Service에 배포] 자습서의 [서비스 주체 만들기](deploy-from-github-to-azure-app-service.md#create-service-principal) 섹션을 참조하세요. `az ad sp create-for-rbac`의 출력은 다음과 같습니다.
 
     ```
     {
@@ -142,11 +141,11 @@ ms.locfileid: "91586138"
     }
     ```
 
-1. Jenkins 대시보드에서 **자격 증명** > **시스템**을 선택합니다. 그런 다음 **전역 자격 증명(제한 없음)** 을 선택합니다.
+1. Jenkins 대시보드에서 **자격 증명** > **시스템** 을 선택합니다. 그런 다음 **전역 자격 증명(제한 없음)** 을 선택합니다.
 
-1. **자격 증명 추가**를 선택합니다.
+1. **자격 증명 추가** 를 선택합니다.
 
-1. 종류로 **Microsoft Azure 서비스 주체**를 선택합니다.
+1. 종류로 **Microsoft Azure 서비스 주체** 를 선택합니다.
 
 1. 다음 필드에 대한 값을 입력합니다.
 
@@ -154,13 +153,13 @@ ms.locfileid: "91586138"
     - **클라이언트 ID**: 서비스 주체 앱 ID
     - **클라이언트 비밀**: 서비스 주체 암호
     - **테넌트 ID**: Microsoft 계정 테넌트 ID
-    - **Azure 환경**: 사용자 환경에 적합한 값을 선택합니다. 예를 들어 Azure Global의 경우 **Azure**를 사용하세요.
+    - **Azure 환경**: 사용자 환경에 적합한 값을 선택합니다. 예를 들어 Azure Global의 경우 **Azure** 를 사용하세요.
     - **ID**: `azure_service_principal`로 설정합니다. 이 ID는 이 문서의 이후 단계에서 사용됩니다.
     - **설명**: 선택 사항이지만 권장합니다.
     
 ### <a name="install-maven-and-az-cli-spring-cloud-extension"></a>Maven 및 Az CLI spring-cloud 확장 설치
 
-샘플 파이프라인은 Maven을 사용하여 빌드하고, Az CLI를 사용하여 서비스 인스턴스에 배포합니다. Jenkins를 설치하면 *jenkins*라는 관리자 계정이 생성됩니다. *jenkins* 사용자에게 spring-cloud 확장을 실행할 수 있는 권한이 있는지 확인합니다.
+샘플 파이프라인은 Maven을 사용하여 빌드하고, Az CLI를 사용하여 서비스 인스턴스에 배포합니다. Jenkins를 설치하면 *jenkins* 라는 관리자 계정이 생성됩니다. *jenkins* 사용자에게 spring-cloud 확장을 실행할 수 있는 권한이 있는지 확인합니다.
 
 1. SSH를 통해 Jenkins 마스터에 연결합니다.
 
@@ -186,9 +185,9 @@ ms.locfileid: "91586138"
 
 ## <a name="create-a-jenkinsfile"></a>Jenkinsfile 만들기
 
-1. 사용자 고유의 리포지토리(https://github.com/&lt ;your GitHub id&gt; /piggymetrics)에서 **Jenkinsfile**을 루트에 만듭니다.
+1. 사용자 고유의 리포지토리(https://github.com/&lt ;your GitHub id&gt; /piggymetrics)에서 **Jenkinsfile** 을 루트에 만듭니다.
 
-1. 파일을 다음과 같이 업데이트합니다. **\<resource group name>** 및 **\<service name>** 의 값을 바꿔야 합니다. Jenkins에서 자격 증명을 추가할 때 다른 값을 사용하는 경우 **azure_service_principal**을 올바른 ID로 바꿉니다.
+1. 파일을 다음과 같이 업데이트합니다. **\<resource group name>** 및 **\<service name>** 의 값을 바꿔야 합니다. Jenkins에서 자격 증명을 추가할 때 다른 값을 사용하는 경우 **azure_service_principal** 을 올바른 ID로 바꿉니다.
 
    ```groovy
        node {
@@ -222,27 +221,27 @@ ms.locfileid: "91586138"
 
 ## <a name="create-the-job"></a>작업 만들기
 
-1. Jenkins 대시보드에서 **새 항목**을 클릭합니다.
+1. Jenkins 대시보드에서 **새 항목** 을 클릭합니다.
 
-1. 작업 이름으로 *Deploy-PiggyMetrics*를 제공하고, **파이프라인**을 선택합니다. 확인을 클릭합니다.
+1. 작업 이름으로 *Deploy-PiggyMetrics* 를 제공하고, **파이프라인** 을 선택합니다. 확인을 클릭합니다.
 
 1. **파이프라인** 탭을 클릭합니다.
 
-1. **정의**에서 **SCM의 파이프라인 스크립트**를 선택합니다.
+1. **정의** 에서 **SCM의 파이프라인 스크립트** 를 선택합니다.
 
-1. **SCM**에서 **Git**을 선택합니다.
+1. **SCM** 에서 **Git** 을 선택합니다.
 
 1. 포크된 리포지토리( **https://github.com/&lt ;your GitHub id&gt; /piggymetrics.git**)에 대한 GitHub URL을 입력합니다.
 
-1. **분기 지정자('any'의 경우 검은색)** 가 * **/Azure**인지 확인합니다.
+1. **분기 지정자('any'의 경우 검은색)** 가 **_/Azure_* 인지 확인합니다.
 
-1. **스크립트 경로**를 **Jenkinsfile**로 유지합니다.
+1. **스크립트 경로** 를 **Jenkinsfile** 로 유지합니다.
 
 1. 페이지 맨 아래에 있는 **저장**
 
 ## <a name="validate-and-run-the-job"></a>작업 유효성 검사 및 실행
 
-작업을 실행하기 전에 로그인 입력 상자의 텍스트를 **로그인 ID 입력**으로 업데이트해 보겠습니다.
+작업을 실행하기 전에 로그인 입력 상자의 텍스트를 **로그인 ID 입력** 으로 업데이트해 보겠습니다.
 
 1. 사용자 고유의 리포지토리에 있는 **/gateway/src/main/resources/static/** 에서 `index.html`을 엽니다.
 
@@ -254,7 +253,7 @@ ms.locfileid: "91586138"
 
 1. 변경 내용 커밋
 
-1. Jenkins에서 작업을 수동으로 실행합니다. Jenkins 대시보드에서 *Deploy-PiggyMetrics* 작업을 클릭한 다음, **지금 빌드**를 클릭합니다.
+1. Jenkins에서 작업을 수동으로 실행합니다. Jenkins 대시보드에서 *Deploy-PiggyMetrics* 작업을 클릭한 다음, **지금 빌드** 를 클릭합니다.
 
 작업이 완료되면 **게이트웨이** 애플리케이션의 공용 IP로 이동하여 애플리케이션이 업데이트되었는지 확인합니다. 
 

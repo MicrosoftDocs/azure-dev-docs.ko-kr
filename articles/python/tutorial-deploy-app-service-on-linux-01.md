@@ -2,14 +2,14 @@
 title: '자습서: Visual Studio Code에서 Linux의 Azure App Service에 Python 앱 배포'
 description: 자습서 1단계, App Service에 대한 환경 구성
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b35fc41707b31bec8e889d2b60becdad56f4e7d9
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 31695cb929188723cc608547849eb88a76b2d003
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773076"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96035518"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>자습서: Visual Studio Code에서 Linux의 Azure App Service에 Python 앱 배포
 
@@ -23,25 +23,22 @@ ms.locfileid: "90773076"
 > CLI를 통해 앱을 배포하려면 **[빠른 시작: Azure App Service on Linux에서 Python 앱 만들기](/azure/app-service/quickstart-python)** 를 참조하세요.
 
 > [!TIP]
-> [Linux의 Azure App Service](/azure/app-service/overview#app-service-on-linux)는 미리 정의된 Docker 컨테이너에서 소스 코드를 실행합니다. 해당 컨테이너는 [Gunicorn](https://gunicorn.org) 웹 서버를 사용하여 Python 3.7 앱을 실행합니다. 이 컨테이너의 특징은 [Linux에서 App Service용 Python 앱 구성](/azure/app-service/configure-language-python)에 설명되어 있습니다. 컨테이너 정의 자체는 [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7)에 있습니다.
+> [Linux의 Azure App Service](/azure/app-service/overview#app-service-on-linux)는 미리 정의된 Docker 컨테이너에서 소스 코드를 실행합니다. 해당 컨테이너는 [Gunicorn](https://gunicorn.org) 웹 서버를 사용하여 Python 3.6 이상 앱을 실행합니다. 이 컨테이너의 특징은 [Linux에서 App Service용 Python 앱 구성](/azure/app-service/configure-language-python)에 설명되어 있습니다. 컨테이너 정의는 [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/)에 있습니다.
 
 ## <a name="configure-your-environment"></a>환경 구성
 
-- [Azure 구독](#azure-subscription).
-- [Azure App Service 확장이 있는 Visual Studio Code](#visual-studio-code-python-and-the-azure-app-service-extension)
-- Python 환경
+- 활성 구독이 있는 Azure 계정이 없는 경우 [체험 계정을 만듭니다](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension).
 
-### <a name="azure-subscription"></a>Azure 구독
+- [로컬에 Python 3.7 또는 3.8이 설치](https://python.org/downloads)되어 있는지 확인합니다. 버전을 확인하려면 다음 명령을 실행합니다.
 
-Azure 구독이 없는 경우 지금 200달러의 Azure 크레딧으로 체험 계정에 [지금 가입](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension)하여 서비스 조합을 사용해 볼 수 있습니다.
+    ```bash
+    python --version
+    ```
 
-### <a name="visual-studio-code-python-and-the-azure-app-service-extension"></a>Visual Studio Code, Python 및 Azure App Service 확장
-
-다음 소프트웨어를 설치합니다.
-
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [VS Code Python 자습서 - 필수 구성 요소](https://code.visualstudio.com/docs/python/python-tutorial)에 설명된 대로 Python 및 [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 확장
-- VS Code 내에서 Azure App Service와 상호 작용을 제공하는 [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) 확장 일반 정보를 보려면 [App Service 확장 자습서](https://code.visualstudio.com/tutorials/app-service-extension/getting-started)를 검색하고 [vscode-azureappservice GitHub 리포지토리](https://github.com/Microsoft/vscode-azureappservice)를 방문하세요.
+- 다음 소프트웨어를 설치합니다.
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [VS Code Python 자습서 - 필수 구성 요소](https://code.visualstudio.com/docs/python/python-tutorial)에 설명된 대로 Python 및 [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 확장
+  - VS Code 내에서 Azure App Service와 상호 작용을 제공하는 [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) 확장 일반 정보를 보려면 [App Service 확장 자습서](https://code.visualstudio.com/tutorials/app-service-extension/getting-started)를 검색하고 [vscode-azureappservice GitHub 리포지토리](https://github.com/Microsoft/vscode-azureappservice)를 방문하세요.
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 

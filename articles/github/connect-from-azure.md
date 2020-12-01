@@ -5,22 +5,25 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 08/31/2020
+ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 5462d7ca3618869232296a9a6739ebe5adcefdb1
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405752"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983632"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions를 사용하여 Azure에 연결
 
 [Azure PowerShell](https://github.com/Azure/PowerShell) 또는 [Azure CLI](https://github.com/Azure/CLI)에서 [Azure 로그인](https://github.com/Azure/login)을 사용하여 Azure 리소스와 상호 작용하는 방법을 알아봅니다.
 
-GitHub Actions 워크플로에서 Azure PowerShell 또는 Azure CLI를 사용하려면 먼저 [Azure 로그인](https://github.com/marketplace/actions/azure-login) 작업을 사용하여 로그인해야 합니다. Azure 로그인 작업을 사용하면 [Azure AD 서비스 주체](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)의 컨텍스트에서 워크플로의 명령을 실행할 수 있습니다.
+GitHub Actions 워크플로에서 Azure PowerShell 또는 Azure CLI를 사용하려면 먼저 [Azure 로그인](https://github.com/marketplace/actions/azure-login) 작업을 사용하여 로그인해야 합니다.
+Azure 로그인 작업을 사용하면 [Azure AD 서비스 주체](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)의 컨텍스트에서 워크플로의 명령을 실행할 수 있습니다.
 
-로그인 작업을 설정한 후에는 Azure CLI 또는 Azure PowerShell을 사용할 수 있습니다. 기본적으로 이 작업은 Azure CLI를 사용하여 로그인한 다음, Azure CLI에 대한 GitHub 작업 실행기 환경을 설정합니다. Azure 로그인 작업의 enable-AzPSSession 속성을 사용하면 Azure PowerShell을 사용할 수 있습니다.  이 방식으로 Azure PowerShell 모듈을 사용하여 GitHub 작업 실행기 환경을 설정합니다.
+로그인 작업을 설정한 후에는 Azure CLI 또는 Azure PowerShell을 사용할 수 있습니다.
+
+기본적으로 이 작업은 Azure CLI를 사용하여 로그인한 다음, Azure CLI에 대한 GitHub 작업 실행기 환경을 설정합니다. Azure 로그인 작업의 `enable-AzPSSession` 속성을 통해 Azure PowerShell을 사용할 수 있습니다. 이 방식으로 Azure PowerShell 모듈을 사용하여 GitHub 작업 실행기 환경을 설정합니다.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>서비스 주체를 만들어서 GitHub 비밀에 추가
 
@@ -39,7 +42,7 @@ GitHub Actions 워크플로에서 Azure PowerShell 또는 Azure CLI를 사용하
         --identifier-uris http://localhost/$appName
     ```
 
-1. Azure Portal에서 앱에 대한 [새 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). 
+1. Azure Portal에서 앱에 대한 [새 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true). 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \

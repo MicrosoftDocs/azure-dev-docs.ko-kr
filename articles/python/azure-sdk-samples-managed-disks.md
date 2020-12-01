@@ -1,32 +1,32 @@
 ---
-title: Managed Disks
-description: 관리 디스크를 생성, 크기 조정 및 업데이트합니다.
+title: Python용 Azure 라이브러리를 통해 Azure Managed Disks 사용
+description: Azure SDK를 사용하여 관리 디스크를 만들고, 크기를 조정하고, 업데이트합니다.
 ms.topic: conceptual
-ms.date: 10/13/2020
+ms.date: 11/18/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: e596d02aad2cbaf97ef588737bedd58c10d8093f
-ms.sourcegitcommit: acdd366aef550c0a75f2315a6a07e1a230df499f
+ms.openlocfilehash: fe2378bcb836dbfc52ad1d5d3e88f048d6ef117e
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92060201"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932417"
 ---
-# <a name="managed-disks"></a>Managed Disks
+# <a name="use-azure-managed-disks-with-the-azure-libraries-sdk-for-python"></a>Python용 Azure 라이브러리(SDK)를 통해 Azure Managed Disks 사용
 
-Azure Managed Disks는 간소화된 디스크 관리, 향상된 확장성, 더 나은 보안 및 크기 조정을 제공합니다. 디스크에 대한 스토리지 계정의 개념을 없앰으로써 고객이 스토리지 계정과 관련된 제한을 걱정하지 않고 크기 조정할 수 있습니다. 이 게시물에서는 Python에서 서비스를 사용하는 방법에 대한 간단한 소개와 참조를 제공합니다.
+Azure Managed Disks는 스토리지 계정을 통해 직접 작업할 필요 없이 간편한 디스크 관리, 향상된 확장성, 강화된 보안 및 향상된 스케일링 기능을 제공합니다.
 
-개발자 관점에서 Azure CLI의 Managed Disks 환경은 다른 플랫폼 간 도구의 CLI 환경에 자연스러운 환경입니다. [azure-mgmt-compute 패키지](/python/api/overview/azure/virtualmachines)를 사용하여 Managed Disks를 관리할 수 있습니다. azure-mgmt-compute 라이브러리로 가상 머신을 프로비저닝하는 예제는 [예 - 가상 머신 프로비전](azure-sdk-example-virtual-machines.md)을 참조하세요.
+[`azure-mgmt-compute`](/python/api/overview/azure/virtualmachines) 라이브러리를 사용하여 Managed Disks를 관리합니다. (`azure-mgmt-compute` 라이브러리로 가상 머신을 프로비저닝하는 예제는 [예 - 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)을 참조하세요.)
 
 ## <a name="standalone-managed-disks"></a>독립 실행형 Managed Disks
 
-독립 실행형 Managed Disks는 다양한 방법으로 쉽게 만들 수 있습니다.
+다음 섹션에 설명된 대로 여러 가지 방법으로 독립 실행형 Managed Disks를 만들 수 있습니다.
 
 ### <a name="create-an-empty-managed-disk"></a>빈 Managed Disk 만들기
 
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.disks.begin_create_or_update(
+poller = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -37,7 +37,7 @@ async_creation = compute_client.disks.begin_create_or_update(
         }
     }
 )
-disk_resource = async_creation.result()
+disk_resource = poller.result()
 ```
 
 ### <a name="create-a-managed-disk-from-blob-storage"></a>Blob 스토리지에서 Managed Disk 만들기
@@ -45,7 +45,7 @@ disk_resource = async_creation.result()
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.disks.begin_create_or_update(
+poller = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -56,7 +56,7 @@ async_creation = compute_client.disks.begin_create_or_update(
         }
     }
 )
-disk_resource = async_creation.result()
+disk_resource = poller.result()
 ```
 
 ### <a name="create-a-managed-disk-image-from-blob-storage"></a>Blob Storage에서 관리 디스크 이미지 만들기
@@ -64,7 +64,7 @@ disk_resource = async_creation.result()
 ```python
 from azure.mgmt.compute.models import DiskCreateOption
 
-async_creation = compute_client.images.begin_create_or_update(
+poller = compute_client.images.begin_create_or_update(
     'my_resource_group',
     'my_image_name',
     {
@@ -79,7 +79,7 @@ async_creation = compute_client.images.begin_create_or_update(
         }
     }
 )
-image_resource = async_creation.result()
+image_resource = poller.result()
 ```
 
 ### <a name="create-a-managed-disk-from-your-own-image"></a>사용자 고유의 이미지에서 Managed Disk 만들기
@@ -90,7 +90,7 @@ from azure.mgmt.compute.models import DiskCreateOption
 # If you don't know the id, do a 'get' like this to obtain it
 managed_disk = compute_client.disks.get(self.group_name, 'myImageDisk')
 
-async_creation = compute_client.disks.begin_create_or_update(
+poller = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
     {
@@ -102,14 +102,14 @@ async_creation = compute_client.disks.begin_create_or_update(
     }
 )
 
-disk_resource = async_creation.result()
+disk_resource = poller.result()
 ```
 
 ## <a name="virtual-machine-with-managed-disks"></a>Managed Disks가 있는 가상 머신
 
-특정 디스크 이미지에 대한 암시적 관리 디스크가 있는 Virtual Machine을 만들 수 있습니다. 간단히 만들려면 모든 디스크 세부 정보를 지정하지 않고 관리 디스크를 암시적으로 만들면 됩니다. 이 경우 스토리지 계정을 만들고 관리하는 것에 대해 걱정할 필요가 없습니다.
+특정 디스크 이미지에 대한 암시적 Managed Disk가 있는 Virtual Machine을 만들 수 있습니다. 따라서 모든 세부 정보를 일일이 지정할 필요가 없습니다.
 
-관리 디스크는 Azure의 OS 이미지에서 VM을 만들 때 암시적으로 만들어집니다. `storage_profile` 매개 변수에서 `os_disk`는 이제 선택적 요소이며 Virtual Machine을 만드는 데 필요한 전제 조건으로 스토리지 계정을 만들 필요가 없습니다.
+관리 디스크는 Azure의 OS 이미지에서 VM을 만들 때 암시적으로 만들어집니다. `storage_profile` 매개 변수에서 `os_disk`는 선택적 요소이며 Virtual Machine을 만들기 위한 전제 조건으로 스토리지 계정을 만들 필요가 없습니다.
 
 ```python
 storage_profile = azure.mgmt.compute.models.StorageProfile(
@@ -122,7 +122,7 @@ storage_profile = azure.mgmt.compute.models.StorageProfile(
 )
 ```
 
-이 `storage_profile` 매개 변수는 이제 유효합니다. Python(네트워크 등 포함)에서 VM을 만드는 방법에 대한 완전한 예제를 얻으려면 [Python의 VM 자습서](https://github.com/Azure-Samples/virtual-machines-python-manage) 전체를 확인하세요.
+Python용 Azure 관리 라이브러리를 사용하여 가상 머신을 만드는 방법에 대한 전체 예제는 [예 - 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)을 참조하세요.
 
 사용자 고유의 이미지를 사용하여 `storage_profile`을 만들 수도 있습니다.
 
@@ -137,7 +137,7 @@ storage_profile = azure.mgmt.compute.models.StorageProfile(
 )
 ```
 
-이전에 프로비전된 관리 디스크를 쉽게 연결할 수 있습니다.
+이전에 프로비저닝된 Managed Disk를 쉽게 연결할 수 있습니다.
 
 ```python
 vm = compute.virtual_machines.get(
@@ -165,9 +165,9 @@ async_update.wait()
 
 ## <a name="virtual-machine-scale-sets-with-managed-disks"></a>Managed Disks를 사용하는 가상 머신 확장 집합
 
-Managed Disks 이전에는 필요한 모든 VM에 대한 스토리지 계정을 확장 집합 내에서 수동으로 만든 다음 `vhd_containers` list 매개 변수를 사용하여 모든 스토리지 계정 이름을 확장 집합 Rest API에 제공해야 했습니다. 공식 전환 가이드는 [확장 집합 템플릿을 관리 디스크 확장 집합 템플릿으로 변환](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md) 문서에서 확인할 수 있습니다.
+Managed Disks 이전에는 필요한 모든 VM에 대한 스토리지 계정을 확장 집합 내에서 수동으로 만든 다음 `vhd_containers` list 매개 변수를 사용하여 모든 스토리지 계정 이름을 확장 집합 Rest API에 제공해야 했습니다. (마이그레이션 가이드의 경우 [확장 집합 템플릿을 관리 디스크 확장 집합 템플릿으로 변환](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md)을 참조하세요.)
 
-이제 관리 디스크를 사용하면 스토리지 계정을 전혀 관리할 필요가 없습니다. 가상 머신 확장 집합 Python SDK에 익숙하다면 `storage_profile`은 이제 VM을 만드는 데 사용된 것과 똑같을 수 있습니다.
+Azure Managed Disks를 통해 스토리지 계정을 관리할 필요가 없기 때문에 이제 `storage_profile`은 VM 만들기에 사용되는 것과 완전히 같아도 됩니다.
 
 ```python
 'storage_profile': {
@@ -305,3 +305,7 @@ async_snapshot_creation = self.compute_client.snapshots.begin_create_or_update(
     )
 snapshot = async_snapshot_creation.result()
 ```
+
+## <a name="see-also"></a>참고 항목
+
+- [예 - 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)

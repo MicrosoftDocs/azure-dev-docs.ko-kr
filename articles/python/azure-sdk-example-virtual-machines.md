@@ -4,12 +4,12 @@ description: Python 및 Azure SDK 관리 라이브러리를 사용하여 Azure �
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d22f403195fd3cba143d9539220ec3376a7f2509
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689248"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932437"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>예제: Azure 라이브러리를 사용하여 가상 머신 프로비저닝
 
@@ -315,6 +315,7 @@ az group delete -n PythonAzureExample-VM-rg  --no-wait
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
 - [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
+- [가상 머신에서 Azure Managed Disks 사용](azure-sdk-samples-managed-disks.md)
 
 다음 리소스 컨테이너는 Python을 사용하여 가상 머신을 만드는 보다 포괄적인 예제입니다.
 

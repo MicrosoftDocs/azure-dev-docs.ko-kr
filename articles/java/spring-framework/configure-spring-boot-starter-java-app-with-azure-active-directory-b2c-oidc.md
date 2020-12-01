@@ -48,7 +48,7 @@ ms.locfileid: "93066304"
     * **프로젝트** 아래에서 **Maven 프로젝트** 를 선택합니다.
     * **언어** 아래에서 **Java** 를 선택합니다.
     * **Spring Boot** 아래에서 **2.3.4** 를 선택합니다.
-    * **그룹** , **아티팩트** 및 **이름** 에서 간단한 설명이 포함된 문자열을 사용하여 동일한 값을 입력합니다. 입력함에 따라 UI에서 이러한 항목 중 일부를 자동으로 채울 수 있습니다.
+    * **그룹**, **아티팩트** 및 **이름** 에서 간단한 설명이 포함된 문자열을 사용하여 동일한 값을 입력합니다. 입력함에 따라 UI에서 이러한 항목 중 일부를 자동으로 채울 수 있습니다.
     * **종속성** 창에서 **종속성 추가** 를 선택합니다. UI를 사용하여 **Spring 웹** 및 **Spring 보안** 에 대한 종속성을 추가합니다.
 
    ![프로젝트를 생성하기 위한 값 입력](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
@@ -88,7 +88,7 @@ ms.locfileid: "93066304"
 
 1. <https://portal.azure.com>에 로그인합니다.
 
-2. **리소스 만들기** , **ID** , **모두 보기** 를 차례로 선택합니다. **Azure Active Directory B2C** 를 검색합니다.
+2. **리소스 만들기**, **ID**, **모두 보기** 를 차례로 선택합니다. **Azure Active Directory B2C** 를 검색합니다.
 
     ![새 Azure Active Directory B2C 인스턴스 만들기](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-1-n.png)
 
@@ -144,7 +144,7 @@ ms.locfileid: "93066304"
 
 10. **개요** 를 선택합니다.
 
-11. 왼쪽 창의 **정책** 섹션에서 **사용자 흐름** , **새 사용자 흐름** 을 차례로 선택합니다.
+11. 왼쪽 창의 **정책** 섹션에서 **사용자 흐름**, **새 사용자 흐름** 을 차례로 선택합니다.
 
 12. 이제 이 자습서를 종료하고, 다른 자습서를 실행하고, 완료되면 이 자습서로 돌아갑니다. 다른 자습서로 이동하는 경우 유의해야 할 몇 가지 사항은 다음과 같습니다.
 
@@ -337,7 +337,7 @@ ms.locfileid: "93066304"
 2. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 
     > [!NOTE]
-    > 로컬 Spring Boot 앱이 실행되는 시스템 클록에 따른 시간은 정확해야 합니다. OAuth 2.0을 사용하는 경우 클록 스큐의 허용 오차가 거의 없습니다. 3분 동안에도 정확하지 않은 경우 `[invalid_id_token] An error occurred while attempting to decode the Jwt: Jwt used before 2020-05-19T18:52:10Z`와 비슷한 오류와 함께 로그인이 실패할 수 있습니다. 이 문서를 작성할 당시 [time.gov](https://time.gov/)에는 클록이 실제 시간에서 떨어져 있는 정도를 나타내는 표시기가 있습니다. 앱은 0.019초 이상의 스큐를 통해 성공적으로 실행되었습니다.
+    > 로컬 Spring Boot 앱이 실행되는 시스템 클록에 따른 시간은 정확해야 합니다. OAuth 2.0을 사용하는 경우 클록 스큐의 허용 오차가 거의 없습니다. 3분의 부정확도에도 `[invalid_id_token] An error occurred while attempting to decode the Jwt: Jwt used before 2020-05-19T18:52:10Z`와 비슷한 오류와 함께 로그인이 실패할 수 있습니다. 이 문서를 작성할 당시 [time.gov](https://time.gov/)에는 클록이 실제 시간에서 떨어져 있는 정도를 나타내는 표시기가 있습니다. 앱은 0.019초 이상의 스큐를 통해 성공적으로 실행되었습니다.
 
     ```shell
     mvn -DskipTests clean package

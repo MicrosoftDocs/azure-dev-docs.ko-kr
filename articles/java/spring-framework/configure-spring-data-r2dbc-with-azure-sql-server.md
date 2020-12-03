@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 557480c4edf2d53cb04b3aa75ce829be3fe13760
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 273f09bc0d0d6d795f13ac81581d105176373775
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92009985"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442268"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Azure SQL Database와 함께 Spring Data R2DBC 사용
 
@@ -39,8 +39,6 @@ ms.locfileid: "92009985"
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
-> [!NOTE]
-> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>반응형 Azure SQL Database 드라이버 구현을 추가
 

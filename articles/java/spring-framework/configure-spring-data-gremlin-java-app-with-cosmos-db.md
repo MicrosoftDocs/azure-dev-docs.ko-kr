@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 9a04f3eac457d22c728a11850d4a85aba88a71df
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192472"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441995"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API에서 Spring Data Gremlin Starter를 사용하는 방법
 
@@ -100,8 +100,7 @@ Spring 데이터 Gremlin Starter는 개발자가 Gremlin 호환 데이터 저장
    >![spring-initializr][spring-initializr-01]
    
    > [!NOTE]
-   > 1. Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: `com.example.wintiptoysdata`).
-   > 2. Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: `com.example.wintiptoysdata`).
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 

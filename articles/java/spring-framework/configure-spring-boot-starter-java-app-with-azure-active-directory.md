@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: e21e1ada221473c3b645da24736d179b92cff07f
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 25164bb67f717acfc7aa8f12e77c1b158528c2e8
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192532"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442337"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>자습서: Azure Active Directory용 Spring Boot Starter를 사용하여 Java 웹앱 보호하기
 
@@ -41,14 +41,12 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 1. [https://www.microsoft.com]\(<https://start.spring.io/>) 로 이동합니다.
 
 1. **Java** 에서 **Maven** 프로젝트를 생성한다고 지정하고, 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 입력합니다.
-1. **Spring Web** , **Azure Active Directory** 및 **Spring Security** 에 대한 **Dependencies** (종속성)를 추가합니다.
+1. **Spring Web**, **Azure Active Directory** 및 **Spring Security** 에 대한 **Dependencies**(종속성)를 추가합니다.
 1. 페이지 아래쪽에서 **GENERATE(생성)** 단추를 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![그룹 및 아티팩트 이름 지정, 종속성 선택][create-spring-app-01]
 
-   > [!NOTE]
-   > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 1. 메시지가 표시되면 로컬 컴퓨터의 경로에 프로젝트를 다운로드합니다.
 
@@ -58,7 +56,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 1. <https://portal.azure.com>에 로그인합니다.
 
-1. **리소스 만들기** , **ID** , **Azure Active Directory** 를 차례로 선택합니다.
+1. **리소스 만들기**, **ID**, **Azure Active Directory** 를 차례로 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![새 Azure Active Directory 인스턴스 만들기][create-directory-01]
@@ -147,7 +145,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>디렉터리에 사용자 계정을 추가하고 해당 계정을 그룹에 추가합니다
 
-1. Active Directory의 **개요** 페이지에서 **사용자** , **새 사용자** 를 차례로 선택합니다.
+1. Active Directory의 **개요** 페이지에서 **사용자**, **새 사용자** 를 차례로 선택합니다.
    
    >[!div class="mx-imgBorder"]
    >![새 사용자 계정 추가하기][create-user-01]

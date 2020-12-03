@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 170d3727b661f18252edb39396739e2791101534
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601255"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441799"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Spring Cloud Azure Stream Binder를 Azure Service Bus에 사용하는 방법
 
@@ -42,8 +42,6 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer](https://start.spring.io/)를 사용하여 **Maven** 프로젝트를 만듭니다. **Maven 프로젝트** 를 선택하고, **종속성** 아래에서 **웹** 종속성을 추가하고, **8** Java 버전을 선택합니다.
 
-    > [!NOTE]
-    > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Spring Cloud Stream Binder 스타터 사용
 
@@ -59,7 +57,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 1. Service Bus 큐 또는 토픽을 사용하는지 여부에 따라 다음 코드 블록을 **&lt;dependencies>** 요소 아래에 추가합니다.
 
-    **Service Bus 큐**
+    **Azure Service Bus 큐**
 
     ```xml
     <dependency>

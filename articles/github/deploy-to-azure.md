@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/19/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 078c2d22fe0075f8ff5714bc7a605f7eac99ba36
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 0d83e0d2b0e36fea0d54f176744a797352d11085
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983542"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442151"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>GitHub에서 Azure로 앱 배포
 
@@ -32,6 +32,10 @@ ms.locfileid: "94983542"
 ## <a name="azure-app-configuration"></a>Azure App Configuration
 
 - [App Configuration에 GitHub 리포지토리 동기화](/azure/azure-app-configuration/concept-github-action)
+
+## <a name="azure-key-vault"></a>Azure Key Vault
+
+- [GitHub Actions 워크플로에서 Key Vault 비밀 사용](/azure/key-vault/secrets/quick-create-github-secret)
 
 ## <a name="azure-storage"></a>Azure Storage
 

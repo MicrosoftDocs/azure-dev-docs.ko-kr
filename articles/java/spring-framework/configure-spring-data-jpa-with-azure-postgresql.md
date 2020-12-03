@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1099b9568a66c2915b000c31c8e84e8e02b1d3d6
-ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
+ms.openlocfilehash: 6df436c1c20ce183df08a30f041f315d211f254f
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200591"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442313"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL에서 Spring Data JPA 사용
 
@@ -36,8 +36,6 @@ ms.locfileid: "92200591"
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
-> [!NOTE]
-> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Azure Database for PostgreSQL을 사용하도록 Spring Boot 구성
 

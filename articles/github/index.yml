@@ -8,45 +8,49 @@ metadata:
   ms.topic: landing-page
   author: N-Usha
   ms.author: ushan
-  ms.date: 05/05/2020
+  ms.date: 11/24/2020
   ms.custom: github-actions-azure
-  ms.openlocfilehash: f2dddbae2eac63fdab7e5956ebcda6003e3c2028
-  ms.sourcegitcommit: 2540e91f7b6aa077158e25a0b718737abff904d4
+  ms.openlocfilehash: 5dd30cbc8737ecd644f235d0494052cbf6f2b4e1
+  ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/10/2020
-  ms.locfileid: "94432784"
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96442130"
 landingContent:
 - title: Azure에 대한 GitHub 작업
   linkLists:
   - linkListType: get-started
     links:
-    - text: GitHub Actions를 사용하여 Azure에 배포
+    - text: Azure용 GitHub Actions란?
       url: github-actions.md
 - title: Deploy to Azure
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: GitHub에서 Azure로 앱 배포
       url: deploy-to-azure.md
+    - text: GitHub에서 Azure로 데이터베이스 배포
+      url: database-actions-deploy.md
+- title: GitHub Actions와 상호 작용하기 위한 도구
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Azure에서 GitHub로 인증
+      url: connect-from-azure.md
+    - text: 변수 대체 사용
+      url: github-variable-substitution.md
 - title: Visual Studio 및 Visual Studio Code
   linkLists:
   - linkListType: deploy
     links:
     - text: Visual Studio 또는 Visual Studio Code를 사용하여 GitHub로부터 앱 배포
       url: deploy-with-visual-studio.md
-- title: Azure DevOps 및 GitHub 통합
+- title: Azure Pipelines 및 GitHub 통합
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Azure DevOps 및 GitHub로 작업
       url: integrate-azure-devops.md
-- title: Azure에서 GitHub로 연결
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Azure 및 기타 서비스에서 GitHub로 연결
-      url: connect-from-azure.md
 - title: GitHub를 사용하여 Azure 정책 관리
   linkLists:
   - linkListType: get-started

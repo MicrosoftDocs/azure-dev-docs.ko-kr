@@ -29,6 +29,8 @@
               href: tutorial/static-web-app/clean-up-resources.md
         - name: Storage Blob에 이미지 업로드
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+        - name: 로그인 단추 추가
+          href: tutorial/single-page-application-azure-login-button-sdk-msal.md
         - name: MongoDB를 사용하는 Express.js
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
         - name: Linux 가상 머신에 앱 배포

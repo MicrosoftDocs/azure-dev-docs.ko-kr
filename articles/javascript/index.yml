@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 65dbdbaaeedd1602782c114052a61aabcda43bb6
-  ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+  ms.openlocfilehash: 40434d11661254d9502239403bb438d3308b8c06
+  ms.sourcegitcommit: 550b165d0b910f4ea9652d8401dd4fc93f057f05
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/20/2020
-  ms.locfileid: "94983952"
+  ms.lasthandoff: 12/04/2020
+  ms.locfileid: "96605913"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -66,7 +66,7 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: MongoDB
-      url: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
+      url: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
     - text: MySql
       url: /azure/mysql/connect-nodejs
     - text: PostgreSQL

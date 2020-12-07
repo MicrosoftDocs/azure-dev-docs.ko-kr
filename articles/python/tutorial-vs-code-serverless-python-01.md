@@ -1,39 +1,43 @@
 ---
 title: '자습서: VS Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포'
-description: 자습서 1단계, Azure Functions에 대한 로컬 환경 구성
+description: 자습서 1단계, 서버리스 Azure Functions에 대한 로컬 환경 구성
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: a7eea7fd73f13f9ca2f93cf3184c5ab7a1889614
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137222"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442254"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포
 
-이 문서에서는 Visual Studio Code 및 Azure Functions 확장을 사용하여 Python으로 서버리스 HTTP 엔드포인트를 만들거나, 스토리지에 연결(또는 “바인딩”)도 추가합니다.
+이 문서에서는 Visual Studio Code 및 Azure Functions 확장을 사용하여 Python으로 "서버리스" HTTP 엔드포인트를 만들거나, 스토리지에 연결(또는 "바인딩")도 추가합니다. Visual Studio Code에 대한 Azure Functions 확장은 많은 구성 문제를 자동으로 처리하여 Functions를 사용하는 프로세스를 크게 간소화합니다.
 
-Azure Functions는 가상 머신을 프로비저닝하거나 웹앱을 게시할 필요가 없는 서버리스 환경에서 코드를 실행합니다. Visual Studio Code에 대한 Azure Functions 확장은 많은 구성 문제를 자동으로 처리하여 Functions를 사용하는 프로세스를 크게 간소화합니다.
+Azure Functions의 서버리스 환경은 Azure가 가상 머신을 프로비저닝하거나 웹앱을 게시하거나 서버 및 리소스를 관리할 필요 없이 앱의 엔드포인트와 공용 URL을 제공함을 의미합니다. Azure는 이러한 모든 리소스를 효율적으로 관리하므로 애플리케이션 호스팅에 드는 오버헤드와 비용이 크게 줄어듭니다. (자세한 내용은 [Azure Functions 개요](/azure/azure-functions/functions-overview)를 참조하세요.)
 
 이 자습서의 단계 중 문제가 발생하는 경우 자세한 내용을 알려주시면 감사하겠습니다. 각 문서의 끝에 있는 **이 페이지** 피드백 단추를 사용합니다.
 
-데모 비디오를 보려면 가상 PyCon 2020에서 <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code로 Azure Functions 빌드</a>(youtube.com)를 참조하세요. 더 긴 세션인 <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Azure Functions를 사용한 손쉬운 데이터 처리</a>(youtube.com)에 관심이 있을 수도 있습니다. 
+데모 비디오를 보려면 가상 PyCon 2020에서 <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code로 Azure Functions 빌드</a>(youtube.com)를 참조하세요. 더 긴 세션인 <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Azure Functions를 사용한 손쉬운 데이터 처리</a>(youtube.com)에 관심이 있을 수도 있습니다.
 
 ## <a name="configure-your-environment"></a>환경 구성
 
-- [Azure 구독](#azure-subscription).
-- [Azure Functions Core Tools](#azure-functions-core-tools).
-- [Azure Functions 확장을 사용하는 Visual Studio Code](#visual-studio-code-python-and-the-azure-functions-extension).
+- 활성 구독이 있는 Azure 계정이 없는 경우 [체험 계정을 만듭니다](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension).
 
-### <a name="azure-subscription"></a>Azure 구독
+- 다음 섹션의 지침을 따릅니다.
 
-Azure 구독이 없는 경우 지금 200달러의 Azure 크레딧으로 30일 체험 계정에 [지금 가입](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension)하여 서비스 조합을 사용해 볼 수 있습니다.
+  - [Azure Functions Core Tools 설치](#azure-functions-core-tools).
 
+  - [Azure Functions 확장을 사용하여 Python 및 Visual Studio Code 설치](#visual-studio-code-python-and-the-azure-functions-extension).
+
+  - [Azure에 로그인](#sign-in-to-azure)
+
+  - [환경 확인](#verify-your-environment)
+ 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-[Azure Functions Core Tools 사용](/azure/azure-functions/functions-run-local#v2)에 나와 있는 해당 운영 체제 지침에 따라 Azure Functions Core Tools를 설치합니다. 이 자습서를 완료하는 데 필요하지 않은 Chocolatey 패키지 관리자에 대한 문서의 설명은 무시합니다.
+[Azure Functions Core Tools 작업](/azure/azure-functions/functions-run-local#v2)에서 사용하는 운영 체제에 대한 지침을 따르세요. 이 자습서를 완료하는 데 필요하지 않은 Chocolatey 패키지 관리자에 대한 문서의 설명은 무시합니다.
 
 Node.js를 설치할 때는 기본 옵션을 사용하고 필요한 도구를 자동으로 설치하는 옵션을 선택하지 *않습니다*.  또한 `-g` 옵션을 `npm install` 명령과 함께 사용하여 Core Tools를 후속 명령에서 사용할 수 있도록 해야 합니다.
 
@@ -44,7 +48,7 @@ Node.js를 설치할 때는 기본 옵션을 사용하고 필요한 도구를 �
 
 다음 소프트웨어를 설치합니다.
 
-- Azure Functions에 필요한 64비트 버전의 Python 3.6, 3.7 또는 3.8입니다. [python.org](https://www.python.org/downloads)에서 Python을 설치합니다. 설치할 때 **PATH에 Python 3.x 추가**를 선택하고 **지금 설치** 옵션을 선택하여 기본 옵션을 사용합니다. Windows에서는 프로세스가 끝날 때 **경로 길이 제한 사용 안 함**을 선택합니다.
+- Azure Functions에 필요한 64비트 버전의 Python 3.6, 3.7 또는 3.8입니다. [python.org](https://www.python.org/downloads)에서 Python을 설치합니다. 설치할 때 **PATH에 Python 3.x 추가** 를 선택하고 **지금 설치** 옵션을 선택하여 기본 옵션을 사용합니다. Windows에서는 프로세스가 끝날 때 **경로 길이 제한 사용 안 함** 을 선택합니다.
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Visual Studio Code Python 자습서 - 필수 구성 요소](https://code.visualstudio.com/docs/python/python-tutorial)에 설명된 [Python 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 - [Azure Functions 확장](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). 일반 정보는 [vscode-azurefunctions GitHub 리포지토리](https://github.com/Microsoft/vscode-azurefunctions)를 참조하세요.
@@ -54,11 +58,11 @@ Node.js를 설치할 때는 기본 옵션을 사용하고 필요한 도구를 �
 
 ### <a name="sign-in-to-azure"></a>Azure에 로그인
 
-Azure 확장이 설치되면, **Azure** 탐색기로 이동하여 **Functions**에서 **Azure에 로그인**을 선택하고 브라우저에 표시되는 메시지에 따라 Azure 계정에 로그인합니다.
+Azure 확장이 설치되면, **Azure** 탐색기로 이동하여 **Functions** 에서 **Azure에 로그인** 을 선택하고 브라우저에 표시되는 메시지에 따라 Azure 계정에 로그인합니다.
 
 ![VS Code를 통해 Azure에 로그인](media/tutorial-vs-code-serverless-python/azure-sign-in.png)
 
-로그인한 후 상태 표시줄에 **Azure: 로그인됨**이 표시되고 **Azure** 탐색기에 구독이 표시되는지 확인합니다.
+로그인한 후 상태 표시줄에 **Azure: 로그인됨** 이 표시되고 **Azure** 탐색기에 구독이 표시되는지 확인합니다.
 
 ![Azure 계정을 보여주는 Visual Studio Code 상태 표시줄](media/tutorial-vs-code-serverless-python/azure-account-status-bar.png)
 

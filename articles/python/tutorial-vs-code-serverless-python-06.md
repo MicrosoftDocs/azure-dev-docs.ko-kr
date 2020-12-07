@@ -1,31 +1,31 @@
 ---
-title: '6단계: VS Code를 사용하여 Azure Functions에 두 번째 Python 함수 추가'
-description: 자습서 6단계, 두 번째 함수를 추가하여 Azure Functions 프로젝트 확장
+title: '6단계: VS Code를 사용하여 Azure Functions에 두 번째 Python 서버리스 함수 추가'
+description: 자습서 6단계, 두 번째 서버리스 함수를 추가하여 Azure Functions 프로젝트 확장
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: bbf89352bbbb93a90ac6f41bea97ba0def9bf815
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: 18cc5b138a46e4194c82bd0339c1566e20107347
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137102"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441710"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Azure Functions에 두 번째 Python 함수 추가
 
 [이전 단계: Azure에 배포](tutorial-vs-code-serverless-python-05.md)
 
-첫 번째 배포 후에는 Python 함수를 추가하는 등 코드 변경 작업을 수행하고, 동일한 Azure Functions 앱에 다시 배포할 수 있습니다.
+첫 번째 배포 후에는 Python 함수를 추가하는 등 코드 변경 작업을 수행한 다음, 동일한 Azure Functions 앱에 다시 배포할 수 있습니다.
 
-1. **Azure: Functions** 탐색기에서 **함수 만들기** 명령을 선택하거나 명령 팔레트에서 **Azure Functions: 함수 만들기**를 사용합니다. 함수에 대해 다음 세부 정보를 지정합니다.
+1. **Azure: Functions** 탐색기에서 **함수 만들기** 명령을 선택하거나 명령 팔레트에서 **Azure Functions: 함수 만들기** 를 사용합니다. 함수에 대해 다음 세부 정보를 지정합니다.
 
     - 템플릿: HTTP 트리거
     - 이름: "DigitsOfPi"
     - 권한 부여 수준: 익명
 
-1. Visual Studio Code에서 파일 탐색기는 *\_\_init\_\_.py*, *function.json* 및 *sample.dat*라는 파일을 다시 포함하는 함수 이름이 있는 하위 폴더입니다.
+    이제 Azure Functions 탐색기의 **Local Project** 섹션에 "*DigitsOfPi* 함수가 표시됩니다. 편집기에서 함수의 *\_\_init\_\_.py*,  *function.json* 및 *sample.dat* 파일 간에 전환할 수 있습니다.
 
-1. 다음 코드와 일치하도록 *\_\_init\_\_.py*의 콘텐츠를 바꿉니다. 이는 URL에 지정된 숫자로 PI의 값을 포함하는 문자열을 생성합니다(이 코드는 URL 매개 변수만 사용함).
+1. 다음 코드와 일치하도록 *\_\_init\_\_.py* 의 콘텐츠를 바꿉니다. 이는 URL에 지정된 숫자로 PI의 값을 포함하는 문자열을 생성합니다(이 코드는 URL 매개 변수만 사용함).
 
     ```python
     import logging
@@ -78,7 +78,7 @@ ms.locfileid: "92137102"
         )
     ```
 
-1. 코드는 HTTP GET만 지원하기 때문에 `"methods"` 컬렉션이 `"get"`만 포함하도록 *function.json*을 수정합니다(즉 `"post"` 제거). 전체 파일은 다음과 같이 나타나야 합니다.
+1. 코드는 HTTP GET만 지원하기 때문에 `"methods"` 컬렉션이 `"get"`만 포함하도록 *function.json* 을 수정합니다(즉 `"post"` 제거). 전체 파일은 다음과 같이 나타나야 합니다.
 
     ```json
     {
@@ -102,7 +102,7 @@ ms.locfileid: "92137102"
     }
     ```
 
-1. F5 키를 누르거나 **디버그** > **디버깅 시작** 메뉴 명령을 선택하여 디버거를 시작합니다. 이제 **출력** 창에 프로젝트의 두 엔드포인트가 모두 표시됩니다.
+1. F5 키를 누르거나 **실행** > **디버깅 시작** 메뉴 명령을 선택하여 로컬 디버거를 시작합니다. 이제 **출력** 창에 프로젝트의 두 엔드포인트가 모두 표시됩니다.
 
     <pre>
     Http Functions:
@@ -114,7 +114,7 @@ ms.locfileid: "92137102"
 
 1. **Azure **:** Functions** 탐색기에서) 코드를 다시 배포합니다. 메시지가 표시되면 이전에 만든 함수 앱을 선택합니다.
 
-1. 배포가 완료되면(몇 분이 소요됩니다.) **출력** 창에는 테스트를 반복할 수 있는 공용 엔드포인트가 표시됩니다.
+1. 잠시 후 배포가 완료되고 **출력** 창에는 테스트를 반복할 수 있는 퍼블릭 엔드포인트가 표시됩니다.
 
 > [!div class="nextstepaction"]
 > [두 번째 함수를 추가했습니다. - 7단계 진행 >>>](tutorial-vs-code-serverless-python-07.md)

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 7e6437859b7b5e67edd9386d0391535dd6537ff7
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192435"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442107"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage에 Spring Boot Starter를 사용하는 방법
 
@@ -104,7 +104,7 @@ Azure CLI를 사용하여 다음 단계에 따라 Azure 스토리지 계정 및 
 1. 다음 옵션을 지정합니다.
 
    * **Maven** 프로젝트를 생성합니다.
-   * **Java 8** 을 지정합니다.
+   * **Java 11** 을 지정합니다.
    * **Spring Boot** 2.3 이상 버전을 지정합니다.
    * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
    * **Spring Web** 종속성을 추가합니다.
@@ -112,8 +112,7 @@ Azure CLI를 사용하여 다음 단계에 따라 Azure 스토리지 계정 및 
       ![기본 Spring Initializr 옵션][SI01]
 
    > [!NOTE]
-   > 1. Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.storage* ).
-   > 2. Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
+   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.wingtiptoys.storage*).
 
 1. 위에 나열된 옵션이 지정되면 **생성** 을 선택합니다.
 
@@ -261,7 +260,7 @@ Azure CLI를 사용하여 다음 단계에 따라 Azure 스토리지 계정 및 
    ```
    위치:
 
-   |                   필드                   |                                            Description                                            |
+   |                   필드                   |                                            설명                                            |
    |-------------------------------------------|---------------------------------------------------------------------------------------------------|
    | `spring.cloud.azure.credential-file-path` |            이 자습서의 앞부분에서 만든 Azure 자격 증명 파일을 지정합니다.             |
    |    `spring.cloud.azure.resource-group`    |           Azure Storage 계정을 포함하는 Azure 리소스 그룹을 지정합니다.            |

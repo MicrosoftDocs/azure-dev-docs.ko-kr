@@ -1,21 +1,21 @@
 ---
-title: '8단계: Azure Functions에서 Python 코드에 사용된 리소스 정리'
-description: 자습서 8단계, 지속적인 변경을 방지하기 위해 Azure 리소스 정리
+title: '8단계: Azure Functions에서 서버리스 Python 코드에 사용된 리소스 정리'
+description: 자습서 8단계, 지속적인 요금을 방지하기 위해 Azure 리소스 정리
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ec97faa440dcfb79240b0805e44de7d3d3447bad
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: af1ce614671d3da67725ca358a018026c76ccb5c
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137212"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441720"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Azure Functions에 대한 Azure 리소스 정리
 
 [이전 단계: 스토리지 바인딩 추가](tutorial-vs-code-serverless-python-07.md)
 
-이 문서에서는 이 자습서에서 만든 Azure 리소스를 제거하는 방법을 보여줍니다. 사용자가 Visual Studio Code로 만든 Azure 함수 앱에는 최소한의 비용을 발생시킬 수 있는 리소스가 포함되어 있습니다. (자세한 내용은 [Functions 가격 책정](https://azure.microsoft.com/pricing/details/functions/)을 참조하세요.)
+이 자습서에서 사용자가 Visual Studio Code로 만든 Azure 함수 앱에는 최소한의 비용을 발생시킬 수 있는 리소스가 포함되어 있습니다. (자세한 내용은 [Functions 가격 책정](https://azure.microsoft.com/pricing/details/functions/)을 참조하세요.)
 
 리소스를 정리하는 가장 좋은 방법은 이 자습서에서 사용되는 모든 개별 리소스가 포함된 리소스 그룹을 삭제하는 것입니다. 리소스에는 함수 앱, 스토리지 계정 및 지원 App Service 계획이 포함됩니다.
 

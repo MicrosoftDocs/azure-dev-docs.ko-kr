@@ -4,12 +4,12 @@ description: Azure에 Node.js 앱을 만들고, 컨테이너화하고, 배포하
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872894"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857821"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Visual Studio Code 및 Azure를 사용하여 컨테이너화된 Node.js 앱 개발 및 배포
 
@@ -77,8 +77,6 @@ Yarn을 통해 앱의 종속성을 설치한 후 나중에 조금도 놀라지 �
 1. **Ctrl**+**P** 를 누릅니다.
 
 1. `.js`를 입력하여 프로젝트의 모든 JavaScript/JSON 파일을 각 파일의 부모 디렉터리와 함께 표시합니다. 
-
-    ![Visual Studio Code에서 모든 .js* 파일 표시](../media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
 1. 앱에 대한 시작 스크립트인 *server.js* 를 선택합니다.
 

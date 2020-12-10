@@ -4,12 +4,12 @@ description: 자습서 2단계, 애플리케이션 설정
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 252bfc02e3c70cc207b29ee0b8f8c58d9802f090
-ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
+ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95485662"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559197"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Azure App Service에 배포할 수 있도록 앱 준비
 
@@ -40,7 +40,7 @@ ms.locfileid: "95485662"
 
 원칙적으로는 클라우드에 배포된 Django 앱 역시 PostgreSQL for Azure 같은 클라우드 기반 데이터베이스를 사용합니다. 자세한 내용은 [자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포](tutorial-python-postgresql-app-portal.md)를 참조하세요.
 
-Django 앱이 이 샘플과 같은 로컬 SQLite 데이터베이스를 사용하는 경우 *db.sqlite3* 파일의 미리 초기화되고 미리 채워진 복사본을 리포지토리에 포함하는 것이 가장 쉬운 방법입니다. 그렇지 않으면 앱이 배포된 컨테이너에서 Django의 `migrate` 명령을 실행하도록 빌드 후 명령을 구성해야 합니다. 자세한 내용은 [App Service 구성 - 빌드 자동화 사용자 지정](/app-service/configure-language-python#customize-build-automation)을 참조하세요.
+Django 앱이 이 샘플과 같은 로컬 SQLite 데이터베이스를 사용하는 경우 *db.sqlite3* 파일의 미리 초기화되고 미리 채워진 복사본을 리포지토리에 포함하는 것이 가장 쉬운 방법입니다. 그렇지 않으면 앱이 배포된 컨테이너에서 Django의 `migrate` 명령을 실행하도록 빌드 후 명령을 구성해야 합니다. 자세한 내용은 [App Service 구성 - 빌드 자동화 사용자 지정](/azure/app-service/configure-language-python#customize-build-automation)을 참조하세요.
 
 ### <a name="option-3-create-a-minimal-flask-app"></a>옵션 3: 최소 Flask 앱 만들기
 

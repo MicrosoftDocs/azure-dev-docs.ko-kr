@@ -4,12 +4,12 @@ description: GitHub 작업을 사용하여 로컬로 React 클라이언트 애�
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5d70e14a9a5247f99c8b6e033af0a225b27da30b
-ms.sourcegitcommit: 291768a67862336267c67819e913c16710e3875e
+ms.openlocfilehash: 1a034d2746fae453019325d01f20c7073a6ce9a3
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95820680"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559258"
 ---
 # <a name="1-build-and-deploy-a-static-web-app-to-azure"></a>1. Static 웹앱을 빌드하여 Azure에 배포
 
@@ -36,7 +36,7 @@ React(create-react-app) 앱은 다음과 같은 기능을 제공합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-- [Azure CLI를 설치](/cli/azure/install-azure-cli)하거나 [Azure Cloud Shell](https://shell.azure.com.) 사용
+- [Azure CLI를 설치](/cli/azure/install-azure-cli)하거나 [Azure Cloud Shell](https://shell.azure.com) 사용
 - [Node.js 및 npm](https://nodejs.org/en/download) - 로컬 컴퓨터에 설치
 - [Visual Studio Code](https://code.visualstudio.com/) - 로컬 컴퓨터에 설치 
     - [Azure Static Web Apps(미리 보기)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) - React 앱을 Azure Static 웹앱에 배포하는 데 사용됩니다.

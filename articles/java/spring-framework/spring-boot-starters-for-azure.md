@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3e73fda380f2743f6a3d4b2fb726ee62173b8563
-ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
+ms.openlocfilehash: 89df7fe719cd8c8301c729bb33cb1d3632a80b0d
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96035371"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559274"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Azure용 Spring Boot Starter
 
@@ -21,10 +21,6 @@ ms.locfileid: "96035371"
 >[!div class="mx-imgBorder"]
 ![Initializr를 사용하여 Azure Spring Boot Starters 구성][configure-azure-spring-boot-starters-with-initializr]
 
-> [!NOTE]
->
-> Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
-> 
 
 현재 다음 Spring Boot Starter를 Azure에 사용할 수 있습니다.
 

@@ -3,13 +3,13 @@ title: '4단계: VS Code를 사용하여 서버리스 Azure Functions Python 코
 description: 자습서 4 단계, 서버리스 Python 코드를 확인하도록 VS Code 디버거를 로컬에서 실행
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ecd93f7b551525576123e57ed9efe55b335d4dd4
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: a96fb6e621f1c0b1c6e6f067e28b920a8c53fb44
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759430"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Azure Functions Python 코드를 로컬에서 디버그
 

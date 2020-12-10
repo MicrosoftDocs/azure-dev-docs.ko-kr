@@ -3,13 +3,13 @@ title: '2단계: VS Code를 사용하여 Azure Functions에 대한 서버리스 
 description: 자습서 2단계, VS Code에 대한 Azure Functions 확장을 사용하여 서버리스 Python 함수를 추가합니다.
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b9805a99ff12108787a85635c308d1c5145491a6
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: ac9bf8f90399a5ad2421689104fd5a6d9772c462
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441836"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759310"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Azure Functions에 대한 Python 함수 만들기
 

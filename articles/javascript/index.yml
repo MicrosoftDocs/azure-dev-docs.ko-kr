@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: e98e1fb3e6640eb25dd5f7b69da8342028024455
-  ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+  ms.openlocfilehash: 244a4fd10fc0c3968354ec565c2f95c117ee2d8a
+  ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/07/2020
-  ms.locfileid: "96759420"
+  ms.lasthandoff: 12/08/2020
+  ms.locfileid: "96857871"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -33,34 +33,36 @@ landingContent:
       url: core/node-sdk-azure-authenticate.md
     - text: Azure SDK 블로그
       url: https://devblogs.microsoft.com/azure-sdk/
-- title: Hosting
+- title: 배포 및 호스트
   linkLists:
   - linkListType: tutorial
     links:
-    - text: 프런트 엔드 앱
+    - text: '정적 웹앱: Cognitive Services를 이용한 React'
       url: tutorial/static-web-app/introduction.md
-    - text: App Service를 사용한 Node.js
+    - text: '앱 서비스: Storage Blob에 React 업로드'
+      url: tutorial/browser-file-upload-azure-storage-blob.md
+    - text: '앱 서비스: Express.js'
       url: tutorial-vscode-azure-app-service-node-01.md
-    - text: App Service를 사용한 Deno
-      url: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
-    - text: Linux 가상 머신에 앱 배포
-      url: tutorial/nodejs-virtual-machine-vm/introduction.md
-    - text: 컨테이너
+    - text: '앱 서비스: MongoDB를 사용하는 Express.js'
+      url: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
+    - text: '앱 서비스: Express.js 컨테이너'
       url: tutorial-vscode-docker-node-01.md
-  - linkListType: how-to-guide
-    links:
-    - text: 전체 스택(서버리스 API 및 프런트 엔드)
-      url: how-to/create-static-site.md
-- title: 서버리스 Functions
+    - text: 'Azure Functions: HTTP 서버리스 트리거'
+      url: tutorial/tutorial-vscode-serverless-node-install.md
+    - text: 'Azure Virtual Machine: NGINX/Express.js 컨테이너'
+      url: tutorial/nodejs-virtual-machine-vm/introduction.md
+- title: Azure SDK 클라이언트 라이브러리 자습서
   linkLists:
   - linkListType: tutorial
     links:
-    - text: 개발 및 배포
-      url: tutorial/tutorial-vscode-serverless-node-install.md
-  - linkListType: how-to-guide
-    links:
-    - text: 서버리스 코드 쓰기
-      url: how-to/develop-serverless-apps.md
+    - text: '정적 웹앱: Computer Vision을 사용하여 이미지 분석'
+      url: /tutorial/static-web-app/add-computer-vision-react-app.md#add-computer-vision-code-as-separate-module
+    - text: '정적 웹앱: Storage Blob에 파일 업로드'
+      url: tutorial/browser-file-upload-azure-storage-blob.md#upload-button-functionality
+    - text: '정적 웹앱: 로그인/로그오프 단추'
+      url: tutorial/single-page-application-azure-login-button-sdk-msal.md#5-add-login-and-logoff-buttons
+    - text: 'Express.js: Application Insights 로깅 추가'
+      url: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md#edit-indexjs-for-logging-with-azure-monitor-application-insights
 - title: 데이터
   linkLists:
   - linkListType: quickstart

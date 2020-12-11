@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 244a4fd10fc0c3968354ec565c2f95c117ee2d8a
-  ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+  ms.openlocfilehash: 4ccacf678ce2774e7d0ae5fe0965114c22e8e407
+  ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/08/2020
-  ms.locfileid: "96857871"
+  ms.lasthandoff: 12/10/2020
+  ms.locfileid: "97034514"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -42,7 +42,7 @@ landingContent:
     - text: '앱 서비스: Storage Blob에 React 업로드'
       url: tutorial/browser-file-upload-azure-storage-blob.md
     - text: '앱 서비스: Express.js'
-      url: tutorial-vscode-azure-app-service-node-01.md
+      url: tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
     - text: '앱 서비스: MongoDB를 사용하는 Express.js'
       url: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
     - text: '앱 서비스: Express.js 컨테이너'

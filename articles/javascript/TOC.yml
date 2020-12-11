@@ -64,17 +64,7 @@
             - name: '서버:  Express.js/MongoDB'
               href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
             - name: '서버:  VS Code를 사용하여 Express.js 배포'
-              items:
-                - name: 소개 및 필수 구성 요소
-                  href: tutorial-vscode-azure-app-service-node-01.md
-                - name: 앱 만들기
-                  href: tutorial-vscode-azure-app-service-node-02.md
-                - name: 웹 사이트 배포
-                  href: tutorial-vscode-azure-app-service-node-03.md
-                - name: 로그 스트리밍
-                  href: tutorial-vscode-azure-app-service-node-04.md
-                - name: 리소스 정리
-                  href: tutorial-vscode-azure-app-service-node-05.md
+              href: tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
             - name: '서버:  Azure CLI를 사용하여 배포'
               items:
                 - name: 소개 및 필수 구성 요소
@@ -131,6 +121,8 @@
       href: learn-azure-javascript.md
     - name: 방법 가이드
       items:
+        - name: 앱 구성
+          href: how-to/configure-web-app-settings.md
         - name: VS Code를 사용한 종단 간 Node.js
           href: how-to/develop-nodejs-on-azure.md
         - name: 웹 앱 배포

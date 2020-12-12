@@ -5,6 +5,8 @@
       href: whats-new-docs.md
     - name: JavaScript로 Azure에서 시작
       items:
+        - name: Node.js 설치
+          href: core/install-nodejs-develop-azure-sdk-project.md
         - name: JavaScript 개발자용 Azure 도구
           href: node-azure-tools.md
         - name: 개발 환경 설정
@@ -138,31 +140,7 @@
         - name: 로깅 및 메트릭
           href: how-to/node-sdk-logging.md
     - name: 샘플
-      items:
-        - name: 웹앱 및 서버리스
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-functions%252cazure-app-service%252cazure-logic-apps
-        - name: 데이터베이스
-          items:
-            - name: Cosmos DB
-              href: /samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db
-            - name: SQL DB
-              href: /samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database
-            - name: MongoDB
-              href: /samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB
-        - name: 스토리지
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-storage
-        - name: ID 및 보안
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-active-directory%252cazure-key-vault
-        - name: IoT
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-iot-hub%252cazure-iot-edge%252cazure-iot-central
-        - name: 마이크로 서비스
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-event-grid
-        - name: Cognitive Services를 이용한 AI
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-cognitive-services
-        - name: 검색
-          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-search
-        - name: 모든 샘플
-          href: /samples/browse/?languages=javascript%252cnodejs
+      href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
     - name: npm 패키지
       href: azure-sdk-library-package-index.md
     - name: npm 패키지 설명서

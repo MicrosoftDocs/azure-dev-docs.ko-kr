@@ -4,12 +4,12 @@ description: HTTP 트리거를 사용하는 함수가 포함된 로컬 Azure Fun
 ms.topic: tutorial
 ms.date: 11/05/2020
 ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: d7d39018ab9645755c6c9bfe414f7507e9d091c7
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: 3c5d747245314029a12b1c502c066324efd70dc8
+ms.sourcegitcommit: 550b165d0b910f4ea9652d8401dd4fc93f057f05
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515194"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96605933"
 ---
 # <a name="2-create-the-local-functions-app-with-the-visual-studio-code-_functions_-extension"></a>2. Visual Studio Code _Functions_ 확장을 사용하여 로컬 함수 앱 만들기
 

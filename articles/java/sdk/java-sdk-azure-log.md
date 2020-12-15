@@ -8,18 +8,18 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 927f20601ded9a0ea6b2793ef1b0c8e1b5e6ac19
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87400621"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857771"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Java용 Azure SDK를 사용한 로깅 구성
 
 이 문서에서는 Java용 [Azure SDK](https://azure.microsoft.com/downloads/)의 로깅 구성 예제를 제공합니다. 구성 옵션(예: 로그 수준 또는 클래스별 사용자 지정 로깅 설정)에 대한 자세한 내용은 선택한 로깅 프레임워크에 대한 설명서를 참조하세요.
 
-Java용 Azure SDK 클라이언트 라이브러리는 SLF4J([Simple Logging Facade for Java](https://www.slf4j.org/))를 사용합니다. SLF4J를 사용하면 애플리케이션을 배포할 때 호출되는 기본 로깅 프레임워크를 사용할 수 있습니다.
+Java용 Azure SDK 클라이언트 라이브러리는 SLF4J([Simple Logging Facade for Java](https://www.slf4j.org/))를 사용합니다. SLF4J를 사용하면 애플리케이션을 배포할 때 호출되는 기본 로깅 프레임워크를 사용할 수 있습니다. 클라이언트 작성기에서 [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable)를 설정하는 기능을 제공하는 경우 로그를 출력하려면 [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) 및 허용되는 모든 헤더와 쿼리 매개 변수도 지정해야 합니다.
 
 > [!NOTE]
 > 이 문서는 Azure SDK 클라이언트 라이브러리의 최신 버전에 적용됩니다. 라이브러리가 지원되는지 확인하려면 [Azure SDK 최신 릴리스](https://azure.github.io/azure-sdk/releases/latest/java.html) 목록을 참조하세요. 애플리케이션에서 이전 버전의 Azure SDK 클라이언트 라이브러리를 사용하는 경우 해당 서비스 설명서의 특정 지침을 참조하세요.
@@ -249,6 +249,20 @@ SLF4J 로거를 사용하여 애플리케이션을 다시 배포할 수 없는 �
 |INFORMATIONAL|"info", "information", "informational"  |
 |WARNING     |"warn", "warning"       |
 |오류    |"err", "error"  |
+
+## <a name="setting-an-httplogdetaillevel"></a>HttpLogDetailLevel 설정
+어떤 로깅 메커니즘을 사용하든, 클라이언트 작성기에서 [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable)를 설정하는 기능을 제공하는 경우 로그를 출력하도록 이러한 옵션을 추가로 구성해야 합니다. 기록할 정보를 나타내도록 [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable)을 지정해야 합니다.  기본값은 `NONE`이므로 이 값을 지정하지 않으면 로깅 프레임워크 또는 대체 로깅이 올바르게 구성되어도 로그가 출력되지 않습니다. 보안상의 이유로 헤더 및 쿼리 매개 변수는 기본적으로 수정되므로, 인쇄해도 안전한 헤더 및 쿼리 매개 변수를 나타내는 `Set<String>`도 로그 옵션으로 제공되어야 합니다. 이러한 값은 아래와 같이 구성할 수 있습니다. 로깅은 본문 내용과 헤더 값을 모두 인쇄하도록 설정되었으며, `"foo"` 키에 해당하는 사용자 지정 메타데이터 값을 제외한 모든 헤더 값이 수정됩니다. 그리고 존재할 가능성이 있는 서명된 sas 버전을 나타내는 sas 토큰 쿼리 매개 변수 `"sv"`를 제외한 모든 쿼리 매개 변수가 수정됩니다. 
+
+```
+new BlobClientBuilder().endpoint(<endpoint>)
+            .httpLogOptions(new HttpLogOptions()
+                .setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS)
+                .setAllowedHeaderNames(Set.of("x-ms-meta-foo"))
+                .setAllowedQueryParamNames(Set.of("sv")))
+            .buildClient();
+```
+> [!NOTE]
+> 이 예제에서는 Storage 클라이언트 작성기를 사용하지만 `HttpLogOptions`를 허용하는 원칙이 모든 작성기에 적용됩니다. 또한 이 예제에서는 클라이언트의 전체 구성을 보여주지 않고 로깅 구성만 보여줍니다. 클라이언트 구성에 대한 자세한 내용은 해당 작성기의 설명서를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 4ccacf678ce2774e7d0ae5fe0965114c22e8e407
-  ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
+  ms.openlocfilehash: 2ae3bb819e79e68a52c39fa571836e8872a12b7f
+  ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/10/2020
-  ms.locfileid: "97034514"
+  ms.lasthandoff: 12/14/2020
+  ms.locfileid: "97394057"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -108,7 +108,7 @@ landingContent:
     - text: 참조 설명서
       url: /javascript/api/overview/azure/?view=azure-node-latest
     - text: JS/TS 샘플
-      url: /samples/browse/?languages=javascript%252cnodejs%252ctypescript
+      url: /samples/browse/?languages=javascript%2Cnodejs%2Ctypescript
 - title: 개발자 도구 살펴보기
   linkLists:
   - linkListType: get-started

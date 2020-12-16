@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 2ae3bb819e79e68a52c39fa571836e8872a12b7f
-  ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+  ms.openlocfilehash: 8c624baedef4ff4131691cb9f36dd58e30b39022
+  ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/14/2020
-  ms.locfileid: "97394057"
+  ms.lasthandoff: 12/15/2020
+  ms.locfileid: "97522238"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -56,7 +56,7 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: '정적 웹앱: Computer Vision을 사용하여 이미지 분석'
-      url: /tutorial/static-web-app/add-computer-vision-react-app.md#add-computer-vision-code-as-separate-module
+      url: /azure/developer/javascript/tutorial/static-web-app/add-computer-vision-react-app#add-computer-vision-code-as-separate-module
     - text: '정적 웹앱: Storage Blob에 파일 업로드'
       url: tutorial/browser-file-upload-azure-storage-blob.md#upload-button-functionality
     - text: '정적 웹앱: 로그인/로그오프 단추'

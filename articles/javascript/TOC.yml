@@ -42,17 +42,17 @@
             - name: '클라이언트 앱: Azure Storage에서 호스트'
               items:
                 - name: 소개 및 필수 구성 요소
-                  href: tutorial-vscode-static-website-node-01.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md
                 - name: 앱 코드 만들기
-                  href: tutorial-vscode-static-website-node-02.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-02.md
                 - name: Storage 계정 만들기
-                  href: tutorial-vscode-static-website-node-03.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-03.md
                 - name: Azure Storage에 배포
-                  href: tutorial-vscode-static-website-node-04.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-04.md
                 - name: 변경 및 재배포
-                  href: tutorial-vscode-static-website-node-05.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-05.md
                 - name: 리소스 정리
-                  href: tutorial-vscode-static-website-node-06.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-06.md
             - name: '서버리스: 만들기 및 배포'
               items:
                 - name: 1. 소개 및 필수 구성 요소
@@ -90,21 +90,21 @@
             - name: '컨테이너: VS Code를 사용하여 Express.js 배포'
               items:
                 - name: 소개 및 필수 구성 요소
-                  href: tutorial-vscode-docker-node-01.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md
                 - name: 컨테이너 레지스트리 사용
-                  href: tutorial-vscode-docker-node-02.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-02.md
                 - name: 로컬 Node.js 앱 만들기
-                  href: tutorial-vscode-docker-node-03.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-03.md
                 - name: 앱 이미지 만들기
-                  href: tutorial-vscode-docker-node-04.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md
                 - name: 앱 이미지 배포
-                  href: tutorial-vscode-docker-node-05.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md
                 - name: 변경 및 재배포
-                  href: tutorial-vscode-docker-node-06.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-06.md
                 - name: 로그 스트리밍
-                  href: tutorial-vscode-docker-node-07.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-07.md
                 - name: 리소스 정리
-                  href: tutorial-vscode-docker-node-08.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-08.md
             - name: 'VM: 로깅을 사용하여 컨테이너 배포'
               items:
                 - name: 1. 소개 및 필수 구성 요소

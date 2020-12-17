@@ -49,6 +49,10 @@
           href: create-vm-scaleset-network-disks-hcl.md
         - name: Packer 이미지가 있는 가상 머신 확장 집합
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
+    - name: 보안
+      items:
+        - name: Azure Attestation
+          href: create-attestation-provider.md
 - name: 자습서
   items:
     - name: 네트워크

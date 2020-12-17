@@ -2,14 +2,14 @@
 title: '3단계: Visual Studio Code에서 변경 후 컨테이너를 Azure App Service에 다시 배포'
 description: 자습서 3단계, 컨테이너 이미지를 다시 빌드하고 다시 배포하는 간단한 단계입니다.
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 12/09/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 79498685492d57a22884b30c551c3a28b6e0fe15
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: f760720755a170e6ff47c5971384f3f83b2b07be
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772636"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522097"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2: 변경 후 컨테이너를 Azure App Service에 다시 배포
 
@@ -25,7 +25,7 @@ ms.locfileid: "90772636"
 
 1. 이미지를 레지스트리에 밀어넣습니다. 앱 코드를 다시 변경하는 경우에는 해당 작은 레이어만 밀어넣어야 하며 프로세스는 일반적으로 몇 초 내에 완료됩니다.
 
-1. **Azure: App Service** 탐색기에서 적절한 App Service를 마우스 오른쪽 단추로 클릭하고 **다시 시작**을 선택합니다. 앱 서비스를 다시 시작하면 레지스트리에서 최신 컨테이너 이미지를 자동으로 가져옵니다.
+1. **Azure: App Service** 탐색기에서 적절한 App Service를 마우스 오른쪽 단추로 클릭하고 **다시 시작** 을 선택합니다. 앱 서비스를 다시 시작하면 레지스트리에서 최신 컨테이너 이미지를 자동으로 가져옵니다.
 
 1. 약 15-20초 후 App Service URL을 다시 방문하여 업데이트를 확인합니다.
 

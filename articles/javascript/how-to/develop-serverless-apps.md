@@ -3,13 +3,13 @@ title: Azure Functions를 사용하는 서버리스 Node.js 코드
 description: Azure Functions가 제공하는 서버리스 코드 인프라로 응답성이 뛰어난 주문형 HTTP 엔드포인트를 만들 수 있습니다.
 ms.topic: how-to
 ms.date: 10/27/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
-ms.openlocfilehash: eb33717761d492051737b0c4ec86a93a6e2b6256
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
+ms.openlocfilehash: b90837cdb144e433a7d776e571291ff09610a845
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192545"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522301"
 ---
 # <a name="use-azure-functions-to-develop-nodejs-serverless-code"></a>Azure Functions를 사용하여 Node.js 서버리스 코드 개발
 

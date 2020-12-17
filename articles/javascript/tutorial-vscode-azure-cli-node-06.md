@@ -4,12 +4,12 @@ description: '자습서 6부: Azure CLI - 변경 및 재배포'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a087bb948c33df43e0cc25afce0f308c6d97fbd7
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3333a805a6ce05742220a6d507dfe25bcc13431b
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689112"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522370"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>6부 변경 및 재배포
 
@@ -32,7 +32,7 @@ ms.locfileid: "92689112"
 1. 앞에서 만든 Azure라는 Git 원격으로 변경 사항을 푸시합니다.
 
     ```bash
-    git push azure master
+    git push azure <DEFAULT-BRANCH-NAME>
     ```
 
 1. App Service가 Git 리포지토리에 이미 연결되어 있기 때문에 명령의 출력에 변경 내용이 Azure에 자동으로 게시된 것으로 표시됩니다. 
@@ -57,8 +57,7 @@ ms.locfileid: "92689112"
     remote: Using start-up script bin/www from package.json.
     remote: Generated web.config.
     remote: The package.json file does not specify node.js engine version constraints.
-    remote: The node.js application will run with the default node.js version 6.9.5.
-    remote: Selected npm version 3.10.10
+    remote: The node.js application will run with the 
     remote: ..
     remote: Finished successfully.
     remote: Running post deployment command(s)...

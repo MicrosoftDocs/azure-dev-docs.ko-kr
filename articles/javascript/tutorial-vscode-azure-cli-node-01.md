@@ -4,23 +4,24 @@ description: '자습서 1부: Azure CLI 소개 및 필수 구성 요소'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 6e16b4baacf845648f021d1bb7cbbd9080e29804
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: f1e2cc68cce3a07f2b2b63bcf8c5f59e626fc025
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559287"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522415"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI를 사용하여 Azure App Service에 배포
 
-이 자습서에서는 모든 운영 체제에서 실행되는 [Azure CLI(명령 줄 인터페이스)](/cli/azure/overview?view=azure-cli-latest)를 사용하여 Azure App Service에 Node.js 애플리케이션을 배포합니다. CLI를 사용하면 Azure 리소스를 만들고 Git 리포지토리와 Azure 간에 배포 파이프라인을 설정하고 앱의 `console.log` 출력을 볼 수 있습니다.
+이 자습서에서는 모든 운영 체제에서 실행되는 [Azure CLI(명령 줄 인터페이스)](/cli/azure/overview?view=azure-cli-latest&preserve-view=false)를 사용하여 Azure App Service에 Node.js 애플리케이션을 배포합니다. CLI를 사용하면 Azure 리소스를 만들고 Git 리포지토리와 Azure 간에 배포 파이프라인을 설정하고 앱의 `console.log` 출력을 볼 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
 - [Azure 구독](#azure-subscription).
 - [Node.js 및 npm 6.x 이상](https://nodejs.org/en/download)(Node.js 패키지 관리자)
 - [Git](https://git-scm.com/downloads)(뒤에 나오는 `git --version` 명령에 버전 번호를 표시해야 함)
-- [Azure CLI를 설치](/cli/azure/install-azure-cli)하거나 [Azure Cloud Shell](https://shell.azure.com) 사용
+[!INCLUDE [Azure CLI](../includes/azure-cli-prepare-your-environment-no-header.md)]
+
 
 ### <a name="azure-subscription"></a>Azure 구독
 

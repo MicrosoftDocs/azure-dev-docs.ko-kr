@@ -1,13 +1,13 @@
 ---
 ms.custom: devx-track-js
 ms.topic: include
-ms.date: 010/16/2020
-ms.openlocfilehash: fb1c04fe82b67076ca38ef353daf7260544a5881
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.date: 10/16/2020
+ms.openlocfilehash: 624ba9739549b260018e05450598d17460f2e5d8
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92179318"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97096266"
 ---
 Azure 서비스 확장을 이미 사용하는 경우 이미 로그인되어 있으며 이 단계를 건너뛸 수 있습니다. Azure 서비스 확장을 사용하지 않는 경우 이 섹션을 계속 진행하여 Azure에 로그인합니다.
 

@@ -2,14 +2,14 @@
 title: '4단계: 컨테이너에 대한 Azure App Service에서 Visual Studio Code로 로그 스트리밍'
 description: 자습서 4부, Azure App Service의 로그를 보고 동작을 모니터링합니다.
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 12/09/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 47316324010d5a74568bb55be508128917702780
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: b4e380fa556f6cc806205e8fb446545328e35976
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772646"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522023"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4: 컨테이너에 대한 Azure App Service에서 로그 스트리밍
 
@@ -19,9 +19,9 @@ ms.locfileid: "90772646"
 
 VS Code 내에서 Azure App Service의 실행 중인 사이트에서 로그(또는 "테일")를 볼 수 있습니다. 이 경우에는 `print` 명령문에서 콘솔에 대한 모든 출력을 캡처하고 VS Code **출력** 패널로 라우팅합니다.
 
-1. **Azure: App Service** 탐색기에서 앱을 찾아서 마우스 오른쪽 단추로 클릭하고, **로그 스트리밍 시작**을 선택합니다.
+1. **Azure: App Service** 탐색기에서 앱을 찾아서 마우스 오른쪽 단추로 클릭하고, **로그 스트리밍 시작** 을 선택합니다.
 
-1. 메시지가 표시되면 **예**에 대답하여 로깅을 사용하도록 설정하고 앱을 다시 시작합니다. 앱이 다시 시작되면 VS Code 출력 패널이 열려 로그 스트림에 연결됩니다.
+1. 메시지가 표시되면 **예** 에 대답하여 로깅을 사용하도록 설정하고 앱을 다시 시작합니다. 앱이 다시 시작되면 VS Code 출력 패널이 열려 로그 스트림에 연결됩니다.
 
 1. 몇 초 후에 로그 스트리밍 서비스에 연결되었다는 메시지가 출력에 표시됩니다.
 

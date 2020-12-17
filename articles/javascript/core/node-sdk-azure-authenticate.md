@@ -4,12 +4,12 @@ description: 서비스 사용자를 통해 Node.js용 Azure 관리 모듈에 인
 ms.topic: how-to
 ms.date: 10/19/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: a3f51cd40f1f1029fbdd6e8e806cb1f7c3cd02c7
-ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
+ms.openlocfilehash: 58acb71741f7e3b381e492b9ac3c06d6a94c331b
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93024067"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034534"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript용 Azure 관리 모듈을 사용하여 인증
 
@@ -109,8 +109,6 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 |[@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) <br>(권장)|[인증서가 있는 서비스 주체](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpCert.ts)<br>[파일의 서비스 주체](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpSecret.ts)<br>[대화형](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/interactivePersonalAccount.ts)<br>[기본](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/usernamePassword.ts)|
 |[@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth)<br>(권장)|[팝업을 사용한 인증(create-react-app)](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/authentication-with-popup)<br>[팝업 없이 반응](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/react-app)<br>[로그인 단추를 사용하는 HTML](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/vanilla)|
 |[ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure)|[서비스 주체](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#service-principal-authentication)<br>[대화형](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#interactive-login)<br>[기본](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#basic-authentication)|
-
-[!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
 ## <a name="next-steps"></a>다음 단계   
 

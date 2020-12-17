@@ -3,13 +3,13 @@ title: Visual Studio Code에서 Azure Functions 애플리케이션 만들기
 description: HTTP 트리거를 사용하는 함수가 포함된 로컬 Azure Functions(서버리스) 애플리케이션을 만듭니다. Azure Functions 앱은 다양한 트리거로 Functions를 많이 포함할 수 있습니다. HTTP 트리거는 들어오는 HTTP 트래픽을 처리합니다.
 ms.topic: tutorial
 ms.date: 11/05/2020
-ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: 3c5d747245314029a12b1c502c066324efd70dc8
-ms.sourcegitcommit: 550b165d0b910f4ea9652d8401dd4fc93f057f05
+ms.custom: devx-track-js, contperf-fy21q2
+ms.openlocfilehash: b1e357bc3329c2dc19fdf4988b22182576575cf5
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96605933"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522079"
 ---
 # <a name="2-create-the-local-functions-app-with-the-visual-studio-code-_functions_-extension"></a>2. Visual Studio Code _Functions_ 확장을 사용하여 로컬 함수 앱 만들기
 

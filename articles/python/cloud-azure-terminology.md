@@ -4,12 +4,12 @@ description: Microsoft Azure를 사용할 때 알아야 하는 가장 중요한 
 ms.date: 12/07/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0be44d246af0f34b60b9ca1403f1889cc5708e9c
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: f79864b39bb70c7ae703468f205e420417698200
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934298"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97521985"
 ---
 # <a name="azure-terminology-in-brief"></a>간단한 Azure 용어
 
@@ -73,7 +73,7 @@ App Service 웹앱의 직접 URL은 항상 `<web-app-name>.azurewebsites.net`입
 
 ## <a name="azure-command-line-interface-cli"></a>Azure CLI(명령줄 인터페이스)
 
-[Azure CLI](/azure/what-is-azure-cli)는 Azure 리소스를 만들고 관리하는 데 사용되는 명령 세트이며, 특히 자동화에 유용합니다. Azure CLI는 모든 운영 체제에서 사용할 수 있으며 대부분의 Azure 서비스에서 작동합니다.
+[Azure CLI](/cli/azure/what-is-azure-cli)는 Azure 리소스를 만들고 관리하는 데 사용되는 명령 세트이며, 특히 자동화에 유용합니다. Azure CLI는 모든 운영 체제에서 사용할 수 있으며 대부분의 Azure 서비스에서 작동합니다.
 
 PowerShell을 선호하는 경우 [Azure PowerShell 모듈](/powershell/azure)을 사용해도 됩니다.
 

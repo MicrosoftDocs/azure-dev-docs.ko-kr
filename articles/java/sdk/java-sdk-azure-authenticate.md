@@ -9,18 +9,16 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
 ms.custom: seo-java-september2019, devx-track-java
-ms.openlocfilehash: d4266c0089a371dd87711bfb692b5db32d9fc881
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 3a461a6aa5ac054a0f139a4be66fb83f7a13bd86
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983942"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034554"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>Java용 Azure 라이브러리를 사용하여 인증
 
 이 문서에서는 Java용 Azure 라이브러리를 사용하여 인증하는 방법을 보여줍니다.
-
-[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="connect-to-services-with-connection-strings"></a>연결 문자열을 사용하여 서비스에 연결
 

@@ -4,12 +4,12 @@ description: Azure에서 Node.js 및 JavaScript를 통해 서비스 사용자 �
 ms.topic: how-to
 ms.date: 11/05/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: e837ca7f83f115a9d7c2bbe34e46d884a02dffe0
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: dc9b82ad8e664beeeedaa0002f76457bb01793e3
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872774"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034504"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>Node.js용 Azure 서비스 주체 만들기
 
@@ -23,8 +23,6 @@ ms.locfileid: "94872774"
 
 - Azure portal
 - Azure CLI 2.0
-
-[!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Azure CLI 2.0을 사용하여 서비스 사용자 만들기
 

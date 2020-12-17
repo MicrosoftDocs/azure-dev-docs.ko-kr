@@ -3,13 +3,13 @@ title: Visual Studio Code에서 Azure Functions 애플리케이션을 로컬에�
 description: Azure Functions 프로젝트를 Azure에 배포하기 전에 로컬로 실행하여 테스트합니다. 서버리스 함수가 응답을 반환하기 직전에 중단점을 설정합니다.
 ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: 031c7a3d2d7ec6cf9c1afadf1d77d67d826853fd
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.custom: devx-track-js, contperf-fy21q2
+ms.openlocfilehash: f345e27074c2070c2f8d8939ed09f8b4301a1966
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94338548"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522344"
 ---
 # <a name="3-test-the-function-locally"></a>3. 로컬에서 함수 테스트
 

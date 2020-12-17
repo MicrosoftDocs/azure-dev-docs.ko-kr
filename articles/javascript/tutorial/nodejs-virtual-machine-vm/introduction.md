@@ -4,12 +4,12 @@ description: GitHub 리포지토리의 Express.js 기반 앱 복제를 사용하
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 835a452e87fed88ac83085c882a5a40461bd2dd0
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 674bf37acda9fcd9f6df7b84602600ad65ada3d9
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94623179"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522112"
 ---
 # <a name="1-create-linux-virtual-machine-with-expressjs-app-using-azure-cli"></a>1. Azure CLI를 사용하여 Express.js 앱으로 Linux 가상 머신 만들기
 
@@ -37,8 +37,9 @@ ms.locfileid: "94623179"
 
 ## <a name="prerequisites"></a>전제 조건
 
-* Azure CLI 명령을 실행할 수 있도록 [Azure CLI](/cli/azure/install-azure-cli)를 설치합니다.
-* 다음과 같이 SSH를 통해 VM에 연결합니다. bash 셸 같은 최신 터미널(SSH 포함)을 사용합니다.
+- 다음과 같이 SSH를 통해 VM에 연결합니다. bash 셸 같은 최신 터미널(SSH 포함)을 사용합니다.
+[!INCLUDE [Azure CLI](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
 
 ## <a name="next-step"></a>다음 단계
 

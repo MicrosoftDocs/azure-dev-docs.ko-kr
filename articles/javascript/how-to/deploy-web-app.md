@@ -3,13 +3,13 @@ title: Azure에 JavaScript 앱 배포
 description: 호스팅 옵션 및 배포 시나리오에는 Azure를 위한 여러 가지 서비스와 도구가 포함됩니다. 앱을 게시하고 Azure에 제공합니다.
 ms.topic: how-to
 ms.date: 12/09/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
-ms.openlocfilehash: 27a923313f7ccbb3f3a4deff368cd6ff8b5121dc
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
+ms.openlocfilehash: 9f9f28204abf8537aeda933083ca5802210b6c20
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933306"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522322"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Azure에 Node.js 앱 배포 및 호스트
 

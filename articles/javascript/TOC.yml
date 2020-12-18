@@ -17,6 +17,8 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: Azure에 대한 인증
           href: core/node-sdk-azure-authenticate.md
+        - name: Azure CLI를 사용하여 자동화
+          href: core/automate-tasks-with-azure-cli.md
     - name: 자습서
       items:
         - name: 배포 및 호스트
@@ -72,19 +74,19 @@
             - name: '서버:  Azure CLI를 사용하여 배포'
               items:
                 - name: 소개 및 필수 구성 요소
-                  href: tutorial-vscode-azure-cli-node-01.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-01.md
                 - name: 앱 만들기
-                  href: tutorial-vscode-azure-cli-node-02.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-02.md
                 - name: App Service 만들기
-                  href: tutorial-vscode-azure-cli-node-03.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md
                 - name: 앱 배포
-                  href: tutorial-vscode-azure-cli-node-04.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md
                 - name: 로그 스트리밍
-                  href: tutorial-vscode-azure-cli-node-05.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md
                 - name: 변경 및 재배포
-                  href: tutorial-vscode-azure-cli-node-06.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-06.md
                 - name: 리소스 정리
-                  href: tutorial-vscode-azure-cli-node-07.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md
             - name: '서버:  Azure CLI를 사용하여 Deno 배포'
               href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
             - name: '컨테이너: VS Code를 사용하여 Express.js 배포'

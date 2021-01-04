@@ -4,12 +4,12 @@ description: 편집기, Azure SDK 라이브러리, 선택적 도구 및 라이�
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.openlocfilehash: 9d542d188205b305a0909e229ed2e71e003e95f7
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333831"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393872"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure를 위한 로컬 JavaScript 개발 환경 구성
 
@@ -31,9 +31,9 @@ Azure 리소스는 Azure 사용의 청구 단위인 구독 내에 생성됩니�
 
 로컬 워크스테이션에서 JavaScript를 사용하여 Azure 리소스를 사용하여 개발하려면 다음이 설치되어 있어야 합니다.
 
-|이름/설치 프로그램|Description|
+|이름/설치 프로그램|설명|
 |--|--|
-[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
+|[Node.js 8 이상](https://www.npmjs.com/)|로컬 워크스테이션 개발을 위한 최신 LTS(장기 지원) 런타임 환경을 설치합니다. 패키지 관리자도 필요합니다. Node.js는 8.x 버전의 NPM을 설치합니다. Azure SDK에는 일반적으로 Node.js 8.x 이상의 버전이 필요합니다. Azure App Service 같은 Azure 호스팅 서비스는 최신 버전의 Node.js가 포함된 런타임을 제공합니다. 로컬에서 8.x 이상을 대상으로 하고 개발 버전을 제거하면 코드가 성공적으로 실행됩니다.|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code는 뛰어난 JavaScript 통합 및 코딩 환경을 제공하지만 반드시 필요한 것은 아닙니다. 모든 코드 편집기를 사용할 수 있습니다. 이 문서에서는 다른 편집기를 사용하는 경우 Azure와의 통합을 확인하거나 Azure CLI를 사용합니다.|
 
 > [!CAUTION]
@@ -65,12 +65,12 @@ Azure를 사용하는 각 새 프로젝트는 다음을 수행해야 합니다.
 ## <a name="securing-configuration-information"></a>구성 정보 보호
 
 구성 정보를 저장하는 몇 가지 옵션이 있습니다.
-- [Dotenv](https://www.npmjs.com/package/dotenv)는 `.env` 파일에서 환경 변수를 읽을 때 많이 사용되는 npm 패키지입니다. `.env` 파일이 소스 제어에 체크 인되지 않도록 `.gitignore` 파일에 `.env` 파일을 추가해야 합니다.
+- [Dotenv](https://www.npmjs.com/package/dotenv)는 `.env` 파일에서 환경 변수를 읽을 때 많이 사용되는 npm 패키지입니다. `.env` 파일이 소스 제어에 체크 인되지 않도록 `.gitignore` 파일에 `.env` 파일을 추가해야 합니다. Azure용 웹앱에서 [환경 변수](../how-to/configure-web-app-settings.md)에 대해 자세히 알아보세요. 
 - 클라우드 리소스, 앱 및 솔루션에 액세스하고 암호화하는 키를 만들고 유지 관리하는 Azure [Key Vault](/azure/key-vault/)
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>Azure 라이브러리에 대한 환경 변수 만들기
 
-Azure SDK 라이브러리에 필요한 Azure 설정을 사용하여 Azure 클라우드에 액세스하려면 가장 일반적인 값을 환경 변수로 설정합니다. 다음 명령은 환경 변수를 로컬 워크스테이션으로 설정합니다. 또 다른 일반적인 메커니즘은 `DOTENV` NPM 패키지를 사용하여 이러한 설정에 대한 `.env` 파일을 만드는 것입니다. `.env`를 사용하려면 파일을 소스 제어에 체크 인하지 않아야 합니다. git의 `.ignore` 파일에 `.env` 파일을 추가하는 것은 이러한 설정이 소스 제어에 체크 인되도록 하는 기본적인 방법입니다.
+Azure SDK 라이브러리에 필요한 Azure 설정을 사용하여 Azure 클라우드에 액세스하려면 가장 일반적인 값을 [환경 변수](../how-to/configure-web-app-settings.md)로 설정합니다. 다음 명령은 환경 변수를 로컬 워크스테이션으로 설정합니다. 또 다른 일반적인 메커니즘은 `DOTENV` NPM 패키지를 사용하여 이러한 설정에 대한 `.env` 파일을 만드는 것입니다. `.env`를 사용하려면 파일을 소스 제어에 체크 인하지 않아야 합니다. git의 `.ignore` 파일에 `.env` 파일을 추가하는 것은 이러한 설정이 소스 제어에 체크 인되도록 하는 기본적인 방법입니다.
 
 다음 예제에서 클라이언트 ID는 서비스 주체 ID와 서비스 주체 비밀입니다.
 

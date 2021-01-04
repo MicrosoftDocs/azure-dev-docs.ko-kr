@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/19/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 2c31c4fdb1f998d75e022bf465bae27edaef930e
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 417591477a7ac08e078e8f4a9d1b36e23c30cfd8
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993502"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522011"
 ---
 # <a name="deploy-databases-from-github-to-azure"></a>GitHub에서 Azure로 데이터베이스 배포
 
@@ -20,4 +20,5 @@ ms.locfileid: "94993502"
 
 - [GitHub Actions를 사용하여 Azure SQL Database에 연결](/azure/azure-sql/database/connect-github-actions-sql-db)
 - [GitHub Actions를 사용하여 Azure MySQL에 연결](/azure/mysql/quickstart-mysql-github-actions)
-- [Azure PostgreSQL 작업](https://github.com/Azure/postgresql)을 통해 PL/SQL 스크립트를 사용하여 Azure PostgreSQL 데이터베이스에 배포합니다.
+- [GitHub Actions를 사용하여 Azure PostgreSQL에 연결](/azure/postgresql/how-to-deploy-github-action)
+

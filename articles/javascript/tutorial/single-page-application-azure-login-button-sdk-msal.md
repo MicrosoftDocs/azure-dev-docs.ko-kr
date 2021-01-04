@@ -1,19 +1,19 @@
 ---
 title: '자습서: React SPA에 Microsoft 로그인 단추 추가'
-description: 이 자습서에 제공된 Azure Active Directory 인증은 로그인 및 로그아웃 단추이며, 사용자의 사용자 이름(이메일)에 대한 액세스를 제공합니다. Azure 클라이언트 쪽 SDK `@azure/msal-browser`를 사용하여 애플리케이션을 개발하고, SPA(단일 페이지 애플리케이션)에서 사용자의 상호 작용을 관리합니다.
+description: 이 자습서에 제공된 Azure Active Directory 인증은 로그인 및 로그아웃 단추이며, 사용자의 사용자 이름(이메일)에 대한 액세스를 제공합니다. Azure 클라이언트 쪽 SDK `@azure/msal-browser`를 사용하여 TypeScript 애플리케이션을 개발하고, SPA(단일 페이지 애플리케이션)에서 사용자의 상호 작용을 관리합니다.
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: a5c07696c6c774408bf2772542234e59f5c0b58c
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563727"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393892"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>인증에 사용할 단일 페이지 애플리케이션에 Microsoft 로그인 단추 추가
 
-이 자습서에 제공된 Azure 인증은 로그인 및 로그아웃 단추이며, 사용자 계정에 대한 액세스를 제공합니다. Azure 클라이언트 쪽 SDK `@azure/msal-browser`를 사용하여 애플리케이션을 개발하고, SPA(단일 페이지 애플리케이션)에서 사용자의 상호 작용을 관리합니다.
+이 TypeScript 자습서에 제공된 Azure 인증은 로그인 및 로그아웃 단추이며, 사용자 계정에 대한 액세스를 제공합니다. Azure 클라이언트 쪽 SDK `@azure/msal-browser`를 사용하여 애플리케이션을 개발하고, SPA(단일 페이지 애플리케이션)에서 사용자의 상호 작용을 관리합니다.
 
 * [소스 코드](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 

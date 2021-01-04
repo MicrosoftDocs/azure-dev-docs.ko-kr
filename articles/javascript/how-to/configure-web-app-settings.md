@@ -4,12 +4,12 @@ description: 웹앱의 일반적인 구성을 설정하는 방법을 알아봅�
 ms.topic: conceptual
 ms.date: 12/08/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 271c2b916062d9cbd2b905fb937c9fb216eb43e5
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: 29c79317d5ccd2f65db6c23e28a852164c74b743
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934297"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97394046"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Azure에 웹앱 호스트
 
@@ -80,7 +80,7 @@ ms.locfileid: "96934297"
 비밀은 일반적으로 다음과 같은 방법으로 제공됩니다.
 
 * Azure Key Vault - [앱 비밀](/azure/app-service/app-service-key-vault-references)을 제공하는 이 서비스에 대한 리소스를 만듭니다. 
-* 앱 설정 - 더 가벼운 솔루션을 찾고 있는 경우 비밀을 앱 설정으로 제공하고, 일반적인 `process.env.VARNAME`을 사용하여 이러한 앱 설정을 참조할 수 있습니다. 
+* 앱 설정 - 더 가벼운 솔루션을 찾고 있는 경우 비밀을 앱 설정으로 제공하고, 일반적인 [환경 변수](/azure/app-service/configure-language-nodejs?pivots=platform-windows) `process.env.VARNAME`을 사용하여 이러한 앱 설정을 참조할 수 있습니다. 
 
 ## <a name="configure-logging"></a>로깅 구성
 

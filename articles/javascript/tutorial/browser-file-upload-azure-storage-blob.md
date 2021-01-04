@@ -1,21 +1,21 @@
 ---
 title: VSCode를 사용하여 Blob Storage에 이미지 업로드 - App Service/CosmosDB
-description: React 앱을 사용하여 파일을 Azure Storage Blob에 업로드합니다. 이 자습서에서는 Visual Studio Code 확장을 통해 로컬 및 원격 환경을 사용하는 데 중점을 둡니다.
+description: React/TypeScript 앱을 사용하여 파일을 Azure Storage Blob에 업로드합니다. 이 자습서에서는 Visual Studio Code 확장을 통해 로컬 및 원격 환경을 사용하는 데 중점을 둡니다.
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 514c4cf3c5d54c30451759958b1cef5e465c5c8e
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.openlocfilehash: 2e38e7e293f87dc9fa8cafc69a0780a10d31d730
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772610"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393902"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Azure Storage Blob에 이미지 업로드
 
 클라이언트 쪽 React 앱을 사용하여 Azure Storage npm 패키지를 통해 이미지 파일을 Azure Storage Blob에 업로드합니다. 
 
-프로그래밍 작업은 완료되었습니다. 이 자습서에서는 Azure 확장을 사용하여 Visual Studio Code 내에서 로컬 및 원격 Azure 환경을 성공적으로 사용하는 데 중점을 둡니다.
+TypeScript 프로그래밍 작업은 완료되었습니다. 이 자습서에서는 Azure 확장을 사용하여 Visual Studio Code 내에서 로컬 및 원격 Azure 환경을 성공적으로 사용하는 데 중점을 둡니다.
 
 * [소스 코드](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)
 
@@ -23,7 +23,7 @@ ms.locfileid: "96772610"
 
 이 자습서에는 JavaScript 개발자를 위한 몇 가지 **상위 Azure 작업** 이 포함되어 있습니다.
 
-* Visual Studio Code를 사용하여 로컬로 React 앱 실행
+* Visual Studio Code를 사용하여 로컬로 React/TypeScript 앱 실행
 * Storage 리소스 만들기 및 파일 업로드 구성
     * CORS 구성
     * SAS(공유 액세스 서명) 토큰 만들기
@@ -188,7 +188,7 @@ SAS 토큰 및 스토리지 계정 이름이 `src/uploadToBlob.ts` 파일에 설
 
 ## <a name="upload-button-functionality"></a>업로드 단추 기능
 
-`src/app` 파일은 create-react-app을 사용하여 해당 앱을 만드는 과정의 일부로 제공됩니다. 파일 선택 단추, 업로드 단추 및 해당 기능을 제공하는 지원 코드를 제공하도록 파일이 수정되었습니다. 
+`src/App.tsx` TypeScript 파일은 create-react-app을 사용하여 해당 앱을 만드는 과정의 일부로 제공됩니다. 파일 선택 단추, 업로드 단추 및 해당 기능을 제공하는 지원 코드를 제공하도록 파일이 수정되었습니다. 
 
 Azure Blob 스토리지 코드에 연결하는 코드가 강조 표시됩니다. `uploadFileToBlob`에 대한 호출에서 컨테이너의 모든 Blob(파일)을 단순 목록으로 반환합니다. 이 목록은 `DisplayImagesFromContainer` 함수를 통해 표시됩니다.
 
@@ -202,7 +202,7 @@ Azure Blob 스토리지 코드에 연결하는 코드가 강조 표시됩니다.
 
 ### <a name="dependencies-and-variables"></a>종속성 및 변수
 
-`uploadToBlob.ts` 파일은 종속성을 로드하고, 환경 변수 또는 하드 코딩된 문자열을 통해 필요한 변수를 가져옵니다.
+`uploadToBlob.ts` TypeScript 파일은 종속성을 로드하고, 환경 변수 또는 하드 코딩된 문자열을 통해 필요한 변수를 가져옵니다.
 
 | 변수 | 설명 |
 |--|--|

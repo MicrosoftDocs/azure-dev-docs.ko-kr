@@ -4,12 +4,12 @@ description: Azure에 Node.js 및 JavaScript 개발을 위한 개별 도구 설�
 ms.topic: reference
 ms.date: 12/07/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 714d096e4afde345bffa2582026f28fa2126a38c
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: 20ec85ccd29c2993241d0ae6c4f004bd7ff251a3
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857798"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522262"
 ---
 # <a name="tools-for-javascript-developers-on-azure"></a>Azure의 JavaScript 개발자용 도구 
 
@@ -26,9 +26,9 @@ Azure CLI는 명령줄에서 Azure 리소스를 관리하기 위해 최적화되
 
 Azure CLI는 다음과 같은 사용 시나리오를 제공합니다.
 
-* [로컬 설치](/cli/azure/install-az-cli2)
-* [웹 셸](https://shell.azure.com/)
-* [컨테이너](/cli/azure/run-azure-cli-docker)
+* [Azure CLI 로컬 설치](/cli/azure/install-az-cli2)
+* [Azure Cloud Shell](https://shell.azure.com/)
+* [Docker 컨테이너](/cli/azure/run-azure-cli-docker)
 
 Azure Portal을 사용하는 경우 포털의 위쪽 탐색 모음에서 Azure CLI를 사용할 수 있습니다.
 

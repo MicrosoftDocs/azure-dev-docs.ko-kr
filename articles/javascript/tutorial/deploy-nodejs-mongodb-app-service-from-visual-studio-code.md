@@ -4,12 +4,12 @@ description: 이 자습서에서는 MongoDB 네이티브 API를 사용하여 Mon
 ms.topic: tutorial
 ms.date: 12/03/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 8c40801607e11a4b929f0bb76926122d26217805
-ms.sourcegitcommit: 550b165d0b910f4ea9652d8401dd4fc93f057f05
+ms.openlocfilehash: 1ddbe6a463f877e86a0c46da1ffb17c6a3094c0a
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96610975"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522407"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Visual Studio Code에서 App Service에 Express.js MongoDB 앱 배포
 
@@ -151,6 +151,7 @@ App Service용 Visual Studio Code 확장을 사용하여 앱 서비스 리소스
 ## <a name="next-steps"></a>다음 단계
 
 App Service 및 CosmosDB에 대해 계속 학습합니다.
+* [앱 설정 구성 방법 알아보기](../how-to/configure-web-app-settings.md)
 * [Azure App Service용 Node.js 앱 구성](/azure/app-service/configure-language-nodejs?pivots=platform-linux)
 * [SSH를 사용하여 연결](/azure/app-service/configure-linux-open-ssh-session)
 * [CosmosDB로 데이터 마이그레이션](/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json?toc=/azure/cosmos-db/toc.json)

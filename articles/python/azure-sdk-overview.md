@@ -4,12 +4,12 @@ description: 개발자가 Azure 리소스를 프로비저닝, 사용 및 관리�
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 276230cf5e5999f7d188d138e3b4e7361c3e4114
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: d610099b3b877f0916079ca2000a5268f3f08c2a
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932387"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97521999"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python용 Azure 라이브러리(SDK) 사용
 
@@ -75,6 +75,8 @@ SDK의 관리(또는 "관리 평면") 라이브러리는 이름이 모두 `azure
 - [가상 머신 프로비전](azure-sdk-example-virtual-machines.md)
 
 각 관리 라이브러리를 사용하는 방법에 대한 자세한 내용은 [SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)에서 라이브러리의 프로젝트 폴더에 있는 *README.md* 또는 *README.rst* 파일을 참조하세요. 추가 코드 조각은 [참조 설명서](/python/api) 및 [Azure 샘플](/samples/browse/?languages=python&term=Getting%20started%20-%20Managing)에서 찾을 수도 있습니다.
+
+### <a name="migrating-from-older-management-libraries"></a>이전 관리 라이브러리에서 마이그레이션
 
 이전 버전의 관리 라이브러리에서 코드를 마이그레이션하는 경우 다음 세부 정보를 참조하세요.
 

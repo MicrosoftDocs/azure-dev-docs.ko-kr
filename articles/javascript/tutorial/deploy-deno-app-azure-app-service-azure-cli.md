@@ -4,12 +4,12 @@ description: 이 자습서에서는 Azure CLI를 사용하여 Deno 애플리케�
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: ba2e0a42b6d2dedd2192629562a8415a0d6d7167
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.openlocfilehash: 16cb388a9a61b0141f04364dc1489607565156a3
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772629"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522391"
 ---
 # <a name="deploy-deno-apps-to-azure-app-service-from-the-azure-cli"></a>Azure CLI에서 Azure App Service에 Deno 앱 배포
 
@@ -21,14 +21,9 @@ Azure CLI를 사용하여 Deno 애플리케이션을 Linux 또는 Windows의 Azu
 
 - 활성 구독이 있는 Azure 계정. [체험 계정 만들기](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-deno&mktingSource=vscode-tutorial-appservice-deno)
 - [Visual Studio Code](https://code.visualstudio.com/) 설치
-- [Deno](https://deno.land/#installation) 설치
-- Bash 환경을 통해 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart)을 사용합니다.
+- [Deno](https://deno.land/#installation)
+[!INCLUDE [Azure CLI](../../includes/azure-cli-prepare-your-environment-no-header.md)] 설치
 
-   [![Embed 시작](https://shell.azure.com/images/launchcloudshell.png "Azure Cloud Shell 시작")](https://shell.azure.com)   
-- 원하는 경우 Azure CLI를 [설치](/cli/azure/install-azure-cli)하여 CLI 참조 명령을 실행합니다.
-   - local install을 사용하는 경우 [az login](/cli/azure/reference-index#az-login) 명령을 사용하여 Azure CLI에 로그인합니다.  인증 프로세스를 완료하려면 터미널에 표시되는 단계를 수행합니다.  추가 로그인 옵션은 [Azure CLI를 사용하여 로그인](/cli/azure/authenticate-azure-cli)을 참조하세요.
-  - 메시지가 표시되면 처음 사용할 때 Azure CLI 확장을 설치합니다.  확장에 대한 자세한 내용은 [Azure CLI에서 확장 사용](/cli/azure/azure-cli-extensions-overview)을 참조하세요.
-  - [az version](/cli/azure/reference-index?#az_version)을 실행하여 설치된 버전과 종속 라이브러리를 찾습니다. 최신 버전으로 업그레이드하려면 [az upgrade](/cli/azure/reference-index?#az_upgrade)를 실행합니다.
 
 ## <a name="2-sign-in-to-azure-cli"></a>2. Azure CLI에 로그인
 
@@ -162,6 +157,7 @@ az group delete deno-quickstart
 ## <a name="next-steps"></a>다음 단계
 
 다음에 대해 자세히 알아봅니다.
+* [앱 설정 구성 방법 알아보기](../how-to/configure-web-app-settings.md)
 * Visual Studio Code 확장을 사용하여 [앱 서비스에 배포](../tutorial-vscode-azure-app-service-node-01.md)
 * [Virtual Machine에 배포](./nodejs-virtual-machine-vm/introduction.md)
 * [사용자 지정 처리기](/azure/azure-functions/functions-custom-handlers)로 [Deno 함수 배포](https://github.com/anthonychu/azure-functions-deno-worker)

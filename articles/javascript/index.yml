@@ -7,26 +7,28 @@ metadata:
   description: 자습서, 도구 및 SDK 참조를 통해 브라우저 또는 Node.js에서 JavaScript용 Azure SDK를 사용하여 앱 개발을 시작하세요.
   author: diberry
   ms.author: diberry
-  ms.date: 09/21/2020
+  ms.date: 012/16/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: c0e7382b6c04c20d65f41c1a5a41922a4b658de4
-  ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+  ms.openlocfilehash: 55e5b258ccafc2fc9e93f8a27efbc5b543b6450d
+  ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/16/2020
-  ms.locfileid: "97601074"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "97636392"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
   - linkListType: get-started
     links:
-    - text: Azure 기본 사항
-      url: /learn/paths/azure-fundamentals/
+    - text: Azure란?
+      url: core/what-is-azure-for-javascript-development.md
+    - text: Node.js 설치
+      url: core/install-nodejs-develop-azure-sdk-project.md
     - text: 개발 환경 설정
       url: core/configure-local-development-environment.md
     - text: 클라이언트 라이브러리에 대한 인증
@@ -89,16 +91,16 @@ landingContent:
       url: /azure/cognitive-services/translator/quickstart-translator?pivots=programming-language-javascript
     - text: 이미지에서 개체 검색
       url: tutorial/static-web-app/introduction.md
-- title: 보안, 메시징 및 로그
+- title: 학습 경로 및 모듈
   linkLists:
-  - linkListType: quickstart
+  - linkListType: learn
     links:
-    - text: 인증
-      url: /azure/active-directory/develop/quickstart-v2-javascript
-    - text: 메시지 큐
-      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package
-    - text: 로깅 및 분석
-      url: /azure/azure-monitor/learn/nodejs-quick-start
+    - text: Azure 기본 사항
+      url: /learn/modules/intro-to-azure-fundamentals/
+    - text: Node.js를 사용하여 JavaScript 애플리케이션 빌드
+      url: /learn/paths/build-javascript-applications-nodejs/
+    - text: Azure Static Web Apps
+      url: /learn/paths/azure-static-web-apps/
 - title: Azure 클라이언트 라이브러리(SDK) 사용
   linkLists:
   - linkListType: get-started

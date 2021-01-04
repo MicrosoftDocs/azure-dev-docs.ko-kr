@@ -6,12 +6,12 @@ metadata:
   description: Azure 기반 Java 개발용 도구, IDE 및 지원 JDK
   ms.date: 04/03/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 7417675f8808d6dd479aea1853a89db77a189cd5
-  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+  ms.openlocfilehash: 5c9b16a6431733875145d071484ae65aee5999fb
+  ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/21/2020
-  ms.locfileid: "90831509"
+  ms.lasthandoff: 12/23/2020
+  ms.locfileid: "97754009"
 landingContent:
 - title: Java 클라우드 개발자용 도구
   linkLists:
@@ -44,11 +44,11 @@ landingContent:
   - linkListType: overview
     links:
     - text: Azure App Service
-      url: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+      url: https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md
     - text: Azure 기능
-      url: /java/api/overview/azure/maven/azure-functions-maven-plugin/readme
+      url: https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions
     - text: Azure Spring Cloud
-      url: /java/api/overview/azure/maven/azure-spring-cloud-maven-plugin/readme
+      url: https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Spring-Cloud
 - title: 로깅
   linkLists:
   - linkListType: overview

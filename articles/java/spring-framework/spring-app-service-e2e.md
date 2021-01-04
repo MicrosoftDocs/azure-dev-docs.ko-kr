@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a8e0614547fa7bfca3a8d66af8a1c1d4240fe161
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 24b023469e4557a62a83f35a3fe6475daed1b3b0
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689170"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754159"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL을 사용하여 App Service에 Spring 앱 배포
 
@@ -182,7 +182,7 @@ set REGION=<region>
 
 Maven은 이러한 값을 사용하여 사용자가 제공하는 이름으로 Azure 리소스를 만듭니다. 환경 변수를 사용하여 프로젝트 파일에서 계정 비밀을 안전하게 유지할 수 있습니다.
 
-그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.11.0`을 [Azure App Service용 Maven 플러그 인](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)의 최신 버전으로 변경합니다.
+그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.11.0`을 [Azure App Service용 Maven 플러그 인](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)의 최신 버전으로 변경합니다.
 
 ```xml
 <plugin>
@@ -390,7 +390,7 @@ show databases;
 </profile>
 ```
 
-그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포 및 MySQL용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.11.0`을 [Azure App Service용 Maven 플러그 인](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)의 최신 버전으로 변경합니다.
+그런 다음, *pom.xml* 파일을 업데이트하여 Azure 배포 및 MySQL용 Maven을 구성합니다. 이전에 추가한 `<plugin>` 요소 뒤에 다음 XML을 추가합니다. 필요한 경우 `1.11.0`을 [Azure App Service용 Maven 플러그 인](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)의 최신 버전으로 변경합니다.
 
 ```xml
 <plugin>

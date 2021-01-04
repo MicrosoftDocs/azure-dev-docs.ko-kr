@@ -4,12 +4,12 @@ description: 호스팅 옵션 및 배포 시나리오에는 Azure를 위한 여�
 ms.topic: how-to
 ms.date: 12/09/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: 9f9f28204abf8537aeda933083ca5802210b6c20
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522322"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636528"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Azure에 Node.js 앱 배포 및 호스트
 
@@ -57,7 +57,7 @@ Azure 클라우드로 파일을 이동하는 일반적인 방법은 다음과 �
 |--|--|
 |[GitHub Actions](/azure/app-service/deploy-github-actions?tabs=applevel)|자동화된 연속 배포 또는 트리거된 연속 배포에 사용합니다.|
 |[Visual Studio Code 확장](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance)|수동, 테스트 또는 셀덤 배포에 사용됩니다. 서비스의 확장이 로컬에 설치되어 있어야 합니다.|
-|[Azure CLI](../tutorial-vscode-azure-cli-node-04.md)|수동 또는 셀덤 배포에 사용됩니다. 서비스의 확장이 로컬에 설치되어 있어야 합니다.|
+|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|수동 또는 셀덤 배포에 사용됩니다. 서비스의 확장이 로컬에 설치되어 있어야 합니다.|
 
 서비스에 따라 다른 배포 방법이 있을 수도 있습니다. 예를 들어 Azure 앱 서비스는 다음과 같은 다양한 배포 방법을 지원합니다.
 * [Zip 파일에서](/azure/app-service/deploy-zip)

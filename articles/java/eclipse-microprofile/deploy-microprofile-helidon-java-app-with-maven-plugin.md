@@ -7,16 +7,16 @@ ms.date: 06/10/2020
 ms.service: app-service
 ms.topic: article
 ms.custom: ''
-ms.openlocfilehash: eaf9d71f469f1b0008a0ea085b13dbebf28f320a
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: ad3ccbc729b768d8aa72162506d44dea7906e424
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846684"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754139"
 ---
 # <a name="deploy-a-helidon-web-app-to-azure-app-service-with-maven"></a>Maven을 사용하여 Azure App Service에 Helidon Web App 배포
 
-이 빠른 시작에서는 [Azure App Service Web Apps용 Maven 플러그 인](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)을 사용하여 Helidon 애플리케이션을 [Azure App Service on Linux](/azure/app-service/containers/)에 배포합니다. 앱의 의존성, 런타임 및 구성을 배포 가능한 단일 아티팩트에 통합하려면 [Tomcat 및 WAR 파일](/azure/app-service/containers/quickstart-java)에 대해 Java SE 배포를 선택하는 것이 좋습니다.
+이 빠른 시작에서는 [Azure App Service Web Apps용 Maven 플러그 인](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)을 사용하여 Helidon 애플리케이션을 [Azure App Service on Linux](/azure/app-service/containers/)에 배포합니다. 앱의 의존성, 런타임 및 구성을 배포 가능한 단일 아티팩트에 통합하려면 [Tomcat 및 WAR 파일](/azure/app-service/containers/quickstart-java)에 대해 Java SE 배포를 선택하는 것이 좋습니다.
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [무료 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
@@ -109,7 +109,7 @@ az login
 
 1. 코드 편집기에서 *pom.xml* 파일을 엽니다.
 
-2. `<build>`pom.xml*파일의* 섹션에서 `<plugins>` 태그 안에 다음 `<plugin>` 항목을 삽입하세요.
+2. `<build>`pom.xml *파일의* 섹션에서 `<plugins>` 태그 안에 다음 `<plugin>` 항목을 삽입하세요.
 
    ```xml
    <build>
@@ -124,7 +124,7 @@ az login
    </build>
    ```
 
-3. 그런 다음, 배포를 구성하고 명령 프롬프트에서 다음 maven 명령을 실행하고 **번호**를 사용하여 프롬프트에서 다음 옵션을 선택할 수 있습니다.
+3. 그런 다음, 배포를 구성하고 명령 프롬프트에서 다음 maven 명령을 실행하고 **번호** 를 사용하여 프롬프트에서 다음 옵션을 선택할 수 있습니다.
 
    ```bash
    mvn azure-webapp:config
@@ -242,11 +242,11 @@ Maven은 Azure에 웹앱을 배포합니다. 웹앱이나 웹앱 플랜이 아�
 
 웹이 배포되면 [Azure Portal]을 통해 관리할 수 있습니다.
 
-* 웹앱은 **App Services**에 나열됩니다.
+* 웹앱은 **App Services** 에 나열됩니다.
 
    ![Azure Portal App Services에 나열된 웹앱](./media/helidon/azure-portal-app-service-screen.png)
 
-* 웹앱에 대한 **개요**에서 `Browse` 단추를 클릭하여 웹앱에 액세스할 수 있습니다.
+* 웹앱에 대한 **개요** 에서 `Browse` 단추를 클릭하여 웹앱에 액세스할 수 있습니다.
 
    ![Azure Portal App Services에서 웹앱 URL 찾기](./media/helidon/azure-portal-app-service-overview.png)
 
@@ -267,7 +267,7 @@ az webapp log tail -g microprofile -n helidon-hello-azure-1600998900939
 Azure 리소스가 더 이상 필요하지 않은 경우 리소스 그룹을 삭제하여 배포한 리소스를 정리합니다.
 
 * Azure Portal의 왼쪽 메뉴에서 리소스 그룹을 선택합니다.
-* **이름으로 필터링** 필드에 **microprofile**을 입력합니다. 이 자습서에서 만든 리소스 그룹에는 이 접두사가 있어야 합니다.
+* **이름으로 필터링** 필드에 **microprofile** 을 입력합니다. 이 자습서에서 만든 리소스 그룹에는 이 접두사가 있어야 합니다.
 * 이 자습서에서 만든 리소스 그룹을 선택합니다.
 * 위쪽 메뉴에서 리소스 그룹 삭제를 선택합니다.
 
@@ -298,7 +298,7 @@ MicroProfile과 Azure에 대해 자세히 알아보려면 Azure의 MicroProfile 
 [Working with Azure DevOps and Java]: /azure/devops/
 [Maven]: http://maven.apache.org/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
-[Azure Web Apps의 Maven 플러그 인]: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+[Azure Web Apps의 Maven 플러그 인]: https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md
 
 [Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->

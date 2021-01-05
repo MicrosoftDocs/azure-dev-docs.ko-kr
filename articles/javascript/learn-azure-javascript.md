@@ -2,14 +2,14 @@
 title: Azure 및 JavaScript를 사용하여 개발하는 방법 알아보기
 description: Microsoft Learn 플랫폼을 사용하여 Azure와 JavaScript에 대한 이해의 폭 확대
 ms.topic: reference
-ms.date: 11/20/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: dd09feba608e9483597a60554f7c53e88565ffab
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: b126894943bf409439b965a631d07029281438f7
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983962"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636538"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Azure 및 JavaScript를 사용하여 개발하는 방법 알아보기 
 
@@ -28,14 +28,33 @@ Microsoft Learn 플랫폼 또는 Microsoft Learning Partner를 사용하여 Azur
 
 다음 Microsoft Learn 모듈에서는 Azure를 JavaScript와 함께 사용하는 방법을 설명합니다.
 
+### <a name="static-web-apps"></a>Static Web Apps
+
+* [정적 웹앱, JavaScript, CodeTour: 농구 통계를 사용하여 SPACE JAM: A NEW LEGACY](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)에서 영감을 얻은 Visual Studio Code로 게임 플레이를 최적화합니다.
 * [Azure Static Web Apps를 사용하여 Angular, React, Svelte 또는 Vue JavaScript 앱 게시](/learn/modules/publish-app-service-static-web-app-api/)
-* [Azure Functions를 사용하여 Node.js 및 Express API를 서버리스 API로 리팩터링](/learn/modules/shift-nodejs-express-apis-serverless/)
 * [Gatsby 및 Azure Static Web Apps를 사용하여 정적 웹앱 만들기 및 게시](/learn/modules/create-deploy-static-webapp-gatsby-app-service/)
-* [Azure Pipelines를 사용하여 Node.js 배포 자동화](/learn/modules/deploy-nodejs/)
-* [Visual Studio Code를 사용하여 Azure Cosmos DB용 Node.js 앱 빌드](/learn/modules/build-node-cosmos-app-vscode/)
-* [Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 애플리케이션 빌드 및 실행](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
-* [GitHub Actions를 사용하여 CI(연속 통합) 워크플로 빌드](/learn/modules/github-actions-ci/)
+* [HTML, CSS 및 JavaScript를 사용하여 간단한 웹 사이트 빌드](https://docs.microsoft.com/learn/modules/build-simple-website/)
+
+### <a name="serverless-apis"></a>서버리스 API
+
 * [Azure Functions를 사용하여 서버리스 API 빌드](/learn/modules/build-api-azure-functions/)
+* [Azure Functions를 사용하여 Node.js 및 Express API를 서버리스 API로 리팩터링](/learn/modules/shift-nodejs-express-apis-serverless/)
+* [Visual Studio Code를 사용하여 Azure Functions 및 Node.js에서 제공하는 서버리스 API가 포함된 JavaScript 및 Vue.js 대시보드를 빌드합니다.](https://docs.microsoft.com/learn/modules/build-api-azure-functions)
+
+### <a name="devops-cicd"></a>DevOps(CI/CD)
+
+* [GitHub Actions를 사용하여 CI(연속 통합) 워크플로 빌드](/learn/modules/github-actions-ci/)
+* [Azure Pipelines를 사용하여 Node.js 배포 자동화](/learn/modules/deploy-nodejs/)
+
+### <a name="data-apps"></a>데이터 앱
+
+* [Visual Studio Code를 사용하여 Azure Cosmos DB용 Node.js 앱 빌드](/learn/modules/build-node-cosmos-app-vscode/)
+
+### <a name="virtual-machines"></a>Virtual Machines
+* [Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 애플리케이션 빌드 및 실행](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
+
+
+
 
 [더 많은 학습 리소스](/search/?category=Learn&terms=JavaScript)를 검색하세요.
 
@@ -59,6 +78,10 @@ Microsoft Learn 플랫폼 또는 Microsoft Learning Partner를 사용하여 Azur
 
 * [MTA: JavaScript를 사용한 프로그래밍 소개](/learn/certifications/mta-introduction-to-programming-using-javascript)
 * [MCSA: 웹 애플리케이션](/learn/certifications/mcsa-web-applications-certification)
+
+## <a name="rss-feed"></a>RSS 피드
+
+* [새 릴리스](https://aka.ms/mslearn-rss)
 
 ## <a name="next-steps"></a>다음 단계
 

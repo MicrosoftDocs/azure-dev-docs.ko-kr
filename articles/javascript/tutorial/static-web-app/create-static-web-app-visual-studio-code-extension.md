@@ -4,14 +4,14 @@ description: 해당 서비스의 Visual Studio Code 확장을 사용하여 Stati
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: c6daa3f2a7ceb7f981cdaf57bdba61a722edbaa3
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: dac91157531b3d26dddebe411d2c79883f77d4b9
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993587"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687468"
 ---
-# <a name="4-create-azure-static-web-app-resource"></a>4. Azure Static 웹앱 리소스 만들기
+# <a name="5-create-azure-static-web-app-resource"></a>5. Azure Static 웹앱 리소스 만들기
 
 자습서의 이 섹션에서는 해당 서비스의 Visual Studio Code 확장을 사용하여 Static 웹앱 리소스를 만들고, 빌드할 원격 리포지토리에 로컬 코드를 푸시하고, 앱을 Azure에 배포합니다.
 

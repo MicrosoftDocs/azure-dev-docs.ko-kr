@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: bbb87890f4db4b744ae4b2794c86e86a18c0e352
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: c952410231ae57b0d127e1b6fb05e03f88403640
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515124"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754069"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Azure용 GitHub Actions란?
 
@@ -25,6 +25,10 @@ GitHub Actions에서 [워크플로](https://help.github.com/articles/about-githu
 Azure용 GitHub Actions를 사용하면 프로젝트를 빌드, 테스트, 패키징, 릴리스 및 Azure에 배포하도록 리포지토리에서 설정 가능한 워크플로를 만들 수 있습니다. Azure용 GitHub Actions는 Azure App Service, Azure Functions 및 Azure Key Vault를 비롯한 Azure 서비스를 지원합니다.
 
 GitHub Actions에는 Azure Resource Manager 템플릿, Azure CLI 및 Azure Policy를 비롯한 유틸리티 지원도 포함되어 있습니다.
+
+GitHub Universe 2020의 이 비디오를 통해 GitHub Actions를 통한 지속적인 제공에 대해 자세히 알아보세요.  
+
+> [!VIDEO https://www.youtube.com/embed/36hY0-O4STg]
 
 ## <a name="why-should-i-use-github-actions-for-azure"></a>Azure용 GitHub Actions를 사용해야 하는 이유
 

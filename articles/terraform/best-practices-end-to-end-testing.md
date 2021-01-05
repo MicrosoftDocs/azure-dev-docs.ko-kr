@@ -4,12 +4,12 @@ description: Terraform 프로젝트에서 Terratest를 사용한 엔드투엔드
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b760908bf1950751b93ba1787f444ca37ee8bf83
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: a70352f5ff6826dc7d07537cf773e76b6d1a6f49
+ms.sourcegitcommit: 485a88d1671a66df34493545488ab34e434f40d8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401713"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809761"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>자습서: Terraform 프로젝트에서 엔드투엔드 Terratest 테스트 설정
 
@@ -56,7 +56,7 @@ ms.locfileid: "91401713"
 
 [샘플을 다운로드](#prerequisites)한 경우 이 시나리오에 대한 Terraform 구성은 `src/main.tf` 파일에서 찾을 수 있습니다. 이 파일에는 위의 그림에 표시된 Azure 인프라를 배포하는 데 필요한 모든 항목이 포함되어 있습니다.
 
-가상 머신을 만드는 데 익숙하지 않은 경우 [Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기](create-linux-virtual-machine-with-infrastructure.md)를 참조하세요.
+가상 머신을 만드는 방식에 익숙하지 않은 경우 [Terraform을 사용하여 Azure에서 인프라를 갖춘 Linux VM 만들기](create-linux-virtual-machine-with-infrastructure.md)를 참조하세요.
 
 > [!CAUTION]
 > 이 문서에 제공된 시나리오 샘플은 설명을 위한 목적으로만 제공됩니다. 엔드투엔드 테스트의 단계에 집중하기 위해 의도적으로 간단하게 유지했습니다. 공용 IP 주소를 통해 SSH 포트를 공개하는 프로덕션 가상 머신은 사용하지 않는 것이 좋습니다.

@@ -4,14 +4,14 @@ description: 전체 샘플 앱은 GitHub 리포지토리에 제공됩니다. 리
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5ddfd00be1c6160ec8c0c9630a8e950f13677bdd
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 5050aca4c34f20f8b4c7cb7a8460815516abd7c7
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993562"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687460"
 ---
-# <a name="2-download-and-run-the-react-cognitive-services-image-analyzer-app"></a>2. React Cognitive Services Image Analyzer 앱을 다운로드하여 실행
+# <a name="3-download-and-run-the-react-cognitive-services-image-analyzer-app"></a>3. React Cognitive Services Image Analyzer 앱을 다운로드하여 실행
 
 전체 샘플 앱은 GitHub 리포지토리에 제공됩니다. 리포지토리를 포크하고, 종속성을 설치하고, 로컬로 실행합니다.
 

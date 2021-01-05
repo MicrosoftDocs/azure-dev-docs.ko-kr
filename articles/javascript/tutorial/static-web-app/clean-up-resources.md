@@ -4,14 +4,14 @@ description: Azure CLI 명령으로 리소스 그룹을 제거하여 비용이 �
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0b425ce873c53ca95628cfe8c3f68ea4b010aba3
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 132ccc26a4ddf17eb38be1573f462492fe1f7f0c
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993539"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687493"
 ---
-# <a name="6-clean-up-resources"></a>6. 리소스 정리
+# <a name="7-clean-up-resources-for-static-web-app"></a>7. 정적 웹앱에 대한 리소스 정리
 
 이 자습서를 완료한 후에는 사용 요금이 청구되지 않도록 Computer Vision 리소스와 Static 웹앱을 비롯한 리소스 그룹을 제거해야 합니다. 
 

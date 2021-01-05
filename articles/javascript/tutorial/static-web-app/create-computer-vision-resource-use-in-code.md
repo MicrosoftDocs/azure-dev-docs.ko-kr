@@ -2,16 +2,16 @@
 title: Computer Vision 리소스 만들기
 description: Cognitive Services Computer Vision 리소스를 만들고 환경 변수로 설정합니다.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4ac324171f47ab8795169c5dd453d1e6451e8906
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 338a3040381768e5987e84676339e8ee46c49fc7
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993507"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687473"
 ---
-# <a name="3-create-computer-vision-resource-and-use-in-code"></a>3. 코드로 Computer Vision 리소스를 만들고 사용
+# <a name="4-create-computer-vision-resource-and-use-in-code"></a>4. 코드로 Computer Vision 리소스를 만들고 사용
 
 이 단계에서는 Computer Vision 리소스를 만들고 환경 변수로 설정합니다. 
 
@@ -108,13 +108,15 @@ Azure Static 웹앱을 사용하는 경우 비밀과 같은 환경 변수를 Git
 
 ## <a name="run-react-app-with-computervision-resource"></a>Computer Vision 리소스를 사용하여 React 앱 실행
 
-이 React 앱은 앱을 다시 빌드하고 다시 실행하기 위한 변경 내용을 감시합니다. 강제로 다시 빌드하려면 앱을 변경하세요.
+1. 다음 명령줄에서 앱을 다시 시작합니다.
 
-1. 첫 번째 빈 줄(4번째 줄) 바로 뒤의 `./src/VisualAi.js`에 **새 줄을 입력** 합니다. 이렇게 변경하면 로컬로 실행되는 웹 사이트가 다시 빌드됩니다.
+    ```bash
+    npm start
+    ```
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-start-up.png" alt-text="URL 또는 Enter 키 누르기 준비가 완료된 React Cognitive Service Computer Vision 샘플을 보여주는 브라우저의 부분 스크린샷.":::
 
-1. 텍스트 필드를 비워 두고 **분석 단추를 선택하세요**. 
+1. 텍스트 필드를 비워두고 기본 카탈로그에서 이미지를 선택한 다음, **분석** 단추를 선택합니다. 
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-image-analysis-result.png" alt-text="React Cognitive Service Computer Vision 샘플 결과를 보여주는 브라우저의 부분 스크린샷.":::
 

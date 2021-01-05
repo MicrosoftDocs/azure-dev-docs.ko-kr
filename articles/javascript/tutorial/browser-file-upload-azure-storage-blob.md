@@ -2,14 +2,14 @@
 title: VSCode를 사용하여 Blob Storage에 이미지 업로드 - App Service/CosmosDB
 description: React/TypeScript 앱을 사용하여 파일을 Azure Storage Blob에 업로드합니다. 이 자습서에서는 Visual Studio Code 확장을 통해 로컬 및 원격 환경을 사용하는 데 중점을 둡니다.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/17/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 2e38e7e293f87dc9fa8cafc69a0780a10d31d730
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 1f66ba54aa6cfccdda96a51bb610350a10fb7eef
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393902"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97689530"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Azure Storage Blob에 이미지 업로드
 
@@ -17,14 +17,14 @@ ms.locfileid: "97393902"
 
 TypeScript 프로그래밍 작업은 완료되었습니다. 이 자습서에서는 Azure 확장을 사용하여 Visual Studio Code 내에서 로컬 및 원격 Azure 환경을 성공적으로 사용하는 데 중점을 둡니다.
 
-* [소스 코드](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)
+* [**예제 코드**](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)
 
 ## <a name="application-architecture-and-functionality"></a>애플리케이션 아키텍처 및 기능
 
-이 자습서에는 JavaScript 개발자를 위한 몇 가지 **상위 Azure 작업** 이 포함되어 있습니다.
+이 자습서에는 JavaScript 개발자를 위한 몇 가지 상위 Azure 작업이 포함되어 있습니다.
 
 * Visual Studio Code를 사용하여 로컬로 React/TypeScript 앱 실행
-* Storage 리소스 만들기 및 파일 업로드 구성
+* **Azure Storage Blob** 리소스 만들기 및 파일 업로드 구성
     * CORS 구성
     * SAS(공유 액세스 서명) 토큰 만들기
 * SAS 토큰을 사용하여 서비스를 인증하도록 Azure SDK 클라이언트 라이브러리에 대한 코드 구성
@@ -32,24 +32,26 @@ TypeScript 프로그래밍 작업은 완료되었습니다. 이 자습서에서�
 [GitHub에서 사용할 수 있는](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob) Resact 앱 샘플을 구성하는 요소는 다음과 같습니다.
 
 * 3000 포트에서 호스팅되는 **React 앱**
-* Storage Blob에 업로드할 Azure SDK 클라이언트 라이브러리 스크립트
+* Storage Blob에 업로드할 **Azure SDK 클라이언트 라이브러리 스크립트**
 
 :::image type="content" source="../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-image-uploaded-displayed.png" alt-text="Azure Storage Blob에 연결된 간단한 React 앱":::
 
 ## <a name="1-set-up-development-environment"></a>1. 개발 환경 설정
 
 - 활성 구독이 포함된 Azure 사용자 계정 [체험 계정 만들기](https://azure.microsoft.com/free/)
-- [Node.js 및 npm](https://nodejs.org/en/download) - 로컬 컴퓨터에 설치된 Node.js 패키지 관리자입니다.
+- [Node.js 10 및 npm](https://nodejs.org/en/download) - 로컬 컴퓨터에 설치된 Node.js 패키지 관리자입니다.
 - [Visual Studio Code](https://code.visualstudio.com/)(로컬 컴퓨터에 설치됨) 
 - Visual Studio Code 확장:
     - [Azure Storage](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage) - Storage 리소스를 보는 데 사용됩니다.
 
 ## <a name="2-clone-and-run-the-initial-react-app"></a>2. 초기 React 앱 복제 및 실행
 
-앱을 복제하고, 종속성을 설치하고, 앱을 실행합니다. 초기 앱이 코드에서 구성된 경우 Azure Storage에 연결하려고 시도하거나 사용할 수 없는 경우 `Storage is not configured`라는 메시지를 표시합니다. 
-
 1. Visual Studio Code를 엽니다.
-1. Git 아이콘, **리포지토리 복제** 를 차례로 선택하여 GitHub 리포지토리를 복제합니다. 이 프로세스를 수행하려면 GitHub에 로그인해야 합니다. `https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob`의 리포지토리 URL을 사용한 다음, 샘플을 복제할 로컬 컴퓨터의 폴더를 선택합니다. 메시지가 표시되면 복제된 리포지토리를 엽니다. 
+1. Git 아이콘, **리포지토리 복제** 를 차례로 선택하여 GitHub 리포지토리를 복제합니다. 이 프로세스를 수행하려면 GitHub에 로그인해야 합니다. 다음 리포지토리 URL을 사용합니다. 
+
+    `https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob`
+
+1. 샘플을 복제할 로컬 컴퓨터의 폴더를 선택합니다. 메시지가 표시되면 복제된 리포지토리를 엽니다. 
 
     :::image type="content" source="../media/tutorial-browser-file-upload/vscode-git-clone-repository.png" alt-text="Git 아이콘, '리포지토리 복제'를 차례로 선택하여 GitHub 리포지토리를 복제합니다.":::
 
@@ -83,11 +85,11 @@ TypeScript 프로그래밍 작업은 완료되었습니다. 이 자습서에서�
 
     :::image type="content" source="../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource.png" alt-text="Azure Storage 확장으로 이동합니다. 마우스 오른쪽 단추로 구독을 클릭한 다음, '스토리지 계정 만들기...'를 선택합니다.":::
 
-1. 다음 표를 사용하여 표시되는 메시지에 따라 값을 사용하는 방법을 이해합니다.
+1. 다음 표를 사용하여 표시되는 메시지에 따라 스토리지 리소스를 만드는 방법을 이해합니다.
 
     |속성|값|
     |--|--|
-    |전역적으로 고유한 새 웹앱의 이름을 입력합니다.| Storage 리소스 이름에 대한 값(예: `fileuploadyourname`)을 입력합니다. `yourname`을 소문자 이름 또는 고유 ID로 바꿉니다. 이 고유한 이름은 브라우저에서 리소스에 액세스하기 위한 URL의 일부로도 사용됩니다. 최대 24자의 문자와 숫자만 사용합니다. 나중에 사용하기 위해 이 **계정 이름** 이 필요합니다.|
+    |전역적으로 고유한 새 웹앱의 이름을 입력합니다.| Storage 리소스 이름에 대한 값(예: `fileuploaddemo`)을 입력합니다.<br><br> 이 고유한 이름은 다음 섹션에서 사용되는 **리소스 이름** 입니다. 최대 24개의 문자와 숫자만 사용하세요. 나중에 사용하기 위해 이 **계정 이름** 이 필요합니다.|
 
 1. 앱 만들기 프로세스가 완료되면 새 리소스에 대한 정보가 포함된 알림이 표시됩니다. 
 
@@ -95,10 +97,10 @@ TypeScript 프로그래밍 작업은 완료되었습니다. 이 자습서에서�
 
 ## <a name="4-set-storage-account-name-in-code-file"></a>4. 코드 파일에서 스토리지 계정 이름 설정
 
-스토리지 키 이름을 빈 문자열에 추가하여 `storageAccountName` 값에 대한 `src/uploadToBlob.ts`의 리소스 이름을 설정합니다. 나머지 코드는 그대로 둡니다. 
+`src/azure-storage-blob.ts`의 이전 단계의 리소스 이름을 설정합니다. 
 
 ```typescript
-const storageAccountName = process.env.storageresourcename || ""; 
+const storageAccountName = process.env.storageresourcename || "fileuploaddemo"; 
 ```
 
 ## <a name="5-generate-your-shared-access-signature-sas-token"></a>5. SAS(공유 액세스 서명) 토큰 생성 
@@ -115,7 +117,7 @@ CORS를 구성하기 전에 SAS 토큰을 생성합니다.
     |허용되는 리소스 유형|서비스, 컨테이너, 개체|
     |허용되는 권한|읽기, 쓰기, 삭제, 나열, 추가, 만들기|
     |버전 삭제 사용|선택됨|
-    |시작 및 만료 날짜/시간|시작 날짜/시간을 적용하고, 종료 날짜 시간을 24시간 이후로 설정합니다. SAS 토큰은 24시간 동안만 유효합니다.|
+    |시작 및 만료 날짜/시간|시작 날짜/시간을 적용하고, **종료 날짜 시간을 24시간 이후로 설정합니다**. SAS 토큰은 24시간 동안만 유효합니다.|
     |HTTPS만 사용|선택됨|
     |기본 설정 라우팅 계층|Basic|
     |서명 키|key1 선택됨|
@@ -126,15 +128,11 @@ CORS를 구성하기 전에 SAS 토큰을 생성합니다.
 
 ## <a name="set-sas-token-in-code-file"></a>코드 파일에서 SAS 토큰 설정
 
-SAS 토큰 값은 부분 쿼리 문자열이며, 클라우드 기반 리소스를 쿼리할 때 URL에 사용됩니다.
+SAS 토큰은 클라우드 기반 리소스에 쿼리를 만들 때 사용됩니다.
 
-토큰 형식은 토큰을 만드는 데 사용한 도구에 따라 달라집니다. 
-* **Azure 포털**: 포털에서 SAS 토큰을 만드는 경우 토큰에는 `?`가 문자열의 첫 번째 문자로 포함됩니다.
-* **Azure CLI**: Azure CLI를 사용하여 SAS 토큰을 만드는 경우 반환되는 값에는 `?`가 문자열의 첫 번째 문자로 포함되지 않습니다. 
+1. 토큰이 물음표로 시작하는 경우 `?`를 제거합니다. 코드 파일에서 `?`를 제공하므로 토큰에 필요하지 않습니다.
 
-1. 토큰의 첫 번째 문자인 경우 `?`를 제거합니다. 코드 파일에서 `?`를 제공하므로 토큰에 필요하지 않습니다.
-
-1. SAS 토큰을 빈 문자열에 추가하여 SAS 토큰을 sasToken 값에 대한 `src/uploadToBlob.ts`로 설정합니다. 나머지 코드는 그대로 둡니다. 
+1. SAS 토큰을 빈 문자열에 추가하여 SAS 토큰을 sasToken 값에 대한 `src/azure-storage-blob.ts`로 설정합니다. 나머지 코드는 그대로 둡니다. 
 
 ```typescript
 // remove `?` if it is first character of token
@@ -162,21 +160,25 @@ const sasToken = process.env.storagesastoken || "";
 
 ## <a name="7-run-project-locally-to-verify-connection-to-storage-account"></a>7. 프로젝트를 로컬로 실행하여 Storage 계정에 대한 연결 확인
 
-SAS 토큰 및 스토리지 계정 이름이 `src/uploadToBlob.ts` 파일에 설정되어 있으므로 애플리케이션을 실행할 준비가 되었습니다.
+SAS 토큰 및 스토리지 계정 이름이 `src/azure-storage-blob.ts` 파일에 설정되어 있으므로 애플리케이션을 실행할 준비가 되었습니다.
 
-1. Visual Studio Code 터미널에서 다음 명령을 입력합니다.
+1. 앱이 실행되고 있지 않은 경우 다시 시작합니다.
 
     ```javascript
     npm start
     ```
 
-1. 터미널에서 `http://localhost:3000`과 같은 URL을 표시하면 앱이 준비된 것입니다. 브라우저를 열고 해당 URL을 입력합니다. Azure Storage Blob에 연결된 웹 사이트가 파일 선택 단추 및 파일 업로드 단추와 함께 표시됩니다. 
+1. 웹 브라우저에서 다음 URL을 엽니다.
+
+    `http://localhost:3000` 
 
     :::image type="content" source="../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Azure Storage Blob에 연결된 React 웹 사이트가 파일 선택 단추 및 파일 업로드 단추와 함께 표시됩니다.":::
 
-1. `images` 폴더에서 업로드할 이미지를 선택합니다. `spring-flowers.jpg`는 이 테스트에 적합한 시각적 개체입니다. **업로드!** 단추를 선택합니다. 클릭합니다. 
+1. `images` 폴더에서 업로드할 이미지를 선택한 다음, **업로드!** 단추를 선택합니다. 
 
-    React 프런트 엔드 클라이언트 코드에서 `src/uploadToBlob.ts`를 호출하여 Azure에 인증한 다음, Storage 컨테이너를 만들고(아직 없는 경우) 파일을 이 컨테이너에 업로드합니다. 
+    React 프런트 엔드 클라이언트 코드에서 `src/azure-storage-blob.ts`를 호출하여 Azure에 인증한 다음, Storage 컨테이너를 만들고(아직 없는 경우) 파일을 이 컨테이너에 업로드합니다. 
+
+    자습서의 단계를 완료했습니다. 나머지 섹션에서는 앱에 대해 설명하고 문제 해결에 도움을 줍니다.
 
 ## <a name="troubleshoot-local-connection-to-storage-account"></a>Storage 계정에 대한 로컬 연결 문제 해결
 
@@ -202,7 +204,7 @@ Azure Blob 스토리지 코드에 연결하는 코드가 강조 표시됩니다.
 
 ### <a name="dependencies-and-variables"></a>종속성 및 변수
 
-`uploadToBlob.ts` TypeScript 파일은 종속성을 로드하고, 환경 변수 또는 하드 코딩된 문자열을 통해 필요한 변수를 가져옵니다.
+`azure-storage-blob.ts` TypeScript 파일은 종속성을 로드하고, 환경 변수 또는 하드 코딩된 문자열을 통해 필요한 변수를 가져옵니다.
 
 | 변수 | 설명 |
 |--|--|
@@ -210,7 +212,7 @@ Azure Blob 스토리지 코드에 연결하는 코드가 강조 표시됩니다.
 |`container`|Blob 스토리지에 있는 컨테이너의 이름입니다. 파일 시스템의 폴더 또는 디렉터리와 동일한 것으로 간주할 수 있습니다.|
 |`storageAccountName`|리소스 이름입니다.|
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="2,5,16" id="snippet_package":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="2,5,16" id="snippet_package":::
 
 ### <a name="security-for-azure-credentials"></a>Azure 자격 증명에 대한 보안
 
@@ -220,19 +222,19 @@ Azure Blob 스토리지 코드에 연결하는 코드가 강조 표시됩니다.
 
 `uploadFileToBlob` 함수는 파일의 기본 함수입니다. Storage 서비스에 대한 클라이언트 개체를 만든 다음, 클라이언트를 컨테이너 개체에 만들고, 파일을 업로드하고, 컨테이너의 모든 Blob 목록을 가져옵니다. 
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="5,6,7" id="snippet_uploadFileToBlob":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="5,6,7" id="snippet_uploadFileToBlob":::
 
 ### <a name="upload-file-to-blob"></a>Blob에 파일 업로드
 
 `createBlobInContainer` 함수는 `uploadBrowserData` 클라이언트 라이브러리 메서드를 사용하여 파일을 컨테이너에 업로드합니다. 그림 표시와 같은 파일 형식에 따라 달라지는 브라우저 기능을 사용하려는 경우 콘텐츠 형식을 요청과 함께 보내야 합니다. 
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="10" id="snippet_createBlobInContainer":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="10" id="snippet_createBlobInContainer":::
 
 ### <a name="get-list-of-blobs"></a>Blob 목록 가져오기
 
 `getBlobsInContainer` 함수는 컨테이너의 Blob에 대한 URL 목록을 가져옵니다. URL은 HTML에서 이미지 표시(`<img src={item} alt={item} height="200" />`)의 `src`로 사용하도록 구성됩니다. 
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="10" id="snippet_getBlobsInContainer":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="10" id="snippet_getBlobsInContainer":::
 
 ## <a name="clean-up-resources"></a>리소스 정리
 

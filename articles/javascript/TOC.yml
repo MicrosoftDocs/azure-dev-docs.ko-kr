@@ -27,15 +27,17 @@
               items:
                 - name: 1. 소개 및 필수 구성 요소
                   href: tutorial/static-web-app/introduction.md
-                - name: 2. 로컬에서 앱 다운로드 및 실행
+                - name: 2. 애플리케이션 아키텍처
+                  href: tutorial/static-web-app/application-architecture.md
+                - name: 3. 로컬에서 앱 다운로드 및 실행
                   href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
-                - name: 3. Computer Vision 리소스 만들기
+                - name: 4. Computer Vision 리소스 만들기
                   href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
-                - name: 4. 정적 웹앱 빌드 및 배포
+                - name: 5. 정적 웹앱 빌드 및 배포
                   href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
-                - name: 5. Computer Vision React 코드 검토
+                - name: 6. Computer Vision React 코드 검토
                   href: tutorial/static-web-app/add-computer-vision-react-app.md
-                - name: 6. 리소스 정리
+                - name: 7. 리소스 정리
                   href: tutorial/static-web-app/clean-up-resources.md
             - name: '클라이언트 앱: 스토리지에 업로드'
               href: tutorial/browser-file-upload-azure-storage-blob.md
@@ -131,6 +133,8 @@
       items:
         - name: 앱 구성
           href: how-to/configure-web-app-settings.md
+        - name: 일반적인 JavaScript 작업
+          href: how-to/common-javascript-tasks.md
         - name: VS Code를 사용한 종단 간 Node.js
           href: how-to/develop-nodejs-on-azure.md
         - name: 웹 앱 배포

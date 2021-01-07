@@ -3,13 +3,13 @@ title: '자습서: VS Code를 사용하여 Python에서 서버리스 Azure Funct
 description: 자습서 1단계, 서버리스 Azure Functions에 대한 로컬 환경 구성
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019, contperfq2
-ms.openlocfilehash: a4fbf9d46a4158fe67660db9f9b7eae8ff83e810
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.custom: devx-track-python, seo-python-october2019, contperf-fy21q2
+ms.openlocfilehash: 2baff5675850de5c8af750efeb49cdec31e5190b
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759440"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911423"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>자습서: Visual Studio Code를 사용하여 Python에서 서버리스 Azure Functions 만들기 및 배포
 

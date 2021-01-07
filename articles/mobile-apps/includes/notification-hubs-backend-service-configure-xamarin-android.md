@@ -4,55 +4,55 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: d3c472b66ffc622fb3ff3e5d149a902f99fcd6f1
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: faacb54f9e8a16cf4ef5b39aed0a3e42a4b3f255
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493273"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97866098"
 ---
 ### <a name="validate-package-name-and-permissions"></a>패키지 이름 및 권한 유효성 검사
 
-1. **PushDemo.Android**에서 **프로젝트 옵션** 연 다음, **빌드** 섹션에서 **Android 애플리케이션**을 엽니다.
+1. **PushDemo.Android** 에서 **프로젝트 옵션** 연 다음, **빌드** 섹션에서 **Android 애플리케이션** 을 엽니다.
 
-1. **패키지 이름**이 [Firebase 콘솔](https://console.firebase.google.com) **PushDemo** 프로젝트에서 사용한 값과 일치하는지 확인합니다. **패키지 이름**은 ``com.<organization>.pushdemo``형식입니다.
+1. **패키지 이름** 이 [Firebase 콘솔](https://console.firebase.google.com) **PushDemo** 프로젝트에서 사용한 값과 일치하는지 확인합니다. **패키지 이름** 은 ``com.<organization>.pushdemo``형식입니다.
 
-1. **최소 Android 버전**을 **Android 8.0(API 레벨 26)** 으로 설정하고 **대상 Android 버전**을 최신 **API 레벨**로 설정합니다.
+1. **최소 Android 버전** 을 **Android 8.0(API 레벨 26)** 으로 설정하고 **대상 Android 버전** 을 최신 **API 레벨** 로 설정합니다.
 
     > [!NOTE]
-    > 이 자습서에서는 **API 레벨 26 이상**을 실행하는 디바이스만 지원되지만, 이전 버전을 실행하는 디바이스를 지원하도록 확장할 수 있습니다.
+    > 이 자습서에서는 **API 레벨 26 이상** 을 실행하는 디바이스만 지원되지만, 이전 버전을 실행하는 디바이스를 지원하도록 확장할 수 있습니다.
 
-1. **필요한 권한**에서 **인터넷** 및 **READ_PHONE_STATE** 권한을 사용하도록 설정합니다.
+1. **필요한 권한** 에서 **인터넷** 및 **READ_PHONE_STATE** 권한을 사용하도록 설정합니다.
 
-1. **확인**을 클릭합니다.
+1. **확인** 을 클릭합니다.
 
 ### <a name="add-the-xamarin-google-play-services-base-and-xamarinfirebasemessaging-packages"></a>Xamarin Google Play 서비스 기본 및 Xamarin.Firebase.Messaging 패키지 추가
 
-1. **PushDemo.Android**에서, **Packages** 폴더를 **Ctrl** + **클릭**한 다음, **NuGet 패키지 관리...** 를 선택합니다.
+1. **PushDemo.Android** 에서, **Packages** 폴더를 **Ctrl** + **클릭** 한 다음, **NuGet 패키지 관리...** 를 선택합니다.
 
 1. **Xamarin.GooglePlayServices.Base**(**Basement** 아님)를 검색하여 선택합니다.
 
-1. **Xamarin.Firebase.Messaging**을 검색하여 선택합니다.
+1. **Xamarin.Firebase.Messaging** 을 검색하여 선택합니다.
 
-1. **패키지 추가**를 클릭한 다음, **사용 조건**에 동의하라는 메시지가 표시되면 **동의**를 클릭합니다.
+1. **패키지 추가** 를 클릭한 다음, **사용 조건** 에 동의하라는 메시지가 표시되면 **동의** 를 클릭합니다.
 
 ### <a name="add-the-google-services-json-file"></a>Google Services JSON 파일 추가
 
-1. `PushDemo.Android` 프로젝트를 **Ctrl** + **클릭**한 다음, **추가** 메뉴에서 **기존 파일...** 을 선택합니다.
+1. `PushDemo.Android` 프로젝트를 **Ctrl** + **클릭** 한 다음, **추가** 메뉴에서 **기존 파일...** 을 선택합니다.
 
-1. 이전에 [Firebase 콘솔](https://console.firebase.google.com)에서 **PushDemo** 프로젝트를 설정할 때 다운로드한 *google-services.json* 파일을 선택한 다음, **열기**를 클릭합니다.
+1. 이전에 [Firebase 콘솔](https://console.firebase.google.com)에서 **PushDemo** 프로젝트를 설정할 때 다운로드한 *google-services.json* 파일을 선택한 다음, **열기** 를 클릭합니다.
 
-1. 메시지가 표시되면 **파일을 디렉터리에 복사**를 선택합니다.
+1. 메시지가 표시되면 **파일을 디렉터리에 복사** 를 선택합니다.
 
-1. `PushDemo.Android` 프로젝트 내에서 *google-services.json* 파일을 **Ctrl** + **클릭**한 다음, **GoogleServicesJson**이 **빌드 작업**으로 설정되었는지 확인합니다.
+1. `PushDemo.Android` 프로젝트 내에서 *google-services.json* 파일을 **Ctrl** + **클릭** 한 다음, **GoogleServicesJson** 이 **빌드 작업** 으로 설정되었는지 확인합니다.
 
 ### <a name="handle-push-notifications-for-android"></a>Android 푸시 알림 처리
 
-1. `PushDemo.Android` 프로젝트를 **Ctrl** + **클릭**하고, **추가** 메뉴에서 **새 폴더**를 선택한 다음, **추가**를 클릭하여 *Services*를 **폴더 이름**으로 사용합니다.
+1. `PushDemo.Android` 프로젝트를 **Ctrl** + **클릭** 하고, **추가** 메뉴에서 **새 폴더** 를 선택한 다음, **추가** 를 클릭하여 *Services* 를 **폴더 이름** 으로 사용합니다.
 
-1. **Services** 폴더를 **Ctrl** + **클릭**한 다음, **추가** 메뉴에서 **새 파일...** 을 선택합니다.
+1. **Services** 폴더를 **Ctrl** + **클릭** 한 다음, **추가** 메뉴에서 **새 파일...** 을 선택합니다.
 
-1. **일반** > **빈 클래스**를 차례로 선택하고, **이름**으로 *DeviceInstallationService.cs*를 입력한 다음, **새로 만들기**를 클릭하여 다음 구현을 추가합니다.
+1. **일반** > **빈 클래스** 를 차례로 선택하고, **이름** 으로 *DeviceInstallationService.cs* 를 입력한 다음, **새로 만들기** 를 클릭하여 다음 구현을 추가합니다.
 
     ```csharp
     using System;
@@ -80,7 +80,7 @@ ms.locfileid: "91493273"
                 if (!NotificationsSupported)
                     throw new Exception(GetPlayServicesError());
 
-                if (string.isNullOrWhitespace(Token))
+                if (string.IsNullOrWhitespace(Token))
                     throw new Exception("Unable to resolve token for FCM");
 
                 var installation = new DeviceInstallation
@@ -113,7 +113,7 @@ ms.locfileid: "91493273"
     > [!NOTE]
     > 이 클래스는 알림 허브 등록 페이로드의 일부로 고유한 ID([Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9) 사용)를 제공합니다.
 
-1. 다른 **빈 클래스**를 *PushNotificationFirebaseMessagingService.cs*라는 **Services** 폴더에 추가하고 다음 구현을 추가합니다.
+1. 다른 **빈 클래스** 를 *PushNotificationFirebaseMessagingService.cs* 라는 **Services** 폴더에 추가하고 다음 구현을 추가합니다.
 
     ```csharp
     using Android.App;
@@ -163,7 +163,7 @@ ms.locfileid: "91493273"
     }
     ```
 
-1. **MainActivity.cs**에서 다음 네임스페이스가 파일의 맨 위에 추가되었는지 확인합니다.
+1. **MainActivity.cs** 에서 다음 네임스페이스가 파일의 맨 위에 추가되었는지 확인합니다.
 
     ```csharp
     using System;
@@ -177,7 +177,7 @@ ms.locfileid: "91493273"
     using PushDemo.Services;
     ```
 
-1. **MainActivity.cs**에서 **LaunchMode**를 **SingleTop**으로 설정합니다. 이렇게 하면 열 때 **MainActivity**가 다시 생성되지 않습니다.
+1. **MainActivity.cs** 에서 **LaunchMode** 를 **SingleTop** 으로 설정합니다. 이렇게 하면 열 때 **MainActivity** 가 다시 생성되지 않습니다.
 
     ```csharp
     [Activity(
@@ -219,7 +219,7 @@ ms.locfileid: "91493273"
     }
     ```
 
-1. 주어진 **의도**에 *action*이라는 추가 값이 있는지 확인하는 **ProcessNotificationActions**라는 새 메서드를 추가합니다. **IPushDemoNotificationActionService** 구현을 사용하여 해당 작업을 조건부로 트리거합니다.
+1. 주어진 **의도** 에 *action* 이라는 추가 값이 있는지 확인하는 **ProcessNotificationActions** 라는 새 메서드를 추가합니다. **IPushDemoNotificationActionService** 구현을 사용하여 해당 작업을 조건부로 트리거합니다.
 
     ```csharp
     void ProcessNotificationActions(Intent intent)
@@ -252,7 +252,7 @@ ms.locfileid: "91493273"
     ```
 
     > [!NOTE]
-    > **활동**에 대한 **LaunchMode**가 **SingleTop**로 설정되었기 때문에, **의도**가 **OnCreate** 메서드가 아닌 **OnNewIntent** 메서드를 통해 기존 **활동** 인스턴스로 전송되므로 **OnCreate** 및 **OnNewIntent** 메서드에서 들어오는 의도를 모두 처리해야 합니다.
+    > **활동** 에 대한 **LaunchMode** 가 **SingleTop** 로 설정되었기 때문에, **의도** 가 **OnCreate** 메서드가 아닌 **OnNewIntent** 메서드를 통해 기존 **활동** 인스턴스로 전송되므로 **OnCreate** 및 **OnNewIntent** 메서드에서 들어오는 의도를 모두 처리해야 합니다.
 
 1. `base.OnCreate` 호출이 플랫폼별 **IDeviceInstallationService** 구현에 전달되는 즉시 `Bootstrap.Begin`을 호출하도록 **OnCreate** 메서드를 업데이트합니다.
 
@@ -260,7 +260,7 @@ ms.locfileid: "91493273"
     Bootstrap.Begin(() => new DeviceInstallationService());
     ```
 
-1. 동일한 메서드에서, **FirebaseApp** 인스턴스에서 **GetInstanceId**를 조건부로 호출하고, `Bootstrap.Begin` 호출 바로 뒤에 **MainActivity**를 **IOnSuccessListener**로 추가합니다.
+1. 동일한 메서드에서, **FirebaseApp** 인스턴스에서 **GetInstanceId** 를 조건부로 호출하고, `Bootstrap.Begin` 호출 바로 뒤에 **MainActivity** 를 **IOnSuccessListener** 로 추가합니다.
 
     ```csharp
     if (DeviceInstallationService.NotificationsSupported)
@@ -271,7 +271,7 @@ ms.locfileid: "91493273"
     }
     ```
 
-1. 여전히 **OnCreate**에서, `LoadApplication` 호출 바로 뒤에 **ProcessNotificationActions**를 호출하여 현재 **의도**를 전달합니다.
+1. 여전히 **OnCreate** 에서, `LoadApplication` 호출 바로 뒤에 **ProcessNotificationActions** 를 호출하여 현재 **의도** 를 전달합니다.
 
     ```cs
     ...

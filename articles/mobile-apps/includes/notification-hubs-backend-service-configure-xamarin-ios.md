@@ -4,40 +4,40 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 7be758e9f1116f933fbb415e6cff7a1c73ffee9f
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 4dba0dcf6fe960b80e445f865644997669ce9b36
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493274"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97866021"
 ---
 ### <a name="configure-infoplist-and-entitlementsplist"></a>Info.plist 및 Entitlements.plist 구성
 
-1. **Visual Studio** > **기본 설정...**  > **게시** > **Apple 개발자 계정**에서 **Apple 개발자 계정**으로 로그인했는지 확인하고, 적절한 *인증서* 및 *프로비저닝 프로필*을 다운로드했는지 확인합니다. 이전 단계에서 이 자산을 만들었습니다.
+1. **Visual Studio** > **기본 설정...**  > **게시** > **Apple 개발자 계정** 에서 **Apple 개발자 계정** 으로 로그인했는지 확인하고, 적절한 *인증서* 및 *프로비저닝 프로필* 을 다운로드했는지 확인합니다. 이전 단계에서 이 자산을 만들었습니다.
 
-1. **PushDemo.iOS**에서 **Info.plist**를 열고, **BundleIdentifier**가 [Apple 개발자 포털](https://developer.apple.com)의 각 프로비저닝 프로필에 사용된 값과 일치하는지 확인합니다. **BundleIdentifier**는 ``com.<organization>.PushDemo`` 형식입니다.
+1. **PushDemo.iOS** 에서 **Info.plist** 를 열고, **BundleIdentifier** 가 [Apple 개발자 포털](https://developer.apple.com)의 각 프로비저닝 프로필에 사용된 값과 일치하는지 확인합니다. **BundleIdentifier** 는 ``com.<organization>.PushDemo`` 형식입니다.
 
-1. 동일한 파일에서 **최소 시스템 버전**을 **13.0**으로 설정합니다.
-
-    > [!NOTE]
-    > 이 자습서에서는 **iOS 13.0 이상**을 실행하는 디바이스만 지원되지만, 이전 버전을 실행하는 디바이스를 지원하도록 확장할 수 있습니다.
-
-1. **PushDemo.iOS**에 대한 **프로젝트 옵션**를 엽니다(프로젝트를 두 번 클릭).
-
-1. **프로젝트 옵션**의 **빌드 > iOS 번들 서명**에 있는 **팀**에서 개발자 계정을 선택했는지 확인합니다. 그런 다음, "자동으로 서명 관리"를 선택하고 서명 인증서 및 프로비저닝 프로필이 자동으로 선택되어 있는지 확인합니다.
+1. 동일한 파일에서 **최소 시스템 버전** 을 **13.0** 으로 설정합니다.
 
     > [!NOTE]
-    > *서명 인증서* 및 *프로비저닝 프로필*이 자동으로 선택되지 않으면 **수동 프로비저닝**을 선택한 다음, **번들 서명 옵션**을 클릭합니다. **서명 ID**로 *팀*을 선택하고, 두 방법 모두 **플랫폼**으로 **iPhone**이 선택되도록 **디버그** 및 **릴리스** 구성의 **프로비저닝 프로필**을 모두 *PushDemo* 관련 프로비저닝 프로필로 선택합니다.
+    > 이 자습서에서는 **iOS 13.0 이상** 을 실행하는 디바이스만 지원되지만, 이전 버전을 실행하는 디바이스를 지원하도록 확장할 수 있습니다.
 
-1. **PushDemo.iOS**에서 **Entitlements.plist**를 열고, **자격** 탭에서 볼 때 **푸시 알림 사용**이 선택되어 있는지 확인합니다. 그런 다음, **원본** 탭에서 볼 때 **APS 환경** 설정이 **개발**로 설정되어 있는지 확인합니다.
+1. **PushDemo.iOS** 에 대한 **프로젝트 옵션** 를 엽니다(프로젝트를 두 번 클릭).
+
+1. **프로젝트 옵션** 의 **빌드 > iOS 번들 서명** 에 있는 **팀** 에서 개발자 계정을 선택했는지 확인합니다. 그런 다음, "자동으로 서명 관리"를 선택하고 서명 인증서 및 프로비저닝 프로필이 자동으로 선택되어 있는지 확인합니다.
+
+    > [!NOTE]
+    > *서명 인증서* 및 *프로비저닝 프로필* 이 자동으로 선택되지 않으면 **수동 프로비저닝** 을 선택한 다음, **번들 서명 옵션** 을 클릭합니다. **서명 ID** 로 *팀* 을 선택하고, 두 방법 모두 **플랫폼** 으로 **iPhone** 이 선택되도록 **디버그** 및 **릴리스** 구성의 **프로비저닝 프로필** 을 모두 *PushDemo* 관련 프로비저닝 프로필로 선택합니다.
+
+1. **PushDemo.iOS** 에서 **Entitlements.plist** 를 열고, **자격** 탭에서 볼 때 **푸시 알림 사용** 이 선택되어 있는지 확인합니다. 그런 다음, **원본** 탭에서 볼 때 **APS 환경** 설정이 **개발** 로 설정되어 있는지 확인합니다.
 
 ### <a name="handle-push-notifications-for-ios"></a>iOS 푸시 알림 처리
 
-1. **PushDemo.iOS** 프로젝트를 **Ctrl** + **클릭**하고, **추가** 메뉴에서 **새 폴더**를 선택한 다음, **추가**를 클릭하여 *Services*를 **폴더 이름**으로 사용합니다.
+1. **PushDemo.iOS** 프로젝트를 **Ctrl** + **클릭** 하고, **추가** 메뉴에서 **새 폴더** 를 선택한 다음, **추가** 를 클릭하여 *Services* 를 **폴더 이름** 으로 사용합니다.
 
-1. **Services** 폴더를 **Ctrl** + **클릭**한 다음, **추가** 메뉴에서 **새 파일...** 을 선택합니다.
+1. **Services** 폴더를 **Ctrl** + **클릭** 한 다음, **추가** 메뉴에서 **새 파일...** 을 선택합니다.
 
-1. **일반** > **빈 클래스**를 차례로 선택하고, **이름**으로 *DeviceInstallationService.cs*를 입력한 다음, **새로 만들기**를 클릭하여 다음 구현을 추가합니다.
+1. **일반** > **빈 클래스** 를 차례로 선택하고, **이름** 으로 *DeviceInstallationService.cs* 를 입력한 다음, **새로 만들기** 를 클릭하여 다음 구현을 추가합니다.
 
     ```csharp
     using System;
@@ -65,7 +65,7 @@ ms.locfileid: "91493274"
                 if (!NotificationsSupported)
                     throw new Exception(GetNotificationsSupportError());
 
-                if (string.isNullOrWhitespace(Token))
+                if (string.IsNullOrWhitespace(Token))
                     throw new Exception("Unable to resolve token for APNS");
 
                 var installation = new DeviceInstallation
@@ -98,7 +98,7 @@ ms.locfileid: "91493274"
     > [!NOTE]
     > 이 클래스는 고유 ID([UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12) 값 사용) 및 알림 허브 등록 페이로드를 제공합니다.
 
-1. *Extensions*라는 새 폴더를 **PushDemo.iOS** 프로젝트에 추가하고, 다음 구현을 사용하여 *NSDataExtensions.cs*라는 **빈 클래스**를 해당 폴더에 추가합니다.
+1. *Extensions* 라는 새 폴더를 **PushDemo.iOS** 프로젝트에 추가하고, 다음 구현을 사용하여 *NSDataExtensions.cs* 라는 **빈 클래스** 를 해당 폴더에 추가합니다.
 
     ```csharp
     using System.Text;
@@ -126,7 +126,7 @@ ms.locfileid: "91493274"
     }
     ```
 
-1. **AppDelegate.cs**에서 다음 네임스페이스가 파일의 맨 위에 추가되었는지 확인합니다.
+1. **AppDelegate.cs** 에서 다음 네임스페이스가 파일의 맨 위에 추가되었는지 확인합니다.
 
     ```csharp
     using System;
@@ -164,7 +164,7 @@ ms.locfileid: "91493274"
             ServiceContainer.Resolve<IDeviceInstallationService>());
     ```
 
-1. **RegisterForRemoteNotifications** 메서드를 추가하여 사용자 알림 설정을 등록한 다음, **APNS**를 사용하여 원격 알림을 등록합니다.
+1. **RegisterForRemoteNotifications** 메서드를 추가하여 사용자 알림 설정을 등록한 다음, **APNS** 를 사용하여 원격 알림을 등록합니다.
 
     ```csharp
     void RegisterForRemoteNotifications()
@@ -193,7 +193,7 @@ ms.locfileid: "91493274"
     }
     ```
 
-1. **NSDictionary** 알림 데이터를 처리하고 **NotificationActionService.TriggerAction**을 조건부로 호출할 **ProcessNotificationActions** 메서드를 추가합니다.
+1. **NSDictionary** 알림 데이터를 처리하고 **NotificationActionService.TriggerAction** 을 조건부로 호출할 **ProcessNotificationActions** 메서드를 추가합니다.
 
     ```csharp
     void ProcessNotificationActions(NSDictionary userInfo)
@@ -269,7 +269,7 @@ ms.locfileid: "91493274"
     }
     ```
 
-1. 여전히 **FinishedLaunching**에서, 최종 **userInfo** 개체를 전달하는 **UIApplication.LaunchOptionsRemoteNotificationKey**가 **options** 인수에 포함된 경우 `LoadApplication`을 호출한 직후 **ProcessNotificationActions**를 호출합니다.
+1. 여전히 **FinishedLaunching** 에서, 최종 **userInfo** 개체를 전달하는 **UIApplication.LaunchOptionsRemoteNotificationKey** 가 **options** 인수에 포함된 경우 `LoadApplication`을 호출한 직후 **ProcessNotificationActions** 를 호출합니다.
 
     ```csharp
     using (var userInfo = options?.ObjectForKey(

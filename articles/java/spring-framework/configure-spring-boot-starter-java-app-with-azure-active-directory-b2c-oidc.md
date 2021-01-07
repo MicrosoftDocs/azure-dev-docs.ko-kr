@@ -12,12 +12,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: aa2d60f969895acbcb56f74e909993ceb9b0d7d5
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: 55b5926ade03280419d03d317df04f5d984ec46b
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066304"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911453"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C용 Spring Boot Starter를 사용하여 Java 웹앱 보호
 
@@ -53,8 +53,6 @@ ms.locfileid: "93066304"
 
    ![프로젝트를 생성하기 위한 값 입력](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
 
-    > [!NOTE]
-    > Spring Initializr는 Java 11을 기본 버전으로 사용합니다. 이 항목에 설명된 Spring Boot Starters를 사용하려면 대신 Java 8을 선택해야 합니다.
 
 
 3. **프로젝트 생성** 을 선택한 다음, 프로젝트를 로컬 컴퓨터의 경로에 다운로드합니다. 다운로드한 파일을 프로젝트의 이름을 딴 디렉터리로 이동하고, 파일의 압축을 풉니다. 파일 레이아웃은 다음과 같으며, 이 경우 `yourProject` 대신 **그룹** 에 대해 입력한 값을 사용합니다.
@@ -240,7 +238,7 @@ ms.locfileid: "93066304"
 
 7. *application.yml* 파일을 저장하고 닫습니다.
 
-8. *src/main/java/<yourGroupId>/<yourGroupId>* 에서 *controller* 라는 폴더를 만들고, `<yourGroupId>`를 **그룹** 에 대해 입력한 값으로 바꿉니다.
+8. *src/main/java/\<yourGroupId\>/\<yourGroupId\>* 에서 *controller* 라는 폴더를 만들고, `<yourGroupId>`를 **그룹** 에 대해 입력한 값으로 바꿉니다.
 
 9. *WebController.java* 라는 새 Java 파일을 *controller* 폴더에 만들고 텍스트 편집기에서 엽니다.
 
@@ -292,7 +290,7 @@ ms.locfileid: "93066304"
 
     컨트롤러의 모든 메서드에서 `initializeModel()`을 호출하고 해당 메서드에서 `model.addAllAttributes(user.getAttributes());`를 호출하므로 *src/main/resources/templates* 의 모든 HTML 페이지에서 `${name}`, `${grant_type}` 또는 `${auth_time}`과 같은 특성에 액세스할 수 있습니다. `user.getAttributes()`에서 반환되는 값은 실제로 인증에 대한 `id_token`의 클레임입니다. 사용 가능한 클레임의 전체 목록은 [Microsoft ID 플랫폼 ID 토큰](/azure/active-directory/develop/id-tokens#payload-claims)에 나와 있습니다.
 
-11. *src/main/java/<yourGroupId>/<yourGroupId>* 에서 *security* 라는 폴더를 만들고, `yourGroupId`를 **그룹** 에 대해 입력한 값으로 바꿉니다.
+11. *src/main/java/\<yourGroupId\>/\<yourGroupId\>* 에서 *security* 라는 폴더를 만들고, `yourGroupId`를 **그룹** 에 대해 입력한 값으로 바꿉니다.
 
 12. *WebSecurityConfiguration.java* 라는 새 Java 파일을 *security* 폴더에 만들고 텍스트 편집기에서 엽니다.
 
@@ -337,7 +335,7 @@ ms.locfileid: "93066304"
 2. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 
     > [!NOTE]
-    > 로컬 Spring Boot 앱이 실행되는 시스템 클록에 따른 시간은 정확해야 합니다. OAuth 2.0을 사용하는 경우 클록 스큐의 허용 오차가 거의 없습니다. 3분의 부정확도에도 `[invalid_id_token] An error occurred while attempting to decode the Jwt: Jwt used before 2020-05-19T18:52:10Z`와 비슷한 오류와 함께 로그인이 실패할 수 있습니다. 이 문서를 작성할 당시 [time.gov](https://time.gov/)에는 클록이 실제 시간에서 떨어져 있는 정도를 나타내는 표시기가 있습니다. 앱은 0.019초 이상의 스큐를 통해 성공적으로 실행되었습니다.
+    > 로컬 Spring Boot 앱이 실행되는 시스템 클록에 따른 시간은 정확해야 합니다. OAuth 2.0을 사용하는 경우 클록 스큐의 허용 오차가 거의 없습니다. 3분 동안에도 정확하지 않은 경우 `[invalid_id_token] An error occurred while attempting to decode the Jwt: Jwt used before 2020-05-19T18:52:10Z`와 비슷한 오류와 함께 로그인이 실패할 수 있습니다. 이 문서를 작성할 당시 [time.gov](https://time.gov/)에는 클록이 실제 시간에서 떨어져 있는 정도를 나타내는 표시기가 있습니다. 앱은 0.019초 이상의 스큐를 통해 성공적으로 실행되었습니다.
 
     ```shell
     mvn -DskipTests clean package

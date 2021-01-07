@@ -4,22 +4,22 @@ description: 기본 앱의 구현에 대한 개요이며, 모든 코드를 포�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 62514474e2eb4517669029058526a39d3a4f3442
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764745"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952435"
 ---
 # <a name="part-4-example-main-application-implementation"></a>4부. 기본 애플리케이션 구현 예
 
 [이전 파트: 타사 API 구현 예](walkthrough-tutorial-authentication-03.md)
 
-이 시나리오의 기본 앱은 Azure App Service에 배포된 간단한 Flask 앱입니다. 앱은 */api/v1/getcode*라는 공용 API 엔드포인트를 제공하며, 앱에서 다른 용도로 코드를 생성합니다(예: 인간 사용자에 대한 2단계 인증 사용).
+이 시나리오의 기본 앱은 Azure App Service에 배포된 간단한 Flask 앱입니다. 앱은 */api/v1/getcode* 라는 공용 API 엔드포인트를 제공하며, 앱에서 다른 용도로 코드를 생성합니다(예: 인간 사용자에 대한 2단계 인증 사용).
 
-작동 중인 엔드포인트를 보려면 브라우저에서 [https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode](https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode)를 방문하거나 curl을 사용하여 요청합니다.
+작동 중인 엔드포인트를 보려면 브라우저에서 [https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode](https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode)를 방문하거나 curl을 사용하여 요청합니다.
 
-기본 앱은 API 엔드포인트 링크를 표시하는 간단한 홈 페이지도 제공합니다. [https://msdocs-main-app-example.azurewebsites.net](https://msdocs-main-app-example.azurewebsites.net)에서 앱의 이 부분을 볼 수 있습니다.
+기본 앱은 API 엔드포인트 링크를 표시하는 간단한 홈 페이지도 제공합니다. [https://msdocs-example-main-app.azurewebsites.net](https://msdocs-example-main-app.azurewebsites.net)에서 앱의 이 부분을 볼 수 있습니다.
 
 샘플의 프로비저닝 스크립트는 다음 단계를 수행합니다.
 

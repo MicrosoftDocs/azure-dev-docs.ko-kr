@@ -3,13 +3,13 @@ title: '5단계: VS Code를 사용하여 Python에서 서버리스 Azure Functio
 description: 자습서 5단계로, Azure에 Python 서버리스 함수 코드를 배포하고 로컬 프로젝트와 Azure 간에 로그를 스트리밍하고 설정을 동기화하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019, contperfq2
-ms.openlocfilehash: bcbc7116c1c0bc0cf323d56e46471856ebc5e9ea
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.custom: devx-track-python, seo-python-october2019, contperf-fy21q2
+ms.openlocfilehash: 24c24aa7a52b756688449eafa0645d0ac971cea3
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759300"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911383"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Python에서 Azure Functions 배포
 

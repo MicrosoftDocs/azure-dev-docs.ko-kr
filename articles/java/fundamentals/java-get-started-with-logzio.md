@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
 ms.custom: devx-track-java
-ms.openlocfilehash: 89dc2a40e39a417d33e59b22f28202c61f036c79
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 88dc420b594a50f3a82462552427c2d838e3a2ce
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831489"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864275"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>자습서: Azure에서 실행되는 Java 앱용 Logz.io를 사용하여 모니터링 및 로깅 시작
 
@@ -38,7 +38,7 @@ ms.locfileid: "90831489"
 
 ### <a name="get-your-logzio-access-token"></a>Logz.io 액세스 토큰 가져오기
 
-토큰을 가져오려면 Logz.io 계정에 로그인하고, 오른쪽 모서리에서 톱니바퀴 아이콘을 선택한 다음, **설정 > 일반**을 차례로 선택합니다. 나중에 사용할 수 있도록 계정 설정에 표시된 액세스 토큰을 복사하세요.
+토큰을 가져오려면 Logz.io 계정에 로그인하고, 오른쪽 모서리에서 톱니바퀴 아이콘을 선택한 다음, **설정 > 일반** 을 차례로 선택합니다. 나중에 사용할 수 있도록 계정 설정에 표시된 액세스 토큰을 복사하세요.
 
 ### <a name="install-and-configure-the-logzio-library-for-log4j-or-logback"></a>Log4J 또는 Logback용 Logz.io 라이브러리 설치 및 구성
 
@@ -161,7 +161,7 @@ Connected. Tailing...
 
 [리포지토리의 추가 정보에 있는 첫 번째 단계](https://github.com/logzio/logzio-azure-serverless)에 표시된 **Azure에 배포** 단추를 찾습니다.
 
-**Azure에 배포**가 선택되면 Azure Portal의 **사용자 지정 배포** 페이지가 미리 채워진 필드 목록과 함께 표시됩니다.
+**Azure에 배포** 가 선택되면 Azure Portal의 **사용자 지정 배포** 페이지가 미리 채워진 필드 목록과 함께 표시됩니다.
 
 대부분의 필드는 있는 그대로 둘 수 있지만, 다음 설정은 입력해야 합니다.
 
@@ -169,35 +169,35 @@ Connected. Tailing...
 * **Logzio 로그/메트릭 호스트**: Logz.io 수신기의 URL을 입력합니다. 이 URL이 무엇인지 확실하지 않으면 로그인 URL을 확인합니다. app.logz.io인 경우 listener.logz.io를 사용합니다(기본 설정). app-eu.logz.io인 경우 listener-eu.logz.io를 사용합니다.
 * **Logzio 로그/메트릭 토큰**: Azure 로그 또는 메트릭을 제공하려는 Logz.io 계정의 토큰을 입력합니다. 이 토큰은 Logz.io UI의 계정 페이지에서 찾을 수 있습니다.
 
-페이지 아래쪽의 약관에 동의하고, **구매**를 선택합니다. 그러면 Azure에서 템플릿을 배포하며, 1~2분 정도 걸릴 수 있습니다. 결국에는 포털의 위쪽에 "배포 성공" 메시지가 표시됩니다.
+페이지 아래쪽의 약관에 동의하고, **구매** 를 선택합니다. 그러면 Azure에서 템플릿을 배포하며, 1~2분 정도 걸릴 수 있습니다. 결국에는 포털의 위쪽에 "배포 성공" 메시지가 표시됩니다.
 
 정의된 리소스 그룹을 방문하여 배포된 리소스를 검토할 수 있습니다.
 
-데이터를 Azure Blob Storage에 백업하도록 logzio-azure-serverless를 구성하는 방법을 알아보려면 [Azure 활동 로그 제공](https://docs.logz.io/shipping/log-sources/azure-activity-logs.html)을 참조하세요.
+데이터를 Azure Blob Storage에 백업하도록 logzio-azure-serverless를 구성하는 방법을 알아보려면 [Azure 활동 로그 제공](https://docs.logz.io/shipping/log-sources/azure-diagnostic-logs.html)을 참조하세요.
 
 ### <a name="stream-azure-logs-and-metrics-to-logzio"></a>Logz.io로 Azure 로그 및 메트릭 스트림
 
 이제 통합 템플릿을 배포했으므로 진단 데이터를 방금 배포한 Event Hub로 스트림하도록 Azure를 구성해야 합니다. 데이터가 Event Hub에 제공되면 함수 앱에서 해당 데이터를 Logz.io로 전달합니다.
 
-1. 검색 창에서 "진단"을 입력한 다음, **진단 설정**을 선택합니다.
+1. 검색 창에서 "진단"을 입력한 다음, **진단 설정** 을 선택합니다.
 
-2. 리소스 목록에서 리소스를 선택한 다음, **진단 설정**을 선택하여 해당 리소스에 대한 **진단 설정** 패널을 엽니다.
+2. 리소스 목록에서 리소스를 선택한 다음, **진단 설정** 을 선택하여 해당 리소스에 대한 **진단 설정** 패널을 엽니다.
 
     ![진단 설정 패널](media/java-get-started-with-logzio/diagnostics-settings.png)
 
-3. **이름**에서 진단 설정 이름을 지정합니다.
+3. **이름** 에서 진단 설정 이름을 지정합니다.
 
-4. **이벤트 허브로의 스트림**을 선택한 다음, **구성**을 선택하여 **Event Hub 선택** 패널을 엽니다.
+4. **이벤트 허브로의 스트림** 을 선택한 다음, **구성** 을 선택하여 **Event Hub 선택** 패널을 엽니다.
 
 5. Event Hub를 선택합니다.
 
-    * **이벤트 허브 네임스페이스 선택**: **Logzio**로 시작하는 네임스페이스(예: `LogzioNS6nvkqdcci10p`)를 선택합니다.
-    * **이벤트 허브 이름 선택**: 로그에 대해 **insights-operational-logs**를 선택하고, 메트릭에 대해 **insights-operational-metrics**를 선택합니다.
-    * **이벤트 허브 정책 이름 선택**: **LogzioSharedAccessKey**를 선택합니다.
+    * **이벤트 허브 네임스페이스 선택**: **Logzio** 로 시작하는 네임스페이스(예: `LogzioNS6nvkqdcci10p`)를 선택합니다.
+    * **이벤트 허브 이름 선택**: 로그에 대해 **insights-operational-logs** 를 선택하고, 메트릭에 대해 **insights-operational-metrics** 를 선택합니다.
+    * **이벤트 허브 정책 이름 선택**: **LogzioSharedAccessKey** 를 선택합니다.
 
-6. **확인**을 선택하여 **진단 설정** 패널로 돌아갑니다.
+6. **확인** 을 선택하여 **진단 설정** 패널로 돌아갑니다.
 
-7. [로그] 섹션에서 스트림하려는 데이터를 선택한 다음, **저장**을 선택합니다.
+7. [로그] 섹션에서 스트림하려는 데이터를 선택한 다음, **저장** 을 선택합니다.
 
 이제 선택한 데이터가 Event Hub로 스트림됩니다.
 

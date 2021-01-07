@@ -4,12 +4,12 @@ description: 기본 앱의 종속성(주로 Azure SDK 라이브러리), 필요�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 666ddd3222e724c316c6cf975bbb1e292f4525cd
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764735"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952465"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>5부: 기본 앱 종속성, import 문, 환경 변수
 
@@ -48,7 +48,7 @@ from azure.storage.queue import QueueClient
 
 | 변수 | 값 |
 | --- | --- |
-| THIRD_PARTY_API_ENDPOINT | 타사 API의 URL입니다(예: [3부](walkthrough-tutorial-authentication-03.md)에 설명된 `https://msdocs-api-example.azurewebsites.net/api/RandomNumber`). |
+| THIRD_PARTY_API_ENDPOINT | 타사 API의 URL입니다(예: [3부](walkthrough-tutorial-authentication-03.md)에 설명된 `https://msdocs-example-api.azurewebsites.net/api/RandomNumber`). |
 | KEY_VAULT_URL | 타사 API에 대한 액세스 키를 저장한 Azure Key Vault의 URL입니다. |
 | THIRD_PARTY_API_SECRET_NAME | 타사 API에 대한 액세스 키가 포함된 Key Vault의 비밀 이름입니다. |
 | STORAGE_QUEUE_URL | Azure에서 구성된 Azure Storage Queue의 URL(예: [4부](walkthrough-tutorial-authentication-04.md)의 `https://msdocsmainappexample.queue.core.windows.net/code-requests`)입니다. 큐 이름은 URL 끝에 포함되기 때문에 코드의 어디에도 이름이 보이지 않습니다. |

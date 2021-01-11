@@ -4,18 +4,18 @@ description: 이 자습서에 제공된 Azure Active Directory 인증은 로그�
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 0128d773a2bbc79b22b3ce3424e7133942053597
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393892"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911493"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>인증에 사용할 단일 페이지 애플리케이션에 Microsoft 로그인 단추 추가
 
 이 TypeScript 자습서에 제공된 Azure 인증은 로그인 및 로그아웃 단추이며, 사용자 계정에 대한 액세스를 제공합니다. Azure 클라이언트 쪽 SDK `@azure/msal-browser`를 사용하여 애플리케이션을 개발하고, SPA(단일 페이지 애플리케이션)에서 사용자의 상호 작용을 관리합니다.
 
-* [소스 코드](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
+* [예제 코드](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 
 ## <a name="application-architecture-and-functionality"></a>애플리케이션 아키텍처 및 기능
 
@@ -39,7 +39,7 @@ ms.locfileid: "97393892"
 
 ## <a name="2-keep-value-for-environment-variable"></a>2. 환경 변수 값 유지
 
-앱 클라이언트 ID 값을 복사할 장소를 따로 마련해 둡니다. 
+텍스트 파일 등 앱 등록의 클라이언트 ID 값을 복사할 위치를 따로 설정합니다. 다음 섹션의 5단계에서 이 클라이언트 ID를 가져올 것입니다. 이 값은 웹앱에 대한 환경 변수로 사용됩니다.  
 
 ## <a name="3-create-app-registration-for-authentication"></a>3. 인증에 사용할 앱 등록 만들기
 
@@ -67,17 +67,17 @@ ms.locfileid: "97393892"
    npx create-react-app tutorial-demo-login-button --template typescript
    ```
 
-1. 새 디렉터리로 변경하고 `@azure/msal-browser` 패키지를 설치합니다.
+1. 새 디렉터리로 변경하고 `@azure/msal-browser` 인증 패키지를 설치합니다.
 
    ```bash
    cd tutorial-demo-login-button && npm install @azure/msal-browser
    ```
 
-1. 루트 수준 파일에서 `.env`를 만들고 다음 줄을 추가합니다.
+1. 루트 수준에서 `.env` 파일을 만들고 다음 줄을 추가합니다.
 
     :::code language="env" source="~/../js-e2e-client-azure-login-button/.env"  :::
 
-    `.env` 파일은 create-react-app 프레임워크의 일부로 읽힙니다.
+    `.env` 파일은 create-react-app 프레임워크의 일부로 읽힙니다. 이 파일은 로컬 개발을 위해 클라이언트 ID를 저장할 수 있는 위치입니다. 
 
 1. 애플리케이션(클라이언트) ID를 두 번째 값에 복사합니다.
 

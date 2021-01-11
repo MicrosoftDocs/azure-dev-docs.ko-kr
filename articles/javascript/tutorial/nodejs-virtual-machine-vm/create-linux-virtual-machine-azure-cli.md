@@ -2,14 +2,14 @@
 title: Linux 가상 머신 만들기
 description: Azure CLI를 사용하여 가상 머신을 만들고 구성합니다. 자습서를 여기까지 진행했다면 현재 터미널 창이 열려 있고, 가상 머신을 만들려는 구독에서 Azure CLI를 통해 Azure 클라우드에 로그인되어 있을 것입니다.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: d2da4cac2a93ad953ada9cd98de679abba034908
-ms.sourcegitcommit: a2a51e0c6530eb5794a2fe667cf4c9a60b2a7470
+ms.openlocfilehash: a618c9584775a7c384f05ef01a563943c48f2b3a
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625032"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952505"
 ---
 # <a name="3-create-linux-virtual-machine-using-azure-cli"></a>3. Azure CLI를 사용하여 Linux 가상 머신 만들기
 
@@ -33,30 +33,34 @@ Azure CLI의 단일 인스턴스에서 모든 Azure CLI 단계를 완료할 수 
 
 ## <a name="create-a-virtual-machine-resource"></a>가상 머신 리소스 만들기 
 
-1. 터미널에서 [Azure CLI 명령](/cli/azure/vm?view=azure-cli-latest#az_vm_create)을 입력하여 Linux 가상 머신의 Azure 리소스를 만듭니다. 이 명령은 cloud-init 파일로 VM을 만들고 SSH 키를 생성합니다. 실행 중인 명령은 키가 저장되는 위치를 표시합니다. 
+터미널에서 [Azure CLI 명령](/cli/azure/vm?view=azure-cli-latest#az_vm_create)을 입력하여 Linux 가상 머신의 Azure 리소스를 만듭니다. 이 명령은 cloud-init 파일로 VM을 만들고 SSH 키를 생성합니다. 실행 중인 명령은 키가 저장되는 위치를 표시합니다. 
 
-    ```azurecli
-    az vm create \
-      --resource-group rg-demo-vm-eastus \
-      --name demo-vm \
-      --location eastus \
-      --image UbuntuLTS \
-      --admin-username azureuser \
-      --generate-ssh-keys \
-      --custom-data cloud-init-github.txt
-    ```
+```azurecli
+az vm create \
+  --resource-group rg-demo-vm-eastus \
+  --name demo-vm \
+  --location eastus \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys \
+  --custom-data cloud-init-github.txt
+```
 
-    이 프로세스에 몇 분 정도 걸릴 수 있습니다. 프로세스가 완료되면 Azure CLI가 새 리소스에 대한 정보를 반환합니다. `publicIpAddress` 값을 그대로 유지합니다. 브라우저에서 웹앱을 살펴보고 VM에 연결하는 데 필요합니다. 
+이 프로세스에 몇 분 정도 걸릴 수 있습니다. 프로세스가 완료되면 Azure CLI가 새 리소스에 대한 정보를 반환합니다. `publicIpAddress` 값을 그대로 유지합니다. 브라우저에서 웹앱을 살펴보고 VM에 연결하는 데 필요합니다. 
      
 
-1. 생성된 가상 머신은 처음에는 열려 있는 포트가 _없습니다_. 웹앱을 공개적으로 사용할 수 있도록 다음 [Azure CLI 명령](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port)을 사용하여 80 포트를 엽니다.
+## <a name="open-port-for-virtual-machine"></a>가상 머신용 포트 열기
 
-    ```azurecli
-    az vm open-port \
-      --port 80 \
-      --resource-group rg-demo-vm-eastus \
-      --name demo-vm
-    ```
+생성된 가상 머신은 처음에는 열려 있는 포트가 _없습니다_. 웹앱을 공개적으로 사용할 수 있도록 다음 [Azure CLI 명령](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port)을 사용하여 80 포트를 엽니다.
+
+```azurecli
+az vm open-port \
+  --port 80 \
+  --resource-group rg-demo-vm-eastus \
+  --name demo-vm
+```
+
+## <a name="browse-to-web-site"></a>웹 사이트로 이동
 
 1. 웹 브라우저에서 공용 IP 주소를 사용하여 가상 머신이 사용 가능하고 현재 실행 중인지 확인합니다. `publicIpAddress`의 값을 사용하도록 URL을 변경합니다.
 

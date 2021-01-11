@@ -2,18 +2,18 @@
 title: Node.js용 Azure 관리 모듈을 사용하여 인증
 description: 서비스 사용자를 통해 Node.js용 Azure 관리 모듈에 인증합니다.
 ms.topic: how-to
-ms.date: 10/19/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 58acb71741f7e3b381e492b9ac3c06d6a94c331b
-ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
+ms.openlocfilehash: 413357533d5ddf8e41bc2e33d929074df4f2ac12
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034534"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864263"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript용 Azure 관리 모듈을 사용하여 인증
 
-모든 [SDK 클라이언트 라이브러리](../azure-sdk-library-package-index.md)에는 인스턴스화될 때 `credentials` 개체를 통한 인증이 필요합니다. 필요한 자격 증명을 인증하고 만드는 방법에는 여러 가지가 있습니다.
+모든 [SDK 클라이언트 라이브러리](../azure-sdk-library-package-index.md)는 `credentials` 개체를 통한 인증이 필요합니다. 필요한 자격 증명을 인증하고 만드는 방법에는 여러 가지가 있습니다.
 
 모든 소프트웨어 및 서비스와 마찬가지로 인증은 수년에 걸쳐 개선되었습니다. 해당 서비스에서 사용하는 인증 라이브러리를 알고 있어야 합니다. 
 
@@ -49,19 +49,22 @@ const blobServiceClient = new BlobServiceClient(
 );
 ```
 
+앞의 JavaScript 예제 코드는 Azure ID 라이브러리를 사용하여 기본 Azure 자격 증명을 만든 다음, 이 자격 증명을 사용하여 Azure Storage 리소스에 액세스하는 방법을 보여줍니다.
+
 ## <a name="azure-ms-rest--libraries"></a>Azure ms-rest-* 라이브러리
-`@azure` 범위 지정 [클라이언트 라이브러리](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries)를 사용하려면 서비스를 사용하기 위한 토큰이 필요합니다. 자격 증명을 반환하는 Azure SDK 클라이언트 인증 방법을 사용하여 토큰을 가져옵니다. 
+최신 `@azure` 범위의 [클라이언트 라이브러리](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries)의 경우 서비스를 사용하려면 토큰이 필요합니다. 자격 증명을 반환하는 Azure SDK 클라이언트 인증 방법을 사용하여 토큰을 가져옵니다. 
 
 ```javascript
 const msRestNodeAuth = require("@azure/ms-rest-nodeauth");
 msRestNodeAuth.interactiveLogin().then((credential) => {
-}).catch((err) => {
     // service code goes here
+}).catch((err) => {
+    // error code goes here
     console.error(err);
 });
 ```
 
-다음 코드 샘플에서 사용하는 Storage 서비스와 같은 특정 Azure 서비스 클라이언트 라이브러리에 자격 증명을 전달합니다. 클라이언트 라이브러리에서 해당 자격 증명을 사용하여 토큰을 생성합니다. 서비스에서 해당 토큰을 사용하여 요청의 유효성을 검사합니다. 
+앞의 JavaScript 예제 코드는 대화형 로그인과 함께 최신 Azure 인증 라이브러리를 사용하여 자격 증명을 얻는 방법을 보여줍니다.
 
 ```javascript
 // service code - this is an example only and not best practices for code flow
@@ -73,6 +76,8 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 })
 ```
 
+앞의 JavaScript 예제 코드는 이 다음 코드 샘플에서 사용되는 스토리지 서비스와 같은 특정 Azure 서비스 클라이언트 라이브러리에 해당 자격 증명을 전달하는 방법을 보여줍니다. 클라이언트 라이브러리에서 해당 자격 증명을 사용하여 토큰을 생성합니다. 서비스는 토큰을 사용하여 요청에 대한 서비스 수준 인증의 유효성을 검사합니다. 
+
 클라이언트 라이브러리는 토큰을 관리하며, 토큰을 언제 새로 고쳐야 하는지 알고 있습니다. 코드 베이스를 사용하는 개발자는 이를 관리할 필요가 없습니다.
 
 ## <a name="older-azure-sdk-client-authentication"></a>이전 Azure SDK 클라이언트 인증 
@@ -80,8 +85,10 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 이전 Azure SDK 클라이언트는 궁극적으로 위에서 사용한 새로운 최신 인증으로 마이그레이션됩니다. 이 마이그레이션이 완료될 때까지 이전 클라이언트 라이브러리는 여러 인증 클라이언트를 사용하거나 리소스 키처럼 완전히 분리된 메커니즘을 사용하여 인증할 수 있습니다. 
 
 이전 클라이언트 라이브러리에서 최상의 결과를 얻기 위해 다음과 같은 동작이 수행됩니다. 
-* 각 npm 패키지는 해당 클라이언트 라이브러리의 인증을 보여줍니다. 
-* 현재 코드에서 @azure/ms를 사용하는 경우
+* 각 npm 패키지는 해당 클라이언트 라이브러리의 인증을 보여줍니다.  
+* 현재 코드가 동일한 코드 베이스에서 최신 `@azure/ms-*` 라이브러리와 이전의 인증 라이브러리를 사용하는 경우:
+    * 이전의 비 Azure 범위 라이브러리가 서비스의 최신 라이브러리인지 확인하세요. 이 내용은 서비스 설명서에 나와 있습니다. 
+    * 최신 인증 라이브러리와 이전의 인증 라이브러리를 함께 사용해야 하는 경우, 코드 베이스의 모든 애플리케이션 논리와 일치하도록 이전 라이브러리에 대한 자격 증명 만료를 제공하고 새로 고쳐야 할 수 있습니다. 
 
 ## <a name="authentication-with-azure-services-while-developing"></a>개발 중에 Azure 서비스를 사용하여 인증
 

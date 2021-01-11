@@ -4,18 +4,20 @@ description: 이 자습서에서는 MongoDB 네이티브 API를 사용하여 Mon
 ms.topic: tutorial
 ms.date: 12/03/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 1ddbe6a463f877e86a0c46da1ffb17c6a3094c0a
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: 6c295c305f2882c4a97a34ffa288738112ee9600
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522407"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911503"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Visual Studio Code에서 App Service에 Express.js MongoDB 앱 배포
 
 MongoDB에 연결하는 Express.js 애플리케이션을 Linux의 Azure App Service와 CosmosDB에 배포합니다. 
 
 프로그래밍 작업은 완료되었습니다. 이 자습서에서는 Azure 확장을 사용하여 Visual Studio Code 내에서 로컬 및 원격 Azure 환경을 성공적으로 사용하는 데 중점을 둡니다.
+
+* **[예제 코드](https://github.com/Azure-Samples/js-e2e-express-mongo)**
 
 ## <a name="top-tasks"></a>상위 작업
 

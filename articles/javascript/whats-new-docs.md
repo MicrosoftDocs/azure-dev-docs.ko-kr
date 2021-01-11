@@ -1,18 +1,27 @@
 ---
-title: 'JavaScript의 새로운 기능 문서: '
-description: 2020년 10월 JavaScript의 새로운 기능 문서
+title: JavaScript 문서의 새로운 내용
+description: 개발자 센터의 JavaScript 문서의 새로운 내용
 ms.topic: conceptual
-ms.date: 12/18/2020
-ms.openlocfilehash: ccc38a8dae86527650342e16e30da9fa7f28c0a7
-ms.sourcegitcommit: 28bed3dead87528796bdd76f3e94e66f4bd5e197
+ms.date: 01/05/2021
+ms.openlocfilehash: 507c52491784a508535ae07f4a9b2755fa68cc1b
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97710390"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952455"
 ---
-# <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript 문서: 2020년 10월의 새로운 기능
+# <a name="javascript-docs-whats-new"></a>JavaScript 문서: 새로운 내용
 
 JavaScript 및 TypeScript 개발자를 위한 새로운 콘텐츠 및 업데이트된 콘텐츠를 찾아보세요.
+
+## <a name="2021-january"></a>2021년 1월
+
+### <a name="whats-updated"></a>업데이트 내용
+
+|이름|메모|
+|---------------------------------------|--|
+|[**초보자용**](learn-azure-javascript.md#getting-started)|JavaScript, Node.js, 웹 개발 및 기타 JavaScript 개발자의 관심 분야를 시작하기 위한 다양한 온라인 자료 모음입니다.|
+|[JavaScript 개발자를 위한 일반 상위 작업](how-to/common-javascript-tasks.md)|현재 작업의 예를 찾습니다.|
 
 ## <a name="2020-december"></a>2020년 12월
 

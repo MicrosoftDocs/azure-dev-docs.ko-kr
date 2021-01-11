@@ -3,14 +3,14 @@ title: '자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Djang
 description: Azure에서 웹앱 및 PostgreSQL 데이터베이스를 프로비저닝하고 GitHub에서 앱 코드를 배포합니다.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 11/02/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
-ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
+ms.openlocfilehash: 65f8558aa81e839b3701669a0274419cd2143e49
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284533"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911463"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 PostgreSQL을 사용하는 Django 웹앱 배포
 
@@ -48,7 +48,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. **리소스 만들기** 를 선택합니다. 그러면 **새로 만들기** 페이지가 열립니다.
 
-1. **웹앱** 을 검색하여 선택합니다.
+1. **웹앱** 을 검색하여 선택한 다음, **만들기** 를 선택합니다.
 
 1. **웹앱 만들기** 페이지에서 다음 정보를 입력합니다.
 
@@ -61,9 +61,9 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
     | 런타임 스택 | 드롭다운 목록에서 **Python 3.8** 을 선택합니다. |
     | 지역 | 가까운 위치를 선택합니다. |
     | Linux 플랜 | 포털에서 이 필드는 리소스 그룹을 기반으로 하는 App Service 계획 이름으로 채워집니다. 이름을 변경하려면 **새로 만들기** 를 선택합니다. |
-    | SKU 및 크기 | 구독에서 요금이 발생하더라도 최상의 성능을 위해 기본 계획을 사용합니다. 요금 청구를 방지하려면 **크기 변경** , **개발/테스트** , **B1** (30일간 체험)을 차례로 선택한 다음, **적용** 을 선택합니다. 성능 향상을 위해 나중에 계획을 확장할 수 있습니다. |
+    | SKU 및 크기 | 구독에서 요금이 발생하더라도 최상의 성능을 위해 기본 계획을 사용합니다. 요금 청구를 방지하려면 **크기 변경**, **개발/테스트**, **B1**(30일간 체험)을 차례로 선택한 다음, **적용** 을 선택합니다. 성능 향상을 위해 나중에 계획을 확장할 수 있습니다. |
 
-1. **검토 + 만들기** , **만들기** 를 차례로 선택합니다. Azure에서 웹앱을 프로비저닝하는 데 몇 분 정도 걸립니다.
+1. **검토 + 만들기**, **만들기** 를 차례로 선택합니다. Azure에서 웹앱을 프로비저닝하는 데 몇 분 정도 걸립니다.
 
 1. 프로비저닝이 완료되면 **리소스로 이동** 을 선택하여 웹앱에 대한 개요 페이지를 엽니다. 이후 단계를 위해 이 브라우저 창 또는 탭을 열어 둡니다.
 
@@ -75,7 +75,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. **리소스 만들기** 를 선택합니다. 그러면 **새로 만들기** 페이지가 열립니다.
 
-1. **Azure Database for PostgreSQL** 을 검색하여 선택합니다.
+1. **Azure Database for PostgreSQL** 을 검색하여 선택한 다음, **만들기** 를 선택합니다.
 
 1. 다음 페이지의 **단일 서버** 아래에서 **만들기** 를 선택합니다.
 
@@ -148,7 +148,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
     | 설정 이름 | 값 |
     | --- | --- |
-    | DBHOST | 이전 섹션의 데이터베이스 서버 이름입니다. 즉, `.postgres.database.azure.com` 앞에 오는 서버 URL의 `<server-name>` 부분입니다. ( *azuresite/production.py* 의 코드는 전체 URL을 자동으로 생성합니다.) |
+    | DBHOST | 이전 섹션의 데이터베이스 서버 이름입니다. 즉, `.postgres.database.azure.com` 앞에 오는 서버 URL의 `<server-name>` 부분입니다. (*azuresite/production.py* 의 코드는 전체 URL을 자동으로 생성합니다.) |
     | DBNAME | `pollsdb` |
     | DBUSER | 데이터베이스를 프로비저닝할 때 사용되는 관리자 사용자 이름입니다. (샘플 코드는 `@<server-name>` 부분을 자동으로 추가합니다. *azuresite/production.py* 를 참조하세요.) |
     | DBPASS | 이전에 만든 관리자 암호입니다. |
@@ -170,7 +170,9 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. **원본 제어** 단계에서 **GitHub** 를 선택한 다음, 필요한 경우 **권한 부여** 를 선택합니다. 그런 다음, 로그인 프롬프트를 따르거나 **계속** 을 선택하여 현재 GitHub 로그인을 사용합니다.
 
-1. **빌드 공급자** 단계에서 **App Service 빌드 서비스** , **계속** 을 차례로 선택합니다.
+    인증이 성공했다는 팝업 창이 표시되지만 포털에 여전히 승인 단추가 표시되는 경우 페이지를 새로 고치면 GitHub 상자에 GitHub 로그인이 표시됩니다. GitHub 상자를 다시 선택한 다음, **계속** 을 선택합니다.
+
+1. **빌드 공급자** 단계에서 **App Service 빌드 서비스**, **계속** 을 차례로 선택합니다.
 
 1. **구성** 단계에서 다음 값을 선택합니다.
 
@@ -190,24 +192,18 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 코드가 배포되고 데이터베이스가 준비되면 앱을 거의 사용할 수 있습니다. 이제 데이터베이스 자체에 필요한 스키마를 설정하기만 하면 됩니다. 이렇게 하려면 Django 앱의 데이터 모델을 데이터베이스로 "마이그레이션"합니다.
 
-1. 웹 앱의 브라우저 창 또는 탭에서 **SSH** (왼쪽에 있는 **개발 도구** 아래에서)를 선택한 다음, **이동** 하여 웹앱 서버에서 SSH 콘솔을 엽니다. 웹앱 컨테이너에서 시작해야 하므로 처음 연결하는 데 1분 정도 걸릴 수 있습니다.
+1. 웹 앱의 브라우저 창 또는 탭에서 **SSH**(왼쪽에 있는 **개발 도구** 아래에서)를 선택한 다음, **이동** 하여 웹앱 서버에서 SSH 콘솔을 엽니다. 웹앱 컨테이너에서 시작해야 하므로 처음 연결하는 데 1분 정도 걸릴 수 있습니다.
 
 1. 콘솔에서 웹앱의 폴더로 변경합니다.
 
     ```bash
-    cd site/wwwroot
+    cd $APP_PATH
     ```
 
-1. 컨테이너의 가상 환경을 활성화합니다.
+1. 가상 환경 활성화
 
     ```bash
     source /antenv/bin/activate
-    ```
-
-1. Python 패키지를 설치합니다.
-
-    ```bash
-    pip install -r requirements.txt
     ```
 
 1. 데이터베이스 마이그레이션을 실행합니다.
@@ -215,6 +211,8 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
     ```bash
     python manage.py migrate
     ```
+
+    데이터베이스 연결과 관련된 오류가 발생하면 [데이터베이스 연결](#connect-the-database)에서 만든 애플리케이션 설정 값을 확인합니다.
 
 1. 앱에 대한 관리자 로그인을 만듭니다.
 
@@ -230,11 +228,11 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 이제 PostgreSQL 데이터베이스를 사용하고 있음을 보여 주기 위해 앱에 대한 빠른 테스트를 실행할 준비가 되었습니다.
 
-1. 웹앱에 대한 브라우저 창 또는 탭에서 **개요** 페이지로 돌아간 다음, 웹앱에 대한 **URL** (`http://<app-name>.azurewebsites.net` 형식)을 선택합니다.
+1. 웹앱에 대한 브라우저 창 또는 탭에서 **개요** 페이지로 돌아간 다음, 웹앱에 대한 **URL**(`http://<app-name>.azurewebsites.net` 형식)을 선택합니다.
 
-1. 데이터베이스에 아직 특정 설문 조사가 없으므로 앱에서 "설문 조사를 사용할 수 없습니다."라는 메시지가 표시됩니다.
+1. 데이터베이스에 아직 특정 설문 조사가 없으므로 앱에서 "설문 조사 앱" 및 "설문 조사를 사용할 수 없습니다."라는 메시지가 표시됩니다.
 
-1. `http://<app-name>.azurewebsites.net/admin`("Django 관리" 페이지)으로 이동하여 이전 섹션의 슈퍼 사용자 자격 증명(`root` 및 `Pollsdb1`)을 사용하여 로그인합니다.
+1. `http://<app-name>.azurewebsites.net/admin`("Django 관리" 페이지)으로 이동하여 이전 섹션의 Django 슈퍼 사용자 자격 증명(`root` 및 `Pollsdb1`)을 사용하여 로그인합니다.
 
 1. **설문 조사** 아래에서 **질문** 옆에 있는 **추가** 를 선택하고, 몇 가지 선택 항목이 있는 설문 조사 질문을 만듭니다.
 
@@ -252,7 +250,7 @@ Azure Portal을 사용하면 데이터 기반 Python [Django](https://www.django
 
 1. [Django 데이터베이스 마이그레이션 실행](#run-django-database-migrations)에서 설명한 대로 SSH를 통해 웹앱에 다시 연결합니다.
 
-1. `cd site/wwwroot`를 사용하여 앱 폴더로 변경합니다.
+1. `cd $APP_PATH`를 사용하여 앱 폴더로 변경합니다.
 
 1. `source /antenv/bin/activate`를 사용하여 가상 환경을 활성화합니다.
 

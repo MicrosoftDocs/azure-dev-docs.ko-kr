@@ -4,12 +4,12 @@ description: 자습서 2단계, 애플리케이션 설정
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: 78efb3fdfa7d7d4ac8699726c2be6b17d27ea875
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559197"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911393"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Azure App Service에 배포할 수 있도록 앱 준비
 
@@ -57,7 +57,7 @@ Django 앱이 이 샘플과 같은 로컬 SQLite 데이터베이스를 사용하
         return "Hello Flask, on Azure App Service for Linux"
     ```
 
-1. 다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
+1. 같은 폴더에서 다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
 
     ```text
     Flask
@@ -65,21 +65,33 @@ Django 앱이 이 샘플과 같은 로컬 SQLite 데이터베이스를 사용하
 
 1. 메뉴 명령 **터미널** > **새 터미널** 을 사용하여 터미널을 엽니다.
 
-1. 터미널에서 `.venv`라는 가상 환경을 만들고 활성화합니다. 
+1. 터미널에서 *hello.py* 가 포함된 폴더로 이동합니다. 나머지 모든 터미널 명령은 이 폴더에서 실행됩니다.
 
-    # <a name="macoslinux"></a>[macOS/Linux](#tab/linux)
+1. `.venv`라는 가상 환경 만들기 및 활성화:
+
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```cmd
+    :: Assumes Windows
+    py -3 -m venv .venv
+    .venv\scripts\activate
+    ```
+
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+    ```ps
+    # Assumes Windows
+    py -3 -m venv .venv
+    .venv\scripts\activate
+    ```
+
+    # <a name="bash"></a>[bash](#tab/bash)
 
     ```bash
+    # Assumes macOS/Linux
     sudo apt-get install python3-venv    # If needed
     python3 -m venv .venv
     source .venv/bin/activate
-    ```
-
-    # <a name="windows"></a>[Windows](#tab/windows)
-
-    ```cmd
-    py -3 -m venv .venv
-    .venv\scripts\activate
     ```
 
     ---

@@ -4,18 +4,20 @@ description: '자습서 3부: Azure CLI - App Service 만들기'
 ms.topic: tutorial
 ms.date: 12/18/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: abd434d2222e5bdd758be42856a569e24def08f8
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 24b64c5b618d06083ddf5eee3be7c6e53923a99d
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687439"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911403"
 ---
 # <a name="create-the-app-service"></a>App Service 만들기
 
 [이전 단계: 앱 만들기](tutorial-vscode-azure-cli-node-02.md)
 
 이 단계에서는 Azure CLI를 사용하여 앱 코드를 호스트하는 Azure App Service를 만듭니다.
+
+## <a name="create-resource-group"></a>리소스 그룹 만들기
 
 1. 터미널 또는 명령 프롬프트에서 다음 명령을 사용하여 App Service에 대한 **리소스 그룹** 을 만듭니다. 리소스 그룹은 기본적으로 Azure에 있는 앱 리소스의 명명된 컬렉션(예: 웹 사이트, 데이터베이스, Azure Functions 등)입니다.
 
@@ -33,20 +35,25 @@ ms.locfileid: "97687439"
     az configure --defaults group=myResourceGroup location=westus
     ```
 
-1. 다음 Azure CLI 명령([`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create))을 실행하여 App Service에 사용되는 기본 가상 머신을 정의하는 **App Service 요금제** 를 만듭니다.
+## <a name="create-app-service-plan"></a>앱 서비스 계획 만들기
 
-    ```azurecli
-    az appservice plan create --name myPlan --sku F1
-    ```
+다음 Azure CLI 명령([`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create))을 실행하여 App Service에 사용되는 기본 가상 머신을 정의하는 **App Service 계획** 을 만듭니다.
 
-    위의 명령은 공유 가상 머신을 사용하는 [무료 호스팅 계획](../../core/what-is-azure-for-javascript-development.md#free-tier-resources)(`--sku F1`)을 지정하고 계획 이름을 `myPlan`으로 지정합니다. 
+```azurecli
+az appservice plan create --name myPlan --sku F1
+```
 
-1. 다음 Azure CLI 명령([`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create))을 실행하여 App Service를 만들고 `<your_app_name>`을 URL(`http://<your_app_name>.azurewebsites.net`)이 될 고유 이름으로 대체하고, [최신 Node.js 런타임](/cli/azure/webapp?view=azure-cli-latest#az_webapp_list_runtimes&preserve-view=false)을 지정합니다. 
+위의 명령은 공유 가상 머신을 사용하는 [무료 호스팅 계획](../../core/what-is-azure-for-javascript-development.md#free-tier-resources)(`--sku F1`)을 지정하고 계획 이름을 `myPlan`으로 지정합니다. 
 
-    ```azurecli
-    az webapp create --name <your_app_name> --plan myPlan -g --runtime "node|12-lts"
-    ```
+## <a name="create-web-app-service"></a>웹앱 서비스 만들기
 
+다음 Azure CLI 명령([`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create))을 실행하여 App Service를 만들고 `<your_app_name>`을 URL(`http://<your_app_name>.azurewebsites.net`)이 될 고유 이름으로 대체하고, [최신 Node.js 런타임](/cli/azure/webapp?view=azure-cli-latest#az_webapp_list_runtimes&preserve-view=false)을 지정합니다. 
+
+```azurecli
+az webapp create --name <your_app_name> --plan myPlan -g --runtime "node|12-lts"
+```
+
+## <a name="browse-web-app"></a>웹앱 찾아보기
 
 1. 다음 Azure CLI 명령([`az webapp browse`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_browse))을 실행하여 새로 생성된 App Service를 브라우저에서 열고 `<your_app_name>`을 사용한 이름으로 다시 대체합니다.
 
@@ -60,7 +67,7 @@ ms.locfileid: "97687439"
 
 ## <a name="troubleshooting"></a>문제 해결
 
-* 필수 매개 변수(`--resource-group`)가 누락되었다는 오류가 표시되면 아티클 맨 위로 돌아가 기본값을 설정하세요. 
+* 필수 매개 변수(`--resource-group`)가 누락되었다는 오류가 표시되면 문서 맨 위로 돌아가 기본값을 설정하거나 매개 변수와 값을 제공하세요. 
 
 > [!div class="nextstepaction"]
 > [App Service를 만들었습니다.](tutorial-vscode-azure-cli-node-04.md) [문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=create-website)

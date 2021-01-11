@@ -2,14 +2,14 @@
 title: 가상 머신에 SSH로 연결
 description: SSH를 사용하여 Linux 가상 머신에 연결합니다.  최신 Mac, Windows 또는 Linux 운영 체제를 사용하는 경우 터미널 기반 클라이언트 SSH가 이미 설치되어 있을 것입니다.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7c496a907b6cbac894e92d0ecccdf32411a370ab
-ms.sourcegitcommit: ed749b136f0d6b876fd5866ba4a151c73af5b71f
+ms.openlocfilehash: c4b9577c93e37c28145abe8e976a93cd6ff39197
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94674723"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952495"
 ---
 # <a name="4-connect-to-linux-virtual-machine-using-ssh"></a>4. SSH를 사용하여 Linux 가상 머신에 연결
 
@@ -51,11 +51,15 @@ ms.locfileid: "94674723"
     -rw-r--r--   1 root root   697 Nov 11 20:23 readme.md
     ```
 
-1. [Application Insights용 Azure SDK 클라이언트 라이브러리](https://www.npmjs.com/package/applicationinsights)를 설치합니다.
+## <a name="install-monitoring-sdk"></a>모니터링 SDK 설치
 
-    ```bash
-    sudo npm install --save applicationinsights
-    ```
+[Application Insights용 Azure SDK 클라이언트 라이브러리](https://www.npmjs.com/package/applicationinsights)를 설치합니다.
+
+```bash
+sudo npm install --save applicationinsights
+```
+
+## <a name="add-monitoring-instrumentation-key"></a>모니터링 계측 키 추가
 
 1. [Nano](https://www.nano-editor.org/dist/latest/nano.html#Editor-Basics) 편집기를 사용하여 `package.json` 파일을 변경합니다.
 

@@ -2,14 +2,14 @@
 title: Azure 및 JavaScript를 사용하여 개발하는 방법 알아보기
 description: Microsoft Learn 플랫폼을 사용하여 Azure와 JavaScript에 대한 이해의 폭 확대
 ms.topic: reference
-ms.date: 12/16/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: b126894943bf409439b965a631d07029281438f7
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 3b37f31d9df4c152874f4c913fbc59a369636640
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636538"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952475"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Azure 및 JavaScript를 사용하여 개발하는 방법 알아보기 
 
@@ -23,6 +23,13 @@ Microsoft Learn 플랫폼 또는 Microsoft Learning Partner를 사용하여 Azur
 * [Node.js 및 Express를 사용하여 웹 API 빌드](/learn/modules/build-web-api-nodejs-express/) 
 * [Node.js 앱에서 파일 및 디렉터리 작업](/learn/modules/nodejs-files/)
 * [기본 제공 디버거와 Visual Studio Code 디버거를 사용하여 대화형으로 Node.js 앱 디버그](/learn/modules/debug-nodejs/)
+
+## <a name="getting-started"></a>시작
+
+* [초보자를 위한 JavaScript](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-javascript-with-this-series-of-videos-for-beginners/ba-p/1764635)
+* [초보자를 위한 웹 개발](https://github.com/microsoft/Web-Dev-For-Beginners)
+* [Babylon.js를 사용하는 3D 앱](https://techcommunity.microsoft.com/t5/apps-on-azure/a-first-introduction-to-building-3d-applications-with-javascript/ba-p/1877650)
+* [초보자를 위한 Node.js](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-node-js-with-this-series-of-short-videos-for-beginners/ba-p/1771830)
 
 ## <a name="javascript-on-azure"></a>Azure의 JavaScript
 

@@ -1,15 +1,15 @@
 ---
 title: Azure 개발을 위한 로컬 Python 환경 구성
 description: Visual Studio Code, Azure SDK 라이브러리 및 라이브러리 인증에 필요한 자격 증명을 포함하여 Azure를 사용하기 위한 로컬 Python 개발 환경을 설정하는 방법을 설명합니다.
-ms.date: 05/29/2020
+ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: b9e3c36199cfe9fa94fa518587b6065f4d9ef9b0
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: fcad7c614ae27c8b1b3ccf081d85292549cfcee3
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515154"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911473"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure를 위한 로컬 Python 개발 환경 구성
 
@@ -124,7 +124,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
     구독 ID를 검색하려면 [`az account show`](/cli/azure/account#az-account-show) 명령을 실행하고 출력에서 `id` 속성을 찾습니다.
 
-    편의를 위해 동일한 명령이 포함된 명령줄 스크립트 파일(예: macOS/Linux의 경우 *setenv.sh* 또는 Windows의 경우 *setenv.cmd* )을 만듭니다. 그런 다음, 로컬 테스트를 위해 터미널 또는 명령 프롬프트를 열 때마다 스크립트를 실행하여 변수를 설정할 수 있습니다. 다시 강조하지만, 파일이 사용자 계정에만 남아 있도록 스크립트 파일을 소스 제어에 추가하지 마세요.
+    편의를 위해 동일한 명령이 포함된 명령줄 스크립트 파일(예: macOS/Linux의 경우 *setenv.sh* 또는 Windows의 경우 *setenv.cmd*)을 만듭니다. 그런 다음, 로컬 테스트를 위해 터미널 또는 명령 프롬프트를 열 때마다 스크립트를 실행하여 변수를 설정할 수 있습니다. 다시 강조하지만, 파일이 사용자 계정에만 남아 있도록 스크립트 파일을 소스 제어에 추가하지 마세요.
 
 1. 항상 워크스테이션의 특정 사용자 계정 내에 남아 있도록 클라이언트 ID와 클라이언트 암호(및 클라이언트 암호를 저장하는 모든 파일)를 보호합니다. 이러한 속성을 소스 제어에 저장하거나 다른 개발자와 공유하지 마세요. 필요한 경우 서비스 주체를 삭제하고 새로 만들 수 있습니다.
 
@@ -136,13 +136,13 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
 #### <a name="what-the-create-for-rbac-command-does"></a>create-for-rbac 명령의 기능
 
-`az ad create-for-rbac` 명령은 "RBAC(역할 기반 인증)"에 대한 서비스 주체를 만듭니다.
+`az ad create-for-rbac` 명령은 "RBAC(역할 기반 인증)"에 대한 서비스 주체를 만듭니다. (서비스 주체에 대한 자세한 내용은 [Azure에서 Python 앱을 인증하고 권한을 부여하는 방법](azure-sdk-authenticate.md)을 참조하세요.)
 
 - `ad`는 Azure Active Directory를 의미하고, `sp`는 "서비스 주체"를 의미하고, `create-for-rbac`는 Azure의 기본 인증 형태인 "역할 기반 액세스 제어 만들기"를 의미합니다. [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) 명령 참조를 확인하세요.
 
 - `--name` 인수는 조직 내에서 고유해야 하며 일반적으로 서비스 주체를 사용하는 개발자의 이름을 사용합니다. 이 인수를 생략하면 Azure CLI는 `azure-cli-<timestamp>` 형식의 일반 이름을 사용합니다. 원하는 경우 Azure Portal에서 서비스 사용자의 이름을 바꿀 수 있습니다.
 
-- `--skip-assignment` 인수는 기본 권한 없는 서비스 주체를 만듭니다. 그 후에는 로컬에서 실행되는 코드가 리소스에 액세스할 수 있도록 서비스 주체에게 특정 권한을 할당해야 합니다. 서비스 주체에게 관련 리소스에 대한 권한을 부여하는 방법을 자세히 설명하는 여러 빠른 시작과 자습서가 있습니다.
+- `--skip-assignment` 인수는 기본 권한 없는 서비스 주체를 만듭니다. 그 후에는 로컬에서 실행되는 코드가 리소스에 액세스할 수 있도록 서비스 주체에게 특정 권한을 할당해야 합니다. 자세한 내용은 [Azure RBAC(역할 기반 액세스 제어)란?](/azure/role-based-access-control/overview) 및 [역할 할당을 추가하는 단계](/azure/role-based-access-control/role-assignments-steps)를 참조하세요. 다른 빠른 시작 및 자습서에서는 관련된 특정 리소스에 대한 서비스 주체를 승인하는 세부 정보도 제공합니다.
 
 - 이 명령은 *local-sp.json* 이라는 파일에 저장되는 JSON 출력을 예로서 제공합니다.
 
@@ -176,6 +176,11 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
     </pre>
 
     이 경우 `tenant`는 테넌트 ID이고, `appId`는 클라이언트 ID이고, `password`는 클라이언트 암호입니다.
+
+    > [!WARNING]
+    >  `az ad sp create-for-rbac`를 사용하여 서비스 주체를 만들면 출력에 암호, 클라이언트 암호 또는 인증서와 같이 보호해야 하는 자격 증명이 포함됩니다. 이러한 자격 증명을 코드 또는 소스 제어에 커밋된 파일에 저장하지 마세요.
+    > 기본적으로 `az ad sp create-for-rbac`는 구독 범위에서 서비스 주체에 [기여자 역할](/azure/role-based-access-control/built-in-roles#contributor)을 할당합니다. 서비스 주체가 손상된 경우 위험을 줄이려면 보다 구체적인 역할을 할당하고 범위를 리소스 또는 리소스 그룹으로 좁힙니다.
+    > 로컬 개발 대신 프로덕션 코드의 경우, 특정 서비스 주체 대신 가능하면 [관리 ID](/azure/active-directory/managed-identities-azure-resources/overview)를 사용하세요.
 
     > [!IMPORTANT]
     > 이 명령의 출력은 클라이언트 암호/암호가 표시되는 유일한 장소입니다. 이후에는 비밀/암호를 검색할 수 없습니다. 그러나 필요하다면 서비스 주체 또는 기존 암호를 무효화하지 않고 새 비밀을 추가할 수 있습니다.

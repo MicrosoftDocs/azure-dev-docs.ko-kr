@@ -4,12 +4,12 @@ description: 이 문서에서는 Java 애플리케이션을 개발하고 실행�
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-september2019, devx-track-java
-ms.openlocfilehash: 7df92d62afa57677e4985231a621257bd6b9031f
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: 165fcf08089690685067a694a2f813b67a50ed33
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515139"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864271"
 ---
 # <a name="java-long-term-support-and-medium-term-support-on-azure-and-azure-stack"></a>Azure 및 Azure Stack에 대한 Java 장기 지원 및 중기 지원
 
@@ -82,7 +82,7 @@ Azul Zulu for Azure - Enterprise Edition JDK 릴리스는 다음과 같습니다
 
    * OpenJDK의 해당 빌드에 대한 100% 오픈 소스
    * 많은 Java SE 배포에 대한 드롭인 교체.
-   * JDK, JRE 및 헤드리스 JRE
+   * JDK, JRE 및 헤드리스 JRE.
    * Java 7, 8, 11, 13 및 15.
    * OpenJDK Community TCK(Technology Compatibility Kit)를 통해 Java SE 사양을 준수하는 것으로 확인되었습니다.
    * Java SE 7, 8, 11, 13 및 15에 대한 버그 수정, 향상된 성능 및 보안 패치를 포함하여 Java SE에 대한 프로덕션 업데이트가 포함됩니다.

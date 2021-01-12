@@ -15,7 +15,6 @@
       items:
         - name: Azure Container Instances를 사용하여 크기 조정
           href: azure-container-instances-as-jenkins-build-agent.md
-          maintainContext: true
         - name: Azure VM 에이전트를 사용하여 크기 조정
           href: scale-deployments-using-vm-agents.md
     - name: CI/CD 구현
@@ -28,27 +27,20 @@
           items:
             - name: Kubernetes에 대한 CI/CD
               href: deploy-from-github-to-aks.md
-              maintainContext: true
-            - name: 파란색/녹색 패턴을 사용하여 AKS에 배포
-              href: deploy-to-aks-using-blue-green-deployment-pattern.md
         - name: App Service
           items:
             - name: 파이프라인 작업에서 Azure 리소스 만들기
               href: deploy-to-azure-app-service-using-azure-cli.md
         - name: Azure DevOps에서 Jenkins 사용
           href: deploy-to-linux-vm-using-azure-devops-services.md
-          maintainContext: true
         - name: Azure Functions에 배포
           href: deploy-to-azure-functions.md
         - name: Azure Storage에 게시
           href: azure-storage-blobs-as-build-artifact-repository.md
-          maintainContext: true
         - name: Linux VM에 대한 CI/CD
           href: pipeline-with-github-and-docker.md
-          maintainContext: true
         - name: Service Fabric에 대한 CI/CD
           href: deploy-to-service-fabric-cluster.md
-          maintainContext: true
 - name: 샘플
   items:
     - name: 샘플 작업 및 스크립트

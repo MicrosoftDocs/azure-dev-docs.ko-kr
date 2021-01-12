@@ -9,14 +9,14 @@ metadata:
   ms.topic: landing-page
   author: TomArcherMsft
   ms.author: tarcher
-  ms.date: 02/24/2020
+  ms.date: 12/16/2020
   ms.custom: devx-track-jenkins
-  ms.openlocfilehash: b00d65638bdc9d695a064183f3de058728164b13
-  ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+  ms.openlocfilehash: 217a6b9e0fa3369f4e6270e316e09f88aafeff3a
+  ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/20/2020
-  ms.locfileid: "94983552"
+  ms.lasthandoff: 01/12/2021
+  ms.locfileid: "98109056"
 landingContent:
 - title: Azure에서 Jenkins 정보
   linkLists:
@@ -62,8 +62,6 @@ landingContent:
     links:
     - text: GitHub에서 AKS로 배포
       url: deploy-from-github-to-aks.md
-    - text: 파란색/녹색 패턴을 사용하여 AKS에 배포
-      url: deploy-to-aks-using-blue-green-deployment-pattern.md
 - title: App Service에 대한 CI/CD
   linkLists:
   - linkListType: tutorial

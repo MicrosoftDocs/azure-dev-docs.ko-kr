@@ -4,16 +4,18 @@ description: GitHub 리포지토리의 Express.js 기반 앱 복제를 사용하
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 674bf37acda9fcd9f6df7b84602600ad65ada3d9
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: c68a8442862eb03291f80609bb9767fb1c9b1b6b
+ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522112"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974550"
 ---
 # <a name="1-create-linux-virtual-machine-with-expressjs-app-using-azure-cli"></a>1. Azure CLI를 사용하여 Express.js 앱으로 Linux 가상 머신 만들기
 
 이 자습서에서는 Express.js 앱에 대한 Linux VM(가상 머신)을 만듭니다. 이 VM은 cloud-init 구성 파일을 통해 구성되며 NGINX 및 Express.js 앱용 GitHub 리포지토리를 포함합니다. VM이 실행되면 SSH를 통해 VM에 연결하고, 추적 로깅을 포함하도록 웹앱을 변경하고, 웹 브라우저에서 공용 Express.js 서버 앱을 볼 수 있습니다.
+
+* [**예제 코드**](https://github.com/Azure-Samples/js-e2e-vm)
 
 이 자습서에는 다음 작업이 포함되어 있습니다.
 

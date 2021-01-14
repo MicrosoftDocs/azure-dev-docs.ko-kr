@@ -3,14 +3,14 @@ title: Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비�
 description: Azure 공급자 배포 슬롯에서 Terraform을 사용하는 방법을 알아봅니다.
 keywords: azure devops terraform 배포 슬롯
 ms.topic: how-to
-ms.date: 09/27/2020
+ms.date: 01/07/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ad98549bca6b98635d111ee333212bd8b9a9dbba
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 0a7bb2fa3e5a0251b6a441ef8312726d93d29e07
+ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401773"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109136"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
 
@@ -27,7 +27,7 @@ ms.locfileid: "91401773"
 
 1. [Azure Portal](https://portal.azure.com)로 이동합니다.
 
-1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 엽니다. 이전에 환경을 선택하지 않은 경우 환경으로 **Bash**를 선택합니다.
+1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 엽니다. 이전에 환경을 선택하지 않은 경우 환경으로 **Bash** 를 선택합니다.
 
     ![Cloud Shell 프롬프트](./media/provision-infrastructure-using-azure-deployment-slots/azure-portal-cloud-shell-button-min.png)
 
@@ -135,11 +135,11 @@ ms.locfileid: "91401773"
 
 1. Cloud Shell 창을 닫습니다.
 
-1. Azure Portal의 주 메뉴에서 **리소스 그룹**을 선택합니다.
+1. Azure Portal의 주 메뉴에서 **리소스 그룹** 을 선택합니다.
 
     ![포털의 "리소스 그룹" 선택 항목](./media/provision-infrastructure-using-azure-deployment-slots/resource-groups-menu-option.png)
 
-1. **리소스 그룹** 탭에서 **slotDemoResourceGroup**을 선택합니다.
+1. **리소스 그룹** 탭에서 **slotDemoResourceGroup** 을 선택합니다.
 
     ![Terraform에서 만든 리소스 그룹](./media/provision-infrastructure-using-azure-deployment-slots/resource-group.png)
 
@@ -163,41 +163,41 @@ ms.locfileid: "91401773"
 
 테스트 프로젝트 리포지토리를 포크한 후에는 다음 단계를 통해 배포 슬롯을 구성합니다.
 
-1. Azure Portal의 주 메뉴에서 **리소스 그룹**을 선택합니다.
+1. Azure Portal의 주 메뉴에서 **리소스 그룹** 을 선택합니다.
 
-1. **slotDemoResourceGroup**을 선택합니다.
+1. **slotDemoResourceGroup** 을 선택합니다.
 
-1. **slotAppService**를 선택합니다.
+1. **slotAppService** 를 선택합니다.
 
-1. **배포 옵션**을 선택합니다.
+1. **배포 옵션** 을 선택합니다.
 
     ![App Service 리소스의 배포 옵션](./media/provision-infrastructure-using-azure-deployment-slots/deployment-options.png)
 
-1. **배포 옵션** 탭에서 **원본 선택**을 선택한 다음, **GitHub**를 선택합니다.
+1. **배포 옵션** 탭에서 **원본 선택** 을 선택한 다음, **GitHub** 를 선택합니다.
 
     ![배포 원본 선택](./media/provision-infrastructure-using-azure-deployment-slots/select-source.png)
 
-1. Azure가 연결을 설정하고 모든 옵션을 표시하면 **권한 부여**를 선택합니다.
+1. Azure가 연결을 설정하고 모든 옵션을 표시하면 **권한 부여** 를 선택합니다.
 
-1. **권한 부여** 탭에서 **권한 부여**을 선택하고 Azure가 GitHub 계정에 액세스하는 데 필요한 자격 증명을 제공합니다. 
+1. **권한 부여** 탭에서 **권한 부여** 을 선택하고 Azure가 GitHub 계정에 액세스하는 데 필요한 자격 증명을 제공합니다. 
 
-1. Azure가 GitHub 자격 증명의 유효성을 검사한 후에는 권한 부여 절차가 완료되었다는 메시지가 표시됩니다. **확인**을 선택하여 **권한 부여** 탭을 닫습니다.
+1. Azure가 GitHub 자격 증명의 유효성을 검사한 후에는 권한 부여 절차가 완료되었다는 메시지가 표시됩니다. **확인** 을 선택하여 **권한 부여** 탭을 닫습니다.
 
-1. **조직 선택**을 선택하고 조직을 선택합니다.
+1. **조직 선택** 을 선택하고 조직을 선택합니다.
 
-1. **프로젝트 선택**을 선택합니다.
+1. **프로젝트 선택** 을 선택합니다.
 
 1. **프로젝트 선택** 탭에서 **awesome-terraform** 프로젝트를 선택합니다.
 
     ![awesome-terraform 프로젝트 선택](./media/provision-infrastructure-using-azure-deployment-slots/choose-project.png)
 
-1. **분기 선택**을 선택합니다.
+1. **분기 선택** 을 선택합니다.
 
-1. **분기 선택** 탭에서 **마스터**를 선택합니다.
+1. **분기 선택** 탭에서 **마스터** 를 선택합니다.
 
     ![마스터 분기 선택](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-master.png)
 
-1. **배포 옵션** 탭에서 **확인**을 선택합니다.
+1. **배포 옵션** 탭에서 **확인** 을 선택합니다.
 
 이 시점에서 프로덕션 슬롯을 배포했습니다. 스테이징 슬롯을 배포하려면 다음 수정 사항을 사용하여 이전 단계를 수행합니다.
 
@@ -209,21 +209,21 @@ ms.locfileid: "91401773"
 
 ## <a name="test-the-app-deployments"></a>앱 배포 테스트
 
-이전 섹션에서는 GitHub의 다른 분기에서 배포할 두 개의 슬롯인 **slotAppService** 및 **slotAppServiceSlotOne**을 설정했습니다. 웹앱을 미리 보면서 성공적으로 배포되었는지 확인합니다.
+이전 섹션에서는 GitHub의 다른 분기에서 배포할 두 개의 슬롯인 **slotAppService** 및 **slotAppServiceSlotOne** 을 설정했습니다. 웹앱을 미리 보면서 성공적으로 배포되었는지 확인합니다.
 
-1. Azure Portal의 주 메뉴에서 **리소스 그룹**을 선택합니다.
+1. Azure Portal의 주 메뉴에서 **리소스 그룹** 을 선택합니다.
 
-1. **slotDemoResourceGroup**을 선택합니다.
+1. **slotDemoResourceGroup** 을 선택합니다.
 
-1. **slotAppService** 또는 **slotAppServiceSlotOne**을 선택합니다.
+1. **slotAppService** 또는 **slotAppServiceSlotOne** 을 선택합니다.
 
-1. 개요 페이지에서 **URL**를 선택합니다.
+1. 개요 페이지에서 **URL** 를 선택합니다.
 
     ![개요 탭에서 URL을 선택하여 앱을 렌더링합니다.](./media/provision-infrastructure-using-azure-deployment-slots/resource-url.png)
 
 1. 선택한 앱에 따라 다음과 같은 결과가 표시됩니다.
-    - **slotAppService** 웹앱 - 페이지 제목이 **Slot Demo App 1**인 파란색 페이지입니다. 
-    - **slotAppServiceSlotOne** 웹앱 - 페이지 제목이 **Slot Demo App 2**인 녹색 페이지입니다.
+    - **slotAppService** 웹앱 - 페이지 제목이 **Slot Demo App 1** 인 파란색 페이지입니다. 
+    - **slotAppServiceSlotOne** 웹앱 - 페이지 제목이 **Slot Demo App 2** 인 녹색 페이지입니다.
 
     ![앱을 미리 보면서 앱이 올바르게 배포되었는지 테스트합니다.](./media/provision-infrastructure-using-azure-deployment-slots/app-preview.png)
 

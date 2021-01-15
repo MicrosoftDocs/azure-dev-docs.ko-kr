@@ -81,7 +81,7 @@
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-02.md
                 - name: App Service 만들기
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md
-                - name: 앱 배포
+                - name: Git push로 배포
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md
                 - name: 로그 스트리밍
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md

@@ -2,14 +2,14 @@
 title: Azure에 JavaScript 앱 배포
 description: 호스팅 옵션 및 배포 시나리오에는 Azure를 위한 여러 가지 서비스와 도구가 포함됩니다. 앱을 게시하고 Azure에 제공합니다.
 ms.topic: how-to
-ms.date: 12/09/2020
+ms.date: 01/12/2021
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: c1ca1f3dcf99ce96c52eec7ebccee9860608b273
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636528"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173213"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Azure에 Node.js 앱 배포 및 호스트
 
@@ -67,6 +67,14 @@ Azure 클라우드로 파일을 이동하는 일반적인 방법은 다음과 �
 * [cURL](/azure/app-service/deploy-zip#with-curl)
 * [SSH](/azure/app-service/configure-linux-open-ssh-session)
 
+[제시된 방법](#deploy-your-web-app-to-azure) 중 하나를 사용하여 앱 서비스에 다시 배포할 수 있습니다. 처음에 해당 방법을 사용하여 배포하지 않았더라도 가능합니다. 방법을 전환하는 경우 다시 배포하기 전에 몇 가지 구성이 있을 수 있습니다. 
+
+### <a name="deploy-or-redeploy-to-app-service-with-visual-studio-code"></a>Visual Studio Code를 사용하여 앱 서비스에 배포 또는 다시 배포
+
+Visual Studio Code를 사용하여 앱 서비스 앱을 배포하거나 다시 배포하려면 앱 서비스 확장의 서비스 목록에서 앱 서비스를 마우스 오른쪽 단추로 클릭한 다음, **웹앱에 배포...** 를 선택합니다. 
+
+:::image type="content" source="../media/azure-app-service-vscode-extensions/deploy-or-redeploy-app-service.png" alt-text="Visual Studio Code를 사용하여 앱 서비스에 배포 또는 다시 배포":::
+
 ## <a name="verify-your-deployment-with-your-http-endpoint"></a>HTTP 엔드포인트를 사용하여 배포 확인
 
 배포를 확인하려면 HTTP 엔드포인트에 액세스합니다. HTTP 엔드포인트는 **개요** 페이지의 모든 서비스에서 볼 수 있습니다. 
@@ -80,3 +88,4 @@ Azure Portal의 서비스 [개요] 페이지에서 HTTP 엔드포인트를 볼 �
 ## <a name="next-steps"></a>다음 단계
 
 * [컨테이너를 사용하여 배포](deploy-containers.md)
+* [Visual Studio Code를 사용하는 배포 자습서 더 보기](https://code.visualstudio.com/docs/azure/deployment)

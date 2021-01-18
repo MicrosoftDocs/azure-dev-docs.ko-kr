@@ -4,12 +4,12 @@ description: '자습서 6부: Azure CLI - 변경 및 재배포'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: ddd03bb06d1b6b91626e4db979f0a0ca8ea7f124
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 1c80c76759d22195fc7268d4b072a7a25c3a1745
+ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658405"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98128177"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>6부 변경 및 재배포
 
@@ -17,9 +17,9 @@ ms.locfileid: "97658405"
 
 이 단계에서는 앱 코드를 변경하고 로컬 Git 리포지토리에 커밋한 다음, Azure로 푸시하여 사이트를 다시 배포합니다.
 
-1. `myExpressApp` 폴더에서 *views/index.pug* 파일을 열고 5번 줄의 메시지를 `p Welcome to Azure!`로 변경합니다.
+1. `myExpressApp` 폴더에서 *src/node.js* 파일을 열고 `Welcome to Azure!` 메시지를 변경합니다.
 
-    ![index.pug 파일 편집](../../media/azure-cli/editpugfile.png)
+    ![src/server.js 파일 편집](../../media/azure-cli/edit-server-file.png)
 
 1. 파일을 저장합니다.
 
@@ -52,7 +52,7 @@ ms.locfileid: "97658405"
     remote: Handling node.js deployment.
     remote: Creating app_offline.htm
     remote: KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'
-    remote: Copying file: 'views\index.pug'
+    remote: Copying file: 'src\server.js'
     remote: Deleting app_offline.htm
     remote: Using start-up script bin/www from package.json.
     remote: Generated web.config.

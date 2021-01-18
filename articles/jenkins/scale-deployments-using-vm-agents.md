@@ -1,142 +1,170 @@
 ---
-title: 자습서 - Azure VM 에이전트를 사용하여 Jenkins 배포 크기 조정
-description: Jenkins Azure VM 에이전트 플러그 인에서 Azure 가상 머신을 사용하여 추가 용량을 Jenkins 파이프라인에 추가하는 방법을 알아봅니다.
+title: 자습서 - Azure에서 실행 중인 VM을 사용하여 Jenkins 배포 크기 조정
+description: Azure 가상 머신을 사용하여 추가 용량을 Jenkins 파이프라인에 추가하는 방법 알아보기
 keywords: Jenkins, Azure, DevOps, 가상 머신, 에이전트
 ms.topic: tutorial
-ms.date: 08/19/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 4918b548fb98f27fffaa8d836ec125cc325da79d
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.date: 01/08/2021
+ms.custom: devx-track-jenkins,devx-track-jenkins
+ms.openlocfilehash: c498a43d5a8d57a75a5592de279b79a75b8e6360
+ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035471"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109095"
 ---
-# <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>자습서: Azure VM 에이전트를 사용하여 Jenkins 배포 크기 조정
+# <a name="tutorial-scale-jenkins-deployments-with-vm-running-in-azure"></a>자습서: Azure에서 실행 중인 VM을 사용하여 Jenkins 배포 크기 조정
 
 [!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
-이 자습서는 Jenkins [Azure VM 에이전트 플러그 인](https://plugins.jenkins.io/azure-vm-agents)을 사용하여 Azure에서 실행 중인 Linux 가상 머신을 통해 주문형 용량을 추가하는 방법을 설명합니다.
+이 자습서에서는 Azure에서 Linux 가상 머신을 만들고 해당 VM을 Jenkins에 작업 노드로 추가하는 방법을 보여 줍니다.
 
 이 자습서에서는 다음을 수행합니다.
 
 > [!div class="checklist"]
-> * Azure VM 에이전트 플러그 인 설치
-> * Azure 구독에서 리소스를 만들기 위한 플러그 인 구성
-> * 각 에이전트에 사용할 수 있는 컴퓨팅 리소스 설정
-> * 각 에이전트에 설치된 운영 체제 및 도구 설정
+> * 에이전트 머신 만들기
+> * Jenkins에 에이전트 추가
 > * 새 Jenkins 프리스타일 작업 만들기
 > * Azure VM 에이전트에서 작업 실행
-
-> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
 - **Jenkins 설치**: Jenkins 설치에 대한 액세스 권한이 없는 경우 [Azure CLI를 사용하여 Jenkins를 구성](configure-on-linux-vm.md)합니다.
 
-## <a name="install-azure-vm-agents-plugin"></a>Azure VM 에이전트 플러그 인 설치
+## <a name="configure-agent-virtual-machine"></a>에이전트 가상 머신 구성
 
-1. Jenkins 대시보드에서 **Jenkins 관리** 를 선택한 다음, **플러그 인 관리** 를 선택합니다.
+1. [az group create](/cli/azure/group?#az_group_create)를 사용하여 Azure 리소스 그룹을 만듭니다.
 
-1. **가용성** 탭을 선택한 다음, **Azure VM 에이전트** 를 검색합니다. 플러그 인에 대한 항목 옆의 확인란을 선택하고 대시보드 아래 쪽에서 **다시 시작하지 않고 설치** 를 선택합니다.
+    ```azurecli
+    az group create --name <resource_group> --location <location>
+    ```
 
-## <a name="configure-the-azure-vm-agents-plugin"></a>Azure VM 에이전트 플러그 인 구성
+1. [az vm create](/cli/azure/vm#az_vm_create)를 사용하여 가상 머신을 만듭니다.
 
-1. Jenkins 대시보드에서 **Jenkins 관리**, **시스템 관리** 를 차례로 선택합니다.
+    ```azurecli
+    az vm create --resource-group <resource-group> --name <vm_name> --image UbuntuLTS --admin-username azureuser --admin-password "<password>"
+    ```
 
-1. 페이지의 아래쪽으로 스크롤하여 **새 클라우드 추가** 드롭다운이 있는 **클라우드** 섹션을 찾아 **Microsoft Azure VM 에이전트** 를 선택합니다.
+    **참고**:
 
-1. **Azure 자격 증명** 섹션에 있는 **추가** 드롭다운에서 기존 서비스 주체를 선택합니다. 아무것도 나열되지 않는 경우 다음 단계를 수행하여 Azure 계정에 대한 [서비스 주체를 만들어](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager) Jenkins 구성에 추가합니다.
+    - 또한 `--ssh-key-value <ssh_path>` 명령을 사용하여 SSH 키를 업로드할 수도 있습니다.
 
-    a. **Azure 자격 증명** 옆에 있는 **추가** 를 선택하고 **Jenkins** 를 선택합니다.
-    b. **자격 증명 추가** 대화 상자에 있는 **종류** 드롭다운에서 **Microsoft Azure 서비스 주체** 를 선택합니다.
-    c. Azure CLI 또는 [Cloud Shell](/azure/cloud-shell/overview)에서 Active Directory Service 주체를 만듭니다.
+1. JDK를 설치합니다.  
+
+    #### <a name="linux"></a>[Linux](#tab/linux)
     
-    ```azurecli-interactive
-    az ad sp create-for-rbac --name jenkins_sp --password secure_password
-    ```
+    1. SSH 도구를 사용하여 가상 머신에 로그인합니다.
+    
+        ```bash
+        ssh username@123.123.123.123
+        ```
+        
+    1. apt를 사용하여 JDK를 설치합니다. yum 또는 pacman 같은 다른 패키지 관리자 도구를 사용하여 설치할 수도 있습니다.
+    
+        ```bash
+        sudo apt-get install -y default-jdk
+        ```
+    
+    1. 설치가 완료되면 `java -version`을 실행하여 Java 환경을 확인합니다. 출력에는 JDK의 다양한 부분과 관련된 버전 번호가 포함됩니다.
+    
+    #### <a name="windows"></a>[Windows](#tab/windows)
+    
+    1. SSH 도구 또는 원격 데스크톱 연결을 사용하여 가상 머신에 로그인합니다.
+    
+    1. 사용자 환경에 적합한 [JDK를 다운로드](https://www.oracle.com/java/technologies/javase-downloads.html)합니다.
+    
+    1. JDK 설치
+    
+## <a name="configure-jenkins-url"></a>Jenkins URL 구성
 
-    ```json
-    {
-        "appId": "BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBB",
-        "displayName": "jenkins_sp",
-        "name": "http://jenkins_sp",
-        "password": "secure_password",
-        "tenant": "CCCCCCCC-CCCC-CCCC-CCCCCCCCCCC"
-    }
-    ```
-    d. 서비스 주체의 자격 증명을 **자격 증명 추가** 대화 상자에 입력합니다. Azure 구독 ID를 모르는 경우 CLI에서 쿼리할 수 있습니다.
-     
-     ```azurecli-interactive
-     az account list
-     ```
+JNLP를 사용하는 경우 Jenkins URL을 구성해야 합니다.
 
-     ```json
-        {
-            "cloudName": "AzureCloud",
-            "id": "AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA",
-            "isDefault": true,
-            "name": "Visual Studio Enterprise",
-            "state": "Enabled",
-            "tenantId": "CCCCCCCC-CCCC-CCCC-CCCC-CCCCCCCCCCC",
-            "user": {
-            "name": "raisa@fabrikam.com",
-            "type": "user"
-            }
-     ```
+1. 메뉴에서 **Jenkins 관리** 를 선택합니다.
 
-    완료된 서비스 주체는 **구독 ID** 에 `id` 필드, **클라이언트 ID** 에 `appId` 값, **클라이언트 암호** 에 `password` 및 **테넌트 ID** 에 `tenant`을 사용해야 합니다. **추가** 를 선택하여 서비스 주체를 추가한 다음, 새로 만든 자격 증명을 사용하도록 플러그 인을 구성합니다.
+1. **시스템 구성** 에서 **시스템 구성** 을 선택합니다.
 
-    ![Azure 서비스 주체 구성](./media/scale-deployments-using-vm-agents/new-service-principal.png)
+1. **Jenkins URL** 이 Jenkins 설치의 HTTP 주소(`http://<your_host>.<your_domain>:8080/`)로 설정되었는지 확인합니다.
 
-1. **리소스 그룹 이름** 섹션에서 **새로 만들기** 를 선택된 상태로 두고 `myJenkinsAgentGroup`을 입력합니다.
-1. **구성 확인** 을 선택하여 Azure에 연결하여 프로필 설정을 테스트합니다.
-1. **적용** 을 선택하여 플러그 인 구성을 업데이트합니다.
+1. **저장** 을 선택합니다.
 
-## <a name="configure-agent-resources"></a>에이전트 리소스 구성
+## <a name="add-agent-to-jenkins"></a>Jenkins에 에이전트 추가
 
-Azure VM 에이전트를 정의하는 데 사용할 템플릿을 구성합니다. 이 템플릿은 만들 때 각 에이전트가 갖게 되는 컴퓨팅 리소스를 정의합니다.
+1. 메뉴에서 **Jenkins 관리** 를 선택합니다.
 
-1. **Azure Virtual Machine Template 추가** 옆에 있는 **추가** 를 선택합니다.
-1. **이름** 에 `defaulttemplate`을 입력합니다.
-1. **레이블** 에 `ubuntu`를 입력합니다.
-1. 콤보 상자에서 원하는 [Azure 지역](https://azure.microsoft.com/regions/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)을 선택합니다.
-1. **Virtual Machine 크기** 에 있는 드롭다운 목록에서 [VM 크기](/azure/virtual-machines/linux/sizes)를 선택합니다. 이 자습서에는 범용 `Standard_DS1_v2` 크기가 적합합니다.   
-1. **보존 시간** 은 `60`으로 둡니다. 이 설정은 Jenkins가 유휴 에이전트를 할당 취소할 때까지 대기할 수 있는 시간(분)을 정의합니다. 유휴 에이전트를 자동으로 제거하지 않으려는 경우 0을 지정합니다.
+1. **시스템 구성** 에서 **노드 및 클라우드 관리** 를 선택합니다.
 
-   ![일반 VM 구성](./media/scale-deployments-using-vm-agents/general-config.png)
+1. 메뉴에서 **새 노드** 를 선택합니다.
 
-## <a name="configure-agent-operating-system-and-tools"></a>에이전트 운영 체제 및 도구 구성
+1. **노드 이름** 에 값을 입력합니다.
 
-플러그 인 구성의 **이미지 구성** 섹션에서 **Ubuntu 16.04 LTS** 를 선택합니다. **Git 설치(최신)**, **Maven 설치(V3.5.0)** 및 **Docker 설치** 옆에 있는 확인란을 선택하여 새로 만든 에이전트에서 이러한 도구를 설치합니다.
+1. **영구 에이전트** 를 선택합니다.
 
-![VM OS 및 도구 구성](./media/scale-deployments-using-vm-agents/jenkins-os-config.png)
+1. **확인** 을 선택합니다.
 
-**관리자 자격 증명** 옆에 있는 **추가** 를 선택한 다음, **Jenkins** 를 선택합니다. 에이전트에 로그인하는 데 사용되는 사용자 이름 및 암호를 입력하여 Azure VM에서 관리 계정에 대한 [사용자 이름 및 암호 정책](/azure/virtual-machines/linux/faq#what-are-the-username-requirements-when-creating-a-vm)을 충족하도록 합니다.
+1. 다음 필드에 값을 지정합니다.
 
-**템플릿 확인** 을 선택하여 구성을 확인한 다음, **저장** 을 선택하여 변경 내용을 저장하고 Jenkins 대시보드로 돌아갑니다.
+    - **이름**: 새 Jenkins 설치 내에서 에이전트를 식별하는 고유 이름을 지정합니다. 이 값은 에이전트 호스트 이름과 다를 수 있습니다. 그러나 두 값을 동일하게 설정하는 것이 편리합니다. 이름 값에는 모든 특수 문자(`?*/\%!@#$^&|<>[]:;`)를 사용할 수 있습니다.
+
+    - **원격 루트 디렉터리**: 에이전트에는 Jenkins 전용 디렉터리가 있어야 합니다. 에이전트에 이 디렉터리의 경로를 지정합니다. `/home/azureuser/work` 또는 `c:\jenkins` 같은 절대 경로를 사용하는 것이 가장 좋습니다. 이는 에이전트 머신의 로컬 경로여야 합니다. 마스터에 이 경로를 표시할 필요는 없습니다. ./jenkins-agent 같은 상대 경로를 사용하는 경우 시작 방법에 지정된 작업 디렉터리를 기준으로 경로가 설정됩니다.
+
+    - **레이블**: 레이블은 의미상 관련된 에이전트를 하나의 논리 그룹으로 그룹화하는 데 사용됩니다. 예를 들어 Linux의 Ubuntu 배포판을 실행하는 모든 에이전트에는 `UBUNTU` 레이블을 정의할 수 있습니다.
+
+    - **시작 방법**: 원격 Jenkins 노드를 시작하는 방법에는 **SSH를 통해 에이전트 시작** 및 **마스터에서 명령 실행을 통해 에이전트 시작** 같은 두 가지가 있습니다.
+
+        - **SSH를 통해 에이전트 시작**: 다음 필드에 값을 지정합니다.
+
+            - **호스트**: VM 공용 IP 주소 또는 도메인 이름. 예를 들어 `123.123.123.123` 또는 `example.com`와 같습니다.
+
+            - **자격 증명**: 원격 호스트에 로그인하는 데 사용할 자격 증명을 선택합니다. **추가** 단추를 선택하여 새 자격 증명을 정의한 후 생성된 새 자격 증명을 선택할 수도 있습니다.
+
+            - **호스트 키 확인 전략**: Jenkins가 연결하는 동안 원격 호스트에서 제공하는 SSH 키를 확인하는 방법을 제어합니다.
+
+            ![SSH를 통해 에이전트 시작이라는 시작 방법을 지정하는 노드 구성 예제](./media/scale-deployments-using-vm-agents/ssh2.png)
+
+        - **마스터에서 명령 실행을 통해 에이전트 시작**:
+
+            - `https://<your_jenkins_host_name>/jnlpJars/agent.jar`에서 `agent.jar`를 다운로드합니다. 예들 들어 `https://localhost:8443/jnlpJars/agent.jar`입니다.
+
+            - `agent.jar`를 가상 머신에 업로드합니다.
+
+            - `ssh <node_host> java -jar <remote_agentjar_path>` 명령을 사용하여 Jenkins를 시작합니다. 예들 들어 `ssh azureuser@99.99.999.9 java -jar /home/azureuser/agent.jar`입니다.
+
+            ![마스터에서 명령 실행을 통해 에이전트 시작이라는 시작 방법을 지정하는 노드 구성 예제](./media/scale-deployments-using-vm-agents/config.png)
+
+1. **저장** 을 선택합니다.
+
+구성을 정의하면 Jenkins가 가상 머신을 새 작업 노드로 추가합니다.
+
+![가상 머신을 새 작업 노드로 추가하는 예제](./media/scale-deployments-using-vm-agents/commandstart.png)
 
 ## <a name="create-a-job-in-jenkins"></a>Jenkins에서 작업 만들기
 
-1. Jenkins 대시보드 내에서 **New Item** 을 클릭합니다. 
-1. 이름에 `demoproject1`을 입력하고 **프리스타일 프로젝트** 를 선택한 다음, **확인** 을 선택합니다.
-1. **일반** 탭에서 **프로젝트를 실행할 수 있는 위치 제한** 을 선택하고 **레이블 식** 에 `ubuntu`를 입력합니다. 이전 단계에서 만든 클라우드 구성에 의해 레이블이 처리된다는 확인 메시지가 표시됩니다. 
-   ![작업 설정](./media/scale-deployments-using-vm-agents/job-config.png)
+1. 메뉴에서 **새 항목** 을 선택합니다.
+
+1. 이름으로 `demoproject1`를 입력합니다.
+
+1. **프리스타일 프로젝트** 를 선택합니다.
+
+1. **확인** 을 선택합니다.
+
+1. **일반** 탭에서 **프로젝트를 실행할 수 있는 위치 제한** 을 선택하고 **레이블 식** 에 `ubuntu`를 입력합니다. 이전 단계에서 만든 클라우드 구성에 의해 레이블이 처리된다는 확인 메시지가 표시됩니다.
+
+   ![새 Jenkins 작업 설정](./media/scale-deployments-using-vm-agents/job-config.png)
+
 1. **소스 코드 관리** 탭에서 **Git** 을 선택하고 **리포지토리 URL** 필드에 다음 URL을 추가합니다. `https://github.com/spring-projects/spring-petclinic.git`
+
 1. **빌드** 섹션에서 **빌드 단계 추가**, **최상위 Maven 대상 호출** 을 차례로 선택합니다. **목표** 필드에 `package`를 입력합니다.
-1. **저장** 을 클릭하여 작업 정의를 저장합니다.
+
+1. **저장** 을 선택합니다.
 
 ## <a name="build-the-new-job-on-an-azure-vm-agent"></a>Azure VM 에이전트에서 새 작업 빌드
 
-1. Jenkins 대시보드로 돌아갑니다.
-1. 이전 단계에서 만든 작업을 선택한 다음 **지금 빌드** 를 클릭합니다. 새 빌드가 대기됩니다. 에이전트 VM이 Azure 구독에 만들어져야 시작됩니다.
+1. 이전 단계에서 만든 작업을 선택합니다.
+
+1. **지금 빌드** 를 선택합니다. 새 빌드가 큐에 추가됩니다. 에이전트 VM이 Azure 구독에 만들어져야 시작됩니다.
+
 1. 빌드가 완료되면 **콘솔 출력** 으로 이동합니다. 해당 빌드가 Azure 에이전트에서 원격으로 수행되었음이 표시됩니다.
 
-![콘솔 출력](./media/scale-deployments-using-vm-agents/console-output.png)
-
-## <a name="troubleshooting-the-jenkins-plugin"></a>Jenkins 플러그 인 문제 해결
-
-Jenkins 플러그 인에서 버그가 발생하면 [Jenkins JIRA](https://issues.jenkins-ci.org/)에서 특정 구성 요소에 대한 문제를 제출해 주세요.
+    ![콘솔 출력](./media/scale-deployments-using-vm-agents/console-output.png)
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -2,14 +2,14 @@
 title: 웹앱 호스트 - 구성 설정
 description: 웹앱의 일반적인 구성을 설정하는 방법을 알아봅니다.
 ms.topic: conceptual
-ms.date: 12/08/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 29c79317d5ccd2f65db6c23e28a852164c74b743
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: c31d77f6b4dd61bd45bd84b6cfe1e5d14cadb586
+ms.sourcegitcommit: a7b77d07ec6e181c2d40c00ff6e5ef3866980172
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97394046"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98069079"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Azure에 웹앱 호스트
 
@@ -65,6 +65,61 @@ ms.locfileid: "97394046"
 ## <a name="configure-port-forwarding"></a>포트 전달 구성
 
 앱의 포트가 기본 포트 `8080`이 아닌 경우 [앱의 포트 번호를 매핑](/azure/app-service/configure-language-nodejs?pivots=platform-windows#get-port-number)해야 합니다. 이렇게 하면 App 서비스에서 올바른 포트에 요청을 전달할 수 있습니다. 
+
+## <a name="configure-browser-for-cors-to-connect-with-server"></a>CORS의 브라우저를 서버와 연결하도록 구성
+
+자체 서버에 연결해야 하고 클라이언트에서 로컬로 실행하고 디버깅하는 동안 CORS 보안을 무시해야 하는 경우 권장되는 솔루션은 Visual Studio Code 디버그 파일(`launch.json`)에서 이 설정을 구성하여 보안을 사용하지 않는 설정을 브라우저에 전달하는 것입니다. 
+
+이 파일은 디버깅 세션을 시작하는 용도로만 사용되므로 소스 제어에 체크 인하는 것이 안전합니다. 
+
+### <a name="configure-edge-browser-to-disable-cors-for-debugging"></a>디버깅 시 CORS를 사용하지 않도록 Edge 브라우저 구성
+
+다음 `launch.json` 파일은 디버그 세션에서 CORS 보안을 해제하도록 **Edge 브라우저** 를 구성합니다(`--disable-web-security`). 
+
+```json
+{
+    // Debug client, with requests to server, w/o 
+    // changes to client or server
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Edge against localhost",
+            "request": "launch",
+            "type": "pwa-msedge",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--disable-web-security"
+            ],
+        },
+    ]
+}
+```
+
+### <a name="configure-chrome-browser-to-disable-cors-for-debugging"></a>디버깅 시 CORS를 사용하지 않도록 Chrome 브라우저 구성
+
+다음 `launch.json` 파일은 디버그 세션에서 CORS 보안을 해제하도록 **Chrome 브라우저** 를 구성합니다(`--disable-web-security`). 
+
+```json
+{
+    // Debug client, with requests to server, w/o 
+    // changes to client or server
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--disable-web-security"
+            ],
+        }
+    ]
+}
+```
+
 
 ## <a name="configure-certificates"></a>인증서 구성
 

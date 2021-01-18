@@ -2,14 +2,14 @@
 title: VSCode를 사용하여 Express.js/MongoDB 앱 배포 - App Service/CosmosDB
 description: 이 자습서에서는 MongoDB 네이티브 API를 사용하여 MongoDB 데이터베이스와 함께 Node.js 앱을 사용합니다. Node.js 애플리케이션을 Linux의 Azure App Service에 배포한 다음, 호스트된 앱이 작동하는지 확인합니다.
 ms.topic: tutorial
-ms.date: 12/03/2020
+ms.date: 01/12/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 6c295c305f2882c4a97a34ffa288738112ee9600
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: e9c9b6cf624f646b3b41f9af95fcef95fa5841e6
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911503"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173203"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Visual Studio Code에서 App Service에 Express.js MongoDB 앱 배포
 
@@ -142,6 +142,10 @@ App Service용 Visual Studio Code 확장을 사용하여 앱 서비스 리소스
 
 1. 브라우저에서 웹 사이트를 열고, `YOUR-RESOURCE_NAME` 텍스트를 사용자 고유의 리소스 이름(예: `https://YOUR-RESOURCE_NAME.azurewebsites.net`)으로 바꿉니다.
 1. 웹앱을 사용하여 항목을 추가하고 삭제합니다. 
+
+## <a name="make-changes-and-redeploy"></a>변경 및 재배포
+
+앱 서비스 확장을 사용하여 몇 가지 변경을 수행하고 앱을 [다시 배포합니다](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code). 
 
 ## <a name="clean-up-resources"></a>리소스 정리 
 

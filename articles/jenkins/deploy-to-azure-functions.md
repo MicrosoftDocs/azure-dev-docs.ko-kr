@@ -3,14 +3,14 @@ title: 자습서 - Jenkins를 사용하여 Azure Functions에 배포
 description: Jenkins Azure Functions 플러그 인을 사용하여 Azure Functions에 배포하는 방법 알아보기
 keywords: jenkins, azure, devops, java, azure functions
 ms.topic: tutorial
-ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 7258e3d20262e214bbe9461564210c0d84fe2e89
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.date: 01/11/2021
+ms.custom: devx-track-jenkins,devx-track-cli
+ms.openlocfilehash: 51807b1a3038d17278a6015d387b84e68aac71f5
+ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035388"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109034"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>자습서: Jenkins를 사용하여 Azure Functions에 배포
 
@@ -48,7 +48,7 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
 1. 자리 표시자를 적절한 값으로 바꿔서 테스트 함수 앱을 만듭니다.
 
     ```azurecli
-    az functionapp create --resource-group <resource_group> --consumption-plan-location eastus --name <function_app> --storage-account <storage_account>
+    az functionapp create --resource-group <resource_group> --runtime java --consumption-plan-location eastus --name <function_app> --storage-account <storage_account> --functions-version 2
     ```
 
 ## <a name="prepare-jenkins-server"></a>Jenkins 서버 준비
@@ -59,29 +59,57 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
 
 1. SSH를 사용하여 Jenkins 인스턴스에 로그인합니다.
 
-1. Jenkins 인스턴스에서 다음 명령을 사용하여 Maven을 설치합니다.
+1. Jenkins 인스턴스에 Azure CLI(버전 2.0.67 이상)를 설치합니다.
 
-    ```terminal
+1. 다음 명령을 사용하여 maven을 설치합니다.
+
+    ```bash
     sudo apt install -y maven
     ```
 
 1. Jenkins 인스턴스에서 터미널 프롬프트에 다음 명령을 실행하여 [Azure Functions 핵심 도구](/azure/azure-functions/functions-run-local)를 설치합니다.
 
-    ```terminal
-    wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
-    sudo dpkg -i packages-microsoft-prod.deb
+    ```bash
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
+    cat /etc/apt/sources.list.d/dotnetdev.list
     sudo apt-get update
-    sudo apt-get install azure-functions-core-tools
+    sudo apt-get install azure-functions-core-tools-3
     ```
-
-1. Jenkins 대시보드에서 다음 플러그 인을 설치합니다.
-
-    - Azure Functions 플러그 인
-    - EnvInject 플러그 인
 
 1. Jenkins에서 Azure 서비스 주체는 Azure 리소스를 인증하고 액세스해야 합니다. 단계별 지침은 [Azure App Service에 배포](./deploy-from-github-to-azure-app-service.md)를 참조하세요.
 
-1. Azure 서비스 주체를 사용하여 “Microsoft Azure 서비스 주체” 자격 증명 유형을 Jenkins에 추가합니다. [Azure App Service에 배포](./deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) 자습서를 참조하세요.
+1. [자격 증명 플러그 인](https://plugins.jenkins.io/credentials/)이 설치되어 있는지 확인합니다.
+
+    1. 메뉴에서 **Jenkins 관리** 를 선택합니다.
+
+    1. **시스템 구성** 에서 **플러그 인 관리** 를 선택합니다.
+
+    1. **설치됨** 탭을 선택합니다.
+
+    1. **필터** 필드에 `credentials`를 입력합니다.
+    
+    1. **자격 증명 플러그 인** 이 설치되어 있는지 확인합니다. 그렇지 않으면 **사용 가능** 탭에서 설치해야 합니다.
+
+    ![자격 증명 플러그 인을 설치해야 합니다.](./media/deploy-to-azure-functions/credentials-plugin.png)
+
+1. 메뉴에서 **Jenkins 관리** 를 선택합니다.
+
+1. **보안** 에서 **자격 증명 관리** 를 선택합니다.
+
+1. **자격 증명** 에서 **(글로벌)** 을 선택합니다.
+
+1. 메뉴에서 **자격 증명 추가** 를 선택합니다.
+
+1. [Microsoft Azure 서비스 주체](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json)에 다음 값을 입력합니다.
+
+    - **종류**: 종류가 **_사용자 이름 및 암호_* _인지 확인합니다.
+    - _*사용자 이름**: 생성된 서비스 주체의 **_앱 ID_*_ 입니다.
+    - _*암호**: 생성된 서비스 주체의 **_암호_*_ 입니다.
+    - _*ID**: `as azuresp` 같은 자격 증명 식별자입니다.
+
+1. **확인** 을 선택합니다.
 
 ## <a name="fork-the-sample-github-repo"></a>샘플 GitHub 리포지토리 포크
 
@@ -99,34 +127,37 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
 
 1. **실행을 위한 환경을 준비** 를 사용합니다.
 
-1. 자리 표시자를 사용자 환경에 적절한 값으로 바꿔서 다음 환경 변수를 **속성 콘텐츠** 에 추가합니다.
-
-    ```
-    AZURE_CRED_ID=<service_principal_credential_id>
-    RES_GROUP=<resource_group>
-    FUNCTION_NAME=<function_name>
-    ```
-    
 1. **파이프라인 > 정의** 섹션에서 **SCM의 파이프라인 스크립트** 를 선택합니다.
 
 1. [JenkinsFile 예제](https://github.com/VSChina/odd-or-even-function/blob/master/doc/resources/jenkins/JenkinsFile)에서 사용할 GitHub 포크의 URL 및 스크립트 경로("doc/resources/jenkins/JenkinsFile")를 입력합니다.
 
-   ```
-   node {
-    stage('Init') {
-        checkout scm
+   ```nodejs
+    node {
+    withEnv(['AZURE_SUBSCRIPTION_ID=99999999-9999-9999-9999-999999999999',
+            'AZURE_TENANT_ID=99999999-9999-9999-9999-999999999999']) {
+        stage('Init') {
+            cleanWs()
+            checkout scm
         }
 
-    stage('Build') {
-        sh 'mvn clean package'
+        stage('Build') {
+            sh 'mvn clean package'
         }
 
-    stage('Publish') {
-        azureFunctionAppPublish appName: env.FUNCTION_NAME, 
-                                azureCredentialsId: env.AZURE_CRED_ID, 
-                                filePath: '**/*.json,**/*.jar,bin/*,HttpTrigger-Java/*', 
-                                resourceGroup: env.RES_GROUP, 
-                                sourceDirectory: 'target/azure-functions/odd-or-even-function-sample'
+        stage('Publish') {
+            def RESOURCE_GROUP = '<resource_group>' 
+            def FUNC_NAME = '<function_app>'
+            // login Azure
+            withCredentials([usernamePassword(credentialsId: 'azuresp', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+            sh '''
+                az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                az account set -s $AZURE_SUBSCRIPTION_ID
+            '''
+            }
+            sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && zip -r ../../../archive.zip ./* && cd -'
+            sh "az functionapp deployment source config-zip -g $RESOURCE_GROUP -n $FUNC_NAME --src archive.zip"
+            sh 'az logout'
+            }
         }
     }
     ```

@@ -2,14 +2,14 @@
 title: Visual Studio Code에서 Azure App Service에 Node.js 앱 배포
 description: Visual Studio Code App Service 확장을 사용하여 Express.js Node.js 애플리케이션을 Azure App Service에 배포합니다.
 ms.topic: tutorial
-ms.date: 12/09/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 9b6b91cffa50c3c1a2beb3dc2c800db20877b9af
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+ms.openlocfilehash: 2c019cc9ae13b81ecde934faee6d7d7a9fadf07a
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97601034"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173253"
 ---
 # <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code를 사용하여 Azure App Services에 Node.js 배포
 
@@ -42,41 +42,11 @@ Git와 Azure App Service 확장을 사용하여 Node.js 앱을 Azure에 배포�
 
 ## <a name="3-create-a-local-expressjs-app"></a>3. 로컬 Express .js 앱 만들기
 
-Express.js 애플리케이션 생성기를 사용하여 Node.js 앱을 만듭니다. 
-
-1. 터미널 또는 명령 프롬프트에서 앱 폴더를 만들려는 위치로 이동합니다.
-
-1. 다음 명령을 실행하여 Express Generator를 통해 *expressApp1* 이라는 새 Express 앱을 만듭니다. (`--view pug --git` 매개 변수는 [pug](https://pugjs.org/api/getting-started.html) 템플릿 엔진(이전 이름: Jade)을 사용하고 *.gitignore* 파일을 만들도록 생성기에 지시합니다.)
-
-    ```bash
-    npx express-generator expressApp1 -–git --view pug 
-    ```
-
-1. 앱 폴더로 이동합니다.
-
-    ```bash
-    cd expressApp1
-    ```
-
-1. 애플리케이션의 종속성을 설치합니다.
-
-    ```bash
-    npm install
-    ```
+[!INCLUDE [Create a local Express.js app](../includes/create-node-app.md)]
 
 ## <a name="4-run-your-local-expressjs-app"></a>4. 로컬 Express .js 앱 실행
 
-1. 서버를 시작합니다.
-
-    ```bash
-    npm start
-    ```
-
-1. 브라우저에서 `http://localhost:3000`을 열어 앱을 테스트합니다. 사이트가 다음과 같이 표시됩니다.
-
-    ![Express 애플리케이션 실행](../media/deploy-azure/express.png)
-
-1. 터미널에서 **Ctrl**+**C** 를 눌러 서버를 중지합니다.
+[!INCLUDE [Run your local Express.js app](../includes/run-node-app.md)]
 
 ## <a name="5-initialize-git-in-visual-studio-code-for-current-app"></a>5. Visual Studio Code에서 현재 앱의 Git 초기화
 
@@ -169,7 +139,11 @@ Express.js 애플리케이션 생성기를 사용하여 Node.js 앱을 만듭니
 
 1. 브라우저에서 페이지를 몇 번 새로 고치면 로그 출력이 추가로 표시됩니다.
 
-## <a name="8-clean-up-resources"></a>8. 리소스 정리
+## <a name="8-make-changes-and-redeploy"></a>8. 변경 및 재배포
+
+앱 서비스 확장을 사용하여 몇 가지 변경을 수행하고 앱을 [다시 배포합니다](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code). 
+
+## <a name="9-clean-up-resources"></a>9. 리소스 정리
 
 리소스를 정리하려면 Visual Studio Code의 App Service 확장에서 App Service를 마우스 오른쪽 단추로 클릭한 다음, **삭제** 를 선택합니다.
 

@@ -4,12 +4,12 @@ description: JavaScript용 Azure SDK의 모든 라이브러리에 대한 패키�
 ms.date: 12/08/2020
 ms.topic: reference
 ms.custom: devx-track-js
-ms.openlocfilehash: 2acf99ad9ee1ced7d84579b79602b56a1f17bd26
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: 476cad12727e06fd20b507263be66527824b4089
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933360"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561219"
 ---
 # <a name="azure-libraries-packages-for-javascript"></a>JavaScript용 Azure 라이브러리 패키지
 
@@ -30,4 +30,4 @@ JavaScript용 Azure 라이브러리는 다음에서 설치할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-모든 Azure NPM 패키지에 대한 [참조 설명서](/javascript/api/overview/azure/?view=azure-node-latest)를 찾습니다.
+모든 Azure NPM 패키지에 대한 [참조 설명서](/javascript/api/overview/azure/)를 찾습니다.

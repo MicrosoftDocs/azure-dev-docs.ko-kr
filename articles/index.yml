@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 749fa6b63fc46f4bdd0061f09802c3c9b3d93a6b
-  ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
+  ms.openlocfilehash: 251978c321c029d947c5eef7a2764f9b2da0560a
+  ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/10/2020
-  ms.locfileid: "97034564"
+  ms.lasthandoff: 01/18/2021
+  ms.locfileid: "98561269"
 productDirectory:
   items:
   - title: Python
@@ -36,13 +36,13 @@ productDirectory:
   - title: JavaScript
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
     links:
-    - url: ./javascript/tutorial-vscode-static-website-node-01.md?tabs=bash
+    - url: ./javascript/tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md?tabs=bash
       text: 정적 웹 사이트 개발
     - url: ./javascript/tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
       text: Azure App Service에 배포
     - url: ./javascript/tutorial/tutorial-vscode-serverless-node-install.md?tabs=bash
       text: 서버리스 애플리케이션 배포
-    - url: ./javascript/tutorial-vscode-docker-node-01.md?tabs=bash
+    - url: ./javascript/tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md?tabs=bash
       text: Docker 컨테이너 배포
     - url: /azure/cosmos-db/create-mongodb-nodejs?bc=%252fazure%252fdeveloper%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fdeveloper%252fjavascript%252ftoc.json
       text: MongoDB 앱을 Azure Cosmos DB로 마이그레이션
@@ -96,15 +96,15 @@ productDirectory:
   - title: Azure CLI
     imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
     links:
-    - url: /cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/get-started-with-azure-cli
       text: 시작하기
-    - url: /cli/azure/install-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/install-azure-cli
       text: 설치
-    - url: /cli/azure/authenticate-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/authenticate-azure-cli
       text: 로그인
-    - url: /cli/azure/query-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/query-azure-cli
       text: CLI 명령의 출력에 대해 쿼리 실행
-    - url: /cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
+    - url: /cli/azure/azure-cli-vm-tutorial
       text: 가상 머신 만들기
     - url: /cli/azure/
       text: Azure CLI 개발자 센터에서 자세히 보기

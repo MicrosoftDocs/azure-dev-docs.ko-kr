@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 55e5b258ccafc2fc9e93f8a27efbc5b543b6450d
-  ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+  ms.openlocfilehash: 2f33f80ebca72a642d089b10d3d7657fe293ddd5
+  ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/17/2020
-  ms.locfileid: "97636392"
+  ms.lasthandoff: 01/18/2021
+  ms.locfileid: "98561119"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -58,7 +58,7 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: '정적 웹앱: Computer Vision을 사용하여 이미지 분석'
-      url: /azure/developer/javascript/tutorial/static-web-app/add-computer-vision-react-app#add-computer-vision-code-as-separate-module
+      url: ./tutorial/static-web-app/add-computer-vision-react-app.md#add-computer-vision-code-as-separate-module
     - text: '정적 웹앱: Storage Blob에 파일 업로드'
       url: tutorial/browser-file-upload-azure-storage-blob.md#upload-button-functionality
     - text: '정적 웹앱: 로그인/로그오프 단추'
@@ -108,7 +108,7 @@ landingContent:
     - text: 최신 클라이언트 라이브러리
       url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
     - text: 참조 설명서
-      url: /javascript/api/overview/azure/?view=azure-node-latest
+      url: /javascript/api/overview/azure/
     - text: JS/TS 샘플
       url: /samples/browse/?languages=javascript%2Cnodejs%2Ctypescript
 - title: 개발자 도구 살펴보기

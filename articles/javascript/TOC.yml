@@ -17,13 +17,11 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: Azure에 대한 인증
           href: core/node-sdk-azure-authenticate.md
-        - name: Azure CLI를 사용하여 자동화
-          href: core/automate-tasks-with-azure-cli.md
     - name: 자습서
       items:
-        - name: 배포 및 호스트
+        - name: 클라이언트 앱 배포 및 호스팅
           items:
-            - name: '클라이언트 앱: Cognitive Services'
+            - name: Cognitive Services - 이미지 분석
               items:
                 - name: 1. 소개 및 필수 구성 요소
                   href: tutorial/static-web-app/introduction.md
@@ -39,11 +37,11 @@
                   href: tutorial/static-web-app/add-computer-vision-react-app.md
                 - name: 7. 리소스 정리
                   href: tutorial/static-web-app/clean-up-resources.md
-            - name: '클라이언트 앱: 스토리지에 업로드'
+            - name: Storage에 이미지 업로드
               href: tutorial/browser-file-upload-azure-storage-blob.md
-            - name: '클라이언트 앱: 로그인 단추 추가'
+            - name: Microsoft ID 공급자를 위한 로그인 단추 추가
               href: tutorial/single-page-application-azure-login-button-sdk-msal.md
-            - name: '클라이언트 앱: Azure Storage에서 호스트'
+            - name: Azure Storage에서 웹앱 호스트
               items:
                 - name: 소개 및 필수 구성 요소
                   href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md
@@ -57,7 +55,9 @@
                   href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-05.md
                 - name: 리소스 정리
                   href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-06.md
-            - name: '서버리스: 만들기 및 배포'
+        - name: 서버리스 앱 배포 및 호스팅
+          items:
+            - name: Visual Studio Code를 사용하여 함수 만들기
               items:
                 - name: 1. 소개 및 필수 구성 요소
                   href: tutorial/tutorial-vscode-serverless-node-install.md
@@ -69,11 +69,13 @@
                   href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
                 - name: 5. 리소스 정리
                   href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
-            - name: '서버:  Express.js/MongoDB'
-              href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
-            - name: '서버:  VS Code를 사용하여 Express.js 배포'
+        - name: 서버 앱 배포 및 호스팅
+          items:
+            - name: VS Code가 포함된 Express.js
               href: tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
-            - name: '서버:  Azure CLI를 사용하여 배포'
+            - name: MongoDB(Cosmos) 데이터베이스가 포함된 Express .js
+              href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
+            - name: 'Azure CLI를 사용하여 만들기, Git을 사용하여 배포'
               items:
                 - name: 소개 및 필수 구성 요소
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-01.md
@@ -89,9 +91,9 @@
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-06.md
                 - name: 리소스 정리
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md
-            - name: '서버:  Azure CLI를 사용하여 Deno 배포'
-              href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
-            - name: '컨테이너: VS Code를 사용하여 Express.js 배포'
+        - name: 컨테이너 앱 배포 및 호스트
+          items:
+            - name: VS Code가 포함된 Express.js
               items:
                 - name: 소개 및 필수 구성 요소
                   href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md
@@ -109,7 +111,11 @@
                   href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-07.md
                 - name: 리소스 정리
                   href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-08.md
-            - name: 'VM: 로깅을 사용하여 컨테이너 배포'
+            - name: Azure CLI가 포함된 Deno
+              href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
+        - name: 가상 컴퓨터에 배포
+          items:
+            - name: 로깅을 사용하여 컨테이너 배포
               items:
                 - name: 1. 소개 및 필수 구성 요소
                   href: tutorial/nodejs-virtual-machine-vm/introduction.md
@@ -149,6 +155,8 @@
           href: how-to/create-static-site.md
         - name: 로깅 및 메트릭
           href: how-to/node-sdk-logging.md
+        - name: Azure CLI를 사용하여 자동화
+          href: core/automate-tasks-with-azure-cli.md
     - name: Learn
       href: learn-azure-javascript.md
     - name: 샘플

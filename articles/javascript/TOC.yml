@@ -160,8 +160,8 @@
     - name: Learn
       href: learn-azure-javascript.md
     - name: 샘플
-      href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
+      href: /samples/browse/?languages=javascript%2cnodejs%2ctypescript
     - name: npm 패키지
       href: azure-sdk-library-package-index.md
     - name: npm 패키지 설명서
-      href: /javascript/api/overview/azure/?view=azure-node-latest
+      href: /javascript/api/overview/azure/

@@ -4,12 +4,12 @@ description: Azure 작업 자동화는 호스팅 환경에 대한 지속적인 �
 ms.topic: conceptual
 ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7cfce90d8d0daf861dab9ba02e46ce489ae10742
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+ms.openlocfilehash: c2df54b23baab71cbdedb03fe5990f53dd0c807a
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754059"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561139"
 ---
 # <a name="automate-tasks-with-azure-cli"></a>Azure CLI를 사용하여 작업 자동화
 
@@ -33,7 +33,7 @@ Azure CLI를 자동화하려면 환경에 CLI를 설치해야 합니다. 일반�
 
 Azure CLI가 설치되면 Azure CLI 명령을 계속 실행하려면 로그인해야 합니다. 자동화의 경우 Azure CLI에 대한 인증을 수행할 수 있습니다.
 
-**참조 설명서**: [az login](/cli/azure/reference-index?view=azure-cli-latest#az-login)
+**참조 설명서**: [az login](/cli/azure/reference-index#az-login)
 
 [관리 ID](/cli/azure/authenticate-azure-cli#sign-in-with-a-managed-identity)는 인증에 권장되는 선택 사항입니다.
 
@@ -62,7 +62,7 @@ az login -u <MY_AZURE_USERNAME> -p <MY_AZURE_PASSWORD>
 
 리소스 그룹은 Azure 리소스에 대한 논리적 컬렉션입니다. 논리적 그룹화는 프로젝트에 대한 특정 지역에 필요한 서비스를 기반으로 합니다. [명명 규칙](/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)에 대해 자세히 알아보세요.
 
-**참조 설명서**: [az group create](/cli/azure/group?view=azure-cli-latest#az_group_create)
+**참조 설명서**: [az group create](/cli/azure/group#az_group_create)
 
 ```azurecli
 az group create \
@@ -79,11 +79,11 @@ az group create \
 
 앱은 서버리스 API에 Azure 함수를 사용할 수 있지만 정적 웹앱에 대한 요구 사항은 아닙니다. 
 
-**참조 설명서**: [az staticwebapp](/cli/azure/staticwebapp?view=azure-cli-latest)
+**참조 설명서**: [az staticwebapp](/cli/azure/staticwebapp)
 
 ### <a name="create-azure-static-web-app"></a>Azure Static 웹앱 만들기 
 
-**참조 설명서**: [az staticwebapp create](/cli/azure/staticwebapp?view=azure-cli-latest#az_staticwebapp_create)
+**참조 설명서**: [az staticwebapp create](/cli/azure/staticwebapp#az_staticwebapp_create)
 
 ```azurecli
 az staticwebapp create \
@@ -112,7 +112,7 @@ git push origin main
 
 ### <a name="delete-static-web-app"></a>정적 웹앱 삭제 
 
-**참조 설명서**: [az staticwebapp delete](/cli/azure/staticwebapp?view=azure-cli-latest#az_staticwebapp_delete)
+**참조 설명서**: [az staticwebapp delete](/cli/azure/staticwebapp#az_staticwebapp_delete)
 
 ```azurecli
 az staticwebapp delete && \

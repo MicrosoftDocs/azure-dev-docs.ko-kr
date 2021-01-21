@@ -4,12 +4,12 @@ description: 이 자습서에 제공된 Azure Active Directory 인증은 로그�
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: 0128d773a2bbc79b22b3ce3424e7133942053597
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: ffbc8ea2824f7bbfaef3a3ae3579537633f9455b
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911493"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561659"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>인증에 사용할 단일 페이지 애플리케이션에 Microsoft 로그인 단추 추가
 
@@ -157,5 +157,5 @@ ms.locfileid: "97911493"
 
 사용자 권한 부여는 Azure에서 제공할 수도 있고, Azure 없이 권한 부여를 개발할 수도 있고, 두 가지 방법을 결합하여 권한 부여, 역할 및 앱 기능으로 이루어진 사용자 지정 환경을 만들 수도 있습니다. 
 
-* 계속해서 [MSAL 라이브러리](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)를 사용하여 사용자 프로필을 가져오고 자동 로그온을 제공하세요.
-* [Microsoft Graph](https://docs.microsoft.com/graph/overview)를 추가하여 이메일 및 일정 약속을 포함하는 Microsoft 365의 사용자 계정에 액세스합니다.
+* 계속해서 [MSAL 라이브러리](/azure/active-directory/develop/msal-overview)를 사용하여 사용자 프로필을 가져오고 자동 로그온을 제공하세요.
+* [Microsoft Graph](/graph/overview)를 추가하여 이메일 및 일정 약속을 포함하는 Microsoft 365의 사용자 계정에 액세스합니다.

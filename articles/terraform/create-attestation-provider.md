@@ -5,16 +5,16 @@ keywords: azure devops terraform attestation
 ms.topic: how-to
 ms.date: 11/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: c42f2a00886bedf3e9f26566cb619c69bb5073b7
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+ms.openlocfilehash: c79c472da4604458475bd230a844e2d308c2bda1
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609399"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561549"
 ---
 # <a name="configure-an-azure-attestation-policy-using-terraform"></a>Terraform을 사용하여 Azure Attestation 정책 구성
 
-이 문서에서는 Azure에서 [증명 공급자](https://docs.microsoft.com/azure/attestation/overview)를 만들기 위한 Terraform 코드 예제를 보여 줍니다.
+이 문서에서는 Azure에서 [증명 공급자](/azure/attestation/overview)를 만들기 위한 Terraform 코드 예제를 보여 줍니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 

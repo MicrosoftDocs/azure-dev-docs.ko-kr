@@ -4,12 +4,12 @@ description: 모든 Azure 리소스에 대한 Azure 리소스 그룹 하나와 A
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: b401953c0e1c972efa0f5d90817f461b858cf04b
-ms.sourcegitcommit: a2a51e0c6530eb5794a2fe667cf4c9a60b2a7470
+ms.openlocfilehash: 0b1b634756a5188cbd9233274205005f62b25026
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625042"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561049"
 ---
 # <a name="2-create-application-insights-resource-for-web-pages"></a>2. 웹 페이지에 대한 Application Insights 리소스 만들기
 
@@ -19,7 +19,7 @@ ms.locfileid: "94625042"
 
 이 자습서에는 여러 Azure 리소스가 포함되어 있습니다. 리소스 그룹을 만들면 리소스를 쉽게 찾고, 작업을 마친 후 쉽게 삭제할 수 있습니다.
 
-1. 터미널 또는 bash 셸에서 [Azure 리소스 그룹을 만드는 Azure CLI 명령을 입력](/cli/azure/group?view=azure-cli-latest#az_group_create)하고, 이름을 `rg-demo-vm-eastus`로 지정합니다.
+1. 터미널 또는 bash 셸에서 [Azure 리소스 그룹을 만드는 Azure CLI 명령을 입력](/cli/azure/group#az_group_create)하고, 이름을 `rg-demo-vm-eastus`로 지정합니다.
 
     ```azurecli
     az group create \
@@ -35,7 +35,7 @@ ms.locfileid: "94625042"
     az extension add -n application-insights
     ```
 
-1. 다음 명령을 사용하여 [모니터링 리소스 그룹을 만듭니다](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext_application_insights_az_monitor_app_insights_component_create).
+1. 다음 명령을 사용하여 [모니터링 리소스 그룹을 만듭니다](/cli/azure/ext/application-insights/monitor/app-insights/component#ext_application_insights_az_monitor_app_insights_component_create).
 
 
     ```azurecli

@@ -4,12 +4,12 @@ description: 자습서의 이 섹션에서는 클라이언트 앱 및 배포 프
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 12d156591393607f4cb40094fa00dda1a0f947fd
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: b8949b355ec30775dfacf5ea77db53edb595578c
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97690795"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561649"
 ---
 # <a name="2-application-architecture-for-static-web-app-with-computer-vision"></a>2. Computer Vision이 있는 정적 웹앱을 위한 애플리케이션 아키텍처
 
@@ -22,7 +22,7 @@ ms.locfileid: "97690795"
 ## <a name="client-application-architecture"></a>클라이언트 애플리케이션 아키텍처
 
 React(create-react-app) 앱은 다음과 같은 기능을 제공합니다. 
-* Cognitive Services [**Computer Vision**](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)의 Azure 키 및 엔드포인트를 찾을 수 없는 경우 메시지 표시
+* Cognitive Services [**Computer Vision**](/azure/cognitive-services/computer-vision/)의 Azure 키 및 엔드포인트를 찾을 수 없는 경우 메시지 표시
 * Cognitive Services Computer Vision을 사용하여 이미지 분석
     * 공용 이미지 URL을 입력하거나 컬렉션의 이미지 분석
     * 분석이 완료되면
@@ -36,7 +36,7 @@ React(create-react-app) 앱은 다음과 같은 기능을 제공합니다.
 특정 분기에 대한 푸시가 발생하면 다음과 같은 GitHub 작업이 시작됩니다.
 * Computer Vision 키 및 엔드포인트의 GitHub 비밀을 빌드에 삽입
 * React(create-react-app) 클라이언트 빌드
-* 결과 파일을 Azure [**Static 웹앱**](https://docs.microsoft.com/azure/static-web-apps) 리소스로 이동
+* 결과 파일을 Azure [**Static 웹앱**](/azure/static-web-apps) 리소스로 이동
 
 > [!div class="nextstepaction"]
-> [React Cognitive Services Image Analyzer 앱을 다운로드하여 로컬로 실행](run-the-react-cognitive-services-image-analyzer-app-locally.md) 
+> [React Cognitive Services Image Analyzer 앱을 다운로드하여 로컬로 실행](run-the-react-cognitive-services-image-analyzer-app-locally.md)

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: 047b4a07c56e29d51ae4234bd2aefcb1936d8059
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682161"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561779"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot 애플리케이션을 Azure App Service로 마이그레이션
 
@@ -34,7 +34,7 @@ App Service는 특정 버전의 Java SE를 제공합니다. 호환성을 보장�
 
 ### <a name="inventory-external-resources"></a>인벤토리 외부 리소스
 
-데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서 이러한 리소스의 구성은 일반적으로 *src/main/directory* 폴더의 *application.properties* 또는 *application.yml*이라는 파일에서 찾을 수 있습니다. 또한 프로덕션 배포의 환경 변수에서 관련 구성 설정을 확인합니다.
+데이터 원본, JMS 메시지 브로커, 다른 서비스의 URL 등과 같은 외부 리소스를 확인합니다. Spring Boot 애플리케이션에서 이러한 리소스의 구성은 일반적으로 *src/main/directory* 폴더의 *application.properties* 또는 *application.yml* 이라는 파일에서 찾을 수 있습니다. 또한 프로덕션 배포의 환경 변수에서 관련 구성 설정을 확인합니다.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
@@ -56,7 +56,7 @@ App Service는 특정 버전의 Java SE를 제공합니다. 호환성을 보장�
 
 #### <a name="passwords-and-secure-strings"></a>암호 및 보안 문자열
 
-프로덕션 배포의 모든 속성 및 구성 파일과 모든 환경 변수에 비밀 문자열과 암호가 있는지 확인합니다. Spring Boot 애플리케이션에서 이러한 문자열은 *application.properties* 또는 *application.yml*에서 찾을 수 있습니다.
+프로덕션 배포의 모든 속성 및 구성 파일과 모든 환경 변수에 비밀 문자열과 암호가 있는지 확인합니다. Spring Boot 애플리케이션에서 이러한 문자열은 *application.properties* 또는 *application.yml* 에서 찾을 수 있습니다.
 
 [!INCLUDE [inventory-certificates-h4](includes/inventory-certificates-h4.md)]
 
@@ -120,10 +120,10 @@ spring.jms.servicebus.idle-timeout=10000
 Maven 플러그 인을 사용할 수 없는 경우 다음과 같은 다른 메커니즘을 통해 Web App을 프로비저닝해야 합니다.
 
 * [Azure Portal](https://portal.azure.com/#create/Microsoft.WebSite)
-* [Azure CLI](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+* [Azure CLI](/cli/azure/webapp#az-webapp-create)
 * [Azure PowerShell](/powershell/module/az.websites/new-azwebapp)
 
-Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-service/deploy-ftp) 중 하나를 사용하여 애플리케이션을 배포합니다. 가능하다면 애플리케이션을 */home/site/wwwroot/app.jar*에 업로드해야 합니다. JAR 이름을 *app.jar*로 바꾸지 않으려면 JAR을 실행하는 명령을 사용하여 셸 스크립트를 업로드할 수 있습니다. 그런 다음, 포털의 구성 섹션에 있는 [시작 파일](/azure/app-service/containers/app-service-linux-faq#built-in-images) 텍스트 상자에 이 스크립트의 전체 경로를 붙여넣습니다. 시작 스크립트는 배치된 디렉터리에서 실행되지 않습니다. 따라서 항상 절대 경로를 사용하여 시작 스크립트의 파일을 참조해야 합니다(예: `java -jar /home/myapp/myapp.jar`).
+Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-service/deploy-ftp) 중 하나를 사용하여 애플리케이션을 배포합니다. 가능하다면 애플리케이션을 */home/site/wwwroot/app.jar* 에 업로드해야 합니다. JAR 이름을 *app.jar* 로 바꾸지 않으려면 JAR을 실행하는 명령을 사용하여 셸 스크립트를 업로드할 수 있습니다. 그런 다음, 포털의 구성 섹션에 있는 [시작 파일](/azure/app-service/containers/app-service-linux-faq#built-in-images) 텍스트 상자에 이 스크립트의 전체 경로를 붙여넣습니다. 시작 스크립트는 배치된 디렉터리에서 실행되지 않습니다. 따라서 항상 절대 경로를 사용하여 시작 스크립트의 파일을 참조해야 합니다(예: `java -jar /home/myapp/myapp.jar`).
 
 ### <a name="migrate-jvm-runtime-options"></a>JVM 런타임 옵션 마이그레이션
 
@@ -168,6 +168,6 @@ Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-ser
 
 * 가동 중지 시간이 없는 안정적인 배포를 위해 [배포 슬롯을 사용](/azure/app-service/deploy-staging-slots)하는 것이 좋습니다.
 
-* DevOps 전략을 설계하고 구현합니다. 개발 속도를 높이는 동시에 안정성을 유지하기 위해 [Azure Pipelines를 사용하여 배포를 자동화하고 테스트](/azure/devops/pipelines/ecosystems/java-webapp)하는 것이 좋습니다. 배포 슬롯을 사용하는 경우 [슬롯에 대한 배포를 자동화](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)한 다음, 슬롯 교환을 수행할 수 있습니다.
+* DevOps 전략을 설계하고 구현합니다. 개발 속도를 높이는 동시에 안정성을 유지하기 위해 [Azure Pipelines를 사용하여 배포를 자동화하고 테스트](/azure/devops/pipelines/ecosystems/java-webapp)하는 것이 좋습니다. 배포 슬롯을 사용하는 경우 [슬롯에 대한 배포를 자동화](/azure/devops/pipelines/targets/webapp?tabs=yaml#deploy-to-a-slot)한 다음, 슬롯 교환을 수행할 수 있습니다.
 
 * 비즈니스 연속성 및 재해 복구 전략을 설계하고 구현합니다. 중요 업무용 애플리케이션의 경우 [다중 지역 배포 아키텍처](/azure/architecture/reference-architectures/app-service-web-app/multi-region)를 고려하세요.

@@ -4,12 +4,12 @@ description: Cognitive Services Computer Vision 리소스를 만들고 환경 �
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 338a3040381768e5987e84676339e8ee46c49fc7
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 12d55ab384fc7a6a387d832a78883f62de9f38ea
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687473"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561029"
 ---
 # <a name="4-create-computer-vision-resource-and-use-in-code"></a>4. 코드로 Computer Vision 리소스를 만들고 사용
 
@@ -21,14 +21,14 @@ ms.locfileid: "97687473"
 
 이러한 단계를 마친 후에는 리소스의 **키 및 엔드포인트** 가 필요합니다.
 
-1. 터미널 또는 bash 셸에서 [Azure 리소스 그룹을 만드는 Azure CLI 명령을 입력](/cli/azure/group?view=azure-cli-latest#az_group_create)하고, 이름을 `rg-demo`로 지정합니다.
+1. 터미널 또는 bash 셸에서 [Azure 리소스 그룹을 만드는 Azure CLI 명령을 입력](/cli/azure/group#az_group_create)하고, 이름을 `rg-demo`로 지정합니다.
 
     ```azurecli
     az group create \
         --location eastus \
         --name rg-demo 
     ```
-1. 다음 명령을 실행하여 [Computer Vision 리소스 그룹을 만듭니다](/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-create).
+1. 다음 명령을 실행하여 [Computer Vision 리소스 그룹을 만듭니다](/cli/azure/cognitiveservices/account#az-cognitiveservices-account-create).
 
 
     ```azurecli
@@ -53,7 +53,7 @@ ms.locfileid: "97687473"
     ...
     ```
 
-1. 다음 [명령](/cli/azure/cognitiveservices/account/keys?view=azure-cli-latest#az-cognitiveservices-account-keys-list)을 실행하여 키를 가져옵니다. 
+1. 다음 [명령](/cli/azure/cognitiveservices/account/keys#az-cognitiveservices-account-keys-list)을 실행하여 키를 가져옵니다. 
 
     ```azurecli
     az cognitiveservices account keys list \

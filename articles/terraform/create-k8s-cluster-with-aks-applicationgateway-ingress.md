@@ -5,12 +5,12 @@ keywords: azure devops terraform 애플리케이션 게이트웨이 수신 aks k
 ms.topic: how-to
 ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 1613145e4b72cf2e30ab95e8e85b72ed19c38c80
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192555"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626024"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Azure Kubernetes Service에 Application Gateway 수신 컨트롤러 만들기
 
@@ -31,13 +31,13 @@ ms.locfileid: "93192555"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform 구성** : [Terraform 및 Azure에 액세스 구성](get-started-cloud-shell.md) 문서의 지침을 따릅니다.
+- **Terraform 구성**: [Terraform 및 Azure에 액세스 구성](get-started-cloud-shell.md) 문서의 지침을 따릅니다.
 
-- **Azure 리소스 그룹** : 데모에 사용할 Azure 리소스 그룹이 없는 경우 [Azure 리소스 그룹을 만듭니다](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). 해당 값이 데모에 사용되므로 리소스 그룹 이름과 위치를 기록해 둡니다.
+- **Azure 리소스 그룹**: 데모에 사용할 Azure 리소스 그룹이 없는 경우 [Azure 리소스 그룹을 만듭니다](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). 해당 값이 데모에 사용되므로 리소스 그룹 이름과 위치를 기록해 둡니다.
 
-- **Azure 서비스 주체** : [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli) 문서의 **서비스 주체 만들기** 섹션에 나온 지침을 따릅니다. `appId`, `displayName` 및 `password` 값을 적어 둡니다.
+- **Azure 서비스 주체**: [Azure CLI를 사용하여 Azure 서비스 주체 만들기](/cli/azure/create-an-azure-service-principal-azure-cli) 문서의 **서비스 주체 만들기** 섹션에 나온 지침을 따릅니다. `appId`, `displayName` 및 `password` 값을 적어 둡니다.
 
-- **서비스 사용자 개체 ID 가져오기** : Cloud Shell에서 다음 명령을 실행합니다. `az ad sp list --display-name <displayName>`
+- **서비스 사용자 개체 ID 가져오기**: Cloud Shell에서 다음 명령을 실행합니다. `az ad sp list --display-name <displayName>`
 
 ## <a name="create-the-directory-structure"></a>디렉터리 구조 만들기
 
@@ -90,7 +90,7 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
     }
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
+1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
 
 ## <a name="define-input-variables"></a>입력 변수 정의
 
@@ -233,7 +233,7 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
     }
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
+1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
 
 ## <a name="define-the-resources"></a>리소스 정의
 
@@ -468,13 +468,17 @@ Azure 공급자를 선언하는 Terraform 구성 파일을 만듭니다.
         service_cidr       = var.aks_service_cidr
       }
 
+      role_based_access_control {
+        enabled = var.aks_enable_rbac
+      }
+
       depends_on = [azurerm_virtual_network.test, azurerm_application_gateway.network]
       tags       = var.tags
     }
 
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
+1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
 
 이 섹션에 제시된 코드는 클러스터의 이름, 위치 및 resource_group_name을 설정합니다. 클러스터에 액세스하는 데 사용되는 FQDN(정규화된 도메인 이름)의 일부를 형성하는 `dns_prefix` 값이 설정됩니다.
 
@@ -532,13 +536,13 @@ AKS를 사용하면 작업자 노드에 대해서만 지불합니다. `agent_poo
     }
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
+1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
 
 ## <a name="configure-azure-storage-to-store-terraform-state"></a>Terraform 상태를 저장하도록 Azure Storage 구성
 
 Terraform은 `terraform.tfstate` 파일을 통해 로컬로 상태를 추적합니다. 이 패턴은 단일 작업자 환경에서 잘 작동합니다. 그러나 실제의 다중 작업자 환경에서는 [Azure 스토리지](/azure/storage/)를 사용하여 서버의 상태를 추적해야 합니다. 이 섹션에서는 필요한 스토리지 계정 정보를 검색하고 스토리지 컨테이너를 만드는 방법을 알아봅니다. 그런 다음, Terraform 상태 정보를 해당 컨테이너에 저장합니다.
 
-1. Azure Portal의 **Azure 서비스** 에서 **스토리지 계정** 을 선택합니다. ( **스토리지 계정** 옵션이 주 페이지에 표시되지 않으면 **더 많은 서비스** 를 선택한 다음, 이를 찾아서 선택합니다.)
+1. Azure Portal의 **Azure 서비스** 에서 **스토리지 계정** 을 선택합니다. (**스토리지 계정** 옵션이 주 페이지에 표시되지 않으면 **더 많은 서비스** 를 선택한 다음, 이를 찾아서 선택합니다.)
 
 1. **스토리지 계정** 페이지에서 Terraform가 상태를 저장하도록 설정할 스토리지 계정의 이름을 선택합니다. 예를 들어, Cloud Shell을 처음 열 때 만들어진 스토리지 계정을 사용할 수 있습니다.  Cloud Shell에서 만든 스토리지 계정 이름은 일반적으로 `cs`로 시작되고 그 뒤에 숫자 및 문자로 이루어진 임의의 문자열이 나옵니다. 
 
@@ -592,7 +596,7 @@ Terraform은 `terraform.tfstate` 파일을 통해 로컬로 상태를 추적합�
         
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
+1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
 
 1. `terraform plan` 명령을 실행하여 인프라 요소를 정의하는 Terraform 계획을 만듭니다. 
 

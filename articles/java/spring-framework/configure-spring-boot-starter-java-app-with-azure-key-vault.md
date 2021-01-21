@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: e075c4dbc26e0d7c09d3dfedf8d2d6da0ef731fc
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 09b1a13dda348329eee454574eed999f6d58a059
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983822"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561829"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>자습서: Spring Boot 애플리케이션의 Azure Key Vault에서 비밀 읽기
 
@@ -34,7 +34,7 @@ Spring Boot 애플리케이션은 사용자 이름 및 암호와 같은 중요�
 
 * 활성화된 Azure 구독.
   * Azure 구독이 아직 없는 경우 [무료 계정을 만듭니다](https://azure.microsoft.com/free/).
-* [Azure CLI 버전 2.0.67 이상을 설치](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest)하고 다음 명령을 사용하여 Azure Spring Cloud 확장을 설치합니다. `az extension add --name spring-cloud`
+* [Azure CLI 버전 2.0.67 이상을 설치](/cli/azure/install-azure-cli)하고 다음 명령을 사용하여 Azure Spring Cloud 확장을 설치합니다. `az extension add --name spring-cloud`
 * 지원되는 JDK(Java Development Kit) Azure에서 개발하는 경우 사용할 수 있는 JDK에 대한 자세한 내용은 <https://aka.ms/azure-jdks>를 참조하세요.
 * [Apache Maven](http://maven.apache.org/), 버전 3.0 이상
 * `curl` 명령.  UNIX와 유사한 대부분의 운영 체제에는 이 명령이 미리 설치되어 있습니다.  OS별 클라이언트는 [공식 curl 웹 사이트](https://curl.haxx.se/)에서 사용할 수 있습니다.

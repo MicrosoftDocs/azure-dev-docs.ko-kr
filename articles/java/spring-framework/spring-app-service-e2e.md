@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 24b023469e4557a62a83f35a3fe6475daed1b3b0
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+ms.openlocfilehash: 7ed013fd5856c446d6836183fcbc8f1e9cc01d88
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754159"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561159"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL을 사용하여 App Service에 Spring 앱 배포
 
@@ -268,7 +268,7 @@ set DOLLAR=$
 ```
 ---
 
-그런 다음, 데이터베이스 서버를 만들고 초기화합니다. 초기 구성에는 [az mysql up](/cli/azure/ext/db-up/mysql?view=azure-cli-latest#ext-db-up-az-mysql-up)을 사용합니다. 그런 다음, [az mysql server configuration set](/cli/azure/mysql/server/configuration?view=azure-cli-latest#az-mysql-server-configuration-set)을 사용하여 연결 제한 시간을 늘리고 서버 표준 시간대를 설정합니다.
+그런 다음, 데이터베이스 서버를 만들고 초기화합니다. 초기 구성에는 [az mysql up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up)을 사용합니다. 그런 다음, [az mysql server configuration set](/cli/azure/mysql/server/configuration#az-mysql-server-configuration-set)을 사용하여 연결 제한 시간을 늘리고 서버 표준 시간대를 설정합니다.
 
 # <a name="bash"></a>[bash](#tab/bash)
 
@@ -569,6 +569,6 @@ az group delete --name %RESOURCEGROUP_NAME%
 > [!div class="nextstepaction"]
 > [Azure App Service용 Linux Java 앱 구성](/azure/app-service/containers/configure-language-java)
 > [!div class="nextstepaction"]
-> [Azure Pipelines를 사용하여 Java 웹앱에 빌드 및 배포](/azure/devops/pipelines/ecosystems/java-webapp?view=azure-devops&tabs=java-tomcat)
+> [Azure Pipelines를 사용하여 Java 웹앱에 빌드 및 배포](/azure/devops/pipelines/ecosystems/java-webapp?tabs=java-tomcat)
 > [!div class="nextstepaction"]
 > [Jenkins 플러그 인을 사용하여 Azure App Service에 배포](/azure/jenkins/deploy-jenkins-app-service-plugin)

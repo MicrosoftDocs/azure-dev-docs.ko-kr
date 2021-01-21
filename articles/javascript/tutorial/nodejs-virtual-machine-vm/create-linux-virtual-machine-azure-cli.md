@@ -4,12 +4,12 @@ description: Azure CLI를 사용하여 가상 머신을 만들고 구성합니�
 ms.topic: tutorial
 ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: a618c9584775a7c384f05ef01a563943c48f2b3a
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: baed6874a89a8291e3a1b03c45db43565428ff20
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952505"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561669"
 ---
 # <a name="3-create-linux-virtual-machine-using-azure-cli"></a>3. Azure CLI를 사용하여 Linux 가상 머신 만들기
 
@@ -33,7 +33,7 @@ Azure CLI의 단일 인스턴스에서 모든 Azure CLI 단계를 완료할 수 
 
 ## <a name="create-a-virtual-machine-resource"></a>가상 머신 리소스 만들기 
 
-터미널에서 [Azure CLI 명령](/cli/azure/vm?view=azure-cli-latest#az_vm_create)을 입력하여 Linux 가상 머신의 Azure 리소스를 만듭니다. 이 명령은 cloud-init 파일로 VM을 만들고 SSH 키를 생성합니다. 실행 중인 명령은 키가 저장되는 위치를 표시합니다. 
+터미널에서 [Azure CLI 명령](/cli/azure/vm#az_vm_create)을 입력하여 Linux 가상 머신의 Azure 리소스를 만듭니다. 이 명령은 cloud-init 파일로 VM을 만들고 SSH 키를 생성합니다. 실행 중인 명령은 키가 저장되는 위치를 표시합니다. 
 
 ```azurecli
 az vm create \
@@ -51,7 +51,7 @@ az vm create \
 
 ## <a name="open-port-for-virtual-machine"></a>가상 머신용 포트 열기
 
-생성된 가상 머신은 처음에는 열려 있는 포트가 _없습니다_. 웹앱을 공개적으로 사용할 수 있도록 다음 [Azure CLI 명령](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port)을 사용하여 80 포트를 엽니다.
+생성된 가상 머신은 처음에는 열려 있는 포트가 _없습니다_. 웹앱을 공개적으로 사용할 수 있도록 다음 [Azure CLI 명령](/cli/azure/vm#az_vm_open_port)을 사용하여 80 포트를 엽니다.
 
 ```azurecli
 az vm open-port \

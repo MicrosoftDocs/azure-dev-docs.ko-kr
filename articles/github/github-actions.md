@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: c952410231ae57b0d127e1b6fb05e03f88403640
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+ms.openlocfilehash: b5b3192d1d65515dc3741be80bbab018f9cf5f09
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754069"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561739"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Azure용 GitHub Actions란?
 
@@ -47,7 +47,7 @@ Azure 및 GitHub 계정이 필요합니다.
 
 ## <a name="how-do-i-connect-github-actions-and-azure"></a>GitHub Actions와 Azure를 연결하는 방법
 
-작업에 따라 서비스 주체 또는 게시 프로필을 사용하여 GitHub에서 Azure에 연결합니다. [Azure 로그인](https://github.com/marketplace/actions/azure-login) 작업을 사용할 때마다 서비스 주체를 사용하게 됩니다. [Azure App Service 작업](https://github.com/marketplace/actions/azure-webapp)은 게시 프로필 또는 서비스 주체 사용을 지원합니다. 서비스 주체에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 주체 개체](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)를 참조하세요.  
+작업에 따라 서비스 주체 또는 게시 프로필을 사용하여 GitHub에서 Azure에 연결합니다. [Azure 로그인](https://github.com/marketplace/actions/azure-login) 작업을 사용할 때마다 서비스 주체를 사용하게 됩니다. [Azure App Service 작업](https://github.com/marketplace/actions/azure-webapp)은 게시 프로필 또는 서비스 주체 사용을 지원합니다. 서비스 주체에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 주체 개체](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)를 참조하세요.  
 
 Azure 로그인 작업을 [Azure CLI](https://github.com/marketplace/actions/azure-cli-action) 및 Azure [Azure PowerShell](https://github.com/marketplace/actions/azure-powershell-action) 작업과 함께 사용할 수 있습니다. Azure 로그인 작업은 [웹앱에 배포](https://github.com/marketplace/actions/azure-webapp) 및 [키 자격 증명 모음 비밀에 액세스](https://github.com/marketplace/actions/azure-key-vault-get-secrets)를 포함하여 Azure에 대한 대부분의 다른 GitHub 작업에서도 작동합니다.
 
@@ -91,7 +91,7 @@ Azure 로그인 작업을 [Azure CLI](https://github.com/marketplace/actions/azu
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [학습 경로, GitHub Actions를 사용하여 워크플로 자동화](https://docs.microsoft.com/learn/modules/github-actions-automate-tasks/)
+> [학습 경로, GitHub Actions를 사용하여 워크플로 자동화](/learn/modules/github-actions-automate-tasks/)
 
 > [!div class="nextstepaction"]
 > [학습 랩, Azure를 사용하여 지속적인 업데이트](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, 가상 머신, CI/CD, Azure DevOps Services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 66890b5284179f3417295f477b8dc576258c2367
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983652"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626016"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>자습서: Jenkins 및 Azure DevOps Services를 사용하여 Linux 가상 머신에 배포
 
@@ -30,12 +30,10 @@ Linux VM(가상 머신)을 포함하는 [배포 그룹](/azure/devops/pipelines/
 > * Azure Pipelines 릴리스 파이프라인을 만듭니다.
 > * 수동 및 CI 트리거 배포 실행
 
-## <a name="before-you-begin"></a>시작하기 전에
+## <a name="prerequisites"></a>사전 요구 사항
 
-* Jenkins 서버에 대한 액세스가 필요합니다. Jenkins 서버를 아직 만들지 않은 경우 [Azure 가상 머신에 Jenkins 마스터 만들기](/azure/jenkins/install-jenkins-solution-template)를 참조하세요. 
-
-* Azure DevOps Services 조직(**https://{yourorganization}.visualstudio.com**)에 로그인합니다. 
-  [무료 Azure DevOps Services 조직](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308)을 얻을 수 있습니다.
+- **Azure 구독**: Azure 구독이 아직 없는 경우 시작하기 전에 [Azure 체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- **Jenkins 서버**: Jenkins 서버가 설치되어 있지 않다면 [Azure에서 Jenkins 서버를 만듭니다](./configure-on-linux-vm.md).
 
   > [!NOTE]
   > 자세한 내용은 [Azure DevOps Services에 연결](/azure/devops/organizations/projects/connect-to-projects)을 참조하세요.

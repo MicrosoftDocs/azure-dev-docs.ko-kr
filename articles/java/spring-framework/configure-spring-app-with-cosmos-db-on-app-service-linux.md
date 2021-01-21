@@ -7,12 +7,12 @@ ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d3343940cd35767aa6887244d8ae9d7cca221646
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: d07447301dc721d8fd9179e0830f49143387e819
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846524"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626040"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Azure App Service on Linux를 통해 Spring 및 Cosmos DB를 사용하는 방법
 
@@ -29,7 +29,7 @@ ms.locfileid: "91846524"
 이 문서의 단계를 수행하기 위해 다음 필수 구성 요소가 필요합니다.
 
 - Java 웹앱을 클라우드에 배포하려면 Azure 구독이 필요합니다. Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)을 활성화하거나 [무료 Azure 계정](https://azure.microsoft.com/pricing/free-trial/)에 가입할 수 있습니다.
-- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [Azure CLI 2.0](/cli/azure/install-azure-cli)
 - [Java 8 JDK](../fundamentals/java-jdk-install.md)
 - [Maven 3](http://maven.apache.org/)
 
@@ -39,12 +39,14 @@ ms.locfileid: "91846524"
 1. Spring Todo 앱을 복제하고 **.prep** 폴더의 내용을 복사하여 프로젝트를 초기화합니다.
 
     Bash의 경우:
+
     ```bash
     git clone --recurse-submodules https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2.git
     yes | cp -rf .prep/* .
     ```
 
     Windows의 경우:
+
     ```cmd
     git clone --recurse-submodules https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2.git
     cd e2e-java-experience-in-app-service-linux-part-2
@@ -63,19 +65,19 @@ ms.locfileid: "91846524"
 
 1. Azure CLI에 로그인하고 구독 ID를 설정합니다.
 
-    ```bash
+    ```azurecli
     az login
     ```
 
 2. 필요한 경우 구독 ID를 설정합니다.
 
-    ```bash
+    ```azurecli
     az account set -s <your-subscription-id>
     ```
 
 3. Azure 리소스 그룹을 만들고 리소스 그룹 이름을 나중에 사용할 수 있도록 메모합니다.
 
-    ```bash
+    ```azurecli
     az group create -n <your-azure-group-name> \
     -l <your-resource-group-region>
     ```
@@ -83,7 +85,7 @@ ms.locfileid: "91846524"
 4. Cosmos DB를 생성하고 GlobalDocumentDB 형식을 지정합니다.
 Cosmos DB의 이름은 소문자만 사용해야 합니다. 응답에서 `documentEndpoint` 필드에 유의해야 합니다. 이 필드는 나중에 필요합니다.
 
-    ```bash
+    ```azurecli
     az cosmosdb create --kind GlobalDocumentDB \
         -g <your-azure-group-name> \
         -n <your-azure-COSMOS-DB-name-in-lower-case-letters>
@@ -91,7 +93,7 @@ Cosmos DB의 이름은 소문자만 사용해야 합니다. 응답에서 `docume
 
 5. Azure Cosmos DB 키를 가져오고 `primaryMasterKey` 값을 나중에 사용할 수 있도록 기록합니다.
 
-    ```bash
+    ```azurecli
     az cosmosdb keys list -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
     ```
 
@@ -113,6 +115,7 @@ export REGION=<put-your-REGION-here>
 ```
 
 Windows(Command Prompt)의 경우:
+
 ```cmd
 set COSMOSDB_URI=<put-your-COSMOS-DB-documentEndpoint-URI-here>
 set COSMOSDB_KEY=<put-your-COSMOS-DB-primaryMasterKey-here>
@@ -145,7 +148,7 @@ set REGION=<put-your-REGION-here>
 
 다음 절차는 Azure의 Linux에 애플리케이션을 배포합니다.
 
-1. 이전에 리포지토리의 **initial/spring-todo-app** 디렉터리에 복사한 pom.xml 파일을 엽니다. 아래의 pom.xml 파일과 같이 [Azure App Service용 Maven 플러그인](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)이 포함되었는지 확인합니다. 버전이 **1.6.0**으로 설정되지 않은 경우 값을 업데이트합니다.
+1. 이전에 리포지토리의 **initial/spring-todo-app** 디렉터리에 복사한 pom.xml 파일을 엽니다. 아래의 pom.xml 파일과 같이 [Azure App Service용 Maven 플러그인](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)이 포함되었는지 확인합니다. 버전이 **1.6.0** 으로 설정되지 않은 경우 값을 업데이트합니다.
 
 ```xml
 <plugins> 
@@ -240,14 +243,14 @@ bash-3.2$ mvn azure-webapp:deploy
 
 1. Linux의 Azure App Service에서 배포된 Java 웹앱에 대한 로그를 구성합니다.
 
-    ```bash
+    ```azurecli
     az webapp log config --name ${WEBAPP_NAME} \
      --resource-group ${RESOURCEGROUP_NAME} \
      --web-server-logging filesystem
     ```
 2. 로컬 컴퓨터에서 Java 웹앱 원격 로그 스트림을 엽니다.
 
-    ```bash
+    ```azurecli
     az webapp log tail --name ${WEBAPP_NAME} \
      --resource-group ${RESOURCEGROUP_NAME}
      ```
@@ -294,7 +297,7 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 
 1. Azure CLI를 사용하여 Java 웹앱을 확장합니다.
 
-    ```bash
+    ```azurecli
     az appservice plan update --number-of-workers 2 \
       --name ${WEBAPP_PLAN_NAME} \
       --resource-group ${RESOURCEGROUP_NAME}

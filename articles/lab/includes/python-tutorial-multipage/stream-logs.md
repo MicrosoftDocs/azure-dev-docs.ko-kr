@@ -4,16 +4,16 @@ description: azure-sign-in.md 포함 파일
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 5868697895ad067065627cca99f604d531dcb173
-ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+ms.openlocfilehash: b0da4ffd08f324bec7a404c21fb0e01d80228560
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93405309"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98566342"
 ---
 앱 내부에서 생성되는 콘솔 로그와 앱이 실행되는 컨테이너에 액세스할 수 있습니다. 로그에는 `print` 문을 사용하여 생성된 모든 출력이 포함됩니다.
 
-로그를 스트리밍하려면 [az webapp log tail](/cli/azure/webapp/log?view=azure-cli-latest&preserve-view=true#az_webapp_log_tail) 명령을 실행합니다.
+로그를 스트리밍하려면 [az webapp log tail](/cli/azure/webapp/log#az_webapp_log_tail) 명령을 실행합니다.
 
 ```azurecli
 az webapp log tail

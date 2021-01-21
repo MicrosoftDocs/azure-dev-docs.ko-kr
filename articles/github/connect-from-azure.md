@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 5462d7ca3618869232296a9a6739ebe5adcefdb1
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: d835fb755a2acecba3e7ad173ef9d6c036d59546
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983632"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561749"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions를 사용하여 Azure에 연결
 
@@ -42,7 +42,7 @@ Azure 로그인 작업을 사용하면 [Azure AD 서비스 주체](/azure/active
         --identifier-uris http://localhost/$appName
     ```
 
-1. Azure Portal에서 앱에 대한 [새 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true). 
+1. Azure Portal에서 앱에 대한 [새 서비스 주체를 만듭니다](/cli/azure/create-an-azure-service-principal-azure-cli). 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \

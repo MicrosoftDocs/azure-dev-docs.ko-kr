@@ -4,12 +4,12 @@ description: Azure CLI 명령으로 리소스 그룹을 제거하여 Azure 리�
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5c8c0bb8a1413da72cb2c32d9ce541bee1c36cac
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: ac61f1b73e873ee1c1c6cd343792a79a88e76123
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872824"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98560989"
 ---
 # <a name="7-clean-up-resources"></a>7. 리소스 정리
 
@@ -17,7 +17,7 @@ ms.locfileid: "94872824"
 
 ## <a name="remove-all-the-resources-by-removing-resource-group"></a>리소스 그룹을 제거하여 모든 리소스 제거
 
-다음과 같이 동일한 터미널에서 [Azure CLI 명령](/cli/azure/group?view=azure-cli-latest#az_group_delete)을 사용하여 리소스 그룹을 삭제합니다.
+다음과 같이 동일한 터미널에서 [Azure CLI 명령](/cli/azure/group#az_group_delete)을 사용하여 리소스 그룹을 삭제합니다.
 
 ```azurecli
 az group delete --name rg-demo-vm-eastus -y

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Container Instances, 빌드 에이전트
 ms.topic: article
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 678f1e19895f43e519bccaea4cdc9d796f91da91
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+ms.openlocfilehash: 7633d88897d76f4ed75fa1d7d6c5b0c620db4919
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109214"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561599"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>자습서: Azure Container Instances를 Jenkins 빌드 에이전트로 사용
 
@@ -85,7 +85,7 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
       az group create --name my-resourcegroup --location westus
       ```
 
-1. [az container create](https://docs.microsoft.com/cli/azure/container#az_container_create)를 사용하여 Azure Container Instance를 만듭니다. 자리 표시자를 작업 에이전트를 만들 때 얻은 값으로 바꿉니다.
+1. [az container create](/cli/azure/container#az_container_create)를 사용하여 Azure Container Instance를 만듭니다. 자리 표시자를 작업 에이전트를 만들 때 얻은 값으로 바꿉니다.
 
     ```azurecli
     az container create \

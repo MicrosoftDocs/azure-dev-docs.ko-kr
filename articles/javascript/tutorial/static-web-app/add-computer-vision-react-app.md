@@ -4,12 +4,12 @@ description: 자습서의 이 섹션에서는 단계와 코드를 _검토_ 합�
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 84140472c4bb57e208cc0e2c0665e72680664a2f
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 95486bd7551b87e0db9e01d372888bbaefb02443
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687490"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98560979"
 ---
 # <a name="6-review-how-to-add-computer-vision-to-the-react-app"></a>6. React 앱에 Computer Vision을 추가하는 방법 검토
 
@@ -17,8 +17,8 @@ ms.locfileid: "97687490"
 
 * [예제 코드](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)
 * Azure 서비스
-    * [정적 웹앱](https://docs.microsoft.com/azure/static-web-apps)
-    * [Cognitive Services의 Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
+    * [정적 웹앱](/azure/static-web-apps)
+    * [Cognitive Services의 Computer Vision](/azure/cognitive-services/computer-vision/)
 
 ## <a name="add-computer-vision-to-local-react-app"></a>로컬 React 앱에 Computer Vision 추가
 
@@ -49,4 +49,4 @@ React `app.js`에 메서드를 추가합니다. 이미지 분석 및 결과가 �
 ## <a name="next-step"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [리소스 정리](clean-up-resources.md) 
+> [리소스 정리](clean-up-resources.md)

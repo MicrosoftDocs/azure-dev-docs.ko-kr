@@ -4,12 +4,12 @@ description: Azure CLI 명령으로 리소스 그룹을 제거하여 비용이 �
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 132ccc26a4ddf17eb38be1573f462492fe1f7f0c
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: bc68f550d0a2c1bc1550eb755e6ef33bae6ae9b7
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687493"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561639"
 ---
 # <a name="7-clean-up-resources-for-static-web-app"></a>7. 정적 웹앱에 대한 리소스 정리
 
@@ -17,7 +17,7 @@ ms.locfileid: "97687493"
 
 ## <a name="remove-all-the-resources-by-removing-resource-group"></a>리소스 그룹을 제거하여 모든 리소스 제거
 
-다음과 같이 동일한 터미널에서 [Azure CLI 명령](/cli/azure/group?view=azure-cli-latest#az_group_delete)을 사용하여 리소스 그룹을 삭제합니다.
+다음과 같이 동일한 터미널에서 [Azure CLI 명령](/cli/azure/group#az_group_delete)을 사용하여 리소스 그룹을 삭제합니다.
 
 ```azurecli
 az group delete --name rg-demo  -y

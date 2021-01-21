@@ -4,12 +4,12 @@ description: Azure는 웹 및 기타 Node.js 앱과 함께 사용할 수 있는 
 ms.topic: how-to
 ms.date: 12/08/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 2aae93a85ca505967f0c999be4addc78ac31ad02
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: b39a7d3e39600081148893a68d3dbc064c1db380
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933286"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561689"
 ---
 # <a name="integrate-databases-in-nodejs-apps"></a>Node.js 앱에서 데이터베이스 통합
 
@@ -32,7 +32,7 @@ Azure 데이터베이스는 데이터베이스에 연결할 네이티브 API 또
 
 ## <a name="cosmos-db-connection-strings-with-azure-cli"></a>Azure CLI에서 Cosmos DB 연결 문자열 사용
 
-다음과 같이 [az cosmosdb keys list](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-list-connection-strings) 명령을 사용합니다.
+다음과 같이 [az cosmosdb keys list](/cli/azure/cosmosdb#az-cosmosdb-list-connection-strings) 명령을 사용합니다.
 
 ```azurecli-interactive
 az cosmosdb keys list \
@@ -43,7 +43,7 @@ az cosmosdb keys list \
 
 ## <a name="sql-connection-strings-with-azure-cli"></a>Azure CLI에서 SQL 연결 문자열 사용
 
-다음과 같이 [az sql db show-connection-string](/cli/azure/sql/db?view=azure-cli-latest#az_sql_db_show_connection_string) 명령을 사용합니다.
+다음과 같이 [az sql db show-connection-string](/cli/azure/sql/db#az_sql_db_show_connection_string) 명령을 사용합니다.
 
 ```azurecli-interactive
 az sql db show-connection-string \
@@ -57,11 +57,11 @@ az sql db show-connection-string \
 
 ## <a name="mysql-username-and-password-with-azure-cli"></a>Azure CLI에서 MySQL 사용자 이름 및 암호 사용
 
-두 항목은 [리소스 생성 시간](/cli/azure/mysql/server?view=azure-cli-latest#az_mysql_server_create)에 설정됩니다. 
+두 항목은 [리소스 생성 시간](/cli/azure/mysql/server#az_mysql_server_create)에 설정됩니다. 
 
 ## <a name="postgresql-username-and-password-with-azure-cli"></a>Azure CLI에서 PostgreSQL 사용자 이름 및 암호 사용
 
-두 항목은 [리소스 생성 시간](/cli/azure/postgres/server?view=azure-cli-latest#az_postgres_server_create)에 설정됩니다. 
+두 항목은 [리소스 생성 시간](/cli/azure/postgres/server#az_postgres_server_create)에 설정됩니다. 
 
 ## <a name="azure-storage-solutions-for-files-and-data"></a>파일 및 데이터를 위한 Azure Storage 솔루션
 

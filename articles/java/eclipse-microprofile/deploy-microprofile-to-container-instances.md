@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 72bb601c87e66c6ad95d046154fa6f6db4e5169d
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: 4aa168ddb38937ee8aeba0269c9dc3e50484717f
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872834"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626032"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>Docker 및 Azure를 사용하여 클라우드로 MicroProfile 애플리케이션 배포
 
@@ -81,15 +81,15 @@ Hello, Azure!
 
 #### <a name="set-up-azure-cli"></a>Azure CLI 설치
 
-Azure 구독, [Azure CLI 설치](/cli/azure/install-azure-cli?view=azure-cli-latest), 계정 인증을 확인합니다.
+Azure 구독, [Azure CLI 설치](/cli/azure/install-azure-cli), 계정 인증을 확인합니다.
 
-```bash
+```azurecli
 az login
 ```
 
 #### <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
-```bash
+```azurecli
 export ARG=microprofileRG
 export ADCL=eastus
 az group create --name $ARG --location $ADCL
@@ -99,7 +99,7 @@ az group create --name $ARG --location $ADCL
 
 이 명령은 기본 이름에 임의의 숫자를 사용하여 전역적으로 유일한 컨테이너 레지스트리를 작성합니다.
 
-```bash
+```azurecli
 export RANDINT=`date +"%m%d%y$RANDOM"`
 export ACR=mydockerrepo$RANDINT
 az acr create --name $ACR -g $ARG --sku Basic --admin-enabled
@@ -116,7 +116,7 @@ Docker 자체를 사용하여 Docker 이미지를 로컬에서 쉽게 만들 수
 
 이러한 이유 때문에 [Azure Container Registry 빌드] 기능을 사용하여 이미지를 빌드합니다.
 
-```bash
+```azurecli
 export IMG_NAME="mympapp:latest"
 az acr build -r $ACR -t $IMG_NAME -g $ARG .
 ...
@@ -128,7 +128,7 @@ Build ID: aa1 was successful after 1m2.674577892s
 
 ACR에서 이미지를 사용할 수 있게 되었으므로 ACI에서 컨테이너 인스턴스를 푸시하고 인스턴스화합니다. 하지만 먼저 ACR에 인증할 수 있는지 확인해야 합니다.
 
-```bash
+```azurecli
 export ACR_REPO=`az acr show --name $ACR -g $ARG --query loginServer -o tsv`
 export ACR_PASS=`az acr credential show --name $ACR -g $ARG --query "passwords[0].value" -o tsv`
 export ACI_INSTANCE=myapp`date +"%m%d%y$RANDOM"`

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
-ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
+ms.openlocfilehash: e109d8f32e6ffbf42f155f0292a292bff237d6bf
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062002"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561769"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat 애플리케이션을 Azure App Service의 Tomcat으로 마이그레이션
 
@@ -95,7 +95,7 @@ App Service는 단일 HTTP 커넥터만 지원합니다. 애플리케이션에 A
 
 [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html)에는 지속형 XML 파일이 필요합니다. Azure AppService에서 이 파일을 */home* 디렉터리, 해당 하위 디렉터리 중 하나 또는 탑재된 스토리지에 업로드해야 합니다. 이에 따라 `pathName` 매개 변수도 적절히 수정해야 합니다.
 
-`MemoryRealm`이 현재 사용되고 있는지 확인하려면 *server.xml* 및 * context.xml* 파일을 검사하고 `className` 특성이 `org.apache.catalina.realm.MemoryRealm`으로 설정된 `<Realm>` 요소를 찾습니다.
+`MemoryRealm`이 현재 사용되고 있는지 확인하려면 *server.xml* 및 *context.xml* 파일을 검사하고 `className` 특성이 `org.apache.catalina.realm.MemoryRealm`으로 설정된 `<Realm>` 요소를 찾습니다.
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>SSL 세션 추적이 사용되는지 확인
 
@@ -162,7 +162,7 @@ App Service 계획에서 Tomcat 서버에 배포된 모든 WAR 파일에 대한 
 Maven 플러그 인을 사용할 수 없는 경우 다음과 같은 다른 메커니즘을 통해 Web App을 프로비저닝해야 합니다.
 
 * [Azure Portal](https://portal.azure.com/#create/Microsoft.WebSite)
-* [Azure CLI](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+* [Azure CLI](/cli/azure/webapp#az-webapp-create)
 * [Azure PowerShell](/powershell/module/az.websites/new-azwebapp)
 
 Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-service/deploy-zip) 중 하나를 사용하여 애플리케이션을 배포합니다.
@@ -194,7 +194,7 @@ Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-ser
 
 ### <a name="migrate-remaining-configuration"></a>나머지 구성 마이그레이션
 
-이전 섹션이 완료되면 사용자 지정 가능한 서버 구성이 */home/tomcat/conf*에 있어야 합니다.
+이전 섹션이 완료되면 사용자 지정 가능한 서버 구성이 */home/tomcat/conf* 에 있어야 합니다.
 
 추가 구성(예: [영역(realm)](https://tomcat.apache.org/tomcat-9.0-doc/config/realm.html) 및 [JASPIC](https://tomcat.apache.org/tomcat-9.0-doc/config/jaspic.html))을 복사하여 마이그레이션을 완료합니다.
 
@@ -216,6 +216,6 @@ Web App이 만들어지면 [사용 가능한 배포 메커니즘](/azure/app-ser
 
 * 가동 중지 시간이 없는 안정적인 배포를 위해 [배포 슬롯을 사용](/azure/app-service/deploy-staging-slots)하는 것이 좋습니다.
 
-* DevOps 전략을 설계하고 구현합니다. 개발 속도를 높이는 동시에 안정성을 유지하기 위해 [Azure Pipelines를 사용하여 배포를 자동화하고 테스트](/azure/devops/pipelines/ecosystems/java-webapp)하는 것이 좋습니다. 배포 슬롯을 사용하는 경우 [슬롯에 대한 배포를 자동화](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)한 다음, 슬롯 교환을 수행할 수 있습니다.
+* DevOps 전략을 설계하고 구현합니다. 개발 속도를 높이는 동시에 안정성을 유지하기 위해 [Azure Pipelines를 사용하여 배포를 자동화하고 테스트](/azure/devops/pipelines/ecosystems/java-webapp)하는 것이 좋습니다. 배포 슬롯을 사용하는 경우 [슬롯에 대한 배포를 자동화](/azure/devops/pipelines/targets/webapp?tabs=yaml#deploy-to-a-slot)한 다음, 슬롯 교환을 수행할 수 있습니다.
 
 * 비즈니스 연속성 및 재해 복구 전략을 설계하고 구현합니다. 중요 업무용 애플리케이션의 경우 [다중 지역 배포 아키텍처](/azure/architecture/reference-architectures/app-service-web-app/multi-region)를 고려하세요.

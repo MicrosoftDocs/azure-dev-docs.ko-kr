@@ -6,18 +6,18 @@ ms.author: anfeldma
 ms.topic: conceptual
 ms.date: 11/23/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 725754dc55198c38e6a9148ed0e37b83bf8a294e
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: ebec3cdc6a1f16534132a333b4c6119c5e6208bd
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97394010"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561819"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 개발자 가이드
 
 이 문서에서는 SQL API를 사용하는 [Spring Data Azure Cosmos DB](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)의 특징에 대해 설명합니다. 이 문서에는 일반적인 이슈, 해결 방법 및 진단 단계에 대한 지침도 포함되어 있습니다.
 
-개발자는 전역적으로 분산된 데이터베이스 서비스인 [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)에서 다양한 표준 API를 사용하여 데이터를 작업할 수 있습니다. Spring Data Azure Cosmos DB SDK는 [Spring Data](https://spring.io/projects/spring-data) 프레임워크를 기반으로 하며 SQL API를 사용하여 Azure Cosmos DB와의 통합을 제공합니다. 다른 API 지원에 대한 자세한 내용은 다음을 참조하세요.
+개발자는 전역적으로 분산된 데이터베이스 서비스인 [Azure Cosmos DB](/azure/cosmos-db/introduction)에서 다양한 표준 API를 사용하여 데이터를 작업할 수 있습니다. Spring Data Azure Cosmos DB SDK는 [Spring Data](https://spring.io/projects/spring-data) 프레임워크를 기반으로 하며 SQL API를 사용하여 Azure Cosmos DB와의 통합을 제공합니다. 다른 API 지원에 대한 자세한 내용은 다음을 참조하세요.
 
 - [Azure Cosmos DB에서 Spring Data MongoDB API 사용](./configure-spring-data-mongodb-with-cosmos-db.md)
 - [Azure Cosmos DB에서 Spring Data Apache Cassandra API 사용](./configure-spring-data-apache-cassandra-with-cosmos-db.md)
@@ -97,7 +97,7 @@ String[] includePaths; // The included paths for indexing.
 String[] excludePaths; // The excluded paths for indexing.
 ```
 
-SDK는 분할을 지원합니다. 자세한 내용은 [Azure Cosmos DB에서 분할 및 수평 확장](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview)을 참조하세요. 도메인 클래스의 필드를 파티션 키 필드로 지정하려면 `@PartitionKey`를 사용하여 주석을 추가합니다. 그런 다음, CRUD 작업을 수행할 때 파티션 값을 지정합니다.
+SDK는 분할을 지원합니다. 자세한 내용은 [Azure Cosmos DB에서 분할 및 수평 확장](/azure/cosmos-db/partitioning-overview)을 참조하세요. 도메인 클래스의 필드를 파티션 키 필드로 지정하려면 `@PartitionKey`를 사용하여 주석을 추가합니다. 그런 다음, CRUD 작업을 수행할 때 파티션 값을 지정합니다.
 
 다음 예제에서는 CRUD 작업을 수행할 때 `@PartitionKey` 주석을 사용하는 방법을 보여줍니다.
 

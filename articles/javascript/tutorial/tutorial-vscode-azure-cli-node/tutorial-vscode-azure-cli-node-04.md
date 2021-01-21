@@ -4,12 +4,12 @@ description: '자습서 4부: Azure CLI - 웹 사이트 배포'
 ms.topic: tutorial
 ms.date: 12/14/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7dc0369615f58e8677b479b28c2223d3fa865b19
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 368597fb10397f7e7ba8feb82b29d031c292dab0
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658412"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561009"
 ---
 # <a name="deploy-the-app-to-app-service"></a>App Service에 앱 배포
 
@@ -31,7 +31,7 @@ ms.locfileid: "97658412"
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
-1. 다음 명령을 실행하여 앱 코드를 푸시할 [Git 엔드포인트를 Azure CLI에서 검색](/cli/azure/webapp/deployment/source?view=azure-cli-latest&preserve-view=false)하고 `<your_app_name>`을 이전 단계에서 App Service를 만들 때 사용한 이름으로 바꿉니다.
+1. 다음 명령을 실행하여 앱 코드를 푸시할 [Git 엔드포인트를 Azure CLI에서 검색](/cli/azure/webapp/deployment/source)하고 `<your_app_name>`을 이전 단계에서 App Service를 만들 때 사용한 이름으로 바꿉니다.
 
     ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>

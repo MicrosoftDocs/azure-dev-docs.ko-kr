@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, 클러스터
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983982"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626008"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>자습서: Service Fabric 클러스터에 배포
 
@@ -303,7 +303,7 @@ Jenkins를 설정한 후 다음 섹션, [Jenkins 작업 만들기 및 구성](#c
 1. **Service Fabric 클러스터 구성** 으로 다시 돌아가 **Azure 자격 증명** 으로 새 자격 증명이 선택되어 있는지 확인합니다. 
 1. **리소스 그룹** 드롭다운에서 애플리케이션을 배포할 클러스터의 리소스 그룹을 선택합니다.
 1. **Service Fabric** 드롭다운에서 애플리케이션을 배포할 클러스터를 선택합니다.
-1. **클라이언트 키** 및 **클라이언트 인증서** 에 대해 Jenkins 컨테이너의 PEM 파일 위치를 입력합니다. 예: `/var/jenkins_home/clustercert.pem`. 
+1. **클라이언트 키** 및 **클라이언트 인증서** 에 대해 Jenkins 컨테이너의 PEM 파일 위치를 입력합니다. 예: `/var/jenkins_home/clustercert.pem`.
 1. **애플리케이션 구성** 아래에서 **애플리케이션 이름**, **애플리케이션 유형** 및 (상대)**애플리케이션 매니페스트 경로** 필드를 구성합니다.
     ![Service Fabric Jenkins 빌드 후 작업 - Azure 자격 증명 구성](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. **Verify Configuration** 을 클릭합니다. 성공적으로 확인되면 **저장** 을 클릭합니다. 이제 Jenkins 작업 파이프라인이 완전히 구성되었습니다. [다음 단계](#next-steps)를 계속 진행하여 배포를 테스트합니다.

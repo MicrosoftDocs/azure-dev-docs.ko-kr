@@ -4,12 +4,12 @@ description: 편집기, Azure SDK 라이브러리, 선택적 도구 및 라이�
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 9d542d188205b305a0909e229ed2e71e003e95f7
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 9cc5cde0d16c4d5ec51395656ada591dd02345f1
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393872"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561709"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure를 위한 로컬 JavaScript 개발 환경 구성
 
@@ -45,7 +45,7 @@ Azure 리소스는 Azure 사용의 청구 단위인 구독 내에 생성됩니�
 
 |이름/설치 프로그램|Description|
 |--|--|
-|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) 또는 [Azure용 Visual Studio Code 확장](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Azure로 작업하는 경우 일반적으로 Azure와 함께 작동하는 [Azure Portal](https://ms.portal.azure.com/), Azure CLI 또는 특정 Visual Studio Code 확장을 사용하여 완료됩니다. 빠른 시작 또는 자습서에 지정되지 않은 이상 Azure CLI가 꼭 필요한 것은 아니지만 Azure와 함께 작동하는 단일 도구이며, Visual Studio Code는 서비스별 확장 단위로 동일한 기능을 제공합니다.|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli) 또는 [Azure용 Visual Studio Code 확장](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Azure로 작업하는 경우 일반적으로 Azure와 함께 작동하는 [Azure Portal](https://ms.portal.azure.com/), Azure CLI 또는 특정 Visual Studio Code 확장을 사용하여 완료됩니다. 빠른 시작 또는 자습서에 지정되지 않은 이상 Azure CLI가 꼭 필요한 것은 아니지만 Azure와 함께 작동하는 단일 도구이며, Visual Studio Code는 서비스별 확장 단위로 동일한 기능을 제공합니다.|
 | [git](https://git-scm.com/downloads) | 소스 제어를 위한 명령줄 도구입니다. 원한다면 다른 소스 제어 도구를 사용해도 됩니다. |
 
 
@@ -130,7 +130,7 @@ git init
 
 여기서 `git add` 및 `git commit` 같은 명령을 실행하여 변경 내용을 커밋할 수 있습니다. 정기적으로 변경 내용을 커밋하면 이전 상태로 되돌릴 수 있는 커밋 기록이 생성됩니다.
 
-온라인으로 프로젝트 백업을 만들려면 리포지토리를 [GitHub](https://github.com) 또는 [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops)에 업로드하는 것이 좋습니다. 로컬 리포지토리를 처음으로 초기화한 경우에는 `git remote add` 명령을 사용하여 로컬 리포지토리를 GitHub 또는 Azure DevOps에 연결합니다.
+온라인으로 프로젝트 백업을 만들려면 리포지토리를 [GitHub](https://github.com) 또는 [Azure DevOps](/azure/devops/user-guide/code-with-git)에 업로드하는 것이 좋습니다. 로컬 리포지토리를 처음으로 초기화한 경우에는 `git remote add` 명령을 사용하여 로컬 리포지토리를 GitHub 또는 Azure DevOps에 연결합니다.
 
 git에 대한 설명서는 [git-scm.com/docs](https://git-scm.com/docs) 및 인터넷에서 찾을 수 있습니다.
 
@@ -142,4 +142,4 @@ Visual Studio Code에는 여러 가지 기본 git 기능이 포함되어 있습�
 
 * [서비스 주체 생성 및 사용](node-sdk-azure-authenticate-principal.md)
 * [Node.js용 Azure 모듈을 사용하여 인증](node-sdk-azure-authenticate.md)
-* [Visual Studio Code에서 Azure에 정적 웹 사이트 배포](../tutorial-vscode-static-website-node-01.md)
+* [Visual Studio Code에서 Azure에 정적 웹 사이트 배포](../tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md)

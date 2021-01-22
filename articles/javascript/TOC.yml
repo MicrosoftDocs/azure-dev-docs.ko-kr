@@ -139,7 +139,7 @@
       items:
         - name: 앱 구성
           href: how-to/configure-web-app-settings.md
-        - name: 일반적인 JavaScript 작업
+        - name: JavaScript 개발자를 위한 작업
           href: how-to/common-javascript-tasks.md
         - name: VS Code를 사용한 종단 간 Node.js
           href: how-to/develop-nodejs-on-azure.md

@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 07/27/2020
-  ms.openlocfilehash: f7f7948f16d6d72f963f91cbf7121f02ddb528cc
-  ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+  ms.openlocfilehash: 780b09cc1094373bfab38cb4c13e348125a3e2a8
+  ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91493091"
+  ms.lasthandoff: 01/22/2021
+  ms.locfileid: "98699881"
 landingContent:
 - title: Azure에서 모바일 시작
   linkLists:
@@ -117,7 +117,7 @@ landingContent:
     - text: 연속 빌드 및 통합으로 앱 수명 주기 자동화
       url: continuous-integration.md
     - text: 새로운 Azure Pipelines 사용자를 위한 핵심 개념
-      url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+      url: /azure/devops/pipelines/get-started/key-pipelines-concepts
   - linkListType: overview
     links:
     - text: App Center를 사용하여 빌드 릴리스

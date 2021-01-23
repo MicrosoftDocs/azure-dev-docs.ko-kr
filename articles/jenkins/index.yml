@@ -11,12 +11,12 @@ metadata:
   ms.author: tarcher
   ms.date: 12/16/2020
   ms.custom: devx-track-jenkins
-  ms.openlocfilehash: 217a6b9e0fa3369f4e6270e316e09f88aafeff3a
-  ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+  ms.openlocfilehash: e3b2544152be77099fe726ea0fa337485716bc6d
+  ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/12/2021
-  ms.locfileid: "98109056"
+  ms.lasthandoff: 01/22/2021
+  ms.locfileid: "98699921"
 landingContent:
 - title: Azure에서 Jenkins 정보
   linkLists:

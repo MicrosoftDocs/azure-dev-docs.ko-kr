@@ -4,14 +4,14 @@ description: 현재 작업의 예를 찾습니다.
 ms.topic: reference
 ms.date: 01/06/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 4c17b95cb5acc9f04227c8ccc9ea91d6d8aa1829
-ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
+ms.openlocfilehash: 3a4c319d5258fccd1c1153591ccefddf87098343
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974570"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625976"
 ---
-# <a name="common-top-tasks-for-javascript-developers"></a>JavaScript 개발자를 위한 일반 상위 작업
+# <a name="top-tasks-for-javascript-developers"></a>JavaScript 개발자를 위한 상위 작업
 
 현재 작업의 예를 찾습니다. 작업을 찾을 수 없는 경우 작업을 요청하는 피드백을 남기세요. 
 
@@ -87,11 +87,8 @@ ms.locfileid: "97974570"
 |로컬 Express.js 앱 만들기|[Bash](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#3-create-a-local-expressjs-app)|
 |앱 리소스 만들기 - 포함: Express.js 앱 배포, 스트림 로그|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-web-app-resource-and-deploy-expressjs-app)|
 |앱 리소스 만들기 - 포함: Express.js 앱 배포, 앱 설정 구성, npm install 실행, 배포된 웹 사이트로 이동|[Visual Studio Code 확장](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#6-create-app-service-resource-in-visual-studio-code)|
-|웹앱 리소스 계획 만들기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#create-app-service-plan)|
 |앱 리소스 만들기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
-|배포 구성|[Azure CLI](../tutorial/deploy-deno-app-azure-app-service-azure-cli.md#5-configure-the-azure-app-service-webapp)
-|앱 배포|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|
-|브라우저에서 앱 보기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#browse-web-app)|
+|앱 만들기, 배포, 브라우저 앱, 로그 보기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |앱 리소스 삭제|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
 |원격 로그 스트림|[Visual Studio Code 확장](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
@@ -203,7 +200,7 @@ ms.locfileid: "97974570"
 |MongoDB 데이터베이스를 사용하는 Express.js 앱|이 자습서에서는 확장을 사용하여 VSCode를 사용하여 로컬에서 프로젝트를 로드하고 실행하는 방법과 앱 서비스에서 코드를 원격으로 실행하는 방법을 보여줍니다. 이 자습서에는 Mongo API용 CosmosDB 리소스 만들기, 연결 정보 가져오기, 앱 서비스 구성 설정에서 이를 설정하여 클라우드 데이터베이스에 연결 등이 있습니다.<br>[자습서](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [샘플 코드](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 |cloud-init 파일을 사용하여 VM에 배포된 Express.js 앱|Express.js 앱용 Linux VM(가상 머신)을 만듭니다. 이 VM은 cloud-init 구성 파일을 통해 구성되며 NGINX 및 Express.js 앱용 GitHub 리포지토리를 포함합니다. VM이 실행되면 SSH를 통해 VM에 연결하고, 추적 로깅을 포함하도록 웹앱을 변경하고, 웹 브라우저에서 공용 Express.js 서버 앱을 볼 수 있습니다.<br>[자습서](../tutorial/nodejs-virtual-machine-vm/introduction.md) - [샘플 코드](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 
-[Azure 샘플 브라우저](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript)를 사용하여 특정 사용 사례를 지원하는 더 많은 샘플을 찾을 수 있습니다. 
+[Azure 샘플 브라우저](/samples/browse/?languages=javascript%2cnodejs%2ctypescript)를 사용하여 특정 사용 사례를 지원하는 더 많은 샘플을 찾을 수 있습니다. 
 
 ## <a name="next-steps"></a>다음 단계
 

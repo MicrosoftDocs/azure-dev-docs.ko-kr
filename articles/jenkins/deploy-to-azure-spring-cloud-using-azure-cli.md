@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: ef078589506af95fc05bfd7a85f48757f3cb0242
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983972"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625992"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용하여 Azure Spring Cloud에 앱 배포
 
@@ -129,7 +129,7 @@ ms.locfileid: "94983972"
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Jenkins 자격 증명 저장소에 Azure 서비스 주체 자격 증명 추가
 
-1. Azure에 배포하려면 Azure 서비스 주체가 필요합니다. 자세한 내용은 [Azure App Service에 배포] 자습서의 [서비스 주체 만들기](deploy-from-github-to-azure-app-service.md#create-service-principal) 섹션을 참조하세요. `az ad sp create-for-rbac`의 출력은 다음과 같습니다.
+1. Azure에 배포하려면 Azure 서비스 주체가 필요합니다. 자세한 내용은 [Azure App Service에 배포] 자습서의 [서비스 주체 만들기](./deploy-to-azure-app-service-using-azure-cli.md#add-azure-service-principal-to-a-jenkins-credential) 섹션을 참조하세요. `az ad sp create-for-rbac`의 출력은 다음과 같습니다.
 
     ```
     {
@@ -161,7 +161,7 @@ ms.locfileid: "94983972"
 
 샘플 파이프라인은 Maven을 사용하여 빌드하고, Az CLI를 사용하여 서비스 인스턴스에 배포합니다. Jenkins를 설치하면 *jenkins* 라는 관리자 계정이 생성됩니다. *jenkins* 사용자에게 spring-cloud 확장을 실행할 수 있는 권한이 있는지 확인합니다.
 
-1. SSH를 통해 Jenkins 마스터에 연결합니다.
+1. SSH를 통해 Jenkins 컨트롤러에 연결합니다.
 
 1. Maven 설치
 

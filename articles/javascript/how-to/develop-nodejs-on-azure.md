@@ -4,12 +4,12 @@ description: Azure에 Node.js 앱을 만들고, 컨테이너화하고, 배포하
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: e549ef0cf5baaf003788a55bf2549e9c3f2fbe5c
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857821"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626056"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Visual Studio Code 및 Azure를 사용하여 컨테이너화된 Node.js 앱 개발 및 배포
 
@@ -325,21 +325,21 @@ FROM mhart
 
 1. Azure 리소스를 구성하는 데 도움이 되는 *네임스페이스* 또는 *디렉터리* 로 간주할 수 있는 리소스 그룹을 만듭니다. `-n` 옵션은 그룹의 이름을 지정하는 데 사용되며, 원하는 대로 지정할 수 있습니다.
 
-    ```shell
+    ```azurecli
     az group create -n nina-demo -l westus
     ```
 
     `-l` 옵션은 리소스 그룹의 위치를 나타냅니다. 미리 보기로 있는 동안 Linux에 대한 App Service 지원은 일부 지역에서만 제공됩니다. 따라서 미국 서부에 있지 않고 다른 지역에서 사용할 수 있는지 확인하려면 CLI에서 `az appservice list-locations --linux-workers-enabled`를 실행하여 데이터 센터 옵션을 확인하세요.
 
-1. 각 CLI 호출에서 리소스 그룹을 명시적으로 지정하지 않고도 CLI를 계속 사용할 수 있도록 새로 만든 리소스 그룹을 기본 리소스 그룹으로 설정합니다.
+1. 각 Azure CLI 호출에서 리소스 그룹을 명시적으로 지정하지 않고도 CLI를 계속 사용할 수 있도록 새로 만든 리소스 그룹을 기본 리소스 그룹으로 설정합니다.
 
-   ```shell
+   ```azurecli
    az configure -d group=nina-demo
    ```
 
 1. 앱이 배포된 기본 가상 머신의 생성 및 크기 조정을 관리하는 App Service *계획* 을 만듭니다. 다시 한 번 `n` 옵션에 대해 원하는 값을 지정합니다.
 
-    ```shell
+    ```azurecli
     az appservice plan create -n nina-demo-plan --is-linux
     ```
 
@@ -347,7 +347,7 @@ FROM mhart
 
 1. 방금 생성된 계획 및 리소스 그룹 내에서 실행될 실제 할 일 앱을 나타내는 App Service 웹앱을 만듭니다. 웹앱은 프로세스 또는 컨테이너와 동의어로, 계획은 실행 중인 가상 머신/컨테이너 호스트로 간주할 수 있습니다. 또한 웹앱을 만드는 작업의 일부로 DockerHub에 게시한 Docker 이미지를 사용하도록 해당 웹앱을 구성해야 합니다.
 
-    ```shell
+    ```azurecli
     az webapp create -n nina-demo-app -p nina-demo-plan -i lostintangent/node
     ```
 
@@ -356,13 +356,13 @@ FROM mhart
 
 1. 웹앱을 기본 웹 인스턴스로 설정합니다.
 
-    ```shell
+    ```azurecli
     az configure -d web=nina-demo-app
     ```
 
 1. 앱을 실행하여 `*.azurewebsites.net` URL에서 사용할 수 있는 배포된 컨테이너를 봅니다.
 
-    ```shell
+    ```azurecli
     az webapp browse
     ```
 
@@ -378,20 +378,20 @@ FROM mhart
 
 1. Visual Studio Code 터미널에서 다음 명령을 실행하여 Cosmos DB 서비스의 MongoDB 호환 인스턴스를 만듭니다. **<NAME** 자리 표시자를 전역적으로 고유한 값으로 바꿉니다(Cosmos DB에서는 이 이름을 사용하여 데이터베이스의 서버 URL을 생성함).
 
-   ```shell
+   ```azurecli
    COSMOSDB_NAME=<NAME>
    az cosmosdb create -n $COSMOSDB_NAME --kind MongoDB
    ```
 
 1. 이 인스턴스에 대한 MongoDB 연결 문자열을 검색합니다.
 
-   ```shell
+   ```bash
    MONGODB_URL=$(az cosmosdb list-connection-strings -n $COSMOSDB_NAME -otsv --query "connectionStrings[0].connectionString")
    ```
 
 1. 로컬로 실행 중인 MongoDB 서버(존재하지 않음)에 연결하는 대신 새로 프로비전된 Cosmos DB 인스턴스에 연결하도록 웹앱의 **MONGODB_URL** 환경 변수를 업데이트합니다.
 
-    ```shell
+    ```azurecli
     az webapp config appsettings set --settings MONGODB_URL=$MONGODB_URL
     ```
 
@@ -409,7 +409,7 @@ DockerHub는 보안/거버넌스 또는 성능 이점과 같이 컨테이너 이
 
 다음 명령을 실행하여 사용자 지정 레지스트리 프로비전을 수행할 수 있습니다. ACR에서 레지스트리의 로그인 서버 URL을 생성하는 데 지정된 값을 사용하므로 **<NAME** 자리 표시자를 전역적으로 고유한 값으로 바꿉니다.
 
-```shell
+```azurecli
 ACR_NAME=<NAME>
 az acr create -n $ACR_NAME -l westus --admin-enabled
 ```
@@ -419,31 +419,31 @@ az acr create -n $ACR_NAME -l westus --admin-enabled
 
 `az acr create` 명령은 Docker CLI(예: `ninademo.azurecr.io`)를 사용하여 로그인하는 데 사용하는 로그인 서버 URL(`LOGIN SERVER` 열을 통해)을 표시합니다. 또한 이 명령은 인증에 사용할 수 있는 관리자 자격 증명을 생성합니다. 이러한 자격 증명을 검색하려면 다음 명령을 실행하고 표시된 사용자 이름과 암호를 기록해 둡니다.
 
-```shell
+```azurecli
 az acr credential show -n $ACR_NAME
 ```
 
 이전 단계의 자격 증명과 개별 로그인 서버를 사용하면 표준 Docker CLI 워크플로를 통해 레지스트리에 로그인할 수 있습니다.
 
-```shell
+```console
 docker login <LOGIN_SERVER> -u <USERNAME> -p <PASSWORD>
 ```
 
 이제 `lostintangent/node`를 컨테이너 이미지에 지정한 이름으로 바꾸는 다음 명령을 사용하여 프라이빗 레지스트리와 연결되어 있음을 나타내도록 Docker 컨테이너에 태그를 지정할 수 있습니다.
 
-```shell
+```console
 docker tag lostintangent/node <LOGIN_SERVER>/lostintangent/node
 ```
 
 마지막으로 태그가 지정된 이미지를 프라이빗 Docker 레지스트리로 푸시합니다.
 
-```shell
+```console
 docker push <LOGIN_SERVER>/lostintangent/node
 ```
 
 이제 컨테이너가 사용자 고유의 프라이빗 레지스트리에 저장되고, Docker CLI는 DockerHub를 사용할 때와 동일한 방식으로 계속 작업할 수 있게 되었습니다. App Service 웹앱에서 프라이빗 레지스트리에서 가져오도록 지시하려면 다음 명령만 실행하면 됩니다.
 
-```shell
+```azurecli
 az appservice web config container set \
     -r <LOGIN_SERVER> \
     -c <LOGIN_SERVER>/lostintangent/node \
@@ -459,7 +459,7 @@ az appservice web config container set \
 
 `*.azurewebsites.net` URL은 테스트에 적합하지만, 어느 시점에서 사용자 지정 도메인 이름을 웹앱에 추가할 수 있습니다. 등록자의 도메인 이름이 있으면 웹앱의 외부 IP(실제로 부하 분산 장치)를 가리키는 `A` 레코드만 추가하면 됩니다. 다음 명령을 실행하여 이 IP를 검색할 수 있습니다.
 
-```shell
+```azurecli
 az webapp config hostname get-external-ip
 ```
 
@@ -467,7 +467,7 @@ az webapp config hostname get-external-ip
 
 일단 레코드가 만들어지고 DNS 변경 내용이 전파되면 들어오는 트래픽을 올바르게 예상하는지 파악할 수 있도록 Azure에 사용자 지정 도메인을 등록합니다.
 
-```shell
+```azurecli
 az webapp config hostname add --hostname <DOMAIN>
 ```
 
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 어느 시점에서는 증가된 트래픽 및 운영 요구 사항을 처리하기에는 할당된 리소스(CPU 및 RAM)가 충분하지 않을 만큼 웹앱이 충분히 인기가 있을 수 있습니다. 이전에 만든 App Service 계획(**B1**)에는 하나의 CPU 코어와 1.75GB RAM이 포함되어 있어서 쉽게 오버로드될 수 있습니다. **B2** 계획은 이러한 CPU와 RAM의 두 배가 됩니다. 따라서 둘 중 어느 하나가 부족하게 되면 앱에서 다음 명령을 실행하여 기본 가상 머신을 강화할 수 있습니다.
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --sku B2
 ```
 
@@ -491,7 +491,7 @@ az appservice plan update -n nina-demo-plan --sku B2
 
 가상 머신 사양을 강화하는 것 외에도, 상태 비저장 웹앱인 경우 기본 가상 머신 인스턴스를 더 많이 추가하여 *확장* 하는 옵션이 있습니다. 이전에 만든 App Service 계획에는 단일 가상 머신(*작업자*)만 있으므로 들어오는 모든 트래픽은 최종적으로 해당 인스턴스 하나의 사용 가능한 리소스 제한을 따릅니다. 두 번째 가상 머신 인스턴스를 추가하려는 경우 이전에 실행한 동일한 명령을 실행해도 되지만 SKU를 강화하는 대신 작업자 가상 머신의 수를 확장합니다.
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --number-of-workers 2
 ```
 
@@ -506,7 +506,7 @@ az appservice plan update -n nina-demo-plan --number-of-workers 2
 
 사용하지 않는 Azure 리소스에 대해 요금이 청구되지 않도록 하려면 Visual Studio Code 터미널에서 다음 명령을 실행하여 이 자습서에서 프로비전된 모든 리소스를 삭제합니다.
 
-```shell
+```azurecli
 az group delete
 ```
 

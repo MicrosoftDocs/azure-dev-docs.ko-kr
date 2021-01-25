@@ -3,12 +3,12 @@ title: JavaScript 문서의 새로운 내용
 description: 개발자 센터의 JavaScript 문서의 새로운 내용
 ms.topic: conceptual
 ms.date: 01/05/2021
-ms.openlocfilehash: 507c52491784a508535ae07f4a9b2755fa68cc1b
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: 71f4db11833d0c5346ee6204c94ecd943bb4f126
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952455"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625904"
 ---
 # <a name="javascript-docs-whats-new"></a>JavaScript 문서: 새로운 내용
 
@@ -21,7 +21,7 @@ JavaScript 및 TypeScript 개발자를 위한 새로운 콘텐츠 및 업데이�
 |이름|메모|
 |---------------------------------------|--|
 |[**초보자용**](learn-azure-javascript.md#getting-started)|JavaScript, Node.js, 웹 개발 및 기타 JavaScript 개발자의 관심 분야를 시작하기 위한 다양한 온라인 자료 모음입니다.|
-|[JavaScript 개발자를 위한 일반 상위 작업](how-to/common-javascript-tasks.md)|현재 작업의 예를 찾습니다.|
+|[JavaScript 개발자를 위한 상위 작업](how-to/common-javascript-tasks.md)|현재 작업의 예를 찾습니다.|
 
 ## <a name="2020-december"></a>2020년 12월
 
@@ -42,9 +42,9 @@ JavaScript 및 TypeScript 개발자를 위한 새로운 콘텐츠 및 업데이�
 
 |이름|
 |---------------------------------------|
-|정적 웹앱, JavaScript, CodeTour: 농구 통계를 사용하여 SPACE JAM: A NEW LEGACY에서 영감을 얻은 Visual Studio Code로 게임 플레이를 최적화합니다. - [Learn](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)|
-|HTML, CSS 및 JavaScript를 사용하는 간단한 웹 사이트 빌드 - [Learn](https://docs.microsoft.com/learn/modules/build-simple-website/)|
-|Visual Studio Code를 사용하여 Azure Functions 및 Node.js에서 제공하는 서버리스 API가 포함된 JavaScript 및 Vue.js 대시보드를 빌드합니다. - [Learn](https://docs.microsoft.com/learn/modules/build-api-azure-functions)|
+|정적 웹앱, JavaScript, CodeTour: 농구 통계를 사용하여 SPACE JAM: A NEW LEGACY에서 영감을 얻은 Visual Studio Code로 게임 플레이를 최적화합니다. - [Learn](/learn/paths/optimize-basketball-games-with-machine-learning/)|
+|HTML, CSS 및 JavaScript를 사용하는 간단한 웹 사이트 빌드 - [Learn](/learn/modules/build-simple-website/)|
+|Visual Studio Code를 사용하여 Azure Functions 및 Node.js에서 제공하는 서버리스 API가 포함된 JavaScript 및 Vue.js 대시보드를 빌드합니다. - [Learn](/learn/modules/build-api-azure-functions)|
 
 ## <a name="2020-november"></a>2020년 11월
 

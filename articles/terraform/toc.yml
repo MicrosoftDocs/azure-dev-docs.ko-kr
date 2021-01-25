@@ -21,6 +21,10 @@
       items:
         - name: Terraform 및 Azure 공급자 배포 슬롯
           href: provision-infrastructure-using-azure-deployment-slots.md
+    - name: 네트워크
+      items:
+        - name: Azure Network Watcher 구성
+          href: create-network-watcher-nsg-flow-logs.md
     - name: 컨테이너
       items:
         - name: AKS로 Kubernetes 클러스터 만들기

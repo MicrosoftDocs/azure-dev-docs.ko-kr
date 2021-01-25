@@ -11,18 +11,18 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: fdc0892298c18e3be5db1b97b1ad5fe77ac6a537
-ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
+ms.openlocfilehash: 10f85c7d1208ff77f2c85ec14e77ced450d5fcc8
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200628"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561308"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API에서 Spring Boot Starter를 사용하는 방법
 
-Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표준 API를 사용하여 데이터를 사용할 수 있도록 하는 전역 분산 데이터베이스 서비스입니다. Microsoft의 Spring Boot Starter를 사용하면 개발자가 SQL API를 사용하여 Azure Cosmos DB와 쉽게 통합하는 Spring Boot 애플리케이션을 사용할 수 있습니다.
+Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 다양한 표준 API를 사용하여 데이터를 사용할 수 있도록 하는 전역 분산 데이터베이스 서비스입니다. Microsoft의 Spring Boot Starter를 사용하면 개발자가 SQL API를 사용하여 Azure Cosmos DB와 쉽게 통합하는 Spring Boot 애플리케이션을 사용할 수 있습니다.
 
-이 문서에서는 Azure Portal을 사용하여 Azure Cosmos DB를 만들고, **[Spring Initializr]** 를 사용하여 사용자 지정 Spring Boot 애플리케이션을 만든 다음, [Azure용 Spring Boot Cosmos DB Starter]를 사용자 지정 애플리케이션에 추가하여 Spring Data 및 Cosmos DB SQL API를 통해 Azure Cosmos DB에서 데이터를 저장하고 검색하는 방법을 보여줍니다.
+이 문서에서는 Azure Portal을 사용하여 Azure Cosmos DB를 만들고, **[Spring Initializr]** 를 사용하여 사용자 지정 Spring Boot 애플리케이션을 만든 다음, [Azure Cosmos DB용 Azure Spring Boot Starter]를 사용자 지정 애플리케이션에 추가하여 Spring Data 및 Cosmos DB SQL API를 통해 Azure Cosmos DB에서 데이터를 저장하고 검색하는 방법을 보여줍니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -31,9 +31,9 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>Azure Portal을 사용하여 Azure Cosmos DB 만들기
 
-1. Azure Portal(<https://portal.azure.com/>)로 이동하고 **리소스 만들기** 를 클릭합니다.
+1. Azure Portal(<https://portal.azure.com/>)로 이동하고 **리소스 만들기** 를 선택합니다.
 
-1. **데이터베이스** 를 클릭한 후 **Azure Cosmos DB** 를 클릭합니다.
+1. **데이터베이스** 를 선택한 다음, **Azure Cosmos DB** 를 선택합니다.
 
     ![Azure Portal에서 Azure Cosmos DB를 선택합니다.][AZ02]
 
@@ -41,21 +41,21 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
     * 데이터베이스에 사용하려는 **구독** 을 선택합니다.
     * 데이터베이스에 새 **리소스 그룹** 을 만들지 아니면 기존 리소스 그룹을 선택할지를 지정합니다.
-    * 데이터베이스에 대한 URI로 사용할 고유한 **계정 이름** 을 입력합니다. 예를 들어 *wingtiptoysdata* 입니다.
+    * 데이터베이스에 대한 URI로 사용할 고유한 **계정 이름** 을 입력합니다. 예: *contosoaccount*.
     * API에 대한 **Core(SQL)** 를 선택합니다.
     * 데이터베이스의 **위치** 를 지정합니다.
 
-    이러한 옵션이 지정되면 **검토 + 만들기** 를 클릭하고 사양을 검토한 후 **만들기** 를 클릭합니다.
+    이러한 옵션이 지정되면 **검토 + 만들기** 를 선택하고 사양을 검토한 후 **만들기** 를 선택합니다.
 
     ![검토 + 만들기를 선택하여 계속 진행합니다.][AZ03]
 
-1. 데이터베이스를 만든 경우 Azure **대시보드** 뿐 아니라 **모든 리소스** 및 **Azure Cosmos DB** 페이지에도 나열됩니다. 해당 위치 중 하나에서 데이터베이스를 클릭하여 캐시에 대한 속성 페이지를 열 수 있습니다.
+1. 데이터베이스를 만들면 Azure **대시보드** 그리고 **모든 리소스** 및 **Azure Cosmos DB** 페이지에 나열됩니다. 이러한 위치에 대한 데이터베이스를 선택하여 캐시의 속성 페이지를 열 수 있습니다.
 
-1. 데이터베이스에 대한 속성 페이지가 표시되면 **키** 를 클릭하고 데이터베이스에 대한 URI 및 액세스 키를 복사합니다. 이러한 값은 Spring Boot 애플리케이션에서 사용하게 됩니다.
+1. 데이터베이스에 대한 속성 페이지가 표시되면 **키** 를 선택하고 데이터베이스에 대한 URI 및 액세스 키를 복사합니다. 이러한 값은 Spring Boot 애플리케이션에서 사용하게 됩니다.
 
     ![키 섹션에서 URI 및 액세스 키를 복사합니다.][AZ05]
 
-## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr를 사용하여 간단한 Spring Boot 애플리케이션 만들기
+## <a name="create-a-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr를 사용하여 Spring Boot 애플리케이션 만들기
 
 다음 단계를 사용하여 Azure 지원으로 새 Spring Boot 애플리케이션 프로젝트를 만듭니다. 대안으로 [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) 리포지토리에서 [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmos) 샘플을 사용할 수 있습니다. 그런 다음, [앱 빌드 및 테스트](#build-and-test-your-app)로 직접 건너뛸 수 있습니다.
 
@@ -66,14 +66,15 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
    * **Java** 를 사용하는 **Maven** 프로젝트를 생성합니다.
    * **Spring Boot** 버전을 지정합니다.
    * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
-   * Java 버전에 대해 **8** 을 선택합니다.
+   * Java 버전에 대해 **11** 을 선택합니다.
    * 종속성에서 **Azure 지원** 을 추가합니다.
 
    >[!div class="mx-imgBorder"]
    >![기본 Spring Initializr 옵션][SI01]
 
    > [!NOTE]
-   > Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.example.wingtiptoysdata* ).
+   > 1. Spring Initializr는 **그룹** 및 **아티팩트** 이름을 사용하여 패키지 이름을 만듭니다(예: *com.example.wingtiptoysdata*).
+   > 1. Spring Boot의 버전은 Azure Support에서 지원하는 버전보다 높을 수 있습니다. 프로젝트가 자동으로 생성되면 Spring Boot 버전을 [여기][azure-spring-boot-version-matrix]에서 찾을 수 있는 Azure에서 지원하는 가장 높은 버전으로 수동으로 변경할 수 있습니다.
 
 1. 위에 나열된 옵션이 지정되면 **생성** 을 선택합니다.
 
@@ -95,9 +96,9 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
-        <version>2.3.3</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-boot-starter-cosmos</artifactId>
+        <version>3.0.0</version>
     </dependency>
     ```
 
@@ -105,8 +106,8 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
     ```xml
     <properties>
-       <java.version>1.8</java.version>
-       <azure.version>2.2.0</azure.version>
+        <java.version>11</java.version>
+        <azure.version>3.0.0</azure.version>
     </properties>
     ```
 
@@ -124,15 +125,16 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
 1. 텍스트 편집기에서 *application.properties* 파일을 찾고 파일에 다음 줄을 추가하고 샘플 값을 데이터베이스의 적절한 속성으로 바꿉니다.
 
-    ```text
+    ```properties
     # Specify the DNS URI of your Azure Cosmos DB.
-    azure.cosmosdb.uri=https://wingtiptoys.documents.azure.com:443/
-
+    azure.cosmos.uri=https://contosoaccount.documents.azure.com:443/
+    
     # Specify the access key for your database.
-    azure.cosmosdb.key=57686f6120447564652c20426f6220526f636b73==
-
-    # Specify the name of your database.
-    azure.cosmosdb.database=wingtiptoysdata
+    azure.cosmos.key=replace-your-access-key-here
+    
+    # Specify the name of your database. 
+    azure.cosmos.database=contosoaccount
+    azure.cosmos.populateQueryMetrics=true
     ```
 
 1. *application.properties* 파일을 저장하고 닫습니다.
@@ -149,64 +151,63 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
     ```java
     package com.example.wingtiptoysdata;
-
-    import com.microsoft.azure.spring.data.cosmosdb.core.mapping.Document;
-    import com.microsoft.azure.spring.data.cosmosdb.core.mapping.PartitionKey;
+    
+    import com.azure.spring.data.cosmos.core.mapping.Container;
+    import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
     import org.springframework.data.annotation.Id;
-
-    @Document(collection = "mycollection")
+    
+    @Container(containerName = "mycollection")
     public class User {
-
         @Id
         private String id;
         private String firstName;
-
         @PartitionKey
         private String lastName;
         private String address;
-
+    
+        public User() {
+    
+        }
+    
         public User(String id, String firstName, String lastName, String address) {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.address = address;
         }
-
-        public User() {
-        }
-
+    
         public String getId() {
             return id;
         }
-
+    
         public void setId(String id) {
             this.id = id;
         }
-
+    
         public String getFirstName() {
             return firstName;
         }
-
+    
         public void setFirstName(String firstName) {
             this.firstName = firstName;
         }
-
+    
         public String getLastName() {
             return lastName;
         }
-
+    
         public void setLastName(String lastName) {
             this.lastName = lastName;
         }
-
+    
         public String getAddress() {
             return address;
         }
-
+    
         public void setAddress(String address) {
             this.address = address;
         }
-
+    
         @Override
         public String toString() {
             return String.format("%s %s, %s", firstName, lastName, address);
@@ -224,11 +225,11 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
     ```java
     package com.example.wingtiptoysdata;
-
-    import com.microsoft.azure.spring.data.cosmosdb.repository.ReactiveCosmosRepository;
+    
+    import com.azure.spring.data.cosmos.repository.ReactiveCosmosRepository;
     import org.springframework.stereotype.Repository;
     import reactor.core.publisher.Flux;
-
+    
     @Repository
     public interface UserRepository extends ReactiveCosmosRepository<User, String> {
         Flux<User> findByFirstName(String firstName);
@@ -253,77 +254,63 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 
     ```java
     package com.example.wingtiptoysdata;
-
+    
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.boot.CommandLineRunner;
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.boot.autoconfigure.SpringBootApplication;
     import org.springframework.util.Assert;
     import reactor.core.publisher.Flux;
     import reactor.core.publisher.Mono;
-
-    import javax.annotation.PostConstruct;
-    import javax.annotation.PreDestroy;
+    
     import java.util.Optional;
-
+    
     @SpringBootApplication
     public class WingtiptoysdataApplication implements CommandLineRunner {
-
+    
         private static final Logger LOGGER = LoggerFactory.getLogger(WingtiptoysdataApplication.class);
-
+    
         @Autowired
         private UserRepository repository;
-
+    
         public static void main(String[] args) {
             SpringApplication.run(WingtiptoysdataApplication.class, args);
         }
-
-        public void run(String... var1) throws Exception {
-            final User testUser = new User("1", "Tasha", "Calderon", "4567 Main St Buffalo, NY 98052");
-
-            LOGGER.info("Saving user: {}", testUser);
-
-            // Save the User class to Azure CosmosDB database.
+    
+        public void run(String... var1) {
+            this.repository.deleteAll().block();
+            LOGGER.info("Deleted all data in container.");
+    
+            final User testUser = new User("testId", "testFirstName", "testLastName", "test address line one");
+    
+            // Save the User class to Azure Cosmos DB database.
             final Mono<User> saveUserMono = repository.save(testUser);
-
+    
             final Flux<User> firstNameUserFlux = repository.findByFirstName("testFirstName");
-
+    
             //  Nothing happens until we subscribe to these Monos.
             //  findById will not return the user as user is not present.
             final Mono<User> findByIdMono = repository.findById(testUser.getId());
             final User findByIdUser = findByIdMono.block();
             Assert.isNull(findByIdUser, "User must be null");
-
+    
             final User savedUser = saveUserMono.block();
             Assert.state(savedUser != null, "Saved user must not be null");
             Assert.state(savedUser.getFirstName().equals(testUser.getFirstName()), "Saved user first name doesn't match");
-
-            LOGGER.info("Saved user");
-
+    
             firstNameUserFlux.collectList().block();
-
+    
             final Optional<User> optionalUserResult = repository.findById(testUser.getId()).blockOptional();
             Assert.isTrue(optionalUserResult.isPresent(), "Cannot find user.");
-
+    
             final User result = optionalUserResult.get();
             Assert.state(result.getFirstName().equals(testUser.getFirstName()), "query result firstName doesn't match!");
             Assert.state(result.getLastName().equals(testUser.getLastName()), "query result lastName doesn't match!");
-
-            LOGGER.info("Found user by findById : {}", result);
-        }
-
-        @PostConstruct
-        public void setup() {
-            LOGGER.info("Clear the database");
-            this.repository.deleteAll().block();
-        }
-
-        @PreDestroy
-        public void cleanup() {
-            LOGGER.info("Cleaning up users");
-            this.repository.deleteAll().block();
+    
+            LOGGER.info("findOne in User collection get result: {}", result.toString());
         }
     }
     ```
@@ -343,65 +330,26 @@ Azure Cosmos DB는 개발자가 SQL, MongoDB, Graph 및 Table API와 같은 표�
 1. 다음 명령을 사용하여 애플리케이션을 빌드하고 실행합니다.
 
     ```console
-    mvnw clean test
+    mvnw clean
     ```
 
     이 명령은 테스트 단계의 일부로 애플리케이션을 자동으로 실행합니다. 다음을 사용할 수도 있습니다.
 
     ```console
-    mvnw clean spring-boot:run
+    mvnw spring-boot:run
     ```
 
     일부 빌드 및 테스트 출력 후 콘솔 창에 다음과 비슷한 메시지가 표시됩니다.
 
     ```console
-      .   ____          _            __ _ _
-     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-      '  |____| .__|_| |_|_| |_\__, | / / / /
-     =========|_|==============|___/=/_/_/_/
-     :: Spring Boot ::            (v2.2.0.RC1)
-    >
-    > 2019-10-04 15:19:06.817  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplicationTests    : Starting WingtiptoysdataApplicationTests on devmachine03 with PID 30013 (started by <user> in /d/source/repos/wingtiptoysdata)
-    > 2019-10-04 15:19:06.818  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplicationTests    : No active profile set, falling back to default profiles: default
-    > 2019-10-04 15:19:08.329  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-    > 2019-10-04 15:19:09.720  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1369ms. Found 1 repository interfaces.
-    > 2019-10-04 15:19:09.734  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-    > 2019-10-04 15:19:09.748  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
-
-    ... (omitting Cosmos DB connection output) ...
-
-    > 2019-10-04 15:19:46.584  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplicationTests    : Started WingtiptoysdataApplicationTests in 40.702 seconds (JVM running for 44.647)
-    > 2019-10-04 15:19:46.587  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplication         : Saving user: Tasha Calderon, 4567 Main St Buffalo, NY 98052
-    > 2019-10-04 15:19:47.122  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplication         : Saved user
-    > 2019-10-04 15:19:47.289  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplication         : Found user by findById : Tasha Calderon, 4567 Main St Buffalo, NY 98052
-    > [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 44.003 s - in com.example.wingtiptoysdata.WingtiptoysdataApplicationTests
-    > 2019-10-04 15:19:48.124  INFO 30013 --- [extShutdownHook] c.a.d.c.internal.RxDocumentClientImpl    : Shutting down ...
-    > 2019-10-04 15:19:48.194  INFO 30013 --- [extShutdownHook] c.a.d.c.internal.RxDocumentClientImpl    : Shutting down ...
-    > 2019-10-04 15:19:48.200  INFO 30013 --- [extShutdownHook] c.e.w.WingtiptoysdataApplication         : Cleaning up users
-    > [INFO]
-    > [INFO] Results:
-    > [INFO]
-    > [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-    > [INFO]
-    > [INFO]
-    > [INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ wingtiptoysdata ---
-    > [INFO] Building jar: /d/source/repos/wingtiptoysdata/target/wingtiptoysdata-0.0.1-SNAPSHOT.jar
-    > [INFO]
-    > [INFO] --- spring-boot-maven-plugin:2.2.0.RC1:repackage (repackage) @ wingtiptoysdata ---
-    > [INFO] Replacing main artifact with repackaged archive
-    > [INFO] ------------------------------------------------------------------------
-    > [INFO] BUILD SUCCESS
-    > [INFO] ------------------------------------------------------------------------
-    > [INFO] Total time:  02:18 min
-    > [INFO] Finished at: 2019-10-04T15:20:05-07:00
-    > [INFO] ------------------------------------------------------------------------
+    INFO 1365 --- [           main] c.e.w.WingtiptoysdataApplication         : Deleted all data in container.
+    
+    ... (omitting connection and diagnostics output) ...
+    
+    INFO 1365 --- [           main] c.e.w.WingtiptoysdataApplication         : findOne in User collection get result: testFirstName testLastName, test address line one
     ```
 
-    ![애플리케이션에서 성공적인 출력][JV02]
-
-    `Saved user` 및 `Found user` 메시지는 데이터를 Cosmos DB에 성공적으로 저장한 다음, 다시 검색했음을 의미합니다.
+    위의 출력 메시지는 데이터를 Cosmos DB에 성공적으로 저장한 다음, 다시 검색했음을 의미합니다.
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
@@ -414,7 +362,7 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 > [!div class="nextstepaction"]
 > [Azure의 Spring](./index.yml)
 
-### <a name="additional-resources"></a>추가 리소스
+### <a name="more-resources"></a>기타 참고 자료
 
 Azure Cosmos DB 및 Java를 사용하는 방법에 대한 자세한 내용은 다음 문서를 참조하세요.
 
@@ -426,7 +374,7 @@ Azure Cosmos DB 및 Java를 사용하는 방법에 대한 자세한 내용은 �
 
 Azure에서 Spring Boot 애플리케이션을 사용 하는 방법에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* [Azure용 Spring Boot Cosmos DB Starter]
+* [Azure Cosmos DB용 Azure Spring Boot Starter]
 
 * [Azure App Service에서 Linux에 Spring Boot 애플리케이션 배포](deploy-spring-boot-java-app-on-linux.md)
 
@@ -442,22 +390,18 @@ Java와 함께 Azure를 사용하는 방법에 관한 자세한 정보는 [Java 
 [Java 개발자를 위한 Azure]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java
 [Azure Cosmos DB SQL API용 Spring 데이터]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[Azure용 Spring Boot Cosmos DB Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmos
+[Azure Cosmos DB용 Azure Spring Boot Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmos
 [체험판 Azure 계정]: https://azure.microsoft.com/pricing/free-trial/
 [Azure DevOps 및 Java 사용하기]: https://azure.microsoft.com/services/devops/java/
 [MSDN 구독자 혜택]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
+[azure-spring-boot-version-matrix]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring#azure-spring-boot
 
 <!-- IMG List -->
-
-[AZ01]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ01.png
 [AZ02]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ02.png
 [AZ03]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ03.png
-[AZ04]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ04.png
 [AZ05]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ05.png
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-cosmos-db/SI01.png
-
-[JV02]: media/configure-spring-boot-starter-java-app-with-cosmos-db/JV02.png

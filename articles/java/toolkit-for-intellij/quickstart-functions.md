@@ -4,12 +4,12 @@ description: Azure Toolkit for IntelliJ를 사용하여 간단한 HTTP 트리거
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: d796d6974d9591ae9df79d37c48f47d7e1cb5a72
-ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
+ms.openlocfilehash: 8276b7de4425cb4eb5630116c59803118d3002b0
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93278468"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561789"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>빠른 시작: IntelliJ IDEA를 사용하여 Azure Functions 프로젝트 만들기
 
@@ -35,7 +35,7 @@ ms.locfileid: "93278468"
 
    ![IntelliJ Azure 로그인 명령][I01]
 
-3. **Azure 로그인** 창에서 **디바이스 로그인** 을 선택하고 **로그인** ( [다른 로그인 옵션](sign-in-instructions.md))을 클릭합니다.
+3. **Azure 로그인** 창에서 **디바이스 로그인** 을 선택하고 **로그인**([다른 로그인 옵션](sign-in-instructions.md))을 클릭합니다.
 
    ![디바이스 로그인을 선택한 Azure 로그인 창][I02]
 
@@ -85,7 +85,7 @@ ms.locfileid: "93278468"
 
     ![로컬 디버그 함수 단추](media/quickstart-functions/local-debug-functions-button.png)
 
-1. `src/main/java/org/example/functions/HttpTriggerFunction.java` 파일의 줄 *20* 을 클릭하여 중단점을 추가하고 엔드포인트 `http://localhost:7071/api/HttpTrigger-Java?name=Azure`에 액세스하면 중단점에 도달한 것을 확인할 수 있습니다. *한 단계 실행* , *조사식* , *평가* 같은 더 많은 디버그 기능을 사용해 볼 수 있습니다. 중지 단추를 클릭하여 디버그 세션을 중지합니다.
+1. `src/main/java/org/example/functions/HttpTriggerFunction.java` 파일의 줄 *20* 을 클릭하여 중단점을 추가하고 엔드포인트 `http://localhost:7071/api/HttpTrigger-Java?name=Azure`에 액세스하면 중단점에 도달한 것을 확인할 수 있습니다. *한 단계 실행*, *조사식*, *평가* 같은 더 많은 디버그 기능을 사용해 볼 수 있습니다. 중지 단추를 클릭하여 디버그 세션을 중지합니다.
 
     ![로컬 디버그 함수 중단](media/quickstart-functions/local-debug-functions-break.png)
 
@@ -121,7 +121,7 @@ ms.locfileid: "93278468"
 
 1. *HttpTrigger-Java* 함수를 마우스 오른쪽 단추로 클릭하고 *트리거 함수* 를 선택하면 브라우저에 트리거 URL이 열린 것을 볼 수 있습니다.
 
-    ![Azure에 함수 배포 실행](media/quickstart-functions/explorer-trigger-functions.png)
+    ![트리거 URL을 표시하는 브라우저 주소 표시줄](media/quickstart-functions/explorer-trigger-functions.png)
 
 ## <a name="add-more-functions-to-the-project"></a>프로젝트에 함수 추가
 
@@ -137,9 +137,9 @@ ms.locfileid: "93278468"
 
 ## <a name="cleaning-up-functions"></a>Functions 정리
 
-1. Azure 탐색기에서 Azure Functions 삭제
+1. Azure Explorer에서 Azure Functions 삭제
       
-      ![프로젝트 선택 트리거에 함수 추가](media/quickstart-functions/delete-function.png)
+      ![Azure Explorer에서 함수 삭제](media/quickstart-functions/delete-function.png)
       
 
 ## <a name="next-steps"></a>다음 단계

@@ -4,12 +4,12 @@ description: 이 자습서에서는 Azure CLI를 사용하여 Deno 애플리케�
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 16cb388a9a61b0141f04364dc1489607565156a3
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: f1f8c93954d2e4cbb8f5bd525a518aae03ec9667
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522391"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561078"
 ---
 # <a name="deploy-deno-apps-to-azure-app-service-from-the-azure-cli"></a>Azure CLI에서 Azure App Service에 Deno 앱 배포
 
@@ -95,7 +95,7 @@ Azure CLI를 사용하여 Azure에 Deno 앱을 배포합니다.
 
     이 AppService는 Deno 코드를 실행하는 기본 기능을 제공하는 `anthonychu/azure-webapps-deno:1.0.2` Docker 이미지를 실행합니다. 이 프로세스가 완료될 때까지 몇 초 정도 걸릴 수 있습니다.
 
-## <a name="5-configure-the-azure-app-service-webapp"></a>5. Azure 앱 서비스 웹앱 구성
+## <a name="5-configure-app-service-deno-container"></a>5. App Service Deno 컨테이너 구성
 
 1. 실험적 Deno 이미지 이름에 대한 Docker 컨테이너 이미지를 가져올 위치를 웹앱에 알려줍니다.
 
@@ -158,6 +158,6 @@ az group delete deno-quickstart
 
 다음에 대해 자세히 알아봅니다.
 * [앱 설정 구성 방법 알아보기](../how-to/configure-web-app-settings.md)
-* Visual Studio Code 확장을 사용하여 [앱 서비스에 배포](../tutorial-vscode-azure-app-service-node-01.md)
+* Visual Studio Code 확장을 사용하여 [앱 서비스에 배포](./deploy-nodejs-azure-app-service-with-visual-studio-code.md)
 * [Virtual Machine에 배포](./nodejs-virtual-machine-vm/introduction.md)
 * [사용자 지정 처리기](/azure/azure-functions/functions-custom-handlers)로 [Deno 함수 배포](https://github.com/anthonychu/azure-functions-deno-worker)

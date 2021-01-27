@@ -73,6 +73,8 @@
           items:
             - name: VS Code가 포함된 Express.js
               href: tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
+            - name: Cognitive Services를 사용하여 텍스트 음성 변환
+              href: tutorial/convert-text-to-speech-cognitive-services.md
             - name: MongoDB(Cosmos) 데이터베이스가 포함된 Express .js
               href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
             - name: 'Azure CLI를 사용하여 만들기, Git을 사용하여 배포'

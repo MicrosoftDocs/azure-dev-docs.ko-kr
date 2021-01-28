@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 19b83e0dcc161c87e5a70eb6f8d4bbac29858c7b
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 82ce8246b916549d2207a10d96de89ad26cde49c
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632465"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699891"
 ---
 # <a name="automate-the-lifecycle-of-your-apps-with-continuous-build-and-integration"></a>연속 빌드 및 통합으로 앱 수명 주기 자동화
 
@@ -68,8 +68,8 @@ Visual Studio App Center 서비스의 추가 기능을 사용하면 워크플로
 
 ### <a name="azure-pipelines-references"></a>Azure Pipelines 참조
 
-- [Azure Pipelines 가이드 시작](/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops)
+- [Azure Pipelines 가이드 시작](/azure/devops/pipelines/get-started/pipelines-get-started)
 - [Azure DevOps 시작](https://app.vsaex.visualstudio.com/signup/)
-- [빠른 시작](/azure/devops/pipelines/create-first-pipeline?view=azure-devops&tabs=tfs-2018-2)
+- [빠른 시작](/azure/devops/pipelines/create-first-pipeline?tabs=tfs-2018-2)
 
 애플리케이션 빌드에 적합한 서비스를 선택하는 데 도움이 되도록 [App Center 빌드 및 Azure Pipelines](/appcenter/build/choose-between-services)를 비교하는 문서를 참조하세요.

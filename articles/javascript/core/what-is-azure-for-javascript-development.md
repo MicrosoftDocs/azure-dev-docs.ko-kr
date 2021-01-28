@@ -4,12 +4,12 @@ description: JavaScript, TypeScript 및 Node.js 개발자용 Azure의 개념입�
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 155add5f2c1119f028cfae966438bda4ead3e758
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+ms.openlocfilehash: b6d0e54bdaf1b0ea9adba9800de58fe664df8324
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97601004"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699801"
 ---
 # <a name="what-is-azure-for-javascript-developers"></a>JavaScript 개발자용 Azure란?
 
@@ -111,7 +111,7 @@ Azure를 처음 접하는 사용자가 리소스를 만드는 가장 일반적�
 
 Azure 리소스는 다음에서도 사용할 수 있습니다.
 * [Azure CLI](/cli/azure/install-azure-cli) 및 [Azure Cloud Shell](https://shell.azure.com/)
-* [Azure PowerShell](/powershell/azure/?view=azps-5.2.0&preserve-view=true)
+* [Azure PowerShell](/powershell/azure/)
 * [REST API](/rest/api/azure/)
 
 ## <a name="deploy-web-apps-to-hosting-options"></a>호스팅 옵션에 웹앱 배포

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 3f4070fa18c9d5d5db7df5d877b490ff0103b0b2
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 3d4262d7009004d177b38bf9f4cb3fb8c9b02259
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561460"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811140"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>자습서: Azure Active Directory용 Spring Boot Starter를 사용하여 Java 웹앱 보호하기
 
@@ -295,7 +295,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    >[!div class="mx-imgBorder"]
    >![사용 중인 애플리케이션 빌드][build-application]
 
-1. 애플리케이션이 Maven에서 빌드 및 시작되고 나면, <http://localhost:8080/group1>을 웹 브라우저에서 엽니다. 사용자 이름 및 암호 입력 메시지가 나타납니다.
+1. 애플리케이션이 Maven에서 빌드 및 시작되고 나면, `http://localhost:8080/group1`을 웹 브라우저에서 엽니다. 사용자 이름 및 암호 입력 메시지가 나타납니다.
    
    >[!div class="mx-imgBorder"]
    ![애플리케이션에 로그인][application-login]

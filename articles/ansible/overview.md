@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, 개요, 클라우드 프로비전, 구성 관�
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 9943dd0dbdd1b352d245bc471538e1a05d464c99
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586104"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811097"
 ---
 # <a name="using-ansible-with-azure"></a>Azure에서 Ansible 사용
 
@@ -38,7 +38,7 @@ Ansible을 사용하면 Azure 마이크로 서비스(예: [Azure Functions](http
 
 ## <a name="manage-deployments-with-dynamic-inventory"></a>동적 인벤토리를 사용하여 배포 관리
 
-Ansible은 [동적 인벤토리](https://docs.ansible.com/ansible/intro_dynamic_inventory.html) 기능을 통해 Azure 리소스에서 인벤토리를 끌어오는 기능을 제공합니다. 그런 다음, 기존 Azure 배포에 태그를 지정하고, Ansible을 통해 이러한 태그가 지정된 배포를 관리할 수 있습니다.
+Ansible은 [동적 인벤토리](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html) 기능을 통해 Azure 리소스에서 인벤토리를 끌어오는 기능을 제공합니다. 그런 다음, 기존 Azure 배포에 태그를 지정하고, Ansible을 통해 이러한 태그가 지정된 배포를 관리할 수 있습니다.
 
 ## <a name="additional-azure-marketplace-options"></a>추가 Azure Marketplace 옵션
 

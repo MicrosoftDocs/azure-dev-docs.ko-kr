@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 0ab44652d4a635d5ff04928b76883a76fe3a62fa
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 7a97aa687c80b4b49a566df2f5552bf919a0ec9e
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493114"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699751"
 ---
 # <a name="cloud-hosted-source-code-management-services"></a>클라우드에서 호스팅되는 소스 코드 관리 서비스
 
@@ -63,7 +63,7 @@ ms.locfileid: "91493114"
 
 ## <a name="azure-devops"></a>Azure DevOps
 
-[Azure DevOps](https://azure.microsoft.com/services/devops/)는 소스 제어 옵션으로 [Azure Repos](https://azure.microsoft.com/services/devops/repos/) 및 [TFVC(Team Foundation 버전 제어)](/azure/devops/repos/tfvc/index?view=azure-devops)를 지원합니다. 협업 코드 검토, 고급 파일 관리, 코드 검색 및 분기 정책이 있는 프라이빗 리포지토리를 추가 비용 없이 무제한으로 제공하여 고품질 코드를 보장합니다. Azure Repos는 네이티브 Azure Active Directory 지원 및 고급 정책이 필요한 소규모 프로젝트와 대규모 조직에 적합합니다.
+[Azure DevOps](https://azure.microsoft.com/services/devops/)는 소스 제어 옵션으로 [Azure Repos](https://azure.microsoft.com/services/devops/repos/) 및 [TFVC(Team Foundation 버전 제어)](/azure/devops/repos/tfvc/index)를 지원합니다. 협업 코드 검토, 고급 파일 관리, 코드 검색 및 분기 정책이 있는 프라이빗 리포지토리를 추가 비용 없이 무제한으로 제공하여 고품질 코드를 보장합니다. Azure Repos는 네이티브 Azure Active Directory 지원 및 고급 정책이 필요한 소규모 프로젝트와 대규모 조직에 적합합니다.
 
 ### <a name="azure-devops-features"></a>Azure DevOps 기능
 
@@ -84,4 +84,4 @@ ms.locfileid: "91493114"
 ### <a name="azure-devops-references"></a>Azure DevOps 참조
 
 - [Azure Repos 시작](https://azure.microsoft.com/services/devops/repos/) 
-- [Azure Repos 설명서](/azure/devops/repos/?view=azure-devops)
+- [Azure Repos 설명서](/azure/devops/repos)

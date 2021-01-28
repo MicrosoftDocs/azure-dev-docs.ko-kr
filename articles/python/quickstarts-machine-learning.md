@@ -4,12 +4,12 @@ description: Python 앱 기계 학습에 대한 Azure 설명서의 시작 자료
 ms.date: 05/28/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6f36d3059f616a3b149113108f8dfd922abcf57e
-ms.sourcegitcommit: a5a47f96602996f2867ac1405f9ea18daed23a23
+ms.openlocfilehash: 960ab460eb12641f61f071d53f2ead1a811472fb
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88200598"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699641"
 ---
 # <a name="machine-learning-for-python-apps-on-azure"></a>Azure에서 Python 앱 기계 학습
 
@@ -21,5 +21,5 @@ Azure에서 다양한 기계 학습 옵션을 시작하는 데 유용한 문서�
 - [ML 모델 자동 학습](/azure/machine-learning/tutorial-auto-train-models)
 - [Azure Machine Learning Python 클라이언트 라이브러리를 사용하여 Python으로 데이터 세트에 액세스](/azure/machine-learning/team-data-science-process/python-data-access)
 - [Python에서 자동화된 ML 실험 구성](/azure/machine-learning/how-to-configure-auto-train)
-- [Azure DevOps를 사용하여 데이터 파이프라인 배포](/azure/devops/pipelines/apps/cd/azure/cicd-data-overview?view=azure-devops)
+- [Azure DevOps를 사용하여 데이터 파이프라인 배포](/azure/devops/pipelines/apps/cd/azure/cicd-data-overview)
 - [Azure Machine Learning SDK를 사용하여 기계 학습 파이프라인 만들기 및 실행](/azure/machine-learning/how-to-create-your-first-pipeline)

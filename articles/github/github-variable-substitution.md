@@ -5,22 +5,22 @@ author: juliakm
 ms.author: jukullam
 ms.topic: conceptual
 ms.service: azure
-ms.date: 11/18/2020
+ms.date: 01/25/2021
 ms.custom: github-actions-azure
-ms.openlocfilehash: 0e3f3b11980c987ef4f7a288380b9517ad88d777
-ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
+ms.openlocfilehash: e2a82fbcbe48269339dc672d46aca4cc3601ae12
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96120553"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759496"
 ---
 # <a name="use-variable-substitution-with-github-actions"></a>GitHub Actions에서 변수 바꾸기 사용
 
 [변수 바꾸기 작업](https://github.com/marketplace/actions/variable-substitution)을 사용하여 XML, JSON 및 YAML 기반 구성과 매개 변수 파일의 값을 바꾸는 방법에 대해 알아봅니다.
 
-워크플로를 실행하는 동안 변수 바꾸기를 통해 [GitHub 비밀](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)을 비롯한 값을 리포지토리의 파일에 삽입할 수 있습니다. 예를 들어 워크플로를 실행하는 동안 API 로그인 및 암호를 JSON 파일에 삽입할 수 있습니다.
+워크플로를 실행하는 동안 변수 바꾸기를 통해 [GitHub 비밀](https://docs.github.com/en/actions/reference/encrypted-secrets)을 비롯한 값을 리포지토리의 파일에 삽입할 수 있습니다. 예를 들어 워크플로를 실행하는 동안 API 로그인 및 암호를 JSON 파일에 삽입할 수 있습니다.
 
-변수 바꾸기는 개체 계층 구조에 미리 정의된 키에만 작동합니다. 변수 바꾸기를 통해 새 키를 만들 수 없습니다. 또한 이미 사용 가능한 워크플로 또는 시스템 변수에서 [환경 변수](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)로 정의된 변수만 바꾸기에 사용할 수 있습니다.
+변수 바꾸기는 개체 계층 구조에 미리 정의된 키에만 작동합니다. 변수 바꾸기를 통해 새 키를 만들 수 없습니다. 또한 이미 사용 가능한 워크플로 또는 시스템 변수에서 [환경 변수](https://docs.github.com/en/actions/reference/environment-variables)로 정의된 변수만 바꾸기에 사용할 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 

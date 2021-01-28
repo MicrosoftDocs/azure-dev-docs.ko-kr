@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d835fb755a2acecba3e7ad173ef9d6c036d59546
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 6310254e450c7e0fc648459ddad2c08b1bba555b
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561749"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759515"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions를 사용하여 Azure에 연결
 
@@ -80,7 +80,7 @@ Azure 로그인 작업을 사용하면 [Azure AD 서비스 주체](/azure/active
 
 [Azure 로그인 작업](https://github.com/Azure/login)에서 서비스 주체 비밀을 사용하여 Azure에 인증합니다.
 
-이 워크플로에서는 `secrets.AZURE_CREDENTIALS`에 저장된 서비스 주체 세부 정보를 Azure 로그인 작업에서 사용하여 인증합니다. 그런 다음, Azure CLI 작업을 실행합니다. 워크플로 파일의 GitHub 비밀 참조에 대한 자세한 내용은 GitHub Docs의 [워크플로에서 암호화된 비밀 사용](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)을 참조하세요.
+이 워크플로에서는 `secrets.AZURE_CREDENTIALS`에 저장된 서비스 주체 세부 정보를 Azure 로그인 작업에서 사용하여 인증합니다. 그런 다음, Azure CLI 작업을 실행합니다. 워크플로 파일의 GitHub 비밀 참조에 대한 자세한 내용은 GitHub Docs의 [워크플로에서 암호화된 비밀 사용](https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)을 참조하세요.
 
 제대로 작동하는 Azure 로그인 단계가 있으면 [Azure PowerShell](https://github.com/Azure/PowerShell) 또는 [Azure CLI](https://github.com/Azure/CLI) 작업을 사용할 수 있습니다. [Azure 웹앱 배포](https://github.com/Azure/webapps-deploy) 및 [Azure 함수](https://github.com/Azure/functions-action)와 같은 다른 Azure 작업을 사용할 수도 있습니다.
 

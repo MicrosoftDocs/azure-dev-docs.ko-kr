@@ -7,20 +7,20 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: b5b3192d1d65515dc3741be80bbab018f9cf5f09
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 7309bd16cdecf8b148b89eb40649864590b552a6
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561739"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811092"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Azure용 GitHub Actions란?
 
-[GitHub Actions](https://help.github.com/articles/about-github-actions)는 GitHub 내에서 소프트웨어 개발 워크플로를 자동화하는 데 도움이 됩니다. 코드를 저장하고 끌어오기 요청 및 이슈에 대해 협업하는 위치와 동일한 위치에 워크플로를 배포할 수 있습니다.
+[GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions)는 GitHub 내에서 소프트웨어 개발 워크플로를 자동화하는 데 도움이 됩니다. 코드를 저장하고 끌어오기 요청 및 이슈에 대해 협업하는 위치와 동일한 위치에 워크플로를 배포할 수 있습니다.
 
-GitHub Actions에서 [워크플로](https://help.github.com/articles/about-github-actions#workflow)는 GitHub 리포지토리에서 설정하는 자동화된 프로세스입니다. GitHub에서 워크플로를 사용하여 프로젝트를 빌드, 테스트, 패키징, 릴리스 또는 배포할 수 있습니다.
+GitHub Actions에서 [워크플로](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)는 GitHub 리포지토리에서 설정하는 자동화된 프로세스입니다. GitHub에서 워크플로를 사용하여 프로젝트를 빌드, 테스트, 패키징, 릴리스 또는 배포할 수 있습니다.
 
-각 워크플로는 특정 이벤트(예: 끌어오기 요청)가 발생한 후에 실행되는 개별 [작업](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)으로 구성됩니다.  개별 작업은 소프트웨어 개발 작업을 자동화하는 패키징된 스크립트입니다.
+각 워크플로는 특정 이벤트(예: 끌어오기 요청)가 발생한 후에 실행되는 개별 [작업](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)으로 구성됩니다.  개별 작업은 소프트웨어 개발 작업을 자동화하는 패키징된 스크립트입니다.
 
 Azure용 GitHub Actions를 사용하면 프로젝트를 빌드, 테스트, 패키징, 릴리스 및 Azure에 배포하도록 리포지토리에서 설정 가능한 워크플로를 만들 수 있습니다. Azure용 GitHub Actions는 Azure App Service, Azure Functions 및 Azure Key Vault를 비롯한 Azure 서비스를 지원합니다.
 
@@ -32,11 +32,11 @@ GitHub Universe 2020의 이 비디오를 통해 GitHub Actions를 통한 지속�
 
 ## <a name="why-should-i-use-github-actions-for-azure"></a>Azure용 GitHub Actions를 사용해야 하는 이유
 
-Microsoft에서 개발한 Azure용 GitHub Actions는 Azure와 함께 사용하도록 설계되었습니다. [GitHub Marketplace](https://github.com/marketplace?query=Azure&type=actions)에서 모든 Azure용 GitHub Actions를 볼 수 있습니다. 워크플로에 작업을 통합하는 방법에 대한 자세한 내용은 [작업 찾기 및 사용자 지정](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/finding-and-customizing-actions)을 참조하세요.
+Microsoft에서 개발한 Azure용 GitHub Actions는 Azure와 함께 사용하도록 설계되었습니다. [GitHub Marketplace](https://github.com/marketplace?query=Azure&type=actions)에서 모든 Azure용 GitHub Actions를 볼 수 있습니다. 워크플로에 작업을 통합하는 방법에 대한 자세한 내용은 [작업 찾기 및 사용자 지정](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions)을 참조하세요.
 
 ## <a name="what-is-the-difference-between-github-actions-and-azure-pipelines"></a>GitHub Actions와 Azure Pipelines의 차이점
 
-Azure Pipelines 및 GitHub Actions 둘 다 소프트웨어 개발 워크플로를 자동화하는 데 도움이 됩니다. 두 서비스의 차이점 및 Azure Pipelines에서 GitHub Actions로 마이그레이션하는 방법에 대해 [자세히 알아보세요](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions).
+Azure Pipelines 및 GitHub Actions 둘 다 소프트웨어 개발 워크플로를 자동화하는 데 도움이 됩니다. 두 서비스의 차이점 및 Azure Pipelines에서 GitHub Actions로 마이그레이션하는 방법에 대해 [자세히 알아보세요](https://docs.github.com/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions).
 
 ## <a name="what-do-i-need-to-use-github-actions-for-azure"></a>Azure용 GitHub Actions를 사용하려면 무엇이 필요한가요?
 
@@ -53,7 +53,7 @@ Azure 로그인 작업을 [Azure CLI](https://github.com/marketplace/actions/azu
 
 ## <a name="what-is-included-in-a-github-actions-workflow"></a>GitHub Actions 워크플로에 포함되는 내용
 
-워크플로는 하나 이상의 작업으로 구성됩니다. 작업 내에는 개별 작업으로 구성된 단계가 있습니다. GitHub Actions 개념에 대한 자세한 내용은 [GitHub Actions 소개](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)를 참조하세요.  
+워크플로는 하나 이상의 작업으로 구성됩니다. 작업 내에는 개별 작업으로 구성된 단계가 있습니다. GitHub Actions 개념에 대한 자세한 내용은 [GitHub Actions 소개](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)를 참조하세요.  
 
 ## <a name="where-can-i-see-complete-workflow-examples"></a>전체 워크플로 예제를 볼 수 있는 위치
 

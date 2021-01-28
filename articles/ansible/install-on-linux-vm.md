@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, cloudshell, 플레이북, Azure CLI
 ms.topic: quickstart
 ms.date: 09/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: b01cf6925f19ae6dc561358546f9ee3b945cad4f
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: a16e9affb6153d1defea2f5233a62f78d3b85ae8
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066252"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811128"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Ansible 구성
 
@@ -38,8 +38,8 @@ Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 �
 
 키 기반 인증에는 두 가지 키가 있습니다.
 
-- **공개 키** : 공개 키는 VM과 같은 호스트에 저장됩니다(이 문서 참조).
-- **프라이빗 키** : 프라이빗 키를 사용하면 호스트에 안전하게 연결할 수 있습니다. 프라이빗 키는 사실상 내 암호이며 내 암호처럼 보호해야 합니다.
+- **공개 키**: 공개 키는 VM과 같은 호스트에 저장됩니다(이 문서 참조).
+- **프라이빗 키**: 프라이빗 키를 사용하면 호스트에 안전하게 연결할 수 있습니다. 프라이빗 키는 사실상 내 암호이며 내 암호처럼 보호해야 합니다.
         
 다음 단계는 SSH 키 쌍을 만드는 과정을 안내합니다.
 
@@ -53,7 +53,7 @@ Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 �
     ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-    **참고** :
+    **참고**:
 
     - `ssh-keygen` 명령은 생성된 키 파일의 위치를 표시합니다. 가상 머신을 만들 때 이 디렉터리 이름이 필요합니다.
     - 공개 키는 `ansible_rsa.pub`에 저장되고 프라이빗 키는 `ansible_rsa`에 저장됩니다.
@@ -83,7 +83,7 @@ Linux VM에 연결할 때 암호 인증 또는 키 기반 인증을 사용할 �
     az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-    **참고** :
+    **참고**:
 
     - `az vm list` 명령의 출력에는 SSH를 통해 가상 머신에 연결하는 데 사용되는 공용 IP 주소가 포함됩니다.
 
@@ -132,7 +132,7 @@ Ansible Tower 또는 Jenkins를 사용하는 경우 서비스 주체 값을 환�
 
 이 섹션에서는 Ansible에 자격 증명을 제공하는 로컬 자격 증명 파일을 만듭니다.
 
-Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자격 증명 제공](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)을 참조하세요.
+Ansible 자격 증명 정의에 대한 자세한 내용은 [Azure 모듈에 자격 증명 제공](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)을 참조하세요.
 
 1. 호스트 가상 머신에 성공적으로 연결되면 `credentials`라는 파일을 만들고 엽니다.
 

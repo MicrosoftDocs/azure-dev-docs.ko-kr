@@ -6,12 +6,12 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3b6d9847cc72f246587a36b74173521736a6cc9a
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.openlocfilehash: 58ed07c18fdb8492cf7f2c19883f3cf0288d9cc1
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052266"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699981"
 ---
 # <a name="migrate-weblogic-server-applications-to-azure-virtual-machines"></a>WebLogic 애플리케이션을 Azure Virtual Machines로 마이그레이션
 
@@ -159,7 +159,7 @@ CI/CD 파이프라인 또는 수동 배포 시스템에서 액세스할 수 있�
 
 * Azure Storage를 사용하여 가상 머신에 탑재된 정적 콘텐츠 제공. 자세한 내용은 [가상 머신에 데이터 디스크 연결 또는 분리](/azure/lab-services/devtest-lab-attach-detach-data-disk)를 참조하세요.
 
-* Azure DevOps를 사용하여 마이그레이션된 WebLogic 클러스터에 애플리케이션 배포. 자세한 내용은 [Azure DevOps 시작 설명서](/azure/devops/get-started/?view=azure-devops)를 참조하세요.
+* Azure DevOps를 사용하여 마이그레이션된 WebLogic 클러스터에 애플리케이션 배포. 자세한 내용은 [Azure DevOps 시작 설명서](/azure/devops/get-started)를 참조하세요.
 
 * [자습서: Azure Application Gateway를 부하 분산 장치로 사용하여 WebLogic Server 클러스터를 Azure로 마이그레이션](migrate-weblogic-with-app-gateway.md)의 단계에 따라 Azure Application Gateway를 사용하여 WebLogic Server를 배포한 경우 Application Gateway에서 추가 구성을 수행하는 것이 좋습니다.  자세한 내용은 [Application Gateway 구성 개요](/azure/application-gateway/configuration-overview)를 참조하세요.
 

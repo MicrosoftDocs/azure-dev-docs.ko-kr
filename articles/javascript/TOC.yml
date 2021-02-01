@@ -143,6 +143,8 @@
           href: how-to/configure-web-app-settings.md
         - name: JavaScript 개발자를 위한 작업
           href: how-to/common-javascript-tasks.md
+        - name: 변경 내용에 대한 GitHub 리포지토리 복제
+          href: how-to/with-visual-studio-code/clone-github-repository.md
         - name: VS Code를 사용한 종단 간 Node.js
           href: how-to/develop-nodejs-on-azure.md
         - name: 웹 앱 배포

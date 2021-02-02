@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, 클러스터
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 91e4602184ab1351c935a083841e045f9b764308
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626008"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699931"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>자습서: Service Fabric 클러스터에 배포
 
@@ -20,7 +20,7 @@ ms.locfileid: "98626008"
 1. 그런 후 다음 섹션 중 하나의 단계를 수행하여 Jenkins를 설정합니다.
    * [Service Fabric 클러스터 내에서 Jenkins 설정](#set-up-jenkins-inside-a-service-fabric-cluster), 
    * [Service Fabric 클러스터 외부에서 Jenkins 설정](#set-up-jenkins-outside-a-service-fabric-cluster) 또는
-   * [기존 Jenkins 환경에 Service Fabric 플러그 인 설치](#install-service-fabric-plugin-in-an-existing-jenkins-environment)
+   * [기존 Jenkins 환경에 Service Fabric 플러그 인 설치](#install-service-fabric-plug-in-in-an-existing-jenkins-environment)
 1. Jenkins를 설정한 후에, [Jenkins 작업 만들기 및 구성](#create-and-configure-a-jenkins-job)의 단계에 따라 애플리케이션이 변경될 때 Jenkins를 트리거하도록 GitHub를 설정하고, GitHub에서 변경 내용을 끌어오고 애플리케이션을 빌드하도록 빌드 단계의 Jenkins 작업 파이프라인을 구성합니다. 
 1. 마지막으로 애플리케이션을 Service Fabric 클러스터에 배포하도록 Jenkins 작업 빌드 후 단계를 구성합니다. 클러스터에 애플리케이션을 배포하도록 Jenkins를 구성하는 방법에는 다음 두 가지가 있습니다.    
    * 개발 및 테스트 환경의 경우, [클러스터 관리 엔드포인트를 사용하여 배포 구성](#configure-deployment-using-cluster-management-endpoint)을 사용합니다. 이것이 가장 간단하게 설정할 수 있는 배포 방법입니다.
@@ -32,7 +32,7 @@ ms.locfileid: "98626008"
 - 이 문서에서는 애플리케이션을 빌드 및 배포하기 위해 GitHub [https://github.com/Azure-Samples/service-fabric-java-getting-started](https://github.com/Azure-Samples/service-fabric-java-getting-started)의 *Service Fabric 시작 샘플* 을 사용합니다. 이 리포지토리를 포크하여 진행하거나 지침을 약간 수정하여 사용자 고유의 GitHub 프로젝트를 사용할 수 있습니다.
 
 
-## <a name="install-service-fabric-plugin-in-an-existing-jenkins-environment"></a>기존 Jenkins 환경에 Service Fabric 플러그 인 설치
+## <a name="install-service-fabric-plug-in-in-an-existing-jenkins-environment"></a>기존 Jenkins 환경에 Service Fabric 플러그 인 설치
 
 Service Fabric 플러그 인을 기존 Jenkins 환경에 추가하는 경우 다음 단계를 수행해야 합니다.
 
@@ -308,7 +308,7 @@ Jenkins를 설정한 후 다음 섹션, [Jenkins 작업 만들기 및 구성](#c
     ![Service Fabric Jenkins 빌드 후 작업 - Azure 자격 증명 구성](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. **Verify Configuration** 을 클릭합니다. 성공적으로 확인되면 **저장** 을 클릭합니다. 이제 Jenkins 작업 파이프라인이 완전히 구성되었습니다. [다음 단계](#next-steps)를 계속 진행하여 배포를 테스트합니다.
 
-## <a name="troubleshooting-the-jenkins-plugin"></a>Jenkins 플러그 인 문제 해결
+## <a name="troubleshooting-the-jenkins-plug-in"></a>Jenkins 플러그 인 문제 해결
 
 Jenkins 플러그 인에서 버그가 발생하면 [Jenkins JIRA](https://issues.jenkins-ci.org/)에서 특정 구성 요소에 대한 문제를 제출해 주세요.
 

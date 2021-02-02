@@ -2,14 +2,14 @@
 title: 웹앱 호스트 - 구성 설정
 description: 웹앱의 일반적인 구성을 설정하는 방법을 알아봅니다.
 ms.topic: conceptual
-ms.date: 01/11/2021
+ms.date: 01/21/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: ec183d08460b932cec1dea8d301f2877d7bc9ece
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 7b72cb2a72e1bf27630ad06451d9a6ad90dcf1ad
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561699"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699781"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Azure에 웹앱 호스트
 
@@ -64,7 +64,12 @@ ms.locfileid: "98561699"
 
 ## <a name="configure-port-forwarding"></a>포트 전달 구성
 
-앱의 포트가 기본 포트 `8080`이 아닌 경우 [앱의 포트 번호를 매핑](/azure/app-service/configure-language-nodejs?pivots=platform-windows#get-port-number)해야 합니다. 이렇게 하면 App 서비스에서 올바른 포트에 요청을 전달할 수 있습니다. 
+앱의 포트가 기본 포트가 아닌 경우 [앱의 포트 번호를 매핑](/azure/app-service/configure-language-nodejs?pivots=platform-windows#get-port-number)해야 합니다. 이렇게 하면 App 서비스에서 올바른 포트에 요청을 전달할 수 있습니다. 
+
+```javascript
+// 3000 is an example port
+const port = process.env.PORT || 3000
+```
 
 ## <a name="configure-browser-for-cors-to-connect-with-server"></a>CORS의 브라우저를 서버와 연결하도록 구성
 

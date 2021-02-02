@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, AKS, Azure Kubernetes Service, GitHub
 ms.topic: article
 ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 137f7cf050c9d31adc9e56a70fbb98e29342e142
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192505"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699971"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>자습서: Jenkins를 사용하여 GitHub에서 Azure Kubernetes Service로 배포
 
@@ -153,7 +153,7 @@ Enter the following to Unlock Jenkins:
 
 웹 브라우저를 표시된 URL로 열고 잠금 해제 키를 입력합니다. 화면에 표시되는 메시지에 따라 Jenkins 구성을 완료합니다.
 
-- **Install suggested plugins** (제안된 플러그 인 설치)를 선택합니다.
+- **Install suggested plugins**(제안된 플러그 인 설치)를 선택합니다.
 - 첫 번째 관리 사용자를 만듭니다. *azureuser* 와 같은 사용자 이름을 입력한 다음, 고유하고 안전한 암호를 입력합니다. 마지막으로, 전체 이름 및 이메일 주소를 입력합니다.
 - **저장 및 끝내기** 를 선택합니다.
 - Jenkins가 준비되면 **Jenkins를 사용하여 시작** 을 선택합니다.
@@ -228,8 +228,8 @@ Azure에서 만든 역할 할당을 사용하여 이제 ACR 자격 증명을 Jen
 Jenkins 포털 홈페이지의 왼쪽에 있는 **새 항목** 을 선택합니다.
 
 1. *azure-vote* 를 작업 이름으로 입력합니다. **프리스타일 프로젝트** 를 선택한 후 **확인** 을 선택합니다.
-1. **일반** 섹션 아래에서 **GitHub 프로젝트** 를 선택하고, 포크된 리포지토리 URL(예: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis* )을 입력합니다.
-1. **원본 코드 관리** 섹션 아래에서 **Git** 을 선택하고, 포크된 리포지토리 *.git* URL(예: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git* )을 입력합니다.
+1. **일반** 섹션 아래에서 **GitHub 프로젝트** 를 선택하고, 포크된 리포지토리 URL(예: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*)을 입력합니다.
+1. **원본 코드 관리** 섹션 아래에서 **Git** 을 선택하고, 포크된 리포지토리 *.git* URL(예: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*)을 입력합니다.
 
 1. **빌드 트리거** 섹션에서 **GITscm 폴링에 대한 GitHub 후크 트리거** 를 선택합니다.
 1. **빌드 환경** 에서 **비밀 텍스트 또는 파일 사용** 을 선택합니다.

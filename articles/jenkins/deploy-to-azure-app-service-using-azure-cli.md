@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
 ms.date: 01/06/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1f73da29b6b1bff2abf92383d672afd5af92abe4
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: cc73127ad780b42a6dd82058052a9749f86f3f3c
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626000"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699961"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>자습서: Jenkins 및 Azure CLI를 사용해 Azure App Service에 배포
 
@@ -60,7 +60,7 @@ Java 웹앱을 Azure에 배포하려면 [Jenkins 파이프라인](https://jenkin
 
 1. [자격 증명 플러그 인](https://plugins.jenkins.io/credentials/)이 설치되어 있는지 확인합니다.
 
-1. Jenkins 대시보드 내에서 **자격 증명 -> 시스템** 을 선택합니다. 
+1. Jenkins 대시보드 내에서 **자격 증명 -> 시스템** 을 선택합니다.
 
 1. **글로벌 자격 증명(제한 없음)** 을 선택합니다.
 

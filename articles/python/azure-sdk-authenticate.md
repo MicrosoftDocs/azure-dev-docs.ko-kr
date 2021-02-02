@@ -4,12 +4,12 @@ description: Azure 라이브러리를 사용하여 Azure 서비스로 Python 앱
 ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 51b7a074bef81999f17f3a5fa51d243e64a33f3c
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 19a69cf0379dd290893724db6527ebd30b5bab63
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625968"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759464"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure에서 Python 앱을 인증하고 권한을 부여하는 방법
 
@@ -470,3 +470,5 @@ print(subscription.subscription_id)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
 - [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
+- [가상 머신에서 Azure Managed Disks 사용](azure-sdk-samples-managed-disks.md)
+- [Python용 Azure SDK에 대한 간단한 설문 조사 완료](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

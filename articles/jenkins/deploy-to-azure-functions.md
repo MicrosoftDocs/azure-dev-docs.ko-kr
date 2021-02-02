@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, java, azure functions
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.custom: devx-track-jenkins,devx-track-cli
-ms.openlocfilehash: b2c616dd6d0a2a659a25527072358e8f1095e414
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 5e246b21f44de9ccb9b876827b44d01f456e60fd
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561059"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699951"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>자습서: Jenkins를 사용하여 Azure Functions에 배포
 
@@ -84,7 +84,7 @@ Java 런타임 스택을 사용하여 Java 함수를 만들려면 [Azure Portal]
 
     1. 메뉴에서 **Jenkins 관리** 를 선택합니다.
 
-    1. **시스템 구성** 에서 **플러그 인 관리** 를 선택합니다.
+    1. **System Configuration(시스템 구성)** 에서 **Manage plug-in(플러그 인 관리)** 을 선택합니다.
 
     1. **설치됨** 탭을 선택합니다.
 

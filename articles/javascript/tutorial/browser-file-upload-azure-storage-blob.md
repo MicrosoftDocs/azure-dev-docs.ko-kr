@@ -4,12 +4,12 @@ description: React/TypeScript 앱을 사용하여 파일을 Azure Storage Blob�
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 1f66ba54aa6cfccdda96a51bb610350a10fb7eef
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 19fc63272ff579ca0bb04802b04a7d44e9114ba4
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97689530"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759571"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Azure Storage Blob에 이미지 업로드
 
@@ -192,7 +192,7 @@ SAS 토큰 및 스토리지 계정 이름이 `src/azure-storage-blob.ts` 파일�
 
 `src/App.tsx` TypeScript 파일은 create-react-app을 사용하여 해당 앱을 만드는 과정의 일부로 제공됩니다. 파일 선택 단추, 업로드 단추 및 해당 기능을 제공하는 지원 코드를 제공하도록 파일이 수정되었습니다. 
 
-Azure Blob 스토리지 코드에 연결하는 코드가 강조 표시됩니다. `uploadFileToBlob`에 대한 호출에서 컨테이너의 모든 Blob(파일)을 단순 목록으로 반환합니다. 이 목록은 `DisplayImagesFromContainer` 함수를 통해 표시됩니다.
+Azure Blob Storage 코드에 연결하는 코드가 강조 표시됩니다. `uploadFileToBlob`에 대한 호출에서 컨테이너의 모든 Blob(파일)을 단순 목록으로 반환합니다. 이 목록은 `DisplayImagesFromContainer` 함수를 통해 표시됩니다.
 
 :::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/App.tsx" highlight="3,28":::
 

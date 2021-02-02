@@ -4,12 +4,12 @@ description: Python 및 Azure SDK 관리 라이브러리를 사용하여 Azure �
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d22f403195fd3cba143d9539220ec3376a7f2509
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: 276c345c6fe07a117adb6622ae8bb36bc5ce9a83
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932437"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759577"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>예제: Azure 라이브러리를 사용하여 가상 머신 프로비저닝
 
@@ -316,7 +316,8 @@ az group delete -n PythonAzureExample-VM-rg  --no-wait
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
 - [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [가상 머신에서 Azure Managed Disks 사용](azure-sdk-samples-managed-disks.md)
-
+- [Python용 Azure SDK에 대한 간단한 설문 조사 완료](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)
+- 
 다음 리소스 컨테이너는 Python을 사용하여 가상 머신을 만드는 보다 포괄적인 예제입니다.
 
 - [Python을 사용하여 Azure에서 Windows VM을 만들고 관리합니다](/azure/virtual-machines/windows/python). 이 예제를 통해 `storage_profile` 매개 변수를 변경하여 Linux VM을 만들 수 있습니다.

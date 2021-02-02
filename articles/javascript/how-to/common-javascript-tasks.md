@@ -2,14 +2,14 @@
 title: JavaScript 개발자를 위한 상위 Azure 작업
 description: 현재 작업의 예를 찾습니다.
 ms.topic: reference
-ms.date: 01/06/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 3a4c319d5258fccd1c1153591ccefddf87098343
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 2d7a3091529adb530af76069d9f70880a68e40d3
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625976"
+ms.locfileid: "98658770"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>JavaScript 개발자를 위한 상위 작업
 
@@ -90,6 +90,7 @@ ms.locfileid: "98625976"
 |앱 리소스 만들기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |앱 만들기, 배포, 브라우저 앱, 로그 보기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |앱 리소스 삭제|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
+|앱 배포 또는 재배포|[Visual Studio Code 확장](deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code)|
 |원격 로그 스트림|[Visual Studio Code 확장](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
 ## <a name="cognitive-services"></a>Cognitive Services

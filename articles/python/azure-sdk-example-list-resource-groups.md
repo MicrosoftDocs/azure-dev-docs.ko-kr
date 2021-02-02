@@ -4,12 +4,12 @@ description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용�
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 06395891ea1b8294f9eaafe7dad40bf7a335e965
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 2867ea550ce233594d30b3de2be744d20a1e96de
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010675"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759599"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 및 리소스 나열
 
@@ -30,7 +30,7 @@ ms.locfileid: "92010675"
 
 ## <a name="2-install-the-azure-library-packages"></a>2: Azure 라이브러리 패키지 설치
 
-다음과 같은 콘텐츠가 포함된 *requirements.txt*라는 파일을 만듭니다.
+다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
 
 ```text
 azure-mgmt-resource
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ### <a name="3a-list-resource-groups-in-a-subscription"></a>3a. 구독의 리소스 그룹 나열
 
-다음 코드를 사용하여 *list_groups.py*라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
+다음 코드를 사용하여 *list_groups.py* 라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
 
 ```python
 # Import the needed credential and management objects from the libraries.
@@ -79,7 +79,7 @@ for group in list(group_list):
 
 ### <a name="3b-list-resources-within-a-specific-resource-group"></a>3b. 특정 리소스 그룹 내의 리소스 나열
 
-다음 코드를 사용하여 *list_resources.py*라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
+다음 코드를 사용하여 *list_resources.py* 라는 Python 파일을 만듭니다. 주석은 세부 정보를 설명합니다.
 
 ```python
 # Import the needed credential and management objects from the libraries.
@@ -160,3 +160,5 @@ az resource list --resource group myResourceGroup --location centralus
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
 - [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
+- [가상 머신에서 Azure Managed Disks 사용](azure-sdk-samples-managed-disks.md)
+- [Python용 Azure SDK에 대한 간단한 설문 조사 완료](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

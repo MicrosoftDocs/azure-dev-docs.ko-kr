@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, 스토리지, CI/CD, 빌드 아티팩트
 ms.topic: article
 ms.date: 01/12/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 31c86da8f861e4295967007cb1b885325feb93dc
-ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
+ms.openlocfilehash: 0f7f9bd8ca7997064745a5be431e17f4e3d3fc13
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98128160"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759531"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>자습서: 빌드 아티팩트에 Azure Storage 사용
 

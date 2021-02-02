@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, 파이프라인, CI/CD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: debcd94b885813a8f1a1640d4eb46e75b36c4d6c
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 10bc92098b565ce2e4c9395c661716279e397659
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035461"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699721"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>자습서: GitHub 및 Docker를 사용하여 Jenkins 파이프라인 만들기
 

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, 가상 머신, CI/CD, Azure DevOps Services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 66890b5284179f3417295f477b8dc576258c2367
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 2261db025f48ef6df5e0ad3d8518ef3fc966f13d
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626016"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699941"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>자습서: Jenkins 및 Azure DevOps Services를 사용하여 Linux 가상 머신에 배포
 
@@ -161,7 +161,7 @@ Azure Pipelines에서 릴리스 파이프라인을 만들려면
 7. 변경 내용을 커밋합니다.
 8. 몇 분이 지나면 Azure DevOps의 **릴리스** 페이지에서 새 릴리스가 만들어진 것을 확인할 수 있습니다. 릴리스를 열어 배포가 진행되는지 확인합니다. 축하합니다!
 
-## <a name="troubleshooting-the-jenkins-plugin"></a>Jenkins 플러그 인 문제 해결
+## <a name="troubleshooting-the-jenkins-plug-in"></a>Jenkins 플러그 인 문제 해결
 
 Jenkins 플러그 인에서 버그가 발생하면 [Jenkins JIRA](https://issues.jenkins-ci.org/)에서 특정 구성 요소에 대한 문제를 제출해 주세요.
 

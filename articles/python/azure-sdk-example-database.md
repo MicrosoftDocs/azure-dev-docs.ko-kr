@@ -4,12 +4,12 @@ description: Python용 Azure SDK 라이브러리의 관리 라이브러리를 �
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 873b854ac2702ac62484a8ed37a5367084eb4b00
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 2e63ec96c8e98e5d74f3ccadfadbdf8fd5b71e8a
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689011"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759371"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>예: Azure 라이브러리를 사용하여 데이터베이스 프로비저닝
 
@@ -279,5 +279,7 @@ az mysql db create -g PythonAzureExample-DB-rg --server PythonAzureExample-MySQL
 - [예: 구독의 리소스 그룹 나열](azure-sdk-example-list-resource-groups.md)
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
-- [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
 - [예: 웹앱 프로비저닝 및 배포](azure-sdk-example-web-app.md)
+- [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
+- [가상 머신에서 Azure Managed Disks 사용](azure-sdk-samples-managed-disks.md)
+- [Python용 Azure SDK에 대한 간단한 설문 조사 완료](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

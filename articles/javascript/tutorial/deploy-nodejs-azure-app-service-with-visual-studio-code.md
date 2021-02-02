@@ -2,14 +2,14 @@
 title: Visual Studio Code에서 Azure App Service에 Node.js 앱 배포
 description: Visual Studio Code App Service 확장을 사용하여 Express.js Node.js 애플리케이션을 Azure App Service에 배포합니다.
 ms.topic: tutorial
-ms.date: 01/11/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 2c019cc9ae13b81ecde934faee6d7d7a9fadf07a
-ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
+ms.openlocfilehash: 8f6ab806262bee9684cc2c37d05aa1f21695c806
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98173253"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98658778"
 ---
 # <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code를 사용하여 Azure App Services에 Node.js 배포
 
@@ -141,7 +141,12 @@ Git와 Azure App Service 확장을 사용하여 Node.js 앱을 Azure에 배포�
 
 ## <a name="8-make-changes-and-redeploy"></a>8. 변경 및 재배포
 
-앱 서비스 확장을 사용하여 몇 가지 변경을 수행하고 앱을 [다시 배포합니다](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code). 
+1. 앱을 약간 변경합니다. `Welcome to Express`을 `Welcome to Express with Visual Studio Code`으로 변경합니다. 
+
+1. App Service 확장의 App Services 목록에서 앱 서비스를 마우스 오른쪽 단추로 클릭한 후 **웹앱에 배포...** 를 선택합니다. 
+
+    :::image type="content" source="../media/deploy-azure/deploy-or-redeploy-app-service.png" alt-text="Visual Studio Code를 사용하여 앱 서비스에 배포 또는 다시 배포":::
+
 
 ## <a name="9-clean-up-resources"></a>9. 리소스 정리
 

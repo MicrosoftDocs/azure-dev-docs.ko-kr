@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, 포털, Linux, 가상 머신
 ms.topic: quickstart
 ms.date: 08/21/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 6fc5eafbec8917b517b38d7a02c3149512675ac9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3ec8c309bfb88d1735bc523dca54bf71195f5c26
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689133"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699901"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Jenkins 구성
 
@@ -60,7 +60,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
       - service jenkins restart
     ```
 
-1. 파일을 저장( **&lt;Ctrl>S** )하고 편집기를 종료( **&lt;Ctrl>Q** )합니다.
+1. 파일을 저장( **&lt;Ctrl>S**)하고 편집기를 종료( **&lt;Ctrl>Q**)합니다.
 
 1. [az group create](/cli/azure/group#az-group-create)를 사용하여 리소스 그룹을 만듭니다. `--location` 매개 변수를 사용자 환경에 적절한 값으로 바꿔야 할 수 있습니다.
 
@@ -109,7 +109,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
     --output tsv
     ```
 
-    **참고** :
+    **참고**:
 
     - `--query` 매개 변수는 가상 머신의 공용 IP 주소로 출력을 제한합니다.
 
@@ -119,7 +119,7 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
     ssh azureuser@<ip_address>
     ```
 
-    **참고** :
+    **참고**:
 
     - 연결에 성공하면 Cloud Shell 프롬프트에 사용자 이름 및 가상 머신 이름(`azureuser@QuickstartJenkins-vm`)이 포함됩니다.
 
@@ -141,11 +141,11 @@ Jenkins를 구성할 때 문제가 발생할 경우 최신 지침 및 알려진 
 
     ![Jenkins 잠금을 해제하는 초기 페이지](./media/configure-on-linux-vm/unlock-jenkins.png)
 
-1. **설치할 플러그인 선택** 을 선택합니다.
+1. **설치할 플러그 인 선택** 을 선택합니다.
 
     ![선택한 플러그 인을 설치하는 옵션을 선택합니다.](./media/configure-on-linux-vm/select-plugins.png)
 
-1. 페이지 맨 위에 있는 필터 상자에 `github`를 입력합니다. GitHub 플러그인을 선택하고 **설치** 를 선택합니다.
+1. 페이지 맨 위에 있는 필터 상자에 `github`를 입력합니다. GitHub 플러그 인을 선택하고 **설치** 를 선택합니다.
 
     ![GitHub 플러그 인 설치](./media/configure-on-linux-vm/install-github-plugin.png)
 

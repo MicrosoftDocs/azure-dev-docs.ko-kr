@@ -4,12 +4,12 @@ description: Azure SDK를 사용하여 관리 디스크를 만들고, 크기를 
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: fe2378bcb836dbfc52ad1d5d3e88f048d6ef117e
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: b8d45f3d4b5ccd2c8a1c2850d496b9f68625ef46
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932417"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759329"
 ---
 # <a name="use-azure-managed-disks-with-the-azure-libraries-sdk-for-python"></a>Python용 Azure 라이브러리(SDK)를 통해 Azure Managed Disks 사용
 
@@ -308,4 +308,10 @@ snapshot = async_snapshot_creation.result()
 
 ## <a name="see-also"></a>참고 항목
 
-- [예 - 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
+- [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
+- [예: 리소스 그룹 프로비저닝](azure-sdk-example-resource-group.md)
+- [예: 구독의 리소스 그룹 나열](azure-sdk-example-list-resource-groups.md)
+- [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
+- [예: Azure Storage 사용](azure-sdk-example-storage-use.md)
+- [예: MySQL 데이터베이스 프로비저닝 및 사용](azure-sdk-example-database.md)
+- [Python용 Azure SDK에 대한 간단한 설문 조사 완료](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

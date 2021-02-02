@@ -4,12 +4,12 @@ description: Python용 Azure SDK 라이브러리의 일반적인 사용 패턴 �
 ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 28c2013245765d6829e46f564f7a7a3c74cb996d
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601395"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759535"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python용 Azure 라이브러리 사용 패턴
 
@@ -197,12 +197,13 @@ JSON이 제대로 구성되지 않으면 일반적으로 다음 오류가 발생
 
 ## <a name="next-steps"></a>다음 단계
 
-이제 Python용 Azure 라이브러리 사용에 대한 일반적인 패턴을 이해했으며, 이제 다음 독립 실행형 예제를 참조하여 특정 관리 및 클라이언트 라이브러리 시나리오를 살펴보세요.
+이제 Python용 Azure 라이브러리 사용에 대한 일반적인 패턴을 이해했으며, 이제 다음 독립 실행형 예제를 참조하여 특정 관리 및 클라이언트 라이브러리 시나리오를 살펴보세요. 이들 예는 순차적이거나 상호 의존적이지 않으므로 어떤 순서로든 시도할 수 있습니다.
 
 - [예: 리소스 그룹 만들기](azure-sdk-example-resource-group.md)
 - [예: Azure Storage 사용](azure-sdk-example-storage.md)
 - [예: 웹앱 프로비저닝 및 코드 배포](azure-sdk-example-web-app.md)
 - [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
+- [가상 머신에서 Azure Managed Disks 사용](azure-sdk-samples-managed-disks.md)
 
-이들 예는 순차적이거나 상호 의존적이지 않으므로 어떤 순서로든 시도할 수 있습니다.
+- [Python용 Azure SDK에 대한 간단한 설문 조사 완료](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

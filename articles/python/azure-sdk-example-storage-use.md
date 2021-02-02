@@ -4,12 +4,12 @@ description: Python 라이브러리용 Azure SDK를 사용하여 Azure Storage �
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: f1ada9de2cdf52fac1b4219f1f9b8253d58ca881
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: ae021e47e803496d1e3a2395b923740339fe07c9
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689239"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759585"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>예제: Python용 Azure 라이브러리를 사용하여 Azure Storage 액세스
 
@@ -212,3 +212,5 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 - [예: Azure Storage 프로비저닝](azure-sdk-example-storage.md)
 - [예: 데이터베이스 프로비저닝 및 쿼리](azure-sdk-example-database.md)
 - [예: 가상 머신 프로비저닝](azure-sdk-example-virtual-machines.md)
+- [가상 머신에서 Azure Managed Disks 사용](azure-sdk-samples-managed-disks.md)
+- [Python용 Azure SDK에 대한 간단한 설문 조사 완료](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

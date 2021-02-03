@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: e58700140b1f014a3ff393d66e17f3a4f38e44d3
-  ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+  ms.openlocfilehash: dbc01af045726a3e0b5b8c788cb3415ce985ba50
+  ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/21/2021
-  ms.locfileid: "98625896"
+  ms.lasthandoff: 02/01/2021
+  ms.locfileid: "99224747"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -37,6 +37,14 @@ landingContent:
       url: https://devblogs.microsoft.com/azure-sdk/
     - text: JavaScript 개발자를 위한 상위 작업
       url: how-to/common-javascript-tasks.md
+- title: Azure로 돌아가시겠습니까?
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 문서의 새로운 기능
+      url: whats-new-docs.md
+    - text: Developer Advocates의 새로운 기능
+      url: whats-new-developer-advocacy.md
 - title: 배포 및 호스트
   linkLists:
   - linkListType: tutorial

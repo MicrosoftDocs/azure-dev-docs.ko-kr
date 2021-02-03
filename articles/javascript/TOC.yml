@@ -3,6 +3,8 @@
   items:
     - name: 문서의 새로운 기능
       href: whats-new-docs.md
+    - name: Developer Advocates의 새로운 기능
+      href: whats-new-developer-advocacy.md
     - name: JavaScript로 Azure에서 시작
       items:
         - name: JavaScript 개발자를 위한 Azure란?
@@ -143,10 +145,22 @@
           href: how-to/configure-web-app-settings.md
         - name: JavaScript 개발자를 위한 작업
           href: how-to/common-javascript-tasks.md
-        - name: 변경 내용에 대한 GitHub 리포지토리 복제
-          href: how-to/with-visual-studio-code/clone-github-repository.md
-        - name: VS Code를 사용한 종단 간 Node.js
-          href: how-to/develop-nodejs-on-azure.md
+        - name: Visual Studio Code 사용
+          items:
+            - name: 로컬 프로젝트 설치 및 디버그
+              href: how-to/with-visual-studio-code/install-run-debug-nodejs.md
+            - name: 변경 내용에 대한 GitHub 리포지토리 복제
+              href: how-to/with-visual-studio-code/clone-github-repository.md
+            - name: 로컬 프로젝트에서 컨테이너 만들기
+              href: how-to/with-visual-studio-code/containerize-local-project.md
+        - name: Azure CLI 사용
+          items:
+            - name: 컨테이너 레지스트리 만들기 및 사용
+              href: how-to/with-azure-cli/create-container-registry-resource.md
+            - name: 웹앱 도메인 이름 구성
+              href: how-to/with-azure-cli/configure-app-service-custom-domain-name.md
+            - name: MongoDB Cosmos DB 리소스 사용
+              href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
         - name: 웹 앱 배포
           href: how-to/deploy-web-app.md
         - name: 컨테이너 배포

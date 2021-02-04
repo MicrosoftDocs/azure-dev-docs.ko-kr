@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fe73a2c6b6f18a5e85d342f8fed7ed547b272be9
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 9731f0504dd654b5fdb617b7b82cbd1afc4e2414
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93406764"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99528577"
 ---
 | 샘플  | Description |
 |---|---|
@@ -16,8 +16,6 @@ ms.locfileid: "93406764"
 | [지역 간에 동시에 가상 머신 만들기][5] | 여러 Azure 지역에서 가상 머신 집합을 만들고, 부하를 분산합니다. |
 | **네트워크 가상 머신** || 
 | [가상 네트워크 관리][6] | 두 개의 서브넷이 있는 가상 네트워크를 설정하고 인터넷 액세스를 제한합니다. |
-| **확장 집합 만들기** ||
-| [부하 분산 장치를 사용하여 가상 머신 확장 집합 만들기][7] | VM 확장 집합을 만들고, 부하 분산 장치를 설정하고, 확장 집합 VM에 SSH 연결 문자열을 가져옵니다. |
 
 [1]: ../index.yml
 [2]: https://github.com/Azure-Samples/managed-disk-java-create-virtual-machine-using-custom-image/
@@ -25,4 +23,3 @@ ms.locfileid: "93406764"
 [4]: https://github.com/Azure-Samples/compute-java-manage-virtual-machines-in-parallel/
 [5]: ../index.yml
 [6]: ../index.yml
-[7]: ../java-sdk-manage-vm-scalesets.md

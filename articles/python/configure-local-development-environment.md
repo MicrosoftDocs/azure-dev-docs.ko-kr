@@ -4,12 +4,12 @@ description: Visual Studio Code, Azure SDK 라이브러리 및 라이브러리 �
 ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: fcad7c614ae27c8b1b3ccf081d85292549cfcee3
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: 184996eca52c096602863beb1c73ae4337695829
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911473"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069080"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure를 위한 로컬 Python 개발 환경 구성
 
@@ -53,7 +53,7 @@ ms.locfileid: "97911473"
 
 | 이름/설치 프로그램 | Description |
 | --- | --- |
-| [VS Code용 Docker 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | VS Code에 Docker 지원을 추가합니다. 컨테이너를 정기적으로 사용하는 경우에 유용합니다. |
+| [VS Code용 Docker 확장](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) | VS Code에 Docker 지원을 추가합니다. 컨테이너를 정기적으로 사용하는 경우에 유용합니다. |
 
 ### <a name="verify-components"></a>구성 요소 확인
 
@@ -136,7 +136,7 @@ Azure CLI는 일반적으로 세션 간에 로그인을 유지하지만, 새 터
 
 #### <a name="what-the-create-for-rbac-command-does"></a>create-for-rbac 명령의 기능
 
-`az ad create-for-rbac` 명령은 "RBAC(역할 기반 인증)"에 대한 서비스 주체를 만듭니다. (서비스 주체에 대한 자세한 내용은 [Azure에서 Python 앱을 인증하고 권한을 부여하는 방법](azure-sdk-authenticate.md)을 참조하세요.)
+`az ad sp create-for-rbac` 명령은 "RBAC(역할 기반 인증)"에 대한 서비스 주체를 만듭니다. (서비스 주체에 대한 자세한 내용은 [Azure에서 Python 앱을 인증하고 권한을 부여하는 방법](azure-sdk-authenticate.md)을 참조하세요.)
 
 - `ad`는 Azure Active Directory를 의미하고, `sp`는 "서비스 주체"를 의미하고, `create-for-rbac`는 Azure의 기본 인증 형태인 "역할 기반 액세스 제어 만들기"를 의미합니다. [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) 명령 참조를 확인하세요.
 

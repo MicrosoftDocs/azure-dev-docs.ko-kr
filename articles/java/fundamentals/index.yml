@@ -6,12 +6,12 @@ metadata:
   description: Azure 기반 Java 개발용 도구, IDE 및 지원 JDK
   ms.date: 04/03/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 5c9b16a6431733875145d071484ae65aee5999fb
-  ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+  ms.openlocfilehash: 6de683ed7b163252798cac8499d19b7e067f0d40
+  ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/23/2020
-  ms.locfileid: "97754009"
+  ms.lasthandoff: 02/03/2021
+  ms.locfileid: "99511109"
 landingContent:
 - title: Java 클라우드 개발자용 도구
   linkLists:
@@ -54,7 +54,7 @@ landingContent:
   - linkListType: overview
     links:
     - text: Java용 Azure SDK를 사용한 로깅 구성
-      url: ../sdk/java-sdk-azure-log.md
+      url: ../sdk/logging-overview.md
     - text: Logz.io를 사용한 모니터링 및 로깅
       url: java-get-started-with-logzio.md
 - title: DevOps

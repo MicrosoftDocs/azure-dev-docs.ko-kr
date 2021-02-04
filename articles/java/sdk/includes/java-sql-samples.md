@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bbe9f1e3d12fe45a6465aa5b2b15220789ec8f4e
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 40f37f381283c58296a1b3cde3ac91848b9fbe8a
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93406782"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99528606"
 ---
 |샘플   |Description  |
 |---------|---------|

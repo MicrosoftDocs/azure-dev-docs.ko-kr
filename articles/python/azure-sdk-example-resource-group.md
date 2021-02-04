@@ -1,15 +1,15 @@
 ---
 title: Python용 Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
 description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용하여 Python 코드에서 리소스 그룹을 만듭니다.
-ms.date: 11/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 3bda14cd52f55d25e3669662765aa8f27c3dc939
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 37e912e9fed6edabc966034a6411e7786875bf3f
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759439"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069090"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 프로비저닝
 
@@ -28,8 +28,8 @@ ms.locfileid: "98759439"
 다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 가상 환경이 활성화된 터미널 또는 명령 프롬프트에서 다음 요구 사항을 설치합니다.

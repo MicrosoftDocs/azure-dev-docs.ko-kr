@@ -1,15 +1,15 @@
 ---
 title: Python용 Azure 라이브러리를 사용하여 리소스 그룹 및 리소스 나열
 description: Python용 Azure SDK의 리소스 관리 라이브러리를 사용하여 그룹의 리소스 그룹 및 리소스를 나열합니다.
-ms.date: 10/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2867ea550ce233594d30b3de2be744d20a1e96de
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: c44698fb7fee0e7f736c51fbf11f664b8642e946
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759599"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069100"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>예제: Azure 라이브러리를 사용하여 리소스 그룹 및 리소스 나열
 
@@ -17,7 +17,7 @@ ms.locfileid: "98759599"
 
 - Azure 구독의 모든 리소스 그룹을 나열합니다.
 - 특정 리소스 그룹 내의 리소스를 나열합니다.
- 
+
 이 문서의 모든 명령은 언급되지 않는 한 Linux/macOS bash 및 Windows 명령 셸에서 동일하게 작동합니다.
 
 [해당 Azure CLI 명령](#for-reference-equivalent-azure-cli-commands)은 이 문서의 뒷부분에 있습니다.
@@ -33,8 +33,8 @@ ms.locfileid: "98759599"
 다음과 같은 콘텐츠가 포함된 *requirements.txt* 라는 파일을 만듭니다.
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 가상 환경이 활성화된 터미널 또는 명령 프롬프트에서 다음 요구 사항을 설치합니다.

@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, 플레이북, 가상 머신, 가상 머�
 ms.topic: tutorial
 ms.date: 01/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 2ea2dbf740025797e6dd8514330e5b0c0de0df84
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 9e562f034f14f45ece55247f1cda6ec19e9c6b09
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831099"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224767"
 ---
 # <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>자습서: Azure에서 Ansible을 사용하여 가상 머신 확장 집합에 앱 배포
 
@@ -44,12 +44,12 @@ ms.locfileid: "90831099"
 
   ```yml
   - name: Get facts for all Public IPs within a resource groups
-    azure_rm_publicipaddress_facts:
+    azure_rm_publicipaddress_info:
       resource_group: "{{ resource_group }}"
     register: output_ip_address
 
   - name: Get loadbalancer info
-    azure_rm_loadbalancer_facts:
+    azure_rm_loadbalancer_info:
       resource_group: "{{ resource_group }}"
       name: "{{ loadbalancer_name }}"
     register: output

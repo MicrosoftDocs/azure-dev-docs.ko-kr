@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, 플레이북, 네트워킹, 경로, 경�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 6eca7aa93716e41d62ca5dae0211fa1467eec2ef
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: 079388ff635561a0d09777994a01d068cce0937c
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681993"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224707"
 ---
 # <a name="tutorial-configure-azure-route-tables-using-ansible"></a>자습서: Ansible을 사용하여 Azure 경로 테이블 구성
 
@@ -101,7 +101,7 @@ ansible-playbook route_table_create.yml
         virtual_network_name: "{{ virtual_network_name }}"
         resource_group: "{{ resource_group }}"
         address_prefix_cidr: "10.1.0.0/24"
-        route_table: "{ route_table_name }"
+        route_table: "{{ route_table_name }}"
 ```
 
 [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행

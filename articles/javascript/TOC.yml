@@ -161,6 +161,10 @@
               href: how-to/with-azure-cli/configure-app-service-custom-domain-name.md
             - name: MongoDB Cosmos DB 리소스 사용
               href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
+        - name: 데이터베이스 사용
+          items:
+            - name: CosmosDB의 MongoDB
+              href: how-to/with-database/use-mongodb-as-cosmosdb.md
         - name: 웹 앱 배포
           href: how-to/deploy-web-app.md
         - name: 컨테이너 배포

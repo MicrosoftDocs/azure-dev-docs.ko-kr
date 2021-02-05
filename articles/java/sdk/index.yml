@@ -4,34 +4,46 @@ summary: Azure 기반 Java를 사용한 클라우드 개발.
 metadata:
   title: Java용 Azure SDK 설명서
   description: Azure 기반 Java를 사용한 클라우드 개발
-  ms.date: 04/03/2020
+  ms.date: 02/02/2021
   ms.topic: landing-page
-  ms.openlocfilehash: 2380696b801927bc842278b1b8604825feda0984
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: cde5054104f4331e48078b5854d61dca2c36f6cf
+  ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675149"
+  ms.lasthandoff: 02/03/2021
+  ms.locfileid: "99511075"
 landingContent:
-- title: Java 클라우드 개발자용 Azure
+- title: Java 개발자용 Azure
   linkLists:
   - linkListType: get-started
     links:
     - text: Java를 사용하여 Azure 개발
-      url: java-sdk-azure-get-started.md
+      url: get-started.md
+    - text: Java용 Azure SDK 사용
+      url: overview.md
   - linkListType: reference
     links:
     - text: Java API 브라우저
-      url: /java/api/?view=azure-java
+      url: /java/api
   - linkListType: how-to-guide
     links:
-    - text: 루트 인증서 추가
-      url: java-sdk-add-certificate-ca-store.md
-    - text: Authenticate
-      url: java-sdk-azure-authenticate.md
+    - text: ID 및 인증
+      url: identity.md
     - text: 로깅 구성
-      url: java-sdk-azure-log.md
+      url: logging-overview.md
+- title: 일반적인 개념
+  linkLists:
   - linkListType: learn
     links:
-    - text: 패턴 & 모범 사례
-      url: java-sdk-azure-concepts.md
+    - text: HTTP 클라이언트 및 파이프라인
+      url: http-client-pipeline.md
+    - text: 비동기 프로그래밍
+      url: async-programming.md
+    - text: 페이지 매김 및 반복
+      url: pagination.md
+    - text: 장기 실행 작업
+      url: lro.md
+    - text: 프록시 사용
+      url: proxying.md
+    - text: 추적
+      url: tracing.md

@@ -7,12 +7,12 @@ metadata:
   description: Java 개발자를 위한 이러한 자습서 및 도구를 사용하여 클라우드에서 앱 개발을 시작하세요.
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: 94ea0c2dd3b11651cc30bce84bc3b26f7f12cc7a
-  ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+  ms.openlocfilehash: badee30def237b49cb9e46730335e730090fb66b
+  ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 10/16/2020
-  ms.locfileid: "92137172"
+  ms.lasthandoff: 02/03/2021
+  ms.locfileid: "99511092"
 conceptualContent:
   items:
   - title: Java용 Azure 빠른 시작
@@ -61,10 +61,10 @@ conceptualContent:
     links:
     - text: Java를 사용하여 Azure 개발
       itemType: get-started
-      url: sdk/java-sdk-azure-get-started.md
-    - text: 패턴 & 모범 사례
+      url: sdk/get-started.md
+    - text: Java용 Azure SDK 소개
       itemType: learn
-      url: sdk/java-sdk-azure-concepts.md
+      url: sdk/overview.md
     - text: Java API 브라우저
       itemType: reference
       url: /java/api/?view=azure-java

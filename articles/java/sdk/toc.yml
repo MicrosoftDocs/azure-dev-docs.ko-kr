@@ -2,34 +2,78 @@
   href: index.yml
   items:
     - name: 시작
-      href: java-sdk-azure-get-started.md
+      href: get-started.md
     - name: 개념
       expanded: true
       items:
-        - name: 패턴 & 모범 사례
-          href: java-sdk-azure-concepts.md
-    - name: 방법 문서
-      expanded: true
+        - name: 개요
+          href: overview.md
+        - name: 일반적인 개념
+          expanded: false
+          items:
+            - name: HTTP 클라이언트 및 파이프라인
+              href: http-client-pipeline.md
+            - name: 비동기 프로그래밍
+              href: async-programming.md
+            - name: 페이지 매김 및 반복
+              href: pagination.md
+            - name: 장기 실행 작업
+              href: lro.md
+            - name: 프록시 사용
+              href: proxying.md
+            - name: 추적
+              href: tracing.md
+        - name: ID 및 인증
+          expanded: false
+          items:
+            - name: 개요
+              href: identity.md
+            - name: 개발 환경의 인증
+              href: identity-dev-env-auth.md
+            - name: Azure 호스팅 애플리케이션의 인증
+              href: identity-azure-hosted-auth.md
+            - name: 서비스 주체로 인증
+              href: identity-service-principal-auth.md
+            - name: 사용자 자격 증명으로 인증
+              href: identity-user-auth.md
+        - name: 로깅
+          expanded: false
+          items:
+            - name: 개요
+              href: logging-overview.md
+            - name: java.util.logging
+              href: logging-jul.md
+            - name: Logback
+              href: logging-logback.md
+            - name: Log4J
+              href: logging-log4j.md
+    - name: 통합
+      expanded: false
       items:
-        - name: 루트 인증서 추가
-          href: java-sdk-add-certificate-ca-store.md
-        - name: Authenticate
-          href: java-sdk-azure-authenticate.md
-        - name: 로깅 구성
-          href: java-sdk-azure-log.md
-    - name: 코드 예제
+        - name: Spring
+          href: /azure/developer/java/spring-framework/spring-boot-starters-for-azure
+        - name: MicroProfile
+          href: 'https://docs.microsoft.com/azure/developer/java/eclipse-microprofile/'
+    - name: 문제 해결
+      expanded: false
+      items:
+        - name: 네트워크 문제
+          href: troubleshooting-network.md
+    - name: 코드 샘플
       items:
         - name: 가상 머신
-          href: java-sdk-azure-virtual-machine-samples.md
-        - name: 웹 앱
-          href: java-sdk-azure-web-apps-samples.md
+          href: virtual-machine-samples.md
+        - name: 웹앱
+          href: web-apps-samples.md
         - name: SQL Database
-          href: java-sdk-azure-sql-database-samples.md
+          href: sql-database-samples.md
         - name: 보안
-          href: java-sdk-azure-security-samples.md
+          href: security-samples.md
         - name: 컨테이너
-          href: java-sdk-azure-containers-samples.md
+          href: containers-samples.md
         - name: 모든 Java 샘플
           href: /samples/browse/?products=azure&languages=java
+    - name: 패키지 인덱스
+      href: azure-sdk-library-package-index.md
     - name: 참조
-      href: /java/api/?view=azure-java
+      href: /java/api

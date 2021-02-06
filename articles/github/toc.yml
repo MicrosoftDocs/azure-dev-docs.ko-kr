@@ -14,6 +14,8 @@
           href: database-actions-deploy.md
         - name: 변수 대체 사용
           href: github-variable-substitution.md
+        - name: 키 자격 증명 모음 암호 사용
+          href: github-key-vault.md
         - name: Azure Policy 관리
           href: manage-azure-policy.md
     - name: Azure DevOps & GitHub

@@ -163,6 +163,8 @@
               href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
             - name: MariaDB 리소스 사용
               href: how-to/with-azure-cli/create-mariadb.md
+            - name: MySQL 리소스 사용
+              href: how-to/with-azure-cli/create-mysql-db.md
         - name: 데이터베이스 사용
           items:
             - name: CosmosDB의 MongoDB

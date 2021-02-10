@@ -4,12 +4,12 @@ description: 웹앱의 일반적인 구성을 설정하는 방법을 알아봅�
 ms.topic: conceptual
 ms.date: 01/21/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7b72cb2a72e1bf27630ad06451d9a6ad90dcf1ad
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.openlocfilehash: 50125f4b0b79254b5106cf60b9e156555547e052
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699781"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224797"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Azure에 웹앱 호스트
 
@@ -170,4 +170,4 @@ const port = process.env.PORT || 3000
 
 ## <a name="next-steps"></a>다음 단계
 
-* [엔드투엔드 Node.js 앱](./develop-nodejs-on-azure.md) 개발 흐름에서 이러한 단계를 많이 살펴보세요.
+* [Visual Studio Code를 사용하여 Node.js를 개발하고 디버그하는 방법](with-visual-studio-code/install-run-debug-nodejs.md)

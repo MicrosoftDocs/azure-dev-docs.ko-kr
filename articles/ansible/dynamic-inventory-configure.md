@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 동적 인벤토리
 ms.topic: tutorial
 ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: d5d3095384fb3f192f7e8cd74b2a49b41b47f239
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192355"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224737"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>자습서: Ansible을 사용하여 Azure 리소스의 동적 인벤토리 구성
 
@@ -133,16 +133,16 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. 위의 명령을 실행하면 다음과 같은 오류가 발생할 수 있습니다. 이 오류는 다음과 같은 이유로 인해 호스트에 연결하지 못했음을 나타냅니다. 
+1. 기본적으로 호스트 키 검사가 활성화되어 있으며, 이로 인해 다음과 같은 오류가 발생할 수 있습니다.
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
     ```
-    
-    "호스트 키 확인" 오류가 발생하면 Ansible 구성 파일에 다음 줄을 추가합니다. Ansible 구성 파일은 `/etc/ansible/ansible.cfg` 또는 `~/.ansible.cfg`에 있습니다.
+
+    `ANSIBLE_HOST_KEY_CHECKING` 환경 변수를 `False`로 설정하여 호스트 키 확인을 사용하지 않도록 설정합니다.
 
     ```bash
-    host_key_checking = False
+    export ANSIBLE_HOST_KEY_CHECKING=False
     ```
 
 1. 플레이북이 실행되면 다음 출력과 비슷한 결과가 표시됩니다.

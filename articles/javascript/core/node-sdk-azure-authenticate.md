@@ -4,12 +4,12 @@ description: 서비스 사용자를 통해 Node.js용 Azure 관리 모듈에 인
 ms.topic: how-to
 ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: b0e39b14e8f96c58e1e5fb4f2bbf12f07180db8b
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.openlocfilehash: e5774f0453960b41679a01170882fad1d9f50bad
+ms.sourcegitcommit: b09d3aa79113af04a245b05cec2f810e43062152
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699911"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99476439"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript용 Azure 관리 모듈을 사용하여 인증
 
@@ -31,7 +31,7 @@ ms.locfileid: "98699911"
 
 ## <a name="azure-identity-library"></a>Azure ID 라이브러리
 
-Azure ID 라이브러리는 Azure용 최신 인증 패키지입니다. Azure ID를 사용하여 [지원되는 라이브러리 목록](https://www.npmjs.com/package/@azure/identity#client-libraries-supporting-authentication-with-azure-identity)을 검토하세요.
+Azure ID 라이브러리는 Azure용 최신 인증 패키지입니다. 사용 중인 클라이언트 라이브러리의 추가 정보를 확인하여 이 새 라이브러리의 사용을 지원하는지 확인합니다.
 
 [@azure/identity](https://www.npmjs.com/package/@azure/identity) 라이브러리는 Azure SDK용 Azure Active Directory 라이브러리 인증을 간소화합니다. 이 라이브러리는 SDK 라이브러리로 전달하여 API 요청을 인증할 수 있는 TokenCredential 구현 세트를 제공합니다. Azure Active Directory 서비스 주체 또는 관리 ID를 사용하는 토큰 인증을 지원합니다.
 

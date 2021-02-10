@@ -4,12 +4,12 @@ description: 현재 작업의 예를 찾습니다.
 ms.topic: reference
 ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 2d7a3091529adb530af76069d9f70880a68e40d3
-ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
+ms.openlocfilehash: cc5ca751b8d22612c63d26a46934eb5b4c057c69
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98658770"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99511001"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>JavaScript 개발자를 위한 상위 작업
 
@@ -89,8 +89,13 @@ ms.locfileid: "98658770"
 |앱 리소스 만들기 - 포함: Express.js 앱 배포, 앱 설정 구성, npm install 실행, 배포된 웹 사이트로 이동|[Visual Studio Code 확장](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#6-create-app-service-resource-in-visual-studio-code)|
 |앱 리소스 만들기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |앱 만들기, 배포, 브라우저 앱, 로그 보기|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
+|데이터베이스 연결 문자열을 사용하도록 웹앱 구성|[Azure CLI](./with-azure-cli/create-mongodb-cosmosdb.md#configure-your-azure-web-app-with-the-connection-string)|
+|컨테이너를 사용하도록 웹앱 구성|[Azure CLI](./with-azure-cli/create-container-registry-resource.md#configure-web-app-to-use-container)|
+|웹앱 사용자 지정 도메인 이름 구성|[Azure CLI](./with-azure-cli/configure-app-service-custom-domain-name.md#register-a-domain-name-with-your-azure-app)|
 |앱 리소스 삭제|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
 |앱 배포 또는 재배포|[Visual Studio Code 확장](deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code)|
+|웹앱 외부 IP 가져오기|[Azure CLI](./with-azure-cli/configure-app-service-custom-domain-name.md#register-a-domain-name-with-your-azure-app)|
+|도메인 이름 구매 및 DNS 레코드 구성|[Azure CLI](./with-azure-cli/configure-app-service-custom-domain-name.md#purchase-a-domain-name-and-configure-dns-record)|
 |원격 로그 스트림|[Visual Studio Code 확장](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
 ## <a name="cognitive-services"></a>Cognitive Services
@@ -102,40 +107,42 @@ ms.locfileid: "98658770"
 |Azure SDK 설치|[Bash](../tutorial/static-web-app/add-computer-vision-react-app.md#add-computer-vision-to-local-react-app)|
 |[`@azure/cognitiveservices-computervision`](https://www.npmjs.com/package/@azure/cognitiveservices-computervision)으로 이미지 분석|[Visual Studio Code](../tutorial/static-web-app/add-computer-vision-react-app.md#add-computer-vision-code-as-separate-module)|
 
-## <a name="containers"></a>컨테이너
-
-원하는 항목을 찾지 못한 경우 [Docker 작업](#docker)을 확인합니다. 
+## <a name="containers-including-docker-tasks"></a>Docker 작업을 포함하는 컨테이너
 
 |작업|사용|
 |--|--|
-|컨테이너 레지스트리 리소스 만들기|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-02.md#create-an-azure-container-registry)|
-|레지스트리 리소스에 이미지 푸시|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md#push-the-image-to-a-registry)|
+|로컬 프로젝트에 docker 파일 추가|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md#add-docker-files)|
+|로컬 프로젝트에서 docker 이미지 빌드|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md#build-a-docker-image)|
+|로컬 JavaScript 프로젝트에서 컨테이너 이미지 만들기|[Visual Studio Code](./with-visual-studio-code/containerize-local-project.md#create-a-container)|
+|컨테이너 레지스트리 리소스 만들기|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-02.md#create-an-azure-container-registry)<br>[Azure CLI](./with-azure-cli/create-container-registry-resource.md#create-a-container-registry)|
+|Dockerfile 만들기|[Visual Studio Code 확장](./with-visual-studio-code/containerize-local-project.md#create-a-dockerfile-in-your-project)|
+|앱 서비스에 이미지 배포|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md#deploy-image)|
 |레지스트리에 대한 관리자 액세스 활성화|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md#enable-admin-access-on-the-registry)|
-|앱 서비스에 이미지 배포|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md?branch=main#deploy-image)|
-
+|Azure 컨테이너 레지스트리 자격 증명 가져오기|[Azure CLI](./with-azure-cli/create-container-registry-resource.md#get-container-registry-credentials)|
+|컨테이너 레지스트리에 로그인|[BASH - Docker CLI](./with-azure-cli/create-container-registry-resource.md#login-to-container-registry-with-docker-cli)|
+|Docker 레지스트리 리소스에 이미지 푸시|[Visual Studio Code 확장](./with-visual-studio-code/containerize-local-project.md#push-local-container-image-to-dockerhub)|
+|Azure 컨테이너 레지스트리 리소스에 이미지 푸시|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md#push-the-image-to-a-registry)<BR>[BASH - Docker CLI](./with-azure-cli/create-container-registry-resource.md#push-your-local-image-to-your-container-registry)|
+|로컬 컨테이너 실행|[Visual Studio Code 확장](with-visual-studio-code/containerize-local-project.md#build-image-from-your-project)|
+|로컬 이미지 태그|[BASH - Docker CLI](./with-azure-cli/create-container-registry-resource.md#tag-your-local-image)|
+|Docker 버전 확인|[Bash](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md#verify-docker-install)|
 
 ## <a name="databases"></a>데이터베이스
 
 |작업|사용|
 |--|--|
-|CosmosDB 만들기 - MongoDB 리소스|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)|
-|CosmosDB 연결 문자열 가져오기|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string)|
-
-## <a name="docker"></a>Docker
-
-원하는 항목을 찾지 못한 경우 [컨테이너 작업](#containers)을 확인합니다. 
-
-|작업|사용|
-|--|--|
-|Docker 버전 확인|[Bash](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md#verify-docker-install)|
-|로컬 프로젝트에 docker 파일 추가|[Visual Studio Code 확장](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md#add-docker-files)|
-|로컬 프로젝트에서 docker 이미지 빌드|[Bash](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md#build-a-docker-image)|
+|Cosmos DB 만들기 - MongoDB 리소스|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)<br>[Azure CLI](./with-azure-cli/create-mongodb-cosmosdb.md#create-a-cosmos-db-resource-for-mongodb)|
+|CosmosDB 연결 문자열 가져오기|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string)<br>[Azure CLI](./with-azure-cli/create-mongodb-cosmosdb.md#get-the-mongodb-connection-string-for-your-resource)|
+|Cosmos DB 보기|[Cosmos DB Explorer](https://cosmos.azure.com/)|
+|Cosmos DB에서 mongoDB용 Mongoose API 사용|[JavaScript](./with-database/use-mongodb-as-cosmosdb.md#use-mongoose-sdk-to-connect-to-mongodb-on-azure)
 
 ## <a name="git"></a>Git
 
 |작업|사용|
 |--|--|
 |로컬 Git 리포지토리 초기화|[Visual Studio Code 확장](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#5-initialize-git-in-visual-studio-code-for-current-app)|
+|로컬 분기 만들기|[명령 팔레트가 있는 Visual Studio Code](./with-visual-studio-code/clone-github-repository.md#create-a-branch-for-changes-with-git-cl)<br>[상태 표시줄이 있는 Visual Studio Code](./with-visual-studio-code/clone-github-repository.md#create-a-branch-from-status-bar)|
+|GitHub에서 로컬 컴퓨터로 프로젝트 복제|[Visual Studio Code](with-visual-studio-code/install-run-debug-nodejs.md#clone-sample-project-to-local-computer)|
+|원격 리포지토리에 로컬 분기 푸시|[상태 표시줄이 있는 Visual Studio Code](./with-visual-studio-code/clone-github-repository.md#push-a-local-branch-to-remote-from-status-bar)<br>[Source Course 확장이 있는 Visual Studio Code](./with-visual-studio-code/clone-github-repository.md#push-a-local-branch-to-remote-from-the-source-control-extension)|
 
 ## <a name="github"></a>GitHub 
 
@@ -172,6 +179,12 @@ ms.locfileid: "98658770"
 |[`@azure/storage-blob`](https://www.npmjs.com/package/@azure/storage-blob)으로 스토리지에 파일 업로드|[React/TypeScript](../tutorial/browser-file-upload-azure-storage-blob.md#upload-button-functionality)|
 |[`@azure/storage-blob`](https://www.npmjs.com/package/@azure/storage-blob)으로 스토리지 컨테이너에서 파일 나열|[React/TypeScript](../tutorial/browser-file-upload-azure-storage-blob.md#get-list-of-blobs)|
 
+## <a name="terminal-usage"></a>터미널 사용량
+
+|작업|사용|
+|--|--|
+|통합 터미널|[Visual Studio Code](./with-visual-studio-code/install-run-debug-nodejs.md#use-the-integrated-bash-terminal-to-install-dependencies)|
+
 ## <a name="virtual-machines"></a>가상 머신
 
 |작업|사용|
@@ -185,11 +198,15 @@ ms.locfileid: "98658770"
 |로그 보기|[Azure CLI](../tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md#viewing-the-vm-logs-for-nginx-and-pm2)<br>[포털](../tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md#view-application-traces-in-azure-portal)|
 
 
-## <a name="visual-studio-code"></a>Visual Studio Code
+## <a name="visual-studio-code-develop-and-debug-javascript-apps"></a>Visual Studio Code: JavaScript 앱 개발 및 디버그 
 
 |작업|사용|
 |--|--|
-|GitHub 리포지토리 복제|[Visual Studio Code](../tutorial/browser-file-upload-azure-storage-blob.md#2-clone-and-run-the-initial-react-app)|
+|코드 완성|[Visual Studio Code](./with-visual-studio-code/install-run-debug-nodejs.md#use-visual-studio-code-autocompletion-with-mongodb)|
+|로컬 Node.js 앱 디버깅|[Visual Studio Code](./with-visual-studio-code/install-run-debug-nodejs.md#debugging-the-local-nodejs-app)|
+|로컬 전체 스택 디버깅|[Visual Studio Code](with-visual-studio-code/install-run-debug-nodejs.md#local-full-stack-debugging-in-visual-studio-code)|
+|프로젝트 파일 및 코드 탐색|[Visual Studio Code](./with-visual-studio-code/install-run-debug-nodejs.md#navigate-the-project-files-and-code)|
+|로컬 Node.js 앱 실행|[Visual Studio Code](./with-visual-studio-code/install-run-debug-nodejs.md#running-the-local-nodejs-app)|
 
 ## <a name="samples-supporting-these-tasks"></a>이러한 작업을 지원하는 샘플
 

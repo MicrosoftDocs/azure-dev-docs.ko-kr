@@ -1,25 +1,27 @@
 ---
 title: Python용 Azure 라이브러리에서 로깅 구성
 description: Azure 라이브러리는 라이브러리 또는 작업별로 구성되는 표준 Python 로깅 모듈을 사용합니다.
-ms.date: 06/04/2020
+ms.date: 02/01/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0c08ba9c514bf9bca3c982ccf3ef3182f203e247
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f42941ec54876fec5854a0a82cee1cbcf30506ce
+ms.sourcegitcommit: b09d3aa79113af04a245b05cec2f810e43062152
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983318"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99476449"
 ---
 # <a name="configure-logging-in-the-azure-libraries-for-python"></a>Python용 Azure 라이브러리에서 로깅 구성
 
 [azure.core 페이지](azure-sdk-library-package-index.md#libraries-using-azurecore)를 기반으로 하는 Python용 Azure 라이브러리는 표준 Python [logging](https://docs.python.org/3/library/logging.html) 라이브러리를 사용하여 로깅 출력을 제공합니다.
 
-로거 출력은 기본적으로 사용하도록 설정되어 있지 않습니다. 로깅을 사용하도록 설정하려면 다음을 수행합니다.
+로깅을 사용하는 일반적인 프로세스는 다음과 같습니다.
 
 1. 원하는 라이브러리에 대한 로깅 개체를 가져오고, 로깅 수준을 설정합니다.
 1. 로깅 스트림에 대한 처리기를 등록합니다.
-1. `logging_enable=True` 매개 변수를 클라이언트 개체 생성자 또는 특정 메서드에 전달하여 로깅을 사용하도록 설정합니다.
+1. HTTP 정보를 포함하려면 클라이언트 개체 생성자, 자격 증명 개체 생성자 또는 특정 메서드에 `logging_enable=True` 매개 변수를 전달합니다.
+
+세부 정보는 이 문서의 나머지 섹션에서 제공합니다.
 
 일반적으로 라이브러리 내에서 로깅을 사용하는 방법을 이해하는 데 가장 적합한 리소스는 [github.com/Azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python)에서 SDK 소스 코드를 검색하는 것입니다. 다음 섹션에서 제안하는 것처럼 필요할 때 세부 정보를 쉽게 검색할 수 있도록 이 리포지토리를 로컬로 복제하는 것이 좋습니다.
 
@@ -73,7 +75,7 @@ print(f"Logger enabled for ERROR={logger.isEnabledFor(logging.ERROR)}, " \
 | logging.ERROR             | 애플리케이션에서 복구할 가능성이 없는 오류입니다(예: 메모리 부족). |
 | logging.WARNING(기본값) | 함수에서 의도된 작업을 수행하지 못합니다(그러나 REST API 호출 재시도와 같이 해당 함수에서 복구할 수 있는 경우는 제외). 함수는 일반적으로 예외를 발생시킬 때 경고를 기록합니다. 경고 수준에서 자동으로 오류 수준을 사용하도록 설정합니다. |
 | logging.INFO              | 함수가 정상적으로 작동하거나 서비스 호출이 취소됩니다. 정보 이벤트에는 일반적으로 요청, 응답 및 헤더가 포함됩니다. 정보 수준에서 자동으로 오류 및 경고 수준을 사용하도록 설정합니다. |
-| logging.DEBUG             | 일반적으로 문제를 해결하는 데 사용되는 자세한 정보입니다. 디버그는 헤더의 계정 키와 같은 중요한 정보를 포함하는 유일한 로깅 수준입니다. 디버그 출력에는 일반적으로 예외에 대한 스택 추적이 포함됩니다. 디버그 수준에서 자동으로 정보, 경고 및 오류 수준을 사용하도록 설정합니다. |
+| logging.DEBUG             | 문제 해결에 일반적으로 사용되며 예외에 대한 스택 추적을 포함하는 세부 정보입니다. 디버그 수준에서 자동으로 정보, 경고 및 오류 수준을 사용하도록 설정합니다. 주의: 또한 `logging_enable=True`를 설정하는 경우 디버그 수준에는 헤더의 계정 키 및 기타 자격 증명과 같은 중요한 정보가 포함됩니다. 보안이 손상되지 않도록 이러한 로그를 보호해야 합니다. |
 | logging.NOTSET            | 모든 로깅을 사용하지 않도록 설정합니다. |
 
 ### <a name="library-specific-logging-level-behavior"></a>라이브러리와 관련된 로깅 수준 동작
@@ -104,41 +106,58 @@ handler = logging.StreamHandler(stream=sys.stdout)
 logger.addHandler(handler)
 ```
 
-이 예제에서는 로그 출력을 stdout으로 보내는 처리기를 등록합니다. Python 설명서의 [loging.handlers](https://docs.python.org/3/library/logging.handlers.html)에서 설명한 대로 다른 유형의 처리기를 사용할 수 있습니다.
+이 예제에서는 로그 출력을 stdout으로 보내는 처리기를 등록합니다. Python 설명서의 [loging.handlers](https://docs.python.org/3/library/logging.handlers.html)에서 설명한 대로 다른 유형의 처리기를 사용하거나 표준 [logging.basicConfig](https://docs.python.org/3/library/logging.html#logging.basicConfig) 메서드를 사용할 수 있습니다.
 
-## <a name="enable-logging-for-a-client-object-or-operation"></a>클라이언트 개체 또는 작업에 대한 로깅 사용
+## <a name="enable-http-logging-for-a-client-object-or-operation"></a>클라이언트 개체 또는 작업에 대한 HTTP 로깅 사용
 
-로깅 수준을 설정하고 처리기를 등록한 후에도 클라이언트 개체 생성자 또는 작업 메서드에 대한 로깅을 사용하도록 Azure 라이브러리에 계속 지시해야 합니다.
+기본적으로 Azure 라이브러리 내의 로깅에는 HTTP 정보가 포함되지 않습니다. 로그 출력에 HTTP 정보(DEBUG 수준)를 포함하려면 클라이언트 또는 자격 증명 개체 생성자 또는 특정 메서드에 구체적으로 `logging_enable=True`를 전달해야 합니다.
 
-### <a name="enable-logging-for-a-client-object"></a>클라이언트 개체에 대한 로깅 사용
+**주의**: HTTP 로깅에는 헤더의 계정 키 및 기타 자격 증명과 같은 중요한 정보가 포함될 수 있습니다. 보안이 손상되지 않도록 이러한 로그를 보호해야 합니다.
+
+### <a name="enable-http-logging-for-a-client-object-debug-level"></a>클라이언트 개체에 대한 HTTP 로깅 사용(DEBUG 수준)
 
 ```python
 from azure.storage.blob import BlobClient
 from azure.identity import DefaultAzureCredential
 
+# Enable HTTP logging on the client object when using DEBUG level
 # endpoint is the Blob storage URL.
 client = BlobClient(endpoint, DefaultAzureCredential(), logging_enable=True)
 ```
 
-클라이언트 개체에 대한 로깅을 사용하도록 설정하면 해당 개체를 통해 호출되는 모든 작업에 대한 로깅을 사용할 수 있습니다.
+클라이언트 개체에 대해 HTTP 로깅을 사용하도록 설정하면 해당 개체를 통해 호출되는 모든 작업에 대한 로깅을 사용할 수 있습니다.
 
-### <a name="enable-logging-for-an-operation"></a>작업에 대한 로깅 사용
+### <a name="enable-http-logging-for-a-credential-object-debug-level"></a>자격 증명 개체에 대한 HTTP 로깅 사용(DEBUG 수준)
 
 ```python
 from azure.storage.blob import BlobClient
 from azure.identity import DefaultAzureCredential
 
-# Logging is not enabled on this client.
+# Enable HTTP logging on the credential object when using DEBUG level
+credential = DefaultAzureCredential(logging_enable=True)
+
+# endpoint is the Blob storage URL.
+client = BlobClient(endpoint, credential)
+```
+
+자격 증명 개체에 대해 HTTP 로깅을 사용하도록 설정하면 해당 개체를 통해 호출되는 모든 작업에 대해 로깅이 가능하지만 인증을 포함하지 않는 클라이언트 개체의 작업에 대한 로깅은 실행되지 않습니다.
+
+### <a name="enable-logging-for-an-individual-method-debug-level"></a>개별 메서드에 대한 로깅 사용(DEBUG 수준)
+
+```python
+from azure.storage.blob import BlobClient
+from azure.identity import DefaultAzureCredential
+
 # endpoint is the Blob storage URL.
 client = BlobClient(endpoint, DefaultAzureCredential())
 
-# Enable logging for only this operation
+# Enable HTTP logging for only this operation when using DEBUG level
 client.create_container("container01", logging_enable=True)
 ```
 
 ## <a name="example-logging-output"></a>로깅 출력 예제
 
-다음 코드는 [예제: 스토리지 계정 사용](azure-sdk-example-storage-use.md)에 나와 있는 코드이며, 추가적으로 DEBUG 로깅을 사용하도록 설정되어 있습니다(여기서는 간단히 하기 위해 주석이 생략됨).
+다음 코드는 [예제: 스토리지 계정 사용](azure-sdk-example-storage-use.md)에 나와 있는 코드이며, 추가적으로 DEBUG 및 HTTP 로깅을 사용하도록 설정되어 있습니다(간단히 하기 위해 주석이 생략됨).
 
 ```python
 import os, sys, logging

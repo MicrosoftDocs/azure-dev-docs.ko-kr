@@ -4,12 +4,12 @@ description: Microsoft Learn 플랫폼을 사용하여 Azure와 JavaScript에 �
 ms.topic: reference
 ms.date: 01/14/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7fd0fd26b1b0133faf8cf21bd7b29afdbd37f5aa
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 80c0a9d285c1701369f8c7518f42220662759d86
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561679"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224827"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Azure 및 JavaScript를 사용하여 개발하는 방법 알아보기 
 
@@ -47,6 +47,10 @@ Microsoft Learn 플랫폼 또는 Microsoft Learning Partner를 사용하여 Azur
 * [Gatsby 및 Azure Static Web Apps를 사용하여 정적 웹앱 만들기 및 게시](/learn/modules/create-deploy-static-webapp-gatsby-app-service/)
 * [HTML, CSS 및 JavaScript를 사용하여 간단한 웹 사이트 빌드](/learn/modules/build-simple-website/)
 
+### <a name="server-apis"></a>서버 API
+
+* [노드 HTTP 서버 만들기](/learn/modules/build-web-api-nodejs-express/)
+
 ### <a name="serverless-apis"></a>서버리스 API
 
 * [Azure Functions를 사용하여 서버리스 API 빌드](/learn/modules/build-api-azure-functions/)
@@ -65,11 +69,7 @@ Microsoft Learn 플랫폼 또는 Microsoft Learning Partner를 사용하여 Azur
 ### <a name="virtual-machines"></a>Virtual Machines
 * [Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 애플리케이션 빌드 및 실행](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
 
-
-
-
 [더 많은 학습 리소스](/search/?category=Learn&terms=JavaScript)를 검색하세요.
-
 
 ## <a name="microsoft-learning-partners"></a>Microsoft Learning Partners
 

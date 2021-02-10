@@ -5,12 +5,12 @@ keywords: azure devops terraform 배포 슬롯
 ms.topic: how-to
 ms.date: 01/07/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0a7bb2fa3e5a0251b6a441ef8312726d93d29e07
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+ms.openlocfilehash: 5464764dbfbe7ff52b7f0b47f8f15e2c7af629ae
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109136"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069110"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform을 사용하여 Azure 배포 슬롯으로 인프라 프로비전
 
@@ -195,7 +195,7 @@ ms.locfileid: "98109136"
 
 1. **분기 선택** 탭에서 **마스터** 를 선택합니다.
 
-    ![마스터 분기 선택](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-master.png)
+    ![분기 선택](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-master.png)
 
 1. **배포 옵션** 탭에서 **확인** 을 선택합니다.
 
@@ -203,7 +203,7 @@ ms.locfileid: "98109136"
 
 - 3단계에서 **slotAppServiceSlotOne** 리소스를 선택합니다.
 
-- 13단계에서 마스터 분기 대신 작업 중 분기를 선택합니다.
+- 13단계에서 작업 분기를 선택합니다.
 
     ![작업 중 분기 선택](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-working.png)
 

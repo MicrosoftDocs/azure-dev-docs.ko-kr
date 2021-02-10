@@ -4,12 +4,12 @@ description: Docker 컨테이너를 사용하여 Azure에 Node.js 앱 배포
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: 6bf8acb66a708433966bdfe90cc358a56d2d3b42
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: 50c26c26fffc0c9377b661d79858dd97318bd3c2
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857811"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224787"
 ---
 # <a name="deploy-nodejs-container-to-azure"></a>Azure에 Node.js 컨테이너 배포 
 
@@ -29,18 +29,9 @@ ms.locfileid: "96857811"
 
 ## <a name="build-containerize-and-deploy-app-to-azure"></a>앱을 빌드하고, 컨테이너화하고, Azure에 배포
 
-시작하려면 이 [자습서](develop-nodejs-on-azure.md)를 따라 다음 방법을 알아보세요.
-
-* 샘플 코드 다운로드
-* Node.js 앱 실행
-* Visual Studio Code에서 앱 디버그
-* Node.js MEAN 앱 컨테이너화
-* Azure CLI 명령을 사용하여 앱 배포
-* CosmosDB 리소스에 MongoDB 서버 만들기
-* 프라이빗 컨테이너 레지스트리에 컨테이너 이미지 추가
-* 웹앱에 사용자 지정 도메인 이름 추가
-* 웹앱을 더 큰 규모로 스케일링
-* 모든 리소스에 대한 리소스 그룹 만들기 및 삭제
+시작하려면 목록에서 다음을 선택합니다.
+* 자습서: [Express.js](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md)
+* 자습서: [Deno](../tutorial/deploy-deno-app-azure-app-service-azure-cli.md)
 
 ## <a name="next-steps"></a>다음 단계
 

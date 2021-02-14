@@ -335,7 +335,7 @@ ms.locfileid: "97911453"
 2. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다. 예:
 
     > [!NOTE]
-    > 로컬 Spring Boot 앱이 실행되는 시스템 클록에 따른 시간은 정확해야 합니다. OAuth 2.0을 사용하는 경우 클록 스큐의 허용 오차가 거의 없습니다. 3분 동안에도 정확하지 않은 경우 `[invalid_id_token] An error occurred while attempting to decode the Jwt: Jwt used before 2020-05-19T18:52:10Z`와 비슷한 오류와 함께 로그인이 실패할 수 있습니다. 이 문서를 작성할 당시 [time.gov](https://time.gov/)에는 클록이 실제 시간에서 떨어져 있는 정도를 나타내는 표시기가 있습니다. 앱은 0.019초 이상의 스큐를 통해 성공적으로 실행되었습니다.
+    > 로컬 Spring Boot 앱이 실행되는 시스템 클록에 따른 시간은 정확해야 합니다. OAuth 2.0을 사용하는 경우 클록 스큐의 허용 오차가 거의 없습니다. 3분의 부정확도에도 `[invalid_id_token] An error occurred while attempting to decode the Jwt: Jwt used before 2020-05-19T18:52:10Z`와 비슷한 오류와 함께 로그인이 실패할 수 있습니다. 이 문서를 작성할 당시 [time.gov](https://time.gov/)에는 클록이 실제 시간에서 떨어져 있는 정도를 나타내는 표시기가 있습니다. 앱은 0.019초 이상의 스큐를 통해 성공적으로 실행되었습니다.
 
     ```shell
     mvn -DskipTests clean package

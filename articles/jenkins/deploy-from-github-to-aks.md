@@ -3,16 +3,18 @@ title: 자습서 - Jenkins를 사용하여 GitHub에서 Azure Kubernetes Service
 description: GitHub 및 CD(지속적인 배포)에서 AKS(Azure Kubernetes Service)까지의 CI(연속 통합)를 위해 Jenkins를 구성하는 방법을 알아봅니다.
 keywords: Jenkins, Azure, DevOps, AKS, Azure Kubernetes Service, GitHub
 ms.topic: article
-ms.date: 10/29/2019
+ms.date: 02/05/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 137f7cf050c9d31adc9e56a70fbb98e29342e142
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.openlocfilehash: b64037f6a6113208182fa6c9f28e53005928dbab
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699971"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99822756"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>자습서: Jenkins를 사용하여 GitHub에서 Azure Kubernetes Service로 배포
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 이 자습서에는 Jenkins에서 CI(지속적인 통합) 및 CD(지속적인 배포)를 설정하여 GitHub의 샘플 앱을 [AKS(Azure Kubernetes Service)](/azure/aks/intro-kubernetes)로 배포합니다. 이런 방식으로 커밋을 GitHub에 푸시하여 앱을 업데이트하는 경우 Jenkins는 자동으로 새 컨테이너 빌드를 실행하고, 컨테이너 이미지를 ACR(Azure Container Registry)에 푸시한 다음, AKS에서 앱을 실행합니다. 
 

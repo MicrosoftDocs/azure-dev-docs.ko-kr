@@ -4,12 +4,13 @@ description: Python API 참조 설명서에 대한 포인터
 ms.date: 05/26/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: f1a30c02059179f21694d716bcb5e063ae20956d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+adobe-target: true
+ms.openlocfilehash: a7d462bf903c1893403addd30c1adda70f89108a
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764823"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395178"
 ---
 # <a name="azure-libraries-for-python-api-reference"></a>Python용 Azure 라이브러리 API 참조
 

@@ -5,12 +5,13 @@ keywords: Jenkins, Azure, DevOps, 개요
 ms.topic: overview
 ms.date: 11/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 38703bbd857c1990571f6255ab3a4d9089ad7a46
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+adobe-target: true
+ms.openlocfilehash: 051d04950248ec6d3e6364ad9fc808872888d726
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699831"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395198"
 ---
 # <a name="azure-and-jenkins"></a>Azure 및 Jenkins
 

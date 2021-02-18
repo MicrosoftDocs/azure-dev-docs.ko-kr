@@ -1,15 +1,15 @@
 ---
 title: Azure 개발 흐름
 description: 프로비저닝, 코딩, 테스트, 배포 및 관리로 구성되는 Azure의 클라우드 개발 주기에 대한 개요입니다.
-ms.date: 10/06/2020
+ms.date: 02/16/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 149bf0c56de95d2f1230e2bc527c64da780bd5ad
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: c2187f43da3159cc623e2ace671561ece2cf1758
+ms.sourcegitcommit: b882128a763f81dba83913bfff1e9cd1ec70818f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764772"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100642289"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Azure 개발 흐름: 프로비저닝, 코딩, 테스트, 배포 및 관리
 
@@ -43,7 +43,7 @@ Azure의 서비스 및 리소스 모델을 알아보았으므로, Azure에서 �
 
 예를 들어 프로비저닝 단계에서 Azure 스토리지 계정을 만들고 해당 계정 내에 BLOB 컨테이너를 만든 다음, 해당 컨테이너에서 애플리케이션에 대한 액세스 정책을 설정할 수 있습니다. 이 프로비저닝 프로세스는 [예제 - Azure Storage 프로비저닝](azure-sdk-example-storage.md)에 설명되어 있습니다. 이제 코드에서 해당 스토리지 계정으로 인증한 다음, 해당 컨테이너 내에서 BLOB을 생성, 업데이트 또는 삭제할 수 있습니다. 이 런타임 프로세스는 [예제 - Azure Storage 사용](azure-sdk-example-storage.md)에 설명되어 있습니다. 마찬가지로, 애플리케이션 코드에서 데이터베이스에 연결하고 일상적인 만들기-읽기-업데이트-삭제 쿼리를 수행할 수 있도록 스키마와 적절한 권한을 사용하여 데이터베이스를 프로비저닝할 수 있습니다(자세한 내용은 [예제 - Azure Storage 사용](azure-sdk-example-database.md) 참조).
 
-앱 코드는 일반적으로 환경 변수를 통해 사용하려는 리소스의 이름과 URL을 식별합니다. 환경 변수를 사용하면 코드를 변경하지 않고 클라우드 환경(개발, 테스트, 준비 및 프로덕션) 간에 쉽게 전환할 수 있습니다. 애플리케이션 코드를 호스팅하는 다양한 Azure 서비스는 필요한 변수를 정의하는 수단을 제공합니다. 예를 들어 웹앱을 호스팅하는 Azure App Service 및 Azure Functions(Azure의 서버리스 호스트)에서는 Azure Portal 또는 Azure CLI를 통해 *애플리케이션 설정*을 정의합니다. 그러면 코드에 환경 변수로 표시됩니다.
+앱 코드는 일반적으로 환경 변수를 통해 사용하려는 리소스의 이름과 URL을 식별합니다. 환경 변수를 사용하면 코드를 변경하지 않고 클라우드 환경(개발, 테스트, 준비 및 프로덕션) 간에 쉽게 전환할 수 있습니다. 애플리케이션 코드를 호스팅하는 다양한 Azure 서비스는 필요한 변수를 정의하는 수단을 제공합니다. 예를 들어 웹앱을 호스팅하는 Azure App Service 및 Azure Functions(Azure의 서버리스 호스트)에서는 Azure Portal 또는 Azure CLI를 통해 *애플리케이션 설정* 을 정의합니다. 그러면 코드에 환경 변수로 표시됩니다.
 
 Python 개발자는 대부분 Python에서 Python용 Azure 라이브러리를 사용하여 애플리케이션 코드를 작성합니다. 즉, 클라우드 애플리케이션의 독립적인 부분은 지원되는 언어로 작성할 수 있습니다. 예를 들어 다양한 언어 전문가들이 있는 팀에서 일하는 경우 애플리케이션의 일부는 Python, 일부는 JavaScript, 일부는 Java로 작성하고 나머지는 C#으로 작성하는 것이 가능합니다.
 

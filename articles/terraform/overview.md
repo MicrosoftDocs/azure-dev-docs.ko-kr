@@ -4,12 +4,13 @@ description: Terraform을 통해 Azure에서 인프라를 배포 및 버전 관�
 ms.topic: overview
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 883242a09129bbc864185786ccf99888e7d3d842
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+adobe-target: true
+ms.openlocfilehash: 0857586db7fdac0f4decd515c3a6a71026d2d375
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442159"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395318"
 ---
 # <a name="terraform-with-azure"></a>Azure의 Terraform
 

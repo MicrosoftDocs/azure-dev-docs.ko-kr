@@ -4,7 +4,7 @@
     - name: 도구 설명
       items:
         - name: 도구 설명을 사용한 Python 빠른 시작
-          href: tool-tip-metric.md
+          href: tool-tip-metrics.md
     - name: 자습서 형식 랩
       items:
         - name: Python flask 단일 페이지

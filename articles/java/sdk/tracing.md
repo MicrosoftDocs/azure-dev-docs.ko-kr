@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: savaity
-ms.openlocfilehash: 2dc2085ac71167cefd8fed5475dc9744cf520fea
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: e5ead01c22fdb80e7c5fc49c3a980add883eb6d9
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528589"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395218"
 ---
 # <a name="configure-tracing-in-the-azure-sdk-for-java"></a>Java용 Azure SDK에서 추적 구성
 
@@ -85,7 +85,7 @@ OpenTelemetry의 [의미 체계 규칙](https://github.com/open-telemetry/opente
 
 ### <a name="configure-tracing-exports"></a>추적 내보내기 구성
 
-추적 정보를 사용하려는 애플리케이션은 [Zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/) 및 [Azure Monitor](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/monitor/microsoft-opentelemetry-exporter-azuremonitor#azure-monitor-opentelemetry-exporter-client-library-for-java) 같은 분산 추적 저장소로 추적을 내보내야 합니다. 다음 예에서는 Jaeger 관련 API를 사용하여 localhost 포트 14250에서 실행되는 Jaeger 분산 추적 저장소로 추적 정보를 내보내도록 구성합니다.
+추적 정보를 사용하려는 애플리케이션은 [Zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/) 및 [Azure Monitor](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/monitor/azure-monitor-opentelemetry-exporter#azure-monitor-opentelemetry-exporter-client-library-for-java) 같은 분산 추적 저장소로 추적 정보를 내보내야 합니다. 다음 예에서는 Jaeger 관련 API를 사용하여 localhost 포트 14250에서 실행되는 Jaeger 분산 추적 저장소로 추적 정보를 내보내도록 구성합니다.
 
 ```java
 ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 14250).usePlaintext().build();

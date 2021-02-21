@@ -4,18 +4,20 @@ description: 현재 작업의 예를 찾습니다.
 ms.topic: reference
 ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: cc5ca751b8d22612c63d26a46934eb5b4c057c69
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 9da8ede8dfbf7ffc54fce9531f4b490ae9db1942
+ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99511001"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589439"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>JavaScript 개발자를 위한 상위 작업
 
 현재 작업의 예를 찾습니다. 작업을 찾을 수 없는 경우 작업을 요청하는 피드백을 남기세요. 
 
 ## <a name="app-registration"></a>앱 등록
+
+[앱 등록 설명서](/azure/active-directory/develop/quickstart-register-app)
 
 |작업|사용|
 |--|--|
@@ -56,6 +58,8 @@ ms.locfileid: "99511001"
 
 ### <a name="static-web-apps"></a>정적 웹앱
 
+[서비스 설명서](/azure/static-web-apps/)
+
 |작업|사용|
 |--|--|
 |Angular 앱 만들기|[Bash](../tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-02.md?tabs=angular)|
@@ -71,6 +75,8 @@ ms.locfileid: "99511001"
 
 ### <a name="function-serverless-apps"></a>함수(서버리스) 앱
 
+[서비스 설명서](/azure/azure-functions/)
+
 |작업|사용|
 |--|--|
 |로컬로 함수 앱 만들기|[Visual Studio Code 확장](../tutorial/tutorial-vscode-serverless-node-create-local.md)|
@@ -81,6 +87,8 @@ ms.locfileid: "99511001"
 |함수 앱 리소스 제거|[Visual Studio Code 확장](../tutorial/tutorial-vscode-serverless-node-remove-resource.md)|
 
 ### <a name="app-service---full-stack-server-only-or-client-only-apps"></a>앱 서비스 - 전체 스택, 서버 전용 또는 클라이언트 전용 앱
+
+[서비스 설명서](/azure/app-service/)
 
 |작업|사용|
 |--|--|
@@ -99,6 +107,8 @@ ms.locfileid: "99511001"
 |원격 로그 스트림|[Visual Studio Code 확장](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
 ## <a name="cognitive-services"></a>Cognitive Services
+
+[서비스 그룹 설명서](/azure/cognitive-services/)
 
 |작업|사용|
 |--|--|
@@ -128,12 +138,29 @@ ms.locfileid: "99511001"
 
 ## <a name="databases"></a>데이터베이스
 
+### <a name="mariadb"></a>MariaDB
+
+[서비스 설명서](/azure/mariadb/)
+
+|Task|사용|
+|--|--|
+|MariaDB 리소스 만들기|[Azure Portal](https://ms.portal.azure.com/#create/Microsoft.MariaDBServer)<br>[Azure CLI](./with-azure-cli/create-mariadb.md#create-a-mariadb-resource-with-azure-cli)<br>[@azure/arm-mariadb](https://www.npmjs.com/package/@azure/arm-mariadb)|
+|리소스에 MariaDB 데이터베이스 만들기|[Azure CLI](./with-azure-cli/create-mariadb.md#create-a-mariadb-resource-with-azure-cli)|
+|연결 문자열 가져오기|[Azure CLI](./with-azure-cli/create-mariadb.md#get-the-mariadb-connection-string-with-azure-cli)|
+|데이터베이스 사용 및 보기|[Azure Cloud Shell](https://shell.azure.com/)의 _mysql_ CLI<br>[MySQL Workbench](https://www.mysql.com/products/workbench/)<br>[Visual Studio Code 확장](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql)<br>[npm mariadb](https://www.npmjs.com/package/mariadb)<br>[JavaScript](./with-database/use-mariadb.md#use-mariadb-sdk-to-connect-to-mariadb-on-azure)|
+
+### <a name="mongodb-on-cosmos-db"></a>Cosmos DB의 MongoDB
+
+[서비스 설명서](/azure/cosmos-db/)
+
 |작업|사용|
 |--|--|
 |Cosmos DB 만들기 - MongoDB 리소스|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)<br>[Azure CLI](./with-azure-cli/create-mongodb-cosmosdb.md#create-a-cosmos-db-resource-for-mongodb)|
 |CosmosDB 연결 문자열 가져오기|[Visual Studio Code 확장](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string)<br>[Azure CLI](./with-azure-cli/create-mongodb-cosmosdb.md#get-the-mongodb-connection-string-for-your-resource)|
 |Cosmos DB 보기|[Cosmos DB Explorer](https://cosmos.azure.com/)|
 |Cosmos DB에서 mongoDB용 Mongoose API 사용|[JavaScript](./with-database/use-mongodb-as-cosmosdb.md#use-mongoose-sdk-to-connect-to-mongodb-on-azure)
+
+
 
 ## <a name="git"></a>Git
 
@@ -164,6 +191,8 @@ ms.locfileid: "99511001"
 
 ## <a name="storage"></a>스토리지
 
+[서비스 설명서](/azure/storage/)
+
 |작업|사용|
 |--|--|
 |리소스 만들기|[Visual Studio Code 확장](../tutorial/browser-file-upload-azure-storage-blob.md#3-create-storage-resource-with-visual-studio-extension)|
@@ -187,6 +216,8 @@ ms.locfileid: "99511001"
 
 ## <a name="virtual-machines"></a>가상 머신
 
+[서비스 설명서](/azure/virtual-machines/)
+
 |작업|사용|
 |--|--|
 |SSH를 통해 VM에 연결|[Bash](../tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md#connect-with-ssh-and-change-web-app)|
@@ -199,6 +230,8 @@ ms.locfileid: "99511001"
 
 
 ## <a name="visual-studio-code-develop-and-debug-javascript-apps"></a>Visual Studio Code: JavaScript 앱 개발 및 디버그 
+
+[도구 설명서](https://code.visualstudio.com/docs)
 
 |작업|사용|
 |--|--|

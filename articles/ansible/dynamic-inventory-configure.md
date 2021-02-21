@@ -5,14 +5,16 @@ keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 동적 인벤토리
 ms.topic: tutorial
 ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: d5d3095384fb3f192f7e8cd74b2a49b41b47f239
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: ff23b6d4d363e8b83e33414c6518560fa82b8ee0
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99224737"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395268"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>자습서: Ansible을 사용하여 Azure 리소스의 동적 인벤토리 구성
+
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *동적 인벤토리* 로 인벤토리 정보를 가져오는 데 사용할 수 있습니다. 
 
@@ -68,53 +70,21 @@ Ansible은 다양한 원본(Azure와 같은 클라우드 원본 포함)에서 *�
 
 사용자 정의 범주별로 [태그를 사용하여 Azure 리소스를 구성](/azure/azure-resource-manager/resource-group-using-tags#azure-cli)할 수 있습니다.
 
-### <a name="using-ansible-version--28"></a>Ansible 2.8 이전 버전 사용
-다음 [az resource tag](/cli/azure/resource#az-resource-tag) 명령을 입력하여 `ansible-inventory-test-vm1` 가상 머신에 `nginx` 키를 사용한 태그를 지정합니다.
-
-```azurecli
-az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
-```
-
-### <a name="using-ansible-version--28"></a>Ansible 2.8 이상 버전 사용
 다음 [az resource tag](/cli/azure/resource#az-resource-tag) 명령을 입력하여 `ansible-inventory-test-vm1` 가상 머신에 `Ansible=nginx` 키를 사용한 태그를 지정합니다.
 
 ```azurecli
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
+`<YourAzureSubscriptionID>`를 구독 ID로 바꿉니다.
+
 ## <a name="generate-a-dynamic-inventory"></a>동적 인벤토리 생성
 
 가상 머신이 정의되고 태그가 지정되면 동적 인벤토리를 생성해야 합니다.
 
-### <a name="using-ansible-version--28"></a>Ansible 2.8 이전 버전 사용
+Ansible은 [Azure 동적 인벤토리 플러그 인](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py)을 제공합니다. 다음 단계는 이 플러그 인을 사용하는 과정을 안내합니다.
 
-Ansible은 Azure 리소스의 동적 인벤토리를 생성하는 [azure_rm.py](https://github.com/ansible-collections/community.general/blob/main/scripts/inventory/azure_rm.py)라는 Python 스크립트를 제공합니다. 다음 단계에서는 `azure_rm.py` 스크립트를 사용하여 두 개의 테스트 Azure Virtual Machines에 연결하는 과정을 안내합니다.
-
-1. GNU `wget` 명령을 사용하여 `azure_rm.py` 스크립트를 검색합니다.
-
-    ```bash
-    wget https://raw.githubusercontent.com/ansible-collections/azure/dev/plugins/inventory/azure_rm.py
-    ```
-
-1. `chmod` 명령을 사용하여 `azure_rm.py` 스크립트에 대한 액세스 권한을 변경합니다. 다음 명령은 `+x` 매개 변수를 사용하여 지정된 파일(`azure_rm.py`)의 실행을 허용합니다.
-
-    ```bash
-    chmod +x azure_rm.py
-    ```
-
-1. [ansible 명령](https://docs.ansible.com/ansible/2.4/ansible.html)을 사용하여 리소스 그룹에 연결합니다.
-
-    ```bash
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
-    ```
-
-1. 연결되면 만들어지는 가상 머신의 결과를 나타내는 결과가 표시됩니다.
-
-### <a name="ansible-version--28"></a>Ansible 2.8 이상 버전
-
-Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py)을 제공합니다. 다음 단계는 이 플러그 인을 사용하는 과정을 안내합니다.
-
-1. 인벤토리 플러그 인에는 구성 파일이 필요합니다. 구성 파일은 `azure_rm`으로 끝나야 하고 확장명이 `yml` 또는 `yaml`이어야 합니다. 이 자습서 예제에서는 다음 플레이북을 `myazure_rm.yml`로 저장합니다.
+1. 동적 인벤토리는 `azure_rm`으로 끝나고 확장명은 `yml` 또는 `yaml`이어야 합니다. 그렇지 않으면 Ansible이 올바른 재고 플러그 인을 검색하지 못합니다. 이 자습서 예제에서는 다음 플레이북을 `myazure_rm.yml`로 저장합니다.
 
     ```yml
         plugin: azure_rm
@@ -154,32 +124,6 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
 
 ## <a name="enable-the-vm-tag"></a>VM 태그를 사용하도록 설정
 
-### <a name="if-youre-using-ansible--28"></a>Ansible 2.8 미만을 사용하는 경우
-
-- 태그를 설정한 경우 태그를 "사용하도록 설정"해야 합니다. 태그를 사용하도록 설정하는 한 가지 방법은 `export` 명령을 통해 환경 변수 `AZURE_TAGS`에 태그를 내보내는 것입니다.
-
-    ```console
-    export AZURE_TAGS=nginx
-    ```
-    
-- 다음 명령 실행:
-
-    ```bash
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
-    ```
-    
-    이제 하나의 가상 머신(태그가 `AZURE_TAGS` 환경 변수로 내보낸 값과 일치하는 가상 머신)만 표시됩니다.
-
-    ```output
-       ansible-inventory-test-vm1 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ```
-
-### <a name="if-youre-using-ansible---28"></a>Ansible 2.8 이상을 사용하는 경우
-
 - `ansible-inventory -i myazure_rm.yml --graph` 명령을 실행하여 다음 출력을 가져옵니다.
 
     ```output
@@ -195,7 +139,6 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
     ```bash
     ansible -i ./myazure_rm.yml -m ping tag_Ansible_nginx
     ```
-
 
 ## <a name="set-up-nginx-on-the-tagged-vm"></a>태그가 지정된 VM에 Nginx 설정
 
@@ -228,14 +171,6 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
 1. 파일을 저장하고 편집기를 종료합니다.
 
 1. [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)을 사용하여 플레이북 실행
-
-   - Ansible 2.8 이전 버전:
-
-     ```bash
-     ansible-playbook -i azure_rm.py nginx.yml
-     ```
-
-   - Ansible 2.8 이상 버전:
 
      ```bash
      ansible-playbook  -i ./myazure_rm.yml  nginx.yml --limit=tag_Ansible_nginx
@@ -307,5 +242,5 @@ Ansible 2.8부터 Ansible은 [Azure 동적 인벤토리 플러그 인](https://g
 
 ## <a name="next-steps"></a>다음 단계
 
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [빠른 시작: Ansible을 사용하여 Azure에서 Linux 가상 머신 구성](./vm-configure.md)

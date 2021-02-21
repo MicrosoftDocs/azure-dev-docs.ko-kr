@@ -4,15 +4,15 @@ description: 이 문서에서는 Spring Cloud Stream Binder를 사용하여 Azur
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 10/10/2020
+ms.date: 02/04/2021
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 170d3727b661f18252edb39396739e2791101534
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.openlocfilehash: 4223927cd99e652e8fb06dd8250c39b191f36a94
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441799"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99822706"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Spring Cloud Azure Stream Binder를 Azure Service Bus에 사용하는 방법
 
@@ -40,7 +40,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 
 1. 구성된 Service Bus 큐 또는 토픽이 없는 경우 Azure Portal을 사용하여 [Service Bus 큐를 만들거나](/azure/service-bus-messaging/service-bus-quickstart-portal)[Service Bus 토픽을 만듭니다](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). 네임스페이스가 이전 단계에서 지정된 요구 사항을 충족하는지 확인합니다. 또한 이 자습서의 테스트 앱에 필요한 네임스페이스의 연결 문자열을 적어둡니다.
 
-1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer](https://start.spring.io/)를 사용하여 **Maven** 프로젝트를 만듭니다. **Maven 프로젝트** 를 선택하고, **종속성** 아래에서 **웹** 종속성을 추가하고, **8** Java 버전을 선택합니다.
+1. Spring Boot 애플리케이션이 없는 경우 [Spring Initializer](https://start.spring.io/)를 사용하여 **Maven** 프로젝트를 만듭니다. **Maven 프로젝트** 를 선택하고, **종속성** 에서 **웹** 종속성을 추가하고, **Spring Boot** 에서 2.3.8을 선택하고, Java 버전 **8** 을 선택합니다.
 
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Spring Cloud Stream Binder 스타터 사용
@@ -63,7 +63,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
     <dependency>
         <groupId>com.azure.spring</groupId>
         <artifactId>azure-spring-cloud-stream-binder-servicebus-queue</artifactId>
-        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-queue;current} -->
+        <version>2.1.0</version>
     </dependency>
     ```
 
@@ -73,7 +73,7 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
     <dependency>
         <groupId>com.azure.spring</groupId>
         <artifactId>azure-spring-cloud-stream-binder-servicebus-topic</artifactId>
-        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-topic;current} -->
+        <version>2.1.0</version>
     </dependency>
     ```
 
@@ -100,32 +100,71 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
     **Service Bus 큐**
 
     ```yaml
-    spring.cloud.azure.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
-    spring.cloud.stream.bindings.input.destination=examplequeue
-    spring.cloud.stream.bindings.output.destination=examplequeue
-    spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode=MANUAL
+    spring:
+      cloud:
+        azure:
+          servicebus:
+            connection-string: <ServiceBusNamespaceConnectionString>
+        stream:
+          bindings:
+            consume-in-0:
+              destination: examplequeue
+            supply-out-0:
+              destination: examplequeue
+          servicebus:
+            queue:
+              bindings:
+                consume-in-0:
+                  consumer:
+                    checkpoint-mode: MANUAL
+          function:
+            definition: consume;supply;
+          poller:
+            fixed-delay: 1000
+            initial-delay: 0
     ```
 
     **Service Bus 토픽**
 
     ```yaml
-    spring.cloud.azure.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
-    spring.cloud.stream.bindings.input.destination=exampletopic
-    spring.cloud.stream.bindings.input.group=examplesubscription
-    spring.cloud.stream.bindings.output.destination=exampletopic
-    spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode=MANUAL
+    spring:
+      cloud:
+        azure:
+          servicebus:
+            connection-string: <ServiceBusNamespaceConnectionString>
+        stream:
+          bindings:
+            consume-in-0:
+              destination: exampletopic
+              group: examplesubscription
+            supply-out-0:
+              destination: exampletopic
+          servicebus:
+            topic:
+              bindings:
+                consume-in-0:
+                  consumer:
+                    checkpoint-mode: MANUAL
+          function:
+            definition: consume;supply;
+          poller:
+            fixed-delay: 1000
+            initial-delay: 0
     ```
 
     **<a name="fd">필드 설명</a>**
 
     |                                        필드                                   |                                                                                   Description                                                                                    |
     |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    |               `spring.cloud.azure.function.definition`                |                                        바인딩에서 노출하는 외부 대상에 바인딩할 기능 빈을 지정합니다.                                   |
+    |               `spring.cloud.azure.poller.fixed-delay`                |                                        기본 폴러의 고정 지연 시간을 밀리초 단위로 지정합니다(기본값은 1000L).                                   |
+    |               `spring.cloud.azure.poller.initial-delay`                |                                       정기 트리거의 초기 지연 시간을 지정합니다(기본값은 0).                                   |
     |               `spring.cloud.azure.servicebus.connection-string`                |                                        Azure Portal의 Service Bus 네임스페이스에서 가져온 연결 문자열을 지정합니다.                                   |
-    |               `spring.cloud.stream.bindings.input.destination`                 |                            이 자습서에서 사용한 Service Bus 큐 또는 Service Bus 토픽을 지정합니다.                         |
-    |                  `spring.cloud.stream.bindings.input.group`                    |                                            Service Bus 토픽을 사용한 경우 토픽 구독을 지정합니다.                                |
-    |               `spring.cloud.stream.bindings.output.destination`                |                               입력 대상에 사용한 것과 동일한 값을 지정합니다.                        |
-    | `spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`을 지정합니다.                                                   |
-    | `spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`을 지정합니다.                                                   |
+    |               `spring.cloud.stream.bindings.consume-in-0.destination`                 |                            이 자습서에서 사용한 Service Bus 큐 또는 Service Bus 토픽을 지정합니다.                         |
+    |                  `spring.cloud.stream.bindings.consume-in-0.group`                    |                                            Service Bus 토픽을 사용한 경우 토픽 구독을 지정합니다.                                |
+    |               `spring.cloud.stream.bindings.supply-out-0.destination`                |                               입력 대상에 사용한 것과 동일한 값을 지정합니다.                        |
+    | `spring.cloud.stream.servicebus.queue.bindings.consume-in-0.consumer.checkpoint-mode` |                                                       `MANUAL`를 지정합니다.                                                   |
+    | `spring.cloud.stream.servicebus.topic.bindings.consume-in-0.consumer.checkpoint-mode` |                                                       `MANUAL`을 지정합니다.                                                   |
 
 1. *application.properties* 파일을 저장하고 닫습니다.
 
@@ -148,89 +187,131 @@ Azure는 [AMQP 1.0](http://www.amqp.org/)("고급 메시지 큐 프로토콜 1.0
 1. 파일에 다음 코드를 추가합니다.
 
     ```java
-    package com.example;
-
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-    @SpringBootApplication
-    public class ServiceBusBinderApplication {
-
-        public static void main(String[] args) {
-            SpringApplication.run(ServiceBusBinderApplication.class, args);
-        }
-    }
+   package com.example;
+   
+   import com.azure.spring.integration.core.api.Checkpointer;
+   import org.slf4j.Logger;
+   import org.slf4j.LoggerFactory;
+   import org.springframework.boot.SpringApplication;
+   import org.springframework.boot.autoconfigure.SpringBootApplication;
+   import org.springframework.context.annotation.Bean;
+   import org.springframework.messaging.Message;
+   
+   import java.util.function.Consumer;
+   
+   import static com.azure.spring.integration.core.AzureHeaders.CHECKPOINTER;
+   
+   @SpringBootApplication
+   public class ServiceBusBinderApplication {
+   
+       private static final Logger LOGGER = LoggerFactory.getLogger(ServiceBusBinderApplication.class);
+   
+       public static void main(String[] args) {
+           SpringApplication.run(ServiceBusBinderApplication.class, args);
+       }
+   
+       @Bean
+       public Consumer<Message<String>> consume() {
+           return message -> {
+               Checkpointer checkpointer = (Checkpointer) message.getHeaders().get(CHECKPOINTER);
+               LOGGER.info("New message received: '{}'", message);
+               checkpointer.success().handle((r, ex) -> {
+                   if (ex == null) {
+                       LOGGER.info("Message '{}' successfully checkpointed", message);
+                   }
+                   return null;
+               });
+           };
+       }
+   }
     ```
 
 1. 파일을 저장하고 닫습니다.
 
-### <a name="create-a-new-class-for-the-source-connector"></a>원본 커넥터에 대한 새 클래스 만들기
+### <a name="create-a-new-producer-configuration-class"></a>새 생산자 구성 클래스 만들기
 
-1. 텍스트 편집기를 사용하여 *StreamBinderSource.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
+1. 텍스트 편집기를 사용하여 앱의 패키지 디렉터리에 *ServiceProducerConfiguration.java* 라는 Java 파일을 만듭니다.
 
 1. 다음 코드를 새 파일에 추가합니다.
 
     ```java
-    package com.example;
-
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.cloud.stream.annotation.EnableBinding;
-    import org.springframework.cloud.stream.messaging.Source;
-    import org.springframework.messaging.support.GenericMessage;
-    import org.springframework.web.bind.annotation.PostMapping;
-    import org.springframework.web.bind.annotation.RequestParam;
-    import org.springframework.web.bind.annotation.RestController;
-
-    @EnableBinding(Source.class)
-    @RestController
-    public class StreamBinderSource {
-
-        @Autowired
-        private Source source;
-
-        @PostMapping("/messages")
-        public String postMessage(@RequestParam String message) {
-            this.source.output().send(new GenericMessage<>(message));
-            return message;
-        }
-    }
+   package com.example;
+   
+   import org.slf4j.Logger;
+   import org.slf4j.LoggerFactory;
+   import org.springframework.context.annotation.Bean;
+   import org.springframework.context.annotation.Configuration;
+   import org.springframework.messaging.Message;
+   import reactor.core.publisher.EmitterProcessor;
+   import reactor.core.publisher.Flux;
+   
+   import java.util.function.Supplier;
+   
+   @Configuration
+   public class ServiceProducerConfiguration {
+   
+       private static final Logger LOGGER = LoggerFactory.getLogger(ServiceProducerConfiguration.class);
+   
+       @Bean
+       public EmitterProcessor<Message<String>> emitter() {
+           return EmitterProcessor.create();
+       }
+   
+       @Bean
+       public Supplier<Flux<Message<String>>> supply(EmitterProcessor<Message<String>> emitter) {
+           return () -> Flux.from(emitter)
+                            .doOnNext(m -> LOGGER.info("Manually sending message {}", m))
+                            .doOnError(t -> LOGGER.error("Error encountered", t));
+       }
+   }
     ```
 
-1. *StreamBinderSources.java* 파일을 저장하고 닫습니다.
+1. *ServiceProducerConfiguration.java* 파일을 저장하고 닫습니다.
 
-### <a name="create-a-new-class-for-the-sink-connector"></a>싱크 커넥터에 대한 새 클래스 만들기
+### <a name="create-a-new-controller-class"></a>새 컨트롤러 클래스 만들기
 
-1. 텍스트 편집기를 사용하여 *StreamBinderSink.java* 라는 Java 파일을 앱의 패키지 디렉터리에 만듭니다.
+1. 텍스트 편집기를 사용하여 앱의 패키지 디렉터리에 *ServiceProducerController.java* 라는 Java 파일을 만듭니다.
 
 1. 다음 코드 줄을 새 파일에 추가합니다.
 
     ```java
-    package com.example;
-
-    import com.microsoft.azure.spring.integration.core.AzureHeaders;
-    import com.microsoft.azure.spring.integration.core.api.Checkpointer;
-    import org.springframework.cloud.stream.annotation.EnableBinding;
-    import org.springframework.cloud.stream.annotation.StreamListener;
-    import org.springframework.cloud.stream.messaging.Sink;
-    import org.springframework.messaging.handler.annotation.Header;
-
-    @EnableBinding(Sink.class)
-    public class StreamBinderSink {
-
-        @StreamListener(Sink.INPUT)
-        public void handleMessage(String message, @Header(AzureHeaders.CHECKPOINTER) Checkpointer checkpointer) {
-            System.out.println(String.format("New message received: '%s'", message));
-            checkpointer.success().handle((r, ex) -> {
-                if (ex == null) {
-                    System.out.println(String.format("Message '%s' successfully checkpointed", message));
-                }
-                return null;
-            });
-        }
-    }
+   package com.example;
+   
+   import org.slf4j.Logger;
+   import org.slf4j.LoggerFactory;
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.http.ResponseEntity;
+   import org.springframework.messaging.Message;
+   import org.springframework.messaging.support.MessageBuilder;
+   import org.springframework.web.bind.annotation.GetMapping;
+   import org.springframework.web.bind.annotation.PostMapping;
+   import org.springframework.web.bind.annotation.RequestParam;
+   import org.springframework.web.bind.annotation.RestController;
+   import reactor.core.publisher.EmitterProcessor;
+   
+   @RestController
+   public class ServiceProducerController {
+   
+       private static final Logger LOGGER = LoggerFactory.getLogger(ServiceProducerController.class);
+   
+       @Autowired
+       private EmitterProcessor<Message<String>> emitterProcessor;
+   
+       @PostMapping("/messages")
+       public ResponseEntity<String> sendMessage(@RequestParam String message) {
+           LOGGER.info("Going to add message {} to emitter", message);
+           emitterProcessor.onNext(MessageBuilder.withPayload(message).build());
+           return ResponseEntity.ok("Sent!");
+       }
+   
+       @GetMapping("/")
+       public String welcome() {
+           return "welcome";
+       }
+   }
     ```
 
-1. *StreamBinderSink.java* 파일을 저장하고 닫습니다.
+1. *ServiceProducerController.java* 파일을 저장하고 닫습니다.
 
 ## <a name="build-and-test-your-application"></a>애플리케이션 빌드 및 테스트
 

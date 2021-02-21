@@ -3,17 +3,17 @@ title: Azure Event Hub를 사용하여 Spring Cloud 스트림 바인더 애플�
 description: Azure Event Hub와 함께 Spring Boot Initializer로 만든 Java 기반 Spring Cloud Stream Binder애플리케이션을 구성하는 방법을 알아보세요.
 services: event-hubs
 documentationcenter: java
-ms.date: 10/13/2020
+ms.date: 02/08/2021
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 0cc3289243c1a146cf59ecb15c5150327f49c236
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: d0c87ce32caddc0100b91abd800a18179ba4101e
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560306"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99822723"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hub를 사용하여 Spring Cloud 스트림 바인더 애플리케이션을 만드는 방법
 
@@ -26,7 +26,7 @@ ms.locfileid: "94560306"
 * [Apache Maven](http://maven.apache.org/), 버전 3.0 이상
 
 > [!IMPORTANT]
-> 이 문서의 단계를 완료하려면 Spring Boot 버전 2.2 이상이 필요합니다.
+> 이 문서의 단계를 완료하려면 Spring Boot 2.2 또는 2.3 버전이 필요합니다.
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Azure Portal을 사용하여 Azure Event Hub 만들기
 
@@ -103,7 +103,7 @@ ms.locfileid: "94560306"
 1. 다음 옵션을 지정합니다.
 
    * **Java** 를 사용하는 **Maven** 프로젝트를 생성합니다.
-   * 2\.2 이후의 **Spring Boot** 버전을 지정합니다.
+   * **2.3** 과 동일한 **Spring Boot** 버전을 지정합니다.
    * 애플리케이션에 대한 **그룹** 및 **아티팩트** 이름을 지정합니다.
    * Java 버전에 대해 **8** 을 선택합니다.
    * *Web* 종속성 추가
@@ -134,9 +134,9 @@ ms.locfileid: "94560306"
 
    ```xml
    <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
-      <version>1.2.7</version>
+     <groupId>com.azure.spring</groupId>
+     <artifactId>azure-spring-cloud-stream-binder-eventhubs</artifactId>
+     <version>2.1.0</version>
    </dependency>
    ```
 
@@ -158,118 +158,65 @@ ms.locfileid: "94560306"
 
 1. *pom.xml* 파일을 저장하고 닫습니다.
 
-## <a name="create-an-azure-credential-file"></a>Azure 자격 증명 파일 만들기
-
-1. 명령 프롬프트를 엽니다.
-
-1. Spring Boot 앱의 *리소스* 디렉터리로 이동합니다. 예:
-
-   ```cmd
-   cd C:\SpringBoot\eventhubs-sample\src\main\resources
-   ```
-
-   또는
-
-   ```bash
-   cd /users/example/home/eventhubs-sample/src/main/resources
-   ```
-
-1. Azure 계정 로그인:
-
-   ```azurecli
-   az login
-   ```
-
-1. 구독 나열:
-
-   ```azurecli
-   az account list
-   ```
-   Azure가 구독 목록을 반환하며 사용하려는 구독의 GUID를 복사해야 합니다. 예를 들어 다음과 같습니다.
-
-   ```json
-   [
-     {
-       "cloudName": "AzureCloud",
-       "id": "11111111-1111-1111-1111-111111111111",
-       "isDefault": true,
-       "name": "Converted Windows Azure MSDN - Visual Studio Ultimate",
-       "state": "Enabled",
-       "tenantId": "22222222-2222-2222-2222-222222222222",
-       "user": {
-         "name": "user@contoso.com",
-         "type": "user"
-       }
-     }
-   ]
-   ```
-   
-1. Azure에 사용하려는 구독에 대한 GUID를 지정합니다. 예:
-
-   ```azurecli
-   az account set -s 11111111-1111-1111-1111-111111111111
-   ```
-
-1. Azure 자격 증명 파일 만들기
-
-   ```azurecli
-   az ad sp create-for-rbac --sdk-auth > my.azureauth
-   ```
-
-   이 명령은 *my.azureauth* 파일을 *리소스* 디렉터리에 다음 예제와 유사하게 만듭니다.
-
-   ```json
-   {
-     "clientId": "33333333-3333-3333-3333-333333333333",
-     "clientSecret": "44444444-4444-4444-4444-444444444444",
-     "subscriptionId": "11111111-1111-1111-1111-111111111111",
-     "tenantId": "22222222-2222-2222-2222-222222222222",
-     "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
-     "resourceManagerEndpointUrl": "https://management.azure.com/",
-     "activeDirectoryGraphResourceId": "https://graph.windows.net/",
-     "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
-     "galleryEndpointUrl": "https://gallery.azure.com/",
-     "managementEndpointUrl": "https://management.core.windows.net/"
-   }
-   ```
-
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>Azure Event Hub를 사용하도록 Spring Boot 앱 구성
 
-1. 앱의 *리소스* 디렉터리에서 *application.properties* 파일을 찾습니다.
+1. 다음과 같은 앱의 *리소스* 디렉터리에서 *application.yaml* 파일을 찾습니다.
 
-   *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
+   *C:\SpringBoot\eventhubs-sample\src\main\resources\application.yaml*
 
    또는
 
-   */users/example/home/eventhubs-sample/src/main/resources/application.properties*
+   */users/example/home/eventhubs-sample/src/main/resources/application.yaml*
 
-2. 텍스트 편집기에서 *application.properties* 파일을 찾고 다음 줄을 추가하고 샘플 값을 이벤트 허브의 적절한 속성으로 바꿉니다.
+2. 텍스트 편집기에서 *application.yaml* 파일을 열고, 다음 줄을 추가하고, 샘플 값을 이벤트 허브의 적절한 속성으로 바꿉니다.
 
    ```yaml
-   spring.cloud.azure.credential-file-path=my.azureauth
-   spring.cloud.azure.resource-group=wingtiptoysresources
-   spring.cloud.azure.region=West US
-   spring.cloud.azure.eventhub.namespace=wingtiptoysnamespace
-   spring.cloud.azure.eventhub.checkpoint-storage-account=wingtiptoysstorage
-   spring.cloud.stream.bindings.input.destination=wingtiptoyshub
-   spring.cloud.stream.bindings.input.group=$Default
-   spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
-   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
+    spring:
+      cloud:
+        azure:
+          eventhub:
+            connection-string: [eventhub-namespace-connection-string]
+            checkpoint-storage-account: wingtiptoysstorage
+            checkpoint-access-key: [checkpoint-access-key]
+            checkpoint-container: wingtiptoyscontainer
+            
+        stream:
+          bindings:
+            consume-in-0:
+              destination: wingtiptoyshub
+              group: $Default
+            supply-out-0:
+              destination: wingtiptoyshub
+   
+          eventhub:
+            bindings:
+              consume-in-0:
+                consumer:
+                  checkpoint-mode: MANUAL
+          function:
+            definition: consume;supply;
+          poller:
+            initial-delay: 0
+            fixed-delay: 1000
    ```
+
    위치:
 
    |                          필드                           |                                                                                   Description                                                                                    |
    |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |        `spring.cloud.azure.credential-file-path`         |                                                    이 자습서의 앞부분에서 만든 Azure 자격 증명 파일을 지정합니다.                                                    |
-   |           `spring.cloud.azure.resource-group`            |                                                      Azure 이벤트 허브를 포함하는 Azure 리소스 그룹을 지정합니다.                                                      |
-   |               `spring.cloud.azure.region`                |                                           Azure 이벤트 허브를 만들 때 지정한 지리적 영역을 지정합니다.                                            |
-   |         `spring.cloud.azure.eventhub.namespace`          |                                          Azure 이벤트 허브 네임스페이스를 만들 때 지정한 고유 이름을 지정합니다.                                           |
-   | `spring.cloud.azure.eventhub.checkpoint-storage-account` |                                                    이 자습서의 앞부분에서 만든 Azure Storage 계정을 지정합니다.                                                    |
-   |     `spring.cloud.stream.bindings.input.destination`     |                            입력 대상 Azure Event Hub를 지정합니다.이 자습서에서는 이 자습서의 앞부분에서 만든 허브를 사용합니다.                            |
-   |       `spring.cloud.stream.bindings.input.group `        | Azure Event Hub에서 소비자 그룹을 지정합니다. Azure Event Hub를 만들 때 생성된 기본 소비자 그룹을 사용하려면 '$Default'로 설정할 수 있습니다. |
-   |    `spring.cloud.stream.bindings.output.destination`     |                               출력 대상 Azure Event Hub를 지정합니다.이 자습서에서는 입력 대상과 동일합니다.                               |
+   |               `spring.cloud.azure.eventhub.connection-string`                |                                        Azure Portal의 이벤트 허브 네임스페이스에서 가져온 연결 문자열을 지정합니다.                                   |
+   |               `spring.cloud.azure.function.definition`                |                                        바인딩에서 노출하는 외부 대상에 바인딩할 기능 빈을 지정합니다.                                   |
+   |               `spring.cloud.azure.poller.fixed-delay`                |                                        기본 폴러의 고정 지연 시간을 밀리초 단위로 지정합니다(기본값은 1000L).                                   |
+   |               `spring.cloud.azure.poller.initial-delay`                |                                       정기 트리거의 초기 지연 시간을 지정합니다(기본값은 0).                                   |
+   |               `spring.cloud.stream.bindings.consume-in-0.destination`                 |                            이 자습서에서 사용한 이벤트 허브를 지정합니다.                         |
+   |               `spring.cloud.stream.bindings.consume-in-0.group`                    |                               Event Hubs 인스턴스의 소비자 그룹을 지정합니다.                                |
+   |               `spring.cloud.stream.bindings.supply-out-0.destination`                |                             이 자습서에서 사용한 것과 동일한 이벤트 허브를 지정합니다.                        |
+   | `spring.cloud.stream.eventhub.bindings.consume-in-0.consumer.checkpoint-mode` |                                                       `MANUAL`을 지정합니다.                                                   |
+   |               `spring.cloud.stream.eventhub.checkpoint-access-key` |                                                      스토리지 계정의 액세스 키를 지정합니다.                                                   |
+   |               `spring.cloud.stream.eventhub.checkpoint-container` |                                                       스토리지 계정의 컨테이너를 지정합니다.                                                   |
+   |               `spring.cloud.stream.eventhub.checkpoint-storage-account` |                                                 이 자습서에서 만든 스토리지 계정을 지정합니다.                                               |
 
-3. *application.properties* 파일을 저장하고 닫습니다.
+3. *application.yaml* 파일을 저장하고 닫습니다.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>기본 이벤트 허브 기능을 구현하는 샘플 코드 추가
 
@@ -279,25 +226,48 @@ ms.locfileid: "94560306"
 
 1. 앱의 패키지 디렉터리에서 기본 애플리케이션 Java 파일을 찾습니다. 예:
 
-   *C:\SpringBoot\eventhubs-sample\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java*
+   *C:\SpringBoot\eventhubs-sample\src\main\java\com\contoso\eventhubs\sample\EventhubSampleApplication.java*
 
    또는
 
-   */users/example/home/eventhubs-sample/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java*
+   */users/example/home/eventhubs-sample/src/main/java/com/contoso/eventhubs/sample/EventhubSampleApplication.java*
 
 1. 텍스트 편집기에서 애플리케이션 Java 파일을 열고 다음 줄을 파일에 추가합니다.
 
    ```java
     package com.contoso.eventhubs.sample;
     
+    import com.azure.spring.integration.core.api.reactor.Checkpointer;
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
     import org.springframework.boot.SpringApplication;
     import org.springframework.boot.autoconfigure.SpringBootApplication;
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.messaging.Message;
+    
+    import java.util.function.Consumer;
+    
+    import static com.azure.spring.integration.core.AzureHeaders.CHECKPOINTER;
     
     @SpringBootApplication
-    public class EventhubsSampleApplication {
+    public class EventhubSampleApplication {
+    
+        public static final Logger LOGGER = LoggerFactory.getLogger(EventhubSampleApplication.class);
     
         public static void main(String[] args) {
-            SpringApplication.run(EventhubsSampleApplication.class, args);
+            SpringApplication.run(EventhubSampleApplication.class, args);
+        }
+    
+        @Bean
+        public Consumer<Message<String>> consume() {
+            return message -> {
+                Checkpointer checkpointer = (Checkpointer) message.getHeaders().get(CHECKPOINTER);
+                LOGGER.info("New message received: '{}'", message);
+                checkpointer.success()
+                            .doOnSuccess(success -> LOGGER.info("Message '{}' successfully checkpointed", message))
+                            .doOnError(error -> LOGGER.error("Exception: {}", error.getMessage()))
+                            .subscribe();
+            };
         }
     
     }
@@ -305,72 +275,79 @@ ms.locfileid: "94560306"
 
 1. 기본 애플리케이션 Java 파일을 저장하고 닫습니다.
 
-### <a name="create-a-new-class-for-the-source-connector"></a>원본 커넥터에 대한 새 클래스 만들기
+### <a name="create-a-new-configuration-class"></a>새 구성 클래스 만들기
 
-1. 앱의 패키지 디렉터리에 *EventhubSource.java* 라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
+1. 앱의 패키지 디렉터리에 *EventProducerConfiguration.java* 라는 새 Java 파일을 만든 다음, 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
 
     ```java
     package com.contoso.eventhubs.sample;
     
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.cloud.stream.annotation.EnableBinding;
-    import org.springframework.cloud.stream.messaging.Source;
-    import org.springframework.messaging.support.GenericMessage;
-    import org.springframework.web.bind.annotation.PostMapping;
-    import org.springframework.web.bind.annotation.RequestBody;
-    import org.springframework.web.bind.annotation.RestController;
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.context.annotation.Configuration;
+    import org.springframework.messaging.Message;
+    import reactor.core.publisher.EmitterProcessor;
+    import reactor.core.publisher.Flux;
     
-    @EnableBinding(Source.class)
-    @RestController
-    public class EventhubSource {
+    import java.util.function.Supplier;
     
-        @Autowired
-        private Source source;
+    @Configuration
+    public class EventProducerConfiguration {
     
-        @PostMapping("/messages")
-        public String postMessage(@RequestBody String message) {
-            this.source.output().send(new GenericMessage<>(message));
-            return message;
+        private static final Logger LOGGER = LoggerFactory.getLogger(EventProducerConfiguration.class);
+    
+        @Bean
+        public EmitterProcessor<Message<String>> emitter() {
+            return EmitterProcessor.create();
+        }
+    
+        @Bean
+        public Supplier<Flux<Message<String>>> supply(EmitterProcessor<Message<String>> emitter) {
+            return () -> Flux.from(emitter)
+                             .doOnNext(m -> LOGGER.info("Manually sending message {}", m))
+                             .doOnError(t -> LOGGER.error("Error encountered", t));
         }
     }
     ```
-1. *EventhubSource.java* 파일을 저장 후 닫습니다.
+1. *EventProducerConfiguration.java* 파일을 저장하고 닫습니다.
 
-### <a name="create-a-new-class-for-the-sink-connector"></a>싱크 커넥터에 대한 새 클래스 만들기
+### <a name="create-a-new-controller-class"></a>새 컨트롤러 클래스 만들기
 
-1. 앱의 패키지 디렉터리에 *EventhubSink.java* 라는 새 Java 파일을 만듭니다. 그리고 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
+1. 앱의 패키지 디렉터리에 *EventProducerController.java* 라는 새 Java 파일을 만든 다음, 파일 텍스트 편집기에서 해당 파일을 열고 다음 줄을 추가합니다.
 
    ```java
    package com.contoso.eventhubs.sample;
-
-   import com.microsoft.azure.spring.integration.core.AzureHeaders;
-   import com.microsoft.azure.spring.integration.core.api.reactor.Checkpointer;
+   
    import org.slf4j.Logger;
    import org.slf4j.LoggerFactory;
-   import org.springframework.cloud.stream.annotation.EnableBinding;
-   import org.springframework.cloud.stream.annotation.StreamListener;
-   import org.springframework.cloud.stream.messaging.Sink;
-   import org.springframework.messaging.handler.annotation.Header;
-
-   @EnableBinding(Sink.class)
-   public class EventhubSink {
-
-      private static final Logger LOGGER = LoggerFactory.getLogger(EventhubSink.class);
-
-      @StreamListener(Sink.INPUT)
-      public void handleMessage(String message, @Header(AzureHeaders.CHECKPOINTER) Checkpointer checkpointer) {
-        LOGGER.info("New message received: '{}'", message);
-        checkpointer.success()
-                .doOnSuccess(s -> LOGGER.info("Message '{}' successfully checkpointed", message))
-                .doOnError((msg) -> {
-                    LOGGER.error(String.valueOf(msg));
-                })
-                .subscribe();
-      }
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.http.ResponseEntity;
+   import org.springframework.messaging.Message;
+   import org.springframework.messaging.support.MessageBuilder;
+   import org.springframework.web.bind.annotation.PostMapping;
+   import org.springframework.web.bind.annotation.RequestBody;
+   import org.springframework.web.bind.annotation.RestController;
+   import reactor.core.publisher.EmitterProcessor;
+   
+   @RestController
+   public class EventProducerController {
+   
+       public static final Logger LOGGER = LoggerFactory.getLogger(EventProducerController.class);
+   
+       @Autowired
+       private EmitterProcessor<Message<String>> emitterProcessor;
+   
+       @PostMapping("/messages")
+       public ResponseEntity<String> sendMessage(@RequestBody String message) {
+           LOGGER.info("Going to add message {} to emitter", message);
+           emitterProcessor.onNext(MessageBuilder.withPayload(message).build());
+           return ResponseEntity.ok("Sent!");
+       }
    }
    ```
 
-1. *EventhubSink.java* 파일을 저장 후 닫습니다.
+1. *EventProducerController.java* 파일을 저장하고 닫습니다.
 
 ## <a name="build-and-test-your-application"></a>애플리케이션 빌드 및 테스트
 
@@ -402,8 +379,8 @@ ms.locfileid: "94560306"
    애플리케이션 로그에 "hello"가 표시됩니다. 예를 들면 다음과 같습니다.
 
    ```output
-   2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
-   2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
+   2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSampleApplication  : New message received: 'hello'
+   2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSampleApplication  : Message 'hello' successfully checkpointed
    ```
 
 ## <a name="next-steps"></a>다음 단계

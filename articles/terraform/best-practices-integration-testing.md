@@ -4,12 +4,12 @@ description: 통합 테스트 및 Azure DevOps를 사용하여 Terraform 프로�
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b9a533475bd291cc0d1fd9fffa418b0ce4498fb0
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 7b10693907feedf94db60315d8819d45fdd47412
+ms.sourcegitcommit: b19420d1a8d526a81e0835012cccc46717fadd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983992"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524898"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>자습서: Azure에서 Terraform 프로젝트에 대한 통합 테스트 구성
 

@@ -4,12 +4,12 @@ description: BDD(동작 기반 개발) 스타일 호환성 테스트를 Terrafor
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 26b32beabaa4526a79c28639fd6f7c68b7a7d49d
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d19c1cfa2c794910d65f98ba71f108e478b1c52b
+ms.sourcegitcommit: b19420d1a8d526a81e0835012cccc46717fadd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401693"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524888"
 ---
 # <a name="tutorial-compliance-testing-with-terraform-and-azure"></a>자습서: Terraform 및 Azure를 사용한 호환성 테스트
 
@@ -31,7 +31,7 @@ ms.locfileid: "91401693"
 
 ## <a name="what-is-compliance-testing"></a>호환성 테스트 정의
 
-호환성 테스트는 시스템에서 규정된 표준을 충족하는지 여부를 확인하는 비기능 테스트 기술입니다. 호환성 테스트는 *적합성 테스트*라고도 합니다.
+호환성 테스트는 시스템에서 규정된 표준을 충족하는지 여부를 확인하는 비기능 테스트 기술입니다. 호환성 테스트는 *적합성 테스트* 라고도 합니다.
 
 대부분의 소프트웨어 팀에서는 표준이 적절하게 적용되고 구현되는지 확인하기 위해 분석을 수행합니다. 표준을 개선하기 위해 동시에 작업하는 경우가 많으며, 이에 따라 품질이 향상됩니다.
 
@@ -49,7 +49,7 @@ ms.locfileid: "91401693"
 
 이 문제를 해결하는 한 가지 방법은 리소스에 태그(예: `role` 및 `creator` 태그)를 지정하는 정책을 정의하는 것입니다. 정책이 정의되면 [Terraform-compliance](https://terraform-compliance.com)와 같은 도구를 사용하여 정책을 준수하도록 합니다.
 
-Terraform-compliance는 *부정적 테스트*에 중점을 둡니다. 부정적 테스트는 시스템에서 예기치 않은 입력 또는 원치 않는 동작을 정상적으로 처리할 수 있는지 확인하는 프로세스입니다. *퍼지*는 부정적 테스트의 한 예입니다. 퍼지를 사용하면 입력을 받는 시스템을 테스트하여 예기치 않은 입력을 안전하게 처리할 수 있는지 확인합니다.
+Terraform-compliance는 *부정적 테스트* 에 중점을 둡니다. 부정적 테스트는 시스템에서 예기치 않은 입력 또는 원치 않는 동작을 정상적으로 처리할 수 있는지 확인하는 프로세스입니다. *퍼지* 는 부정적 테스트의 한 예입니다. 퍼지를 사용하면 입력을 받는 시스템을 테스트하여 예기치 않은 입력을 안전하게 처리할 수 있는지 확인합니다.
 
 다행히 Terraform은 클라우드 인프라 엔터티를 만들거나, 업데이트하거나, 제거하는 모든 API에 대한 추상화 계층입니다. 또한 Terraform은 로컬 구성과 원격 API 응답이 동기화되도록 합니다. Terraform은 대부분 클라우드 API에 사용되므로 인프라에 대해 배포되는 코드에서 특정 정책을 따르도록 하는 방법이 여전히 필요합니다. 무료 오픈 소스 도구인 Terraform-compliance는 이 기능을 Terraform 구성에 제공합니다.
 
@@ -61,7 +61,7 @@ Terraform-compliance를 사용하면 BDD 또는 *동작 기반 개발* 원칙을
 
 ## <a name="looking-at-an-example"></a>예제 살펴보기
 
-이 문서의 앞부분에서 테스트 환경에 사용할 VM을 만드는 호환성 테스트 예제에 대해 살펴보았습니다. 이 섹션에서는 해당 예제를 BDD 기능 및 시나리오로 변환하는 방법을 보여 줍니다. 규칙은 먼저 BDD를 지원하는 데 사용되는 도구인 *Cucumber*를 사용하여 표현됩니다.
+이 문서의 앞부분에서 테스트 환경에 사용할 VM을 만드는 호환성 테스트 예제에 대해 살펴보았습니다. 이 섹션에서는 해당 예제를 BDD 기능 및 시나리오로 변환하는 방법을 보여 줍니다. 규칙은 먼저 BDD를 지원하는 데 사용되는 도구인 *Cucumber* 를 사용하여 표현됩니다.
 
 ```Cucumber
 when creating Azure resources, every new resource should have a tag
@@ -155,7 +155,7 @@ Scenario Outline: Ensure that specific tags are defined
     docker pull eerkunt/terraform-compliance
     ```
     
-1. [docker run](https://docs.docker.com/engine/reference/commandline/run/)을 실행하여 Docker 컨테이너에서 테스트를 실행합니다. **테스트가 실패**합니다. 태그의 존재를 요구하는 첫 번째 규칙은 성공합니다. 그러나 `Role` 및 `Creator` 태그가 없으므로 두 번째 규칙은 실패합니다.
+1. [docker run](https://docs.docker.com/engine/reference/commandline/run/)을 실행하여 Docker 컨테이너에서 테스트를 실행합니다. **테스트가 실패** 합니다. 태그의 존재를 요구하는 첫 번째 규칙은 성공합니다. 그러나 `Role` 및 `Creator` 태그가 없으므로 두 번째 규칙은 실패합니다.
 
     ```bash
     docker run --rm -v $PWD:/target -it eerkunt/terraform-compliance -f features -p tf.out

@@ -2,14 +2,16 @@
 title: '자습서: React SPA에 Microsoft 로그인 단추 추가'
 description: 이 자습서에 제공된 Azure Active Directory 인증은 로그인 및 로그아웃 단추이며, 사용자의 사용자 이름(이메일)에 대한 액세스를 제공합니다. Azure 클라이언트 쪽 SDK `@azure/msal-browser`를 사용하여 TypeScript 애플리케이션을 개발하고, SPA(단일 페이지 애플리케이션)에서 사용자의 상호 작용을 관리합니다.
 ms.topic: tutorial
-ms.date: 12/01/2020
+ms.date: 02/16/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: ffbc8ea2824f7bbfaef3a3ae3579537633f9455b
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.history:
+- 20210216:fix public issue 443
+ms.openlocfilehash: d5d64f1de3637c79a081e64dbf3cd632e15a3ef3
+ms.sourcegitcommit: 450cfb580f0fef7aabd38a7db17ecf7502126ce4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561659"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548844"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>인증에 사용할 단일 페이지 애플리케이션에 Microsoft 로그인 단추 추가
 
@@ -22,7 +24,7 @@ ms.locfileid: "98561659"
 이 자습서에서 빌드하는 SPA는 다음과 같은 작업을 수행하는 React 앱(create-react-app)입니다.
 
 - Office 365 또는 Outlook.com 같은 Microsoft 지원 로그인을 사용하여 로그인
-- 애플리케이션 로그오프
+- 애플리케이션에서 로그오프
 
 빠르고 간단한 단일 페이지 애플리케이션을 제공하기 위해 이 샘플에서는 **create-react-app** 과 TypeScript를 사용합니다. 이 프런트 엔드 프레임워크는 Azure SDK를 사용하는 일반적인 클라이언트 개발에서 다음과 같은 몇 가지 바로 가기를 제공합니다.
 
@@ -31,7 +33,7 @@ ms.locfileid: "98561659"
 
 ## <a name="1-set-up-development-environment"></a>1. 개발 환경 설정
 
-로컬 컴퓨터에 다음 항목이 설치되었는지 확인합니다.
+로컬 컴퓨터에 다음 소프트웨어가 설치되었는지 확인합니다.
 
 - 활성 구독이 포함된 Azure 사용자 계정 [체험 계정 만들기](https://azure.microsoft.com/free/)
 - [Node.js 및 npm](https://nodejs.org/en/download) - 로컬 컴퓨터에 설치

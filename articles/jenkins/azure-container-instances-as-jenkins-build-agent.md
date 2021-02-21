@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Container Instances, 빌드 에이전트
 ms.topic: article
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7633d88897d76f4ed75fa1d7d6c5b0c620db4919
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 6a7578818eb1f59fa2ce2bd46003f799045fc154
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561599"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395391"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>자습서: Azure Container Instances를 Jenkins 빌드 에이전트로 사용
 
@@ -63,7 +63,7 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
 
 1. **원격 루트 디렉터리** 에 값을 입력합니다. 예를 들어 `/home/jenkins/work`
 
-1. 필요할 경우 레이블을 입력합니다. 레이블은 여러 에이전트를 하나의 논리 그룹으로 그룹화하는 데 사용됩니다. 레이블의 예로 Linux 에이전트를 그룹화하는 `linux`가 있습니다.
+1. 사용자 지정 <abbr title="레이블은 여러 에이전트를 하나의 논리 그룹으로 그룹화하는 데 사용됩니다. 레이블의 예로 Linux 에이전트를 그룹화하는 `linux`가 있습니다.">**레이블**</abbr> 값이 `linux`인
 
 1. **시작 방법** 을 **마스터에 연결하여 에이전트 시작** 으로 설정합니다.
 
@@ -97,9 +97,14 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
       --command-line "jenkins-agent -url http://jenkinsserver:port <JENKINS_SECRET> <AGENT_NAME>"
     ```
 
-    컨테이너가 시작되면 Jenkins 컨트롤러 서버에 자동으로 연결됩니다.
+    `http://jenkinsserver:port`, `<JENKINS_SECRET>` 및 `<AGENT_NAME>`을 Jenkins controller 및 에이전트 정보로 바꿉니다. 컨테이너가 시작되면 Jenkins 컨트롤러 서버에 자동으로 연결됩니다.
+
+1. Jenkins 대시보드로 돌아가서 에이전트 상태를 확인합니다.
 
     ![에이전트가 시작됨](./media/azure-container-instances-as-jenkins-build-agent/agent-start.png)
+
+    > [!NOTE]
+    > Jenkins 에이전트는 `5000` 포트를 통해 컨트롤러에 연결하고, 포트가 Jenkins 컨트롤러에 대한 인바운드를 허용하는지 확인합니다.
 
 ## <a name="create-a-build-job"></a>빌드 작업 만들기
 
@@ -109,35 +114,31 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
 
    ![빌드 작업 이름 상자와 프로젝트 형식 목록](./media/azure-container-instances-as-jenkins-build-agent/jenkins-new-job.png)
 
-2. **일반** 에서 **이 프로젝트를 실행할 수 있는 위치 제한** 을 선택합니다. 레이블 식에 **linux** 를 입력합니다. 이렇게 구성하면 이 빌드 작업이 ACI 클라우드에서 실행됩니다.
+1. **일반** 에서 **이 프로젝트를 실행할 수 있는 위치 제한** 을 선택합니다. 레이블 식에 **linux** 를 입력합니다. 이렇게 구성하면 이 빌드 작업이 ACI 클라우드에서 실행됩니다.
 
    ![구성 세부 정보가 제공되는 "일반" 탭](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-01.png)
 
-3. **빌드** 아래에서 **빌드 단계 추가** 를 선택하고 **셸 실행** 을 선택합니다. `echo "aci-demo"`를 명령으로 입력합니다.
+1. **빌드** 아래에서 **빌드 단계 추가** 를 선택하고 **셸 실행** 을 선택합니다. `echo "aci-demo"`를 명령으로 입력합니다.
 
    ![빌드 단계에 대한 선택 영역이 있는 "빌드" 탭](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-02.png)
 
-5. **저장** 을 선택합니다.
+1. **저장** 을 선택합니다.
 
 ## <a name="run-the-build-job"></a>빌드 작업 실행
 
-빌드 작업을 테스트하고 빌드 플랫폼으로 Azure Container Instances를 관찰하려면 수동으로 빌드를 시작합니다.
+빌드 작업을 테스트하고 Azure Container Instances를 관찰하려면 수동으로 빌드를 시작합니다.
 
-1. **지금 빌드** 를 선택하여 빌드 작업을 시작합니다. 작업이 시작될 때까지 몇 분 정도 걸립니다. 다음 이미지와 비슷한 상태가 표시됩니다.
+1. **지금 빌드** 를 선택하여 빌드 작업을 시작합니다. 작업이 시작되면 다음 이미지와 유사한 상태가 표시됩니다.
 
    ![작업 상태가 포함된 "빌드 기록" 정보](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-status.png)
 
-2. 작업이 실행되는 동안 Azure Portal을 열고 Jenkins 리소스 그룹을 살펴봅니다. 컨테이너 인스턴스가 만들어진 것을 볼 수 있습니다. Jenkins 작업이 이 인스턴스 내부에서 실행되고 있습니다.
+1. **빌드 기록** 에서 **#1** 을 클릭합니다.
 
-   ![리소스 그룹의 컨테이너 인스턴스](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci.png)
+    !["콘솔 출력" 콘솔에서 빌드 출력 보기](./media/azure-container-instances-as-jenkins-build-agent/build-history.png)
 
-3. Jenkins가 구성된 Jenkins 실행기 수(기본값 2)보다 많은 작업을 실행하면 여러 컨테이너 인스턴스가 만들어집니다.
+1. **콘솔 출력** 을 선택하여 빌드 출력을 봅니다.
 
-   ![새로 만들어진 컨테이너 인스턴스](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci-multi.png)
-
-4. 모든 빌드 작업이 완료되면 컨테이너 인스턴스가 제거됩니다.
-
-   ![컨테이너 인스턴스가 제거된 리소스 그룹](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci-none.png)
+    !["콘솔 출력" 콘솔에서 빌드 출력 보기](./media/azure-container-instances-as-jenkins-build-agent/build-console-output.png)
 
 ## <a name="next-steps"></a>다음 단계
 

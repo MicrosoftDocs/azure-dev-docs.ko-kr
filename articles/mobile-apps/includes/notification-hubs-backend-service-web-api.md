@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 6fbc1036b06a318d81729691331adb6b868e1d5c
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 0d7c65f9e114a81299b9b877733087ae42985909
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93406677"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554295"
 ---
 ### <a name="create-a-web-project"></a>웹 프로젝트 만들기
 
@@ -21,7 +21,7 @@ ms.locfileid: "93406677"
 
 1. **프로젝트 이름** 에 대해 *PushDemoApi* 를 입력한 다음, **만들기** 를 선택합니다.
 
-1. 디버깅을 시작하여( **명령** + **Enter 키** ) 템플릿 기반 앱을 테스트합니다.
+1. 디버깅을 시작하여(**명령** + **Enter 키**) 템플릿 기반 앱을 테스트합니다.
 
     > [!NOTE]
     > 템플릿 기반 앱은 **WeatherForecastController** 를 *launchUrl* 로 사용하도록 구성되어 있습니다. 이는 **Properties** > **launchSettings.json** 에서 설정됩니다.  
@@ -36,7 +36,7 @@ ms.locfileid: "93406677"
 
 1. **WeatherForecast.cs** 를 삭제합니다.
 
-1. [비밀 관리자 도구](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)를 사용하여 로컬 구성 값을 설정합니다. 솔루션에서 비밀을 분리하면 원본 제어에서 종료되지 않습니다. **터미널** 을 연 다음, 프로젝트 파일의 디렉터리로 이동하여 다음 명령을 실행합니다.
+1. [비밀 관리자 도구](/aspnet/core/security/app-secrets?tabs=linux#secret-manager)를 사용하여 로컬 구성 값을 설정합니다. 솔루션에서 비밀을 분리하면 원본 제어에서 종료되지 않습니다. **터미널** 을 연 다음, 프로젝트 파일의 디렉터리로 이동하여 다음 명령을 실행합니다.
 
     ```bash
     dotnet user-secrets init
@@ -46,10 +46,10 @@ ms.locfileid: "93406677"
 
     자리 표시자 값을 사용자 고유의 알림 허브 이름 및 연결 문자열 값으로 바꿉니다. [알림 허브 만들기](#create-a-notification-hub) 섹션에서 이를 적어 두었습니다. 그렇지 않으면 [Azure](https://portal.azure.com)에서 조회할 수 있습니다.
 
-    **NotificationsHub:Name** :  
+    **NotificationsHub:Name**:  
     **개요** 의 위쪽에 있는 **기본 정보** 요약의 *이름* 을 참조하세요.  
 
-    **NotificationHub:ConnectionString** :  
+    **NotificationHub:ConnectionString**:  
     **액세스 정책** 의 *DefaultFullSharedAccessSignature* 를 참조하세요.
 
     > [!NOTE]
@@ -57,7 +57,7 @@ ms.locfileid: "93406677"
 
 ### <a name="authenticate-clients-using-an-api-key-optional"></a>API 키를 사용하여 클라이언트 인증(선택 사항)
 
-API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분합니다. API 키는 [ASP.NET 미들웨어](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)를 통해 쉽게 구성할 수 있습니다.
+API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분합니다. API 키는 [ASP.NET 미들웨어](/aspnet/core/fundamentals/middleware/)를 통해 쉽게 구성할 수 있습니다.
 
 1. **API 키** 를 로컬 구성 값에 추가합니다.
 
@@ -148,7 +148,7 @@ API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분
     ```
 
     > [!NOTE]
-    > [인증 처리기](/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler)는 체계(이 경우 사용자 지정 API 키 체계)의 동작을 구현하는 유형입니다.
+    > [인증 처리기](/aspnet/core/security/authentication/#authentication-handler)는 체계(이 경우 사용자 지정 API 키 체계)의 동작을 구현하는 유형입니다.
 
 1. *ApiKeyAuthenticationBuilderExtensions.cs* 라는 다른 **빈 클래스** 를 **Authentication** 폴더에 추가하고, 다음 구현을 추가합니다.
 
@@ -225,7 +225,7 @@ API 키는 토큰만큼 안전하지 않지만 이 자습서의 용도로 충분
 
 ### <a name="add-dependencies-and-configure-services"></a>종속성 추가 및 서비스 구성
 
-ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion)를 구현하는 기술인 [DI(종속성 주입)](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) 소프트웨어 디자인 패턴을 지원합니다.  
+ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion)를 구현하는 기술인 [DI(종속성 주입)](/aspnet/core/fundamentals/dependency-injection) 소프트웨어 디자인 패턴을 지원합니다.  
 
 백 엔드 작업에 대한 알림 허브 및 [Notification Hubs SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)를 사용하면 서비스 내에 캡슐화됩니다. 서비스는 적절한 추상화를 통해 등록되고 사용할 수 있게 됩니다.
 
@@ -262,7 +262,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotne
     ```
 
     > [!NOTE]
-    > 이 클래스에는 이 시나리오에 필요한 제네릭 및 자동 알림에 대한 토큰화된 알림 페이로드가 포함되어 있습니다. 페이로드는 서비스를 통해 기존 설치를 업데이트하지 않고도 실험을 수행할 수 있도록 [설치](/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) 외부에서 정의됩니다. 설치에 대한 변경을 이 방식으로 처리하는 것은 이 자습서의 범위를 벗어납니다. 프로덕션의 경우 [사용자 지정 템플릿](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)을 사용하는 것이 좋습니다.
+    > 이 클래스에는 이 시나리오에 필요한 제네릭 및 자동 알림에 대한 토큰화된 알림 페이로드가 포함되어 있습니다. 페이로드는 서비스를 통해 기존 설치를 업데이트하지 않고도 실험을 수행할 수 있도록 [설치](/dotnet/api/microsoft.azure.notificationhubs.installation) 외부에서 정의됩니다. 설치에 대한 변경을 이 방식으로 처리하는 것은 이 자습서의 범위를 벗어납니다. 프로덕션의 경우 [사용자 지정 템플릿](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)을 사용하는 것이 좋습니다.
 
 1. *DeviceInstallation.cs* 라는 다른 **빈 클래스** 를 **Models** 폴더에 추가한 후 다음 구현을 추가합니다.
 
@@ -587,9 +587,9 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotne
     }
     ```
 
-1. **launchSettings.json** ( **Properties** 폴더 내)에서 **RegistrationsController** **Route** 특성에 지정된 URL과 일치하도록 **launchUrl** 을 `weatherforecast`에서 *api/notifications* 로 변경합니다.
+1. **launchSettings.json**(**Properties** 폴더 내)에서 **RegistrationsController** **Route** 특성에 지정된 URL과 일치하도록 **launchUrl** 을 `weatherforecast`에서 *api/notifications* 로 변경합니다.
 
-1. 디버깅을 시작하여( **명령** + **Enter 키** ) 앱에서 새 **NotificationsController** 를 사용하고 **401 권한 없음** 상태를 반환하는지 확인합니다.
+1. 디버깅을 시작하여(**명령** + **Enter 키**) 앱에서 새 **NotificationsController** 를 사용하고 **401 권한 없음** 상태를 반환하는지 확인합니다.
 
     > [!NOTE]
     > Visual Studio에서 브라우저를 통해 앱을 자동으로 시작하지 못할 수 있습니다. 이 시점부터 [Postman](https://www.postman.com/downloads)을 사용하여 API를 테스트합니다.
@@ -601,7 +601,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotne
     ```
 
     > [!NOTE]
-    > 기본 프로필에 대해 **applicationUrl** 은 'https://localhost:5001 '이어야 합니다. **IIS** (Windows의 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)에서 기본값)를 사용하는 경우 **iisSettings** 항목에 지정된 **applicationUrl** 을 대신 사용해야 합니다. 주소가 잘못되면 404 응답을 받게 됩니다.
+    > 기본 프로필에 대해 **applicationUrl** 은 'https://localhost:5001 '이어야 합니다. **IIS**(Windows의 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)에서 기본값)를 사용하는 경우 **iisSettings** 항목에 지정된 **applicationUrl** 을 대신 사용해야 합니다. 주소가 잘못되면 404 응답을 받게 됩니다.
 
 1. [API 키를 사용하여 클라이언트 인증](#authenticate-clients-using-an-api-key-optional) 섹션을 완료하도록 선택한 경우 **apikey** 값을 포함하도록 요청 헤더를 구성해야 합니다.
 
@@ -712,7 +712,7 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotne
     > [!NOTE]
     > URL은 이전에 지정한 API 앱 이름을 `https://<app_name>.azurewebsites.net` 형식으로 사용합니다.
 
-1. 목록( **설정** 아래)에서 **구성** 을 선택합니다.  
+1. 목록(**설정** 아래)에서 **구성** 을 선택합니다.  
 
 1. 아래의 각 설정에 대해 **새 애플리케이션 설정** 을 클릭하여 **이름** 및 **값** 을 입력한 다음, **확인** 을 클릭합니다.
 
@@ -725,14 +725,14 @@ ASP.NET Core는 클래스와 해당 종속성 간에 [IoC(제어 반전)](/dotne
    > [!NOTE]
    > 이러한 설정은 이전에 사용자 설정에서 정의한 설정과 동일하며, 복사할 수 있습니다. **Authentication:ApiKey** 설정은 [API 키를 사용하여 클라이언트 인증](#authenticate-clients-using-an-api-key-optional) 섹션을 완료하도록 선택한 경우에만 필요합니다. 프로덕션 시나리오의 경우 [Azure KeyVault](https://azure.microsoft.com/services/key-vault)와 같은 옵션을 살펴볼 수 있습니다. 여기서는 간단히 하기 위해 이러한 설정이 애플리케이션 설정으로 추가되었습니다.
 
-1. 모든 애플리케이션 설정이 추가되면 **저장** , **계속** 을 차례로 클릭합니다.
+1. 모든 애플리케이션 설정이 추가되면 **저장**, **계속** 을 차례로 클릭합니다.
 
 ### <a name="publish-the-backend-service"></a>백 엔드 서비스 게시
 
 다음으로, 모든 디바이스에서 액세스할 수 있도록 앱을 API 앱에 배포합니다.  
 
 >[!NOTE]
-> 다음 단계는 [Mac용 Visual Studio](https://visualstudio.microsoft.com/vs/mac/)에만 적용됩니다. Windows에서 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)를 사용하는 경우 게시 흐름이 달라집니다. [Windows의 Azure App Service에 게시](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)를 참조하세요.
+> 다음 단계는 [Mac용 Visual Studio](https://visualstudio.microsoft.com/vs/mac/)에만 적용됩니다. Windows에서 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)를 사용하는 경우 게시 흐름이 달라집니다. [Windows의 Azure App Service에 게시](/visualstudio/deployment/quickstart-deploy-to-azure#publish-to-azure-app-service-on-windows)를 참조하세요.
 
 1. 구성을 **디버그** 에서 **릴리스** 로 아직 변경하지 않은 경우 이렇게 변경합니다.
 

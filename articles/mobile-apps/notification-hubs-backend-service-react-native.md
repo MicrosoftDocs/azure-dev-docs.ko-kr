@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: alstrakh
-ms.openlocfilehash: b8846a2171c6f99a4796d288774c3b525093238a
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: ac6b1cc183cd06f8186a678e006602c57a54238e
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493249"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554337"
 ---
 # <a name="tutorial-send-push-notifications-to-react-native-apps-using-azure-notification-hubs-via-a-backend-service"></a>자습서: 백 엔드 서비스를 통해 Azure Notification Hubs를 사용하여 React Native 앱에 푸시 알림 보내기  
 
@@ -23,7 +23,7 @@ ms.locfileid: "91493249"
 > * [Flutter](notification-hubs-backend-service-flutter.md)
 > * [React Native](notification-hubs-backend-service-react-native.md)
 
-이 자습서에서는 [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)를 사용하여 **Android** 및 **iOS**를 대상으로 하는 [React Native](https://reactnative.dev/) 애플리케이션에 푸시 알림을 보냅니다.  
+이 자습서에서는 [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)를 사용하여 **Android** 및 **iOS** 를 대상으로 하는 [React Native](https://reactnative.dev/) 애플리케이션에 푸시 알림을 보냅니다.  
 
 [!INCLUDE [Notification Hubs Backend Service Introduction](includes/notification-hubs-backend-service-introduction.md)]
 
@@ -54,7 +54,7 @@ iOS의 경우 다음이 필요합니다.
 
 * 활성 [Apple Developer](https://developer.apple.com) 계정
 * [개발자 계정에 등록된](https://help.apple.com/developer-account/#/dev40df0d9fa) 물리적 iOS 디바이스 *(iOS 13.0 이상 실행)*
-* [물리적 디바이스에서 앱을 실행](https://help.apple.com/xcode/mac/current/#/dev5a825a1ca)할 수 있도록 **키 집합**에 설치된 **.p12** [개발 인증서](https://help.apple.com/developer-account/#/dev04fd06d56)
+* [물리적 디바이스에서 앱을 실행](https://help.apple.com/xcode/mac/current/#/dev5a825a1ca)할 수 있도록 **키 집합** 에 설치된 **.p12** [개발 인증서](https://help.apple.com/developer-account/#/dev04fd06d56)
 
 > [!NOTE]
 > iOS 시뮬레이터는 원격 알림을 지원하지 않으므로 iOS에서 이 샘플을 탐색할 때 물리적 디바이스가 필요합니다. 그러나 이 자습서를 완료하기 위해 **Android** 및 **iOS** 둘 다에서 앱을 실행할 필요는 없습니다.
@@ -62,7 +62,7 @@ iOS의 경우 다음이 필요합니다.
 이전 환경 없이 이 첫 번째 원칙 예제의 단계를 따라 할 수 있습니다. 하지만 다음과 같은 내용을 알아두는 것이 좋습니다.
 
 * [Apple 개발자 포털](https://developer.apple.com)
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core)
 * [Google Firebase 콘솔](https://console.firebase.google.com/u/0/)
 * [Microsoft Azure](https://portal.azure.com) 및 [Azure Notification Hubs를 사용하여 iOS 앱에 푸시 알림 보내기](/azure/notification-hubs/ios-sdk-get-started)
 * [React Native](https://reactnative.dev/docs/getting-started).
@@ -118,7 +118,7 @@ iOS의 경우 다음이 필요합니다.
 ## <a name="related-links"></a>관련 링크
 
 * [Azure Notification Hubs 개요](/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [Mac용 Visual Studio 설치](/visualstudio/mac/installation?view=vsmac-2019)
+* [Mac용 Visual Studio 설치](/visualstudio/mac/installation)
 * [Visual Studio Code 설치](https://code.visualstudio.com/download)
 * [React Native 개발 환경 설정](https://reactnative.dev/docs/environment-setup)
 * [백 엔드 작업에 대한 Notification Hubs SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)

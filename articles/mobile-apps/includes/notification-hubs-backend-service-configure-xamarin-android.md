@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: faacb54f9e8a16cf4ef5b39aed0a3e42a4b3f255
-ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
+ms.openlocfilehash: f69c6287d0d4904c1c19ba7e9a115b85bc621185
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97866098"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99974481"
 ---
 ### <a name="validate-package-name-and-permissions"></a>패키지 이름 및 권한 유효성 검사
 
@@ -80,7 +80,7 @@ ms.locfileid: "97866098"
                 if (!NotificationsSupported)
                     throw new Exception(GetPlayServicesError());
 
-                if (string.IsNullOrWhitespace(Token))
+                if (string.IsNullOrWhiteSpace(Token))
                     throw new Exception("Unable to resolve token for FCM");
 
                 var installation = new DeviceInstallation
@@ -111,7 +111,7 @@ ms.locfileid: "97866098"
     ```
 
     > [!NOTE]
-    > 이 클래스는 알림 허브 등록 페이로드의 일부로 고유한 ID([Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9) 사용)를 제공합니다.
+    > 이 클래스는 알림 허브 등록 페이로드의 일부로 고유한 ID([Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid) 사용)를 제공합니다.
 
 1. 다른 **빈 클래스** 를 *PushNotificationFirebaseMessagingService.cs* 라는 **Services** 폴더에 추가하고 다음 구현을 추가합니다.
 

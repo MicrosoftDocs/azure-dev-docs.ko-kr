@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: 308e727f57ed086899d4fb5906235cb5a17bda16
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: d42f44226169232c18ebdd8039f0cf9ceb1018fc
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337188"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554316"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>자습서: 백 엔드 서비스를 통해 Azure Notification Hubs를 사용하여 Xamarin.Forms 앱에 푸시 알림 보내기  
 
@@ -23,7 +23,7 @@ ms.locfileid: "92337188"
 > * [Flutter](notification-hubs-backend-service-flutter.md)
 > * [React Native](notification-hubs-backend-service-react-native.md)
 
-이 자습서에서는 [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)를 사용하여 **Android** 및 **iOS**를 대상으로 하는 [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms) 애플리케이션에 푸시 알림을 보냅니다.  
+이 자습서에서는 [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)를 사용하여 **Android** 및 **iOS** 를 대상으로 하는 [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms) 애플리케이션에 푸시 알림을 보냅니다.  
 
 [!INCLUDE [Notification Hubs Backend Service Introduction](includes/notification-hubs-backend-service-introduction.md)]
 
@@ -44,7 +44,7 @@ ms.locfileid: "92337188"
 
 * 리소스를 만들고 관리할 수 있는 [Azure 구독](https://azure.microsoft.com/free/dotnet)
 * [Mac용 Visual Studio](https://visualstudio.microsoft.com/vs/mac/)가 설치된 Mac 또는 [Visual Studio 2019](https://visualstudio.microsoft.com/vs)를 실행하는 PC
-* [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 사용자는 **.NET을 사용한 모바일 개발**과 **ASP.NET 및 웹 개발** 워크로드가 설치되어 있어야 합니다.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs) 사용자는 **.NET을 사용한 모바일 개발** 과 **ASP.NET 및 웹 개발** 워크로드가 설치되어 있어야 합니다.
 * **Android**(물리적 또는 에뮬레이터 디바이스) 또는 **iOS**(물리적 디바이스만 해당)에서 앱을 실행하는 기능
 
 Android의 경우 다음이 필요합니다.
@@ -55,7 +55,7 @@ iOS의 경우 다음이 필요합니다.
 
 * 활성 [Apple Developer](https://developer.apple.com) 계정
 * [개발자 계정에 등록된](https://help.apple.com/developer-account/#/dev40df0d9fa) 물리적 iOS 디바이스 *(iOS 13.0 이상 실행)*
-* [물리적 디바이스에서 앱을 실행](https://help.apple.com/xcode/mac/current/#/dev5a825a1ca)할 수 있도록 **키 집합**에 설치된 **.p12** [개발 인증서](https://help.apple.com/developer-account/#/dev04fd06d56)
+* [물리적 디바이스에서 앱을 실행](https://help.apple.com/xcode/mac/current/#/dev5a825a1ca)할 수 있도록 **키 집합** 에 설치된 **.p12** [개발 인증서](https://help.apple.com/developer-account/#/dev04fd06d56)
 
 > [!NOTE]
 > iOS 시뮬레이터는 원격 알림을 지원하지 않으므로 iOS에서 이 샘플을 탐색할 때 물리적 디바이스가 필요합니다. 그러나 이 자습서를 완료하기 위해 **Android** 및 **iOS** 둘 다에서 앱을 실행할 필요는 없습니다.
@@ -63,7 +63,7 @@ iOS의 경우 다음이 필요합니다.
 이전 환경 없이 이 첫 번째 원칙 예제의 단계를 따라 할 수 있습니다. 하지만 다음과 같은 내용을 알아두는 것이 좋습니다.
 
 * [Apple 개발자 포털](https://developer.apple.com)
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1) 및 [웹 API](https://dotnet.microsoft.com/apps/aspnet/apis)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core) 및 [웹 API](https://dotnet.microsoft.com/apps/aspnet/apis)
 * [Google Firebase 콘솔](https://console.firebase.google.com/u/0/)
 * [Microsoft Azure](https://portal.azure.com) 및 [Azure Notification Hubs를 사용하여 iOS 앱에 푸시 알림 보내기](/azure/notification-hubs/ios-sdk-get-started)
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) 및 [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)
@@ -120,7 +120,7 @@ iOS의 경우 다음이 필요합니다.
 ## <a name="related-links"></a>관련 링크
 
 * [Azure Notification Hubs 개요](/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [Mac용 Visual Studio 설치](/visualstudio/mac/installation?view=vsmac-2019)
+* [Mac용 Visual Studio 설치](/visualstudio/mac/installation)
 * [Windows에 Xamarin 설치](/xamarin/get-started/installation/windows)
 * [백 엔드 작업에 대한 Notification Hubs SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub의 Notification Hubs SDK](https://github.com/Azure/azure-notificationhubs)

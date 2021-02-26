@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 4dba0dcf6fe960b80e445f865644997669ce9b36
-ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
+ms.openlocfilehash: 87509c0201407eb603f776e8b4994fc6f984cb6c
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97866021"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99974258"
 ---
 ### <a name="configure-infoplist-and-entitlementsplist"></a>Info.plist 및 Entitlements.plist 구성
 
@@ -65,7 +65,7 @@ ms.locfileid: "97866021"
                 if (!NotificationsSupported)
                     throw new Exception(GetNotificationsSupportError());
 
-                if (string.IsNullOrWhitespace(Token))
+                if (string.IsNullOrWhiteSpace(Token))
                     throw new Exception("Unable to resolve token for APNS");
 
                 var installation = new DeviceInstallation
@@ -96,7 +96,7 @@ ms.locfileid: "97866021"
     ```
 
     > [!NOTE]
-    > 이 클래스는 고유 ID([UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12) 값 사용) 및 알림 허브 등록 페이로드를 제공합니다.
+    > 이 클래스는 고유 ID([UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor) 값 사용) 및 알림 허브 등록 페이로드를 제공합니다.
 
 1. *Extensions* 라는 새 폴더를 **PushDemo.iOS** 프로젝트에 추가하고, 다음 구현을 사용하여 *NSDataExtensions.cs* 라는 **빈 클래스** 를 해당 폴더에 추가합니다.
 

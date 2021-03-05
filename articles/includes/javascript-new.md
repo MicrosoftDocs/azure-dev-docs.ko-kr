@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fd03afae59d43274647b32a5e1f122cc220d59a1
-ms.sourcegitcommit: 450cfb580f0fef7aabd38a7db17ecf7502126ce4
+ms.openlocfilehash: a8a4c08b2b9dbfe40f0c8e056109eeea4b7cc14f
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551648"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118495"
 ---
 | Name | 패키지 | Docs | 원본 |
 | ---- | ------- | ---- | ------ |
@@ -12,12 +12,11 @@ ms.locfileid: "100551648"
 | 앱 구성 | npm [1.1.0](https://www.npmjs.com/package/@azure/app-configuration/v/1.1.0) | [docs](/javascript/api/overview/azure/app-configuration-readme/) | GitHub [1.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/app-configuration_1.1.0/sdk/appconfiguration/app-configuration/) |
 | Azure Security Attestation | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/attestation/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/attestation-readme/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/attestation_1.0.0-beta.2/sdk/attestation/attestation/) |
 | Cognitive Search | npm [11.1.0](https://www.npmjs.com/package/@azure/search-documents/v/11.1.0) | [docs](/javascript/api/overview/azure/search-documents-readme/) | GitHub [11.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.1.0/sdk/search/search-documents/) |
-| 통신 관리 | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-administration/v/1.0.0-beta.4) | [docs](/javascript/api/overview/azure/communication-administration-readme/) | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-administration_1.0.0-beta.4/sdk/communication/communication-administration/) |
 | 통신 채팅 | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-chat/v/1.0.0-beta.4) | [docs](/javascript/api/overview/azure/communication-chat-readme/) | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-chat_1.0.0-beta.4/sdk/communication/communication-chat/) |
 | 통신 공통 | npm [1.0.0-beta.5](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0-beta.5) | [docs](/javascript/api/overview/azure/communication-common-readme/) | GitHub [1.0.0-beta.5](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0-beta.5/sdk/communication/communication-common/) |
-| 통신 ID | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-identity/v/1.0.0-beta.4) |  | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-identity_1.0.0-beta.4/sdk/communication/communication-identity/) |
+| 통신 ID | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-identity/v/1.0.0-beta.4) | [docs](/javascript/api/overview/azure/communication-identity-readme/) | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-identity_1.0.0-beta.4/sdk/communication/communication-identity/) |
 | 통신 Sms | npm [1.0.0-beta.3](https://www.npmjs.com/package/@azure/communication-sms/v/1.0.0-beta.3) | [docs](/javascript/api/overview/azure/communication-sms-readme/) | GitHub [1.0.0-beta.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-sms_1.0.0-beta.3/sdk/communication/communication-sms/) |
-| 코어 - 컨트롤러 중단 | npm [1.0.2](https://www.npmjs.com/package/@azure/abort-controller/v/1.0.2) | [docs](/javascript/api/overview/azure/abort-controller-readme/) | GitHub [1.0.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/abort-controller_1.0.2/sdk/core/abort-controller/) |
+| 코어 - 컨트롤러 중단 | npm [1.0.3](https://www.npmjs.com/package/@azure/abort-controller/v/1.0.3) | [docs](/javascript/api/overview/azure/abort-controller-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/abort-controller_1.0.3/sdk/core/abort-controller/) |
 | 코어 - AMQP | npm [2.1.0](https://www.npmjs.com/package/@azure/core-amqp/v/2.1.0) | [docs](/javascript/api/overview/azure/core-amqp-readme/) | GitHub [2.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-amqp_2.1.0/sdk/core/core-amqp/) |
 | 코어 - 인증 | npm [1.2.0](https://www.npmjs.com/package/@azure/core-auth/v/1.2.0) | [docs](/javascript/api/overview/azure/core-auth-readme/) | GitHub [1.2.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-auth_1.2.0/sdk/core/core-auth/) |
 | Core - HTTP | npm [1.2.3](https://www.npmjs.com/package/@azure/core-http/v/1.2.3) | [docs](/javascript/api/overview/azure/core-http-readme/) | GitHub [1.2.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-http_1.2.3/sdk/core/core-http/) |

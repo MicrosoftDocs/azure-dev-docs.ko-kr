@@ -10,18 +10,18 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 251978c321c029d947c5eef7a2764f9b2da0560a
-  ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+  ms.openlocfilehash: 860a6d12f7fe9bc54e921a4b92c18a1211315789
+  ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/18/2021
-  ms.locfileid: "98561269"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "102118415"
 productDirectory:
   items:
   - title: Python
     imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
     links:
-    - url: ./python/tutorial-vs-code-serverless-python-01.md
+    - url: /azure/azure-functions/create-first-function-vs-code-python
       text: Azure Functions에 서버리스 Python 앱 배포
     - url: ./python/tutorial-deploy-app-service-on-linux-01.md
       text: Azure App Service에 Python 앱 배포

@@ -50,6 +50,8 @@
           href: tutorial-python-postgresql-app-portal.md
         - name: Azure CLI 사용
           href: /azure/app-service/tutorial-python-postgresql-app
+    - name: 정적 웹 사이트
+      href: how-to-create-static-sites.md
     - name: CI/CD 설정
       href: /azure/devops/pipelines/languages/python-webapp
     - name: Linux 호스트 구성

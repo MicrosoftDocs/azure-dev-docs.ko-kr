@@ -11,12 +11,12 @@ metadata:
   ms.author: tarcher
   ms.date: 04/03/2020
   ms.custom: devx-track-ansible
-  ms.openlocfilehash: 7410a36718677568aa3df8bea4b8576ddd459886
-  ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+  ms.openlocfilehash: 1d0be5fbeb4e063b796eb40572381eee49a609aa
+  ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/30/2020
-  ms.locfileid: "91585521"
+  ms.lasthandoff: 03/05/2021
+  ms.locfileid: "102220352"
 landingContent:
 - title: Azure의 Ansible 정보
   linkLists:
@@ -42,10 +42,6 @@ landingContent:
     links:
     - text: 동적 인벤토리 구성
       url: dynamic-inventory-configure.md
-  - linkListType: download
-    links:
-    - text: Ansible용 Visual Studio Code 확장
-      url: https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible
 - title: Virtual Machines 관리
   linkLists:
   - linkListType: quickstart

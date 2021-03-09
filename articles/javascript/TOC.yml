@@ -5,6 +5,8 @@
       href: whats-new-docs.md
     - name: Developer Advocates의 새로운 기능
       href: whats-new-developer-advocacy.md
+    - name: 개발자용 상위 작업
+      href: how-to/common-javascript-tasks.md
     - name: JavaScript로 Azure에서 시작
       items:
         - name: JavaScript 개발자를 위한 Azure란?
@@ -157,23 +159,33 @@
               href: how-to/with-visual-studio-code/create-azure-database.md
         - name: Azure CLI 사용
           items:
-            - name: 컨테이너 레지스트리 만들기 및 사용
+            - name: 컨테이너 레지스트리
               href: how-to/with-azure-cli/create-container-registry-resource.md
             - name: 웹앱 도메인 이름 구성
               href: how-to/with-azure-cli/configure-app-service-custom-domain-name.md
-            - name: MongoDB Cosmos DB 리소스 사용
+            - name: Cassandra Cosmos DB 리소스
+              href: how-to/with-azure-cli/create-cassandra-db.md
+            - name: Cache for Redis
+              href: how-to/with-azure-cli/create-cache-for-redis-db.md
+            - name: MongoDB Cosmos DB 리소스
               href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
-            - name: MariaDB 리소스 사용
+            - name: MariaDB 리소스
               href: how-to/with-azure-cli/create-mariadb.md
-            - name: MySQL 리소스 사용
+            - name: MySQL 리소스
               href: how-to/with-azure-cli/create-mysql-db.md
-            - name: PostgreSQL 리소스 사용
+            - name: PostgreSQL 리소스
               href: how-to/with-azure-cli/create-postgresql-server-resource.md
+            - name: Cosmos DB의 SQL API
+              href: how-to/with-azure-cli/create-cosmos-sql-api-resource.md
         - name: 데이터베이스 사용
           items:
             - name: 시작
               href: how-to/with-database/getting-started.md
-            - name: CosmosDB의 MongoDB
+            - name: Cache for Redis
+              href: how-to/with-database/use-azure-cache-for-redis-db.md
+            - name: Cosmos DB의 Cassandra
+              href: how-to/with-database/use-cassandra-as-cosmos-db.md
+            - name: Cosmos DB의 MongoDB
               href: how-to/with-database/use-mongodb-as-cosmosdb.md
             - name: MariaDB
               href: how-to/with-database/use-mariadb.md
@@ -181,6 +193,8 @@
               href: how-to/with-database/use-mysql-db.md
             - name: PostgreSQL
               href: how-to/with-database/use-postgresql-db.md
+            - name: Cosmos DB의 SQL API
+              href: how-to/with-database/use-sql-api-as-cosmos-db.md
         - name: 웹 앱 배포
           href: how-to/deploy-web-app.md
         - name: 컨테이너 배포

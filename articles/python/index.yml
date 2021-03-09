@@ -14,19 +14,19 @@ metadata:
   ms.service: multiple
   ms.devlang: python
   ms.custom: devx-track-python
-  ms.openlocfilehash: b242630cbc9b2e352e857704402dbac84f1564a5
-  ms.sourcegitcommit: 450cfb580f0fef7aabd38a7db17ecf7502126ce4
+  ms.openlocfilehash: 831a749cb0fdea1e9c6f1e10431d5060c819ea17
+  ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 02/16/2021
-  ms.locfileid: "100548834"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "102118595"
 landingContent:
 - title: 서버리스 Functions
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Visual Studio Code를 사용하여 배포
-      url: tutorial-vs-code-serverless-python-01.md
+      url: /azure/azure-functions/create-first-function-vs-code-python
     - text: 명령줄을 사용하여 배포
       url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
     - text: Visual Studio Code를 사용하여 스토리지에 연결
@@ -47,14 +47,10 @@ landingContent:
       url: /azure/app-service/tutorial-python-postgresql-app
     - text: Visual Studio Code를 사용하는 컨테이너
       url: tutorial-deploy-containers-01.md
+    - text: Azure Storage를 사용하는 정적 사이트
+      url: how-to-create-static-sites.md
     - text: CI/CD 파이프라인
       url: /azure/devops/pipelines/ecosystems/python-webapp
-- title: 의견을 알려 주세요.
-  linkLists:
-  - linkListType: whats-new
-    links:
-    - text: 이 페이지에 대한 의견을 알려주세요.
-      url: https://ux.microsoft.com/Talk/PythonDevCenterDocumentation
 - title: 데이터 및 스토리지
   linkLists:
   - linkListType: deploy

@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 57dbe81eb0ce2b8b7c8766934b765dd0f057e51b
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010203"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118318"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Eclipse용 Azure 도구 키트 설치
 
@@ -28,7 +28,7 @@ Azure Toolkit for Eclipse는 Eclipse 개발 환경을 사용하여 간단하고 
 
 [!INCLUDE [basic-prerequisites](includes/basic-prerequisites.md)]
 
-Azure Toolkit for Eclipse를 설치하는 방법에는 두 가지 방법, 즉 **Eclipse 마켓플레이스**에 액세스하는 방법 및 도움말 메뉴에서 **새 소프트웨어 설치** 옵션을 사용하는 방법이 있습니다. 다음 섹션에서는 두 가지 설치 방법을 모두 보여 줍니다.
+Azure Toolkit for Eclipse를 설치하는 방법에는 두 가지 방법, 즉 **Eclipse 마켓플레이스** 에 액세스하는 방법 및 도움말 메뉴에서 **새 소프트웨어 설치** 옵션을 사용하는 방법이 있습니다. 다음 섹션에서는 두 가지 설치 방법을 모두 보여 줍니다.
 
 ## <a name="eclipse-marketplace"></a>Eclipse 마켓플레이스
 
@@ -38,7 +38,7 @@ Eclipse IDE에서 Eclipse 마켓플레이스 마법사를 사용하면 [Eclipse 
 
       [![실행 중인 Eclipse* 작업 영역으로 끌어옵니다. *Eclipse 마켓플레이스 클라이언트 필요](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "실행 중인 Eclipse* 작업 영역으로 끌어옵니다. *Eclipse 마켓플레이스 클라이언트 필요")
 
-   * Eclipse IDE에서 **도움말** 메뉴를 클릭하고, **Eclipse 마켓플레이스**로 이동하여 "Azure Toolkit for Eclipse"를 검색한 다음, **설치**를 클릭합니다.
+   * Eclipse IDE에서 **도움말** 메뉴를 클릭하고, **Eclipse 마켓플레이스** 로 이동하여 "Azure Toolkit for Eclipse"를 검색한 다음, **설치** 를 클릭합니다.
 
       :::image type="content" source="media/installation/eclipse-marketplace-button.png" alt-text="마켓플레이스 창, 도움말 메뉴."::: 
 
@@ -55,28 +55,28 @@ Eclipse IDE에서 Eclipse 마켓플레이스 마법사를 사용하면 [Eclipse 
    | **Java용 Microsoft Azure 라이브러리 패키지** | 스토리지, service bus, 서비스 런타임 등의 Microsoft Azure 서비스에 액세스하기 위한 API를 제공합니다. | 
    | **Eclipse용 WebApp 플러그 인** | 웹 애플리케이션을 Azure App Services로 배포하도록 설정합니다. | 
 
-1. **Review Licenses** 대화 상자에서 사용권 계약 조건을 검토합니다. 사용권 계약 조건에 동의하면 **서비스 계약 조건에 동의합니다.** 를 클릭한 다음, **마침**을 클릭합니다. 
+1. **Review Licenses** 대화 상자에서 사용권 계약 조건을 검토합니다. 사용권 계약 조건에 동의하면 **서비스 계약 조건에 동의합니다.** 를 클릭한 다음, **마침** 을 클릭합니다. 
 
    > [!NOTE]
    > Eclipse 작업 영역의 오른쪽 아래 모서리에서 설치 진행률을 확인할 수 있습니다.
 
-4. 설치가 완료되면 Eclipse IDE를 다시 시작하여 소프트웨어 업데이트를 적용하라는 메시지가 표시됩니다. **지금 다시 시작**을 클릭합니다.
+4. 설치가 완료되면 Eclipse IDE를 다시 시작하여 소프트웨어 업데이트를 적용하라는 메시지가 표시됩니다. **지금 다시 시작** 을 클릭합니다.
 
 ## <a name="install-new-software"></a>새 소프트웨어 설치
 
 *도움말* 메뉴에서 직접 Azure Toolkit for Eclipse를 새 소프트웨어 유형으로 설치할 수 있습니다.
 
-1. **도움말** 메뉴를 클릭한 다음, **새 소프트웨어 설치**를 클릭합니다.
+1. **도움말** 메뉴를 클릭한 다음, **새 소프트웨어 설치** 를 클릭합니다.
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="마켓플레이스 창, 도움말 메뉴."::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="새 소프트웨어 설치, 도움말 메뉴"::: 
 
-1. **사용 가능한 소프트웨어** 대화 상자의 **작업** 텍스트 상자에서 `http://dl.microsoft.com/eclipse/`를 입력합니다.
+1. **사용 가능한 소프트웨어** 대화 상자의 **작업** 텍스트 상자에서 `http://azuredownloads.blob.core.windows.net/eclipse/`를 입력합니다.
 
-1. **이름** 창에서 **Java용 Azure 도구 키트**를 선택하고 **Contact all update sites during install to find required software**를 선택하지 않습니다. 화면은 다음과 유사한 모양입니다.
+1. **이름** 창에서 **Java용 Azure 도구 키트** 를 선택하고 **Contact all update sites during install to find required software** 를 선택하지 않습니다. 화면은 다음과 유사한 모양입니다.
 
    ![Eclipse용 Azure 도구 키트 설치][02]
 
-1. **Azure Toolkit for Java**를 펼치면 설치되는 구성 요소 목록이 표시됩니다. 예를 들어 다음과 같습니다.
+1. **Azure Toolkit for Java** 를 펼치면 설치되는 구성 요소 목록이 표시됩니다. 예를 들어 다음과 같습니다.
 
    | 기능 | Description | 
    |---|---| 
@@ -89,11 +89,11 @@ Eclipse IDE에서 Eclipse 마켓플레이스 마법사를 사용하면 [Eclipse 
    | **Java용 Microsoft Azure 라이브러리 패키지** | 스토리지, service bus, 서비스 런타임 등의 Microsoft Azure 서비스에 액세스하기 위한 API를 제공합니다. | 
    | **Eclipse용 WebApp 플러그 인** | 웹 애플리케이션을 Azure App Services로 배포하도록 설정합니다. | 
 
-1. **다음**을 클릭합니다. (도구 키트를 설치하는 동안 비정상적인 지연이 발생하는 경우에는 **Contact all update sites during install to find required software** 가 선택되어 있지 않은지 확인합니다.)
+1. **다음** 을 클릭합니다. (도구 키트를 설치하는 동안 비정상적인 지연이 발생하는 경우에는 **Contact all update sites during install to find required software** 가 선택되어 있지 않은지 확인합니다.)
 
-1. **설치 세부 정보** 대화 상자에서 **다음**을 클릭합니다.
+1. **설치 세부 정보** 대화 상자에서 **다음** 을 클릭합니다.
 
-1. **Review Licenses** 대화 상자에서 사용권 계약 조건을 검토합니다. 사용권 계약 조건에 동의하면 **동의함**을 클릭한 후 **마침**을 클릭합니다. (나머지 단계에서는 사용권 계약 조건에 동의한다고 가정합니다. 사용권 계약 조건에 동의하지 않으면 설치 프로세스를 종료합니다.)
+1. **Review Licenses** 대화 상자에서 사용권 계약 조건을 검토합니다. 사용권 계약 조건에 동의하면 **동의함** 을 클릭한 후 **마침** 을 클릭합니다. (나머지 단계에서는 사용권 계약 조건에 동의한다고 가정합니다. 사용권 계약 조건에 동의하지 않으면 설치 프로세스를 종료합니다.)
 
    > [!NOTE]
    > Eclipse 작업 영역의 오른쪽 아래 모서리에서 설치 진행률을 확인할 수 있습니다.

@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: srnagar
-ms.openlocfilehash: 537c030b81913c660b873ac028a7bed90c464b67
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 0de76274b7f33f724c339eb0137a89d74f3e8678
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528643"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118475"
 ---
 # <a name="log-with-the-azure-sdk-for-java-and-log4j"></a>Java 및 Log4j용 Azure SDK를 사용하여 로그
 
@@ -85,4 +85,4 @@ rootLogger.appenderRef.stdout.ref = STDOUT
 
 이 문서에서는 Log4j의 구성과 Java용 Azure SDK가 로깅에 사용하도록 설정하는 방법을 설명합니다. Java용 Azure SDK는 모든 SLF4J 로깅 프레임워크에서 작동하므로 자세한 내용은 [SLF4J 사용자 설명서](http://www.slf4j.org/manual.html)를 검토하는 것이 좋습니다. Log4j를 사용하는 경우 웹 사이트에도 많은 양의 구성 지침이 제공됩니다. 자세한 내용은 [Log4j 2 시작](https://logging.apache.org/log4j/2.x/manual/index.html)을 참조하세요.
 
-로깅을 익힌 후에는 Azure가 [Spring](/azure/developer/java/spring-framework/spring-boot-starters-for-azure) 및 [MicroProfile](/azure/developer/java/eclipse-microprofile/)과 같은 프레임워크에서 제공하는 통합을 살펴보는 것이 좋습니다.
+로깅을 익힌 후에는 Azure가 [Spring](../spring-framework/spring-boot-starters-for-azure.md) 및 [MicroProfile](../eclipse-microprofile/index.yml)과 같은 프레임워크에서 제공하는 통합을 살펴보는 것이 좋습니다.

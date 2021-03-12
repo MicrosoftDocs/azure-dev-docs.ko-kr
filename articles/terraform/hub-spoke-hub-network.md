@@ -2,14 +2,14 @@
 title: 자습서 - Terraform을 사용하여 Azure에서 허브 가상 네트워크 만들기
 description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 허브 가상 네트워크를 만드는 방법을 알아봅니다.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ee75fe6c7fe49463137f9e0a68e518290f78acce
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 731af5b942ac02db3a191c37d84eeb28ceff55b3
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401513"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604134"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 만들기
 
@@ -40,7 +40,7 @@ ms.locfileid: "91401513"
 
 1. [Azure Portal](https://portal.azure.com)로 이동합니다.
 
-1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 엽니다. 이전에 환경을 선택하지 않은 경우 환경으로 **Bash**를 선택합니다.
+1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 엽니다. 이전에 환경을 선택하지 않은 경우 환경으로 **Bash** 를 선택합니다.
 
     ![Cloud Shell 프롬프트](./media/common/azure-portal-cloud-shell-button-min.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "91401513"
     ```hcl
     locals {
       prefix-hub         = "hub"
-      hub-location       = "CentralUS"
+      hub-location       = "eastus"
       hub-resource-group = "hub-vnet-rg"
       shared-key         = "4-v3ry-53cr37-1p53c-5h4r3d-k3y"
     }
@@ -96,21 +96,21 @@ ms.locfileid: "91401513"
       name                 = "GatewaySubnet"
       resource_group_name  = azurerm_resource_group.hub-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.hub-vnet.name
-      address_prefix       = "10.0.255.224/27"
+      address_prefixes     = ["10.0.255.224/27"]
     }
 
     resource "azurerm_subnet" "hub-mgmt" {
       name                 = "mgmt"
       resource_group_name  = azurerm_resource_group.hub-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.hub-vnet.name
-      address_prefix       = "10.0.0.64/27"
+      address_prefixes       = ["10.0.0.64/27"]
     }
 
     resource "azurerm_subnet" "hub-dmz" {
       name                 = "dmz"
       resource_group_name  = azurerm_resource_group.hub-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.hub-vnet.name
-      address_prefix       = "10.0.0.32/27"
+      address_prefixes       = ["10.0.0.32/27"]
     }
 
     resource "azurerm_network_interface" "hub-nic" {

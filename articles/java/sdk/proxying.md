@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: alzimmer
-ms.openlocfilehash: ce4305e1f76a15ab799523f67002315b0883c3e1
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 03acb768d348505b03419eb132c1d9623633b442
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528619"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118171"
 ---
 # <a name="configure-proxies-in-the-azure-sdk-for-java"></a>Java용 Azure SDK에서 프록시 구성
 
@@ -102,14 +102,14 @@ Java 클라이언트 라이브러리는 프록시 구성에 사용되는 Azure �
 다음 예에서는 기본 Fiddler 주소(`localhost:8888`)에 대한 요청을 프록시하는 간단한 `ProxyOptions` 인스턴스를 만듭니다.
 
 ```java
-ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAddress("localhost", 8888));
+ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.Type.HTTP, new InetSocketAddress("localhost", 8888));
 ```
 
 다음 예에서는 프록시 인증을 요구하는 Fiddler 인스턴스에 요청을 프록시하는 인증된 `ProxyOptions`를 만듭니다.
 
 ```java
 // Fiddler uses username "1" and password "1" with basic authentication as its proxy authentication requirement.
-ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAddess("localhost", 8888))
+ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.Type.HTTP, new InetSocketAddress("localhost", 8888))
     .setCredentials("1", "1");
 ```
 
@@ -118,7 +118,7 @@ ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAd
 다음 예에서는 `ProxyOptions`를 사용하여 Fiddler를 프록시로 사용합니다.
 
 ```java
-ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAddress("localhost", 8888));
+ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.Type.HTTP, new InetSocketAddress("localhost", 8888));
 
 HttpClient nettyHttpClient = new NettyAsyncHttpClientBuilder()
     .proxy(proxyOptions)

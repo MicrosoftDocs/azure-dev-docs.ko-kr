@@ -6,12 +6,12 @@ metadata:
   description: Spring은 VMware에서 개발한 오픈 소스 애플리케이션 프레임워크로, Java 애플리케이션을 간편하게 모듈식으로 개발하는 방법을 제공합니다.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 3aaece404996f82110bc252581771a6311a6c6f1
-  ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+  ms.openlocfilehash: 8236e23befec1fac825f701886c88f257aa1e415
+  ms.sourcegitcommit: 3536f174735cd3bb7da7e4b266fbf43349a22b67
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/12/2020
-  ms.locfileid: "94560196"
+  ms.lasthandoff: 03/12/2021
+  ms.locfileid: "103193468"
 landingContent:
 - title: 시작 가이드
   linkLists:
@@ -25,8 +25,10 @@ landingContent:
     links:
     - text: Azure Storage
       url: configure-spring-boot-starter-java-app-with-azure-storage.md
-    - text: Key Vault
+    - text: Key Vault 비밀
       url: configure-spring-boot-starter-java-app-with-azure-key-vault.md
+    - text: Key Vault 인증서
+      url: configure-spring-boot-starter-java-app-with-azure-key-vault-certificates.md
     - text: Kafka 및 Event Hubs
       url: configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md
 - title: 단계별 자습서

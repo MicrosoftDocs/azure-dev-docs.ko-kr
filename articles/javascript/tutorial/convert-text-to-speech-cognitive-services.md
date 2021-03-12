@@ -4,12 +4,12 @@ description: 클라이언트와 서버에 표시되는 텍스트를 음성으로
 ms.topic: tutorial
 ms.date: 01/20/2021
 ms.custom: languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 911d38854856f2add28958454f7ce020c1cf2a31
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 028871f55a7be2e38191efef37a65ad41ab9c3dc
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760076"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117887"
 ---
 # <a name="expressjs-app-converts-text-to-speech-with-cognitive-services-speech"></a>Express.js 앱은 Cognitive Services 음성을 사용하여 텍스트를 음성으로 변환합니다.
 
@@ -90,11 +90,11 @@ npm install microsoft-cognitiveservices-speech-sdk
     :::code language="javascript" source="~/../js-e2e-express-server-cognitive-services/text-to-speech/src/azure-cognitiveservices-speech.js" highlight="3,21,32" :::
 
     * 매개 변수 - 파일이 SDK, 스트림, 버퍼 및 파일 시스템(fs)을 사용하는 데 필요한 종속성을 끌어옵니다. `textToSpeech` 함수는 4개의 인수를 사용합니다. 로컬 경로를 가진 파일 이름이 전송되면 텍스트가 오디오 파일로 변환됩니다. 파일 이름이 전송되지 않으면 메모리 내 오디오 스트림이 생성됩니다. 
-    * Speech SDK 메서드 - Speech SDK 메서드 [synthesizer.speakTextAsync](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer#speakTextAsync_string___e__SpeechSynthesisResult_____void___e__string_____void__AudioOutputStream___PushAudioOutputStreamCallback___PathLike_)는 수신한 구성에 따라 서로 다른 형식을 반환합니다. 
+    * Speech SDK 메서드 - Speech SDK 메서드 [synthesizer.speakTextAsync](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer#speakTextAsync_string___e__SpeechSynthesisResult_____void___e__string_____void__AudioOutputStream___PushAudioOutputStreamCallback___PathLike_)는 수신한 구성에 따라 서로 다른 형식을 반환합니다. 
         이 메서드는 수행해야 할 작업에 따라 다른 결과를 반환합니다.
         * 파일 만들기 
         * 메모리 내 스트림을 버퍼 배열로 만들기
-    * 오디오 형식 - 선택한 오디오 형식은 MP3이지만 다른 [오디오 구성 방법](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig?preserve-view=true&view=azure-node-latest#methods)과 [다른 형식](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat?preserve-view=true&view=azure-node-latest)이 있습니다. 
+    * 오디오 형식 - 선택한 오디오 형식은 MP3이지만 다른 [오디오 구성 방법](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig?preserve-view=true&view=azure-node-latest#methods)과 [다른 형식](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat?preserve-view=true&view=azure-node-latest)이 있습니다. 
 
     로컬 메서드인 `textToSpeech`는 SDK 콜백 함수를 래핑하고 프라미스로 변환합니다. 
 

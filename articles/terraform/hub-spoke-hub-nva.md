@@ -2,18 +2,18 @@
 title: 자습서 - Terraform을 사용하여 Azure에서 허브 가상 네트워크 어플라이언스 만들기
 description: 다른 네트워크 간의 공통 연결 지점 역할을 하는 허브 VNet(가상 네트워크)을 만드는 방법을 알아봅니다.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b7276d3807f00e828c89ee00ffcde2e6e2f0b9a5
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: b8deb50c29a0fd1cdd317dc2edfe0bd3bf21d8da
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401461"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604164"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>자습서: Terraform을 사용하여 Azure에서 허브 가상 네트워크 어플라이언스 만들기
 
-*VPN 디바이스*는 온-프레미스 네트워크에 외부 연결을 제공하는 디바이스입니다. VPN 디바이스는 하드웨어 디바이스 또는 소프트웨어 솔루션일 수 있습니다. 소프트웨어 솔루션의 한 예는 Windows Server 2012의 RRAS(라우팅 및 원격 액세스 서비스)입니다. VPN 어플라이언스에 대한 자세한 내용은 [사이트 간 VPN Gateway 연결을 위한 VPN 디바이스 정보](/azure/vpn-gateway/vpn-gateway-about-vpn-devices)를 참조하세요.
+*VPN 디바이스* 는 온-프레미스 네트워크에 외부 연결을 제공하는 디바이스입니다. VPN 디바이스는 하드웨어 디바이스 또는 소프트웨어 솔루션일 수 있습니다. 소프트웨어 솔루션의 한 예는 Windows Server 2012의 RRAS(라우팅 및 원격 액세스 서비스)입니다. VPN 어플라이언스에 대한 자세한 내용은 [사이트 간 VPN Gateway 연결을 위한 VPN 디바이스 정보](/azure/vpn-gateway/vpn-gateway-about-vpn-devices)를 참조하세요.
 
 Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언스를 지원합니다. 이 문서에서는 Ubuntu 이미지가 사용됩니다. Azure에서 지원되는 다양한 디바이스 솔루션에 대해 자세히 알아보려면 [네트워크 어플라이언스 홈페이지](https://azure.microsoft.com/solutions/network-appliances/)를 참조하세요.
 
@@ -35,7 +35,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
 
 1. [Azure Portal](https://portal.azure.com)로 이동합니다.
 
-1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 엽니다. 이전에 환경을 선택하지 않은 경우 환경으로 **Bash**를 선택합니다.
+1. [Azure Cloud Shell](/azure/cloud-shell/overview)을 엽니다. 이전에 환경을 선택하지 않은 경우 환경으로 **Bash** 를 선택합니다.
 
     ![Cloud Shell 프롬프트](./media/common/azure-portal-cloud-shell-button-min.png)
 
@@ -66,7 +66,7 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
     ```hcl
     locals {
       prefix-hub-nva         = "hub-nva"
-      hub-nva-location       = "CentralUS"
+      hub-nva-location       = "eastus"
       hub-nva-resource-group = "hub-nva-rg"
     }
 
@@ -135,12 +135,11 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
 
     resource "azurerm_virtual_machine_extension" "enable-routes" {
       name                 = "enable-iptables-routes"
-      location             = azurerm_resource_group.hub-nva-rg.location
-      resource_group_name  = azurerm_resource_group.hub-nva-rg.name
-      virtual_machine_name = azurerm_virtual_machine.hub-nva-vm.name
+      virtual_machine_id   = azurerm_virtual_machine.hub-nva-vm.id
       publisher            = "Microsoft.Azure.Extensions"
       type                 = "CustomScript"
       type_handler_version = "2.0"
+
 
       settings = <<SETTINGS
         {
@@ -264,7 +263,6 @@ Azure는 선택할 수 있는 광범위한 네트워크 가상 어플라이언�
       route_table_id = azurerm_route_table.spoke2-rt.id
       depends_on = [azurerm_subnet.spoke2-workload]
     }
-
     ```
 
 1. 파일을 저장하고 편집기를 종료합니다.

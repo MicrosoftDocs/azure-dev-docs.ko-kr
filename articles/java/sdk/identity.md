@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: vigera
-ms.openlocfilehash: 2a09b4ccaf39564c1cd2547417d722472ed9017c
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: e0349297bed9ee2e499c904483d9c3e018a6cddf
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528672"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118555"
 ---
 # <a name="azure-authentication-with-java-and-azure-identity"></a>Java 및 Azure Identity로 Azure 인증
 
@@ -20,7 +20,7 @@ ms.locfileid: "99528672"
 Azure Identity 라이브러리는 현재 다음을 지원합니다.
 
 * 다음과 같은 것이 가능한 [Java 개발 환경의 Azure 인증](identity-dev-env-auth.md):
-  * IDEA IntelliJ 인증. 로그인 정보는 [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/)에서 검색합니다.
+  * IDEA IntelliJ 인증. 로그인 정보는 [Azure Toolkit for IntelliJ](../toolkit-for-intellij/index.yml)에서 검색합니다.
   * Visual Studio Code 인증. 로그인 정보는 [Visual Studio Code용 Azure 플러그 인](https://code.visualstudio.com/docs/azure/extensions)에 저장됩니다.
   * Azure CLI 인증. 로그인 정보는 [Azure CLI](/cli/azure/what-is-azure-cli)에 저장됩니다.
 * 다음과 같은 것이 가능한 [Azure에서 호스트되는 애플리케이션 인증](identity-azure-hosted-auth.md):

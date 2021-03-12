@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: srnagar
-ms.openlocfilehash: ca59b7dc9f861dd833788c88c18ce8b14a016e70
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 785bb65a1a6f55314246d4c1410891717f8bbd6f
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528637"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118161"
 ---
 # <a name="log-with-the-azure-sdk-for-java-and-logback"></a>Java용 Azure SDK 및 Logback을 사용하여 로그
 
@@ -123,4 +123,4 @@ logging.config=classpath:logback.xml
 
 이 문서에서는 Logback 구성 및 Java용 Azure SDK에서 Logback을 로깅에 사용하도록 설정하는 방법을 알아보았습니다. Java용 Azure SDK는 모든 SLF4J 로깅 프레임워크에서 작동하므로 [SLF4J 사용자 설명서](http://www.slf4j.org/manual.html)에서 자세한 내용을 검토하는 것이 좋습니다. Logback을 사용하는 경우 웹 사이트에서 방대한 분량의 구성 지침을 찾을 수 있습니다. 자세한 내용은 Logback 설명서의 [Logback 구성](http://logback.qos.ch/manual/configuration.html)을 참조하세요.
 
-로깅을 익힌 후에는 Azure가 [Spring](/azure/developer/java/spring-framework/spring-boot-starters-for-azure) 및 [MicroProfile](/azure/developer/java/eclipse-microprofile/)과 같은 프레임워크에서 제공하는 통합을 살펴보는 것이 좋습니다.
+로깅을 익힌 후에는 Azure가 [Spring](../spring-framework/spring-boot-starters-for-azure.md) 및 [MicroProfile](../eclipse-microprofile/index.yml)과 같은 프레임워크에서 제공하는 통합을 살펴보는 것이 좋습니다.

@@ -2,14 +2,14 @@
 title: Visual Studio Code에서 Azure Functions 애플리케이션을 로컬에서 실행
 description: Azure Functions 프로젝트를 Azure에 배포하기 전에 로컬로 실행하여 테스트합니다. 서버리스 함수가 응답을 반환하기 직전에 중단점을 설정합니다.
 ms.topic: tutorial
-ms.date: 09/23/2019
+ms.date: 03/02/2021
 ms.custom: devx-track-js, contperf-fy21q2
-ms.openlocfilehash: f345e27074c2070c2f8d8939ed09f8b4301a1966
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: e16daa0f9c3db2edf2335c3f35277b1b95fcfef8
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522344"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117827"
 ---
 # <a name="3-test-the-function-locally"></a>3. 로컬에서 함수 테스트
 
@@ -38,10 +38,6 @@ Functions 앱을 만들 때, Azure Functions 확장 프로그램이 VS Code 시�
     ![중단점에서 중지한 VS Code](../media/functions-extension/debugging-breakpoint.png)
 
     VS Code의 중단점 및 디버깅에 대해 자세히 알아보려면 [디버깅](https://code.visualstudio.com/docs/editor/debugging)을 참조하세요.
-
-> [!Note]
->
-> 이 프로세스에서 실행 정책 오류가 발생할 경우 npm을 사용하여 `azure-functions-core-tools@3`을 제거한 다음, 터미널에서 관리자 권한으로 패키지를 다시 설치해 보세요.
 
 > [!div class="nextstepaction"]
 > [함수 앱을 로컬에서 실행했습니다.](tutorial-vscode-serverless-node-deploy-hosting.md)[문제가 발생했습니다.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)

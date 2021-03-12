@@ -1,15 +1,15 @@
 ---
 title: 인증 및 권한 부여 - JavaScript - Azure
 description: Azure를 사용하여 ID, 인증 및 사용자가 포함된 JavaScript 앱을 개발하는 방법을 이해합니다.
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 12/09/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: b43ebd5a9c782b2abd83033a8ce0bee038655f80
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: 68f53743d001b44aa1495ece36d0c2764ec749d4
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97529443"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118465"
 ---
 # <a name="identity-authentication-and-users"></a>ID, 인증 및 사용자
 

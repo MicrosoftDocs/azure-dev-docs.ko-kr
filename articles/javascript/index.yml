@@ -7,19 +7,19 @@ metadata:
   description: 자습서, 도구 및 SDK 참조를 통해 브라우저 또는 Node.js에서 JavaScript용 Azure SDK를 사용하여 앱 개발을 시작하세요.
   author: diberry
   ms.author: diberry
-  ms.date: 01/20/2021
+  ms.date: 03/04/2021
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: dbc01af045726a3e0b5b8c788cb3415ce985ba50
-  ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+  ms.openlocfilehash: 1fd27be9cc1037b591933e7ec93ca6b318720475
+  ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 02/01/2021
-  ms.locfileid: "99224747"
+  ms.lasthandoff: 03/10/2021
+  ms.locfileid: "102604094"
 landingContent:
 - title: Azure를 처음 사용하세요?
   linkLists:
@@ -45,6 +45,8 @@ landingContent:
       url: whats-new-docs.md
     - text: Developer Advocates의 새로운 기능
       url: whats-new-developer-advocacy.md
+    - text: JS 개발자를 위한 상위 10개 문서
+      url: whats-new-docs.md#top-10
 - title: 배포 및 호스트
   linkLists:
   - linkListType: tutorial
